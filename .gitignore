@@ -1,0 +1,31 @@
+# Ignore the home directory by default, then allow only project artifacts.
+*
+
+!.gitignore
+!*.py
+!*.md
+
+# Datasets and top-level result files.
+!question_and_result.json
+!shuffled_prepend_names_question.json
+!shuffled_prepend_profiles_question.json
+!whitebox_results_*.jsonl
+!whitebox_detector_results.jsonl
+!whitebox_detector_v2_*.jsonl
+
+# Experiment outputs and trained lightweight heads.
+!weakbox_output/
+!weakbox_output/*.json
+!weakbox_output/*.jsonl
+!weakbox_output/*.joblib
+
+!role_mediated_output/
+!role_mediated_output/*.json
+!role_mediated_output/*.jsonl
+!role_mediated_output/*.joblib
+
+# Generated Python files remain excluded.
+__pycache__/
+*.pyc
+*.pyo
+*.log

@@ -1,0 +1,454 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "data": "/home/tong56/question_and_result.json",
+  "device": "cuda",
+  "dtype": "torch.bfloat16",
+  "choices": [
+    "1",
+    "2"
+  ],
+  "n_input": 500,
+  "n_extracted": 500,
+  "n_train": 375,
+  "n_test": 125,
+  "interventions": [
+    "delete",
+    "neutralize",
+    "mask"
+  ],
+  "span_mode": "clause",
+  "role_pseudo_label_counts": {
+    "constraint": 470,
+    "shortcut": 380,
+    "irrelevant": 6
+  },
+  "mean_role_reliability": 0.3778884692498324,
+  "n_role_training_spans": 520,
+  "train_oof_metrics": {
+    "n": 375,
+    "positive_rate": 0.31466666666666665,
+    "threshold": 0.5990215662652582,
+    "accuracy": 0.7706666666666667,
+    "precision": 0.625,
+    "recall": 0.6779661016949152,
+    "f1": 0.6504065040650406,
+    "confusion_matrix": [
+      [
+        209,
+        48
+      ],
+      [
+        38,
+        80
+      ]
+    ],
+    "auroc": 0.8156697223504583,
+    "auprc": 0.6588043153295478
+  },
+  "test_metrics": {
+    "n": 125,
+    "positive_rate": 0.312,
+    "threshold": 0.5990215662652582,
+    "accuracy": 0.776,
+    "precision": 0.6571428571428571,
+    "recall": 0.5897435897435898,
+    "f1": 0.6216216216216216,
+    "confusion_matrix": [
+      [
+        74,
+        12
+      ],
+      [
+        16,
+        23
+      ]
+    ],
+    "auroc": 0.8524150268336315,
+    "auprc": 0.7568900858832489
+  },
+  "selected_threshold_from_train_oof": 0.5990215662652582,
+  "role_feature_coefficients": {
+    "constraint": [
+      [
+        "grad_norm_sum",
+        -0.6519811280524375
+      ],
+      [
+        "grad_norm_density",
+        0.5985481188781803
+      ],
+      [
+        "attn_mass_mid",
+        -0.48403887658339034
+      ],
+      [
+        "attn_mass_late",
+        0.45523555369731367
+      ],
+      [
+        "attn_headmax_mid",
+        0.43410547000500155
+      ],
+      [
+        "attn_density_late",
+        -0.38321522581700346
+      ],
+      [
+        "attn_density_max",
+        0.3223736970796046
+      ],
+      [
+        "span_words",
+        -0.29239353586360034
+      ],
+      [
+        "attn_mass_std",
+        -0.2867144095595716
+      ],
+      [
+        "span_tokens",
+        0.23249718209985096
+      ],
+      [
+        "grad_signed_density",
+        0.2267790432244036
+      ],
+      [
+        "attn_headmax_std",
+        -0.22094670941157754
+      ],
+      [
+        "attn_density_mid",
+        0.19382835386084787
+      ],
+      [
+        "lap_token_late",
+        0.19109115333842008
+      ],
+      [
+        "span_characters",
+        0.19063160260383455
+      ],
+      [
+        "attn_headmax_max",
+        0.19040318826685756
+      ],
+      [
+        "attn_headmax_mean",
+        0.18663586357229872
+      ],
+      [
+        "lap_token_early",
+        -0.1752388698253709
+      ],
+      [
+        "attn_density_std",
+        -0.16399108207371682
+      ],
+      [
+        "attn_density_mean",
+        -0.15727130185025182
+      ]
+    ],
+    "shortcut": [
+      [
+        "attn_density_mid",
+        -0.5906988789660359
+      ],
+      [
+        "attn_density_late",
+        0.5462098958594386
+      ],
+      [
+        "span_words",
+        0.44804675627591206
+      ],
+      [
+        "attn_mass_mid",
+        0.438166596822597
+      ],
+      [
+        "attn_mass_max",
+        -0.43619597376779984
+      ],
+      [
+        "attn_headmax_late",
+        -0.422967586960323
+      ],
+      [
+        "span_characters",
+        -0.41688381341459346
+      ],
+      [
+        "attn_mass_early",
+        0.3963399374405374
+      ],
+      [
+        "attn_mass_mean",
+        0.29883745856329136
+      ],
+      [
+        "attn_headmax_mean",
+        -0.2938273279162772
+      ],
+      [
+        "attn_headmax_std",
+        0.2916292200235827
+      ],
+      [
+        "span_tokens",
+        -0.27308581380805164
+      ],
+      [
+        "attn_mass_late",
+        -0.2640100327841463
+      ],
+      [
+        "attn_headmax_early",
+        -0.2634201122433097
+      ],
+      [
+        "grad_norm_density",
+        0.23267294301523325
+      ],
+      [
+        "lap_token_early",
+        -0.21679427555528188
+      ],
+      [
+        "span_relative_start",
+        0.20949555816505153
+      ],
+      [
+        "span_relative_end",
+        0.16729328001236887
+      ],
+      [
+        "grad_norm_sum",
+        0.15430730136616935
+      ],
+      [
+        "lap_token_mean",
+        -0.09917933573018389
+      ]
+    ],
+    "irrelevant": [
+      [
+        "grad_norm_density",
+        -0.8312210618934116
+      ],
+      [
+        "attn_mass_max",
+        0.5442078885097142
+      ],
+      [
+        "grad_norm_sum",
+        0.4976738266862653
+      ],
+      [
+        "attn_headmax_mid",
+        -0.46894339248322214
+      ],
+      [
+        "attn_mass_early",
+        -0.44428891428551187
+      ],
+      [
+        "attn_density_max",
+        -0.39805655247197663
+      ],
+      [
+        "attn_density_mid",
+        0.3968705251051877
+      ],
+      [
+        "lap_token_early",
+        0.3920331453806524
+      ],
+      [
+        "attn_headmax_late",
+        0.359032818634261
+      ],
+      [
+        "attn_mass_mean",
+        -0.3518842606396341
+      ],
+      [
+        "attn_mass_std",
+        0.33322976215274536
+      ],
+      [
+        "attn_density_mean",
+        0.23073259244872926
+      ],
+      [
+        "attn_density_early",
+        0.22730721548091368
+      ],
+      [
+        "span_characters",
+        0.2262522108107594
+      ],
+      [
+        "attn_headmax_early",
+        0.21213841860034513
+      ],
+      [
+        "attn_mass_late",
+        -0.19122552091316505
+      ],
+      [
+        "grad_signed_density",
+        -0.18606301362565736
+      ],
+      [
+        "attn_headmax_max",
+        -0.17988274799018616
+      ],
+      [
+        "lap_token_mid",
+        -0.17574705386435546
+      ],
+      [
+        "attn_density_late",
+        -0.16299467004243468
+      ]
+    ]
+  },
+  "hallucination_feature_coefficients": [
+    [
+      "choice_margin_abs",
+      -0.6442906595189347
+    ],
+    [
+      "shortcut_weighted_attn_max",
+      0.596382025815688
+    ],
+    [
+      "lapeig4_max",
+      -0.5752385539045075
+    ],
+    [
+      "role_irrelevant_mean",
+      -0.4981843044755836
+    ],
+    [
+      "decision_attn_entropy_early",
+      0.4895743293350471
+    ],
+    [
+      "role_entropy_mean",
+      0.44747994140540964
+    ],
+    [
+      "decision_attn_entropy_std",
+      -0.4150124895356676
+    ],
+    [
+      "lapeig7_std",
+      0.3725559787266967
+    ],
+    [
+      "lapeig6_early",
+      0.3545245602687892
+    ],
+    [
+      "role_constraint_mean",
+      0.33491430369862013
+    ],
+    [
+      "role_constraint_count_p50",
+      -0.2916645372515752
+    ],
+    [
+      "chosen_is_a",
+      -0.23596247197775713
+    ],
+    [
+      "lapeig2_mean",
+      -0.2275853346559279
+    ],
+    [
+      "num_candidate_spans",
+      0.2167269202260878
+    ],
+    [
+      "lapeig7_early",
+      -0.21325016038570535
+    ],
+    [
+      "lapeig5_late",
+      0.20981914680368752
+    ],
+    [
+      "lapeig5_mean",
+      0.20808672165547976
+    ],
+    [
+      "lapeig3_std",
+      -0.19574145586166336
+    ],
+    [
+      "lapeig0_max",
+      0.18921571592141936
+    ],
+    [
+      "lapeig1_late",
+      -0.16405560958152504
+    ],
+    [
+      "shortcut_weighted_grad_max",
+      0.16393561340756038
+    ],
+    [
+      "lapeig6_max",
+      -0.15745678955234355
+    ],
+    [
+      "choice_entropy",
+      0.14848153401999648
+    ],
+    [
+      "lapeig9_early",
+      0.1413589413671848
+    ],
+    [
+      "lapeig2_mid",
+      -0.13815203130792772
+    ],
+    [
+      "decision_attn_entropy_mid",
+      0.12338716844379445
+    ],
+    [
+      "constraint_weighted_attn_max",
+      -0.12256552238846555
+    ],
+    [
+      "lapeig9_mid",
+      0.11335585140497871
+    ],
+    [
+      "role_shortcut_count_p50",
+      -0.1117254234034325
+    ],
+    [
+      "lapeig9_max",
+      0.10002413376780779
+    ]
+  ],
+  "files": {
+    "base_features": "/home/tong56/weakbox_output/base_features.jsonl",
+    "intervention_labels": "/home/tong56/weakbox_output/intervention_labels.jsonl",
+    "predictions": "/home/tong56/weakbox_output/predictions.jsonl",
+    "role_model": "/home/tong56/weakbox_output/role_head.joblib",
+    "hallucination_model": "/home/tong56/weakbox_output/hallucination_head.joblib"
+  },
+  "method_notes": {
+    "test_prediction_uses_interventions": false,
+    "test_prediction_uses_gold_answer": false,
+    "training_hallucination_labels_from_gold": true,
+    "training_span_roles_from_intervention_soft_labels": true,
+    "role_training_predictions_for_hall_head_are_group_oof": true
+  }
+}
