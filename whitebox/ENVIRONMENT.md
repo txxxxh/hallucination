@@ -42,8 +42,9 @@ Use source activate_whitebox.sh to activate the environment and set CPATH.
 
 ## Rebuild
 
-From the cloned repository:
+From the cloned repository's whitebox directory:
 
+    cd hallucination/whitebox
     bash setup_whitebox_env.sh
     source activate_whitebox.sh
 

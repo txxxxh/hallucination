@@ -1,58 +1,16 @@
-# Ignore the home directory by default, then allow only project artifacts.
+# Keep the repository split into the two project trees. Ignore unrelated
+# home-directory state because this repository is checked out at $HOME.
 *
-
 !.gitignore
-!*.py
-!*.md
-!*.sh
-!requirements-lock.txt
+!blackbox/
+!blackbox/**
+!whitebox/
+!whitebox/**
 
-# Datasets and top-level result files.
-!question_and_result.json
-!shuffled_prepend_names_question.json
-!shuffled_prepend_profiles_question.json
-!whitebox_results_*.jsonl
-!whitebox_detector_results.jsonl
-!whitebox_detector_v2_*.jsonl
+# Never add regenerated local environment and cache files under whitebox.
+whitebox/**/__pycache__/
+whitebox/**/*.pyc
+whitebox/**/*.pyo
+whitebox/**/*.log
+whitebox/.venv/
 
-# Experiment outputs and trained lightweight heads.
-!weakbox_output/
-!weakbox_output/*.json
-!weakbox_output/*.jsonl
-!weakbox_output/*.joblib
-
-!role_mediated_output/
-!role_mediated_output/*.json
-!role_mediated_output/*.jsonl
-!role_mediated_output/*.joblib
-
-!role_mediated_output_v4/
-!role_mediated_output_v4/*.json
-!role_mediated_output_v4/*.jsonl
-!role_mediated_output_v4/*.joblib
-
-!role_mediated_scientist_names_output/
-!role_mediated_scientist_names_output/*.json
-!role_mediated_scientist_names_output/*.jsonl
-!role_mediated_scientist_names_output/*.joblib
-
-!role_mediated_scientistqa_atomic_v5_output/
-!role_mediated_scientistqa_atomic_v5_output/*.json
-!role_mediated_scientistqa_atomic_v5_output/*.jsonl
-!role_mediated_scientistqa_atomic_v5_output/*.joblib
-
-!role_mediated_scientistqa_profiles_atomic_v5_output/
-!role_mediated_scientistqa_profiles_atomic_v5_output/*.json
-!role_mediated_scientistqa_profiles_atomic_v5_output/*.jsonl
-!role_mediated_scientistqa_profiles_atomic_v5_output/*.joblib
-
-!role_mediated_reallife_nous_llama31_8b_v4_output/
-!role_mediated_reallife_nous_llama31_8b_v4_output/*.json
-!role_mediated_reallife_nous_llama31_8b_v4_output/*.jsonl
-!role_mediated_reallife_nous_llama31_8b_v4_output/*.joblib
-
-# Generated Python files remain excluded.
-__pycache__/
-*.pyc
-*.pyo
-*.log
