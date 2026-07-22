@@ -1,0 +1,1247 @@
+{
+  "method": "open-ended attention-behavior transition detector v11",
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "data": "/home/tong56/other_bench/HaluEval/qa_data.json",
+  "n_input": 2000,
+  "n_examples": 2000,
+  "n_extracted": 2000,
+  "n_failed": 0,
+  "n_refusal_or_unlabeled": 2,
+  "n_valid": 1998,
+  "n_train": 1498,
+  "n_test": 500,
+  "train_positive_rate": 0.3918558077436582,
+  "test_positive_rate": 0.392,
+  "support_scale_from_train": 1.2273026707504875,
+  "interventions_used_for_prediction": [
+    "delete",
+    "neutralize",
+    "mask"
+  ],
+  "attention_transition": {
+    "groups": [
+      "early",
+      "middle",
+      "late"
+    ],
+    "definition": "T[i,j]=post_attention_to_span_j-pre_attention_to_span_j",
+    "delete_alignment": "exclude deleted coordinate and renormalize survivors",
+    "behavior_weight": "tanh(support_delta_i / train_support_scale)",
+    "weighted_matrix": "G=diag(behavior_weight)@T",
+    "global_features": [
+      "frobenius_norm",
+      "largest_singular_value",
+      "singular_entropy",
+      "positive_mass",
+      "mean_abs_entry"
+    ],
+    "global_feature_selection": "top 16 individual features by mean absolute standardized coefficient across both shortcut variants in the prior 2,000-item training run; held-out labels were not used",
+    "selected_global_feature_names": [
+      "early::mask::mean_abs_entry",
+      "early::neutralize::mean_abs_entry",
+      "early::operator_median::positive_mass",
+      "middle::neutralize::positive_mass",
+      "early::neutralize::positive_mass",
+      "middle::mask::mean_abs_entry",
+      "middle::mask::frobenius_norm",
+      "early::neutralize::frobenius_norm",
+      "late::neutralize::mean_abs_entry",
+      "early::mask::largest_singular_value",
+      "late::operator_median::singular_entropy",
+      "late::neutralize::positive_mass",
+      "early::operator_median::largest_singular_value",
+      "middle::neutralize::mean_abs_entry",
+      "late::operator_median::largest_singular_value",
+      "middle::operator_median::positive_mass"
+    ],
+    "global_features_per_matrix": 5,
+    "global_transition_feature_count": 16,
+    "span_features": "weighted row norms/mass/entropy plus leading-left loading",
+    "legacy_singular_topk_argument": 5
+  },
+  "span_selection": {
+    "method": "top_k_answer_to_span_attention",
+    "max_intervention_spans": 4,
+    "control_spans_used": false,
+    "layers": "last_quarter",
+    "last_n": null,
+    "score": "hybrid",
+    "hybrid_density_weight": 0.7
+  },
+  "test_prediction_uses_reference_features": false,
+  "references_used_for_train_pseudo_roles": true,
+  "references_used_for_final_evaluation": true,
+  "primary_configuration": "v11_transition_shortcut",
+  "configurations_evaluated": [
+    "v8_attention_behavior",
+    "v11_transition_direct",
+    "v11_transition_v8shortcut",
+    "v11_transition_shortcut"
+  ],
+  "configuration_comparison": {
+    "v8_attention_behavior": {
+      "configuration": "v8_attention_behavior",
+      "span_feature_set": "behavior_attention",
+      "span_feature_families": [
+        "behavior",
+        "attention"
+      ],
+      "item_mode": "role_only",
+      "item_feature_count": 8,
+      "item_feature_names": [
+        "shortcut_evidence_mean",
+        "constraint_evidence_mean",
+        "max_shortcut_contribution",
+        "topk_shortcut_contribution",
+        "max_shortcut_probability",
+        "sum_shortcut_probability",
+        "shortcut_minus_constraint_top1",
+        "shortcut_minus_constraint_topk"
+      ],
+      "role_head": {
+        "n_input_features": 318,
+        "n_training_spans": 4150,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.9934570789337158
+      },
+      "span_role_train_oof": {
+        "n": 4150,
+        "accuracy": 0.8180722891566266,
+        "macro_f1": 0.8004934687644051,
+        "log_loss": 0.3995357317005824,
+        "class_counts": {
+          "constraint": 1666,
+          "shortcut": 949,
+          "irrelevant": 1535
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.9221727338278306,
+            "auprc": 0.8602299839117292,
+            "precision": 0.8162055335968379,
+            "recall": 0.7436974789915967,
+            "f1": 0.7782663316582915
+          },
+          "shortcut": {
+            "auroc": 0.8939793906606504,
+            "auprc": 0.7443017562876592,
+            "precision": 0.6220984215413184,
+            "recall": 0.7060063224446786,
+            "f1": 0.6614017769002961
+          },
+          "irrelevant": {
+            "auroc": 0.9963627530969538,
+            "auprc": 0.9905059048121736,
+            "precision": 0.9556270096463022,
+            "recall": 0.9680781758957655,
+            "f1": 0.9618122977346278
+          }
+        },
+        "macro_ovr_auroc": 0.9375049591951449,
+        "macro_ovr_auprc": 0.8650125483371873
+      },
+      "selected_threshold_from_train_oof": 0.5114431921811643,
+      "item_logistic": {
+        "intercept": -0.14226881277814687,
+        "regularization_c": 1.0,
+        "top_absolute_standardized_coefficients": [
+          {
+            "feature": "shortcut_evidence_mean",
+            "coefficient": 0.932694098766546
+          },
+          {
+            "feature": "shortcut_minus_constraint_top1",
+            "coefficient": 0.6749037492468523
+          },
+          {
+            "feature": "max_shortcut_contribution",
+            "coefficient": -0.4872469337708373
+          },
+          {
+            "feature": "sum_shortcut_probability",
+            "coefficient": 0.4453786775700795
+          },
+          {
+            "feature": "topk_shortcut_contribution",
+            "coefficient": -0.29194374111102045
+          },
+          {
+            "feature": "constraint_evidence_mean",
+            "coefficient": -0.23376857643941715
+          },
+          {
+            "feature": "shortcut_minus_constraint_topk",
+            "coefficient": 0.11785117255775449
+          },
+          {
+            "feature": "max_shortcut_probability",
+            "coefficient": -0.012204142968161583
+          }
+        ]
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 1498,
+          "positive_rate": 0.3918558077436582,
+          "threshold": 0.5114431921811643,
+          "accuracy": 0.787716955941255,
+          "balanced_accuracy": 0.7797223785756895,
+          "precision": 0.7230514096185738,
+          "recall": 0.7427597955706985,
+          "f1": 0.7327731092436974,
+          "confusion_matrix": [
+            [
+              744,
+              167
+            ],
+            [
+              151,
+              436
+            ]
+          ],
+          "auroc": 0.8373728628143251,
+          "auprc": 0.8017887554345444
+        },
+        "train_full": {
+          "n": 1498,
+          "positive_rate": 0.3918558077436582,
+          "threshold": 0.5114431921811643,
+          "accuracy": 0.7870493991989319,
+          "balanced_accuracy": 0.7788705898193011,
+          "precision": 0.7225913621262459,
+          "recall": 0.7410562180579217,
+          "f1": 0.7317073170731707,
+          "confusion_matrix": [
+            [
+              744,
+              167
+            ],
+            [
+              152,
+              435
+            ]
+          ],
+          "auroc": 0.8431100481153122,
+          "auprc": 0.8110257921249203
+        },
+        "test": {
+          "n": 500,
+          "positive_rate": 0.392,
+          "threshold": 0.5114431921811643,
+          "accuracy": 0.76,
+          "balanced_accuracy": 0.7527859828141783,
+          "precision": 0.6844660194174758,
+          "recall": 0.7193877551020408,
+          "f1": 0.7014925373134329,
+          "confusion_matrix": [
+            [
+              239,
+              65
+            ],
+            [
+              55,
+              141
+            ]
+          ],
+          "auroc": 0.8369864393125672,
+          "auprc": 0.7886179049069139
+        }
+      }
+    },
+    "v11_transition_direct": {
+      "configuration": "v11_transition_direct",
+      "span_feature_set": "behavior_attention",
+      "span_feature_families": [
+        "behavior",
+        "attention"
+      ],
+      "item_mode": "transition_only",
+      "item_feature_count": 42,
+      "item_feature_names": [
+        "support_delta_mean",
+        "support_delta_median",
+        "support_delta_std",
+        "support_delta_max",
+        "support_delta_min",
+        "support_delta_max_abs",
+        "normalized_support_mean",
+        "normalized_support_max",
+        "positive_support_fraction",
+        "answer_change_rate",
+        "attention_selection_score_mean",
+        "attention_selection_score_std",
+        "attention_selection_score_max",
+        "attention_selection_score_top_gap",
+        "attention_selection_mass_mean",
+        "attention_selection_mass_std",
+        "attention_selection_mass_max",
+        "attention_selection_mass_top_gap",
+        "attention_selection_density_mean",
+        "attention_selection_density_std",
+        "attention_selection_density_max",
+        "attention_selection_density_top_gap",
+        "attention_selection_peak_mean",
+        "attention_selection_peak_std",
+        "attention_selection_peak_max",
+        "attention_selection_peak_top_gap",
+        "early::neutralize::frobenius_norm",
+        "early::neutralize::positive_mass",
+        "early::neutralize::mean_abs_entry",
+        "early::mask::largest_singular_value",
+        "early::mask::mean_abs_entry",
+        "early::operator_median::largest_singular_value",
+        "early::operator_median::positive_mass",
+        "middle::neutralize::positive_mass",
+        "middle::neutralize::mean_abs_entry",
+        "middle::mask::frobenius_norm",
+        "middle::mask::mean_abs_entry",
+        "middle::operator_median::positive_mass",
+        "late::neutralize::positive_mass",
+        "late::neutralize::mean_abs_entry",
+        "late::operator_median::largest_singular_value",
+        "late::operator_median::singular_entropy"
+      ],
+      "role_head": null,
+      "span_role_train_oof": null,
+      "selected_threshold_from_train_oof": 0.4304180032854355,
+      "item_logistic": {
+        "intercept": -0.08314164424992664,
+        "regularization_c": 1.0,
+        "top_absolute_standardized_coefficients": [
+          {
+            "feature": "early::neutralize::positive_mass",
+            "coefficient": 1.0345186042062824
+          },
+          {
+            "feature": "early::mask::largest_singular_value",
+            "coefficient": 0.9793567511942135
+          },
+          {
+            "feature": "early::operator_median::positive_mass",
+            "coefficient": -0.8758578067538316
+          },
+          {
+            "feature": "middle::mask::mean_abs_entry",
+            "coefficient": 0.7545590410811122
+          },
+          {
+            "feature": "attention_selection_density_max",
+            "coefficient": -0.748433628634018
+          },
+          {
+            "feature": "early::mask::mean_abs_entry",
+            "coefficient": -0.7455638100742482
+          },
+          {
+            "feature": "support_delta_std",
+            "coefficient": 0.6933272048340908
+          },
+          {
+            "feature": "attention_selection_score_max",
+            "coefficient": -0.6572895129120012
+          },
+          {
+            "feature": "middle::neutralize::positive_mass",
+            "coefficient": -0.6542530918818162
+          },
+          {
+            "feature": "normalized_support_mean",
+            "coefficient": -0.6522244148117292
+          },
+          {
+            "feature": "early::neutralize::mean_abs_entry",
+            "coefficient": 0.635584948002964
+          },
+          {
+            "feature": "early::neutralize::frobenius_norm",
+            "coefficient": -0.6232899799350932
+          },
+          {
+            "feature": "attention_selection_score_top_gap",
+            "coefficient": 0.5866871473481166
+          },
+          {
+            "feature": "attention_selection_mass_mean",
+            "coefficient": -0.49916154669658114
+          },
+          {
+            "feature": "middle::mask::frobenius_norm",
+            "coefficient": -0.4574921701116567
+          },
+          {
+            "feature": "attention_selection_peak_top_gap",
+            "coefficient": -0.44489720859166365
+          },
+          {
+            "feature": "attention_selection_density_std",
+            "coefficient": 0.436046586011582
+          },
+          {
+            "feature": "attention_selection_density_mean",
+            "coefficient": 0.4287179106583186
+          },
+          {
+            "feature": "support_delta_median",
+            "coefficient": -0.42014777645401025
+          },
+          {
+            "feature": "middle::operator_median::positive_mass",
+            "coefficient": 0.3640375871653064
+          }
+        ]
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 1498,
+          "positive_rate": 0.3918558077436582,
+          "threshold": 0.4304180032854355,
+          "accuracy": 0.6882510013351135,
+          "balanced_accuracy": 0.6976411715975668,
+          "precision": 0.58,
+          "recall": 0.7410562180579217,
+          "f1": 0.6507105459985041,
+          "confusion_matrix": [
+            [
+              596,
+              315
+            ],
+            [
+              152,
+              435
+            ]
+          ],
+          "auroc": 0.7644855513812816,
+          "auprc": 0.7214211248257064
+        },
+        "train_full": {
+          "n": 1498,
+          "positive_rate": 0.3918558077436582,
+          "threshold": 0.4304180032854355,
+          "accuracy": 0.7062750333778371,
+          "balanced_accuracy": 0.7163982893164559,
+          "precision": 0.5981308411214953,
+          "recall": 0.7632027257240205,
+          "f1": 0.6706586826347305,
+          "confusion_matrix": [
+            [
+              610,
+              301
+            ],
+            [
+              139,
+              448
+            ]
+          ],
+          "auroc": 0.7952658871225622,
+          "auprc": 0.7552682579922946
+        },
+        "test": {
+          "n": 500,
+          "positive_rate": 0.392,
+          "threshold": 0.4304180032854355,
+          "accuracy": 0.642,
+          "balanced_accuracy": 0.6512150912996777,
+          "precision": 0.5333333333333333,
+          "recall": 0.6938775510204082,
+          "f1": 0.6031042128603105,
+          "confusion_matrix": [
+            [
+              185,
+              119
+            ],
+            [
+              60,
+              136
+            ]
+          ],
+          "auroc": 0.7307834317937701,
+          "auprc": 0.6675525866540711
+        }
+      }
+    },
+    "v11_transition_v8shortcut": {
+      "configuration": "v11_transition_v8shortcut",
+      "span_feature_set": "behavior_attention",
+      "span_feature_families": [
+        "behavior",
+        "attention"
+      ],
+      "item_mode": "transition_plus_role",
+      "item_feature_count": 50,
+      "item_feature_names": [
+        "support_delta_mean",
+        "support_delta_median",
+        "support_delta_std",
+        "support_delta_max",
+        "support_delta_min",
+        "support_delta_max_abs",
+        "normalized_support_mean",
+        "normalized_support_max",
+        "positive_support_fraction",
+        "answer_change_rate",
+        "attention_selection_score_mean",
+        "attention_selection_score_std",
+        "attention_selection_score_max",
+        "attention_selection_score_top_gap",
+        "attention_selection_mass_mean",
+        "attention_selection_mass_std",
+        "attention_selection_mass_max",
+        "attention_selection_mass_top_gap",
+        "attention_selection_density_mean",
+        "attention_selection_density_std",
+        "attention_selection_density_max",
+        "attention_selection_density_top_gap",
+        "attention_selection_peak_mean",
+        "attention_selection_peak_std",
+        "attention_selection_peak_max",
+        "attention_selection_peak_top_gap",
+        "early::neutralize::frobenius_norm",
+        "early::neutralize::positive_mass",
+        "early::neutralize::mean_abs_entry",
+        "early::mask::largest_singular_value",
+        "early::mask::mean_abs_entry",
+        "early::operator_median::largest_singular_value",
+        "early::operator_median::positive_mass",
+        "middle::neutralize::positive_mass",
+        "middle::neutralize::mean_abs_entry",
+        "middle::mask::frobenius_norm",
+        "middle::mask::mean_abs_entry",
+        "middle::operator_median::positive_mass",
+        "late::neutralize::positive_mass",
+        "late::neutralize::mean_abs_entry",
+        "late::operator_median::largest_singular_value",
+        "late::operator_median::singular_entropy",
+        "shortcut_evidence_mean",
+        "constraint_evidence_mean",
+        "max_shortcut_contribution",
+        "topk_shortcut_contribution",
+        "max_shortcut_probability",
+        "sum_shortcut_probability",
+        "shortcut_minus_constraint_top1",
+        "shortcut_minus_constraint_topk"
+      ],
+      "role_head": {
+        "n_input_features": 318,
+        "n_training_spans": 4150,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.9934570789337158
+      },
+      "span_role_train_oof": {
+        "n": 4150,
+        "accuracy": 0.8180722891566266,
+        "macro_f1": 0.8004934687644051,
+        "log_loss": 0.3995357317005824,
+        "class_counts": {
+          "constraint": 1666,
+          "shortcut": 949,
+          "irrelevant": 1535
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.9221727338278306,
+            "auprc": 0.8602299839117292,
+            "precision": 0.8162055335968379,
+            "recall": 0.7436974789915967,
+            "f1": 0.7782663316582915
+          },
+          "shortcut": {
+            "auroc": 0.8939793906606504,
+            "auprc": 0.7443017562876592,
+            "precision": 0.6220984215413184,
+            "recall": 0.7060063224446786,
+            "f1": 0.6614017769002961
+          },
+          "irrelevant": {
+            "auroc": 0.9963627530969538,
+            "auprc": 0.9905059048121736,
+            "precision": 0.9556270096463022,
+            "recall": 0.9680781758957655,
+            "f1": 0.9618122977346278
+          }
+        },
+        "macro_ovr_auroc": 0.9375049591951449,
+        "macro_ovr_auprc": 0.8650125483371873
+      },
+      "selected_threshold_from_train_oof": 0.4374284481921064,
+      "item_logistic": {
+        "intercept": -0.15107468856151032,
+        "regularization_c": 1.0,
+        "top_absolute_standardized_coefficients": [
+          {
+            "feature": "early::operator_median::positive_mass",
+            "coefficient": -0.8254054842842785
+          },
+          {
+            "feature": "early::mask::mean_abs_entry",
+            "coefficient": -0.8195905574613389
+          },
+          {
+            "feature": "early::mask::largest_singular_value",
+            "coefficient": 0.7939382247525345
+          },
+          {
+            "feature": "normalized_support_mean",
+            "coefficient": -0.71595609490156
+          },
+          {
+            "feature": "early::neutralize::positive_mass",
+            "coefficient": 0.6862786143857122
+          },
+          {
+            "feature": "attention_selection_score_max",
+            "coefficient": -0.6715637103576407
+          },
+          {
+            "feature": "sum_shortcut_probability",
+            "coefficient": 0.6063644354192425
+          },
+          {
+            "feature": "middle::neutralize::positive_mass",
+            "coefficient": -0.5689342007982549
+          },
+          {
+            "feature": "shortcut_evidence_mean",
+            "coefficient": 0.5600477426529283
+          },
+          {
+            "feature": "attention_selection_density_max",
+            "coefficient": -0.5596621258823317
+          },
+          {
+            "feature": "late::neutralize::positive_mass",
+            "coefficient": 0.5057473260815196
+          },
+          {
+            "feature": "early::neutralize::mean_abs_entry",
+            "coefficient": 0.505249508014176
+          },
+          {
+            "feature": "middle::mask::mean_abs_entry",
+            "coefficient": 0.4945960178755817
+          },
+          {
+            "feature": "middle::mask::frobenius_norm",
+            "coefficient": -0.4578837588899611
+          },
+          {
+            "feature": "early::neutralize::frobenius_norm",
+            "coefficient": -0.457643425128292
+          },
+          {
+            "feature": "support_delta_std",
+            "coefficient": 0.4413796288009581
+          },
+          {
+            "feature": "shortcut_minus_constraint_top1",
+            "coefficient": 0.43930464965039784
+          },
+          {
+            "feature": "attention_selection_density_std",
+            "coefficient": 0.4307227922934925
+          },
+          {
+            "feature": "attention_selection_score_top_gap",
+            "coefficient": 0.4253190186715437
+          },
+          {
+            "feature": "support_delta_mean",
+            "coefficient": 0.42105368210304345
+          }
+        ]
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 1498,
+          "positive_rate": 0.3918558077436582,
+          "threshold": 0.4374284481921064,
+          "accuracy": 0.7576769025367156,
+          "balanced_accuracy": 0.7616889540482874,
+          "precision": 0.661849710982659,
+          "recall": 0.7802385008517888,
+          "f1": 0.7161845191555903,
+          "confusion_matrix": [
+            [
+              677,
+              234
+            ],
+            [
+              129,
+              458
+            ]
+          ],
+          "auroc": 0.8373560327401044,
+          "auprc": 0.8046433888148714
+        },
+        "train_full": {
+          "n": 1498,
+          "positive_rate": 0.3918558077436582,
+          "threshold": 0.4374284481921064,
+          "accuracy": 0.7723631508678238,
+          "balanced_accuracy": 0.7761871279852344,
+          "precision": 0.6793002915451894,
+          "recall": 0.7938671209540034,
+          "f1": 0.7321288295365279,
+          "confusion_matrix": [
+            [
+              691,
+              220
+            ],
+            [
+              121,
+              466
+            ]
+          ],
+          "auroc": 0.8634071176253887,
+          "auprc": 0.8360701916151503
+        },
+        "test": {
+          "n": 500,
+          "positive_rate": 0.392,
+          "threshold": 0.4374284481921064,
+          "accuracy": 0.734,
+          "balanced_accuracy": 0.7341232545649838,
+          "precision": 0.64,
+          "recall": 0.7346938775510204,
+          "f1": 0.684085510688836,
+          "confusion_matrix": [
+            [
+              223,
+              81
+            ],
+            [
+              52,
+              144
+            ]
+          ],
+          "auroc": 0.8217810150375939,
+          "auprc": 0.7764875879508337
+        }
+      }
+    },
+    "v11_transition_shortcut": {
+      "configuration": "v11_transition_shortcut",
+      "span_feature_set": "attention_behavior_transition",
+      "span_feature_families": [
+        "behavior",
+        "attention",
+        "transition"
+      ],
+      "item_mode": "transition_plus_role",
+      "item_feature_count": 50,
+      "item_feature_names": [
+        "support_delta_mean",
+        "support_delta_median",
+        "support_delta_std",
+        "support_delta_max",
+        "support_delta_min",
+        "support_delta_max_abs",
+        "normalized_support_mean",
+        "normalized_support_max",
+        "positive_support_fraction",
+        "answer_change_rate",
+        "attention_selection_score_mean",
+        "attention_selection_score_std",
+        "attention_selection_score_max",
+        "attention_selection_score_top_gap",
+        "attention_selection_mass_mean",
+        "attention_selection_mass_std",
+        "attention_selection_mass_max",
+        "attention_selection_mass_top_gap",
+        "attention_selection_density_mean",
+        "attention_selection_density_std",
+        "attention_selection_density_max",
+        "attention_selection_density_top_gap",
+        "attention_selection_peak_mean",
+        "attention_selection_peak_std",
+        "attention_selection_peak_max",
+        "attention_selection_peak_top_gap",
+        "early::neutralize::frobenius_norm",
+        "early::neutralize::positive_mass",
+        "early::neutralize::mean_abs_entry",
+        "early::mask::largest_singular_value",
+        "early::mask::mean_abs_entry",
+        "early::operator_median::largest_singular_value",
+        "early::operator_median::positive_mass",
+        "middle::neutralize::positive_mass",
+        "middle::neutralize::mean_abs_entry",
+        "middle::mask::frobenius_norm",
+        "middle::mask::mean_abs_entry",
+        "middle::operator_median::positive_mass",
+        "late::neutralize::positive_mass",
+        "late::neutralize::mean_abs_entry",
+        "late::operator_median::largest_singular_value",
+        "late::operator_median::singular_entropy",
+        "shortcut_evidence_mean",
+        "constraint_evidence_mean",
+        "max_shortcut_contribution",
+        "topk_shortcut_contribution",
+        "max_shortcut_probability",
+        "sum_shortcut_probability",
+        "shortcut_minus_constraint_top1",
+        "shortcut_minus_constraint_topk"
+      ],
+      "role_head": {
+        "n_input_features": 405,
+        "n_training_spans": 4150,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.9902502298355103
+      },
+      "span_role_train_oof": {
+        "n": 4150,
+        "accuracy": 0.8219277108433735,
+        "macro_f1": 0.804114801803867,
+        "log_loss": 0.4062656508745152,
+        "class_counts": {
+          "constraint": 1666,
+          "shortcut": 949,
+          "irrelevant": 1535
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.9230912171631938,
+            "auprc": 0.860050816454042,
+            "precision": 0.8200782268578879,
+            "recall": 0.7551020408163265,
+            "f1": 0.78625
+          },
+          "shortcut": {
+            "auroc": 0.8929802956070434,
+            "auprc": 0.7457715907020808,
+            "precision": 0.6275797373358349,
+            "recall": 0.7049525816649105,
+            "f1": 0.6640198511166253
+          },
+          "irrelevant": {
+            "auroc": 0.9958146747964949,
+            "auprc": 0.9910327285983256,
+            "precision": 0.9574193548387097,
+            "recall": 0.9667752442996743,
+            "f1": 0.9620745542949757
+          }
+        },
+        "macro_ovr_auroc": 0.9372953958555774,
+        "macro_ovr_auprc": 0.865618378584816
+      },
+      "selected_threshold_from_train_oof": 0.460073448713486,
+      "item_logistic": {
+        "intercept": -0.12813338114944436,
+        "regularization_c": 1.0,
+        "top_absolute_standardized_coefficients": [
+          {
+            "feature": "early::mask::mean_abs_entry",
+            "coefficient": -0.8148243189542019
+          },
+          {
+            "feature": "attention_selection_score_max",
+            "coefficient": -0.7291387022916146
+          },
+          {
+            "feature": "early::neutralize::frobenius_norm",
+            "coefficient": -0.7111923589702452
+          },
+          {
+            "feature": "shortcut_evidence_mean",
+            "coefficient": 0.6415900603309773
+          },
+          {
+            "feature": "middle::mask::mean_abs_entry",
+            "coefficient": 0.6096309828933781
+          },
+          {
+            "feature": "early::mask::largest_singular_value",
+            "coefficient": 0.597550714946154
+          },
+          {
+            "feature": "normalized_support_mean",
+            "coefficient": -0.5570917258013552
+          },
+          {
+            "feature": "attention_selection_density_max",
+            "coefficient": -0.5522011898218563
+          },
+          {
+            "feature": "sum_shortcut_probability",
+            "coefficient": 0.5135133842887989
+          },
+          {
+            "feature": "early::neutralize::mean_abs_entry",
+            "coefficient": 0.5036146134390816
+          },
+          {
+            "feature": "early::neutralize::positive_mass",
+            "coefficient": 0.48897957648890905
+          },
+          {
+            "feature": "attention_selection_score_top_gap",
+            "coefficient": 0.4876202624302127
+          },
+          {
+            "feature": "late::neutralize::mean_abs_entry",
+            "coefficient": -0.47164697837879305
+          },
+          {
+            "feature": "middle::mask::frobenius_norm",
+            "coefficient": -0.4633185814000325
+          },
+          {
+            "feature": "late::neutralize::positive_mass",
+            "coefficient": 0.4522849578316104
+          },
+          {
+            "feature": "early::operator_median::positive_mass",
+            "coefficient": -0.4450994004742148
+          },
+          {
+            "feature": "topk_shortcut_contribution",
+            "coefficient": 0.44299631542121454
+          },
+          {
+            "feature": "support_delta_mean",
+            "coefficient": 0.41175755129619634
+          },
+          {
+            "feature": "attention_selection_density_std",
+            "coefficient": 0.3935302497969757
+          },
+          {
+            "feature": "shortcut_minus_constraint_top1",
+            "coefficient": 0.39206233147431024
+          }
+        ]
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 1498,
+          "positive_rate": 0.3918558077436582,
+          "threshold": 0.460073448713486,
+          "accuracy": 0.7576769025367156,
+          "balanced_accuracy": 0.7568418926727467,
+          "precision": 0.6696969696969697,
+          "recall": 0.7529812606473595,
+          "f1": 0.7089013632718525,
+          "confusion_matrix": [
+            [
+              693,
+              218
+            ],
+            [
+              145,
+              442
+            ]
+          ],
+          "auroc": 0.8286249642360922,
+          "auprc": 0.7995707629695383
+        },
+        "train_full": {
+          "n": 1498,
+          "positive_rate": 0.3918558077436582,
+          "threshold": 0.460073448713486,
+          "accuracy": 0.7730307076101469,
+          "balanced_accuracy": 0.7715859726941396,
+          "precision": 0.6897081413210445,
+          "recall": 0.7649063032367973,
+          "f1": 0.7253634894991923,
+          "confusion_matrix": [
+            [
+              709,
+              202
+            ],
+            [
+              138,
+              449
+            ]
+          ],
+          "auroc": 0.8564562969722695,
+          "auprc": 0.8305882133567855
+        },
+        "test": {
+          "n": 500,
+          "positive_rate": 0.392,
+          "threshold": 0.460073448713486,
+          "accuracy": 0.734,
+          "balanced_accuracy": 0.7277792696025779,
+          "precision": 0.6492890995260664,
+          "recall": 0.6989795918367347,
+          "f1": 0.6732186732186732,
+          "confusion_matrix": [
+            [
+              230,
+              74
+            ],
+            [
+              59,
+              137
+            ]
+          ],
+          "auroc": 0.8101168098818474,
+          "auprc": 0.7587794032603103
+        }
+      }
+    }
+  },
+  "configuration_item_test_auroc_ranking": [
+    "v8_attention_behavior",
+    "v11_transition_v8shortcut",
+    "v11_transition_shortcut",
+    "v11_transition_direct"
+  ],
+  "role_pseudo_label_counts": {
+    "constraint": 1666,
+    "shortcut": 949,
+    "irrelevant": 1535,
+    "ambiguous": 2043
+  },
+  "primary_metrics": {
+    "train_oof": {
+      "n": 1498,
+      "positive_rate": 0.3918558077436582,
+      "threshold": 0.460073448713486,
+      "accuracy": 0.7576769025367156,
+      "balanced_accuracy": 0.7568418926727467,
+      "precision": 0.6696969696969697,
+      "recall": 0.7529812606473595,
+      "f1": 0.7089013632718525,
+      "confusion_matrix": [
+        [
+          693,
+          218
+        ],
+        [
+          145,
+          442
+        ]
+      ],
+      "auroc": 0.8286249642360922,
+      "auprc": 0.7995707629695383
+    },
+    "train_full": {
+      "n": 1498,
+      "positive_rate": 0.3918558077436582,
+      "threshold": 0.460073448713486,
+      "accuracy": 0.7730307076101469,
+      "balanced_accuracy": 0.7715859726941396,
+      "precision": 0.6897081413210445,
+      "recall": 0.7649063032367973,
+      "f1": 0.7253634894991923,
+      "confusion_matrix": [
+        [
+          709,
+          202
+        ],
+        [
+          138,
+          449
+        ]
+      ],
+      "auroc": 0.8564562969722695,
+      "auprc": 0.8305882133567855
+    },
+    "test": {
+      "n": 500,
+      "positive_rate": 0.392,
+      "threshold": 0.460073448713486,
+      "accuracy": 0.734,
+      "balanced_accuracy": 0.7277792696025779,
+      "precision": 0.6492890995260664,
+      "recall": 0.6989795918367347,
+      "f1": 0.6732186732186732,
+      "confusion_matrix": [
+        [
+          230,
+          74
+        ],
+        [
+          59,
+          137
+        ]
+      ],
+      "auroc": 0.8101168098818474,
+      "auprc": 0.7587794032603103
+    }
+  },
+  "primary_item_logistic": {
+    "intercept": -0.12813338114944436,
+    "regularization_c": 1.0,
+    "top_absolute_standardized_coefficients": [
+      {
+        "feature": "early::mask::mean_abs_entry",
+        "coefficient": -0.8148243189542019
+      },
+      {
+        "feature": "attention_selection_score_max",
+        "coefficient": -0.7291387022916146
+      },
+      {
+        "feature": "early::neutralize::frobenius_norm",
+        "coefficient": -0.7111923589702452
+      },
+      {
+        "feature": "shortcut_evidence_mean",
+        "coefficient": 0.6415900603309773
+      },
+      {
+        "feature": "middle::mask::mean_abs_entry",
+        "coefficient": 0.6096309828933781
+      },
+      {
+        "feature": "early::mask::largest_singular_value",
+        "coefficient": 0.597550714946154
+      },
+      {
+        "feature": "normalized_support_mean",
+        "coefficient": -0.5570917258013552
+      },
+      {
+        "feature": "attention_selection_density_max",
+        "coefficient": -0.5522011898218563
+      },
+      {
+        "feature": "sum_shortcut_probability",
+        "coefficient": 0.5135133842887989
+      },
+      {
+        "feature": "early::neutralize::mean_abs_entry",
+        "coefficient": 0.5036146134390816
+      },
+      {
+        "feature": "early::neutralize::positive_mass",
+        "coefficient": 0.48897957648890905
+      },
+      {
+        "feature": "attention_selection_score_top_gap",
+        "coefficient": 0.4876202624302127
+      },
+      {
+        "feature": "late::neutralize::mean_abs_entry",
+        "coefficient": -0.47164697837879305
+      },
+      {
+        "feature": "middle::mask::frobenius_norm",
+        "coefficient": -0.4633185814000325
+      },
+      {
+        "feature": "late::neutralize::positive_mass",
+        "coefficient": 0.4522849578316104
+      },
+      {
+        "feature": "early::operator_median::positive_mass",
+        "coefficient": -0.4450994004742148
+      },
+      {
+        "feature": "topk_shortcut_contribution",
+        "coefficient": 0.44299631542121454
+      },
+      {
+        "feature": "support_delta_mean",
+        "coefficient": 0.41175755129619634
+      },
+      {
+        "feature": "attention_selection_density_std",
+        "coefficient": 0.3935302497969757
+      },
+      {
+        "feature": "shortcut_minus_constraint_top1",
+        "coefficient": 0.39206233147431024
+      }
+    ]
+  },
+  "primary_selected_threshold_from_train_oof": 0.460073448713486,
+  "shortcut_explanatory_statistics_primary": {
+    "available": true,
+    "shortcut_evidence_by_outcome": {
+      "hallucination": {
+        "n": 196,
+        "mean": 0.617195085451311,
+        "median": 0.6560620963573456,
+        "std": 0.25575015487107783,
+        "bootstrap_mean_95_ci": [
+          0.5829518088367672,
+          0.6519594704086075
+        ]
+      },
+      "correct": {
+        "n": 304,
+        "mean": 0.3020852122899669,
+        "median": 0.261808380484581,
+        "std": 0.21227453468548158,
+        "bootstrap_mean_95_ci": [
+          0.2783458364621717,
+          0.3257930379109558
+        ]
+      },
+      "mean_difference_hallucination_minus_correct": 0.3151098731613441,
+      "difference_bootstrap_95_ci": [
+        0.2704743002406004,
+        0.3580279870517991
+      ],
+      "label_permutation_p_value": 0.0004997501249375312,
+      "cohens_d": 1.3655360764346671,
+      "shortcut_evidence_auroc": 0.8197167024704619,
+      "shortcut_evidence_auprc": 0.7724363690839993
+    },
+    "shortcut_evidence_dose_response": [
+      {
+        "quartile": 1,
+        "n": 125,
+        "shortcut_evidence_min": 0.0002551848883740604,
+        "shortcut_evidence_max": 0.1856662482023239,
+        "hallucination_rate": 0.112
+      },
+      {
+        "quartile": 2,
+        "n": 125,
+        "shortcut_evidence_min": 0.18890003859996796,
+        "shortcut_evidence_max": 0.3802797198295593,
+        "hallucination_rate": 0.264
+      },
+      {
+        "quartile": 3,
+        "n": 125,
+        "shortcut_evidence_min": 0.38052791357040405,
+        "shortcut_evidence_max": 0.6504967212677002,
+        "hallucination_rate": 0.384
+      },
+      {
+        "quartile": 4,
+        "n": 125,
+        "shortcut_evidence_min": 0.6526662707328796,
+        "shortcut_evidence_max": 0.9839826226234436,
+        "hallucination_rate": 0.808
+      }
+    ]
+  },
+  "files": {
+    "base_open_features": "/home/tong56/other_bench/HaluEval/v11_llama_2000_compact50/base_open_features.jsonl",
+    "intervention_open_features": "/home/tong56/other_bench/HaluEval/v11_llama_2000_compact50/intervention_open_features.jsonl",
+    "transition_matrices": "/home/tong56/other_bench/HaluEval/v11_llama_2000_compact50/transition_matrices.jsonl",
+    "predictions": "/home/tong56/other_bench/HaluEval/v11_llama_2000_compact50/predictions.jsonl",
+    "model_bundle": "/home/tong56/other_bench/HaluEval/v11_llama_2000_compact50/openended_v11_bundle.joblib",
+    "item_cache": "/home/tong56/other_bench/HaluEval/v11_llama_2000_compact50/item_cache"
+  },
+  "failed_items": [],
+  "method_notes": {
+    "open_ended_generation": true,
+    "teacher_forcing_target": "original generated answer",
+    "behavior_support_definition": "mean token logP(original answer|base)-mean token logP(original answer|intervention)",
+    "transition_classifier": "standardized logistic regression",
+    "shortcut_auxiliary_path": "predicted span-role probabilities are pooled into item features",
+    "reference_leakage": "references are never detector inputs at test time",
+    "attention_causality_warning": "the intervention is causal; attention transition is an internal-state observation, not itself proof of causality",
+    "proposal_bias_warning": "top-k attention span proposal favors attention-based feature families"
+  }
+}
