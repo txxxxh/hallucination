@@ -1,0 +1,29 @@
+{
+  "schema_version": "scientist_stressor_interventions_v3_span_centered",
+  "n_records": 750,
+  "base_correct": 408,
+  "base_unparsed": 5,
+  "teacher_cause_counts": {
+    "knowledge_gap": 312,
+    "correct": 408,
+    "known_but_unlocalized": 16,
+    "contextual_interference": 14
+  },
+  "interventions_run": 30,
+  "localized_culprit_spans": 26,
+  "span_representation": {
+    "pooling": [
+      "mean",
+      "max",
+      "first",
+      "last"
+    ],
+    "readout": "full-context option-support readout",
+    "aligned_span_operators": [
+      "neutralize",
+      "mask"
+    ],
+    "delete_policy": "answer/behavior transition only; no fake span post-state",
+    "gold_oriented_option_features": false
+  }
+}

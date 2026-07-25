@@ -52,10 +52,10 @@ Model's trace and answer:
 
 Return JSON only: {{"labels": ["S1"...], "error_span": "<=30 words quoted from trace where the error first surfaces", "rationale": "<=25 words"}}"""
 
-def gen_traces(model, tp):
+def gen_traces(model, tp, stressors=STRESSORS):
     lm = LM(model, tp=tp)
     assert lm.is_reasoner, "trace 生成需要推理模型 (thinking 可见)"
-    for z in STRESSORS:
+    for z in stressors:
         p = DATA / f"processed/{z}_final.jsonl"
         if not p.exists():
             continue
@@ -70,17 +70,17 @@ def gen_traces(model, tp):
                 for s, g in zip(grp, gens):
                     s["meta"]["full_trace"] = g[0]
         else:
-            gens = lm.chat([s["q_trig"] for s in samples], temperature=0.0, max_think=8192)
+            gens = lm.chat([s["q_trig"] for s in samples], temperature=0.0, max_think=4096)
             for s, g in zip(samples, gens):
                 s["meta"]["full_trace"] = g[0]
         write_jsonl(samples, DATA / f"processed/{z}_final.jsonl")
         print(f"[trace] {z}: {len(samples)}")
 
-def judge(judge_model, tp):
+def judge(judge_model, tp, stressors=STRESSORS):
     """judge 输入只含 question/gold/trace, 不含 stressor —— 防泄漏。
     judge_model 可以是本地大模型或换成 API 调用。"""
     lm = LM(judge_model, tp=tp)
-    for z in STRESSORS:
+    for z in stressors:
         p = DATA / f"processed/{z}_final.jsonl"
         if not p.exists():
             continue
@@ -102,12 +102,15 @@ def judge(judge_model, tp):
         write_jsonl(samples, DATA / f"processed/{z}_final.jsonl")
         print(f"[judge] {z}: {n_ok}/{len(samples)} 标注成功")
 
-def stats():
+def stats(stressors=STRESSORS):
     rows = []
-    for z in STRESSORS:
+    for z in stressors:
         p = DATA / f"processed/{z}_final.jsonl"
         if p.exists():
             rows += [s for s in read_jsonl(p) if s.get("symptom") and s["symptom"] != ["PARSE_FAIL"]]
+    if not rows:
+        print("[warning] 没有可用于 symptom 统计的成功标注样本")
+        return
     # 主 symptom = 列表第一个 (混淆矩阵用单标签视图, 多标签视图在附录)
     cm = defaultdict(Counter)
     for s in rows:
@@ -137,13 +140,14 @@ if __name__ == "__main__":
     ap.add_argument("--gen", action="store_true")
     ap.add_argument("--judge", action="store_true")
     ap.add_argument("--stats", action="store_true")
-    ap.add_argument("--model", default="deepseek-ai/DeepSeek-R1-Distill-Qwen-7B")
-    ap.add_argument("--judge_model", default="Qwen/Qwen2.5-72B-Instruct")
+    ap.add_argument("--model", default="deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
+    ap.add_argument("--judge_model", default="NousResearch/Meta-Llama-3.1-8B-Instruct")
     ap.add_argument("--tp", type=int, default=1)
+    ap.add_argument("--stressors", nargs="+", default=STRESSORS)
     a = ap.parse_args()
     if a.gen:
-        gen_traces(a.model, a.tp)
+        gen_traces(a.model, a.tp, a.stressors)
     if a.judge:
-        judge(a.judge_model, a.tp)
+        judge(a.judge_model, a.tp, a.stressors)
     if a.stats:
-        stats()
+        stats(a.stressors)

@@ -1,6 +1,6 @@
 """Z2 干扰: (a) GSM-IC 现成干扰版; (b) GSM8K 自造干扰(控制强度 1-3 句);
 (c) PopQA 事实域干扰(跨域要求)。clean/trig 严格配对。
-用法: python scripts/02_build_z2.py [--gen_model Qwen/Qwen2.5-7B-Instruct]
+用法: python scripts/02_build_z2.py [--gen_model NousResearch/Meta-Llama-3.1-8B-Instruct]
 """
 import argparse, json, random, re
 from pathlib import Path
@@ -8,11 +8,11 @@ from common import Sample, sid_of, write_jsonl, read_jsonl, DATA
 
 random.seed(0)
 
-def build_gsmic(path: Path):
+def build_gsmic(path: Path, limit=800):
     """GSM-IC (google-research-datasets/GSM-IC): 每条含 original_question / new_question。"""
     if not path.exists():
         print(f"[skip] {path} 不存在"); return []
-    rows = json.load(open(path)) if path.suffix == ".json" else read_jsonl(path)
+    rows = (json.load(open(path)) if path.suffix == ".json" else read_jsonl(path))[:limit]
     out = []
     for r in rows:
         gold = str(r.get("answer", "")).replace(",", "")
@@ -31,11 +31,12 @@ Do NOT change any quantity needed for the solution. Return one sentence per line
 
 Problem: {q}"""
 
-def build_gsm8k_dose(gen_model: str, n_base: int = 400):
+def build_gsm8k_dose(gen_model: str, n_base: int = 800):
     """自造剂量版: 同一题插 1/2/3 句干扰 -> 剂量-反应曲线。需要一个生成模型。"""
     from datasets import load_dataset
     from common import LM
-    ds = load_dataset("openai/gsm8k", "main", split="test").shuffle(seed=0).select(range(n_base))
+    ds = load_dataset("openai/gsm8k", "main", split="test")
+    ds = ds.select(range(min(n_base, len(ds))))
     lm = LM(gen_model)
     qs = [DISTRACTOR_PROMPT.format(k=3, q=r["question"]) for r in ds]
     gens = lm.chat(qs, temperature=0.7, max_tokens=200)
@@ -63,7 +64,7 @@ this question, with a plausible fact about it. It must NOT answer the question. 
 
 Question: {q}"""
 
-def build_popqa_distract(gen_model: str, n: int = 400):
+def build_popqa_distract(gen_model: str, n: int = 800):
     """事实域干扰: 取 PopQA 高流行度(模型大概率会答)子集, 前置无关实体句。"""
     from datasets import load_dataset
     from common import LM
@@ -86,12 +87,12 @@ def build_popqa_distract(gen_model: str, n: int = 400):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--gen_model", default="Qwen/Qwen2.5-7B-Instruct")
-    ap.add_argument("--skip_gen", action="store_true", help="只用现成 GSM-IC")
+    ap.add_argument("--gen_model", default="NousResearch/Meta-Llama-3.1-8B-Instruct")
+    ap.add_argument("--limit", type=int, default=800,
+                    help="每个外部数据源最多使用前 N 条")
     a = ap.parse_args()
-    pool = build_gsmic(DATA / "raw/gsm_ic/GSM-IC_2step.json")
-    pool += build_gsmic(DATA / "raw/gsm_ic/GSM-IC_mstep.json")
-    if not a.skip_gen:
-        pool += build_gsm8k_dose(a.gen_model)
-        pool += build_popqa_distract(a.gen_model)
+    pool = build_gsmic(DATA / "raw/gsm_ic/GSM-IC_2step.json", a.limit)
+    pool += build_gsmic(DATA / "raw/gsm_ic/GSM-IC_mstep.json", a.limit)
+    pool += build_gsm8k_dose(a.gen_model, a.limit)
+    pool += build_popqa_distract(a.gen_model, a.limit)
     write_jsonl(pool, DATA / "processed/z2_pool.jsonl")

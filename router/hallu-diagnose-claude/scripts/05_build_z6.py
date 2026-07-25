@@ -9,7 +9,7 @@ from common import Sample, sid_of, write_jsonl, DATA
 
 ABSTAIN_LICENSE = 'If the question is unanswerable or based on a false premise, say so explicitly. '
 
-def build_selfaware(path: Path):
+def build_selfaware(path: Path, limit=800):
     """github.com/yinzhangyue/SelfAware -> SelfAware.json, answerable=False 子集。"""
     if not path.exists():
         print(f"[skip] {path}"); return []
@@ -25,9 +25,11 @@ def build_selfaware(path: Path):
             template_id=f"selfaware-{r.get('source','x')}", intensity=1.0,
             q_trig=q, q_clean=ABSTAIN_LICENSE + q, answer="UNANSWERABLE",
             meta={"source": "selfaware"}))
+        if len(out) >= limit:
+            break
     return out
 
-def build_falseqa(path: Path):
+def build_falseqa(path: Path, limit=800):
     """github.com/thu-coai/FalseQA -> train/valid/test.csv, label==1 为假前提题。"""
     if not path.exists():
         print(f"[skip] {path}"); return []
@@ -42,9 +44,11 @@ def build_falseqa(path: Path):
                 template_id="falseqa", intensity=1.0,
                 q_trig=q, q_clean=ABSTAIN_LICENSE + q, answer="UNANSWERABLE",
                 meta={"source": "falseqa", "fp_explanation": r.get("answer", "")}))
+            if len(out) >= limit:
+                break
     return out
 
-def build_freshqa_fp(path: Path):
+def build_freshqa_fp(path: Path, limit=800):
     import csv as _csv
     if not path.exists():
         return []
@@ -59,10 +63,16 @@ def build_freshqa_fp(path: Path):
                 template_id="freshqa-fp", intensity=1.0,
                 q_trig=q, q_clean=ABSTAIN_LICENSE + q, answer="UNANSWERABLE",
                 meta={"source": "freshqa"}))
+            if len(out) >= limit:
+                break
     return out
 
 if __name__ == "__main__":
-    pool = (build_selfaware(DATA / "raw/selfaware/SelfAware.json")
-            + build_falseqa(DATA / "raw/falseqa/test.csv")
-            + build_freshqa_fp(DATA / "raw/freshqa.csv"))
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--limit", type=int, default=800,
+                    help="每个外部数据源最多使用前 N 条")
+    a = ap.parse_args()
+    pool = (build_selfaware(DATA / "raw/selfaware/SelfAware.json", a.limit)
+            + build_falseqa(DATA / "raw/falseqa/test.csv", a.limit)
+            + build_freshqa_fp(DATA / "raw/freshqa.csv", a.limit))
     write_jsonl(pool, DATA / "processed/z6_pool.jsonl")

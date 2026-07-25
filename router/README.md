@@ -1,7 +1,51 @@
-## 本实验用于探究Hallucination的分类及诊断
+# Router / Hallucination diagnosis experiments
 
-幻觉的mechanism可以看作symptom，这个是很容易人工从推理过程分辨出来的，
+本目录研究从 hallucination symptom 反推 stressor/cause，并用 hidden state 训练诊断或路由器。下面只保留供后续 agent 定位所需的实验逻辑、入口和结果位置。
 
-四种symptom（包括事实性错误，工具调用错误，证据应用错误/关联错误，推理过程/执行错误）可以通过模型的thinking process分析出来，
+## 1. Hallu-Diagnose：stressor × treatment 矩阵
 
-我们需要diagnose他们的stressor（例如没学过，budget不足，context太长/distract太多，prior/shortcut，external system availability，不知道自己不确定这个答案）。
+- 目录：`hallu-diagnose-claude/`
+- 逻辑：构造并筛选 Z1 没学过、Z2 干扰、Z3 捷径、Z4 budget、Z6 校准失败，再施加 RAG、清理上下文、增加 budget、self-consistency、abstain 等 treatment；比较 strict（答对）和 honest（答对或合理弃答）恢复率。
+- 入口：`hallu-diagnose-claude/run_full_pipeline.sh`；各阶段在 `scripts/`，完整说明见 `hallu-diagnose-claude/README.md`。
+- 当前结果：`data/results/matrix_Meta-Llama-3.1-8B-Instruct.jsonl` 有 14,200 条 treatment 记录，目前实际覆盖 Z1/Z2/Z6，Z3/Z4 尚未进入该矩阵。按 treatment 粗汇总，T-Abstain 的 honest=0.786，T-RAG strict=0.165；其余多数接近基线。这是探索性矩阵，不能直接当最终因果结论。
+
+## 2. 通用 stressor intervention teacher（v1）
+
+- 脚本：`stressor_interventions_v1.py`
+- 逻辑：对任意 JSON/JSONL 问答先生成 base answer，再对 S1 知识稀缺、S2 prior/shortcut、S3 上下文复杂、S4 budget、S6 epistemic control 分别施加目标 intervention 和 matched control；用恢复与特异性产生 teacher 标签，同时可保存 hidden traces。S5 工具可用性未实现。
+- 已有审计：`halueval_2000_reference_audit_v1/summary.json`。HaluEval 前 2,000 条 base accuracy=0.9095、base hallucinations=181；该次使用 `base_only`，所有 stressor 仍是 unidentified，因此不是完成的 stressor 诊断结果。
+
+## 3. ScientistQA causal router v2
+
+- 脚本：`stressor_interventions_v2.py`
+- 逻辑：用人物独立事实 probe 区分 knowledge gap 与 contextual interference；对 prompt span 做 delete/neutralize/mask，以恢复行为产生 teacher cause/culprit 标签，再用 base/probe/intervention hidden transition 训练 hallucination、cause、span culprit 三个 head。gold/recovery 只作标签，不进入特征。
+- 结果目录：`stressor_interventions_v2_first1500_results/`
+- 当前结果（1,500 条）：teacher 为 knowledge_gap 687、contextual_interference 51、correct 676、unlocalized 86。hallucination AUROC=0.648；cause head 表面 AUROC=1.0，但类别很不均衡且可能有表示/teacher 捷径；ablation 中 base-only cause AUROC=0.572，加入 probe hidden 后 AUROC=0.754。span culprit AUROC=0.409。
+
+## 4. ScientistQA span-centered router v3
+
+- 脚本：`stressor_interventions_v3.py`
+- 逻辑：保留 v2 teacher，但 cause head 只用 base answer hidden 与独立 probe hidden；span 使用 mean/max/first/last pooling，另存 aligned span delta 和各 intervention 的 answer transition，减少直接行为标签泄漏。
+- 结果目录：`stressor_interventions_v3_llama_first1500_results/`
+- 当前结果（1,500 条）：knowledge_gap 652、contextual_interference 23、correct 785、unlocalized 40。hallucination AUROC=0.678；cause AUROC=0.855，但 balanced accuracy=0.673，仍受少数类很少影响；span culprit AUROC=0.591。`span_feature_audit.json` 显示 span head 选到 layer 0，较多信号可能是 token/replacement identity，而非中层上下文语义。
+
+## 5. Hidden representation / tool gate / Z4
+
+- 目录：`hidden-repr-bench/`
+- `hidden_repr_bench.py`：比较 behavior、单点 hidden、entity hidden、layer transition、counterfactual transition、multiprobe、attention/lookback，以及双实体/实体差分与多种组合表示。
+- 当前可用结果：`run_profiles_dual/combined/` 有 487 条完整 trace；cause 为 correct 244、contextual_interference 70、known_but_unlocalized 98、ambiguous 74、knowledge_gap 1。关联错误 AUROC 使用 70 个正例与 343 个负例，ambiguous 74 条被排除。
+- 21 模式最佳结果：E4 实体绝对差分 `0.710±0.071`（layer 18）、E2 双实体拼接 `0.706±0.090`（layer 23）、C3 实体差分+attention `0.705±0.046`（layer 16）、E3 有符号实体差分 `0.703±0.022`（layer 21）；原 attention A1 为 `0.694±0.076`，单实体 H2 为 `0.689±0.052`。完整曲线见 `run_profiles_dual/combined/repr_comparison.json`。
+- 解释限制：这是磁盘配额耗尽前保存的两个连续数据切片，不是随机完整样本；仅 70 个正例，且逐层扫描后报告最佳层，尚未做嵌套层选择或配对 bootstrap。E4/E2 依赖 prompt 中存在两个候选实体，不是开放式 detector。
+- 采集后来因 `Disk quota exceeded` 停止；大量 `errors*.jsonl` 是失败尝试日志，不能与 487 条有效 records 相加当作样本量。
+- `tool_gate_calibration.py`：让模型在 SEARCH / 直接回答 / ABSTAIN 中选择，检查工具调用是否受知识边界调制。
+- `known_subset_search_probe.py`：完全离线地在 construct-known 子集内用 hidden 预测 SEARCH，并比较 SEARCH 方向与全局 UNKNOWN 方向。
+- `z4_early_diagnosis.py`：在生成 token K=0/32/64/... 处提取 hidden，测量 budget-failure probe AUROC 随生成进度的变化；目前没有完成结果。
+- tool-gate 曾记录 known/unknown AUROC=0.9978、SEARCH AUROC=0.9791、known 子集 SEARCH AUROC=0.9745，但输出是指向 `/tmp/out_tool_gate_popqa_2000` 的符号链接，该目标现已不存在；这些数值目前只能视为历史 README 记录，无法从现存 artifact 复核。
+- 运行方式和详细限制见 `hidden-repr-bench/README.md`。
+
+## 结果使用提醒
+
+- 优先读取各结果目录中的 `config.json`、`training_summary.json`、`analysis.json`，不要只根据目录名推断配置。
+- v2/v3 的 contextual-interference 正例很少，报告 accuracy 时必须同时看 balanced accuracy、AUROC 和 confusion matrix。
+- hidden-repr 的 E2/E3/E4/C1-C6 是二候选相对表示；迁移到开放式 QA 前必须定义可复现的竞争实体或反事实参照。
+- `hidden-repr-bench/out_tool_gate_popqa_2000` 是失效的 `/tmp` 符号链接，不能再作为可用结果位置引用。

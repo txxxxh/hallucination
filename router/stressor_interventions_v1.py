@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Basic intervention teacher for hallucination-stressor diagnosis.
+Intervention teacher with robust evaluation and hidden-state recording.
 
 Implemented stressors
 ---------------------
@@ -20,8 +20,8 @@ The script:
 4. Computes behavioral recovery and specificity scores.
 5. Writes detailed JSONL traces plus a summary JSON.
 
-This is an intervention-labeling teacher, not yet the hidden-state router.
-The output can later supervise one-vs-rest hidden-state probes.
+This version can save compact hidden-state traces for the base answer and every
+intervention variant. These traces can later supervise one-vs-rest stressor routers.
 """
 
 from __future__ import annotations
@@ -104,29 +104,7 @@ def read_json_or_jsonl(path: Union[str, Path]) -> List[Dict[str, Any]]:
         return rows
 
     with path.open("r", encoding="utf-8") as f:
-        raw_text = f.read()
-    try:
-        obj = json.loads(raw_text)
-    except json.JSONDecodeError as exc:
-        # Some benchmarks use a .json suffix for newline-delimited JSON.
-        # Fall back only when every non-empty line is a valid object so a
-        # genuinely malformed JSON document still produces a useful error.
-        rows = []
-        try:
-            for line_no, line in enumerate(raw_text.splitlines(), 1):
-                if not line.strip():
-                    continue
-                row = json.loads(line)
-                if not isinstance(row, dict):
-                    raise ValueError(f"JSON line {line_no} is not an object")
-                rows.append(row)
-        except (json.JSONDecodeError, ValueError) as line_exc:
-            raise ValueError(
-                f"Invalid JSON document and JSONL fallback failed: {line_exc}"
-            ) from exc
-        if rows:
-            return rows
-        raise
+        obj = json.load(f)
 
     if isinstance(obj, list):
         if not all(isinstance(x, dict) for x in obj):
@@ -346,16 +324,27 @@ class GenerationResult:
 
 
 @dataclass
+class EvaluationResult:
+    status: str
+    correct: Optional[bool]
+    score: Optional[float]
+    details: Dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
 class EvaluatedRun:
     text: str
-    correct: bool
+    correct: Optional[bool]
+    evaluation_status: str
     is_abstention: bool
-    evaluation_score: float
+    evaluation_score: Optional[float]
     token_count: int
     mean_token_logprob: Optional[float]
     reference_logprob: Optional[float]
     seed: int
     elapsed_seconds: float
+    hidden_state_path: Optional[str] = None
+    hidden_state_error: Optional[str] = None
     evaluation_details: Dict[str, Any] = field(default_factory=dict)
 
 
@@ -569,138 +558,300 @@ class LocalCausalLM:
         return float(continuation_lp.mean().item())
 
 
+    def resolve_hidden_layers(self, layer_spec: str) -> List[int]:
+        """Resolve comma-separated absolute layers or percentages.
+
+        Hugging Face returns hidden_states[0] for embeddings and hidden_states[i]
+        for the output of transformer layer i. Therefore valid transformer layer
+        indices are 1..num_hidden_layers.
+        """
+        n_layers = int(getattr(self.model.config, "num_hidden_layers", 0))
+        if n_layers <= 0:
+            raise RuntimeError("Model config does not expose num_hidden_layers")
+        values: List[int] = []
+        for raw in layer_spec.split(","):
+            token = raw.strip()
+            if not token:
+                continue
+            if token.endswith("%"):
+                fraction = float(token[:-1]) / 100.0
+                index = int(round(fraction * n_layers))
+            else:
+                index = int(token)
+                if index < 0:
+                    index = n_layers + 1 + index
+            index = max(1, min(n_layers, index))
+            if index not in values:
+                values.append(index)
+        if not values:
+            values = [
+                max(1, int(round(n_layers * p)))
+                for p in (0.25, 0.50, 0.65, 0.80, 1.00)
+            ]
+        return sorted(set(values))
+
+    @torch.inference_mode()
+    def save_hidden_state_trace(
+        self,
+        user_prompt: str,
+        answer: str,
+        output_path: Union[str, Path],
+        layer_spec: str,
+    ) -> Dict[str, Any]:
+        """Run one post-hoc causal forward pass and save selected states.
+
+        Only selected layers and a few prompt/answer positions are retained, so
+        storage is roughly a few hundred KB per run instead of hundreds of MB.
+        """
+        output_path = Path(output_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        encoded = self.encode_prompt(user_prompt)
+        prompt_ids = encoded["input_ids"]
+        answer_ids = self.tokenizer(
+            answer,
+            return_tensors="pt",
+            add_special_tokens=False,
+        )["input_ids"].to(self.input_device)
+
+        max_positions = int(getattr(self.model.config, "max_position_embeddings", 8192))
+        max_full = min(max_positions, self.max_input_tokens + max(1, answer_ids.shape[1]))
+        if answer_ids.shape[1] >= max_full:
+            answer_ids = answer_ids[:, -max_full:]
+            prompt_ids = prompt_ids[:, :0]
+        elif prompt_ids.shape[1] + answer_ids.shape[1] > max_full:
+            keep_prompt = max_full - answer_ids.shape[1]
+            prompt_ids = prompt_ids[:, -keep_prompt:] if keep_prompt > 0 else prompt_ids[:, :0]
+
+        full_ids = torch.cat([prompt_ids, answer_ids], dim=1)
+        if full_ids.shape[1] == 0:
+            raise RuntimeError("Cannot extract hidden states from an empty sequence")
+        attention_mask = torch.ones_like(full_ids, device=self.input_device)
+
+        outputs = self.model(
+            input_ids=full_ids,
+            attention_mask=attention_mask,
+            output_hidden_states=True,
+            use_cache=False,
+            return_dict=True,
+        )
+        hidden_states = outputs.hidden_states
+        layer_indices = self.resolve_hidden_layers(layer_spec)
+
+        prompt_len = int(prompt_ids.shape[1])
+        answer_len = int(answer_ids.shape[1])
+        positions: Dict[str, int] = {}
+        if prompt_len > 0:
+            positions["prompt_last"] = prompt_len - 1
+        if answer_len > 0:
+            positions["answer_first"] = prompt_len
+            positions["answer_q25"] = prompt_len + int(round((answer_len - 1) * 0.25))
+            positions["answer_q50"] = prompt_len + int(round((answer_len - 1) * 0.50))
+            positions["answer_q75"] = prompt_len + int(round((answer_len - 1) * 0.75))
+            positions["answer_last"] = prompt_len + answer_len - 1
+        if not positions:
+            positions["sequence_last"] = full_ids.shape[1] - 1
+
+        position_names = list(positions)
+        position_indices = [positions[name] for name in position_names]
+        layer_tensors: List[torch.Tensor] = []
+        for layer_index in layer_indices:
+            layer = hidden_states[layer_index][0]
+            selected = layer[position_indices].detach().to(dtype=torch.float16, device="cpu")
+            layer_tensors.append(selected)
+        hidden = torch.stack(layer_tensors, dim=0)
+
+        payload = {
+            "model": self.model_name,
+            "layer_indices": layer_indices,
+            "position_names": position_names,
+            "position_indices": position_indices,
+            "prompt_token_count": prompt_len,
+            "answer_token_count": answer_len,
+            "sequence_token_count": int(full_ids.shape[1]),
+            "hidden": hidden,
+        }
+        tmp_path = output_path.with_suffix(output_path.suffix + ".tmp")
+        torch.save(payload, tmp_path)
+        tmp_path.replace(output_path)
+        return {
+            "path": str(output_path),
+            "shape": list(hidden.shape),
+            "layer_indices": layer_indices,
+            "position_names": position_names,
+            "prompt_token_count": prompt_len,
+            "answer_token_count": answer_len,
+        }
+
+
 # ---------------------------------------------------------------------------
 # Evaluation
 # ---------------------------------------------------------------------------
 
 
 class Evaluator:
+    LABELS = ("INVALID_REFERENCE", "UNANSWERABLE", "INCORRECT", "CORRECT")
+
     def __init__(
         self,
         mode: str,
         engine: LocalCausalLM,
         f1_threshold: float = 0.65,
-        judge_max_new_tokens: int = 96,
+        judge_max_new_tokens: int = 8,
+        judge_retries: int = 2,
+        fast_reference_match: bool = True,
     ) -> None:
         self.mode = mode
         self.engine = engine
         self.f1_threshold = f1_threshold
         self.judge_max_new_tokens = judge_max_new_tokens
-        # A semantically identical normalized answer must receive the same
-        # verdict across intervention variants.  This also avoids spending an
-        # extra generation on repeated answers.
-        self._judge_cache: Dict[Tuple[str, str, Tuple[str, ...], str], Tuple[bool, float, Dict[str, Any]]] = {}
+        self.judge_retries = judge_retries
+        self.fast_reference_match = fast_reference_match
+
+    @staticmethod
+    def _result(
+        status: str,
+        correct: Optional[bool],
+        score: Optional[float],
+        **details: Any,
+    ) -> EvaluationResult:
+        return EvaluationResult(status=status, correct=correct, score=score, details=details)
+
+    def _fast_match(
+        self,
+        prediction: str,
+        references: Sequence[str],
+    ) -> Optional[EvaluationResult]:
+        """High-precision shortcuts only; uncertain cases still go to the judge."""
+        pred = normalize_text(prediction)
+        if not pred:
+            return None
+        ref_norms = [normalize_text(x) for x in references if normalize_text(x)]
+        if not ref_norms:
+            return None
+        if pred in ref_norms:
+            return self._result("correct", True, 1.0, evaluator="fast_exact")
+
+        first = pred.split()[0] if pred.split() else ""
+        for ref in ref_norms:
+            if ref in {"yes", "no"} and first == ref:
+                return self._result("correct", True, 1.0, evaluator="fast_yes_no")
+
+        # Containment is accepted only for concise answers. Long answers can
+        # contain the reference and then contradict it, so they are judged.
+        pred_tokens = pred.split()
+        for ref in ref_norms:
+            ref_tokens = ref.split()
+            concise_limit = max(12, 3 * len(ref_tokens) + 6)
+            if ref and ref in pred and len(pred_tokens) <= concise_limit:
+                before = pred.split(ref, 1)[0].split()[-3:]
+                if not any(tok in {"not", "never", "no"} for tok in before):
+                    return self._result("correct", True, 1.0, evaluator="fast_concise_contains")
+        return None
+
+    @classmethod
+    def _parse_label(cls, text: str) -> Optional[str]:
+        upper = strip_code_fences(text).strip().upper()
+        for label in cls.LABELS:
+            if re.search(rf"\b{re.escape(label)}\b", upper):
+                return label
+        return None
 
     def evaluate(
         self,
         question: str,
+        context: str,
         prediction: str,
         references: Sequence[str],
         seed: int,
-        context: str = "",
-    ) -> Tuple[bool, float, Dict[str, Any]]:
+    ) -> EvaluationResult:
         if not references:
-            return False, 0.0, {"error": "missing_reference"}
+            return self._result("unresolved", None, None, error="missing_reference")
 
         if self.mode == "exact":
             pred = normalize_text(prediction)
             scores = [float(pred == normalize_text(ref)) for ref in references]
             score = max(scores)
-            return bool(score), score, {"normalized_prediction": pred}
+            return self._result("correct" if score else "incorrect", bool(score), score)
 
         if self.mode == "contains":
             pred = normalize_text(prediction)
             scores = [float(normalize_text(ref) in pred) for ref in references if normalize_text(ref)]
             score = max(scores) if scores else 0.0
-            return bool(score), score, {}
+            return self._result("correct" if score else "incorrect", bool(score), score)
 
         if self.mode == "choice":
             pred_choice = extract_choice(prediction)
             ref_choices = [extract_choice(ref) or normalize_text(ref).upper() for ref in references]
             score = float(pred_choice is not None and pred_choice in ref_choices)
-            return bool(score), score, {
-                "prediction_choice": pred_choice,
-                "reference_choices": ref_choices,
-            }
+            return self._result(
+                "correct" if score else "incorrect",
+                bool(score),
+                score,
+                prediction_choice=pred_choice,
+                reference_choices=ref_choices,
+            )
 
         if self.mode == "token_f1":
             scores = [token_f1(prediction, ref) for ref in references]
             score = max(scores)
-            return score >= self.f1_threshold, score, {"threshold": self.f1_threshold}
+            correct = score >= self.f1_threshold
+            return self._result("correct" if correct else "incorrect", correct, score)
 
-        if self.mode == "llm_judge":
-            cache_key = (
-                normalize_text(question),
-                normalize_text(context),
-                tuple(sorted(normalize_text(ref) for ref in references)),
-                normalize_text(prediction),
-            )
-            cached = self._judge_cache.get(cache_key)
-            if cached is not None:
-                correct, score, details = cached
-                return correct, score, {**details, "cache_hit": True}
+        if self.mode != "llm_judge":
+            raise ValueError(f"Unsupported evaluation mode: {self.mode}")
 
-            reference_text = "\n".join(f"- {ref}" for ref in references)
+        if self.fast_reference_match:
+            fast = self._fast_match(prediction, references)
+            if fast is not None:
+                return fast
+
+        reference_text = "\n".join(f"- {ref}" for ref in references)
+        context_text = context.strip() or "[No context supplied; use the question and reference.]"
+        attempts: List[Dict[str, Any]] = []
+        for retry in range(self.judge_retries + 1):
             judge_prompt = f"""
-You are a deterministic, context-grounded answer evaluator.
+Evaluate the candidate answer using the CONTEXT as the main source of truth.
+The accepted reference may occasionally be wrong or incompatible with the context.
 
-Question:
+QUESTION:
 {question}
 
-Evidence context:
-{context or '[no context supplied]'}
+CONTEXT:
+{context_text}
 
-Dataset reference answer(s), which may contain annotation errors:
+ACCEPTED REFERENCE ANSWER(S):
 {reference_text}
 
-Candidate answer:
+CANDIDATE ANSWER:
 {prediction}
 
-First solve the question from the evidence context. Do not assume the dataset reference is correct.
-Then decide whether the candidate answers the question correctly. Accept aliases, abbreviations,
-equivalent numbers, and answers that are more or less specific while remaining correct. Reject
-contradictions and unsupported additions. If the context and reference conflict, follow the context.
-Return JSON only:
-{{"correct": true or false, "score": number from 0 to 1,
-  "reference_valid": true or false, "context_answer": "short answer",
-  "reason": "brief evidence-based reason"}}
+Output exactly one label and nothing else:
+CORRECT          - candidate answers the question and adds no material false claim
+INCORRECT        - candidate is wrong, contradictory, incomplete, or adds a material false claim
+INVALID_REFERENCE - context supports a different answer and the accepted reference is invalid
+UNANSWERABLE     - the supplied context/question does not contain enough information to decide
 """.strip()
-            deterministic_seed = int(
-                stable_hash(json.dumps(cache_key, ensure_ascii=False), 8),
-                16,
-            )
             result = self.engine.generate(
                 judge_prompt,
                 max_new_tokens=self.judge_max_new_tokens,
                 temperature=0.0,
                 top_p=1.0,
-                seed=deterministic_seed,
-                system_prompt="You are a deterministic evaluation function. Return valid JSON only.",
+                seed=seed + 7919 + retry * 101,
+                system_prompt="Return exactly one evaluation label. Do not explain.",
             )
-            parsed = parse_first_json(result.text)
-            if isinstance(parsed, dict):
-                correct = bool(parsed.get("correct", False))
-                try:
-                    score = float(parsed.get("score", 1.0 if correct else 0.0))
-                except (TypeError, ValueError):
-                    score = 1.0 if correct else 0.0
-                verdict = (correct, clip(score), {
-                    "judge_output": result.text,
-                    "judge_parsed": parsed,
-                    "cache_hit": False,
-                })
-                self._judge_cache[cache_key] = verdict
-                return verdict
-            # Conservative fallback.
-            verdict = (False, 0.0, {
-                "judge_output": result.text,
-                "parse_failed": True,
-                "cache_hit": False,
-            })
-            self._judge_cache[cache_key] = verdict
-            return verdict
+            label = self._parse_label(result.text)
+            attempts.append({"output": result.text, "parsed_label": label, "retry": retry})
+            if label == "CORRECT":
+                return self._result("correct", True, 1.0, judge_attempts=attempts)
+            if label == "INCORRECT":
+                return self._result("incorrect", False, 0.0, judge_attempts=attempts)
+            if label == "INVALID_REFERENCE":
+                return self._result("invalid_reference", None, None, judge_attempts=attempts)
+            if label == "UNANSWERABLE":
+                return self._result("unanswerable", None, None, judge_attempts=attempts)
 
-        raise ValueError(f"Unsupported evaluation mode: {self.mode}")
+        return self._result("unresolved", None, None, judge_attempts=attempts, parse_failed=True)
 
 
 # ---------------------------------------------------------------------------
@@ -1310,34 +1461,30 @@ verification pass or introduce outside information.
     def s6_gate_decision(self, sample: Sample, seed: int) -> Tuple[Dict[str, Any], str]:
         base = PromptBuilder.base_user_prompt(sample)
         gate_prompt = f"""
-Before answering the task, decide which action is epistemically appropriate.
+Choose the epistemically appropriate action before answering the task.
 
 TASK:
 {base}
 
-Allowed actions:
-- ANSWER: the available information is sufficient for a reliable answer.
-- VERIFY: a candidate answer can be produced, but it should be checked before finalizing.
-- ABSTAIN: the available information is insufficient for a reliable answer.
-
-Return JSON only:
-{{"action": "ANSWER|VERIFY|ABSTAIN", "confidence": 0.0 to 1.0, "reason": "brief reason"}}
+Output exactly one token:
+ANSWER  - available information is sufficient
+VERIFY  - a draft should be checked before finalizing
+ABSTAIN - available information is insufficient
 """.strip()
         result = self.engine.generate(
             gate_prompt,
-            max_new_tokens=96,
+            max_new_tokens=8,
             temperature=0.0,
             top_p=1.0,
             seed=seed,
-            system_prompt="You are an epistemic action selector. Return valid JSON only.",
+            system_prompt="Return exactly ANSWER, VERIFY, or ABSTAIN.",
         )
-        parsed = parse_first_json(result.text)
-        if not isinstance(parsed, dict):
-            parsed = {"action": "VERIFY", "confidence": 0.0, "reason": "parse_failed"}
-        action = as_text(parsed.get("action")).upper()
-        if action not in {"ANSWER", "VERIFY", "ABSTAIN"}:
-            action = "VERIFY"
-        parsed["action"] = action
+        match = re.search(r"\b(ANSWER|VERIFY|ABSTAIN)\b", result.text.upper())
+        action = match.group(1) if match else "UNRESOLVED"
+        parsed = {
+            "action": action,
+            "parse_failed": match is None,
+        }
         return parsed, result.text
 
     def s6_variants(
@@ -1373,9 +1520,15 @@ Epistemic decision: VERIFY. Check whether the candidate follows from the availab
 Correct it if necessary, then return the final answer clearly. Do not add outside information.
 """.strip()
             metadata["initial_draft"] = base_answer
-        else:
+        elif action == "ABSTAIN":
             # The variant is represented as a fixed abstention, not another model call.
             metadata["fixed_answer"] = "I do not have enough information to answer reliably."
+            gate_prompt = base
+        else:
+            # Do not turn a parse failure into an artificial abstention. The
+            # prerequisite will fail and S6 will be marked unavailable/negative.
+            metadata["gate_unresolved"] = True
+            gate_prompt = base
 
         generic_control = f"""
 {base}
@@ -1430,6 +1583,11 @@ class ExperimentRunner:
         max_knowledge_probes: int,
         knowledge_known_threshold: float,
         knowledge_scarce_threshold: float,
+        output_dir: Path,
+        save_hidden_states: bool,
+        hidden_layers: str,
+        save_probe_hidden_states: bool,
+        abstention_policy: str,
     ) -> None:
         self.engine = engine
         self.evaluator = evaluator
@@ -1446,19 +1604,51 @@ class ExperimentRunner:
         self.max_knowledge_probes = max_knowledge_probes
         self.knowledge_known_threshold = knowledge_known_threshold
         self.knowledge_scarce_threshold = knowledge_scarce_threshold
+        self.output_dir = output_dir
+        self.hidden_dir = output_dir / "hidden_states"
+        self.save_hidden_states = save_hidden_states
+        self.hidden_layers = hidden_layers
+        self.save_probe_hidden_states = save_probe_hidden_states
+        self.abstention_policy = abstention_policy
+
+    @staticmethod
+    def _safe_component(text: str, max_len: int = 80) -> str:
+        clean = re.sub(r"[^A-Za-z0-9_.-]+", "_", text).strip("_")
+        return (clean or "trace")[:max_len]
+
+    def hidden_path(self, sample_id: str, trace_id: str, run_index: int) -> Path:
+        sample_dir = self.hidden_dir / self._safe_component(sample_id)
+        filename = f"{self._safe_component(trace_id)}__run_{run_index:02d}.pt"
+        return sample_dir / filename
+
+    @staticmethod
+    def determine_base_status(base: Mapping[str, Any]) -> str:
+        valid = int(base.get("n_valid_evaluations", 0))
+        counts = base.get("evaluation_status_counts", {})
+        if valid > 0:
+            rate = base.get("correct_rate")
+            return "correct" if rate is not None and float(rate) >= 0.5 else "hallucination"
+        if counts.get("invalid_reference", 0) > 0:
+            return "invalid_reference"
+        if counts.get("unanswerable", 0) > 0:
+            return "unanswerable"
+        return "unresolved"
 
     def run_prompt(
         self,
         sample: Sample,
         user_prompt: str,
         seed_offset: int,
+        trace_id: str,
         max_new_tokens: Optional[int] = None,
         temperature: Optional[float] = None,
         fixed_answer: Optional[str] = None,
+        save_hidden_override: Optional[bool] = None,
     ) -> Dict[str, Any]:
         runs: List[EvaluatedRun] = []
         max_tokens = max_new_tokens or self.max_new_tokens
         temp = self.temperature if temperature is None else temperature
+        should_save_hidden = self.save_hidden_states if save_hidden_override is None else save_hidden_override
 
         for index in range(self.n_samples):
             seed = self.base_seed + seed_offset * 1009 + index * 17
@@ -1480,47 +1670,75 @@ class ExperimentRunner:
                     seed=seed,
                 )
 
-            correct, eval_score, eval_details = self.evaluator.evaluate(
+            evaluation = self.evaluator.evaluate(
                 sample.question,
+                sample.context,
                 generation.text,
                 sample.references,
                 seed=seed,
-                context=sample.context,
             )
             reference_lp = None
             if self.score_reference and sample.references:
                 reference_lp = self.engine.score_continuation(user_prompt, sample.references[0])
 
+            hidden_state_path: Optional[str] = None
+            hidden_state_error: Optional[str] = None
+            if should_save_hidden:
+                try:
+                    path = self.hidden_path(sample.id, trace_id, index)
+                    info = self.engine.save_hidden_state_trace(
+                        user_prompt=user_prompt,
+                        answer=generation.text,
+                        output_path=path,
+                        layer_spec=self.hidden_layers,
+                    )
+                    hidden_state_path = info["path"]
+                except Exception as exc:  # noqa: BLE001
+                    hidden_state_error = repr(exc)
+                    LOGGER.exception("Hidden-state extraction failed for %s/%s", sample.id, trace_id)
+
             runs.append(
                 EvaluatedRun(
                     text=generation.text,
-                    correct=correct,
+                    correct=evaluation.correct,
+                    evaluation_status=evaluation.status,
                     is_abstention=is_abstention_text(generation.text),
-                    evaluation_score=eval_score,
+                    evaluation_score=evaluation.score,
                     token_count=generation.token_count,
                     mean_token_logprob=generation.mean_token_logprob,
                     reference_logprob=reference_lp,
                     seed=seed,
                     elapsed_seconds=generation.elapsed_seconds,
-                    evaluation_details=eval_details,
+                    hidden_state_path=hidden_state_path,
+                    hidden_state_error=hidden_state_error,
+                    evaluation_details=evaluation.details,
                 )
             )
 
-        correct_rate = statistics.mean(float(x.correct) for x in runs)
-        abstention_rate = statistics.mean(float(x.is_abstention) for x in runs)
-        safe_rate = statistics.mean(float(x.correct or x.is_abstention) for x in runs)
-        eval_score_mean = statistics.mean(x.evaluation_score for x in runs)
+        valid_runs = [x for x in runs if x.correct is not None]
+        correct_rate = (
+            statistics.mean(float(x.correct) for x in valid_runs)
+            if valid_runs else None
+        )
+        abstention_rate = statistics.mean(float(x.is_abstention) for x in runs) if runs else None
+        safe_values = [float(bool(x.correct) or x.is_abstention) for x in valid_runs]
+        safe_rate = statistics.mean(safe_values) if safe_values else None
+        eval_scores = [x.evaluation_score for x in runs if x.evaluation_score is not None]
+        eval_score_mean = statistics.mean(eval_scores) if eval_scores else None
         answer_counts = Counter(normalize_text(x.text) for x in runs)
         consistency = max(answer_counts.values()) / len(runs) if runs else 0.0
+        status_counts = Counter(x.evaluation_status for x in runs)
         return {
             "prompt": user_prompt,
             "runs": [dataclasses.asdict(x) for x in runs],
             "correct_rate": correct_rate,
+            "n_valid_evaluations": len(valid_runs),
+            "evaluation_status_counts": dict(status_counts),
             "abstention_rate": abstention_rate,
             "safe_rate": safe_rate,
             "evaluation_score_mean": eval_score_mean,
             "consistency": consistency,
-            "mean_token_count": statistics.mean(x.token_count for x in runs),
+            "mean_token_count": statistics.mean(x.token_count for x in runs) if runs else None,
             "mean_token_logprob": mean_or_none([x.mean_token_logprob for x in runs]),
             "mean_reference_logprob": mean_or_none([x.reference_logprob for x in runs]),
             "representative_answer": runs[0].text if runs else "",
@@ -1544,17 +1762,22 @@ class ExperimentRunner:
                 probe_sample,
                 prompt,
                 seed_offset=40 + index,
+                trace_id=f"knowledge_probe_{index}",
                 max_new_tokens=min(64, self.max_new_tokens),
                 temperature=0.0,
+                save_hidden_override=self.save_hidden_states and self.save_probe_hidden_states,
             )
             details.append({**probe, "result": result})
-        score = (
-            statistics.mean(float(x["result"]["correct_rate"]) for x in details)
-            if details else None
-        )
+        valid_scores = [
+            float(x["result"]["correct_rate"])
+            for x in details
+            if x["result"].get("correct_rate") is not None
+        ]
+        score = statistics.mean(valid_scores) if valid_scores else None
         return {
             "score": score,
             "n_probes": len(details),
+            "n_valid_probes": len(valid_scores),
             "probes": details,
         }
 
@@ -1569,6 +1792,7 @@ class ExperimentRunner:
             sample,
             variant.user_prompt,
             seed_offset=100 + variant_index,
+            trace_id=variant.variant_id,
             max_new_tokens=variant.max_new_tokens,
             temperature=variant.temperature,
             fixed_answer=fixed_answer,
@@ -1590,7 +1814,16 @@ class ExperimentRunner:
         knowledge_probe_score: Optional[float],
         gate_decision: Optional[Dict[str, Any]],
     ) -> Dict[str, Any]:
-        base_rate = float(base["correct_rate"])
+        base_rate = base.get("correct_rate")
+        if base_rate is None:
+            return {
+                "per_stressor": {},
+                "primary_stressor": None,
+                "secondary_stressors": [],
+                "unidentified": True,
+                "note": "base_evaluation_not_valid",
+            }
+        base_rate = float(base_rate)
         by_stressor: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
         for variant in variants:
             by_stressor[variant["stressor"]].append(variant)
@@ -1598,18 +1831,25 @@ class ExperimentRunner:
         results: Dict[str, Any] = {}
         for stressor in STRESSOR_NAMES:
             group = by_stressor.get(stressor, [])
-            targeted = [x for x in group if not x["is_control"]]
-            controls = [x for x in group if x["is_control"]]
-            if stressor == "S6":
-                base_effective_rate = float(base.get("safe_rate", base_rate))
-                target_recoveries = [float(x.get("safe_rate", x["correct_rate"])) - base_effective_rate for x in targeted]
-                control_recoveries = [float(x.get("safe_rate", x["correct_rate"])) - base_effective_rate for x in controls]
-            else:
-                target_recoveries = [float(x["correct_rate"]) - base_rate for x in targeted]
-                control_recoveries = [float(x["correct_rate"]) - base_rate for x in controls]
-            max_target = max(target_recoveries, default=0.0)
-            max_control = max(control_recoveries, default=0.0)
-            specificity = max_target - max_control
+            targeted = [x for x in group if not x["is_control"] and x.get("correct_rate") is not None]
+            controls = [x for x in group if x["is_control"] and x.get("correct_rate") is not None]
+
+            rate_key = "safe_rate" if (stressor == "S6" and self.abstention_policy == "safe") else "correct_rate"
+            base_effective = base.get(rate_key)
+            if base_effective is None:
+                base_effective = base_rate
+            base_effective = float(base_effective)
+            target_recoveries = [
+                float(x.get(rate_key) if x.get(rate_key) is not None else x["correct_rate"]) - base_effective
+                for x in targeted
+            ]
+            control_recoveries = [
+                float(x.get(rate_key) if x.get(rate_key) is not None else x["correct_rate"]) - base_effective
+                for x in controls
+            ]
+            max_target = max(target_recoveries) if target_recoveries else None
+            max_control = max(control_recoveries) if control_recoveries else 0.0
+            specificity = (max_target - max_control) if max_target is not None else None
 
             prerequisite = True
             prerequisite_notes: List[str] = []
@@ -1623,7 +1863,7 @@ class ExperimentRunner:
             if stressor == "S2":
                 if not targeted:
                     prerequisite = False
-                    prerequisite_notes.append("no_valid_shortcut_candidate")
+                    prerequisite_notes.append("no_valid_shortcut_candidate_or_evaluation")
                 if knowledge_probe_score is None:
                     prerequisite = False
                     prerequisite_notes.append("knowledge_probes_unavailable")
@@ -1638,48 +1878,53 @@ class ExperimentRunner:
                 if action not in {"VERIFY", "ABSTAIN"}:
                     prerequisite = False
                     prerequisite_notes.append("gate_did_not_detect_need_for_control_action")
+                if action == "ABSTAIN" and self.abstention_policy == "incorrect":
+                    prerequisite_notes.append("abstention_not_rewarded_on_answerable_qa")
 
-            positive = (
-                prerequisite
-                and max_target >= self.strong_positive_recovery
-                and specificity >= self.specificity_threshold
-            )
-            negative = max_target <= self.negative_recovery_threshold
-            if positive:
-                label = "positive"
-            elif negative:
-                label = "negative"
-            else:
-                label = "uncertain"
-
-            soft_label = clip(
-                (specificity - self.negative_recovery_threshold)
-                / max(self.specificity_threshold + self.strong_positive_recovery, 1e-6)
-            )
-            if not prerequisite:
+            if max_target is None:
+                label = "unavailable"
                 soft_label = 0.0
+            else:
+                positive = (
+                    prerequisite
+                    and max_target >= self.strong_positive_recovery
+                    and specificity is not None
+                    and specificity >= self.specificity_threshold
+                )
+                negative = max_target <= self.negative_recovery_threshold
+                if positive:
+                    label = "positive"
+                elif negative:
+                    label = "negative"
+                else:
+                    label = "uncertain"
+                soft_label = clip(
+                    ((specificity or 0.0) - self.negative_recovery_threshold)
+                    / max(self.specificity_threshold + self.strong_positive_recovery, 1e-6)
+                )
+                if not prerequisite:
+                    soft_label = 0.0
 
-            rate_key = "safe_rate" if stressor == "S6" else "correct_rate"
-            base_for_key = float(base.get(rate_key, base_rate))
             best_target = None
             if targeted:
                 best_target = max(
                     targeted,
-                    key=lambda x: float(x.get(rate_key, x["correct_rate"])) - base_for_key,
+                    key=lambda x: float(x.get(rate_key) if x.get(rate_key) is not None else x["correct_rate"]) - base_effective,
                 )["variant_id"]
             best_control = None
             if controls:
                 best_control = max(
                     controls,
-                    key=lambda x: float(x.get(rate_key, x["correct_rate"])) - base_for_key,
+                    key=lambda x: float(x.get(rate_key) if x.get(rate_key) is not None else x["correct_rate"]) - base_effective,
                 )["variant_id"]
 
             results[stressor] = {
                 "name": STRESSOR_NAMES[stressor],
                 "prerequisite_met": prerequisite,
                 "prerequisite_notes": prerequisite_notes,
+                "recovery_metric": rate_key,
                 "max_target_recovery": max_target,
-                "max_control_recovery": max_control,
+                "max_control_recovery": max_control if controls else None,
                 "specificity": specificity,
                 "soft_label": soft_label,
                 "label": label,
@@ -1691,7 +1936,7 @@ class ExperimentRunner:
 
         ranked = sorted(
             results.items(),
-            key=lambda kv: (kv[1]["soft_label"], kv[1]["specificity"]),
+            key=lambda kv: (kv[1]["soft_label"], kv[1].get("specificity") or -999.0),
             reverse=True,
         )
         primary = ranked[0][0] if ranked and ranked[0][1]["label"] == "positive" else None
@@ -1711,12 +1956,41 @@ class ExperimentRunner:
         sample: Sample,
         unrelated_facts: str,
         enabled_stressors: Sequence[str],
+        precomputed_base: Optional[Dict[str, Any]] = None,
     ) -> Dict[str, Any]:
         base_prompt = PromptBuilder.base_user_prompt(sample)
-        base = self.run_prompt(sample, base_prompt, seed_offset=0)
+        base = precomputed_base or self.run_prompt(
+            sample,
+            base_prompt,
+            seed_offset=0,
+            trace_id="base",
+        )
+        base_status = self.determine_base_status(base)
+        if base_status != "hallucination":
+            return {
+                "id": sample.id,
+                "question": sample.question,
+                "context": sample.context,
+                "references": sample.references,
+                "symptom": sample.symptom,
+                "metadata": sample.metadata,
+                "base": base,
+                "base_status": base_status,
+                "base_is_hallucination": False if base_status == "correct" else None,
+                "interventions_run": False,
+                "variants": [],
+                "diagnosis": {
+                    "per_stressor": {},
+                    "primary_stressor": None,
+                    "secondary_stressors": [],
+                    "unidentified": True,
+                    "note": f"interventions_not_run_for_base_status_{base_status}",
+                },
+            }
+
         base_answer = base["representative_answer"]
         knowledge_probes = self.run_knowledge_probes(sample) if ("S1" in enabled_stressors or "S2" in enabled_stressors) else {
-            "score": None, "n_probes": 0, "probes": []
+            "score": None, "n_probes": 0, "n_valid_probes": 0, "probes": []
         }
 
         variants: List[Variant] = []
@@ -1753,7 +2027,7 @@ class ExperimentRunner:
                     "is_control": variant.is_control,
                     "metadata": variant.metadata,
                     "error": "cuda_out_of_memory",
-                    "correct_rate": 0.0,
+                    "correct_rate": None,
                 })
             except Exception as exc:  # noqa: BLE001
                 LOGGER.exception("Variant failed: %s", variant.variant_id)
@@ -1764,7 +2038,7 @@ class ExperimentRunner:
                     "is_control": variant.is_control,
                     "metadata": variant.metadata,
                     "error": repr(exc),
-                    "correct_rate": 0.0,
+                    "correct_rate": None,
                 })
 
         diagnosis = self.score_stressors(
@@ -1782,7 +2056,9 @@ class ExperimentRunner:
             "symptom": sample.symptom,
             "metadata": sample.metadata,
             "base": base,
-            "base_is_hallucination": base["correct_rate"] < 0.5,
+            "base_status": base_status,
+            "base_is_hallucination": True,
+            "interventions_run": True,
             "knowledge_probes": knowledge_probes,
             "epistemic_gate_decision": gate_decision,
             "variants": variant_results,
@@ -1852,18 +2128,45 @@ def summarize(results_path: Union[str, Path]) -> Dict[str, Any]:
                 if line:
                     rows.append(json.loads(line))
 
-    n = len(rows)
-    if n == 0:
+    if not rows:
         return {"n_samples": 0}
 
-    base_rates = [float(x["base"]["correct_rate"]) for x in rows]
-    hallucinations = [x for x in rows if x.get("base_is_hallucination")]
+    base_status_counts: Counter[str] = Counter()
+    evaluable_rates: List[float] = []
     label_counts: Dict[str, Counter[str]] = {s: Counter() for s in STRESSOR_NAMES}
     recoveries: Dict[str, List[float]] = defaultdict(list)
     specificities: Dict[str, List[float]] = defaultdict(list)
     primary_counts: Counter[str] = Counter()
+    n_intervention_samples = 0
+    hidden_files = 0
+    hidden_errors = 0
 
     for row in rows:
+        if "base" not in row:
+            base_status_counts["sample_error"] += 1
+            continue
+        status = row.get("base_status")
+        if not status:
+            status = ExperimentRunner.determine_base_status(row["base"])
+        base_status_counts[status] += 1
+        if status in {"correct", "hallucination"} and row["base"].get("correct_rate") is not None:
+            evaluable_rates.append(float(row["base"]["correct_rate"]))
+
+        for run in row.get("base", {}).get("runs", []):
+            hidden_files += int(bool(run.get("hidden_state_path")))
+            hidden_errors += int(bool(run.get("hidden_state_error")))
+        for variant in row.get("variants", []):
+            for run in variant.get("runs", []):
+                hidden_files += int(bool(run.get("hidden_state_path")))
+                hidden_errors += int(bool(run.get("hidden_state_error")))
+        for probe in row.get("knowledge_probes", {}).get("probes", []):
+            for run in probe.get("result", {}).get("runs", []):
+                hidden_files += int(bool(run.get("hidden_state_path")))
+                hidden_errors += int(bool(run.get("hidden_state_error")))
+
+        if not row.get("interventions_run"):
+            continue
+        n_intervention_samples += 1
         diag = row.get("diagnosis", {}).get("per_stressor", {})
         primary = row.get("diagnosis", {}).get("primary_stressor")
         primary_counts[primary or "unidentified"] += 1
@@ -1872,8 +2175,10 @@ def summarize(results_path: Union[str, Path]) -> Dict[str, Any]:
             if not info:
                 continue
             label_counts[stressor][info.get("label", "missing")] += 1
-            recoveries[stressor].append(float(info.get("max_target_recovery", 0.0)))
-            specificities[stressor].append(float(info.get("specificity", 0.0)))
+            if info.get("max_target_recovery") is not None:
+                recoveries[stressor].append(float(info["max_target_recovery"]))
+            if info.get("specificity") is not None:
+                specificities[stressor].append(float(info["specificity"]))
 
     per_stressor = {}
     for stressor, name in STRESSOR_NAMES.items():
@@ -1885,11 +2190,19 @@ def summarize(results_path: Union[str, Path]) -> Dict[str, Any]:
         }
 
     return {
-        "n_samples": n,
-        "n_base_hallucinations": len(hallucinations),
-        "base_accuracy": statistics.mean(base_rates),
+        "n_samples": len(rows),
+        "base_status_counts": dict(base_status_counts),
+        "n_base_evaluable": len(evaluable_rates),
+        "n_base_hallucinations": base_status_counts.get("hallucination", 0),
+        "n_invalid_reference": base_status_counts.get("invalid_reference", 0),
+        "n_unanswerable": base_status_counts.get("unanswerable", 0),
+        "n_unresolved": base_status_counts.get("unresolved", 0),
+        "base_accuracy": statistics.mean(evaluable_rates) if evaluable_rates else None,
+        "n_intervention_samples": n_intervention_samples,
         "primary_stressor_counts": dict(primary_counts),
         "per_stressor": per_stressor,
+        "hidden_state_files": hidden_files,
+        "hidden_state_errors": hidden_errors,
     }
 
 
@@ -1900,15 +2213,15 @@ def summarize(results_path: Union[str, Path]) -> Dict[str, Any]:
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Run stressor-specific behavioral interventions on a local causal LM.",
+        description="Run stressor interventions with robust evaluation and hidden-state logging.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
 
     parser.add_argument("--input", required=True, help="Input JSON or JSONL file")
-    parser.add_argument("--output-dir", required=True, help="Directory for results.jsonl and summary.json")
+    parser.add_argument("--output-dir", required=True, help="Directory for results and hidden states")
     parser.add_argument("--model", default="NousResearch/Meta-Llama-3.1-8B-Instruct")
     parser.add_argument("--device", default="cuda")
-    parser.add_argument("--device-map", default=None, help="For example: auto. Omit to call model.to(device).")
+    parser.add_argument("--device-map", default=None, help="For example: auto")
     parser.add_argument("--dtype", choices=["float16", "bfloat16", "float32"], default="bfloat16")
     parser.add_argument("--trust-remote-code", action="store_true")
 
@@ -1923,13 +2236,16 @@ def build_arg_parser() -> argparse.ArgumentParser:
 
     parser.add_argument("--eval-mode", choices=["exact", "contains", "choice", "token_f1", "llm_judge"], default="llm_judge")
     parser.add_argument("--f1-threshold", type=float, default=0.65)
+    parser.add_argument("--judge-max-new-tokens", type=int, default=8)
+    parser.add_argument("--judge-retries", type=int, default=2)
+    parser.add_argument("--fast-reference-match", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--score-reference", action="store_true")
 
     parser.add_argument("--max-samples", type=int, default=None)
     parser.add_argument("--start-index", type=int, default=0)
-    parser.add_argument("--n-samples", type=int, default=1, help="Generation samples per intervention variant")
+    parser.add_argument("--n-samples", type=int, default=1, help="Generation samples per prompt/variant")
     parser.add_argument("--max-input-tokens", type=int, default=4096)
-    parser.add_argument("--max-new-tokens", type=int, default=96)
+    parser.add_argument("--max-new-tokens", type=int, default=64)
     parser.add_argument("--low-budget-tokens", type=int, default=32)
     parser.add_argument("--high-budget-tokens", type=int, default=256)
     parser.add_argument("--temperature", type=float, default=0.0)
@@ -1945,29 +2261,70 @@ def build_arg_parser() -> argparse.ArgumentParser:
         nargs="+",
         choices=list(STRESSOR_NAMES),
         default=list(STRESSOR_NAMES),
-        help="Enabled intervention families; S5 is intentionally unavailable",
+        help="Enabled families; S5 is intentionally omitted for the local non-tool model",
+    )
+    parser.add_argument(
+        "--base-only",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Run only robust base/reference audit and no interventions",
     )
     parser.add_argument(
         "--only-base-errors",
         action=argparse.BooleanOptionalAction,
         default=True,
-        help="Skip interventions when base correct_rate >= 0.5",
-    )
-    parser.add_argument(
-        "--base-only",
-        action="store_true",
-        help=(
-            "Generate and evaluate only the base answer. Useful for auditing "
-            "reference validity without running stressor interventions."
-        ),
+        help="Run interventions only for cleanly evaluated base hallucinations",
     )
     parser.add_argument("--resume", action=argparse.BooleanOptionalAction, default=True)
 
+    parser.add_argument("--save-hidden-states", action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument(
+        "--hidden-layers",
+        default="25%,50%,65%,80%,100%",
+        help="Comma-separated absolute layers or relative percentages",
+    )
+    parser.add_argument(
+        "--save-probe-hidden-states",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Also save hidden states for independent S1 knowledge probes",
+    )
+
+    parser.add_argument(
+        "--abstention-policy",
+        choices=["incorrect", "safe"],
+        default="incorrect",
+        help="On answerable QA, use incorrect; safe is for risk-sensitive/open-world settings",
+    )
     parser.add_argument("--strong-positive-recovery", type=float, default=0.5)
     parser.add_argument("--specificity-threshold", type=float, default=0.25)
     parser.add_argument("--negative-recovery-threshold", type=float, default=0.1)
     parser.add_argument("--log-level", choices=["DEBUG", "INFO", "WARNING", "ERROR"], default="INFO")
     return parser
+
+
+def make_base_only_result(sample: Sample, base: Dict[str, Any], note: str) -> Dict[str, Any]:
+    status = ExperimentRunner.determine_base_status(base)
+    return {
+        "id": sample.id,
+        "question": sample.question,
+        "context": sample.context,
+        "references": sample.references,
+        "symptom": sample.symptom,
+        "metadata": sample.metadata,
+        "base": base,
+        "base_status": status,
+        "base_is_hallucination": True if status == "hallucination" else (False if status == "correct" else None),
+        "interventions_run": False,
+        "variants": [],
+        "diagnosis": {
+            "per_stressor": {},
+            "primary_stressor": None,
+            "secondary_stressors": [],
+            "unidentified": True,
+            "note": note,
+        },
+    }
 
 
 def main() -> None:
@@ -2009,6 +2366,9 @@ def main() -> None:
         mode=args.eval_mode,
         engine=engine,
         f1_threshold=args.f1_threshold,
+        judge_max_new_tokens=args.judge_max_new_tokens,
+        judge_retries=args.judge_retries,
+        fast_reference_match=args.fast_reference_match,
     )
     proposal = ProposalGenerator(engine=engine, seed=args.seed)
     rng = random.Random(args.seed)
@@ -2038,79 +2398,57 @@ def main() -> None:
         max_knowledge_probes=args.max_knowledge_probes,
         knowledge_known_threshold=args.knowledge_known_threshold,
         knowledge_scarce_threshold=args.knowledge_scarce_threshold,
+        output_dir=output_dir,
+        save_hidden_states=args.save_hidden_states,
+        hidden_layers=args.hidden_layers,
+        save_probe_hidden_states=args.save_probe_hidden_states,
+        abstention_policy=args.abstention_policy,
     )
 
-    # Pre-generate an unrelated-fact pool for S1 controls. To keep the first version
-    # inexpensive, each sample uses the next sample's reference/context.
     unrelated_pool: List[str] = []
     for sample in samples:
         material = sample.context.strip() or "\n".join(sample.references)
         unrelated_pool.append(material[:1500])
 
     processed_now = 0
-    for idx, sample in enumerate(tqdm(samples, desc="Interventions")):
+    for idx, sample in enumerate(tqdm(samples, desc="Audit/interventions")):
         if sample.id in completed:
             continue
         unrelated_facts = unrelated_pool[(idx + 1) % len(unrelated_pool)] if len(unrelated_pool) > 1 else ""
-
         try:
-            # We need the base answer to decide whether to run the expensive interventions.
+            base_prompt = PromptBuilder.base_user_prompt(sample)
+            base = runner.run_prompt(
+                sample,
+                base_prompt,
+                seed_offset=0,
+                trace_id="base",
+            )
+            base_status = runner.determine_base_status(base)
+
             if args.base_only:
-                base_prompt = PromptBuilder.base_user_prompt(sample)
-                base = runner.run_prompt(sample, base_prompt, seed_offset=0)
-                result = {
-                    "id": sample.id,
-                    "question": sample.question,
-                    "context": sample.context,
-                    "references": sample.references,
-                    "symptom": sample.symptom,
-                    "metadata": sample.metadata,
-                    "base": base,
-                    "base_is_hallucination": base["correct_rate"] < 0.5,
-                    "variants": [],
-                    "diagnosis": {
-                        "per_stressor": {},
-                        "primary_stressor": None,
-                        "secondary_stressors": [],
-                        "unidentified": True,
-                        "note": "base_only_reference_audit",
-                    },
-                }
-            elif args.only_base_errors:
-                base_prompt = PromptBuilder.base_user_prompt(sample)
-                base = runner.run_prompt(sample, base_prompt, seed_offset=0)
-                if base["correct_rate"] >= 0.5:
-                    result = {
-                        "id": sample.id,
-                        "question": sample.question,
-                        "context": sample.context,
-                        "references": sample.references,
-                        "symptom": sample.symptom,
-                        "metadata": sample.metadata,
-                        "base": base,
-                        "base_is_hallucination": False,
-                        "variants": [],
-                        "diagnosis": {
-                            "per_stressor": {},
-                            "primary_stressor": None,
-                            "secondary_stressors": [],
-                            "unidentified": True,
-                            "note": "interventions_skipped_for_correct_base_answer",
-                        },
-                    }
-                else:
-                    # process_sample regenerates the base answer. To ensure deterministic
-                    # behavior it uses the same seeds, so the result should be identical.
-                    result = runner.process_sample(sample, unrelated_facts, args.stressors)
+                result = make_base_only_result(sample, base, "base_only_reference_audit_v2")
+            elif args.only_base_errors and base_status != "hallucination":
+                result = make_base_only_result(
+                    sample,
+                    base,
+                    f"interventions_skipped_for_base_status_{base_status}",
+                )
             else:
-                result = runner.process_sample(sample, unrelated_facts, args.stressors)
+                result = runner.process_sample(
+                    sample,
+                    unrelated_facts,
+                    args.stressors,
+                    precomputed_base=base,
+                )
 
             append_jsonl(results_path, result)
             processed_now += 1
             if processed_now % 5 == 0:
-                write_json(summary_path, summarize(results_path))
+                partial = summarize(results_path)
+                partial["config"] = vars(args)
+                write_json(summary_path, partial)
         except KeyboardInterrupt:
-            LOGGER.warning("Interrupted by user; partial results are preserved")
+            LOGGER.warning("Interrupted; partial results are preserved")
             break
         except Exception as exc:  # noqa: BLE001
             LOGGER.exception("Sample failed: %s", sample.id)
@@ -2129,6 +2467,8 @@ def main() -> None:
     write_json(summary_path, final_summary)
     LOGGER.info("Results: %s", results_path)
     LOGGER.info("Summary: %s", summary_path)
+    if args.save_hidden_states:
+        LOGGER.info("Hidden states: %s", output_dir / "hidden_states")
 
 
 if __name__ == "__main__":

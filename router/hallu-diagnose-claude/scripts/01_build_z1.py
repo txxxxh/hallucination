@@ -7,7 +7,7 @@ from common import Sample, sid_of, write_jsonl, DATA
 
 random.seed(0)
 
-def build_popqa(pop_thresh: int):
+def build_popqa(pop_thresh: int, limit=800):
     """PopQA: 含 s_pop(主语实体月均页面浏览量)。取低流行度子集。"""
     from datasets import load_dataset
     ds = load_dataset("akariasai/PopQA", split="test")
@@ -22,9 +22,11 @@ def build_popqa(pop_thresh: int):
                 q_trig=r["question"], q_clean=r["question"],
                 answer=aliases[0], answer_aliases=aliases[1:],
                 meta={"source": "popqa", "prop": r["prop"], "gold_passage": r.get("obj", "")}))
+            if len(out) >= limit:
+                break
     return out
 
-def build_freshqa(path: Path):
+def build_freshqa(path: Path, limit=800):
     """FreshQA: 需先从 github.com/freshllms/freshqa 下载最新 csv 到 data/raw/freshqa.csv。
     取 fast-changing + 截止后答案变化的题; effective_year 字段筛选。"""
     import csv
@@ -44,6 +46,8 @@ def build_freshqa(path: Path):
                 q_trig=r["question"], q_clean=r["question"], answer=ans,
                 answer_aliases=[a for k, a in r.items() if k.startswith("answer_") and a and a != ans],
                 meta={"source": "freshqa"}))
+            if len(out) >= limit:
+                break
     return out
 
 FIRST = ["Aldric", "Bethune", "Cassivel", "Dornwick", "Elsberry", "Fenlow", "Gathmere", "Holbein",
@@ -78,6 +82,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--pop_thresh", type=int, default=100)
     ap.add_argument("--n_synth", type=int, default=300)
+    ap.add_argument("--limit", type=int, default=800,
+                    help="每个外部数据源最多使用前 N 条")
     a = ap.parse_args()
-    pool = build_popqa(a.pop_thresh) + build_freshqa(DATA / "raw/freshqa.csv") + build_synth(a.n_synth)
+    pool = build_popqa(a.pop_thresh, a.limit) + build_freshqa(DATA / "raw/freshqa.csv", a.limit) + build_synth(a.n_synth)
     write_jsonl(pool, DATA / "processed/z1_pool.jsonl")

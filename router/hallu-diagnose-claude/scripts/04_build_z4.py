@@ -1,23 +1,45 @@
 """Z4 budget 不足: MATH L3-5, 先测每题 full-budget 表现与 thinking 用量,
 再对"稳定正确且用量大"的题做截断。q_clean == q_trig(开关是 budget 不是文本)。
-用法: python scripts/04_build_z4.py --model deepseek-ai/DeepSeek-R1-Distill-Qwen-7B
+用法: python scripts/04_build_z4.py --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B
 """
 import argparse, re
 from common import Sample, sid_of, write_jsonl, match_answer, DATA, LM
 
 def boxed(ans_field: str) -> str:
-    m = re.search(r"\\boxed\{([^{}]+)\}", ans_field)
-    return m.group(1) if m else ans_field.strip()
+    """抽取最后一个 \boxed{...}，支持 \frac 等嵌套花括号。"""
+    marker = r"\boxed{"
+    start = ans_field.rfind(marker)
+    if start < 0:
+        return ans_field.strip()
+    depth = 1
+    body_start = start + len(marker)
+    for i in range(body_start, len(ans_field)):
+        if ans_field[i] == "{":
+            depth += 1
+        elif ans_field[i] == "}":
+            depth -= 1
+            if depth == 0:
+                return ans_field[body_start:i].strip()
+    return ans_field.strip()
 
-def main(model, n_pool=800, full_budget=8192, cut_ratio=0.3):
-    from datasets import load_dataset
-    ds = load_dataset("EleutherAI/hendrycks_math", "all", split="test")
+def main(model, n_pool=800, full_budget=4096, cut_ratio=0.3):
+    from datasets import concatenate_datasets, load_dataset
+    configs = (
+        "algebra", "counting_and_probability", "geometry",
+        "intermediate_algebra", "number_theory", "prealgebra", "precalculus",
+    )
+    ds = concatenate_datasets([
+        load_dataset("EleutherAI/hendrycks_math", config, split="test")
+        for config in configs
+    ]).shuffle(seed=0)
     rows = [r for r in ds if r["level"] in ("Level 3", "Level 4", "Level 5")][:n_pool]
     lm = LM(model)
     prompts = [r["problem"] + "\nPut your final answer in \\boxed{}." for r in rows]
 
     # 1) full-budget 筛稳定正确 + 记录 thinking 用量
-    full = lm.chat(prompts, temperature=0.6, n=8, max_think=full_budget)
+    full = lm.chat(
+        prompts, temperature=0.6, n=8, max_think=full_budget, max_tokens=512
+    )
     out = []
     for r, p, gens in zip(rows, prompts, full):
         gold = boxed(r["solution"])
@@ -42,7 +64,9 @@ def main(model, n_pool=800, full_budget=8192, cut_ratio=0.3):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="deepseek-ai/DeepSeek-R1-Distill-Qwen-7B")
+    ap.add_argument("--model", default="deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
+    ap.add_argument("--n_pool", type=int, default=800)
+    ap.add_argument("--full_budget", type=int, default=4096)
     ap.add_argument("--cut_ratio", type=float, default=0.3)
     a = ap.parse_args()
-    main(a.model, cut_ratio=a.cut_ratio)
+    main(a.model, n_pool=a.n_pool, full_budget=a.full_budget, cut_ratio=a.cut_ratio)
