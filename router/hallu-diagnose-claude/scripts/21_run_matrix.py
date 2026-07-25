@@ -5,11 +5,12 @@
   T-CF      : 反捷径警示 + 1 个 few-shot (Z3 对因)
   T-Budget  : 恢复 2x thinking budget (Z4 对因; 非推理模型改为 "think step by step very carefully")
   T-Abstain : 弃答许可 + 置信度自查 (Z6 对因)
-  T-SC      : self-consistency n=8 多数投票 (通用对照, 必须证明它不是万灵药)
-用法: python scripts/21_run_matrix.py --model Qwen/Qwen2.5-7B-Instruct --stressors z1 z2 z3 z6
+  T-SC      : temperature=0.7 单次采样快速对照（不再构成多数投票 self-consistency）
+用法: python scripts/21_run_matrix.py --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B --stressors z1 z2 z3 z6
 """
 import argparse, json
-from common import read_jsonl, write_jsonl, DATA, LM, outcome, extract_final, normalize, match_answer
+from common import (read_jsonl, write_jsonl, DATA, LM, outcome, extract_final,
+                    normalize, match_answer, chat_by_domain, is_truncated)
 
 CF_FEWSHOT = (
     "Warning: this question may involve a popular but WRONG intuitive association. "
@@ -34,6 +35,8 @@ def apply_treatment(t, s, cleaner_out=None):
     if t == "T-Clean":
         return cleaner_out if cleaner_out else q
     if t == "T-CleanOracle":
+        if s["meta"].get("source") == "gsm-ic" or not s["meta"].get("distractors"):
+            return s["q_clean"]
         out = q
         for d in s["meta"].get("distractors", []):
             out = out.replace(d, "").replace(d.rstrip("."), "")
@@ -54,51 +57,78 @@ def main(model, stressors, treatments, tp):
     # 预跑 cleaner (T-Clean 用小模型; 简化: 同模型也可, 论文里换 3B)
     cleaned = {}
     if "T-Clean" in treatments:
-        outs = lm.chat([CLEAN_PROMPT.format(q=s["q_trig"]) for s in samples],
-                       temperature=0.0, max_tokens=1024)
+        outs, _ = chat_by_domain(
+            lm, samples, lambda s: CLEAN_PROMPT.format(q=s["q_trig"]),
+            temperature=0.0
+        )
         cleaned = {s["sid"]: o[0].strip() for s, o in zip(samples, outs)}
 
     rows = []
     for t in treatments:
         prompts = [apply_treatment(t, s, cleaned.get(s["sid"])) for s in samples]
         if t == "T-SC":
-            gens = lm.chat(prompts, temperature=0.7, n=8)
-            for s, g in zip(samples, gens):
+            gens, caps = chat_by_domain(
+                lm, samples, lambda s: apply_treatment(t, s, cleaned.get(s["sid"])),
+                temperature=0.7, n=1
+            )
+            for s, g, cap in zip(samples, gens, caps):
                 finals = [normalize(extract_final(x)) for x in g]
                 mode = max(set(finals), key=finals.count)
                 rep = next(x for x in g if normalize(extract_final(x)) == mode)
-                rows.append(record(s, t, rep))
+                rows.append(record(
+                    s, t, rep, lm, cap,
+                    any(is_truncated(x, lm, cap) for x in g)
+                ))
         elif t == "T-Budget":
             if lm.is_reasoner:
                 for cut_mult, group in [(2.0, samples)]:
                     budgets = {}
                     for s in group:
-                        b = int(s["meta"].get("avg_think_tokens", 2048) * cut_mult) if s["stressor"] == "Z4" else 4096
+                        b = min(
+                            4096,
+                            int(s["meta"].get("avg_think_tokens", 2048) * cut_mult)
+                            if s["stressor"] == "Z4" else 4096,
+                        )
                         budgets.setdefault(b, []).append(s)
                     for b, grp in budgets.items():
-                        gens = lm.chat([apply_treatment(t, s) for s in grp], temperature=0.0, max_think=b)
-                        rows += [record(s, t, g[0]) for s, g in zip(grp, gens)]
+                        gens, caps = chat_by_domain(
+                            lm, grp, lambda s: apply_treatment(t, s),
+                            temperature=0.0, max_think=b
+                        )
+                        rows += [record(s, t, g[0], lm, cap)
+                                 for s, g, cap in zip(grp, gens, caps)]
             else:
-                gens = lm.chat(["Think step by step very carefully.\n\n" + p for p in prompts], temperature=0.0)
-                rows += [record(s, t, g[0]) for s, g in zip(samples, gens)]
+                gens, caps = chat_by_domain(
+                    lm, samples,
+                    lambda s: "Think step by step very carefully.\n\n" + apply_treatment(t, s),
+                    temperature=0.0
+                )
+                rows += [record(s, t, g[0], lm, cap)
+                         for s, g, cap in zip(samples, gens, caps)]
         else:
-            gens = lm.chat(prompts, temperature=0.0)
-            rows += [record(s, t, g[0]) for s, g in zip(samples, gens)]
+            gens, caps = chat_by_domain(
+                lm, samples, lambda s: apply_treatment(t, s, cleaned.get(s["sid"])),
+                temperature=0.0
+            )
+            rows += [record(s, t, g[0], lm, cap)
+                     for s, g, cap in zip(samples, gens, caps)]
         done = [r for r in rows if r["treatment"] == t]
         cure = sum(r["strict"] for r in done) / max(len(done), 1)
         print(f"  {t}: strict治愈率(全体)={cure:.1%}")
     write_jsonl(rows, DATA / f"results/matrix_{model.split('/')[-1]}.jsonl")
 
-def record(s, t, resp):
+def record(s, t, resp, lm, max_tokens, truncated=None):
     gold = s["answer"] if s["answer"] != "UNKNOWN_ENTITY" else "UNANSWERABLE"
     o = outcome(resp, gold, s.get("answer_aliases", []), bool(s["meta"].get("numeric")))
+    if truncated is None:
+        truncated = is_truncated(resp, lm, max_tokens)
     return dict(sid=s["sid"], stressor=s["stressor"], secondary=s.get("secondary_labels", []),
                 domain=s["domain"], template_id=s["template_id"], intensity=s["intensity"],
-                treatment=t, response_tail=resp[-400:], **o)
+                treatment=t, response=resp, truncated=truncated, **o)
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="Qwen/Qwen2.5-7B-Instruct")
+    ap.add_argument("--model", default="deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
     ap.add_argument("--stressors", nargs="+", default=["z1", "z2", "z3", "z6"])
     ap.add_argument("--treatments", nargs="+",
                     default=["none", "T-RAG", "T-Clean", "T-CleanOracle", "T-CF", "T-Budget", "T-Abstain", "T-SC"])

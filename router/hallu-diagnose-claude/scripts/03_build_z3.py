@@ -85,13 +85,13 @@ def finalize_seeds():
                 meta={"source": "seed", "shortcut_answer": r["shortcut"], "trigger": r["trig"]}))
     return out
 
-def build_truthfulqa():
+def build_truthfulqa(limit=800):
     """TruthfulQA-gen: 流行误解题。无干净反事实(误解在参数里, 不在 prompt 里),
     q_clean 设为加了反捷径提示的版本, 单独 template 标记, 分析时可选剔除。"""
     from datasets import load_dataset
     ds = load_dataset("truthfulqa/truthful_qa", "generation", split="validation")
     out = []
-    for r in ds:
+    for r in ds.select(range(min(limit, len(ds)))):
         if not r["incorrect_answers"]:
             continue
         out.append(Sample(
@@ -139,12 +139,14 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--mine", action="store_true")
     ap.add_argument("--finalize", action="store_true")
-    ap.add_argument("--gen_model", default="Qwen/Qwen2.5-7B-Instruct")
+    ap.add_argument("--gen_model", default="NousResearch/Meta-Llama-3.1-8B-Instruct")
+    ap.add_argument("--limit", type=int, default=800,
+                    help="每个外部数据源最多使用前 N 条")
     a = ap.parse_args()
     if a.mine:
         mine_seeds(a.gen_model)
     elif a.finalize:
-        pool = finalize_seeds() + build_truthfulqa() + build_chains(a.gen_model)
+        pool = finalize_seeds() + build_truthfulqa(a.limit) + build_chains(a.gen_model)
         write_jsonl(pool, DATA / "processed/z3_pool.jsonl")
     else:
         print("先 --mine 再人工审核, 然后 --finalize")

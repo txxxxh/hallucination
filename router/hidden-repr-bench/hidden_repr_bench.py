@@ -1,0 +1,866 @@
+#!/usr/bin/env python3
+"""
+hidden_repr_bench.py — 关联性错误的 hidden-state 表征方式对比实验 (自包含)
+
+目标: 固定 behavior 底座, 系统比较多种 hidden-state 提取方式, 检验
+  (1) transition+behavior 能否逼近 attention+behavior;
+  (2) 关联性错误 (context interference / shortcut) 在残差流里是否有可读、可干预的方向。
+
+不依赖 v2/v3 任何模块或落盘产物; 自己实现数据加载 / 探针 / 干预 / 提取 / 评测。
+默认数据集: ScientistQA 的 shuffled_prepend_names_question.json (+ profiles)。
+数据集格式通过 --*-field 可配置; 若字段缺失会给出清晰报错。
+
+配置矩阵 (全部叠加 behavior 特征):
+  B0  behavior_only                  基线
+  H1  point_lasttok                  单点@答案末token (v3 复现, 预期弱)
+  H2  point_entity                   单点@选项实体token (好位置)
+  H3  layer_traj                     层间轨迹 h_{l+1}-h_l @实体
+  H4  cf_transition                  反事实 transition h(trig)-h(clean) @匹配位
+  H5  multiprobe                     多探针 hidden mean/std (v3 的赢家)
+  H6  cf_transition_multiprobe       H4 + H5
+  A1  attention (Lookback式回看比率)  天花板对照
+  A2  transition_plus_heads          transition + 少量 head 特征
+
+主指标: grouped 5-fold CV AUROC (按 item 分组), 排除 embedding 层, 均值±std。
+方向验证: diff-of-means 方向 + 跨数据泛化 + steering necessity/sufficiency (可选)。
+
+用法:
+  python hidden_repr_bench.py --stage collect --input names.json --profiles profiles.json \
+      --model NousResearch/Meta-Llama-3.1-8B-Instruct --output-dir out --max-samples 800
+  python hidden_repr_bench.py --stage analyze --output-dir out
+  python hidden_repr_bench.py --stage steer --output-dir out   # 可选, 需要 GPU
+"""
+from __future__ import annotations
+
+import argparse, gc, json, logging, re, unicodedata
+from dataclasses import dataclass, field, asdict
+from pathlib import Path
+from typing import Any, Optional, Sequence
+
+import numpy as np
+
+import warnings as _w; _w.filterwarnings("ignore", category=UserWarning); _w.filterwarnings("ignore", category=RuntimeWarning)
+LOGGER = logging.getLogger("hidden_repr_bench")
+SCHEMA = "hidden_repr_bench_v1"
+POOL_NAMES = ("mean", "max", "first", "last")
+OPERATORS = ("delete", "neutralize", "mask")
+ALIGNED_OPS = ("neutralize", "mask")   # delete 无对齐后状态
+MASK_TEXT = "[MASKED]"
+NEUTRAL_TEXT = "some unspecified detail"
+
+_WORD_RE = re.compile(r"\b[\w'-]+\b", re.UNICODE)
+_SENT_RE = re.compile(r"(?<=[.!?])\s+|\n{2,}")
+NEGATION_RE = re.compile(
+    r"\b(?:no|not|never|none|neither|nor|without|cannot|can't|won't|isn't|aren't|didn't|doesn't|don't)\b",
+    re.I)
+
+
+# ============================ 数据 ============================
+@dataclass
+class Example:
+    item_id: str
+    source_index: int
+    prompt: str                 # 完整问题 (含两个 prepend 名字 + 问题)
+    option_map: dict            # {"1": name1, "2": name2}
+    right_name: str
+    wrong_name: str
+    profiles: dict = field(default_factory=dict)   # {name: [fact_str,...]}
+    right_qid: str = ""
+    wrong_qid: str = ""
+
+def _get(row, *keys):
+    for k in keys:
+        if isinstance(row, dict) and k in row and row[k] is not None:
+            return row[k]
+    return None
+
+def profiles_from_embedded_prompt(prompt: str) -> dict[str, list[str]]:
+    """解析 shuffled_prepend_profiles_question 中嵌入 prompt 的人物事实。"""
+    markers = list(re.finditer(r"(?m)^name:\s*(.+?)\s*$", prompt))
+    profiles = {}
+    for i, marker in enumerate(markers):
+        name = marker.group(1).strip()
+        end = markers[i + 1].start() if i + 1 < len(markers) else len(prompt)
+        block = prompt[marker.end():end]
+        # 第二个人物区块后面紧跟题目说明，不能把题干误当成人物事实。
+        block = re.split(r"(?m)^Choose exactly one profile\b", block, maxsplit=1)[0]
+        facts = []
+        for line in block.splitlines():
+            match = re.match(r"^([A-Za-z][A-Za-z0-9_]*)\s*:\s*(.+)$", line.strip())
+            if not match:
+                continue
+            field_name, value = match.groups()
+            if field_name == "name":
+                continue
+            # 将很长的 award/occupation 列表拆成可独立询问的原子事实。
+            for part in value.split(";"):
+                part = part.strip()
+                if part:
+                    facts.append(f"{field_name.replace('_', ' ')}: {part}")
+        profiles[name] = list(dict.fromkeys(facts))
+    return profiles
+
+def load_examples(input_path: Path, profiles_path: Optional[Path],
+                  max_samples: int, start: int, args) -> list[Example]:
+    rows = json.loads(Path(input_path).read_text())
+    if isinstance(rows, dict):
+        rows = next(v for v in rows.values() if isinstance(v, list))
+    profiles_all = {}
+    if profiles_path and Path(profiles_path).exists():
+        pdata = json.loads(Path(profiles_path).read_text())
+        if isinstance(pdata, list):
+            for p in pdata:
+                nm = _get(p, "name", "person")
+                if nm:
+                    profiles_all[nm] = p.get("facts") or p.get("profile") or p
+                else:
+                    embedded = profiles_from_embedded_prompt(
+                        str(_get(p, "prompt", "question", "text") or ""))
+                    for name, facts in embedded.items():
+                        profiles_all.setdefault(name, []).extend(facts)
+            profiles_all = {
+                name: list(dict.fromkeys(facts))
+                for name, facts in profiles_all.items()
+            }
+        elif isinstance(pdata, dict):
+            profiles_all = pdata
+    rows = rows[start: start + max_samples if max_samples > 0 else None]
+    out = []
+    for i, row in enumerate(rows):
+        prompt = _get(row, args.prompt_field, "prompt", "question", "text")
+        right = _get(row, args.right_field, "right_name", "correct_name", "answer")
+        wrong = _get(row, args.wrong_field, "wrong_name", "distractor_name")
+        n1 = _get(row, "option1", "name1", "person1")
+        n2 = _get(row, "option2", "name2", "person2")
+        if prompt is None or right is None:
+            continue
+        # 若未显式给 option1/2, 尝试从 prompt 里按出现顺序抽两个人名
+        if not (n1 and n2):
+            if wrong:
+                n1, n2 = right, wrong
+            else:
+                continue
+        option_map = {"1": str(n1), "2": str(n2)}
+        w = wrong or (n2 if str(n1) == str(right) else n1)
+        out.append(Example(
+            item_id=_get(row, "id", "item_id") or f"question_{start+i:04d}",
+            source_index=start + i, prompt=str(prompt), option_map=option_map,
+            right_name=str(right), wrong_name=str(w),
+            profiles={k: profiles_all.get(k, []) for k in option_map.values() if k in profiles_all},
+            right_qid=str(_get(row, "right_qid", "correct_qid") or ""),
+            wrong_qid=str(_get(row, "wrong_qid") or "")))
+    return out
+
+
+# ============================ 引擎 ============================
+def canonical(s: str) -> str:
+    s = unicodedata.normalize("NFKC", str(s)).casefold().strip()
+    return " ".join(re.sub(r"[^\w\s]", " ", s).split())
+
+def parse_chosen_name(text: str, ex: Example) -> Optional[str]:
+    c = canonical(text)
+    hits = [(c.find(canonical(nm)), nm) for nm in ex.option_map.values()
+            if canonical(nm) and canonical(nm) in c]
+    if hits:
+        return min(hits)[1]      # 最先出现的名字
+    m = re.search(r"\b(?:option|answer|choice)?\s*([12])\b", text, re.I)
+    return ex.option_map.get(m.group(1)) if m else None
+
+def parse_yes_no(text: str) -> Optional[bool]:
+    c = canonical(text)
+    y = bool(re.match(r"^(yes|true|correct)\b", c))
+    n = bool(re.match(r"^(no|false|incorrect)\b", c)) or bool(NEGATION_RE.match(c))
+    return True if y and not n else False if n and not y else None
+
+def find_entity_span(prompt: str, entity: str) -> tuple[int, int]:
+    """返回实体在原始 prompt 中第一次出现的字符区间；找不到时返回空区间。"""
+    m = re.search(re.escape(entity), prompt, re.I)
+    return (m.start(), m.end()) if m else (-1, -1)
+
+
+
+class Engine:
+    def __init__(self, model, device, dtype, max_input_tokens, quant4, trust):
+        import torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        self.torch = torch
+        self.max_input_tokens = max_input_tokens
+        self.tok = AutoTokenizer.from_pretrained(model, use_fast=True, trust_remote_code=trust)
+        if self.tok.pad_token_id is None:
+            self.tok.pad_token = self.tok.eos_token
+        kw = dict(torch_dtype=getattr(torch, dtype), trust_remote_code=trust, low_cpu_mem_usage=True)
+        if quant4:
+            from transformers import BitsAndBytesConfig
+            kw["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                bnb_4bit_use_double_quant=True, bnb_4bit_compute_dtype=torch.bfloat16)
+            kw["device_map"] = {"": 0}
+        self.model = AutoModelForCausalLM.from_pretrained(model, **kw)
+        if not quant4:
+            self.model = self.model.to(device)
+        self.model.eval()
+        self.model.config.use_cache = False
+        self.device = next(self.model.parameters()).device
+        self.n_layers = int(self.model.config.num_hidden_layers)
+        self.hidden = int(self.model.config.hidden_size)
+
+    def format_chat(self, user: str) -> str:
+        if getattr(self.tok, "chat_template", None):
+            return self.tok.apply_chat_template(
+                [{"role": "user", "content": user}], tokenize=False, add_generation_prompt=True)
+        return f"User: {user}\nAssistant:"
+
+    def trace_layers(self, spec: str) -> list[int]:
+        n = self.n_layers + 1
+        if spec == "all":
+            return list(range(n))
+        if spec == "last_half":
+            return list(range(n // 2, n))
+        return list(range(n))
+
+    @property
+    def _im(self):
+        return self.torch.inference_mode
+
+    def generate(self, prompt: str, seed: int, max_new=48):
+        import torch
+        torch.manual_seed(seed)
+        text = self.format_chat(prompt)
+        enc = self.tok(text, return_tensors="pt", truncation=True,
+                       max_length=self.max_input_tokens, add_special_tokens=False).to(self.device)
+        with torch.inference_mode():
+            out = self.model.generate(**enc, max_new_tokens=max_new, do_sample=False,
+                                      pad_token_id=self.tok.pad_token_id,
+                                      eos_token_id=self.tok.eos_token_id,
+                                      output_scores=True, return_dict_in_generate=True)
+        gen_ids = out.sequences[0, enc.input_ids.shape[1]:]
+        txt = self.tok.decode(gen_ids, skip_special_tokens=True).strip()
+        # mean token logprob (置信度 behavior 特征)
+        lp = 0.0
+        if out.scores:
+            logps = [torch.log_softmax(s[0].float(), -1)[gid].item()
+                     for s, gid in zip(out.scores, gen_ids)]
+            lp = float(np.mean(logps)) if logps else 0.0
+        return txt, lp
+
+    def extract(self, user_prompt: str, answer: str, spans: Sequence[tuple[int, int]],
+                layer_spec: str, want_pools=False):
+        """核心提取: 返回答案末token的逐层 hidden + (可选)span 多池化 + attention 回看比率。"""
+        import torch
+        formatted = self.format_chat(user_prompt)
+        answer = (answer or "").strip() or "[NO ANSWER]"
+        enc = self.tok(formatted + answer, return_tensors="pt", return_offsets_mapping=True,
+                       truncation=True, max_length=self.max_input_tokens, add_special_tokens=False)
+        offsets = enc.pop("offset_mapping")[0].tolist()
+        ids = enc["input_ids"].to(self.device)
+        amask = enc["attention_mask"].to(self.device)
+        previous_attn = getattr(self.model.config, "_attn_implementation", None)
+        if want_pools:
+            self.model.config._attn_implementation = "eager"
+        try:
+            with self._im():
+                out = self.model(input_ids=ids, attention_mask=amask, output_hidden_states=True,
+                                 output_attentions=want_pools, use_cache=False, return_dict=True)
+        finally:
+            if want_pools and previous_attn is not None:
+                self.model.config._attn_implementation = previous_attn
+        layers = self.trace_layers(layer_spec)
+        ans_start = len(formatted)
+        ans_tokens = [i for i, (s, e) in enumerate(offsets) if e > s and e > ans_start] or [ids.shape[1]-1]
+        prompt_tokens = [i for i, (s, e) in enumerate(offsets) if e > s and e <= ans_start]
+
+        ans_hidden = torch.stack([out.hidden_states[l][0, ans_tokens[-1]].float().cpu() for l in layers])
+        result = {"layers": layers, "answer_hidden": ans_hidden.half(),
+                  "answer_tokens": len(ans_tokens), "seq_len": int(ids.shape[1])}
+
+        # 实体 token 位置: 答案文本里第一个出现的选项名对应的 token (由调用方给 span 传入更准)
+        # 这里额外返回 prompt 内每个 span 的多池化状态
+        user_start = formatted.find(user_prompt)
+        if want_pools and user_start >= 0 and spans:
+            pooled = []
+            counts = []
+            for (a, b) in spans:
+                abs_a, abs_b = user_start + a, user_start + b
+                idx = [i for i, (s, e) in enumerate(offsets) if e > s and max(s, abs_a) < min(e, abs_b)]
+                counts.append(len(idx))
+                if not idx:
+                    pooled.append(torch.zeros((len(layers), len(POOL_NAMES), self.hidden), dtype=torch.float16))
+                    continue
+                per_layer = []
+                for l in layers:
+                    st = out.hidden_states[l][0, idx].float()
+                    per_layer.append(torch.stack([st.mean(0), st.amax(0), st[0], st[-1]]).cpu().half())
+                pooled.append(torch.stack(per_layer))
+            result["span_pools"] = torch.stack(pooled)
+            result["span_token_counts"] = counts
+
+        # attention 回看比率 (Lookback Lens 式): 每层每头, 答案末token对 prompt token 的注意力和
+        if want_pools and out.attentions is not None:
+            lb = []
+            for l in range(len(out.attentions)):
+                a = out.attentions[l][0, :, ans_tokens[-1], :]     # [H, T]
+                to_prompt = a[:, prompt_tokens].sum(-1) if prompt_tokens else torch.zeros(a.shape[0])
+                to_all = a.sum(-1) + 1e-8
+                lb.append((to_prompt / to_all).float().cpu())      # [H] 回看比率
+            if lb:
+                result["lookback"] = torch.stack(lb).half()        # [L_attn, H]
+        return result
+
+
+# ============================ span / 探针 / 干预 ============================
+def propose_spans(prompt: str, min_words: int) -> list[dict]:
+    spans, cur = [], 0
+    for sent in _SENT_RE.split(prompt):
+        s = sent.strip()
+        if not s:
+            continue
+        start = prompt.find(s, cur)
+        if start < 0:
+            continue
+        cur = start + len(s)
+        if len(_WORD_RE.findall(s)) >= min_words or NEGATION_RE.search(s):
+            spans.append(dict(index=len(spans), text=s, start=start, end=start+len(s),
+                              span_type="negation" if NEGATION_RE.search(s) else "clause"))
+    if not spans and prompt.strip():
+        st = prompt.find(prompt.strip())
+        spans.append(dict(index=0, text=prompt.strip(), start=st, end=st+len(prompt.strip()),
+                          span_type="clause"))
+    return spans
+
+def apply_intervention(prompt: str, span: dict, op: str):
+    before, after = prompt[:span["start"]], prompt[span["end"]:]
+    if op == "delete":
+        mod = re.sub(r"[ \t]+", " ", before.rstrip() + " " + after.lstrip())
+        mod = re.sub(r"\s+([,.;:!?])", r"\1", mod).strip()
+        return mod, None
+    repl = NEUTRAL_TEXT if op == "neutralize" else MASK_TEXT
+    mod = before + repl + after
+    return mod, (span["start"], span["start"] + len(repl))
+
+def make_probes(ex: Example, n_per: int) -> list[dict]:
+    """从 profiles 构造独立事实探针 (yes/no)。无 profile 时回退到"这个人是否是<问题主题>专家"式弱探针。"""
+    probes = []
+    for opt, name in ex.option_map.items():
+        facts = ex.profiles.get(name, [])
+        for j, f in enumerate(facts[:n_per]):
+            fact_str = f if isinstance(f, str) else json.dumps(f, ensure_ascii=False)
+            probes.append(dict(person=name, option=opt, expected_yes=True,
+                               text=f"Is the following true about {name}? {fact_str}"))
+        # 一个负探针 (张冠李戴): 用另一个人的事实
+        other = ex.option_map["2" if opt == "1" else "1"]
+        ofacts = ex.profiles.get(other, [])
+        if ofacts:
+            fx = ofacts[0] if isinstance(ofacts[0], str) else json.dumps(ofacts[0], ensure_ascii=False)
+            probes.append(dict(person=name, option=opt, expected_yes=False,
+                               text=f"Is the following true about {name}? {fx}"))
+        if not facts and not ofacts:
+            probes.append(dict(person=name, option=opt, expected_yes=True,
+                               text=f"Have you heard of the scientist {name}? Answer yes or no."))
+    return probes
+
+def probe_prompt(p: dict) -> str:
+    return p["text"] + " Answer strictly Yes or No."
+
+
+class Collector:
+    def __init__(self, engine: Engine, args, out: Path):
+        self.e = engine
+        self.args = args
+        self.out = out
+        self.trace_dir = out / "traces"
+        self.trace_dir.mkdir(parents=True, exist_ok=True)
+
+    def run_probes(self, ex: Example):
+        """返回 knowledge_state + 逐 person 探针 hidden 的 mean/std (按选项顺序, 不用 gold 顺序)。"""
+        import torch
+        probes = make_probes(ex, self.args.probes_per_person)
+        by_person_correct = {nm: [] for nm in ex.option_map.values()}
+        by_person_hidden = {nm: [] for nm in ex.option_map.values()}
+        for i, p in enumerate(probes):
+            txt, _ = self.e.generate(probe_prompt(p), self.args.seed + 1000 + i, max_new=6)
+            parsed = parse_yes_no(txt)
+            tr = self.e.extract(probe_prompt(p), txt, [], self.args.hidden_layers)
+            by_person_hidden[p["person"]].append(tr["answer_hidden"])
+            if parsed is not None:
+                by_person_correct[p["person"]].append(int(parsed == p["expected_yes"]))
+        scores = {nm: (float(np.mean(v)) if v else None) for nm, v in by_person_correct.items()}
+        valid = [s for s in scores.values() if s is not None]
+        score = min(valid) if len(valid) == 2 else None
+        if score is None:
+            state = "ambiguous"
+        elif score >= self.args.known_threshold:
+            state = "known"
+        elif score <= self.args.gap_threshold:
+            state = "unknown"
+        else:
+            state = "ambiguous"
+        # 逐 person mean/std, 按选项 1/2 顺序堆叠
+        L = len(self.e.trace_layers(self.args.hidden_layers))
+        stats = []
+        for opt in ("1", "2"):
+            nm = ex.option_map[opt]
+            hs = by_person_hidden.get(nm, [])
+            if hs:
+                stk = torch.stack(hs)
+                mean = stk.float().mean(0)
+                std = stk.float().std(0) if len(hs) > 1 else torch.zeros_like(mean)
+            else:
+                mean = torch.zeros((L, self.e.hidden)); std = torch.zeros((L, self.e.hidden))
+            stats.append(torch.stack([mean, std]).half())
+        return dict(state=state, score=score, scores=scores), torch.stack(stats)  # [2,2,L,H]
+
+    def collect_one(self, ex: Example) -> dict:
+        import torch
+        seed = self.args.seed + ex.source_index * 1009
+        gen, lp = self.e.generate(ex.prompt, seed)
+        chosen = parse_chosen_name(gen, ex)
+        base_correct = chosen == ex.right_name
+        spans = propose_spans(ex.prompt, self.args.min_span_words)
+
+        span_ranges = [(s["start"], s["end"]) for s in spans]
+        entity_ranges = [
+            find_entity_span(ex.prompt, ex.option_map[opt]) for opt in ("1", "2")
+        ]
+        # span_pools 的末两项固定对应 prompt 内 option 1/2 实体。
+        base = self.e.extract(ex.prompt, gen, span_ranges + entity_ranges,
+                              self.args.hidden_layers, want_pools=True)
+        probe_info, probe_person_stats = self.run_probes(ex)
+
+        # H2 真正使用原始 prompt 中两个选项实体各自末 token 的逐层 hidden。
+        entity_hidden = base["span_pools"][len(spans):len(spans) + 2, :, -1, :]
+        # ---- 反事实 transition: 对每个候选 span 删除后, 重取答案末token hidden ----
+        # cf_transition = h(原prompt) - h(删span后prompt); 对关联错误, 删掉致错span应大幅移动表征
+        cf_deltas = []            # 每个 span 一个 [L,H]
+        span_meta = []
+        aligned_deltas = []       # neutralize/mask 对齐 span 状态的 delta
+        recovery_by_span = []
+        # 只对相似度高的前 K 个 span 做 (省算力); 相似度 = span mean pool 与答案的 cosine
+        rank_slot = min(len(base["layers"]) - 1, self.args.rank_layer_slot)
+        sims = []
+        for i, s in enumerate(spans):
+            sp = base["span_pools"][i, rank_slot, 0].float()
+            a = base["answer_hidden"][rank_slot].float()
+            sims.append(float(torch.cosine_similarity(sp, a, dim=0)))
+        order = sorted(range(len(spans)), key=lambda i: -sims[i])[:self.args.max_spans]
+        for si in order:
+            s = spans[si]
+            mod_del, _ = apply_intervention(ex.prompt, s, "delete")
+            g2, _ = self.e.generate(mod_del, seed + 8000 + si)
+            new_choice = parse_chosen_name(g2, ex)
+            recovered = int(new_choice == ex.right_name)
+            recovery_by_span.append(recovered)
+            tr_del = self.e.extract(mod_del, gen, [], self.args.hidden_layers)  # teacher-force 原答案
+            cf_deltas.append((base["answer_hidden"].float() - tr_del["answer_hidden"].float()).half())
+            # 对齐 delta (neutralize/mask)
+            al = []
+            for op in ALIGNED_OPS:
+                mod, rb = apply_intervention(ex.prompt, s, op)
+                tr = self.e.extract(mod, gen, [rb], self.args.hidden_layers, want_pools=True)
+                if "span_pools" in tr:
+                    al.append((tr["span_pools"][0] - base["span_pools"][si]).float())
+            aligned_deltas.append((torch.stack(al).mean(0).half() if al
+                                   else torch.zeros_like(base["span_pools"][si]).half()))
+            span_meta.append(dict(index=s["index"], text=s["text"][:120],
+                                  similarity=sims[si], recovered=recovered))
+
+        # teacher 标签 (只用于监督, 不进特征)
+        if base_correct:
+            cause = "correct"
+        elif probe_info["state"] == "unknown":
+            cause = "knowledge_gap"
+        elif probe_info["state"] == "known" and any(recovery_by_span):
+            cause = "contextual_interference"   # 知道但被上下文带偏, 且删某span可恢复
+        elif probe_info["state"] == "known":
+            cause = "known_but_unlocalized"
+        else:
+            cause = "ambiguous"
+
+        # 落盘 tensor
+        payload = dict(
+            schema=SCHEMA, item_id=ex.item_id, layers=base["layers"],
+            answer_hidden=base["answer_hidden"],               # [L,H] 末token
+            entity_hidden=entity_hidden,                       # [2,L,H] prompt 内实体末token
+            option_map=ex.option_map,
+            probe_person_stats=probe_person_stats,             # [2,2,L,H]
+            lookback=base.get("lookback"),                     # [L_attn,H_heads]
+            cf_deltas=torch.stack(cf_deltas) if cf_deltas else torch.zeros((0,)),   # [K,L,H]
+            aligned_deltas=torch.stack(aligned_deltas) if aligned_deltas else torch.zeros((0,)),  # [K,L,pool,H]
+            span_meta=span_meta,
+        )
+        torch.save(payload, self.trace_dir / f"{ex.item_id}.pt")
+        return dict(schema=SCHEMA, id=ex.item_id, source_index=ex.source_index,
+                    base=dict(answer=gen, chosen=chosen, correct=base_correct,
+                              parse_valid=chosen is not None, mean_token_logprob=lp),
+                    knowledge=probe_info, cause=cause,
+                    n_spans=len(spans), n_intervened=len(order),
+                    any_recovered=bool(any(recovery_by_span)),
+                    trace_path=str(self.trace_dir / f"{ex.item_id}.pt"))
+
+
+def stage_collect(args, out: Path):
+    import torch
+    examples = load_examples(Path(args.input), Path(args.profiles) if args.profiles else None,
+                             args.max_samples, args.start_index, args)
+    if not examples:
+        raise RuntimeError("没有可用样本, 检查 --input / 字段映射")
+    LOGGER.info("加载 %d 样本", len(examples))
+    rec_path = out / "records.jsonl"
+    done = set()
+    if args.resume and rec_path.exists():
+        done = {json.loads(l)["id"] for l in rec_path.open() if l.strip()}
+    elif rec_path.exists():
+        rec_path.unlink()
+    eng = Engine(args.model, args.device, args.dtype, args.max_input_tokens,
+                 args.quantize_4bit, args.trust_remote_code)
+    col = Collector(eng, args, out)
+    from tqdm.auto import tqdm
+    with rec_path.open("a") as fh:
+        for ex in tqdm(examples, desc="collect"):
+            if ex.item_id in done:
+                continue
+            try:
+                fh.write(json.dumps(col.collect_one(ex), ensure_ascii=False) + "\n"); fh.flush()
+            except Exception as err:
+                LOGGER.exception("失败 %s", ex.item_id)
+                (out / "errors.jsonl").open("a").write(
+                    json.dumps({"id": ex.item_id, "error": f"{type(err).__name__}: {err}"}) + "\n")
+            finally:
+                gc.collect()
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+    LOGGER.info("采集完成 -> %s", rec_path)
+
+
+# ============================ 分析: 表征方式对比 ============================
+def _load(rec, key):
+    import torch
+    t = torch.load(rec["trace_path"], map_location="cpu", weights_only=False)
+    return t.get(key)
+
+def selected_entity_pair(t, rec, layer_slot):
+    """返回 (模型选中实体, 另一实体) 在 prompt 中的 hidden。"""
+    entity = t["entity_hidden"].float()
+    option_map = t.get("option_map", {})
+    chosen = rec["base"].get("chosen")
+    selected = next((i for i, opt in enumerate(("1", "2"))
+                     if option_map.get(opt) == chosen), None)
+    if selected is None:
+        mean = entity[:, layer_slot].mean(0)
+        return mean, mean
+    return entity[selected, layer_slot], entity[1 - selected, layer_slot]
+
+def build_features(records, mode, layer_slot, args):
+    """为给定配置在给定层槽 (layer_slot) 组装特征矩阵。返回 (X, valid_records)。
+    behavior 底座 (mean_token_logprob + 探针分数差) 始终包含 (B0 只有它)。"""
+    import torch
+    X, keep = [], []
+    for rec in records:
+        beh = [float(rec["base"].get("mean_token_logprob") or 0.0)]
+        sc = rec["knowledge"].get("scores", {})
+        vals = [v for v in sc.values() if v is not None]
+        beh += [float(np.mean(vals)) if vals else 0.0,
+                float(np.min(vals)) if vals else 0.0,
+                float(np.ptp(vals)) if len(vals) >= 2 else 0.0]
+        parts = [np.asarray(beh, np.float32)]
+
+        if mode != "B0":
+            t = torch.load(rec["trace_path"], map_location="cpu", weights_only=False)
+            L = t["answer_hidden"].shape[0]
+            sl = min(layer_slot, L - 1)
+            if mode == "H1":                       # 单点 @末token
+                parts.append(t["answer_hidden"][sl].float().numpy())
+            elif mode == "H2":                     # 单点 @prompt 内选中实体末token
+                ch = rec["base"].get("chosen")
+                entity = t.get("entity_hidden")
+                option_map = t.get("option_map", {})
+                if entity is not None:
+                    selected = next((i for i, opt in enumerate(("1", "2"))
+                                     if option_map.get(opt) == ch), None)
+                    v = (entity[selected, sl] if selected is not None
+                         else entity[:, sl].float().mean(0))
+                else:
+                    # 兼容旧 trace；旧字段来自追加到答案位置的名字，仅作为回退。
+                    v = torch.stack([t["option1_hidden"][sl].float(),
+                                     t["option2_hidden"][sl].float()]).mean(0)
+                parts.append(v.float().numpy())
+            elif mode == "H3":                     # 层间轨迹 h_{l+1}-h_l @末token (全层差分展平后取该层)
+                ah = t["answer_hidden"].float()
+                traj = (ah[1:] - ah[:-1])           # [L-1,H]
+                s2 = min(sl, traj.shape[0]-1)
+                parts.append(traj[s2].numpy())
+            elif mode == "H4":                     # 反事实 transition (删span后末token位移), 对K个span取 max-abs 池化
+                cf = t["cf_deltas"]
+                if cf.numel() and cf.shape[0] > 0:
+                    v = cf.float()[:, sl, :].abs().amax(0).numpy()   # [H]
+                else:
+                    v = np.zeros(t["answer_hidden"].shape[-1], np.float32)
+                parts.append(v)
+            elif mode == "H5":                     # 多探针聚合 mean/std (按选项顺序)
+                ps = t["probe_person_stats"][:, :, sl, :].float().numpy().reshape(-1)  # [2*2*H]
+                parts.append(ps)
+            elif mode == "H6":                     # H4 + H5
+                cf = t["cf_deltas"]
+                v = (cf.float()[:, sl, :].abs().amax(0).numpy() if cf.numel() and cf.shape[0] > 0
+                     else np.zeros(t["answer_hidden"].shape[-1], np.float32))
+                ps = t["probe_person_stats"][:, :, sl, :].float().numpy().reshape(-1)
+                parts.append(np.concatenate([v, ps]))
+            elif mode == "A1":                     # attention 回看比率 (天花板)
+                lb = t.get("lookback")
+                if lb is not None and lb.numel():
+                    la = min(sl, lb.shape[0]-1)
+                    parts.append(lb[la].float().numpy())            # [H_heads]
+                else:
+                    parts.append(np.zeros(1, np.float32))
+            elif mode == "A2":                     # transition + 少量 head
+                cf = t["cf_deltas"]
+                v = (cf.float()[:, sl, :].abs().amax(0).numpy() if cf.numel() and cf.shape[0] > 0
+                     else np.zeros(t["answer_hidden"].shape[-1], np.float32))
+                lb = t.get("lookback")
+                h = (lb[min(sl, lb.shape[0]-1)].float().numpy() if lb is not None and lb.numel()
+                     else np.zeros(1, np.float32))
+                parts.append(np.concatenate([v, h]))
+            elif mode in ("E2", "E3", "E4", "T1", "T2", "P1",
+                          "C1", "C2", "C3", "C4", "C5", "C6"):
+                chosen_h, other_h = selected_entity_pair(t, rec, sl)
+                entity_diff = (chosen_h - other_h).numpy()
+                cf = t["cf_deltas"]
+                if cf.numel() and cf.shape[0] > 0:
+                    cf_layer = cf.float()[:, sl, :]
+                    cf_abs = cf_layer.abs().amax(0).numpy()
+                    cf_mean = cf_layer.mean(0).numpy()
+                else:
+                    width = t["answer_hidden"].shape[-1]
+                    cf_abs = np.zeros(width, np.float32)
+                    cf_mean = np.zeros(width, np.float32)
+                lb = t.get("lookback")
+                heads = (lb[min(sl, lb.shape[0]-1)].float().numpy()
+                         if lb is not None and lb.numel() else np.zeros(1, np.float32))
+                ps = t["probe_person_stats"][:, :, sl, :].float()
+                option_map = t.get("option_map", {})
+                selected = next((i for i, opt in enumerate(("1", "2"))
+                                 if option_map.get(opt) == rec["base"].get("chosen")), None)
+                probe_diff = ((ps[selected] - ps[1-selected]).reshape(-1).numpy()
+                              if selected is not None else
+                              np.zeros(ps.shape[1] * ps.shape[2], np.float32))
+                if mode == "E2":
+                    v = np.concatenate([chosen_h.numpy(), other_h.numpy()])
+                elif mode == "E3":
+                    v = entity_diff
+                elif mode == "E4":
+                    v = np.abs(entity_diff)
+                elif mode == "C1":
+                    v = np.concatenate([t["answer_hidden"][sl].float().numpy(), entity_diff])
+                elif mode == "C2":
+                    v = np.concatenate([entity_diff, cf_abs])
+                elif mode == "C3":
+                    v = np.concatenate([entity_diff, heads])
+                elif mode == "C4":
+                    v = np.concatenate([entity_diff, cf_abs, heads])
+                elif mode == "P1":
+                    v = probe_diff
+                elif mode == "C5":
+                    v = np.concatenate([entity_diff, probe_diff])
+                elif mode == "C6":
+                    v = np.concatenate([entity_diff, cf_abs, probe_diff])
+                elif mode == "T1":
+                    v = cf_mean
+                else:
+                    v = np.concatenate([cf_mean, cf_abs])
+                parts.append(v.astype(np.float32))
+        X.append(np.concatenate(parts).astype(np.float32))
+        keep.append(rec)
+    return np.stack(X), keep
+
+def grouped_cv_auroc(X, y, groups, seed, select_k=0):
+    from sklearn.model_selection import GroupKFold
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.feature_selection import SelectKBest, f_classif
+    from sklearn.pipeline import Pipeline
+    from sklearn.metrics import roc_auc_score
+    aucs = []
+    gkf = GroupKFold(n_splits=min(5, len(set(groups))))
+    for tr, te in gkf.split(X, y, groups):
+        if len(set(y[tr])) < 2 or len(set(y[te])) < 2:
+            continue
+        steps = [("sc", StandardScaler())]
+        if select_k and X.shape[1] > select_k:
+            steps.append(("sel", SelectKBest(f_classif, k=select_k)))
+        steps.append(("lr", LogisticRegression(max_iter=3000, class_weight="balanced", C=0.5)))
+        pipe = Pipeline(steps)
+        pipe.fit(X[tr], y[tr])
+        p = pipe.predict_proba(X[te])[:, 1]
+        aucs.append(roc_auc_score(y[te], p))
+    return (float(np.mean(aucs)), float(np.std(aucs)), len(aucs)) if aucs else (float("nan"), 0.0, 0)
+
+def diff_of_means_direction(X, y):
+    """关联错误方向 = mean(pos) - mean(neg), 标准化。返回单位向量 + 该方向投影的 AUROC。"""
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.metrics import roc_auc_score
+    Xs = StandardScaler().fit_transform(X)
+    d = Xs[y == 1].mean(0) - Xs[y == 0].mean(0)
+    d = d / (np.linalg.norm(d) + 1e-8)
+    proj = Xs @ d
+    auc = roc_auc_score(y, proj) if len(set(y)) > 1 else float("nan")
+    return d, float(auc)
+
+MODES = ["B0", "H1", "H2", "H3", "H4", "H5", "H6", "A1", "A2"]
+EXTENDED_MODES = ["E2", "E3", "E4", "T1", "T2", "P1",
+                  "C1", "C2", "C3", "C4", "C5", "C6"]
+MODE_DESC = {
+    "B0": "behavior_only", "H1": "point_lasttok", "H2": "point_entity",
+    "H3": "layer_traj", "H4": "cf_transition", "H5": "multiprobe",
+    "H6": "cf_transition+multiprobe", "A1": "attention(lookback)", "A2": "transition+heads",
+    "E2": "entity_pair", "E3": "entity_chosen-minus-other", "E4": "entity_abs_difference",
+    "T1": "cf_signed_mean", "T2": "cf_signed_mean+absmax", "P1": "probe_chosen-minus-other",
+    "C1": "answer+entity_diff", "C2": "entity_diff+transition",
+    "C3": "entity_diff+attention", "C4": "entity_diff+transition+attention",
+    "C5": "entity_diff+probe_diff", "C6": "entity_diff+transition+probe_diff"}
+
+def stage_analyze(args, out: Path):
+    import torch
+    records = [json.loads(l) for l in (out / "records.jsonl").open() if l.strip()]
+    records = [r for r in records if r["base"].get("parse_valid") and Path(r["trace_path"]).exists()]
+    # 标签: 关联错误 (contextual_interference) = 1  vs  非关联 (knowledge_gap + correct) = 0
+    # 也可切换成 hallucination 二分类
+    def label_assoc(r):
+        if r["cause"] == "contextual_interference":
+            return 1
+        if r["cause"] in ("knowledge_gap", "correct", "known_but_unlocalized"):
+            return 0
+        return None
+    lab = [(r, label_assoc(r)) for r in records]
+    lab = [(r, y) for r, y in lab if y is not None]
+    y = np.array([y for _, y in lab])
+    recs = [r for r, _ in lab]
+    groups = np.array([r["id"] for r in recs])
+    n_layers = len(torch.load(recs[0]["trace_path"], map_location="cpu", weights_only=False)["layers"])
+    LOGGER.info("关联=%d 非关联=%d, 层数=%d", int(y.sum()), int((y==0).sum()), n_layers)
+    if y.sum() < 5:
+        LOGGER.warning("关联错误正例 < 5, 结果方差极大; 建议扩大采集或改用 hallucination 标签")
+
+    results = {"schema": SCHEMA, "n_pos": int(y.sum()), "n_neg": int((y==0).sum()),
+               "n_layers": n_layers, "label": "contextual_interference vs rest",
+               "modes": {}}
+    # 每个 mode 逐层扫 (排除 embedding 层 0), 取 grouped-CV 最优层
+    all_modes = MODES + EXTENDED_MODES
+    for mode in all_modes:
+        best = {"auc": -1, "layer": None, "std": 0, "folds": 0, "curve": []}
+        layer_range = [0] if mode == "B0" else range(1, n_layers)  # 排除 layer 0
+        for sl in layer_range:
+            X, _ = build_features(recs, mode, sl, args)
+            k = args.select_k if X.shape[1] > args.select_k else 0
+            auc, std, folds = grouped_cv_auroc(X, y, groups, args.seed, k)
+            if not np.isnan(auc):
+                best["curve"].append((sl if mode != "B0" else -1, round(auc, 3)))
+                if auc > best["auc"]:
+                    best.update(auc=round(auc, 4), layer=sl, std=round(std, 4), folds=folds)
+            if mode == "B0":
+                break
+        # 在最优层拿 diff-of-means 方向
+        if best["layer"] is not None:
+            X, _ = build_features(recs, mode, best["layer"], args)
+            _, dir_auc = diff_of_means_direction(X, y)
+            best["diff_of_means_auroc"] = round(dir_auc, 4)
+            best["feat_dim"] = int(X.shape[1])
+        results["modes"][mode] = {"desc": MODE_DESC[mode], **best}
+        LOGGER.info("%-4s %-26s best AUROC=%.3f±%.3f @layer=%s (dir=%.3f)",
+                    mode, MODE_DESC[mode], best["auc"], best["std"], best["layer"],
+                    best.get("diff_of_means_auroc", float("nan")))
+
+    # 关键对比
+    def g(m): return results["modes"][m]["auc"]
+    results["comparisons"] = {
+        "position_gain_H2_minus_H1": round(g("H2") - g("H1"), 4),
+        "transition_vs_attention_H6_over_A1": round(g("H6") / max(g("A1"), 1e-6), 4),
+        "transition_vs_attention_H4_over_A1": round(g("H4") / max(g("A1"), 1e-6), 4),
+        "multiprobe_gain_H5_minus_H1": round(g("H5") - g("H1"), 4),
+        "best_hidden_mode": max([m for m in MODES if m not in ("B0", "A1", "A2")], key=g),
+        "attention_ceiling_A1": g("A1"),
+    }
+    (out / "repr_comparison.json").write_text(json.dumps(results, indent=2, ensure_ascii=False))
+    print(json.dumps({"modes": {m: results["modes"][m]["auc"] for m in all_modes},
+                      "comparisons": results["comparisons"]}, indent=2, ensure_ascii=False))
+    LOGGER.info("写出 -> %s", out / "repr_comparison.json")
+
+
+# ============================ 可选: steering 因果验证 ============================
+def stage_steer(args, out: Path):
+    """用最优 hidden mode 的 diff-of-means 方向做 necessity/sufficiency 验证。
+    necessity: 关联错误样本沿 -dir 干预末token, 看错误是否翻转;
+    sufficiency: correct 样本沿 +dir 注入, 看是否诱发关联错误。
+    需要重新加载模型 (GPU)。方向在 answer_hidden 空间, 故用 H1/H4 之类 answer-space mode。"""
+    import torch
+    comp = json.loads((out / "repr_comparison.json").read_text())
+    # 用 H4 (反事实 transition, answer-space) 或 H1 的方向; 选二者中 AUROC 高者
+    mode = "H4" if comp["modes"]["H4"]["auc"] >= comp["modes"]["H1"]["auc"] else "H1"
+    layer = comp["modes"][mode]["layer"]
+    records = [json.loads(l) for l in (out / "records.jsonl").open() if l.strip()]
+    records = [r for r in records if r["base"].get("parse_valid") and Path(r["trace_path"]).exists()]
+    def lab(r): return 1 if r["cause"] == "contextual_interference" else (0 if r["cause"] in ("knowledge_gap","correct","known_but_unlocalized") else None)
+    recs = [r for r in records if lab(r) is not None]
+    y = np.array([lab(r) for r in recs])
+    X, _ = build_features(recs, mode, layer, args)
+    d, _ = diff_of_means_direction(X, y)
+    # answer_hidden 空间维度 = H; H4 的特征就是 [H], 方向可直接用于该层残差流
+    Hdim = torch.load(recs[0]["trace_path"], map_location="cpu", weights_only=False)["answer_hidden"].shape[-1]
+    direction = torch.tensor(d[-Hdim:] if len(d) >= Hdim else np.pad(d, (0, Hdim-len(d))), dtype=torch.float32)
+    direction = direction / (direction.norm() + 1e-8)
+    torch.save({"direction": direction, "layer": layer, "mode": mode},
+               out / "assoc_direction.pt")
+    LOGGER.info("方向已存 (mode=%s, layer=%s); steering 前向验证需接入 forward hook, "
+                "见脚本内 apply_steering 说明。", mode, layer)
+    # 说明: 实际 steering 需重载模型并在 layer 处注册 hook: h[:, -1, :] += alpha * direction
+    # 这里给出方向与配置, 具体前向注入按你的推理框架接入 (与 43_direction_ablation 对齐)。
+
+
+# ============================ CLI ============================
+def build_parser():
+    p = argparse.ArgumentParser(description="hidden-state 表征方式对比 (关联性错误)")
+    p.add_argument("--stage", choices=["collect", "analyze", "steer", "all"], default="all")
+    p.add_argument("--input")
+    p.add_argument("--profiles")
+    p.add_argument("--output-dir", required=True)
+    p.add_argument("--model", default="NousResearch/Meta-Llama-3.1-8B-Instruct")
+    p.add_argument("--device", default="cuda")
+    p.add_argument("--dtype", default="bfloat16")
+    p.add_argument("--quantize-4bit", action="store_true")
+    p.add_argument("--trust-remote-code", action="store_true")
+    p.add_argument("--max-input-tokens", type=int, default=2048)
+    p.add_argument("--max-samples", type=int, default=800)
+    p.add_argument("--start-index", type=int, default=0)
+    p.add_argument("--hidden-layers", default="all", choices=["all", "last_half"])
+    p.add_argument("--probes-per-person", type=int, default=4)
+    p.add_argument("--known-threshold", type=float, default=0.75)
+    p.add_argument("--gap-threshold", type=float, default=0.25)
+    p.add_argument("--min-span-words", type=int, default=3)
+    p.add_argument("--max-spans", type=int, default=3)
+    p.add_argument("--rank-layer-slot", type=int, default=16)
+    p.add_argument("--select-k", type=int, default=128)
+    p.add_argument("--seed", type=int, default=42)
+    p.add_argument("--resume", action="store_true")
+    # 数据字段映射 (按数据集调整)
+    p.add_argument("--prompt-field", default="prompt")
+    p.add_argument("--right-field", default="right_name")
+    p.add_argument("--wrong-field", default="wrong_name")
+    p.add_argument("--log-level", default="INFO")
+    return p
+
+def main():
+    args = build_parser().parse_args()
+    logging.basicConfig(level=getattr(logging, args.log_level),
+                        format="%(asctime)s | %(levelname)s | %(message)s")
+    np.random.seed(args.seed)
+    out = Path(args.output_dir); out.mkdir(parents=True, exist_ok=True)
+    (out / "config.json").write_text(json.dumps(vars(args), indent=2))
+    if args.stage in ("collect", "all"):
+        if not args.input:
+            raise SystemExit("collect 阶段需要 --input")
+        stage_collect(args, out)
+    if args.stage in ("analyze", "all"):
+        stage_analyze(args, out)
+    if args.stage == "steer":
+        stage_steer(args, out)
+
+if __name__ == "__main__":
+    main()

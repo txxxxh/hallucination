@@ -1,5 +1,5 @@
 """统计分析: 治愈率矩阵 + McNemar(matched vs mismatched) + 交互 logistic 回归 + 热图。
-用法: python scripts/30_stats.py --result data/results/matrix_Qwen2.5-7B-Instruct.jsonl
+用法: python scripts/30_stats.py --result data/results/matrix_DeepSeek-R1-Distill-Llama-8B.jsonl
 """
 import argparse, itertools
 import numpy as np
@@ -73,13 +73,16 @@ def main(result_path, metric="strict"):
     # ---- 4. stressor x treatment 交互 logistic 回归
     sub = df[~df.treatment.isin(["none", "T-CleanOracle"])].copy()
     sub["y"] = np.where(sub.stressor == "Z6", sub.honest, sub.strict)
-    model = smf.logit("y ~ C(stressor) * C(treatment)", data=sub).fit(disp=0, maxiter=200)
-    lr_null = smf.logit("y ~ C(stressor) + C(treatment)", data=sub).fit(disp=0, maxiter=200)
-    from scipy.stats import chi2
-    lr_stat = 2 * (model.llf - lr_null.llf)
-    dof = model.df_model - lr_null.df_model
-    print(f"\n===== 交互项 LR 检验: chi2={lr_stat:.1f}, dof={dof}, "
-          f"p={chi2.sf(lr_stat, dof):.2e} =====")
+    try:
+        model = smf.logit("y ~ C(stressor) * C(treatment)", data=sub).fit(disp=0, maxiter=200)
+        lr_null = smf.logit("y ~ C(stressor) + C(treatment)", data=sub).fit(disp=0, maxiter=200)
+        from scipy.stats import chi2
+        lr_stat = 2 * (model.llf - lr_null.llf)
+        dof = model.df_model - lr_null.df_model
+        print(f"\n===== 交互项 LR 检验: chi2={lr_stat:.1f}, dof={dof}, "
+              f"p={chi2.sf(lr_stat, dof):.2e} =====")
+    except Exception as exc:
+        print(f"\n[warning] 交互 logistic 回归不可估计: {exc}")
 
     # ---- 5. 剂量-反应 (Z2 干扰句数)
     z2 = df[(df.stressor == "Z2") & (df.treatment == "none")]
