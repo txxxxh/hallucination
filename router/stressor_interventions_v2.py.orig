@@ -1,0 +1,1454 @@
+#!/usr/bin/env python3
+"""
+ScientistQA causal router v2: knowledge gap vs. contextual interference.
+
+This version is intentionally specialized to
+``whitebox/shuffled_prepend_names_question.json``.  It implements a
+hierarchical teacher and two learned white-box heads:
+
+1. Ask balanced, atomic questions about *each scientist in isolation*.  The
+   aligned ``shuffled_prepend_profiles_question.json`` file supplies the
+   expected facts.  A base error with poor independent-probe performance is a
+   ``knowledge_gap``.
+2. If the facts are independently accessible, intervene on atomic prompt
+   spans (delete / neutralize / mask).  Gold recovery is used only to create
+   teacher labels.  It is never an input feature.
+3. Extract paper-style last-answer-token hidden states for the original
+   prompt, isolated probes, teacher-forced original answer under every
+   intervention, regenerated answers, and the affected span.  Both raw states
+   and pre/post deltas are saved.
+4. Train:
+   - a base hallucination head;
+   - a cause head (knowledge_gap vs contextual_interference);
+   - a span culprit head.
+
+Classifier inputs contain hidden states, hidden-state transitions, generation
+confidence, and answer-change indicators.  They exclude gold correctness,
+intervention recovery, rgt_ans/wrg_ans strings, and teacher cause labels.
+
+The companion profile file is teacher/evaluation supervision.  Consequently
+this is a benchmark diagnosis pipeline, not a label-free production detector.
+
+Typical smoke run
+-----------------
+python router/stressor_interventions_v2.py \
+  --input whitebox/shuffled_prepend_names_question.json \
+  --profiles-data whitebox/shuffled_prepend_profiles_question.json \
+  --output-dir router/stressor_interventions_v2_smoke \
+  --max-samples 8 --stage all --force
+"""
+from __future__ import annotations
+
+import argparse
+import dataclasses
+import gc
+import hashlib
+import json
+import logging
+import math
+import random
+import re
+import sys
+from collections import Counter, defaultdict
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any, Iterable, Mapping, Optional, Sequence
+
+import joblib
+import numpy as np
+import torch
+import torch.nn.functional as F
+from sklearn.feature_selection import SelectKBest, f_classif
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    accuracy_score,
+    balanced_accuracy_score,
+    classification_report,
+    confusion_matrix,
+    f1_score,
+    roc_auc_score,
+)
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from tqdm import tqdm
+from transformers import (
+    AutoModelForCausalLM,
+    AutoTokenizer,
+    BitsAndBytesConfig,
+)
+
+from stressor_interventions_v1 import (
+    DEFAULT_SYSTEM_PROMPT,
+    GenerationResult,
+    LocalCausalLM,
+    clean_model_text,
+    normalize_text,
+    seed_everything,
+)
+
+
+LOGGER = logging.getLogger("stressor_interventions_v2")
+SCHEMA_VERSION = "scientist_causal_router_v2_hidden_transition_v1"
+OPERATORS = ("delete", "neutralize", "mask")
+CAUSE_LABELS = ("knowledge_gap", "contextual_interference")
+
+QUESTION_MARKER = re.compile(r"\nQuestion:\s*\n", re.I)
+FINAL_QUESTION = re.compile(r"\bWho is this person\?\s*$", re.I)
+OPTION_RE = re.compile(r"^\s*([12])\.\s*(.+?)\s*$", re.M)
+WORD_RE = re.compile(r"\b[\w'’-]+\b", re.UNICODE)
+NEGATION_RE = re.compile(
+    r"\b(?:not|never|no|neither|nor|without|did not|does not|was not|were not)\b",
+    re.I,
+)
+ENTITY_RE = re.compile(
+    r"\b(?:[A-Z][\w'’.-]*(?:\s+(?:of|the|and|for|in|at|from|de|van|von))?\s*)"
+    r"{2,}",
+)
+CLAUSE_BOUNDARY = re.compile(
+    r"[,;]\s+|\s+\b(?:but|however|despite|although|whereas|while|nor)\b\s+",
+    re.I,
+)
+YES_RE = re.compile(r"\b(yes|true|correct)\b", re.I)
+NO_RE = re.compile(r"\b(no|false|incorrect)\b", re.I)
+
+
+@dataclass
+class ScientistExample:
+    item_id: str
+    prompt: str
+    right_name: str
+    wrong_name: str
+    right_qid: str
+    wrong_qid: str
+    option_map: dict[str, str]
+    profiles: dict[str, dict[str, list[str]]]
+    source_index: int
+
+
+@dataclass
+class FactProbe:
+    person: str
+    field: str
+    fact: str
+    expected_yes: bool
+    relevance: float
+
+
+@dataclass
+class Span:
+    index: int
+    start: int
+    end: int
+    text: str
+    span_type: str
+
+
+def stable_hash(text: str, length: int = 16) -> str:
+    return hashlib.sha1(text.encode("utf-8")).hexdigest()[:length]
+
+
+def json_safe(value: Any) -> Any:
+    if isinstance(value, torch.Tensor):
+        return value.detach().cpu().tolist()
+    if isinstance(value, np.ndarray):
+        return value.tolist()
+    if isinstance(value, np.generic):
+        return value.item()
+    if isinstance(value, Path):
+        return str(value)
+    if isinstance(value, dict):
+        return {str(k): json_safe(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [json_safe(v) for v in value]
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return value
+    return str(value)
+
+
+def atomic_json(path: Path, obj: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(
+        json.dumps(json_safe(obj), ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    tmp.replace(path)
+
+
+def atomic_torch(path: Path, obj: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    torch.save(obj, tmp)
+    tmp.replace(path)
+
+
+def append_jsonl(path: Path, obj: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(json_safe(obj), ensure_ascii=False) + "\n")
+        handle.flush()
+
+
+def read_json(path: Path) -> list[dict[str, Any]]:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, list) or not all(isinstance(x, dict) for x in value):
+        raise ValueError(f"{path} must contain a JSON list of objects")
+    return value
+
+
+def read_jsonl(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    return [
+        json.loads(line)
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+
+def torch_load(path: Path) -> Any:
+    try:
+        return torch.load(path, map_location="cpu", weights_only=False)
+    except TypeError:
+        return torch.load(path, map_location="cpu")
+
+
+def canonical(text: str) -> str:
+    return re.sub(r"\s+", " ", normalize_text(text)).strip()
+
+
+def parse_profiles(profile_prompt: str) -> dict[str, dict[str, list[str]]]:
+    """Parse the two ``name:/field: value; value`` blocks in profile prompts."""
+    prefix = profile_prompt.split("Choose exactly one profile", 1)[0]
+    people: dict[str, dict[str, list[str]]] = {}
+    current: Optional[str] = None
+    for raw_line in prefix.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("Given two profiles"):
+            continue
+        if ":" not in line:
+            continue
+        key, value = (x.strip() for x in line.split(":", 1))
+        if key == "name":
+            current = value
+            people.setdefault(current, {})
+            continue
+        if current is None:
+            continue
+        values = [x.strip() for x in value.split(";") if x.strip()]
+        people[current][key] = values
+    return people
+
+
+def parse_options(prompt: str) -> dict[str, str]:
+    return {m.group(1): m.group(2).strip() for m in OPTION_RE.finditer(prompt)}
+
+
+def load_examples(
+    input_path: Path,
+    profiles_path: Path,
+    max_samples: int,
+    start_index: int,
+) -> list[ScientistExample]:
+    names_rows = read_json(input_path)
+    profile_by_key = {str(x["key"]): x for x in read_json(profiles_path)}
+    examples: list[ScientistExample] = []
+    for index, row in enumerate(names_rows):
+        key = str(row.get("key", f"question_{index:04d}"))
+        if key not in profile_by_key:
+            raise KeyError(f"No aligned profile row for {key}")
+        prompt = str(row["prompt"])
+        options = parse_options(prompt)
+        if set(options) != {"1", "2"}:
+            raise ValueError(f"Could not parse two numbered options for {key}")
+        profiles = parse_profiles(str(profile_by_key[key]["prompt"]))
+        right = str(row["rgt_ans"])
+        wrong = str(row["wrg_ans"])
+        if right not in profiles or wrong not in profiles:
+            raise ValueError(f"Profile names do not align for {key}: {profiles.keys()}")
+        examples.append(
+            ScientistExample(
+                item_id=key,
+                prompt=prompt,
+                right_name=right,
+                wrong_name=wrong,
+                right_qid=str(row.get("rgt_ans_qid", "")),
+                wrong_qid=str(row.get("wrg_ans_qid", "")),
+                option_map=options,
+                profiles=profiles,
+                source_index=index,
+            )
+        )
+    examples = examples[start_index:]
+    return examples[:max_samples] if max_samples > 0 else examples
+
+
+def question_body_bounds(prompt: str) -> tuple[int, int]:
+    marker = QUESTION_MARKER.search(prompt)
+    if marker is None:
+        raise ValueError("Scientist prompt lacks a Question: marker")
+    start = marker.end()
+    final = FINAL_QUESTION.search(prompt, start)
+    end = final.start() if final else len(prompt)
+    while start < end and prompt[start].isspace():
+        start += 1
+    while end > start and prompt[end - 1].isspace():
+        end -= 1
+    return start, end
+
+
+def _trim(text: str, start: int, end: int) -> tuple[int, int]:
+    while start < end and text[start].isspace():
+        start += 1
+    while end > start and text[end - 1].isspace():
+        end -= 1
+    return start, end
+
+
+def propose_atomic_spans(prompt: str, min_words: int = 2) -> list[Span]:
+    """Fine-grained structural proposals restricted to the biography body."""
+    body_start, body_end = question_body_bounds(prompt)
+    body = prompt[body_start:body_end]
+    proposals: list[tuple[int, int, str]] = []
+
+    sentence_start = 0
+    sentence_bounds: list[tuple[int, int]] = []
+    for match in re.finditer(r"[.!?](?=\s+[A-Z]|\s*$)", body):
+        a, b = _trim(body, sentence_start, match.end())
+        if a < b:
+            sentence_bounds.append((a, b))
+        sentence_start = match.end()
+    a, b = _trim(body, sentence_start, len(body))
+    if a < b:
+        sentence_bounds.append((a, b))
+
+    for sent_a, sent_b in sentence_bounds:
+        sentence = body[sent_a:sent_b]
+        cursor = 0
+        pieces: list[tuple[int, int]] = []
+        for boundary in CLAUSE_BOUNDARY.finditer(sentence):
+            a, b = _trim(sentence, cursor, boundary.start())
+            if a < b:
+                pieces.append((a, b))
+            cursor = boundary.end()
+        a, b = _trim(sentence, cursor, len(sentence))
+        if a < b:
+            pieces.append((a, b))
+        for a, b in pieces:
+            proposals.append((body_start + sent_a + a, body_start + sent_a + b, "clause"))
+
+        for match in NEGATION_RE.finditer(sentence):
+            proposals.append(
+                (
+                    body_start + sent_a + match.start(),
+                    body_start + sent_a + match.end(),
+                    "negation",
+                )
+            )
+        for match in ENTITY_RE.finditer(sentence):
+            a, b = _trim(sentence, match.start(), match.end())
+            proposals.append(
+                (body_start + sent_a + a, body_start + sent_a + b, "named_entity")
+            )
+
+    priority = {"negation": 0, "named_entity": 1, "clause": 2}
+    unique: dict[tuple[int, int], tuple[int, int, str]] = {}
+    for start, end, kind in proposals:
+        start, end = _trim(prompt, start, end)
+        text = prompt[start:end]
+        required = 1 if kind == "negation" else min_words
+        if len(WORD_RE.findall(text)) < required:
+            continue
+        old = unique.get((start, end))
+        if old is None or priority[kind] < priority[old[2]]:
+            unique[(start, end)] = (start, end, kind)
+    return [
+        Span(i, a, b, prompt[a:b], kind)
+        for i, (a, b, kind) in enumerate(
+            sorted(unique.values(), key=lambda x: (x[0], x[1], priority[x[2]]))
+        )
+    ]
+
+
+def apply_intervention(prompt: str, span: Span, operator: str) -> tuple[str, tuple[int, int]]:
+    if operator == "delete":
+        replacement = ""
+    elif operator == "neutralize":
+        replacement = (
+            "[POLARITY UNSPECIFIED]"
+            if span.span_type == "negation"
+            else "[DETAIL UNSPECIFIED]"
+        )
+    elif operator == "mask":
+        replacement = (
+            "[POLARITY MASKED]" if span.span_type == "negation" else "[MASKED DETAIL]"
+        )
+    else:
+        raise ValueError(operator)
+    modified = prompt[: span.start] + replacement + prompt[span.end :]
+    modified = re.sub(r"[ \t]{2,}", " ", modified)
+    return modified, (span.start, span.start + len(replacement))
+
+
+class ScientistEngine(LocalCausalLM):
+    """v1 generation API plus optional paper-style NF4 loading and traces."""
+
+    def __init__(
+        self,
+        model_name: str,
+        device: str,
+        dtype: str,
+        max_input_tokens: int,
+        quantize_4bit: bool,
+        trust_remote_code: bool,
+    ) -> None:
+        if not quantize_4bit:
+            super().__init__(
+                model_name=model_name,
+                device=device,
+                dtype=dtype,
+                trust_remote_code=trust_remote_code,
+                max_input_tokens=max_input_tokens,
+            )
+            return
+
+        self.model_name = model_name
+        self.max_input_tokens = max_input_tokens
+        self.system_prompt = DEFAULT_SYSTEM_PROMPT
+        compute_dtype = {
+            "float16": torch.float16,
+            "bfloat16": torch.bfloat16,
+            "float32": torch.float32,
+        }[dtype]
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            model_name, use_fast=True, trust_remote_code=trust_remote_code
+        )
+        if not self.tokenizer.is_fast:
+            raise RuntimeError("A fast tokenizer is required for span offset mapping")
+        if self.tokenizer.pad_token_id is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+        self.tokenizer.padding_side = "left"
+        self.tokenizer.truncation_side = "left"
+        bnb = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_quant_type="nf4",
+            bnb_4bit_use_double_quant=True,
+            bnb_4bit_compute_dtype=compute_dtype,
+        )
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            quantization_config=bnb,
+            device_map="auto" if device == "cuda" else None,
+            dtype=compute_dtype,
+            trust_remote_code=trust_remote_code,
+            attn_implementation="eager",
+            low_cpu_mem_usage=True,
+        )
+        if device != "cuda":
+            self.model.to(device)
+        self.model.eval()
+        self.input_device = next(self.model.parameters()).device
+
+    def trace_layers(self, spec: str) -> list[int]:
+        n = int(self.model.config.num_hidden_layers)
+        if spec.strip().lower() == "all":
+            return list(range(n + 1))
+        output: list[int] = []
+        for raw in spec.split(","):
+            token = raw.strip()
+            if not token:
+                continue
+            if token.endswith("%"):
+                index = int(round(float(token[:-1]) / 100.0 * n))
+            else:
+                index = int(token)
+                if index < 0:
+                    index = n + 1 + index
+            output.append(max(0, min(n, index)))
+        return sorted(set(output)) or list(range(n + 1))
+
+    @torch.inference_mode()
+    def extract_trace(
+        self,
+        user_prompt: str,
+        answer: str,
+        spans: Sequence[tuple[int, int]],
+        layer_spec: str,
+    ) -> dict[str, Any]:
+        """Extract raw last-answer and span-mean states from one forward pass."""
+        formatted = self.format_chat(user_prompt)
+        answer = answer.strip() or "[NO ANSWER]"
+        full_text = formatted + answer
+        encoded = self.tokenizer(
+            full_text,
+            return_tensors="pt",
+            return_offsets_mapping=True,
+            truncation=True,
+            max_length=self.max_input_tokens,
+            add_special_tokens=False,
+        )
+        offsets = encoded.pop("offset_mapping")[0].tolist()
+        ids = encoded["input_ids"].to(self.input_device)
+        mask = encoded["attention_mask"].to(self.input_device)
+        outputs = self.model(
+            input_ids=ids,
+            attention_mask=mask,
+            output_hidden_states=True,
+            use_cache=False,
+            return_dict=True,
+        )
+        layers = self.trace_layers(layer_spec)
+        answer_start = len(formatted)
+        answer_tokens = [
+            i for i, (a, b) in enumerate(offsets) if b > a and b > answer_start
+        ]
+        if not answer_tokens:
+            answer_tokens = [ids.shape[1] - 1]
+        answer_last_index = answer_tokens[-1]
+        user_start = formatted.find(user_prompt)
+        if user_start < 0:
+            raise RuntimeError("Could not locate user prompt inside chat template")
+
+        answer_hidden = torch.stack(
+            [
+                outputs.hidden_states[layer][0, answer_last_index]
+                .detach()
+                .to(device="cpu", dtype=torch.float16)
+                for layer in layers
+            ]
+        )
+        span_hidden: list[torch.Tensor] = []
+        span_token_counts: list[int] = []
+        for start, end in spans:
+            absolute = (user_start + start, user_start + end)
+            token_indices = [
+                i
+                for i, (a, b) in enumerate(offsets)
+                if b > a and max(a, absolute[0]) < min(b, absolute[1])
+            ]
+            span_token_counts.append(len(token_indices))
+            if token_indices:
+                span_hidden.append(
+                    torch.stack(
+                        [
+                            outputs.hidden_states[layer][0, token_indices]
+                            .mean(0)
+                            .detach()
+                            .to(device="cpu", dtype=torch.float16)
+                            for layer in layers
+                        ]
+                    )
+                )
+            else:
+                span_hidden.append(torch.zeros_like(answer_hidden))
+        return {
+            "layer_indices": layers,
+            "answer_hidden": answer_hidden,
+            "span_hidden": (
+                torch.stack(span_hidden)
+                if span_hidden
+                else torch.empty((0, len(layers), answer_hidden.shape[-1]), dtype=torch.float16)
+            ),
+            "span_token_counts": span_token_counts,
+            "answer_token_count": len(answer_tokens),
+            "sequence_token_count": int(ids.shape[1]),
+        }
+
+
+def parse_chosen_name(text: str, example: ScientistExample) -> Optional[str]:
+    normalized = canonical(text)
+    matches = [
+        name
+        for name in (example.right_name, example.wrong_name)
+        if canonical(name) in normalized
+    ]
+    if len(matches) == 1:
+        return matches[0]
+    option = re.search(r"\b(?:option|answer|choice)?\s*([12])\b", text, re.I)
+    return example.option_map.get(option.group(1)) if option else None
+
+
+def parse_yes_no(text: str) -> Optional[bool]:
+    yes = YES_RE.search(text)
+    no = NO_RE.search(text)
+    if yes and not no:
+        return True
+    if no and not yes:
+        return False
+    if yes and no:
+        return yes.start() < no.start()
+    return None
+
+
+def profile_facts(profile: Mapping[str, list[str]]) -> list[tuple[str, str]]:
+    priority = (
+        "award_received",
+        "education",
+        "position_held",
+        "notable_work",
+        "field",
+        "occupation",
+        "place_of_birth",
+    )
+    return [
+        (field, fact)
+        for field in priority
+        for fact in profile.get(field, [])
+        if len(fact) >= 3
+    ]
+
+
+def fact_relevance(fact: str, prompt: str) -> float:
+    f = canonical(fact)
+    p = canonical(prompt)
+    if f and f in p:
+        score = 10.0 + min(len(f.split()), 5)
+        # The benchmark is often decided by a late "never/not" constraint.
+        # Give that exact fact priority for both candidates' isolated probes.
+        position = p.find(f)
+        if NEGATION_RE.search(p[max(0, position - 100):position]):
+            score += 20.0
+        return score
+    words = {x for x in f.split() if len(x) >= 4}
+    if not words:
+        return 0.0
+    return len(words & set(p.split())) / len(words)
+
+
+def make_fact_probes(example: ScientistExample, per_person: int) -> list[FactProbe]:
+    """Balanced yes/no probes, selected without showing the composite question."""
+    people = (example.right_name, example.wrong_name)
+    facts_by_person = {
+        person: profile_facts(example.profiles[person]) for person in people
+    }
+    normalized = {
+        person: {canonical(fact) for _, fact in facts_by_person[person]}
+        for person in people
+    }
+    output: list[FactProbe] = []
+    for person, other in ((people[0], people[1]), (people[1], people[0])):
+        # Shared, question-relevant facts are also key knowledge: exclusive-
+        # only positives would push them behind obscure profile details.
+        positives = list(facts_by_person[person])
+        negatives = [
+            (field, fact)
+            for field, fact in facts_by_person[other]
+            if canonical(fact) not in normalized[person]
+        ]
+        positives.sort(key=lambda x: (-fact_relevance(x[1], example.prompt), x[1]))
+        negatives.sort(key=lambda x: (-fact_relevance(x[1], example.prompt), x[1]))
+        n_pos = (per_person + 1) // 2
+        n_neg = per_person // 2
+        for field, fact in positives[:n_pos]:
+            output.append(
+                FactProbe(person, field, fact, True, fact_relevance(fact, example.prompt))
+            )
+        for field, fact in negatives[:n_neg]:
+            output.append(
+                FactProbe(person, field, fact, False, fact_relevance(fact, example.prompt))
+            )
+    return output
+
+
+def probe_prompt(probe: FactProbe) -> str:
+    relation = {
+        "award_received": "receive the following award or honor",
+        "education": "study at or receive education from",
+        "position_held": "hold the following position",
+        "notable_work": "author or produce the following notable work",
+        "field": "work in the following field",
+        "occupation": "have the following occupation",
+        "place_of_birth": "have the following place of birth",
+    }.get(probe.field, "have the following biographical attribute")
+    return (
+        f"Independent factual question about one person only:\n"
+        f"Did {probe.person} {relation}: {probe.fact}?\n"
+        "Answer exactly Yes or No. Do not use or infer from any multiple-choice question."
+    )
+
+
+def hidden_cosine(a: torch.Tensor, b: torch.Tensor) -> np.ndarray:
+    return F.cosine_similarity(a.float(), b.float(), dim=-1).cpu().numpy()
+
+
+def hidden_delta_summary(before: torch.Tensor, after: torch.Tensor) -> dict[str, Any]:
+    delta = after.float() - before.float()
+    return {
+        "delta_l2": delta.norm(dim=-1).cpu().numpy(),
+        "delta_cosine": hidden_cosine(before, after),
+        "delta_abs_mean": delta.abs().mean(dim=-1).cpu().numpy(),
+    }
+
+
+class Collector:
+    def __init__(self, engine: ScientistEngine, args: argparse.Namespace, out: Path):
+        self.engine = engine
+        self.args = args
+        self.out = out
+        self.trace_dir = out / "traces"
+
+    def generate(self, prompt: str, seed: int, max_tokens: Optional[int] = None) -> GenerationResult:
+        return self.engine.generate(
+            prompt,
+            max_new_tokens=max_tokens or self.args.max_new_tokens,
+            temperature=self.args.temperature,
+            top_p=self.args.top_p,
+            seed=seed,
+        )
+
+    def run_probes(self, example: ScientistExample) -> tuple[dict[str, Any], torch.Tensor, torch.Tensor]:
+        probes = make_fact_probes(example, self.args.probes_per_person)
+        rows: list[dict[str, Any]] = []
+        hidden: list[torch.Tensor] = []
+        for index, probe in enumerate(probes):
+            prompt = probe_prompt(probe)
+            generation = self.generate(prompt, self.args.seed + 1000 + index, 8)
+            parsed = parse_yes_no(generation.text)
+            trace = self.engine.extract_trace(prompt, generation.text, [], self.args.hidden_layers)
+            hidden.append(trace["answer_hidden"])
+            rows.append(
+                {
+                    **dataclasses.asdict(probe),
+                    "prompt": prompt,
+                    "answer": generation.text,
+                    "parsed_yes": parsed,
+                    "correct": parsed is not None and parsed == probe.expected_yes,
+                    "parse_valid": parsed is not None,
+                    "mean_token_logprob": generation.mean_token_logprob,
+                }
+            )
+        layer_count = len(self.engine.trace_layers(self.args.hidden_layers))
+        width = int(self.engine.model.config.hidden_size)
+        stack = (
+            torch.stack(hidden)
+            if hidden
+            else torch.zeros((0, layer_count, width), dtype=torch.float16)
+        )
+        person_scores: dict[str, Optional[float]] = {}
+        for person in (example.right_name, example.wrong_name):
+            valid = [x for x in rows if x["person"] == person and x["parse_valid"]]
+            person_scores[person] = (
+                float(np.mean([x["correct"] for x in valid])) if valid else None
+            )
+        valid_scores = [x for x in person_scores.values() if x is not None]
+        score = min(valid_scores) if len(valid_scores) == 2 else None
+        if score is None:
+            state = "ambiguous"
+        elif score >= self.args.knowledge_known_threshold:
+            state = "known"
+        elif score <= self.args.knowledge_gap_threshold:
+            state = "unknown"
+        else:
+            state = "ambiguous"
+        return (
+            {
+                "state": state,
+                "score": score,
+                "person_scores": person_scores,
+                "n_probes": len(rows),
+                "n_valid": sum(x["parse_valid"] for x in rows),
+                "probes": rows,
+            },
+            stack.mean(0) if len(stack) else torch.zeros((layer_count, width), dtype=torch.float16),
+            stack.float().std(0).to(torch.float16) if len(stack) > 1 else torch.zeros((layer_count, width), dtype=torch.float16),
+        )
+
+    def collect_one(self, example: ScientistExample) -> dict[str, Any]:
+        seed = self.args.seed + example.source_index * 1009
+        generation = self.generate(example.prompt, seed)
+        chosen = parse_chosen_name(generation.text, example)
+        base_correct = chosen == example.right_name
+        all_spans = propose_atomic_spans(example.prompt, self.args.min_span_words)
+        base_trace = self.engine.extract_trace(
+            example.prompt,
+            generation.text,
+            [(x.start, x.end) for x in all_spans],
+            self.args.hidden_layers,
+        )
+        probe_info, probe_mean, probe_std = self.run_probes(example)
+
+        span_similarity = []
+        rank_slot = max(0, min(len(base_trace["layer_indices"]) - 1, self.args.rank_layer_slot))
+        for i, span in enumerate(all_spans):
+            similarity = float(
+                F.cosine_similarity(
+                    base_trace["span_hidden"][i, rank_slot].float(),
+                    base_trace["answer_hidden"][rank_slot].float(),
+                    dim=0,
+                ).item()
+            )
+            span_similarity.append((similarity, span))
+        ranked = sorted(span_similarity, key=lambda x: (-x[0], x[1].start))
+        # Negation is frequently the decisive ScientistQA constraint but has a
+        # very small token footprint and can rank low by raw hidden similarity.
+        # Reserve slots for negation operators and clauses containing them,
+        # then fill the remaining budget by representation similarity.
+        mandatory: list[Span] = [
+            span
+            for _, span in ranked
+            if span.span_type == "negation" or NEGATION_RE.search(span.text)
+        ]
+        selected: list[Span] = []
+        selected_indices: set[int] = set()
+        for span in mandatory + [x[1] for x in ranked]:
+            if span.index not in selected_indices:
+                selected.append(span)
+                selected_indices.add(span.index)
+            if len(selected) >= self.args.max_intervention_spans:
+                break
+        selected_ids = {x.index for x in selected}
+        controls = [x[1] for x in sorted(span_similarity, key=lambda x: (x[0], x[1].start)) if x[1].index not in selected_ids]
+        control_span = controls[0] if controls else None
+
+        should_intervene = (
+            not base_correct and probe_info["state"] == "known" and bool(selected)
+        )
+        span_traces: list[dict[str, Any]] = []
+        control_recovery = 0.0
+        if should_intervene and control_span is not None:
+            control_prompt, _ = apply_intervention(example.prompt, control_span, "delete")
+            control_gen = self.generate(control_prompt, seed + 7000)
+            control_recovery = float(parse_chosen_name(control_gen.text, example) == example.right_name)
+
+        if should_intervene:
+            span_lookup = {x.index: i for i, x in enumerate(all_spans)}
+            for span_rank, span in enumerate(selected):
+                original_span_hidden = base_trace["span_hidden"][span_lookup[span.index]]
+                op_rows: list[dict[str, Any]] = []
+                fixed_deltas: list[torch.Tensor] = []
+                regen_deltas: list[torch.Tensor] = []
+                span_deltas: list[torch.Tensor] = []
+                for op_index, operator in enumerate(OPERATORS):
+                    modified, replacement_bounds = apply_intervention(
+                        example.prompt, span, operator
+                    )
+                    variant_gen = self.generate(
+                        modified, seed + 8000 + span_rank * 101 + op_index
+                    )
+                    fixed_trace = self.engine.extract_trace(
+                        modified,
+                        generation.text,
+                        [replacement_bounds],
+                        self.args.hidden_layers,
+                    )
+                    regen_trace = self.engine.extract_trace(
+                        modified,
+                        variant_gen.text,
+                        [replacement_bounds],
+                        self.args.hidden_layers,
+                    )
+                    fixed_delta = fixed_trace["answer_hidden"] - base_trace["answer_hidden"]
+                    regen_delta = regen_trace["answer_hidden"] - base_trace["answer_hidden"]
+                    replacement_hidden = fixed_trace["span_hidden"][0]
+                    span_delta = replacement_hidden - original_span_hidden
+                    fixed_deltas.append(fixed_delta)
+                    regen_deltas.append(regen_delta)
+                    span_deltas.append(span_delta)
+                    new_choice = parse_chosen_name(variant_gen.text, example)
+                    op_rows.append(
+                        {
+                            "operator": operator,
+                            "answer": variant_gen.text,
+                            "chosen_name": new_choice,
+                            "answer_changed": canonical(variant_gen.text)
+                            != canonical(generation.text),
+                            "recovered_correct": new_choice == example.right_name,
+                            "mean_token_logprob": variant_gen.mean_token_logprob,
+                            "fixed_transition_summary": hidden_delta_summary(
+                                base_trace["answer_hidden"], fixed_trace["answer_hidden"]
+                            ),
+                            "regenerated_transition_summary": hidden_delta_summary(
+                                base_trace["answer_hidden"], regen_trace["answer_hidden"]
+                            ),
+                        }
+                    )
+                recovery_rate = float(np.mean([x["recovered_correct"] for x in op_rows]))
+                specificity = recovery_rate - control_recovery
+                culprit = (
+                    recovery_rate >= self.args.span_recovery_threshold
+                    and specificity >= self.args.span_specificity_threshold
+                )
+                span_traces.append(
+                    {
+                        "span": dataclasses.asdict(span),
+                        "similarity_rank": span_rank + 1,
+                        "base_similarity_by_layer": hidden_cosine(
+                            original_span_hidden, base_trace["answer_hidden"]
+                        ),
+                        "operators": op_rows,
+                        # Raw tensors below are classifier inputs. Gold recovery is
+                        # deliberately stored separately in the JSON teacher row.
+                        "base_span_hidden": original_span_hidden,
+                        "fixed_delta_mean": torch.stack(fixed_deltas).mean(0),
+                        "fixed_delta_maxabs": torch.stack(fixed_deltas).abs().amax(0),
+                        "regen_delta_mean": torch.stack(regen_deltas).mean(0),
+                        "span_delta_mean": torch.stack(span_deltas).mean(0),
+                        "teacher": {
+                            "recovery_rate": recovery_rate,
+                            "control_recovery": control_recovery,
+                            "specificity": specificity,
+                            "culprit": culprit,
+                        },
+                    }
+                )
+
+        if base_correct:
+            teacher_cause = "correct"
+        elif probe_info["state"] == "unknown":
+            teacher_cause = "knowledge_gap"
+        elif probe_info["state"] == "ambiguous":
+            teacher_cause = "ambiguous"
+        elif any(x["teacher"]["culprit"] for x in span_traces):
+            teacher_cause = "contextual_interference"
+        else:
+            teacher_cause = "known_but_unlocalized"
+
+        trace_path = self.trace_dir / f"{example.item_id}.pt"
+        tensor_payload = {
+            "schema_version": SCHEMA_VERSION,
+            "item_id": example.item_id,
+            "layer_indices": base_trace["layer_indices"],
+            "base_answer_hidden": base_trace["answer_hidden"],
+            "probe_hidden_mean": probe_mean,
+            "probe_hidden_std": probe_std,
+            "span_traces": [
+                {k: v for k, v in row.items() if k not in {"operators", "teacher"}}
+                for row in span_traces
+            ],
+        }
+        atomic_torch(trace_path, tensor_payload)
+        return {
+            "schema_version": SCHEMA_VERSION,
+            "id": example.item_id,
+            "source_index": example.source_index,
+            "base": {
+                "answer": generation.text,
+                "chosen_name": chosen,
+                "correct": base_correct,
+                "parse_valid": chosen is not None,
+                "mean_token_logprob": generation.mean_token_logprob,
+            },
+            "knowledge_probe": probe_info,
+            "interventions_run": should_intervene,
+            "n_candidate_spans": len(all_spans),
+            "selected_spans": [
+                {
+                    "span": x["span"],
+                    "similarity_rank": x["similarity_rank"],
+                    "operators": x["operators"],
+                    "teacher": x["teacher"],
+                }
+                for x in span_traces
+            ],
+            "control_span": dataclasses.asdict(control_span) if control_span else None,
+            "control_recovery": control_recovery if should_intervene else None,
+            "teacher_cause": teacher_cause,
+            "trace_path": str(trace_path),
+            "supervision": {
+                "right_name": example.right_name,
+                "wrong_name": example.wrong_name,
+                "right_qid": example.right_qid,
+                "wrong_qid": example.wrong_qid,
+            },
+        }
+
+
+def completed_ids(path: Path) -> set[str]:
+    return {str(x["id"]) for x in read_jsonl(path) if "id" in x}
+
+
+def collect(args: argparse.Namespace, examples: Sequence[ScientistExample], out: Path) -> None:
+    records_path = out / "teacher_records.jsonl"
+    if args.force and records_path.exists():
+        records_path.unlink()
+    done = completed_ids(records_path) if args.resume and not args.force else set()
+    engine = ScientistEngine(
+        args.model,
+        args.device,
+        args.dtype,
+        args.max_input_tokens,
+        args.quantize_4bit,
+        args.trust_remote_code,
+    )
+    collector = Collector(engine, args, out)
+    for example in tqdm(examples, desc="Scientist causal collection"):
+        if example.item_id in done:
+            continue
+        try:
+            append_jsonl(records_path, collector.collect_one(example))
+        except KeyboardInterrupt:
+            LOGGER.warning("Interrupted; completed records are preserved")
+            break
+        except Exception as error:  # noqa: BLE001
+            LOGGER.exception("Failed %s", example.item_id)
+            append_jsonl(
+                out / "errors.jsonl",
+                {"id": example.item_id, "error": f"{type(error).__name__}: {error}"},
+            )
+        finally:
+            gc.collect()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+    del engine
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+
+
+def safe_macro_auc(y: np.ndarray, probability: np.ndarray, classes: np.ndarray) -> Optional[float]:
+    try:
+        if len(classes) == 2:
+            return float(roc_auc_score(y, probability[:, 1]))
+        return float(
+            roc_auc_score(y, probability, multi_class="ovr", average="macro", labels=classes)
+        )
+    except ValueError:
+        return None
+
+
+def metrics(y: np.ndarray, pred: np.ndarray, prob: np.ndarray, classes: np.ndarray) -> dict[str, Any]:
+    return {
+        "accuracy": float(accuracy_score(y, pred)),
+        "balanced_accuracy": float(balanced_accuracy_score(y, pred)),
+        "macro_f1": float(f1_score(y, pred, average="macro", zero_division=0)),
+        "macro_ovr_auroc": safe_macro_auc(y, prob, classes),
+        "confusion_matrix": confusion_matrix(y, pred, labels=classes).tolist(),
+        "classification_report": classification_report(
+            y, pred, labels=classes, output_dict=True, zero_division=0
+        ),
+    }
+
+
+def make_pipeline(n_features: int, select_k: int, seed: int) -> Pipeline:
+    k: int | str = min(select_k, n_features) if select_k > 0 else "all"
+    return Pipeline(
+        [
+            ("imputer", SimpleImputer(strategy="constant", fill_value=0.0)),
+            ("scale", StandardScaler()),
+            ("select", SelectKBest(f_classif, k=k)),
+            (
+                "classifier",
+                LogisticRegression(
+                    max_iter=3000,
+                    class_weight="balanced",
+                    random_state=seed,
+                    solver="liblinear",
+                ),
+            ),
+        ]
+    )
+
+
+def split_ids(y: np.ndarray, seed: int) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    index = np.arange(len(y))
+    try:
+        train_val, test = train_test_split(
+            index, test_size=0.2, stratify=y, random_state=seed
+        )
+        train, val = train_test_split(
+            train_val, test_size=0.125, stratify=y[train_val], random_state=seed
+        )
+    except ValueError:
+        train_val, test = train_test_split(index, test_size=0.2, random_state=seed)
+        train, val = train_test_split(train_val, test_size=0.125, random_state=seed)
+    return np.asarray(train), np.asarray(val), np.asarray(test)
+
+
+def load_trace(record: Mapping[str, Any]) -> dict[str, Any]:
+    return torch_load(Path(str(record["trace_path"])))
+
+
+def compact_item_features(record: Mapping[str, Any]) -> np.ndarray:
+    probe = record["knowledge_probe"]
+    base = record["base"]
+    person_scores = [
+        float(x) for x in probe.get("person_scores", {}).values() if x is not None
+    ]
+    spans = record.get("selected_spans", [])
+    answer_changes = [
+        float(op["answer_changed"]) for span in spans for op in span["operators"]
+    ]
+    confidences = [
+        float(op["mean_token_logprob"])
+        for span in spans
+        for op in span["operators"]
+        if op.get("mean_token_logprob") is not None
+    ]
+    return np.asarray(
+        [
+            float(base.get("mean_token_logprob") or 0.0),
+            float(probe.get("score") if probe.get("score") is not None else -1.0),
+            float(min(person_scores) if person_scores else -1.0),
+            float(max(person_scores) if person_scores else -1.0),
+            float(probe.get("n_valid", 0)),
+            float(len(spans)),
+            float(np.mean(answer_changes) if answer_changes else 0.0),
+            float(np.max(answer_changes) if answer_changes else 0.0),
+            float(np.mean(confidences) if confidences else 0.0),
+        ],
+        dtype=np.float32,
+    )
+
+
+def item_vector(record: Mapping[str, Any], trace: Mapping[str, Any], layer: int, mode: str) -> np.ndarray:
+    base = trace["base_answer_hidden"][layer].float().numpy()
+    compact = compact_item_features(record)
+    if mode == "hallucination":
+        return np.concatenate([base, compact[:1]])
+    probe_mean = trace["probe_hidden_mean"][layer].float().numpy()
+    probe_std = trace["probe_hidden_std"][layer].float().numpy()
+    span_rows = trace.get("span_traces", [])
+    if span_rows:
+        fixed = np.stack([x["fixed_delta_mean"][layer].float().numpy() for x in span_rows])
+        regen = np.stack([x["regen_delta_mean"][layer].float().numpy() for x in span_rows])
+        span_delta = np.stack([x["span_delta_mean"][layer].float().numpy() for x in span_rows])
+        transition = np.concatenate(
+            [fixed.mean(0), np.abs(fixed).max(0), regen.mean(0), span_delta.mean(0)]
+        )
+    else:
+        transition = np.zeros(base.size * 4, dtype=np.float32)
+    return np.concatenate([base, probe_mean, probe_std, transition, compact])
+
+
+def fit_layer_scanned_head(
+    records: Sequence[Mapping[str, Any]],
+    labels: Sequence[str],
+    mode: str,
+    select_k: int,
+    seed: int,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    traces = [load_trace(x) for x in records]
+    layer_indices = traces[0]["layer_indices"]
+    y_text = np.asarray(labels, dtype=object)
+    classes_text = np.asarray(sorted(set(labels)), dtype=object)
+    class_to_id = {name: i for i, name in enumerate(classes_text)}
+    y = np.asarray([class_to_id[x] for x in y_text], dtype=np.int64)
+    train, val, test = split_ids(y, seed)
+    layer_results: dict[str, Any] = {}
+    best_slot = 0
+    best_score = -np.inf
+    for slot, model_layer in enumerate(layer_indices):
+        X = np.stack(
+            [item_vector(record, trace, slot, mode) for record, trace in zip(records, traces)]
+        )
+        pipe = make_pipeline(X.shape[1], select_k, seed)
+        pipe.fit(X[train], y[train])
+        prob = pipe.predict_proba(X[val])
+        pred = pipe.predict(X[val])
+        score = float(f1_score(y[val], pred, average="macro", zero_division=0))
+        layer_results[str(model_layer)] = {
+            "slot": slot,
+            "validation": metrics(y[val], pred, prob, pipe.classes_),
+        }
+        if score > best_score:
+            best_score = score
+            best_slot = slot
+
+    X = np.stack(
+        [
+            item_vector(record, trace, best_slot, mode)
+            for record, trace in zip(records, traces)
+        ]
+    )
+    final = make_pipeline(X.shape[1], select_k, seed)
+    final.fit(X[np.concatenate([train, val])], y[np.concatenate([train, val])])
+    test_prob = final.predict_proba(X[test])
+    test_pred = final.predict(X[test])
+    result = {
+        "mode": mode,
+        "classes": classes_text.tolist(),
+        "class_to_id": class_to_id,
+        "n": len(records),
+        "class_counts": dict(Counter(labels)),
+        "selected_layer": int(layer_indices[best_slot]),
+        "selected_slot": int(best_slot),
+        "layer_selection": layer_results,
+        "test": metrics(y[test], test_pred, test_prob, final.classes_),
+        "test_ids": [records[i]["id"] for i in test],
+        "test_gold": y_text[test].tolist(),
+        "test_prediction": classes_text[test_pred].tolist(),
+    }
+    bundle = {
+        "schema_version": SCHEMA_VERSION,
+        "mode": mode,
+        "model": final,
+        "classes": classes_text.tolist(),
+        "selected_layer": int(layer_indices[best_slot]),
+        "selected_slot": int(best_slot),
+        "feature_contract": (
+            "base_hidden+base_confidence"
+            if mode == "hallucination"
+            else "base/probe hidden + intervention hidden deltas + non-gold behavior"
+        ),
+    }
+    return result, bundle
+
+
+def span_vector(row: Mapping[str, Any], layer: int) -> np.ndarray:
+    base = row["base_span_hidden"][layer].float().numpy()
+    fixed = row["fixed_delta_mean"][layer].float().numpy()
+    fixed_max = row["fixed_delta_maxabs"][layer].float().numpy()
+    regen = row["regen_delta_mean"][layer].float().numpy()
+    span_delta = row["span_delta_mean"][layer].float().numpy()
+    return np.concatenate([base, fixed, fixed_max, regen, span_delta])
+
+
+def fit_span_head(
+    records: Sequence[Mapping[str, Any]], select_k: int, seed: int
+) -> tuple[Optional[dict[str, Any]], Optional[dict[str, Any]]]:
+    rows: list[dict[str, Any]] = []
+    labels: list[int] = []
+    item_ids: list[str] = []
+    layer_indices: Optional[list[int]] = None
+    for record in records:
+        trace = load_trace(record)
+        layer_indices = trace["layer_indices"]
+        teacher_by_key = {
+            int(x["span"]["index"]): bool(x["teacher"]["culprit"])
+            for x in record.get("selected_spans", [])
+        }
+        for row in trace.get("span_traces", []):
+            span_index = int(row["span"]["index"])
+            if span_index in teacher_by_key:
+                rows.append(row)
+                labels.append(int(teacher_by_key[span_index]))
+                item_ids.append(str(record["id"]))
+    if not rows or len(set(labels)) < 2 or layer_indices is None:
+        return None, None
+
+    unique_items = np.asarray(sorted(set(item_ids)), dtype=object)
+    train_items, test_items = train_test_split(
+        unique_items, test_size=0.2, random_state=seed
+    )
+    train_items, val_items = train_test_split(
+        train_items, test_size=0.125, random_state=seed
+    )
+    item_array = np.asarray(item_ids, dtype=object)
+    train = np.flatnonzero(np.isin(item_array, train_items))
+    val = np.flatnonzero(np.isin(item_array, val_items))
+    test = np.flatnonzero(np.isin(item_array, test_items))
+    y = np.asarray(labels, dtype=np.int64)
+    best_slot, best_score = 0, -np.inf
+    selection: dict[str, Any] = {}
+    for slot, model_layer in enumerate(layer_indices):
+        X = np.stack([span_vector(row, slot) for row in rows])
+        pipe = make_pipeline(X.shape[1], select_k, seed)
+        pipe.fit(X[train], y[train])
+        pred = pipe.predict(X[val])
+        prob = pipe.predict_proba(X[val])
+        score = float(f1_score(y[val], pred, average="macro", zero_division=0))
+        selection[str(model_layer)] = metrics(y[val], pred, prob, pipe.classes_)
+        if score > best_score:
+            best_slot, best_score = slot, score
+    X = np.stack([span_vector(row, best_slot) for row in rows])
+    final = make_pipeline(X.shape[1], select_k, seed)
+    final.fit(X[np.concatenate([train, val])], y[np.concatenate([train, val])])
+    pred, prob = final.predict(X[test]), final.predict_proba(X[test])
+    result = {
+        "n_spans": len(rows),
+        "class_counts": dict(Counter(labels)),
+        "selected_layer": int(layer_indices[best_slot]),
+        "selected_slot": best_slot,
+        "layer_selection": selection,
+        "test": metrics(y[test], pred, prob, final.classes_),
+    }
+    bundle = {
+        "schema_version": SCHEMA_VERSION,
+        "mode": "span_culprit",
+        "model": final,
+        "selected_layer": int(layer_indices[best_slot]),
+        "selected_slot": best_slot,
+        "feature_contract": "span hidden + teacher-forced/regenerated/span transition vectors",
+    }
+    return result, bundle
+
+
+def train(args: argparse.Namespace, out: Path) -> None:
+    records = [
+        x
+        for x in read_jsonl(out / "teacher_records.jsonl")
+        if x.get("trace_path") and Path(x["trace_path"]).exists()
+    ]
+    if not records:
+        raise RuntimeError("No collected records with traces; run --stage collect first")
+    model_dir = out / "models"
+    model_dir.mkdir(parents=True, exist_ok=True)
+    results: dict[str, Any] = {
+        "schema_version": SCHEMA_VERSION,
+        "n_records": len(records),
+        "teacher_cause_counts": dict(Counter(x["teacher_cause"] for x in records)),
+        "feature_leakage_guard": (
+            "gold correctness/recovery and rgt_ans/wrg_ans are labels only, never features"
+        ),
+    }
+
+    hall_records = [x for x in records if x["base"].get("parse_valid")]
+    hall_labels = ["hallucination" if not x["base"]["correct"] else "correct" for x in hall_records]
+    if len(set(hall_labels)) >= 2 and min(Counter(hall_labels).values()) >= 3:
+        result, bundle = fit_layer_scanned_head(
+            hall_records, hall_labels, "hallucination", args.select_k, args.seed
+        )
+        results["hallucination_head"] = result
+        joblib.dump(bundle, model_dir / "hallucination_head.joblib")
+    else:
+        results["hallucination_head"] = {"skipped": "insufficient class coverage"}
+
+    cause_records = [x for x in records if x["teacher_cause"] in CAUSE_LABELS]
+    cause_labels = [x["teacher_cause"] for x in cause_records]
+    if len(set(cause_labels)) >= 2 and min(Counter(cause_labels).values()) >= 3:
+        result, bundle = fit_layer_scanned_head(
+            cause_records, cause_labels, "cause", args.select_k, args.seed
+        )
+        results["cause_head"] = result
+        joblib.dump(bundle, model_dir / "cause_head.joblib")
+    else:
+        results["cause_head"] = {
+            "skipped": "need >=3 knowledge_gap and >=3 contextual_interference labels",
+            "class_counts": dict(Counter(cause_labels)),
+        }
+
+    span_result, span_bundle = fit_span_head(records, args.select_k, args.seed)
+    results["span_culprit_head"] = (
+        span_result or {"skipped": "insufficient positive/negative localized spans"}
+    )
+    if span_bundle is not None:
+        joblib.dump(span_bundle, model_dir / "span_culprit_head.joblib")
+    atomic_json(out / "training_summary.json", results)
+
+    prediction_path = out / "heldout_reason_predictions.jsonl"
+    if prediction_path.exists():
+        prediction_path.unlink()
+    cause_result = results.get("cause_head", {})
+    for item_id, gold, prediction in zip(
+        cause_result.get("test_ids", []),
+        cause_result.get("test_gold", []),
+        cause_result.get("test_prediction", []),
+    ):
+        append_jsonl(prediction_path, {
+            "id": item_id, "gold_reason": gold,
+            "predicted_reason": prediction,
+
+def summarize(out: Path) -> None:
+    rows = read_jsonl(out / "teacher_records.jsonl")
+    summary = {
+        "schema_version": SCHEMA_VERSION,
+        "n_records": len(rows),
+        "base_correct": sum(bool(x.get("base", {}).get("correct")) for x in rows),
+        "base_hallucinations": sum(
+            x.get("base", {}).get("parse_valid") and not x.get("base", {}).get("correct")
+            for x in rows
+        ),
+        "base_unparsed": sum(not x.get("base", {}).get("parse_valid") for x in rows),
+        "knowledge_states": dict(
+            Counter(x.get("knowledge_probe", {}).get("state", "missing") for x in rows)
+        ),
+        "teacher_cause_counts": dict(Counter(x.get("teacher_cause", "missing") for x in rows)),
+        "interventions_run": sum(bool(x.get("interventions_run")) for x in rows),
+        "localized_culprit_spans": sum(
+            bool(span.get("teacher", {}).get("culprit"))
+            for x in rows
+            for span in x.get("selected_spans", [])
+        ),
+        "method": {
+            "knowledge_teacher": "balanced isolated per-scientist atomic fact probes",
+            "span_teacher": "gold recovery minus low-similarity deletion control",
+            "classifier_features": (
+                "base/probe/intervention hidden states and pre/post deltas; "
+                "no gold correctness or recovery"
+            ),
+        },
+    }
+    atomic_json(out / "collection_summary.json", summary)
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="ScientistQA knowledge-gap vs interference router with hidden transitions",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument(
+        "--input",
+        default="whitebox/shuffled_prepend_names_question.json",
+    )
+    parser.add_argument(
+        "--profiles-data",
+        default="whitebox/shuffled_prepend_profiles_question.json",
+        help="Aligned teacher facts; matched by record key",
+    )
+    parser.add_argument("--output-dir", required=True)
+    parser.add_argument(
+        "--model", default="Qwen/Qwen2.5-7B-Instruct"
+    )
+    parser.add_argument("--stage", choices=("collect", "train", "all"), default="all")
+    parser.add_argument("--device", default="cuda")
+    parser.add_argument(
+        "--dtype", choices=("float16", "bfloat16", "float32"), default="bfloat16"
+    )
+    parser.add_argument(
+        "--quantize-4bit", action=argparse.BooleanOptionalAction, default=True
+    )
+    parser.add_argument("--trust-remote-code", action="store_true")
+    parser.add_argument("--max-input-tokens", type=int, default=512)
+    parser.add_argument("--max-new-tokens", type=int, default=32)
+    parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument("--top-p", type=float, default=0.95)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--start-index", type=int, default=0)
+    parser.add_argument("--max-samples", type=int, default=0)
+    parser.add_argument("--probes-per-person", type=int, default=4)
+    parser.add_argument("--knowledge-known-threshold", type=float, default=0.75)
+    parser.add_argument("--knowledge-gap-threshold", type=float, default=0.50)
+    parser.add_argument("--min-span-words", type=int, default=2)
+    parser.add_argument("--max-intervention-spans", type=int, default=5)
+    parser.add_argument(
+        "--rank-layer-slot",
+        type=int,
+        default=14,
+        help="Slot within extracted layer list used for span pre-ranking",
+    )
+    parser.add_argument("--span-recovery-threshold", type=float, default=1 / 3)
+    parser.add_argument("--span-specificity-threshold", type=float, default=1 / 3)
+    parser.add_argument(
+        "--hidden-layers",
+        default="all",
+        help="'all', percentages, or HF hidden-state indices including 0=embedding",
+    )
+    parser.add_argument("--select-k", type=int, default=128)
+    parser.add_argument("--resume", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument("--force", action="store_true")
+    parser.add_argument(
+        "--log-level", choices=("DEBUG", "INFO", "WARNING", "ERROR"), default="INFO"
+    )
+    return parser
+
+
+def main() -> None:
+    args = build_parser().parse_args()
+    logging.basicConfig(
+        level=getattr(logging, args.log_level),
+        format="%(asctime)s | %(levelname)s | %(message)s",
+    )
+    seed_everything(args.seed)
+    out = Path(args.output_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    atomic_json(out / "config.json", vars(args))
+    examples = load_examples(
+        Path(args.input),
+        Path(args.profiles_data),
+        args.max_samples,
+        args.start_index,
+    )
+    if not examples:
+        raise RuntimeError("No aligned ScientistQA examples")
+    if args.stage in {"collect", "all"}:
+        collect(args, examples, out)
+        summarize(out)
+    if args.stage in {"train", "all"}:
+        train(args, out)
+    LOGGER.info("Output: %s", out)
+
+
+if __name__ == "__main__":
+    main()
