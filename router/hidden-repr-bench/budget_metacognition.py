@@ -1,0 +1,695 @@
+#!/usr/bin/env python3
+"""
+budget_metacognition.py — 模型能否评估并门控自己的计算资源需求? (自包含)
+
+设计对齐文献:
+  * budget forcing (s1, Muennighoff+ 2025): 强制终止=追加 end-of-thinking 分隔符;
+    延长=抑制该分隔符并追加 "Wait"。已知无法精确控长, 故全程记录**实际** thinking tokens。
+  * compute-utility S 曲线 (CLEAR): Strict / Surge / Ample 三相, 逐题拟合。
+  * overthinking (When More Thinking Hurts): 更多预算可能**伤害**性能(negative flip),
+    因此失败是双向的: under-think 与 over-think 都要测。
+  * 已知先例: hidden state 可预测所需长度, 且模型自报长度与真实值近乎零相关
+    (Emergent Response Planning)。故本脚本的novelty定位在**行动门控**层, 而非需求可解码性。
+  * 反向预测: probe 可靠性可能随生成推进而**下降** (LLMs Encode Their Failures)。
+    AUROC-vs-K 曲线预注册双向假设。
+
+四个阶段:
+  curve   逐题在多个预算下测准确率 -> 最小充分预算 b*, S曲线相位, overthinking 标记
+  gate    四选一行动协议 (给定预算 N): [SOLVE]/[NEED_MORE]/[ABSTAIN], 交叉 N vs b*
+  probe   生成过程中 K 个位置提取 hidden -> 三个 probe: 需求回归 / 会不会失败 / 会不会要更多
+  analyze 全部统计: 门控假设检验、供给-需求分离对照、自报 vs probe、AUROC-vs-K
+
+用法:
+  python budget_metacognition.py --stage curve  --output-dir out --max-items 300
+  python budget_metacognition.py --stage gate   --output-dir out
+  python budget_metacognition.py --stage probe  --output-dir out
+  python budget_metacognition.py --stage analyze --output-dir out
+"""
+from __future__ import annotations
+import argparse, gc, hashlib, json, logging, math, re, warnings
+from pathlib import Path
+from typing import Optional, Sequence
+import numpy as np
+
+warnings.filterwarnings("ignore", category=UserWarning)
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
+LOG = logging.getLogger("budget_meta")
+
+# 预算阶梯 (thinking token 上限)。跨越 S 曲线三相。
+BUDGETS = [128, 256, 512, 1024, 2048, 4096]
+# hidden 提取位置 (生成的第 K 个 token; 0 = prompt 末位, 作答前)
+K_POSITIONS = [0, 16, 32, 64, 128, 256, 512]
+
+THINK_END = "</think>"
+WAIT_CUE = "\nWait"          # s1 的延长线索
+FORCE_ANSWER = "\n</think>\n\nThe final answer is \\boxed{"
+
+# ---- 四选一门控协议 (与 tool_gate 的 SEARCH/ANSWER/ABSTAIN 结构对称) ----
+GATE_PROMPT = (
+    "You are given a thinking budget of approximately {budget} tokens for this problem.\n"
+    "Before starting, decide and respond with EXACTLY one of:\n"
+    "  [SOLVE]      -- you can solve this within the given budget; begin now\n"
+    "  [NEED_MORE]  -- this problem needs substantially more reasoning than the budget allows\n"
+    "  [ABSTAIN]    -- you cannot solve this problem at any budget\n"
+    "Output only the tag, nothing else.\n\n"
+    "Problem: {q}"
+)
+# 自报需求 (对照 probe; 复现 Emergent Response Planning 的自预测设置)
+SELFREPORT_PROMPT = (
+    "Estimate how many tokens of step-by-step reasoning you would need to solve the "
+    "following problem. Respond with only an integer.\n\nProblem: {q}"
+)
+
+SOLVE_RE = re.compile(r"\[\s*SOLVE\s*\]", re.I)
+NEEDMORE_RE = re.compile(r"\[\s*NEED[_\s-]?MORE\s*\]", re.I)
+ABSTAIN_RE = re.compile(r"\[\s*ABSTAIN\s*\]", re.I)
+
+
+def parse_gate_action(text: str) -> str:
+    head = text.split(THINK_END)[-1].strip()[:200]
+    if NEEDMORE_RE.search(head):
+        return "need_more"
+    if ABSTAIN_RE.search(head):
+        return "abstain"
+    if SOLVE_RE.search(head):
+        return "solve"
+    return "unparsed"
+
+
+def parse_int(text: str) -> Optional[int]:
+    m = re.search(r"\d[\d,]*", text.replace(",", ""))
+    return int(m.group(0)) if m else None
+
+
+def boxed(sol: str) -> str:
+    m = re.search(r"\\boxed\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}", sol)
+    return m.group(1).strip() if m else sol.strip()
+
+
+def norm_num(s) -> Optional[str]:
+    s = str(s).replace(",", "").replace("$", "").replace("\\!", "").strip()
+    s = re.sub(r"\\(?:d?frac)\{(-?\d+)\}\{(-?\d+)\}", r"\1/\2", s)
+    if re.fullmatch(r"-?\d+/-?\d+", s):
+        a, b = s.split("/")
+        try:
+            v = float(a) / float(b)
+            return str(int(v)) if v.is_integer() else f"{v:.6g}"
+        except (ValueError, ZeroDivisionError):
+            return s
+    nums = re.findall(r"-?\d+\.?\d*", s)
+    if not nums:
+        return s.lower() or None
+    try:
+        v = float(nums[-1])
+        return str(int(v)) if v.is_integer() else f"{v:.6g}"
+    except ValueError:
+        return nums[-1]
+
+
+def match_answer(pred: str, gold: str) -> bool:
+    m = re.findall(r"\\boxed\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}", pred)
+    cand = m[-1] if m else pred
+    a, b = norm_num(cand), norm_num(gold)
+    return a is not None and a == b
+
+
+# ============================ 引擎 (budget forcing) ============================
+class Engine:
+    def __init__(self, model, device, dtype, max_input, quant4, trust):
+        import torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        self.torch = torch
+        self.max_input = max_input
+        self.tok = AutoTokenizer.from_pretrained(model, use_fast=True, trust_remote_code=trust)
+        if self.tok.pad_token_id is None:
+            self.tok.pad_token = self.tok.eos_token
+        kw = dict(torch_dtype=getattr(torch, dtype), trust_remote_code=trust, low_cpu_mem_usage=True)
+        if quant4:
+            from transformers import BitsAndBytesConfig
+            kw["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                bnb_4bit_use_double_quant=True, bnb_4bit_compute_dtype=torch.bfloat16)
+            kw["device_map"] = {"": 0}
+        self.model = AutoModelForCausalLM.from_pretrained(model, **kw)
+        if not quant4:
+            self.model = self.model.to(device)
+        self.model.eval()
+        self.device = next(self.model.parameters()).device
+        self.n_layers = int(self.model.config.num_hidden_layers)
+        self.hidden = int(self.model.config.hidden_size)
+        ids = self.tok.encode(THINK_END, add_special_tokens=False)
+        self.think_end_id = ids[-1] if ids else None
+        self.is_reasoner = self.think_end_id is not None and "R1" in model.upper() or "THINK" in model.upper()
+
+    def fmt(self, user: str) -> str:
+        if getattr(self.tok, "chat_template", None):
+            return self.tok.apply_chat_template([{"role": "user", "content": user}],
+                                                tokenize=False, add_generation_prompt=True)
+        return f"User: {user}\nAssistant:"
+
+    def _enc(self, text):
+        return self.tok(text, return_tensors="pt", truncation=True,
+                        max_length=self.max_input, add_special_tokens=False).to(self.device)
+
+    def plain(self, prompt: str, max_new=32, temperature=0.0, seed=0):
+        """普通短生成 (门控决策 / 自报需求)。"""
+        import torch
+        torch.manual_seed(seed)
+        enc = self._enc(self.fmt(prompt))
+        with torch.inference_mode():
+            out = self.model.generate(**enc, max_new_tokens=max_new,
+                                      do_sample=temperature > 0,
+                                      temperature=temperature if temperature > 0 else None,
+                                      pad_token_id=self.tok.pad_token_id)
+        return self.tok.decode(out[0, enc.input_ids.shape[1]:], skip_special_tokens=True).strip()
+
+    def budget_forced(self, problem: str, budget: int, seed=0, temperature=0.6,
+                      k_positions: Optional[Sequence[int]] = None, extend=False):
+        """s1 式 budget forcing。
+        budget: thinking token 上限。达到上限 -> 追加 end-of-thinking 强制作答。
+        extend: True 时, 若模型提前想结束, 抑制分隔符并追加 "Wait" 继续 (用于探测上界)。
+        k_positions: 若给出, 在生成的第 K 个 token 处记录逐层 hidden。
+        返回 dict: answer_text, think_tokens_used, hit_cap, early_stop, n_wait, hidden{K:[L+1,H]}
+        """
+        import torch
+        torch.manual_seed(seed)
+        enc = self._enc(self.fmt(problem))
+        input_ids = enc.input_ids
+        want_h = sorted(k for k in (k_positions or []) if k > 0)
+        hidden = {}
+
+        with torch.inference_mode():
+            base = self.model(input_ids=input_ids, output_hidden_states=bool(k_positions), use_cache=True)
+        if k_positions and 0 in k_positions:
+            hidden[0] = torch.stack([base.hidden_states[l][0, -1].float().cpu()
+                                     for l in range(len(base.hidden_states))]).half()
+        past = base.past_key_values
+        cur = input_ids[:, -1:]
+        gen, wi, step, n_wait, early = [], 0, 0, 0, False
+
+        while step < budget:
+            need_h = wi < len(want_h) and step + 1 == want_h[wi]
+            with torch.inference_mode():
+                o = self.model(input_ids=cur, past_key_values=past,
+                               output_hidden_states=need_h, use_cache=True)
+            past = o.past_key_values
+            logits = o.logits[0, -1]
+            nxt = int(logits.argmax()) if temperature <= 0 else int(
+                torch.multinomial(torch.softmax(logits.float() / temperature, -1), 1))
+            step += 1
+            if need_h:
+                hidden[want_h[wi]] = torch.stack([o.hidden_states[l][0, -1].float().cpu()
+                                                  for l in range(len(o.hidden_states))]).half()
+                wi += 1
+            # 模型想结束思考
+            if self.think_end_id is not None and nxt == self.think_end_id:
+                if extend and step < budget - len(self.tok.encode(WAIT_CUE, add_special_tokens=False)) - 2:
+                    # 抑制分隔符, 追加 Wait 继续 (s1 的延长机制)
+                    wait_ids = self.tok.encode(WAIT_CUE, add_special_tokens=False)
+                    gen.extend(wait_ids); n_wait += 1; step += len(wait_ids)
+                    cur = torch.tensor([[wait_ids[-1]]], device=self.device)
+                    with torch.inference_mode():
+                        o2 = self.model(input_ids=torch.tensor([wait_ids[:-1]], device=self.device),
+                                        past_key_values=past, use_cache=True) if len(wait_ids) > 1 else None
+                    if o2 is not None:
+                        past = o2.past_key_values
+                    continue
+                early = True
+                break
+            gen.append(nxt)
+            cur = torch.tensor([[nxt]], device=self.device)
+
+        hit_cap = (step >= budget) and not early
+        # 强制闭合 thinking 并作答
+        closer = self.tok.encode(FORCE_ANSWER, add_special_tokens=False)
+        full = torch.cat([input_ids,
+                          torch.tensor([gen], dtype=torch.long, device=self.device) if gen
+                          else torch.zeros((1, 0), dtype=torch.long, device=self.device),
+                          torch.tensor([closer], dtype=torch.long, device=self.device)], dim=1)
+        with torch.inference_mode():
+            out = self.model.generate(input_ids=full, max_new_tokens=48, do_sample=False,
+                                      pad_token_id=self.tok.pad_token_id)
+        tail = self.tok.decode(out[0, input_ids.shape[1]:], skip_special_tokens=True)
+        return dict(answer_text=tail, think_tokens_used=len(gen), hit_cap=hit_cap,
+                    early_stop=early, n_wait=n_wait, hidden=hidden)
+
+
+# ============================ 数据 ============================
+def load_problems(name: str, max_items: int, seed: int):
+    from datasets import concatenate_datasets, load_dataset
+    rng = np.random.RandomState(seed)
+    out = []
+    if name == "math":
+        configs = ["algebra", "counting_and_probability", "geometry",
+                   "intermediate_algebra", "number_theory", "prealgebra",
+                   "precalculus"]
+        ds = concatenate_datasets([
+            load_dataset("EleutherAI/hendrycks_math", c, split="test") for c in configs
+        ])
+        rows = [r for r in ds if r.get("level") in ("Level 1","Level 2","Level 3","Level 4","Level 5")]
+        idx = rng.permutation(len(rows))[:max_items]
+        for i in idx:
+            r = rows[int(i)]
+            out.append(dict(qid=f"math_{int(i):05d}", problem=r["problem"],
+                            gold=boxed(r["solution"]), level=r.get("level",""), subject=r.get("type","")))
+    elif name == "gsm8k":
+        ds = load_dataset("openai/gsm8k", "main", split="test")
+        idx = rng.permutation(len(ds))[:max_items]
+        for i in idx:
+            r = ds[int(i)]
+            out.append(dict(qid=f"gsm_{int(i):05d}", problem=r["question"],
+                            gold=r["answer"].split("####")[-1].strip(), level="", subject="gsm8k"))
+    else:
+        raise ValueError(name)
+    return out
+
+
+def read_jsonl(p: Path):
+    return [json.loads(l) for l in p.open() if l.strip()]
+
+
+def stable_qid_offset(qid: str, modulo: int = 1000) -> int:
+    """跨 Python 进程/工作区稳定的 qid seed 偏移。"""
+    digest = hashlib.sha256(qid.encode("utf-8")).digest()
+    return int.from_bytes(digest[:8], "big") % modulo
+
+# ============================ 阶段 1: compute-utility 曲线 ============================
+def stage_curve(args, out: Path):
+    """逐题在 BUDGETS 上各采 n 次, 得到 acc(B) 曲线。
+    产出 per-item: acc_by_budget, b_star(最小充分预算), phase, overthink 标记。"""
+    import torch
+    probs = load_problems(args.dataset, args.max_items, args.seed)
+    total_probs = len(probs)
+    probs = probs[args.shard_id::args.num_shards]
+    LOG.info("curve shard %d/%d: %d/%d items",
+             args.shard_id, args.num_shards, len(probs), total_probs)
+    eng = Engine(args.model, args.device, args.dtype, args.max_input_tokens,
+                 args.quantize_4bit, args.trust_remote_code)
+    path = out / "curve.jsonl"
+    done = {json.loads(l)["qid"] for l in path.open()} if (args.resume and path.exists()) else set()
+    if path.exists() and not args.resume:
+        path.unlink()
+    from tqdm.auto import tqdm
+    fh = path.open("a")
+    for p in tqdm(probs, desc="curve"):
+        if p["qid"] in done:
+            continue
+        try:
+            rec = dict(**p, runs=[])
+            for B in BUDGETS:
+                accs, used, caps, earlys = [], [], [], []
+                for s in range(args.n_samples):
+                    r = eng.budget_forced(p["problem"] + "\nReason step by step.", B,
+                                          seed=args.seed + s * 7919 + stable_qid_offset(p["qid"]),
+                                          temperature=args.temperature)
+                    accs.append(int(match_answer(r["answer_text"], p["gold"])))
+                    used.append(r["think_tokens_used"]); caps.append(int(r["hit_cap"]))
+                    earlys.append(int(r["early_stop"]))
+                rec["runs"].append(dict(budget=B, acc=float(np.mean(accs)), n=len(accs),
+                                        mean_used=float(np.mean(used)),
+                                        cap_rate=float(np.mean(caps)),
+                                        early_rate=float(np.mean(earlys))))
+            fh.write(json.dumps(rec) + "\n"); fh.flush()
+        except Exception:
+            LOG.exception("curve fail %s", p["qid"])
+        finally:
+            gc.collect()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+    fh.close()
+    LOG.info("curve -> %s", path)
+
+
+def fit_curve(rec, thresh=0.5, overthink_drop=0.2):
+    """从 acc(B) 提取: b_star(首个 acc>=thresh 的预算), 峰值预算, overthinking 标记, 相位。"""
+    runs = sorted(rec["runs"], key=lambda r: r["budget"])
+    accs = [r["acc"] for r in runs]; bs = [r["budget"] for r in runs]
+    b_star = next((b for b, a in zip(bs, accs) if a >= thresh), None)
+    peak_i = int(np.argmax(accs)); peak_b, peak_acc = bs[peak_i], accs[peak_i]
+    # overthinking: 峰值之后出现显著下降
+    after = accs[peak_i + 1:]
+    overthink = bool(after) and (peak_acc - min(after)) >= overthink_drop
+    if b_star is None:
+        phase = "strict_all"          # 全预算都做不出 -> 不是 budget 问题, 是能力问题
+    elif b_star <= bs[1]:
+        phase = "ample_early"         # 很小预算就够 -> 大预算是浪费
+    else:
+        phase = "surge"               # 在中段跨过阈值 -> budget 敏感, 研究主体
+    return dict(b_star=b_star, peak_budget=peak_b, peak_acc=peak_acc,
+                overthink=overthink, phase=phase,
+                acc_by_budget={str(b): a for b, a in zip(bs, accs)},
+                mean_used_by_budget={str(r["budget"]): r["mean_used"] for r in runs},
+                cap_rate_by_budget={str(r["budget"]): r["cap_rate"] for r in runs})
+
+
+# ============================ 阶段 2: 四选一门控 ============================
+def stage_gate(args, out: Path):
+    """对每题、每个给定预算 N, 问模型 [SOLVE]/[NEED_MORE]/[ABSTAIN]; 另记录自报需求。"""
+    import torch
+    curve = read_jsonl(out / "curve.jsonl")
+    eng = Engine(args.model, args.device, args.dtype, args.max_input_tokens,
+                 args.quantize_4bit, args.trust_remote_code)
+    path = out / "gate.jsonl"
+    done = {(json.loads(l)["qid"], json.loads(l)["budget"]) for l in path.open()} \
+        if (args.resume and path.exists()) else set()
+    if path.exists() and not args.resume:
+        path.unlink()
+    from tqdm.auto import tqdm
+    fh = path.open("a")
+    for rec in tqdm(curve, desc="gate"):
+        fit = fit_curve(rec, args.acc_threshold, args.overthink_drop)
+        # 自报需求 (每题一次, 与预算无关) —— 对照 probe
+        try:
+            sr = eng.plain(SELFREPORT_PROMPT.format(q=rec["problem"]), max_new=16,
+                           seed=args.seed + stable_qid_offset(rec["qid"]))
+            self_report = parse_int(sr)
+        except Exception:
+            self_report = None
+        for B in BUDGETS:
+            if (rec["qid"], B) in done:
+                continue
+            try:
+                txt = eng.plain(GATE_PROMPT.format(budget=B, q=rec["problem"]), max_new=12,
+                                seed=args.seed + B + stable_qid_offset(rec["qid"]))
+                action = parse_gate_action(txt)
+                sufficient = (fit["b_star"] is not None) and (B >= fit["b_star"])
+                fh.write(json.dumps(dict(
+                    qid=rec["qid"], budget=B, action=action, raw=txt[:120],
+                    b_star=fit["b_star"], phase=fit["phase"], overthink=fit["overthink"],
+                    sufficient=bool(sufficient),
+                    acc_at_budget=fit["acc_by_budget"].get(str(B)),
+                    mean_used_at_budget=fit["mean_used_by_budget"].get(str(B)),
+                    self_report=self_report, level=rec.get("level",""),
+                )) + "\n"); fh.flush()
+            except Exception:
+                LOG.exception("gate fail %s@%d", rec["qid"], B)
+            finally:
+                gc.collect()
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+    fh.close()
+    LOG.info("gate -> %s", path)
+
+
+# ============================ 阶段 3: 逐位置 hidden ============================
+def stage_probe(args, out: Path):
+    """在参考预算下生成, 于 K_POSITIONS 记录逐层 hidden, 供三个 probe 使用。"""
+    import torch
+    curve = read_jsonl(out / "curve.jsonl")
+    eng = Engine(args.model, args.device, args.dtype, args.max_input_tokens,
+                 args.quantize_4bit, args.trust_remote_code)
+    hdir = out / "hidden"; hdir.mkdir(parents=True, exist_ok=True)
+    path = out / "probe_index.jsonl"
+    done = {json.loads(l)["qid"] for l in path.open()} if (args.resume and path.exists()) else set()
+    if path.exists() and not args.resume:
+        path.unlink()
+    from tqdm.auto import tqdm
+    fh = path.open("a")
+    for rec in tqdm(curve, desc="probe"):
+        if rec["qid"] in done:
+            continue
+        try:
+            fit = fit_curve(rec, args.acc_threshold, args.overthink_drop)
+            r = eng.budget_forced(rec["problem"] + "\nReason step by step.", args.probe_budget,
+                                  seed=args.seed, temperature=0.0, k_positions=K_POSITIONS)
+            torch.save({"qid": rec["qid"], "hidden": r["hidden"]}, hdir / f"{rec['qid']}.pt")
+            fh.write(json.dumps(dict(
+                qid=rec["qid"], k_available=sorted(r["hidden"].keys()),
+                b_star=fit["b_star"], phase=fit["phase"], overthink=fit["overthink"],
+                peak_budget=fit["peak_budget"], peak_acc=fit["peak_acc"],
+                probe_budget=args.probe_budget,
+                fail_at_probe_budget=int((fit["acc_by_budget"].get(str(args.probe_budget), 0.0) or 0.0) < args.acc_threshold),
+                think_used=r["think_tokens_used"], hit_cap=int(r["hit_cap"]),
+                correct=int(match_answer(r["answer_text"], rec["gold"])),
+                level=rec.get("level", ""),
+            )) + "\n"); fh.flush()
+        except Exception:
+            LOG.exception("probe fail %s", rec["qid"])
+        finally:
+            gc.collect()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+    fh.close()
+    LOG.info("probe -> %s", path)
+
+
+# ============================ 阶段 4: 分析 ============================
+def stage_analyze(args, out: Path):
+    import torch
+    from scipy.stats import fisher_exact, spearmanr
+    from sklearn.linear_model import LogisticRegression, Ridge
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.model_selection import cross_val_predict, KFold
+    from sklearn.metrics import roc_auc_score
+
+    res = {}
+    curve = read_jsonl(out / "curve.jsonl") if (out / "curve.jsonl").exists() else []
+    fits = {r["qid"]: fit_curve(r, args.acc_threshold, args.overthink_drop) for r in curve}
+
+    # ---------- (1) S 曲线与相位分布 ----------
+    if curve:
+        from collections import Counter
+        phases = Counter(f["phase"] for f in fits.values())
+        overth = sum(f["overthink"] for f in fits.values())
+        bstars = [f["b_star"] for f in fits.values() if f["b_star"]]
+        agg = {str(B): float(np.mean([f["acc_by_budget"].get(str(B), 0.0) for f in fits.values()]))
+               for B in BUDGETS}
+        res["curve"] = {
+            "n_items": len(fits), "phase_counts": dict(phases),
+            "overthink_items": int(overth), "overthink_rate": round(overth / max(len(fits),1), 4),
+            "aggregate_acc_by_budget": agg,
+            "b_star_distribution": {
+                "n_with_bstar": len(bstars),
+                "median": float(np.median(bstars)) if bstars else None,
+                "p10": float(np.percentile(bstars,10)) if bstars else None,
+                "p90": float(np.percentile(bstars,90)) if bstars else None,
+                "spread_ratio": float(np.percentile(bstars,90)/max(np.percentile(bstars,10),1)) if bstars else None,
+            },
+            "note": "spread_ratio 大 = 逐题最优预算差异大 = 均匀分配次优 (对齐 Snell/Overthinking 的发现)",
+        }
+
+    # ---------- (2) 门控核心假设 ----------
+    gate = read_jsonl(out / "gate.jsonl") if (out / "gate.jsonl").exists() else []
+    if gate:
+        parsed = [g for g in gate if g["action"] != "unparsed"]
+        res["gate_format_compliance"] = round(len(parsed) / max(len(gate),1), 4)
+        # 只在 surge 相(budget 敏感)且有 b_star 的题上检验 —— 其余题预算不是瓶颈
+        core = [g for g in parsed if g["b_star"] is not None and g["phase"] == "surge"]
+        insuff = [g for g in core if not g["sufficient"]]
+        suff = [g for g in core if g["sufficient"]]
+        def rate(sub, act): return float(np.mean([x["action"] == act for x in sub])) if sub else float("nan")
+        a1 = sum(g["action"] == "need_more" for g in insuff); a0 = len(insuff) - a1
+        b1 = sum(g["action"] == "need_more" for g in suff);   b0 = len(suff) - b1
+        block = {"n_core": len(core), "n_insufficient": len(insuff), "n_sufficient": len(suff),
+                 "need_more_rate_insufficient": round(rate(insuff, "need_more"), 4),
+                 "need_more_rate_sufficient": round(rate(suff, "need_more"), 4),
+                 "solve_rate_insufficient": round(rate(insuff, "solve"), 4),
+                 "solve_rate_sufficient": round(rate(suff, "solve"), 4),
+                 "abstain_rate_insufficient": round(rate(insuff, "abstain"), 4)}
+        if min(len(insuff), len(suff)) > 0 and (a1+a0)*(b1+b0) > 0:
+            odds, p = fisher_exact([[a1, a0], [b1, b0]])
+            block.update(odds_ratio=round(float(odds), 3), fisher_p=float(p),
+                         supported=bool(block["need_more_rate_insufficient"] >
+                                        block["need_more_rate_sufficient"] and p < 0.05))
+        res["hypothesis_gate_resource"] = block
+        # 资源维度的 "Gemini 病": 预算不够却自信 SOLVE 且实际答错
+        oc = [g for g in insuff if g["action"] == "solve"]
+        res["overconfident_solve"] = {
+            "rate_among_insufficient": round(len(oc)/max(len(insuff),1), 4),
+            "mean_acc_when_overconfident": round(float(np.mean([g["acc_at_budget"] or 0 for g in oc])), 4) if oc else None,
+            "note": "预算不足却选 SOLVE 的比例; 高 = 资源维度的门控失败",
+        }
+
+        # ---------- (3) 供给-需求分离对照 (关键防守) ----------
+        # 在**需求相近**的题内, 行动是否随**给定供给**变化? 若否 -> 只跟难度走, 没读到预算。
+        by_q = {}
+        for g in core:
+            by_q.setdefault(g["qid"], []).append(g)
+        flip_q = [q for q, gs in by_q.items()
+                  if len({x["action"] for x in gs}) > 1]
+        # 需求分层内的供给效应
+        strata = {}
+        bs_vals = sorted({g["b_star"] for g in core if g["b_star"]})
+        for bstar in bs_vals:
+            sub = [g for g in core if g["b_star"] == bstar]
+            if len(sub) < 10:
+                continue
+            strata[str(bstar)] = {
+                "n": len(sub),
+                "need_more_rate_by_given_budget": {
+                    str(B): round(float(np.mean([x["action"]=="need_more" for x in sub if x["budget"]==B])), 4)
+                    for B in BUDGETS if any(x["budget"]==B for x in sub)}}
+        res["supply_demand_control"] = {
+            "frac_items_action_varies_with_budget": round(len(flip_q)/max(len(by_q),1), 4),
+            "within_demand_strata": strata,
+            "note": "同一 b_star 分层内, need_more 率应随给定预算上升而下降; "
+                    "若各预算下几乎不变 => 模型只读难度、没读供给, 门控主张不成立",
+        }
+
+        # ---------- (4) 自报需求 vs 真实需求 (复现 Emergent Response Planning 的 gap) ----------
+        pairs = [(g["self_report"], g["b_star"]) for g in gate
+                 if g.get("self_report") and g.get("b_star")]
+        uniq = {}
+        for sr, bs in pairs:
+            uniq[sr] = bs   # 每题一次自报, 去重
+        if len(pairs) >= 20:
+            sr_arr = np.array([p[0] for p in pairs], float)
+            bs_arr = np.array([p[1] for p in pairs], float)
+            rho, pv = spearmanr(sr_arr, bs_arr)
+            res["self_report_vs_true_demand"] = {
+                "n": len(pairs), "spearman": round(float(rho), 4), "p": float(pv),
+                "median_self_report": float(np.median(sr_arr)),
+                "median_true_bstar": float(np.median(bs_arr)),
+                "note": "先例: Emergent Response Planning 报告自预测长度近乎零相关; "
+                        "此处若同样低而 probe 高, 即构成 probe>自报 的资源维度证据",
+            }
+
+    # ---------- (5) 三个 probe + AUROC-vs-K ----------
+    idx = read_jsonl(out / "probe_index.jsonl") if (out / "probe_index.jsonl").exists() else []
+    if idx:
+        data, meta = {}, []
+        for r in idx:
+            pt = out / "hidden" / f"{r['qid']}.pt"
+            if not pt.exists():
+                continue
+            h = torch.load(pt, map_location="cpu", weights_only=False)["hidden"]
+            data[r["qid"]] = {int(k): v.float().numpy() for k, v in h.items()}
+            meta.append(r)
+        n_layers = None
+        probe_res = {"fail_classification": {}, "demand_regression": {}, "need_more_prediction": {}}
+        # 门控动作 (用于第三个 probe): 取 probe_budget 处的动作
+        act_at = {g["qid"]: g["action"] for g in gate if g["budget"] == args.probe_budget} if gate else {}
+
+        for K in K_POSITIONS:
+            X, y_fail, y_dem, y_act, groups = [], [], [], [], []
+            for r in meta:
+                d = data.get(r["qid"], {})
+                if K not in d:
+                    continue
+                X.append(d[K]); groups.append(r["qid"])
+                y_fail.append(int(r["fail_at_probe_budget"]))
+                y_dem.append(math.log2(r["b_star"]) if r["b_star"] else math.log2(BUDGETS[-1]*2))
+                y_act.append(int(act_at.get(r["qid"], "") == "need_more"))
+            if len(X) < 25:
+                for k in probe_res:
+                    probe_res[k][str(K)] = {"skipped": f"n={len(X)}"}
+                continue
+            X = np.stack(X); n_layers = X.shape[1]
+            y_fail = np.array(y_fail); y_dem = np.array(y_dem, float); y_act = np.array(y_act)
+
+            def scan_clf(y, tag):
+                if len(set(y)) < 2:
+                    return {"skipped": "single class", "n": len(y)}
+                best = {"auroc": -1, "layer": None, "n": len(y), "pos": int(y.sum()), "curve": []}
+                for l in range(1, n_layers):     # 排除 embedding 层
+                    Xl = StandardScaler().fit_transform(X[:, l])
+                    p = cross_val_predict(LogisticRegression(max_iter=2000, C=0.5,
+                                                             class_weight="balanced"),
+                                          Xl, y, cv=5, method="predict_proba")[:, 1]
+                    a = roc_auc_score(y, p)
+                    best["curve"].append((l, round(a, 3)))
+                    if a > best["auroc"]:
+                        best.update(auroc=round(a, 4), layer=l)
+                return best
+
+            def scan_reg(y):
+                best = {"spearman": -2, "layer": None, "n": len(y), "curve": []}
+                for l in range(1, n_layers):
+                    Xl = StandardScaler().fit_transform(X[:, l])
+                    pred = cross_val_predict(Ridge(alpha=10.0), Xl, y, cv=KFold(5, shuffle=True,
+                                                                                random_state=0))
+                    rho, _ = spearmanr(pred, y)
+                    rho = 0.0 if np.isnan(rho) else float(rho)
+                    best["curve"].append((l, round(rho, 3)))
+                    if rho > best["spearman"]:
+                        best.update(spearman=round(rho, 4), layer=l)
+                return best
+
+            probe_res["fail_classification"][str(K)] = scan_clf(y_fail, "fail")
+            probe_res["demand_regression"][str(K)] = scan_reg(y_dem)
+            probe_res["need_more_prediction"][str(K)] = scan_clf(y_act, "act")
+            LOG.info("K=%-4d n=%d | fail AUROC=%s | demand rho=%s | need_more AUROC=%s", K, len(X),
+                     probe_res["fail_classification"][str(K)].get("auroc"),
+                     probe_res["demand_regression"][str(K)].get("spearman"),
+                     probe_res["need_more_prediction"][str(K)].get("auroc"))
+        res["probes"] = probe_res
+
+        # AUROC-vs-K 形态判读 (预注册双向假设)
+        vals = [(K, probe_res["fail_classification"][str(K)].get("auroc"))
+                for K in K_POSITIONS if isinstance(probe_res["fail_classification"].get(str(K)), dict)
+                and "auroc" in probe_res["fail_classification"][str(K)]]
+        if len(vals) >= 2:
+            k0 = next((a for K, a in vals if K == 0), None)
+            klast = vals[-1][1]
+            if k0 is None:
+                verdict = "no K=0 measurement"
+            elif klast - k0 > 0.05:
+                verdict = "rises with generation (diagnostic window opens during decoding)"
+            elif k0 - klast > 0.05:
+                verdict = ("declines with generation — consistent with prior report that probe "
+                           "reliability degrades as reasoning chains lengthen")
+            else:
+                verdict = "flat (demand largely determined at prompt encoding)"
+            res["auroc_vs_K"] = {"k0": k0, "k_last": klast, "verdict": verdict,
+                                 "series": vals}
+
+        # probe vs 自报 的直接对比
+        dem = probe_res["demand_regression"].get("0", {})
+        sr = res.get("self_report_vs_true_demand", {})
+        if "spearman" in dem and "spearman" in sr:
+            res["probe_beats_selfreport"] = {
+                "probe_spearman_at_K0": dem["spearman"],
+                "self_report_spearman": sr["spearman"],
+                "gap": round(dem["spearman"] - sr["spearman"], 4),
+                "note": "gap>0 且显著 = 需求信息在表征中但模型自报读不出来 (资源维度的 probe>自报)",
+            }
+
+    (out / "analysis.json").write_text(json.dumps(res, indent=2, ensure_ascii=False))
+    print(json.dumps({k: v for k, v in res.items() if k != "probes"}, indent=2, ensure_ascii=False))
+    LOG.info("analysis -> %s", out / "analysis.json")
+
+
+def build_parser():
+    p = argparse.ArgumentParser(description="预算元认知: 资源自评与行动门控")
+    p.add_argument("--stage", choices=["curve","gate","probe","analyze","all"], default="curve")
+    p.add_argument("--output-dir", required=True)
+    p.add_argument("--dataset", choices=["math","gsm8k"], default="math")
+    p.add_argument("--model", default="deepseek-ai/DeepSeek-R1-Distill-Qwen-7B")
+    p.add_argument("--device", default="cuda")
+    p.add_argument("--dtype", default="bfloat16")
+    p.add_argument("--quantize-4bit", action="store_true")
+    p.add_argument("--trust-remote-code", action="store_true")
+    p.add_argument("--max-input-tokens", type=int, default=4096)
+    p.add_argument("--max-items", type=int, default=300)
+    p.add_argument("--num-shards", type=int, default=1,
+                   help="curve 阶段的总分片数；多 GPU 并行时各进程保持一致")
+    p.add_argument("--shard-id", type=int, default=0,
+                   help="当前 curve 分片编号，范围为 [0, num-shards)")
+    p.add_argument("--n-samples", type=int, default=4, help="每题每预算的采样次数")
+    p.add_argument("--temperature", type=float, default=0.6)
+    p.add_argument("--acc-threshold", type=float, default=0.5, help="判定 b* 的准确率阈值")
+    p.add_argument("--overthink-drop", type=float, default=0.2, help="峰值后跌幅超过此值记为 overthinking")
+    p.add_argument("--probe-budget", type=int, default=512, help="probe 阶段使用的参考预算")
+    p.add_argument("--seed", type=int, default=42)
+    p.add_argument("--resume", action="store_true")
+    return p
+
+
+def main():
+    a = build_parser().parse_args()
+    if a.num_shards < 1:
+        raise ValueError("--num-shards must be >= 1")
+    if not 0 <= a.shard_id < a.num_shards:
+        raise ValueError("--shard-id must satisfy 0 <= shard-id < num-shards")
+    out = Path(a.output_dir); out.mkdir(parents=True, exist_ok=True)
+    (out / "config.json").write_text(json.dumps(vars(a), indent=2))
+    stages = ["curve","gate","probe","analyze"] if a.stage == "all" else [a.stage]
+    for s in stages:
+        LOG.info("=== stage: %s ===", s)
+        {"curve": stage_curve, "gate": stage_gate,
+         "probe": stage_probe, "analyze": stage_analyze}[s](a, out)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,40 @@
+=== Hallu-Diagnose full pipeline (Z3 skipped) ===
+root=/home/tong56/router/hallu-diagnose-claude
+python=/home/tong56/venvs/whitebox/bin/python
+eval_model=unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit
+gen_model=Qwen/Qwen2.5-7B-Instruct
+judge_model=Qwen/Qwen2.5-7B-Instruct
+per_source_limit=1000 batch_size=1
+log=/home/tong56/router/hallu-diagnose-claude/logs/full_pipeline_20260723T052909Z.log
+[2026-07-23T05:29:09Z] START preflight
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python -c import\ sys\,torch\;\ from\ transformers\ import\ AutoConfig\;\ \[AutoConfig.from_pretrained\(m\,\ local_files_only=True\,\ trust_remote_code=True\)\ for\ m\ in\ sys.argv\[1:\]\]\;\ assert\ torch.cuda.is_available\(\)\,\ \"CUDA\ unavailable\"\;\ print\(torch.cuda.get_device_name\(0\)\) unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit Qwen/Qwen2.5-7B-Instruct Qwen/Qwen2.5-7B-Instruct
+[2026-07-23T05:29:09Z] START download_data
+  DRY-RUN: bash download_data.sh
+[2026-07-23T05:29:09Z] START build_z1
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/01_build_z1.py --limit 1000
+[2026-07-23T05:29:09Z] START build_z2
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/02_build_z2.py --gen_model Qwen/Qwen2.5-7B-Instruct --limit 1000
+[2026-07-23T05:29:09Z] START build_z4
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/04_build_z4.py --model unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit --n_pool 1000 --full_budget 8192 --cut_ratio 0.3
+[2026-07-23T05:29:09Z] START build_z6
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/05_build_z6.py --limit 1000
+[INFO] Z3 omitted: scripts/03_build_z3.py requires reviewed keep labels.
+[2026-07-23T05:29:09Z] START screen_z1
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/10_screen.py --stressor z1 --model unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit
+[2026-07-23T05:29:09Z] START screen_z2
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/10_screen.py --stressor z2 --model unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit
+[2026-07-23T05:29:09Z] START screen_z4
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/10_screen.py --stressor z4 --model unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit
+[2026-07-23T05:29:09Z] START screen_z6
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/10_screen.py --stressor z6 --model unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit
+[2026-07-23T05:29:09Z] START symptom_traces
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/11_annotate_symptom.py --gen --model unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit --stressors z1 z2 z4 z6
+[2026-07-23T05:29:09Z] START symptom_judge
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/11_annotate_symptom.py --judge --judge_model Qwen/Qwen2.5-7B-Instruct --stressors z1 z2 z4 z6
+[2026-07-23T05:29:09Z] START symptom_stats
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/11_annotate_symptom.py --stats --stressors z1 z2 z4 z6
+[2026-07-23T05:29:09Z] START matrix
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/21_run_matrix.py --model unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit --stressors z1 z2 z4 z6
+[2026-07-23T05:29:09Z] START matrix_stats
+  DRY-RUN: /home/tong56/venvs/whitebox/bin/python scripts/30_stats.py --result data/results/matrix_DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit.jsonl
+=== DRY RUN COMPLETE ===
