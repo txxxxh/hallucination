@@ -29,6 +29,12 @@ import argparse, gc, json, logging, re, unicodedata
 from pathlib import Path
 from typing import Optional
 import numpy as np
+from probe_patch import (
+    build_popqa_index,
+    make_fact_probes,
+    robust_buckets,
+    score_probes,
+)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 LOG = logging.getLogger("tool_gate")
@@ -72,6 +78,7 @@ def load_dataset(name, max_samples, seed):
     if name == "popqa":
         ds = hf_load("akariasai/PopQA", split="test")
         rows = list(ds)
+        by_subj, obj_pool = build_popqa_index(rows)
         rng.shuffle(rows)
         for r in rows:
             if len(out) >= max_samples:
@@ -88,7 +95,10 @@ def load_dataset(name, max_samples, seed):
             out.append(dict(qid=str(r.get("id", len(out))), question=r["question"],
                             answer=aliases[0], aliases=aliases[1:], know_prior=prior,
                             s_pop=float(pop), subj=r.get("subj", ""), prop=r.get("prop", ""),
-                            probes=_popqa_probes(r)))
+                            probes=make_fact_probes(
+                                r.get("subj", ""), r.get("prop", ""),
+                                by_subj, obj_pool, rng,
+                            )[0]))
     elif name == "synthetic":
         # 合成实体: 绝对 unknown; 需配一批高频真实实体作 known 对照
         out = _synthetic_set(max_samples, rng)
@@ -198,6 +208,19 @@ class Engine:
         c = canon(txt)
         return True if c.startswith(("yes","true")) else False if c.startswith(("no","false")) else None
 
+    def ask_open_probe(self, text, seed):
+        import torch
+        torch.manual_seed(seed)
+        t = self._fmt(text + " Answer briefly with only the factual answer.")
+        enc = self.tok(t, return_tensors="pt", truncation=True, max_length=self.max_input,
+                       add_special_tokens=False).to(self.device)
+        with torch.inference_mode():
+            out = self.model.generate(**enc, max_new_tokens=24, do_sample=False,
+                                      pad_token_id=self.tok.pad_token_id)
+        return self.tok.decode(
+            out[0, enc.input_ids.shape[1]:], skip_special_tokens=True
+        ).strip()
+
 
 def stage_collect(args, out: Path):
     import torch
@@ -231,16 +254,23 @@ def stage_collect(args, out: Path):
                 # 探针知识状态
                 probe_results = []
                 for j, p in enumerate(d.get("probes", [])):
-                    ans = eng.ask_probe(p["text"], seed + 500 + j)
-                    if ans is not None:
-                        probe_results.append(int(ans == p["expected_yes"]))
-                probe_score = float(np.mean(probe_results)) if probe_results else None
+                    if p["kind"] == "open":
+                        ans = eng.ask_open_probe(p["text"], seed + 500 + j)
+                        correct_probe = answer_correct(ans, p["gold"], p.get("aliases", []))
+                    else:
+                        ans = eng.ask_probe(p["text"], seed + 500 + j)
+                        if ans is None:
+                            continue
+                        correct_probe = ans == p["expected_yes"]
+                    probe_results.append({"kind": p["kind"], "correct": bool(correct_probe)})
+                probe_score, probe_detail = score_probes(probe_results)
                 torch.save({"qid": d["qid"], "hidden": hidden}, tdir / f"{d['qid']}.pt")
                 fh.write(json.dumps(dict(
                     qid=d["qid"], question=d["question"], answer=d["answer"],
                     know_prior=d["know_prior"], s_pop=d.get("s_pop", 0.0),
                     action=action, generation=gen[:300], answer_correct=correct,
-                    probe_score=probe_score, n_probes=len(probe_results))) + "\n")
+                    probe_score=probe_score, n_probes=len(probe_results),
+                    probe_detail=probe_detail)) + "\n")
                 fh.flush()
             except Exception as e:
                 LOG.exception("fail %s", d["qid"])
@@ -296,14 +326,15 @@ def stage_analyze(args, out: Path):
     with_probe = [r for r in unknown if r.get("probe_score") is not None]
     if len(with_probe) >= 20:
         scores = np.array([r["probe_score"] for r in with_probe])
-        qs = np.quantile(scores, [0, 0.33, 0.66, 1.0])
-        buckets = []
-        for lo, hi in zip(qs[:-1], qs[1:]):
-            b = [r for r in with_probe if lo <= r["probe_score"] <= hi]
-            buckets.append({"range": [round(lo,3), round(hi,3)], "n": len(b),
-                            "search_rate": round(rate(b, "search"), 4)})
+        actions = np.array([r["action"] for r in with_probe])
+        buckets, diagnostics = robust_buckets(scores, actions)
+        from scipy.stats import spearmanr
+        rho, rho_p = spearmanr(scores, actions == "search")
         res["probe_score_vs_search"] = {
             "buckets": buckets,
+            "diagnostics": diagnostics,
+            "spearman_rho": None if np.isnan(rho) else round(float(rho), 4),
+            "spearman_p": None if np.isnan(rho_p) else float(rho_p),
             "note": "probe 越判'知道'(score高), search_rate 应越低; 单调下降=行动被知识信号驱动而非只被题难度"}
 
     # ===== 表征层: 从 base hidden 预测 (a) 知道/不知道 (b) 会不会 search =====

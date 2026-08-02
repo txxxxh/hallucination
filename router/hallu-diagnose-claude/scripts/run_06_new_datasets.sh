@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+command_name="${1:-help}"
+shard_index="${2:-}"
+python_bin="${PYTHON_BIN:-/home/tong56/venvs/whitebox/bin/python}"
+model="${EVAL_MODEL:-unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit}"
+out_dir="${OUT_DIR:-data/processed/real_life_new3}"
+candidate_dir="${CANDIDATE_DIR:-$out_dir/candidates}"
+screened_dir="${SCREENED_DIR:-data/processed/real_life_new3_screened}"
+z4_shards="${Z4_SHARDS:-4}"
+n_samples="${N_SAMPLES:-5}"
+
+case "$command_name" in
+  build)
+    "$python_bin" scripts/06_build.py build --new-only --out-dir "$out_dir"
+    ;;
+  screen-nonz4)
+    for z in z1 z2 z6; do
+      "$python_bin" scripts/10_06.py --stressor "$z" --model "$model" \
+        --candidate-dir "$candidate_dir" --screened-dir "$screened_dir"
+    done
+    ;;
+  z4-shard)
+    test -n "$shard_index" || { echo "usage: $0 z4-shard INDEX" >&2; exit 2; }
+    "$python_bin" scripts/10_06.py --stressor z4 --model "$model" \
+      --candidate-dir "$candidate_dir" --screened-dir "$screened_dir" \
+      --num-shards "$z4_shards" --shard-index "$shard_index" \
+      --n-samples "$n_samples"
+    ;;
+  merge-z4)
+    "$python_bin" scripts/10_06.py --stressor z4 \
+      --screened-dir "$screened_dir" --num-shards "$z4_shards" --merge-shards
+    ;;
+  resolve)
+    "$python_bin" scripts/06_build.py resolve --screened-dir "$screened_dir" \
+      --out-dir "$out_dir" --merge-final
+    ;;
+  *)
+    echo "usage: $0 {build|screen-nonz4|z4-shard INDEX|merge-z4|resolve}" >&2
+    exit 2
+    ;;
+esac

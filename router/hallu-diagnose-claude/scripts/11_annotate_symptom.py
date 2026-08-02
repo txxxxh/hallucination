@@ -10,6 +10,8 @@
   python scripts/11_annotate_symptom.py --gen   # 步骤1: 生成 trace
   python scripts/11_annotate_symptom.py --judge # 步骤2: 标注
   python scripts/11_annotate_symptom.py --stats # 步骤3: 混淆分析
+  python scripts/11_annotate_symptom.py --gen --incremental
+  python scripts/11_annotate_symptom.py --judge --incremental
 """
 import argparse, json, math, re
 from collections import Counter, defaultdict
@@ -52,7 +54,7 @@ Model's trace and answer:
 
 Return JSON only: {{"labels": ["S1"...], "error_span": "<=30 words quoted from trace where the error first surfaces", "rationale": "<=25 words"}}"""
 
-def gen_traces(model, tp, stressors=STRESSORS):
+def gen_traces(model, tp, stressors=STRESSORS, incremental=False):
     lm = LM(model, tp=tp)
     assert lm.is_reasoner, "trace 生成需要推理模型 (thinking 可见)"
     for z in stressors:
@@ -60,23 +62,28 @@ def gen_traces(model, tp, stressors=STRESSORS):
         if not p.exists():
             continue
         samples = read_jsonl(p)
+        targets = ([s for s in samples if not s.get("meta", {}).get("full_trace")]
+                   if incremental else samples)
+        if not targets:
+            print(f"[trace] {z}: 0/{len(samples)}（无需补充）")
+            continue
         # Z4 用其入组时的截断 budget 复现故障 trace, 其余 full budget
         if z == "z4":
             buckets = defaultdict(list)
-            for s in samples:
+            for s in targets:
                 buckets[s["meta"]["cut_think_tokens"]].append(s)
             for b, grp in buckets.items():
                 gens = lm.chat([s["q_trig"] for s in grp], temperature=0.0, max_think=b)
                 for s, g in zip(grp, gens):
                     s["meta"]["full_trace"] = g[0]
         else:
-            gens = lm.chat([s["q_trig"] for s in samples], temperature=0.0, max_think=4096)
-            for s, g in zip(samples, gens):
+            gens = lm.chat([s["q_trig"] for s in targets], temperature=0.0, max_think=4096)
+            for s, g in zip(targets, gens):
                 s["meta"]["full_trace"] = g[0]
         write_jsonl(samples, DATA / f"processed/{z}_final.jsonl")
-        print(f"[trace] {z}: {len(samples)}")
+        print(f"[trace] {z}: {len(targets)}/{len(samples)}")
 
-def judge(judge_model, tp, stressors=STRESSORS):
+def judge(judge_model, tp, stressors=STRESSORS, incremental=False):
     """judge 输入只含 question/gold/trace, 不含 stressor —— 防泄漏。
     judge_model 可以是本地大模型或换成 API 调用。"""
     lm = LM(judge_model, tp=tp)
@@ -84,12 +91,18 @@ def judge(judge_model, tp, stressors=STRESSORS):
         p = DATA / f"processed/{z}_final.jsonl"
         if not p.exists():
             continue
-        samples = [s for s in read_jsonl(p) if s["meta"].get("full_trace")]
+        samples = read_jsonl(p)
+        targets = [s for s in samples if s.get("meta", {}).get("full_trace")]
+        if incremental:
+            targets = [s for s in targets if not s.get("symptom")]
+        if not targets:
+            print(f"[judge] {z}: 0/{len(samples)}（无需补充）")
+            continue
         prompts = [RUBRIC.format(question=s["q_trig"], gold=s["answer"],
-                                 trace=s["meta"]["full_trace"][:6000]) for s in samples]
+                                 trace=s["meta"]["full_trace"][:6000]) for s in targets]
         gens = lm.chat(prompts, temperature=0.0, max_tokens=300)
         n_ok = 0
-        for s, g in zip(samples, gens):
+        for s, g in zip(targets, gens):
             try:
                 txt = g[0]
                 obj = json.loads(txt[txt.index("{"): txt.rindex("}") + 1])
@@ -100,7 +113,7 @@ def judge(judge_model, tp, stressors=STRESSORS):
             except (ValueError, json.JSONDecodeError):
                 s["symptom"] = ["PARSE_FAIL"]
         write_jsonl(samples, DATA / f"processed/{z}_final.jsonl")
-        print(f"[judge] {z}: {n_ok}/{len(samples)} 标注成功")
+        print(f"[judge] {z}: {n_ok}/{len(targets)} 标注成功（总样本 {len(samples)}）")
 
 def stats(stressors=STRESSORS):
     rows = []
@@ -144,10 +157,12 @@ if __name__ == "__main__":
     ap.add_argument("--judge_model", default="NousResearch/Meta-Llama-3.1-8B-Instruct")
     ap.add_argument("--tp", type=int, default=1)
     ap.add_argument("--stressors", nargs="+", default=STRESSORS)
+    ap.add_argument("--incremental", action="store_true",
+                    help="--gen 只补 full_trace；--judge 只补 symptom，不覆盖已有标注")
     a = ap.parse_args()
     if a.gen:
-        gen_traces(a.model, a.tp, a.stressors)
+        gen_traces(a.model, a.tp, a.stressors, a.incremental)
     if a.judge:
-        judge(a.judge_model, a.tp, a.stressors)
+        judge(a.judge_model, a.tp, a.stressors, a.incremental)
     if a.stats:
         stats(a.stressors)
