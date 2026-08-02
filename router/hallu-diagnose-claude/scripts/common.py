@@ -1,8 +1,15 @@
 """公共模块: schema / 推理封装 / 答案与弃答判定。"""
 from __future__ import annotations
-import json, re, hashlib
+import json, re, hashlib, os
 from dataclasses import dataclass, field, asdict
 from pathlib import Path
+
+# PyTorch 2.13 may route RoPE's outer-product bmm through a JIT-compiled
+# Triton override. Compiler artifacts on the network-backed home filesystem
+# have intermittently failed with EIO, so keep the disposable cache on local
+# storage and disable torch.compile unless the caller explicitly opts in.
+os.environ.setdefault("TRITON_CACHE_DIR", f"/tmp/hallu_diagnose_triton_{os.getuid()}")
+os.environ.setdefault("TORCH_COMPILE_DISABLE", "1")
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 
@@ -47,9 +54,16 @@ class LM:
     调整；tp 参数仅为兼容旧命令行保留。
     """
     def __init__(self, model_name: str, max_model_len: int = 16384, tp: int = 1):
-        import os
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer
+
+        # This is separate from torch.compile: torch._native can dispatch bmm
+        # directly to a Triton kernel. Fall back to the stable ATen/CUDA bmm.
+        try:
+            from torch._native.registry import deregister_op_overrides
+            deregister_op_overrides(disable_op_symbols="bmm")
+        except (ImportError, AttributeError):
+            pass
 
         self.name = model_name
         self.is_reasoner = "R1" in model_name or "r1" in model_name

@@ -4,13 +4,14 @@
   - 疗效查表 configs/cure_table.json (来自 30_stats 的矩阵结果; 矩阵没跑完前
     可用 DEFAULT_POLICY 占位跑通全流程, 跑完后替换)
   - symptom-routed baseline 需要 11 的 symptom 标签 (没有则自动跳过该 baseline)
-用法: python scripts/50_routed_mitigation.py --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B \
+用法: python scripts/50_routed_mitigation.py --model unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit \
         --features data/features/DeepSeek-R1-Distill-Llama-8B
 """
 import argparse, json
 import numpy as np
 from pathlib import Path
 from sklearn.linear_model import LogisticRegression
+from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from common import read_jsonl, write_jsonl, DATA, LM, outcome
 
@@ -27,7 +28,7 @@ def load_policy():
     return DEFAULT_POLICY
 
 def train_router(feat_dir, holdout_templates):
-    """训练集排除 holdout 模板 (闭环测试集), 返回 (router, scaler, best_layer, 特征装配函数)。"""
+    """训练集排除 holdout 模板，并仅用训练集统计量填补非有限特征。"""
     idx = [r for r in read_jsonl(Path(feat_dir) / "index.jsonl") if r["label"] != "CLEAN"]
     tr = [r for r in idx if r["template_id"] not in holdout_templates]
     te = [r for r in idx if r["template_id"] in holdout_templates]
@@ -41,13 +42,26 @@ def train_router(feat_dir, holdout_templates):
             y.append(r["label"])
         return np.stack(X), np.array(y)
     Xtr, ytr = feats(tr)
+    Xtr = np.where(np.isfinite(Xtr), Xtr, np.nan)
+    imp = SimpleImputer(strategy="median").fit(Xtr)
+    Xtr = imp.transform(Xtr)
     sc = StandardScaler().fit(Xtr)
     clf = LogisticRegression(max_iter=3000, C=0.5).fit(sc.transform(Xtr), ytr)
-    return clf, sc, feats, tr, te
+    return clf, imp, sc, feats, tr, te
 
-def main(model_name, feat_dir, holdout_templates):
+def main(model_name, feat_dir, holdout_templates, max_per_stressor):
     policy = load_policy()
-    clf, sc, feats, tr_idx, te_idx = train_router(feat_dir, holdout_templates)
+    clf, imp, sc, feats, tr_idx, te_idx = train_router(feat_dir, holdout_templates)
+    if max_per_stressor:
+        kept, counts = [], {}
+        for r in te_idx:
+            label = r["label"]
+            if counts.get(label, 0) < max_per_stressor:
+                kept.append(r)
+                counts[label] = counts.get(label, 0) + 1
+        te_idx = kept
+    if not te_idx:
+        raise ValueError("holdout_templates 没有命中任何特征样本")
     sid2label = {r["sid"]: r["label"] for r in te_idx}
     print(f"router 训练 {len(tr_idx)} / 闭环测试 {len(te_idx)} (holdout={holdout_templates})")
 
@@ -62,7 +76,8 @@ def main(model_name, feat_dir, holdout_templates):
 
     # router 预测
     Xte, yte = feats(te_idx)
-    pred = clf.predict(sc.transform(Xte))
+    Xte = np.where(np.isfinite(Xte), Xte, np.nan)
+    pred = clf.predict(sc.transform(imp.transform(Xte)))
     acc = (pred == yte).mean()
     print(f"router 闭环测试诊断准确率 = {acc:.1%}")
 
@@ -99,9 +114,11 @@ def main(model_name, feat_dir, holdout_templates):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", default="deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
+    ap.add_argument("--model", default="unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit")
     ap.add_argument("--features", required=True)
     ap.add_argument("--holdout_templates", nargs="+",
-                    default=["popqa-genre", "gsmic-mstep", "assoc-seed", "falseqa"])
+                    default=["popqa-genre", "gsm8k-dose", "math-Algebra", "falseqa"])
+    ap.add_argument("--max_per_stressor", type=int, default=100,
+                    help="每个 stressor 最多保留多少个闭环测试样本；0 表示不限制")
     a = ap.parse_args()
-    main(a.model, a.features, a.holdout_templates)
+    main(a.model, a.features, a.holdout_templates, a.max_per_stressor)

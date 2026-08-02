@@ -65,6 +65,12 @@ SOLVE_RE = re.compile(r"\[\s*SOLVE\s*\]", re.I)
 NEEDMORE_RE = re.compile(r"\[\s*NEED[_\s-]?MORE\s*\]", re.I)
 ABSTAIN_RE = re.compile(r"\[\s*ABSTAIN\s*\]", re.I)
 
+GATE_COMPLETIONS = {
+    "solve": "[SOLVE]",
+    "need_more": "[NEED_MORE]",
+    "abstain": "[ABSTAIN]",
+}
+
 
 def parse_gate_action(text: str) -> str:
     head = text.split(THINK_END)[-1].strip()[:200]
@@ -163,6 +169,36 @@ class Engine:
                                       temperature=temperature if temperature > 0 else None,
                                       pad_token_id=self.tok.pad_token_id)
         return self.tok.decode(out[0, enc.input_ids.shape[1]:], skip_special_tokens=True).strip()
+
+    def completion_logprobs(self, prompt: str, completions: dict[str, str]):
+        """计算候选 continuation 在同一 prompt 下的条件序列 logprob。"""
+        import torch
+        prompt_ids = self._enc(self.fmt(prompt)).input_ids
+        scores = {}
+        with torch.inference_mode():
+            for name, text in completions.items():
+                continuation = self.tok.encode(text, add_special_tokens=False)
+                if not continuation:
+                    raise ValueError(f"empty gate completion: {name}")
+                continuation_ids = torch.tensor(
+                    [continuation], dtype=torch.long, device=self.device
+                )
+                input_ids = torch.cat([prompt_ids, continuation_ids], dim=1)
+                logits = self.model(input_ids=input_ids, use_cache=False).logits
+                start = prompt_ids.shape[1] - 1
+                token_logits = logits[0, start:start + len(continuation)]
+                token_logprobs = torch.log_softmax(token_logits.float(), dim=-1)
+                selected = token_logprobs.gather(
+                    1, continuation_ids[0].unsqueeze(1)
+                ).squeeze(1)
+                scores[name] = {
+                    "text": text,
+                    "token_ids": continuation,
+                    "token_logprobs": [float(x) for x in selected.cpu()],
+                    "sum_logprob": float(selected.sum().cpu()),
+                    "mean_logprob": float(selected.mean().cpu()),
+                }
+        return scores
 
     def budget_forced(self, problem: str, budget: int, seed=0, temperature=0.6,
                       k_positions: Optional[Sequence[int]] = None, extend=False):
@@ -345,7 +381,8 @@ def fit_curve(rec, thresh=0.5, overthink_drop=0.2):
 
 # ============================ 阶段 2: 四选一门控 ============================
 def stage_gate(args, out: Path):
-    """对每题、每个给定预算 N, 问模型 [SOLVE]/[NEED_MORE]/[ABSTAIN]; 另记录自报需求。"""
+    """对每题、每个给定预算 N, 选择 [SOLVE]/[NEED_MORE]/[ABSTAIN];
+    支持自由生成解析或候选 continuation 的条件序列 logprob 打分。"""
     import torch
     curve = read_jsonl(out / "curve.jsonl")
     eng = Engine(args.model, args.device, args.dtype, args.max_input_tokens,
@@ -370,12 +407,33 @@ def stage_gate(args, out: Path):
             if (rec["qid"], B) in done:
                 continue
             try:
-                txt = eng.plain(GATE_PROMPT.format(budget=B, q=rec["problem"]), max_new=12,
-                                seed=args.seed + B + stable_qid_offset(rec["qid"]))
-                action = parse_gate_action(txt)
+                prompt = GATE_PROMPT.format(budget=B, q=rec["problem"])
+                gate_scores = None
+                gate_margin = None
+                if args.gate_scoring == "logprob":
+                    gate_scores = eng.completion_logprobs(prompt, GATE_COMPLETIONS)
+                    ranked = sorted(
+                        gate_scores,
+                        key=lambda name: gate_scores[name]["sum_logprob"],
+                        reverse=True,
+                    )
+                    action = ranked[0]
+                    gate_margin = (
+                        gate_scores[ranked[0]]["sum_logprob"]
+                        - gate_scores[ranked[1]]["sum_logprob"]
+                    )
+                    txt = GATE_COMPLETIONS[action]
+                else:
+                    txt = eng.plain(
+                        prompt, max_new=12,
+                        seed=args.seed + B + stable_qid_offset(rec["qid"])
+                    )
+                    action = parse_gate_action(txt)
                 sufficient = (fit["b_star"] is not None) and (B >= fit["b_star"])
                 fh.write(json.dumps(dict(
                     qid=rec["qid"], budget=B, action=action, raw=txt[:120],
+                    gate_scoring=args.gate_scoring, gate_scores=gate_scores,
+                    gate_margin=gate_margin,
                     b_star=fit["b_star"], phase=fit["phase"], overthink=fit["overthink"],
                     sufficient=bool(sufficient),
                     acc_at_budget=fit["acc_by_budget"].get(str(B)),
@@ -671,6 +729,8 @@ def build_parser():
     p.add_argument("--acc-threshold", type=float, default=0.5, help="判定 b* 的准确率阈值")
     p.add_argument("--overthink-drop", type=float, default=0.2, help="峰值后跌幅超过此值记为 overthinking")
     p.add_argument("--probe-budget", type=int, default=512, help="probe 阶段使用的参考预算")
+    p.add_argument("--gate-scoring", choices=["generate", "logprob"], default="generate",
+                   help="gate 动作选择方式；logprob 对三个标签做条件序列打分")
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--resume", action="store_true")
     return p

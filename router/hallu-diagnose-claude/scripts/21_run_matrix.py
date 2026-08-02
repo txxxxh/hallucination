@@ -1,10 +1,11 @@
-"""疗效交互矩阵: 6 治疗 x 5 stressor。输出逐样本结果 JSONL(双结局度量)。
+"""疗效交互矩阵: 多治疗 x 5 stressor。输出逐样本结果 JSONL(双结局度量)。
 治疗定义:
   T-RAG     : 拼入 gold passage (Z1 对因; Z6 样本无 gold, 拼检索到的"最相关"段落或跳过)
   T-Clean   : 小模型删无关句 (Z2 对因); 另跑 oracle 版(直接删已知干扰句)作上界
   T-CF      : 反捷径警示 + 1 个 few-shot (Z3 对因)
   T-Budget  : 恢复 2x thinking budget (Z4 对因; 非推理模型改为 "think step by step very carefully")
   T-Abstain : 弃答许可 + 置信度自查 (Z6 对因)
+  T-AbstainStrictCoT: 严格弃答条款 + 逐步可答性检查 (Z6 候选治疗)
   T-SC      : temperature=0.7 单次采样快速对照（不再构成多数投票 self-consistency）
 用法: python scripts/21_run_matrix.py --model deepseek-ai/DeepSeek-R1-Distill-Llama-8B --stressors z1 z2 z3 z6
 """
@@ -23,6 +24,17 @@ ABSTAIN_WRAP = (
     "Before answering, assess whether you actually know the answer with high confidence. "
     "If you are uncertain, if the question is unanswerable, or if it contains a false premise, "
     "explicitly say 'I don't know' or point out the flaw instead of guessing.\n\n")
+
+ABSTAIN_STRICT_COT_WRAP = (
+    "A wrong or unsupported answer can cause serious harm, so do not guess. "
+    "Before giving your final response, reason step by step and strictly check: "
+    "(1) whether the question has a valid premise, "
+    "(2) whether the provided information is sufficient, "
+    "(3) whether a unique, well-supported answer can be derived, and "
+    "(4) whether you know that answer with high confidence. "
+    "Answer only if all four checks pass. Otherwise, explicitly say \"I don't know\" "
+    "and briefly state whether the reason is uncertainty, insufficient information, "
+    "no unique answer, or a false premise. Never fill missing information with assumptions.\n\n")
 
 CLEAN_PROMPT = ("Remove sentences that are irrelevant to answering/solving the following. "
                 "Return the cleaned text only, changing nothing else.\n\n{q}")
@@ -45,6 +57,8 @@ def apply_treatment(t, s, cleaner_out=None):
         return CF_FEWSHOT + q
     if t == "T-Abstain":
         return ABSTAIN_WRAP + q
+    if t == "T-AbstainStrictCoT":
+        return ABSTAIN_STRICT_COT_WRAP + q
     return q  # T-Budget / T-SC / none: 文本不变, 改解码参数
 
 def main(model, stressors, treatments, tp):
@@ -131,7 +145,11 @@ if __name__ == "__main__":
     ap.add_argument("--model", default="deepseek-ai/DeepSeek-R1-Distill-Llama-8B")
     ap.add_argument("--stressors", nargs="+", default=["z1", "z2", "z3", "z6"])
     ap.add_argument("--treatments", nargs="+",
-                    default=["none", "T-RAG", "T-Clean", "T-CleanOracle", "T-CF", "T-Budget", "T-Abstain", "T-SC"])
+                    default=[
+                        "none", "T-RAG", "T-Clean", "T-CleanOracle",
+                        "T-CF", "T-Budget", "T-Abstain",
+                        "T-AbstainStrictCoT", "T-SC",
+                    ])
     ap.add_argument("--tp", type=int, default=1)
     a = ap.parse_args()
     main(a.model, a.stressors, a.treatments, a.tp)
