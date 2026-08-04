@@ -1,0 +1,110 @@
+{
+  "stressors": {
+    "Z1": {
+      "name": "knowledge gap",
+      "D1_representation": {
+        "missing": true
+      },
+      "D2_introspection": {
+        "missing": "缺 z1_raw.jsonl"
+      },
+      "D3_gating": {
+        "missing": "缺 z1_raw.jsonl"
+      }
+    },
+    "Z2": {
+      "name": "context distraction",
+      "D1_representation": {
+        "missing": true
+      },
+      "D2_introspection": {
+        "metric": "verbalized 'contains irrelevant info': distracted vs clean",
+        "yes_rate_distracted": 0.6732,
+        "yes_rate_clean": 0.9189,
+        "odds_ratio": 0.182,
+        "fisher_p": 8.890316355287149e-19,
+        "n": 407,
+        "note": "odds>1 且显著 = 模型能口头识别干扰的存在"
+      },
+      "D3_gating": {
+        "metric": "accuracy gain from 'you may ignore irrelevant info' permit",
+        "acc_clean": 0.832,
+        "acc_distracted": 0.7712,
+        "acc_distracted_with_permit": 0.7558,
+        "mean_gain": -0.0154,
+        "wilcoxon_p_one_sided_greater": 0.9857650038276844,
+        "gap_closed_fraction": -0.2525,
+        "n": 407,
+        "gated": false,
+        "note": "许可即门控信号可用性; 显著改善 = 模型有能力忽略但默认未启用"
+      }
+    },
+    "Z4": {
+      "name": "compute insufficiency",
+      "D1_representation": {
+        "missing": true
+      },
+      "D2_introspection": {
+        "metric": "Spearman(verbalized token demand, true b*)",
+        "rho_verbal": -0.3529,
+        "p_verbal": 0.0986006078389791,
+        "n": 23,
+        "rho_internal_proxy": 0.8561,
+        "p_internal": 1.6645975702892746e-38,
+        "gap": 1.209,
+        "note": "rho_verbal<=0 = 口头自报无效甚至反向"
+      },
+      "D3_gating": {
+        "metric": "within-item slope of margin(NEED_MORE - SOLVE) vs log2(stated budget)",
+        "n_items": 130,
+        "mean_slope": 0.03902,
+        "frac_negative": 0.3538,
+        "t": 3.738,
+        "p_one_sided_less": 0.9998610542062778,
+        "margin_insufficient_minus_sufficient": -0.12411,
+        "gated": false,
+        "note": "差分设计: 长度伪影对固定标签恒定, 在同题跨预算差分中抵消。斜率显著<0 = 声明预算驱动了元决策"
+      }
+    },
+    "Z6": {
+      "name": "calibration failure",
+      "D1_representation": {
+        "missing": true
+      },
+      "D2_introspection": {
+        "missing": "缺 z6_raw.jsonl"
+      },
+      "D3_gating": {
+        "missing": "缺 z6_raw.jsonl"
+      }
+    }
+  },
+  "dimensions": [
+    "D1_representation",
+    "D2_introspection",
+    "D3_gating"
+  ],
+  "summary_table": {
+    "Z1": {
+      "D1": "—",
+      "D2": "—",
+      "D3": "—"
+    },
+    "Z2": {
+      "D1": "—",
+      "D2": "OR=0.182 p=8.890316355287149e-19",
+      "D3": "NOT GATED (gain=-0.0154)"
+    },
+    "Z4": {
+      "D1": "—",
+      "D2": "rho_verbal=-0.3529 vs internal=0.8561",
+      "D3": "NOT GATED (slope=0.03902)"
+    },
+    "Z6": {
+      "D1": "—",
+      "D2": "—",
+      "D3": "—"
+    }
+  },
+  "interpretation": "D1 强 + D3 GATED => 该状态被表征且驱动了正确行动(闭环); D1 强 + D3 NOT GATED => 表征存在但未整合进决策(整合缺失); D2 弱而 D1 强 => 自省失败, 外部读取有价值。不同 stressor 落在不同格局 => 没有 universal winner 的诊断/治疗。"
+}
