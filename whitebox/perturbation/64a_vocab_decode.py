@@ -1,0 +1,278 @@
+# -*- coding: utf-8 -*-
+"""
+64a_vocab_decode.py  --  Stage 4a: decode the perturbation direction back to words.
+
+This closes the loop from "a direction in embedding space" to "a concrete token
+substitution", and in doing so provides the HELD-OUT OPERATOR validation that the
+v8 pipeline lacked.
+
+  selection operator  = neutralization (used in 61_/62_/63_)
+  validation operator = discrete vocabulary substitution (used here)
+
+They share no machinery, so a positive result here cannot be an artifact of
+reusing one operator for both proposal and scoring.
+
+Method, per selected span, per token position t:
+  1. g_t = dS/dE_t at alpha=0.
+  2. Descent direction for the hallucination margin is -g_t.
+  3. Rank the vocabulary by the normalized directional match
+         score(v) = <w_v - e_t, -g_t> / ||w_v - e_t||
+     (normalization matters: without it the argmax is dominated by embedding
+     norm, i.e. by token frequency, which would make this yet another frequency
+     detector.)
+  4. Take top-n candidates, ACTUALLY SUBSTITUTE each one, and measure the real
+     Delta S and the real generation change.
+
+Reported: predicted rank vs. measured effect (does the first-order direction
+pick good substitutions?), and the best achievable single-token flip.
+
+Multi-word decomposition: --nnls also fits the direction as a non-negative
+combination of several vocabulary directions via matching pursuit, which is the
+"a keyword in embedding space can be recovered as a combination of several
+keywords" case.
+
+Usage
+  python 64a_vocab_decode.py --smoke
+  python 64a_vocab_decode.py --in63 runs/63.jsonl --in61 runs/61.jsonl \
+      --out runs/64a.jsonl --strategy second_order --topn 5
+"""
+from __future__ import annotations
+
+import argparse, itertools, json, os, sys, time
+import numpy as np
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from spanattr.core import (Item, Span, SpanAttributor, set_seed, build_toy,
+                           spearman, bootstrap_ci)
+
+
+def load_model(name: str, dtype: str, device: str):
+    import torch
+    if os.environ.get("SPANATTR_DISABLE_NATIVE_BMM") == "1":
+        from torch._native.registry import deregister_op_overrides
+        deregister_op_overrides(disable_op_symbols="bmm")
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+    tok = AutoTokenizer.from_pretrained(name)
+    if tok.pad_token_id is None:
+        tok.pad_token = tok.eos_token
+    dt = {"float32": torch.float32, "float16": torch.float16,
+          "bfloat16": torch.bfloat16}[dtype]
+    model = AutoModelForCausalLM.from_pretrained(
+        name, torch_dtype=dt, attn_implementation="eager").to(device).eval()
+    for p in model.parameters():
+        p.requires_grad_(False)
+    return model, tok
+
+
+def matching_pursuit(direction: np.ndarray, W: np.ndarray, n_atoms: int = 3):
+    """Non-negative matching pursuit of `direction` onto rows of W (already
+    centered as w_v - e_t). Returns [(vocab_idx, coeff)]."""
+    resid = direction.astype(np.float64).copy()
+    picks = []
+    norms = np.linalg.norm(W, axis=1) + 1e-8
+    for _ in range(n_atoms):
+        proj = (W @ resid) / norms
+        v = int(np.argmax(proj))
+        if proj[v] <= 0:
+            break
+        c = float(proj[v] / norms[v])
+        picks.append((v, c))
+        resid = resid - c * W[v]
+    return picks
+
+
+def main() -> int:
+    import torch
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in63", type=str, default="runs/63_subset_select.jsonl")
+    ap.add_argument("--in61", type=str, default="runs/61_grad_span_proposal.jsonl")
+    ap.add_argument("--out", type=str, default="runs/64a_vocab_decode.jsonl")
+    ap.add_argument("--model", type=str, default="meta-llama/Llama-3.1-8B-Instruct")
+    ap.add_argument("--dtype", type=str, default="bfloat16")
+    ap.add_argument("--device", type=str, default=None)
+    ap.add_argument("--baseline", type=str, default="mean")
+    ap.add_argument("--max_rows", type=int, default=16)
+    ap.add_argument("--length_norm", type=int, default=1)
+    ap.add_argument("--strategy", type=str, default="second_order")
+    ap.add_argument("--topn", type=int, default=5, help="vocab candidates per position")
+    ap.add_argument("--vocab_cap", type=int, default=0, help="0 = full vocab")
+    ap.add_argument("--nnls", type=int, default=1, help="also run matching pursuit")
+    ap.add_argument("--n_atoms", type=int, default=3)
+    ap.add_argument("--joint_top", type=int, default=10,
+                    help="number of exhaustive joint substitutions to report")
+    ap.add_argument("--n_gen", type=int, default=0)
+    ap.add_argument("--max_new_tokens", type=int, default=24)
+    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--smoke", action="store_true")
+    args = ap.parse_args()
+
+    set_seed(args.seed)
+    if args.device is None:
+        args.device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    extra = {}
+    if args.smoke:
+        model, tok = build_toy()
+        args.device = "cpu"
+        args.in63, args.in61 = "runs/63_smoke.jsonl", "runs/61_smoke.jsonl"
+        args.out, args.topn, args.n_atoms = "runs/64a_smoke.jsonl", 3, 2
+        extra = dict(prefix="ctx: ", middle=" q: {question} a: ")
+    else:
+        model, tok = load_model(args.model, args.dtype, args.device)
+
+    att = SpanAttributor(model, tok, device=args.device, baseline=args.baseline,
+                         length_norm=bool(args.length_norm),
+                         max_rows=args.max_rows, **extra)
+
+    r61 = {json.loads(l)["item_id"]: json.loads(l) for l in open(args.in61)}
+    recs = [json.loads(l) for l in open(args.in63)]
+    if args.limit:
+        recs = recs[:args.limit]
+    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
+    fh = open(args.out, "w")
+
+    Wfull = att.emb_layer.weight.detach().float().cpu().numpy()
+    Vcap = args.vocab_cap if args.vocab_cap > 0 else Wfull.shape[0]
+    all_rank_rho, all_best, all_hits = [], [], []
+    t0 = time.time()
+
+    for n, r in enumerate(recs):
+        base = r61[r["item_id"]]
+        item = Item(r["item_id"], base["context"], base["question"],
+                    base["gold"], base["pred"],
+                    context_prefix=base.get("context_prefix", ""),
+                    gold_variants=base.get("gold_variants", []),
+                    pred_variants=base.get("pred_variants", []))
+        prep = att.prepare(item)
+        S0 = att.score_ids(prep, prep.prompt_ids)
+        G = att.grad_embed(prep)                       # [P,d]
+
+        sel_idx = r["selection"][args.strategy]
+        spans_meta = [s for s in base["spans"]]
+        # 63_ selection indices point into the 62_ candidate list
+        cand = base["candidates"]
+        positions = []
+        for si in sel_idx:
+            if si < len(cand):
+                s = spans_meta[cand[si]]
+                positions += list(range(s["start"], s["end"]))
+        positions = sorted(set(positions))
+
+        out_pos = []
+        for t in positions:
+            e_t = Wfull[int(prep.prompt_ids[t])]
+            d_desc = -G[t].astype(np.float64)
+            D = Wfull[:Vcap] - e_t                     # [V,d]
+            nrm = np.linalg.norm(D, axis=1) + 1e-8
+            score = (D @ d_desc) / nrm                 # normalized directional match
+            score[int(prep.prompt_ids[t])] = -np.inf
+            top = np.argsort(-score)[:args.topn]
+
+            meas = []
+            for v in top:
+                ids = prep.prompt_ids.clone()
+                ids[t] = int(v)
+                meas.append(S0 - att.score_ids(prep, ids))   # realized u
+            rho = spearman(list(score[top]), meas)
+            best = int(np.argmax(meas))
+
+            ent = {"pos": t,
+                   "orig": att.tok.decode([int(prep.prompt_ids[t])]),
+                   "candidates": [{"tok": att.tok.decode([int(v)]),
+                                   "id": int(v),
+                                   "pred_score": float(score[v]),
+                                   "u_realized": float(meas[j])}
+                                  for j, v in enumerate(top)],
+                   "rank_rho": rho,
+                   "best_u": float(meas[best]),
+                   "best_tok": att.tok.decode([int(top[best])])}
+
+            if args.nnls:
+                picks = matching_pursuit(d_desc, D, n_atoms=args.n_atoms)
+                ent["decomposition"] = [{"tok": att.tok.decode([int(v)]),
+                                         "coeff": float(c)} for v, c in picks]
+            out_pos.append(ent)
+            if np.isfinite(rho):
+                all_rank_rho.append(rho)
+            all_best.append(float(meas[best]))
+            all_hits.append(1.0 if meas[best] > 0 else 0.0)
+
+        row = {"item_id": r["item_id"], "strategy": args.strategy,
+               "S0": S0, "n_positions": len(positions), "positions": out_pos}
+
+        if out_pos:
+            # Exhaustively score the Cartesian product. Independently best
+            # tokens need not be jointly best because substitutions interact.
+            combos = list(itertools.product(
+                *[range(len(b["candidates"])) for b in out_pos]))
+            ids_batch = prep.prompt_ids.unsqueeze(0).repeat(len(combos), 1)
+            for j, combo in enumerate(combos):
+                for b, ci in zip(out_pos, combo):
+                    ids_batch[j, b["pos"]] = b["candidates"][ci]["id"]
+            joint_scores = att.score_ids_batched(prep, ids_batch).numpy()
+            joint_u = S0 - joint_scores
+            order = np.argsort(-joint_u)
+
+            def describe(j):
+                combo = combos[int(j)]
+                return {
+                    "u_realized": float(joint_u[j]),
+                    "score": float(joint_scores[j]),
+                    "substitutions": [
+                        {"pos": b["pos"], "orig": b["orig"],
+                         "tok": b["candidates"][ci]["tok"],
+                         "id": b["candidates"][ci]["id"]}
+                        for b, ci in zip(out_pos, combo)]}
+
+            best_joint = describe(order[0])
+            row["n_joint_combinations"] = len(combos)
+            row["joint_top"] = [describe(j) for j in order[:args.joint_top]]
+            row["joint_substitutions"] = best_joint["substitutions"]
+            row["joint_u_realized"] = best_joint["u_realized"]
+            row["joint_score"] = best_joint["score"]
+            if args.n_gen > 0:
+                best_ids = ids_batch[int(order[0])]
+                row["tier2_substituted"] = att.greedy_answer(
+                    best_ids, args.max_new_tokens)
+                row["tier2_original"] = att.greedy_answer(prep.prompt_ids,
+                                                            args.max_new_tokens)
+
+        fh.write(json.dumps(row) + "\n"); fh.flush()
+        print(f"[{n+1}/{len(recs)}] {r['item_id']}: pos={len(positions)} "
+              f"mean_rank_rho={np.mean([e['rank_rho'] for e in out_pos if np.isfinite(e['rank_rho'])]) if out_pos else float('nan'):+.3f} "
+              f"best_u={max((e['best_u'] for e in out_pos), default=float('nan')):+.3f}")
+
+    fh.close()
+
+    print("\n" + "=" * 70)
+    print("STAGE-4 VOCABULARY DECODING REPORT")
+    print("=" * 70)
+
+    def line(name, v, fmt="{:+.3f}"):
+        if not v:
+            print(f"  {name:<38} n/a"); return
+        lo, hi = bootstrap_ci(v)
+        print(f"  {name:<38} mean={fmt.format(np.mean(v))} "
+              f"95%CI=[{fmt.format(lo)},{fmt.format(hi)}]  n={len(v)}")
+
+    line("rank rho (predicted vs realized)", all_rank_rho)
+    line("best single-token realized u", all_best)
+    line("frac positions with u>0 substitution", all_hits, "{:.3f}")
+
+    mr = np.mean(all_rank_rho) if all_rank_rho else float("nan")
+    print("\nINTERPRETATION:")
+    if np.isfinite(mr) and mr > 0.3:
+        print(f"  rho={mr:.3f}: the first-order embedding direction genuinely predicts")
+        print("  which discrete substitution hurts. The direction is meaningful, and the")
+        print("  held-out-operator validation SUCCEEDS.")
+    else:
+        print(f"  rho={mr:.3f}: the direction does NOT rank real substitutions well.")
+        print("  The linearization is too local. Report the neutralization results only")
+        print("  and treat embedding-space keyword decoding as a negative result.")
+    print(f"\nWrote {args.out}   ({time.time()-t0:.1f}s)")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

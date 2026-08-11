@@ -1,0 +1,302 @@
+#!/usr/bin/env python3
+"""Low-rank perturbation-response manifold for the profile benchmark.
+
+Consumes per-item NPZ files produced by profile_perturbation_unsupervised.py.
+The primary matrix is label-free; a gold-oriented behavioral matrix is emitted
+only for offline interpretation.  No model forward/generation is performed.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+
+import numpy as np
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE.parent / "router"))
+
+import profile_perturbation_unsupervised as pp
+from new_pipeline_claude.ammi import fit_ammi
+from new_pipeline_claude.loto import loto_curve
+from new_pipeline_claude.rotation import rotate
+
+
+CONDITIONS = [
+    "question_only",
+    "without_question_evidence",
+    "minimal_decisive_evidence",
+    "profile_order_swap",
+    "attribute_order_shuffle",
+    "structure_only_context",
+    "negation_paraphrase",
+    "entity_paraphrase",
+    "structured_comparison_cue",
+]
+
+
+def dump(path: Path, obj) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding="utf-8")
+    tmp.replace(path)
+
+
+def robust_standardize(x: np.ndarray) -> np.ndarray:
+    out = x.copy().astype(float)
+    for k in range(out.shape[1]):
+        v = out[:, k]
+        obs = np.isfinite(v)
+        if not obs.any():
+            continue
+        med = np.median(v[obs]); mad = np.median(np.abs(v[obs] - med))
+        scale = max(1.4826 * mad, np.std(v[obs]), 1e-8)
+        out[obs, k] = (v[obs] - med) / scale
+    return out
+
+
+def build_matrices(items_dir: Path):
+    records = []
+    for path in sorted(items_dir.glob("*.npz")):
+        r = pp.load_item_npz(path)
+        md = r["metadata"]
+        idx = {n: j for j, n in enumerate(md["condition_names"])}
+        full = idx["full_context"]
+        scores = r["candidate_scores"].astype(float)
+        profile_margin = scores[:, 0] - scores[:, 1]
+        ri = int(md["right_index"])
+        correct_margin = (1 if ri == 0 else -1) * profile_margin
+        hidden = r["hidden"].astype(float)
+        rows = {"abs_margin": [], "kl": [], "hidden": [], "gold": []}
+        for name in CONDITIONS:
+            j = idx[name]
+            active = bool(md["condition_changed"][j])
+            if not active:
+                for key in rows: rows[key].append(np.nan)
+                continue
+            rows["abs_margin"].append(abs(profile_margin[j] - profile_margin[full]))
+            rows["kl"].append(float(r["skl_to_full_context"][j]))
+            cos = pp.cosine_distance_rows(hidden[j], hidden[full])
+            rows["hidden"].append(float(np.mean(cos)))
+            rows["gold"].append(float(correct_margin[j] - correct_margin[full]))
+        records.append((path.stem, r, rows, bool(np.argmax(scores[full]) == ri)))
+    metric = {k: np.asarray([x[2][k] for x in records], float)
+              for k in ("abs_margin", "kl", "hidden")}
+    # log compression prevents a few very large KL/distance cells dominating.
+    metric["abs_margin"] = np.log1p(metric["abs_margin"])
+    metric["kl"] = np.log1p(metric["kl"])
+    metric["hidden"] = np.log1p(metric["hidden"])
+    standardized = [robust_standardize(metric[k]) for k in ("abs_margin", "kl", "hidden")]
+    stack = np.stack(standardized)
+    G_free = np.nanmean(stack, axis=0)
+    all_missing = np.all(~np.isfinite(stack), axis=0)
+    G_free[all_missing] = np.nan
+    G_gold = np.asarray([x[2]["gold"] for x in records], float)
+    y = np.asarray([x[3] for x in records], int)
+    H = np.stack([x[1]["hidden"][x[1]["metadata"]["condition_names"].index("full_context"), -1]
+                  for x in records]).astype(np.float32)
+    return records, G_free, G_gold, y, H, metric
+
+
+def cv_rank(G: np.ndarray, max_rank: int, folds: int, seed: int):
+    mask = np.isfinite(G)
+    rng = np.random.default_rng(seed)
+    fold = np.full(G.shape, -1, int)
+    fold[mask] = rng.integers(0, folds, int(mask.sum()))
+    result = {}
+    for rank in range(max_rank + 1):
+        mses = []
+        for f in range(folds):
+            train = mask & (fold != f); test = mask & (fold == f)
+            fit = fit_ammi(G, rank, train)
+            mses.append(float(np.mean((G[test] - fit.predict()[test]) ** 2)))
+        result[rank] = {"mean_mse": float(np.mean(mses)), "fold_mse": mses}
+    best = min(result, key=lambda r: result[r]["mean_mse"])
+    return int(best), result
+
+
+def detector_cv(H, coordinates, y, folds=5, seed=0):
+    from sklearn.decomposition import PCA
+    from sklearn.linear_model import LogisticRegression, Ridge
+    from sklearn.metrics import balanced_accuracy_score, roc_auc_score
+    from sklearn.model_selection import StratifiedKFold
+    from sklearn.preprocessing import StandardScaler
+
+    cv = StratifiedKFold(folds, shuffle=True, random_state=seed)
+    prob_z = np.zeros(len(y)); prob_h = np.zeros(len(y)); prob_oracle_z = np.zeros(len(y))
+    for tr, te in cv.split(H, y):
+        scaler = StandardScaler(); Htr = scaler.fit_transform(H[tr]); Hte = scaler.transform(H[te])
+        nc = min(50, len(tr) - 1, H.shape[1])
+        pca = PCA(n_components=nc, random_state=seed).fit(Htr)
+        Xtr, Xte = pca.transform(Htr), pca.transform(Hte)
+        ridge = Ridge(alpha=10.0).fit(Xtr, coordinates[tr])
+        ztr, zte = ridge.predict(Xtr), ridge.predict(Xte)
+        clf_z = LogisticRegression(class_weight="balanced", max_iter=2000).fit(ztr, y[tr])
+        prob_z[te] = clf_z.predict_proba(zte)[:, 1]
+        clf_h = LogisticRegression(class_weight="balanced", max_iter=2000, C=0.1).fit(Xtr, y[tr])
+        prob_h[te] = clf_h.predict_proba(Xte)[:, 1]
+        clf_o = LogisticRegression(class_weight="balanced", max_iter=2000).fit(coordinates[tr], y[tr])
+        prob_oracle_z[te] = clf_o.predict_proba(coordinates[te])[:, 1]
+    def score(p):
+        return {"roc_auc": float(roc_auc_score(y, p)),
+                "balanced_accuracy": float(balanced_accuracy_score(y, p >= .5))}
+    return {"hidden_to_lowrank": score(prob_z), "direct_hidden_pca": score(prob_h),
+            "oracle_lowrank_coordinates": score(prob_oracle_z)}
+
+
+def cluster_audit(coords, y, seed=0):
+    from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
+    from sklearn.mixture import GaussianMixture
+    gm = GaussianMixture(2, covariance_type="diag", n_init=20, random_state=seed).fit(coords)
+    c = gm.predict(coords)
+    table = [[int(np.sum((c == a) & (y == b))) for b in (0, 1)] for a in (0, 1)]
+    return {"cluster_sizes": [int(np.sum(c == a)) for a in (0, 1)],
+            "contingency_cols_full_wrong_correct": table,
+            "ari_with_correctness": float(adjusted_rand_score(y, c)),
+            "nmi_with_correctness": float(normalized_mutual_info_score(y, c))}
+
+
+def load_generation_labels(path: Path):
+    """Load actual-generation modal choices, dropping unresolved modes."""
+    labels = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        row = json.loads(line)
+        if row.get("generation_mode") is not None:
+            labels[str(row["key"])] = {
+                "correct": int(row["generation_mode"] == row["right_index"]),
+                "mode": int(row["generation_mode"]),
+            }
+    return labels
+
+
+def spectrum_audit(G: np.ndarray, seed: int, permutations: int = 500):
+    """Audit low rank in the interaction residual against a permutation null."""
+    mask = np.isfinite(G)
+    rank0 = fit_ammi(G, 0, mask).predict()
+    residual = np.where(mask, G - rank0, 0.0)
+    singular = np.linalg.svd(residual, compute_uv=False)
+    power = singular ** 2
+    frac = power / max(power.sum(), 1e-12)
+    entropy = -np.sum(frac[frac > 0] * np.log(frac[frac > 0]))
+    rng = np.random.default_rng(seed)
+    null = np.empty((permutations, len(singular)), float)
+    for b in range(permutations):
+        shuffled = residual.copy()
+        for j in range(shuffled.shape[1]):
+            vals = shuffled[mask[:, j], j].copy()
+            rng.shuffle(vals)
+            shuffled[mask[:, j], j] = vals
+        null[b] = np.linalg.svd(shuffled, compute_uv=False)
+    q95 = np.quantile(null, .95, axis=0)
+    return {
+        "singular_values": singular.tolist(),
+        "variance_fraction": frac.tolist(),
+        "cumulative_variance_fraction": np.cumsum(frac).tolist(),
+        "effective_rank_entropy": float(np.exp(entropy)),
+        "stable_rank": float(power.sum() / max(power[0], 1e-12)),
+        "permutation_null_q95": q95.tolist(),
+        "n_singular_values_above_null_q95": int(np.sum(singular > q95)),
+        "permutations": permutations,
+    }
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--input", type=Path, default=pp.DEFAULT_OUTPUT)
+    ap.add_argument("--output", type=Path, default=HERE / "profile_perturbation_lowrank_output")
+    ap.add_argument("--max-rank", type=int, default=6)
+    ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--selection", choices=["all", "full_wrong", "full_correct"], default="all")
+    ap.add_argument("--generation-labels", type=Path,
+                    help="JSONL from profile_likelihood_generation_agreement.py; "
+                         "when set, replaces teacher-forced full-context labels")
+    ap.add_argument("--spectrum-permutations", type=int, default=500)
+    args = ap.parse_args()
+    records, G, Ggold, y, H, metrics = build_matrices(args.input / "items")
+    label_source = "teacher_forced_likelihood"
+    four_cell = None
+    if args.generation_labels:
+        generation = load_generation_labels(args.generation_labels)
+        matched = np.asarray([record[0] in generation for record in records], bool)
+        records = [record for record, selected in zip(records, matched) if selected]
+        G, Ggold, H = G[matched], Ggold[matched], H[matched]
+        y = np.asarray([generation[record[0]]["correct"] for record in records], int)
+        label_source = "generation_modal"
+        q_correct = []
+        for _, record, _, _ in records:
+            md = record["metadata"]
+            qi = md["condition_names"].index("question_only")
+            q_correct.append(int(np.argmax(record["candidate_scores"][qi]) == int(md["right_index"])))
+        q_correct = np.asarray(q_correct, int)
+        four_cell = {
+            "rows": "question_only_teacher_forced_correct_[false,true]",
+            "cols": "full_context_generation_modal_correct_[false,true]",
+            "counts": [[int(np.sum((q_correct == a) & (y == b))) for b in (0, 1)]
+                       for a in (0, 1)],
+            "note": "Mixed-mode table: no question-only generation samples exist.",
+        }
+    preselection_counts = {"correct": int(y.sum()), "wrong": int((1-y).sum())}
+    if args.selection != "all":
+        keep = (y == 0) if args.selection == "full_wrong" else (y == 1)
+        records = [record for record, selected in zip(records, keep) if selected]
+        G, Ggold, y, H = G[keep], Ggold[keep], y[keep], H[keep]
+    cv_selected_rank, curve = cv_rank(G, min(args.max_rank, len(CONDITIONS) - 2), 5, args.seed)
+    loto_res = loto_curve(G, range(0, min(args.max_rank, 5) + 1), CONDITIONS,
+                          n_folds=5, seed=args.seed)
+    loto_mean = {int(r): float(np.mean(v.delta)) for r, v in loto_res.items()}
+    loto_selected_rank = max(loto_mean, key=loto_mean.get)
+    analysis_rank = int(loto_selected_rank)
+    fit = fit_ammi(G, analysis_rank)
+    spectrum = spectrum_audit(G, args.seed, args.spectrum_permutations)
+    rot = rotate(fit, "varimax", CONDITIONS)
+    detector = detector_cv(H, rot.scores, y, seed=args.seed) if analysis_rank > 0 and len(np.unique(y)) > 1 else {}
+    audit = cluster_audit(rot.scores, y, args.seed) if analysis_rank > 0 else {}
+    loading_table = []
+    for k, name in enumerate(CONDITIONS):
+        loading_table.append({"condition": name,
+                              "loadings": [float(x) for x in rot.loadings[k]]})
+    gold_fit = fit_ammi(Ggold, analysis_rank)
+    out = {
+        "selection": args.selection,
+        "label_source": label_source,
+        "preselection_full_context_counts": preselection_counts,
+        "four_cell_table": four_cell,
+        "n_items": len(records), "n_conditions": len(CONDITIONS),
+        "conditions": CONDITIONS, "full_correct": int(y.sum()),
+        "full_wrong": int((1-y).sum()), "primary_matrix": "label_free",
+        "label_free_definition": "mean robust-z of log1p(|delta profile margin|), log1p(symmetric KL), log1p(mean hidden cosine distance)",
+        "gold_matrix_offline_only": True,
+        "selected_rank_cell_cv": cv_selected_rank,
+        "selected_rank_loto": loto_selected_rank,
+        "reported_rank_interval": [min(cv_selected_rank, loto_selected_rank),
+                                   max(cv_selected_rank, loto_selected_rank)],
+        "analysis_rank": analysis_rank,
+        "rank_cv": curve, "loto_mean_delta_by_rank": loto_mean,
+        "interaction_spectrum_audit": spectrum,
+        "in_sample_interaction_fraction": fit.explained()["frac_in_sample"],
+        "varimax_loadings": loading_table, "cluster_correctness_audit": audit,
+        "detector_5fold": detector,
+        "gold_matrix_interaction_fraction_same_rank": gold_fit.explained()["frac_in_sample"],
+        "warning": "Gold-oriented response uses answer identity and is not deployable. Label-free factors are sensitivity axes, not proven causal failure modes."
+    }
+    args.output.mkdir(parents=True, exist_ok=True)
+    dump(args.output / "summary.json", out)
+    np.savez_compressed(args.output / "matrices_and_coordinates.npz", G_label_free=G,
+                        G_gold=Ggold, full_correct=y, hidden=H,
+                        scores=fit.scores, rotated_scores=rot.scores,
+                        rotated_loadings=rot.loadings,
+                        keys=np.asarray([x[0] for x in records]),
+                        conditions=np.asarray(CONDITIONS))
+    print(json.dumps({"rank_interval": [min(cv_selected_rank, loto_selected_rank),
+                                         max(cv_selected_rank, loto_selected_rank)],
+                      "analysis_rank": analysis_rank, "rank_cv": curve, "loto": loto_mean,
+                      "cluster_audit": audit, "detector": detector}, indent=2))
+    print(f"saved -> {args.output}")
+
+
+if __name__ == "__main__":
+    main()

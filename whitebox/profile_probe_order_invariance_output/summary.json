@@ -1,0 +1,130 @@
+{
+  "n_items": 972,
+  "layers": [
+    8,
+    16,
+    24,
+    32
+  ],
+  "label": "original answer identity index; unchanged after profile swap",
+  "protocol": "5-fold item-disjoint cross-fitting; PCA+L2 logistic",
+  "interpretation": "On swapped inputs, prediction y follows person identity; prediction 1-y follows display position. Cross-order transfer is the discriminating statistic.",
+  "results": [
+    {
+      "layer": 8,
+      "orig_to_orig": {
+        "content_identity_accuracy": 0.565843621399177,
+        "display_position_accuracy": 0.43415637860082307
+      },
+      "orig_to_swap": {
+        "content_identity_accuracy": 0.4722222222222222,
+        "display_position_accuracy": 0.5277777777777778
+      },
+      "swap_to_swap": {
+        "content_identity_accuracy": 0.573045267489712,
+        "display_position_accuracy": 0.4269547325102881
+      },
+      "swap_to_orig": {
+        "content_identity_accuracy": 0.4763374485596708,
+        "display_position_accuracy": 0.5236625514403292
+      },
+      "paired_to_orig": {
+        "content_identity_accuracy": 0.5421810699588477,
+        "display_position_accuracy": 0.45781893004115226
+      },
+      "paired_to_swap": {
+        "content_identity_accuracy": 0.5318930041152263,
+        "display_position_accuracy": 0.46810699588477367
+      },
+      "cross_order_content_minus_position": -0.051440329218107,
+      "paired_order_invariant_mean_accuracy": 0.537037037037037
+    },
+    {
+      "layer": 16,
+      "orig_to_orig": {
+        "content_identity_accuracy": 0.9259259259259259,
+        "display_position_accuracy": 0.07407407407407407
+      },
+      "orig_to_swap": {
+        "content_identity_accuracy": 0.09979423868312758,
+        "display_position_accuracy": 0.9002057613168725
+      },
+      "swap_to_swap": {
+        "content_identity_accuracy": 0.9207818930041153,
+        "display_position_accuracy": 0.07921810699588477
+      },
+      "swap_to_orig": {
+        "content_identity_accuracy": 0.07716049382716049,
+        "display_position_accuracy": 0.9228395061728395
+      },
+      "paired_to_orig": {
+        "content_identity_accuracy": 0.5473251028806584,
+        "display_position_accuracy": 0.45267489711934156
+      },
+      "paired_to_swap": {
+        "content_identity_accuracy": 0.4742798353909465,
+        "display_position_accuracy": 0.5257201646090535
+      },
+      "cross_order_content_minus_position": -0.823045267489712,
+      "paired_order_invariant_mean_accuracy": 0.5108024691358024
+    },
+    {
+      "layer": 24,
+      "orig_to_orig": {
+        "content_identity_accuracy": 0.8888888888888888,
+        "display_position_accuracy": 0.1111111111111111
+      },
+      "orig_to_swap": {
+        "content_identity_accuracy": 0.13168724279835392,
+        "display_position_accuracy": 0.8683127572016461
+      },
+      "swap_to_swap": {
+        "content_identity_accuracy": 0.8868312757201646,
+        "display_position_accuracy": 0.11316872427983539
+      },
+      "swap_to_orig": {
+        "content_identity_accuracy": 0.11522633744855967,
+        "display_position_accuracy": 0.8847736625514403
+      },
+      "paired_to_orig": {
+        "content_identity_accuracy": 0.5267489711934157,
+        "display_position_accuracy": 0.4732510288065844
+      },
+      "paired_to_swap": {
+        "content_identity_accuracy": 0.47530864197530864,
+        "display_position_accuracy": 0.5246913580246914
+      },
+      "cross_order_content_minus_position": -0.7530864197530864,
+      "paired_order_invariant_mean_accuracy": 0.5010288065843622
+    },
+    {
+      "layer": 32,
+      "orig_to_orig": {
+        "content_identity_accuracy": 0.6800411522633745,
+        "display_position_accuracy": 0.31995884773662553
+      },
+      "orig_to_swap": {
+        "content_identity_accuracy": 0.36934156378600824,
+        "display_position_accuracy": 0.6306584362139918
+      },
+      "swap_to_swap": {
+        "content_identity_accuracy": 0.6738683127572016,
+        "display_position_accuracy": 0.32613168724279834
+      },
+      "swap_to_orig": {
+        "content_identity_accuracy": 0.3446502057613169,
+        "display_position_accuracy": 0.6553497942386831
+      },
+      "paired_to_orig": {
+        "content_identity_accuracy": 0.5349794238683128,
+        "display_position_accuracy": 0.46502057613168724
+      },
+      "paired_to_swap": {
+        "content_identity_accuracy": 0.49794238683127573,
+        "display_position_accuracy": 0.5020576131687243
+      },
+      "cross_order_content_minus_position": -0.28600823045267487,
+      "paired_order_invariant_mean_accuracy": 0.5164609053497943
+    }
+  ]
+}

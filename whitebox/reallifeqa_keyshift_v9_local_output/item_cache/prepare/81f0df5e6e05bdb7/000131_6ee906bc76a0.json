@@ -1,0 +1,863 @@
+{
+  "item_index": 131,
+  "item_id": "131",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.39526762455815906,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The camp office is nearby.",
+    "located": {
+      "text": "The camp office is nearby.",
+      "start": 131,
+      "end": 157,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine.",
+    "located": {
+      "text": "The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine.",
+      "start": 10,
+      "end": 130,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is nearby. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": false,
+      "logit_1": 31.0,
+      "logit_2": 30.125,
+      "prob_1": 0.7057850360870361,
+      "prob_2": 0.29421496391296387,
+      "correct_margin": -0.875,
+      "shortcut_margin": 0.875,
+      "prior_shortcut_margin": 0.875,
+      "prior_correct_margin": -0.875
+    },
+    "surface_surprisal": 5.316590785980225,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.5,
+      "logit_2": 30.875,
+      "prob_1": 0.2018132209777832,
+      "prob_2": 0.7981867790222168,
+      "correct_margin": 1.375,
+      "shortcut_margin": -1.375
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The camp office is just a short walk away.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285714,
+        "edit_ratio": 0.33333333333333337
+      },
+      "prior_shortcut_margin": 2.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.25,
+        "logit_2": 30.0,
+        "prob_1": 0.9046505093574524,
+        "prob_2": 0.09534946084022522,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25,
+        "prior_shortcut_margin": 2.25,
+        "prior_correct_margin": -2.25
+      },
+      "surface_surprisal": 3.479781150817871,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 31.0,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is just a short walk away. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The camp office is just a short walk away.",
+        "start": 131,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The camp office is conveniently located nearby.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.295774647887324
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 30.375,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.65182638168335,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 31.125,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is conveniently located nearby. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The camp office is conveniently located nearby.",
+        "start": 131,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The office is right next to the campground.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.4626865671641791
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.875,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 3.7443137168884277,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.75,
+        "logit_2": 30.875,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The office is right next to the campground. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is right next to the campground.",
+        "start": 131,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The camp office is situated just a stone's throw away.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5000000000000001,
+        "edit_ratio": 0.41025641025641024
+      },
+      "prior_shortcut_margin": 1.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.5,
+        "logit_2": 29.875,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625,
+        "prior_shortcut_margin": 1.625,
+        "prior_correct_margin": -1.625
+      },
+      "surface_surprisal": 3.66599178314209,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 31.375,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is situated just a stone's throw away. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The camp office is situated just a stone's throw away.",
+        "start": 131,
+        "end": 185,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The camp office is close enough to walk to.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285714,
+        "edit_ratio": 0.3731343283582089
+      },
+      "prior_shortcut_margin": 2.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.25,
+        "logit_2": 30.0,
+        "prob_1": 0.9046505093574524,
+        "prob_2": 0.09534946084022522,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25,
+        "prior_shortcut_margin": 2.25,
+        "prior_correct_margin": -2.25
+      },
+      "surface_surprisal": 3.976506471633911,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 31.0,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is close enough to walk to. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The camp office is close enough to walk to.",
+        "start": 131,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "You can easily walk to the camp office from here.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4,
+        "edit_ratio": 0.4794520547945206
+      },
+      "prior_shortcut_margin": 4.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 33.5,
+        "logit_2": 28.75,
+        "prob_1": 0.9914224743843079,
+        "prob_2": 0.008577484637498856,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75,
+        "prior_shortcut_margin": 4.75,
+        "prior_correct_margin": -4.75
+      },
+      "surface_surprisal": 3.390223264694214,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 31.125,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. You can easily walk to the camp office from here. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "You can easily walk to the camp office from here.",
+        "start": 131,
+        "end": 180,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The camp office is within walking distance.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.3731343283582089
+      },
+      "prior_shortcut_margin": 2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.0,
+        "logit_2": 30.0,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": -2.0,
+        "shortcut_margin": 2.0,
+        "prior_shortcut_margin": 2.0,
+        "prior_correct_margin": -2.0
+      },
+      "surface_surprisal": 4.155821323394775,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.875,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is within walking distance. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The camp office is within walking distance.",
+        "start": 131,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The office is just a quick walk from the campground.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4,
+        "edit_ratio": 0.6052631578947368
+      },
+      "prior_shortcut_margin": 2.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.5,
+        "logit_2": 30.0,
+        "prob_1": 0.9241418242454529,
+        "prob_2": 0.07585817575454712,
+        "correct_margin": -2.5,
+        "shortcut_margin": 2.5,
+        "prior_shortcut_margin": 2.5,
+        "prior_correct_margin": -2.5
+      },
+      "surface_surprisal": 3.6350159645080566,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.375,
+        "logit_2": 31.125,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The office is just a quick walk from the campground. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is just a quick walk from the campground.",
+        "start": 131,
+        "end": 183,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The camp office is nearby, so it's an easy walk.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.625,
+        "edit_ratio": 0.295774647887324
+      },
+      "prior_shortcut_margin": 2.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.25,
+        "logit_2": 29.875,
+        "prob_1": 0.9149009585380554,
+        "prob_2": 0.08509904146194458,
+        "correct_margin": -2.375,
+        "shortcut_margin": 2.375,
+        "prior_shortcut_margin": 2.375,
+        "prior_correct_margin": -2.375
+      },
+      "surface_surprisal": 3.2418532371520996,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.875,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is nearby, so it's an easy walk. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The camp office is nearby, so it's an easy walk.",
+        "start": 131,
+        "end": 179,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The camp office is right here, just a short stroll away.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5000000000000001,
+        "edit_ratio": 0.4177215189873418
+      },
+      "prior_shortcut_margin": 2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.0,
+        "logit_2": 30.0,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": -2.0,
+        "shortcut_margin": 2.0,
+        "prior_shortcut_margin": 2.0,
+        "prior_correct_margin": -2.0
+      },
+      "surface_surprisal": 3.8235816955566406,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 31.125,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is right here, just a short stroll away. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The camp office is right here, just a short stroll away.",
+        "start": 131,
+        "end": 187,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p03",
+      "text": "The office is right next to the campground.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.4626865671641791
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.875,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 3.7443137168884277,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.75,
+        "logit_2": 30.875,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The office is right next to the campground. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is right next to the campground.",
+        "start": 131,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p07",
+      "text": "The camp office is within walking distance.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.3731343283582089
+      },
+      "prior_shortcut_margin": 2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.0,
+        "logit_2": 30.0,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": -2.0,
+        "shortcut_margin": 2.0,
+        "prior_shortcut_margin": 2.0,
+        "prior_correct_margin": -2.0
+      },
+      "surface_surprisal": 4.155821323394775,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.875,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is within walking distance. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The camp office is within walking distance.",
+        "start": 131,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p06",
+      "text": "You can easily walk to the camp office from here.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4,
+        "edit_ratio": 0.4794520547945206
+      },
+      "prior_shortcut_margin": 4.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 33.5,
+        "logit_2": 28.75,
+        "prob_1": 0.9914224743843079,
+        "prob_2": 0.008577484637498856,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75,
+        "prior_shortcut_margin": 4.75,
+        "prior_correct_margin": -4.75
+      },
+      "surface_surprisal": 3.390223264694214,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 31.125,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. You can easily walk to the camp office from here. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "You can easily walk to the camp office from here.",
+        "start": 131,
+        "end": 180,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p02",
+      "text": "The camp office is conveniently located nearby.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.295774647887324
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 30.375,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.65182638168335,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 31.125,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is conveniently located nearby. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The camp office is conveniently located nearby.",
+        "start": 131,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p03",
+      "text": "The office is right next to the campground.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.4626865671641791
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.875,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 3.7443137168884277,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.75,
+        "logit_2": 30.875,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The office is right next to the campground. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is right next to the campground.",
+        "start": 131,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The proximity of the camp office to the campground gate is relevant to the decision of whether to walk or drive the UTV to the gate.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The camp office is nearby. The proximity of the camp office to the campground gate is relevant to the decision of whether to walk or drive the UTV to the gate. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.875,
+      "logit_2": 30.875,
+      "prob_1": 0.2689414322376251,
+      "prob_2": 0.7310585379600525,
+      "correct_margin": 1.0,
+      "shortcut_margin": -1.0
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The campground lets UTVs onto the trail only after the gate attendant scans the current registration tag on the machine. The office is right next to the campground. The proximity of the camp office to the campground gate is relevant to the decision of whether to walk or drive the UTV to the gate. Should I walk to the office or drive the UTV to the trail gate?\nOption1: Walk to the office\nOption2: Drive the UTV to the trail gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 30.125,
+      "logit_2": 31.0,
+      "prob_1": 0.29421496391296387,
+      "prob_2": 0.7057850360870361,
+      "correct_margin": 0.875,
+      "shortcut_margin": -0.875
+    }
+  }
+}

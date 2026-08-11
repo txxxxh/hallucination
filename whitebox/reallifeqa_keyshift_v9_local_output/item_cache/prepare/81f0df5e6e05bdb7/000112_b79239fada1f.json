@@ -1,0 +1,863 @@
+{
+  "item_index": 112,
+  "item_id": "112",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.40902677755228073,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The equipment tech is standing beside the tester to check that the breakaway battery powers the brakes.",
+    "located": {
+      "text": "The equipment tech is standing beside the tester to check that the breakaway battery powers the brakes.",
+      "start": 50,
+      "end": 153,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The enclosed-trailer checkout is ready.",
+    "located": {
+      "text": "The enclosed-trailer checkout is ready.",
+      "start": 10,
+      "end": 49,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is standing beside the tester to check that the breakaway battery powers the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.0,
+      "logit_2": 30.625,
+      "prob_1": 0.3486451506614685,
+      "prob_2": 0.6513549089431763,
+      "correct_margin": -0.625,
+      "shortcut_margin": 0.625,
+      "prior_shortcut_margin": 0.625,
+      "prior_correct_margin": -0.625
+    },
+    "surface_surprisal": 5.363589286804199,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.0,
+      "logit_2": 30.125,
+      "prob_1": 0.4687906503677368,
+      "prob_2": 0.531209409236908,
+      "correct_margin": -0.125,
+      "shortcut_margin": 0.125
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The equipment tech is on site to ensure the breakaway battery powers the brakes.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7096774193548386,
+        "edit_ratio": 0.1933701657458563
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 31.25,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 5.217019557952881,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.375,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is on site to ensure the breakaway battery powers the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is on site to ensure the breakaway battery powers the brakes.",
+        "start": 50,
+        "end": 130,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The equipment tech is checking that the breakaway battery is powering the brakes correctly.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 4,
+        "notes": "Incorrectly implies the tech is checking the battery's functionality rather than its power to the brakes."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6451612903225806,
+        "edit_ratio": 0.26041666666666663
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.75,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 5.086970806121826,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.125,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is checking that the breakaway battery is powering the brakes correctly. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is checking that the breakaway battery is powering the brakes correctly.",
+        "start": 50,
+        "end": 141,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The equipment tech is confirming the breakaway battery is powering the brakes properly.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 3,
+        "notes": "Incorrectly implies the tech is confirming proper functioning rather than power to the brakes."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5999999999999999,
+        "edit_ratio": 0.3085106382978723
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.625,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 5.401975154876709,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.25,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is confirming the breakaway battery is powering the brakes properly. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is confirming the breakaway battery is powering the brakes properly.",
+        "start": 50,
+        "end": 137,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The equipment tech is verifying the breakaway battery powers the brakes as intended.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 4,
+        "notes": "Incorrectly implies the tech is verifying the battery's intended functionality rather than its power to the brakes."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.29729729729729726
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.875,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 5.4324421882629395,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.125,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is verifying the breakaway battery powers the brakes as intended. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is verifying the breakaway battery powers the brakes as intended.",
+        "start": 50,
+        "end": 134,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The equipment tech is inspecting the breakaway battery to ensure it powers the brakes.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 3,
+        "notes": "Incorrectly implies the tech is inspecting the battery's functionality rather than its power to the brakes."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7096774193548386,
+        "edit_ratio": 0.28342245989304815
+      },
+      "prior_shortcut_margin": -0.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.625,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0,
+        "prior_shortcut_margin": -0.0,
+        "prior_correct_margin": 0.0
+      },
+      "surface_surprisal": 4.595059394836426,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.25,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is inspecting the breakaway battery to ensure it powers the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is inspecting the breakaway battery to ensure it powers the brakes.",
+        "start": 50,
+        "end": 136,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The equipment tech is checking that the breakaway battery is functioning correctly and powering the brakes.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 4,
+        "notes": "Incorrectly implies the tech is checking the battery's functionality and power to the brakes rather than just power."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6060606060606061,
+        "edit_ratio": 0.3173076923076923
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.75,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 4.650155544281006,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.0,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is checking that the breakaway battery is functioning correctly and powering the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is checking that the breakaway battery is functioning correctly and powering the brakes.",
+        "start": 50,
+        "end": 157,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The equipment tech is on the scene to check that the breakaway battery powers the brakes.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.11578947368421055
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.75,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.746671199798584,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.125,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is on the scene to check that the breakaway battery powers the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is on the scene to check that the breakaway battery powers the brakes.",
+        "start": 50,
+        "end": 139,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The equipment tech is confirming the breakaway battery powers the brakes.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 3,
+        "notes": "Incorrectly implies the tech is confirming the battery's power to the brakes without context."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857143,
+        "edit_ratio": 0.24137931034482762
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.625,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 5.977820873260498,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.25,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is confirming the breakaway battery powers the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is confirming the breakaway battery powers the brakes.",
+        "start": 50,
+        "end": 123,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The equipment tech is verifying the breakaway battery powers the brakes.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 3,
+        "notes": "Incorrectly implies the tech is verifying the battery's power to the brakes without context."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857143,
+        "edit_ratio": 0.24855491329479773
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 30.5,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 5.868836879730225,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.125,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is verifying the breakaway battery powers the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is verifying the breakaway battery powers the brakes.",
+        "start": 50,
+        "end": 122,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The equipment tech is checking that the breakaway battery is powering the brakes.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.21978021978021978
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.75,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 5.2480788230896,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.0,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is checking that the breakaway battery is powering the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is checking that the breakaway battery is powering the brakes.",
+        "start": 50,
+        "end": 131,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p07",
+      "text": "The equipment tech is on the scene to check that the breakaway battery powers the brakes.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.11578947368421055
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.75,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.746671199798584,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.125,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is on the scene to check that the breakaway battery powers the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is on the scene to check that the breakaway battery powers the brakes.",
+        "start": 50,
+        "end": 139,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "The equipment tech is on site to ensure the breakaway battery powers the brakes.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7096774193548386,
+        "edit_ratio": 0.1933701657458563
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 31.25,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 5.217019557952881,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.375,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is on site to ensure the breakaway battery powers the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is on site to ensure the breakaway battery powers the brakes.",
+        "start": 50,
+        "end": 130,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p10",
+      "text": "The equipment tech is checking that the breakaway battery is powering the brakes.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.21978021978021978
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.75,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 5.2480788230896,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.0,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is checking that the breakaway battery is powering the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is checking that the breakaway battery is powering the brakes.",
+        "start": 50,
+        "end": 131,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p10",
+      "text": "The equipment tech is checking that the breakaway battery is powering the brakes.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.21978021978021978
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.75,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 5.2480788230896,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.0,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is checking that the breakaway battery is powering the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is checking that the breakaway battery is powering the brakes.",
+        "start": 50,
+        "end": 131,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p07",
+      "text": "The equipment tech is on the scene to check that the breakaway battery powers the brakes.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.11578947368421055
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.75,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.746671199798584,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.125,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is on the scene to check that the breakaway battery powers the brakes. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The equipment tech is on the scene to check that the breakaway battery powers the brakes.",
+        "start": 50,
+        "end": 139,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This confirmation is crucial because it affects whether the trailer is safe to tow.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is standing beside the tester to check that the breakaway battery powers the brakes. This confirmation is crucial because it affects whether the trailer is safe to tow. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 30.375,
+      "logit_2": 30.375,
+      "prob_1": 0.5,
+      "prob_2": 0.5,
+      "correct_margin": 0.0,
+      "shortcut_margin": -0.0
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The enclosed-trailer checkout is ready. The equipment tech is on the scene to check that the breakaway battery powers the brakes. This confirmation is crucial because it affects whether the trailer is safe to tow. Should I tow the trailer to the tester or go there without it?\nOption1: Tow the trailer to the tester\nOption2: Go to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 30.5,
+      "logit_2": 30.5,
+      "prob_1": 0.5,
+      "prob_2": 0.5,
+      "correct_margin": 0.0,
+      "shortcut_margin": -0.0
+    }
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "item_index": 43,
+  "item_id": "43",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.5379900896100873,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "Their office is a short walk from my apartment.",
+    "located": {
+      "text": "Their office is a short walk from my apartment.",
+      "start": 210,
+      "end": 257,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "Their office is a short walk from my apartment.",
+    "located": {
+      "text": "Their office is a short walk from my apartment.",
+      "start": 210,
+      "end": 257,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. Their office is a short walk from my apartment. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 26.875,
+      "logit_2": 32.75,
+      "prob_1": 0.0028009270317852497,
+      "prob_2": 0.9971990585327148,
+      "correct_margin": -5.875,
+      "shortcut_margin": 5.875,
+      "prior_shortcut_margin": 5.875,
+      "prior_correct_margin": -5.875
+    },
+    "surface_surprisal": 2.714879035949707,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.0,
+      "logit_2": 30.875,
+      "prob_1": 0.13296423852443695,
+      "prob_2": 0.8670357465744019,
+      "correct_margin": -1.875,
+      "shortcut_margin": 1.875
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The office is conveniently located within walking distance from my apartment.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.34426229508196726
+      },
+      "prior_shortcut_margin": 7.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 25.75,
+        "logit_2": 33.5,
+        "prob_1": 0.0004305570910219103,
+        "prob_2": 0.9995694756507874,
+        "correct_margin": -7.75,
+        "shortcut_margin": 7.75,
+        "prior_shortcut_margin": 7.75,
+        "prior_correct_margin": -7.75
+      },
+      "surface_surprisal": 3.175593376159668,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 30.625,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. The office is conveniently located within walking distance from my apartment. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is conveniently located within walking distance from my apartment.",
+        "start": 210,
+        "end": 287,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "My apartment is just a short walk away from the partner garage's office.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.4871794871794872
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 3.867030620574951,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 30.5,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": -2.0,
+        "shortcut_margin": 2.0
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. My apartment is just a short walk away from the partner garage's office. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My apartment is just a short walk away from the partner garage's office.",
+        "start": 210,
+        "end": 282,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The partner garage's office is a brief stroll from where I live.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3636363636363637,
+        "edit_ratio": 0.4862385321100917
+      },
+      "prior_shortcut_margin": 4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.0,
+        "logit_2": 32.25,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": -4.25,
+        "shortcut_margin": 4.25,
+        "prior_shortcut_margin": 4.25,
+        "prior_correct_margin": -4.25
+      },
+      "surface_surprisal": 4.870579242706299,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 30.625,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. The partner garage's office is a brief stroll from where I live. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The partner garage's office is a brief stroll from where I live.",
+        "start": 210,
+        "end": 274,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "I can easily walk to the office from my apartment in just a few minutes.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.5213675213675213
+      },
+      "prior_shortcut_margin": 6.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.75,
+        "logit_2": 33.25,
+        "prob_1": 0.0015011822106316686,
+        "prob_2": 0.998498797416687,
+        "correct_margin": -6.5,
+        "shortcut_margin": 6.5,
+        "prior_shortcut_margin": 6.5,
+        "prior_correct_margin": -6.5
+      },
+      "surface_surprisal": 2.260007858276367,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 31.25,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": -2.0,
+        "shortcut_margin": 2.0
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. I can easily walk to the office from my apartment in just a few minutes. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I can easily walk to the office from my apartment in just a few minutes.",
+        "start": 210,
+        "end": 282,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The office is situated close enough to my apartment that walking is a viable option.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4166666666666667,
+        "edit_ratio": 0.5038759689922481
+      },
+      "prior_shortcut_margin": 6.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.75,
+        "logit_2": 33.0,
+        "prob_1": 0.0019267346942797303,
+        "prob_2": 0.9980732202529907,
+        "correct_margin": -6.25,
+        "shortcut_margin": 6.25,
+        "prior_shortcut_margin": 6.25,
+        "prior_correct_margin": -6.25
+      },
+      "surface_surprisal": 2.8511791229248047,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.375,
+        "logit_2": 31.25,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. The office is situated close enough to my apartment that walking is a viable option. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is situated close enough to my apartment that walking is a viable option.",
+        "start": 210,
+        "end": 294,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The distance between my apartment and the office is suitable for walking.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.380952380952381,
+        "edit_ratio": 0.6271186440677966
+      },
+      "prior_shortcut_margin": 6.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.375,
+        "logit_2": 33.0,
+        "prob_1": 0.001325022429227829,
+        "prob_2": 0.9986749291419983,
+        "correct_margin": -6.625,
+        "shortcut_margin": 6.625,
+        "prior_shortcut_margin": 6.625,
+        "prior_correct_margin": -6.625
+      },
+      "surface_surprisal": 3.023716688156128,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 31.125,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": -2.125,
+        "shortcut_margin": 2.125
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. The distance between my apartment and the office is suitable for walking. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The distance between my apartment and the office is suitable for walking.",
+        "start": 210,
+        "end": 283,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "Walking to the office is a reasonable choice given its proximity to my apartment.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.43478260869565216,
+        "edit_ratio": 0.4126984126984127
+      },
+      "prior_shortcut_margin": 6.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.75,
+        "logit_2": 32.75,
+        "prob_1": 0.0024726232513785362,
+        "prob_2": 0.9975274205207825,
+        "correct_margin": -6.0,
+        "shortcut_margin": 6.0,
+        "prior_shortcut_margin": 6.0,
+        "prior_correct_margin": -6.0
+      },
+      "surface_surprisal": 2.7264301776885986,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 31.75,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": -3.875,
+        "shortcut_margin": 3.875
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. Walking to the office is a reasonable choice given its proximity to my apartment. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Walking to the office is a reasonable choice given its proximity to my apartment.",
+        "start": 210,
+        "end": 291,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The office is a short distance from my apartment, making it an easy walk.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.2991452991452992
+      },
+      "prior_shortcut_margin": 7.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.0,
+        "logit_2": 33.5,
+        "prob_1": 0.000552778597921133,
+        "prob_2": 0.9994471669197083,
+        "correct_margin": -7.5,
+        "shortcut_margin": 7.5,
+        "prior_shortcut_margin": 7.5,
+        "prior_correct_margin": -7.5
+      },
+      "surface_surprisal": 2.745347499847412,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.375,
+        "logit_2": 31.25,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. The office is a short distance from my apartment, making it an easy walk. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is a short distance from my apartment, making it an easy walk.",
+        "start": 210,
+        "end": 283,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The partner garage's office is near enough to my apartment that I can walk there.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.39999999999999997,
+        "edit_ratio": 0.4920634920634921
+      },
+      "prior_shortcut_margin": 7.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.25,
+        "logit_2": 33.25,
+        "prob_1": 0.0009110512328334153,
+        "prob_2": 0.9990890026092529,
+        "correct_margin": -7.0,
+        "shortcut_margin": 7.0,
+        "prior_shortcut_margin": 7.0,
+        "prior_correct_margin": -7.0
+      },
+      "surface_surprisal": 3.855553150177002,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.75,
+        "logit_2": 31.25,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": -2.5,
+        "shortcut_margin": 2.5
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. The partner garage's office is near enough to my apartment that I can walk there. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The partner garage's office is near enough to my apartment that I can walk there.",
+        "start": 210,
+        "end": 291,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "I can quickly walk to the office from my apartment without exerting myself too much.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.4166666666666667,
+        "edit_ratio": 0.5658914728682171
+      },
+      "prior_shortcut_margin": 6.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.0,
+        "logit_2": 33.0,
+        "prob_1": 0.0024726232513785362,
+        "prob_2": 0.9975274205207825,
+        "correct_margin": -6.0,
+        "shortcut_margin": 6.0,
+        "prior_shortcut_margin": 6.0,
+        "prior_correct_margin": -6.0
+      },
+      "surface_surprisal": 2.631664752960205,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.875,
+        "logit_2": 31.375,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": -2.5,
+        "shortcut_margin": 2.5
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. I can quickly walk to the office from my apartment without exerting myself too much. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I can quickly walk to the office from my apartment without exerting myself too much.",
+        "start": 210,
+        "end": 294,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p03",
+      "text": "The partner garage's office is a brief stroll from where I live.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3636363636363637,
+        "edit_ratio": 0.4862385321100917
+      },
+      "prior_shortcut_margin": 4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.0,
+        "logit_2": 32.25,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": -4.25,
+        "shortcut_margin": 4.25,
+        "prior_shortcut_margin": 4.25,
+        "prior_correct_margin": -4.25
+      },
+      "surface_surprisal": 4.870579242706299,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 30.625,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. The partner garage's office is a brief stroll from where I live. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The partner garage's office is a brief stroll from where I live.",
+        "start": 210,
+        "end": 274,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p04",
+      "text": "I can easily walk to the office from my apartment in just a few minutes.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.5213675213675213
+      },
+      "prior_shortcut_margin": 6.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.75,
+        "logit_2": 33.25,
+        "prob_1": 0.0015011822106316686,
+        "prob_2": 0.998498797416687,
+        "correct_margin": -6.5,
+        "shortcut_margin": 6.5,
+        "prior_shortcut_margin": 6.5,
+        "prior_correct_margin": -6.5
+      },
+      "surface_surprisal": 2.260007858276367,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 31.25,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": -2.0,
+        "shortcut_margin": 2.0
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. I can easily walk to the office from my apartment in just a few minutes. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I can easily walk to the office from my apartment in just a few minutes.",
+        "start": 210,
+        "end": 282,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p01",
+      "text": "The office is conveniently located within walking distance from my apartment.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.34426229508196726
+      },
+      "prior_shortcut_margin": 7.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 25.75,
+        "logit_2": 33.5,
+        "prob_1": 0.0004305570910219103,
+        "prob_2": 0.9995694756507874,
+        "correct_margin": -7.75,
+        "shortcut_margin": 7.75,
+        "prior_shortcut_margin": 7.75,
+        "prior_correct_margin": -7.75
+      },
+      "surface_surprisal": 3.175593376159668,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 30.625,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. The office is conveniently located within walking distance from my apartment. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is conveniently located within walking distance from my apartment.",
+        "start": 210,
+        "end": 287,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p07",
+      "text": "Walking to the office is a reasonable choice given its proximity to my apartment.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.43478260869565216,
+        "edit_ratio": 0.4126984126984127
+      },
+      "prior_shortcut_margin": 6.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.75,
+        "logit_2": 32.75,
+        "prob_1": 0.0024726232513785362,
+        "prob_2": 0.9975274205207825,
+        "correct_margin": -6.0,
+        "shortcut_margin": 6.0,
+        "prior_shortcut_margin": 6.0,
+        "prior_correct_margin": -6.0
+      },
+      "surface_surprisal": 2.7264301776885986,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 31.75,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": -3.875,
+        "shortcut_margin": 3.875
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. Walking to the office is a reasonable choice given its proximity to my apartment. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Walking to the office is a reasonable choice given its proximity to my apartment.",
+        "start": 210,
+        "end": 291,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p02",
+      "text": "My apartment is just a short walk away from the partner garage's office.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.4871794871794872
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 3.867030620574951,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 30.5,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": -2.0,
+        "shortcut_margin": 2.0
+      },
+      "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. My apartment is just a short walk away from the partner garage's office. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My apartment is just a short walk away from the partner garage's office.",
+        "start": 210,
+        "end": 282,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The proximity of the office to my apartment clarifies that walking is a feasible alternative to driving.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. Their office is a short walk from my apartment. The proximity of the office to my apartment clarifies that walking is a feasible alternative to driving. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.875,
+      "logit_2": 33.0,
+      "prob_1": 0.005911068990826607,
+      "prob_2": 0.9940890073776245,
+      "correct_margin": -5.125,
+      "shortcut_margin": 5.125
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: My rideshare account is locked because the inspection sticker in the app does not match the vehicle profile. The partner garage can clear it only after photographing the plate and sticker on the car. My apartment is just a short walk away from the partner garage's office. The proximity of the office to my apartment clarifies that walking is a feasible alternative to driving. Should I walk to the office or drive the car there?\nOption1: Drive the car there\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.0,
+      "logit_2": 32.75,
+      "prob_1": 0.008577484637498856,
+      "prob_2": 0.9914224743843079,
+      "correct_margin": -4.75,
+      "shortcut_margin": 4.75
+    }
+  }
+}

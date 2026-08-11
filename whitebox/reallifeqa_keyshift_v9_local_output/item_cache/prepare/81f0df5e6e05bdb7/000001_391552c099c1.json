@@ -1,0 +1,863 @@
+{
+  "item_index": 1,
+  "item_id": "1",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.541953692995408,
+    "predicted_hallucination": true,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The office is next to the lot.",
+    "located": {
+      "text": "The office is next to the lot.",
+      "start": 166,
+      "end": 196,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The office is next to the lot.",
+    "located": {
+      "text": "The office is next to the lot.",
+      "start": 166,
+      "end": 196,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is next to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.375,
+      "logit_2": 30.625,
+      "prob_1": 0.43782350420951843,
+      "prob_2": 0.562176525592804,
+      "correct_margin": -0.25,
+      "shortcut_margin": 0.25,
+      "prior_shortcut_margin": 0.25,
+      "prior_correct_margin": -0.25
+    },
+    "surface_surprisal": 4.1150712966918945,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.375,
+      "logit_2": 30.125,
+      "prob_1": 0.3208213150501251,
+      "prob_2": 0.6791787147521973,
+      "correct_margin": -0.75,
+      "shortcut_margin": 0.75
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The office is located adjacent to the lot.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.22857142857142854
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 31.0,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 3.656029462814331,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.25,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is located adjacent to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is located adjacent to the lot.",
+        "start": 166,
+        "end": 208,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The office is situated right next to the lot.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8750000000000001,
+        "edit_ratio": 0.20547945205479456
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.625,
+        "logit_2": 30.75,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.66252064704895,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.125,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is situated right next to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is situated right next to the lot.",
+        "start": 166,
+        "end": 211,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The office is right next door to the lot.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8750000000000001,
+        "edit_ratio": 0.1594202898550725
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.875,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 3.77496600151062,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.125,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is right next door to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is right next door to the lot.",
+        "start": 166,
+        "end": 207,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The office is just a short walk away from the lot.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5555555555555556,
+        "edit_ratio": 0.33333333333333337
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 31.0,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 3.1949713230133057,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 30.0,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is just a short walk away from the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is just a short walk away from the lot.",
+        "start": 166,
+        "end": 216,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The office is nearby, located on the same property as the lot.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5263157894736842,
+        "edit_ratio": 0.3707865168539326
+      },
+      "prior_shortcut_margin": 0.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 31.0,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875,
+        "prior_shortcut_margin": 0.875,
+        "prior_correct_margin": -0.875
+      },
+      "surface_surprisal": 3.4126505851745605,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.5,
+        "logit_2": 30.375,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is nearby, located on the same property as the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is nearby, located on the same property as the lot.",
+        "start": 166,
+        "end": 228,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The office is conveniently located next to the lot.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8750000000000001,
+        "edit_ratio": 0.26582278481012656
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.125,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 3.9804954528808594,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 30.25,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is conveniently located next to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is conveniently located next to the lot.",
+        "start": 166,
+        "end": 217,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The office is adjacent to the lot, just a few feet away.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.3493975903614458
+      },
+      "prior_shortcut_margin": 0.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 31.0,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5,
+        "prior_shortcut_margin": 0.5,
+        "prior_correct_margin": -0.5
+      },
+      "surface_surprisal": 2.9256908893585205,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.125,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is adjacent to the lot, just a few feet away. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is adjacent to the lot, just a few feet away.",
+        "start": 166,
+        "end": 222,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The office is situated just a stone's throw from the lot.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5263157894736842,
+        "edit_ratio": 0.3647058823529412
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.625,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 3.327744960784912,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 30.5,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is situated just a stone's throw from the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is situated just a stone's throw from the lot.",
+        "start": 166,
+        "end": 223,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The office is located in close proximity to the lot.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411764,
+        "edit_ratio": 0.275
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 31.25,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.254105806350708,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.125,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is located in close proximity to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is located in close proximity to the lot.",
+        "start": 166,
+        "end": 218,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The office is right across from the lot.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 3,
+        "notes": "This paraphrase implies that the office is across from the lot, which contradicts the original statement that the office is next to the lot."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.2647058823529411
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.75,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 4.0891337394714355,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.0,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is right across from the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is right across from the lot.",
+        "start": 166,
+        "end": 206,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p02",
+      "text": "The office is situated right next to the lot.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8750000000000001,
+        "edit_ratio": 0.20547945205479456
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.625,
+        "logit_2": 30.75,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.66252064704895,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.125,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is situated right next to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is situated right next to the lot.",
+        "start": 166,
+        "end": 211,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "The office is located adjacent to the lot.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.22857142857142854
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 31.0,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 3.656029462814331,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.25,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is located adjacent to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is located adjacent to the lot.",
+        "start": 166,
+        "end": 208,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p04",
+      "text": "The office is just a short walk away from the lot.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5555555555555556,
+        "edit_ratio": 0.33333333333333337
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 31.0,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 3.1949713230133057,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 30.0,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is just a short walk away from the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is just a short walk away from the lot.",
+        "start": 166,
+        "end": 216,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p06",
+      "text": "The office is conveniently located next to the lot.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8750000000000001,
+        "edit_ratio": 0.26582278481012656
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.125,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 3.9804954528808594,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 30.25,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is conveniently located next to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is conveniently located next to the lot.",
+        "start": 166,
+        "end": 217,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p02",
+      "text": "The office is situated right next to the lot.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8750000000000001,
+        "edit_ratio": 0.20547945205479456
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.625,
+        "logit_2": 30.75,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.66252064704895,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.125,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is situated right next to the lot. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is situated right next to the lot.",
+        "start": 166,
+        "end": 211,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This adjacency affects the feasibility of walking to the office.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is next to the lot. This adjacency affects the feasibility of walking to the office. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.0,
+      "logit_2": 30.75,
+      "prob_1": 0.3208213150501251,
+      "prob_2": 0.6791787147521973,
+      "correct_margin": -0.75,
+      "shortcut_margin": 0.75
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The car-hauler is marked ready, but yard staff finish checkout only after testing the emergency breakaway switch with the hauler plugged into their tester. The office is situated right next to the lot. This adjacency affects the feasibility of walking to the office. Should I tow the hauler to the tester or walk to the office?\nOption1: Tow the hauler to the tester\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.25,
+      "logit_2": 31.0,
+      "prob_1": 0.3208213150501251,
+      "prob_2": 0.6791787147521973,
+      "correct_margin": -0.75,
+      "shortcut_margin": 0.75
+    }
+  }
+}

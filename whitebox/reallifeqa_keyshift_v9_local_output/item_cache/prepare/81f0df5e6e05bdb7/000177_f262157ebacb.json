@@ -1,0 +1,863 @@
+{
+  "item_index": 177,
+  "item_id": "177",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.7990227404516448,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "while the store rebate requires the original dated receipt.",
+    "located": {
+      "text": "while the store rebate requires the original dated receipt.",
+      "start": 131,
+      "end": 190,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "I am documenting a pop-up canopy purchase with the event-equipment clerk.",
+    "located": {
+      "text": "I am documenting a pop-up canopy purchase with the event-equipment clerk.",
+      "start": 10,
+      "end": 83,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, while the store rebate requires the original dated receipt. What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.625,
+      "logit_2": 32.75,
+      "prob_1": 0.005911068990826607,
+      "prob_2": 0.9940890073776245,
+      "correct_margin": -5.125,
+      "shortcut_margin": 5.125,
+      "prior_shortcut_margin": 5.125,
+      "prior_correct_margin": -5.125
+    },
+    "surface_surprisal": 5.928821086883545,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.875,
+      "logit_2": 31.125,
+      "prob_1": 0.037326883524656296,
+      "prob_2": 0.9626730680465698,
+      "correct_margin": -3.25,
+      "shortcut_margin": 3.25
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "in order to qualify for the store rebate, the original dated receipt is required",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.3284671532846716
+      },
+      "prior_shortcut_margin": 4.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 32.5,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875,
+        "prior_shortcut_margin": 4.875,
+        "prior_correct_margin": -4.875
+      },
+      "surface_surprisal": 3.6401915550231934,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.375,
+        "logit_2": 31.625,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": -5.25,
+        "shortcut_margin": 5.25
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, in order to qualify for the store rebate, the original dated receipt is required What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "in order to qualify for the store rebate, the original dated receipt is required",
+        "start": 131,
+        "end": 211,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "the rebate requires that the original receipt be kept intact",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.3220338983050848
+      },
+      "prior_shortcut_margin": 4.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.375,
+        "logit_2": 32.5,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": -4.125,
+        "shortcut_margin": 4.125,
+        "prior_shortcut_margin": 4.125,
+        "prior_correct_margin": -4.125
+      },
+      "surface_surprisal": 4.813282489776611,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 31.5,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, the rebate requires that the original receipt be kept intact What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate requires that the original receipt be kept intact",
+        "start": 131,
+        "end": 191,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "the store rebate only accepts original receipts",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.3142857142857143
+      },
+      "prior_shortcut_margin": 5.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.375,
+        "logit_2": 32.5,
+        "prob_1": 0.005911068990826607,
+        "prob_2": 0.9940890073776245,
+        "correct_margin": -5.125,
+        "shortcut_margin": 5.125,
+        "prior_shortcut_margin": 5.125,
+        "prior_correct_margin": -5.125
+      },
+      "surface_surprisal": 6.58402156829834,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.25,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": -4.0,
+        "shortcut_margin": 4.0
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, the store rebate only accepts original receipts What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the store rebate only accepts original receipts",
+        "start": 131,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "in order to receive the rebate, the original receipt must be preserved",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4761904761904762,
+        "edit_ratio": 0.4645669291338582
+      },
+      "prior_shortcut_margin": 3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 31.75,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": -3.25,
+        "shortcut_margin": 3.25,
+        "prior_shortcut_margin": 3.25,
+        "prior_correct_margin": -3.25
+      },
+      "surface_surprisal": 3.1632602214813232,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.5,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": -4.25,
+        "shortcut_margin": 4.25
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, in order to receive the rebate, the original receipt must be preserved What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "in order to receive the rebate, the original receipt must be preserved",
+        "start": 131,
+        "end": 201,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "the rebate requires that the original receipt is not damaged",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 3,
+        "notes": "introduces an additional condition (not damaged)"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.3220338983050848
+      },
+      "prior_shortcut_margin": 3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.625,
+        "logit_2": 32.25,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": -3.625,
+        "shortcut_margin": 3.625,
+        "prior_shortcut_margin": 3.625,
+        "prior_correct_margin": -3.625
+      },
+      "surface_surprisal": 5.200509548187256,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 31.25,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": -3.5,
+        "shortcut_margin": 3.5
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, the rebate requires that the original receipt is not damaged What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate requires that the original receipt is not damaged",
+        "start": 131,
+        "end": 191,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "the store rebate requires that we keep the original receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631577,
+        "edit_ratio": 0.2136752136752137
+      },
+      "prior_shortcut_margin": 5.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 33.0,
+        "prob_1": 0.005911068990826607,
+        "prob_2": 0.9940890073776245,
+        "correct_margin": -5.125,
+        "shortcut_margin": 5.125,
+        "prior_shortcut_margin": 5.125,
+        "prior_correct_margin": -5.125
+      },
+      "surface_surprisal": 4.895496845245361,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.625,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, the store rebate requires that we keep the original receipt What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the store rebate requires that we keep the original receipt",
+        "start": 131,
+        "end": 190,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "the rebate only accepts original receipts that are in their original condition",
+      "valid": false,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 3,
+        "notes": "introduces an additional condition (original condition)"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.28571428571428575,
+        "edit_ratio": 0.5588235294117647
+      },
+      "prior_shortcut_margin": 4.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 32.5,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875,
+        "prior_shortcut_margin": 4.875,
+        "prior_correct_margin": -4.875
+      },
+      "surface_surprisal": 4.583671569824219,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 31.25,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": -4.125,
+        "shortcut_margin": 4.125
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, the rebate only accepts original receipts that are in their original condition What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate only accepts original receipts that are in their original condition",
+        "start": 131,
+        "end": 209,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "the original receipt is necessary to claim the store rebate",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.641025641025641
+      },
+      "prior_shortcut_margin": 5.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 33.0,
+        "prob_1": 0.004070138093084097,
+        "prob_2": 0.9959298968315125,
+        "correct_margin": -5.5,
+        "shortcut_margin": 5.5,
+        "prior_shortcut_margin": 5.5,
+        "prior_correct_margin": -5.5
+      },
+      "surface_surprisal": 4.904740333557129,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.5,
+        "logit_2": 32.0,
+        "prob_1": 0.004070138093084097,
+        "prob_2": 0.9959298968315125,
+        "correct_margin": -5.5,
+        "shortcut_margin": 5.5
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, the original receipt is necessary to claim the store rebate What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the original receipt is necessary to claim the store rebate",
+        "start": 131,
+        "end": 190,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "in order to get the rebate, the original receipt must be saved",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4761904761904762,
+        "edit_ratio": 0.4285714285714286
+      },
+      "prior_shortcut_margin": 3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.25,
+        "logit_2": 32.0,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75,
+        "prior_shortcut_margin": 3.75,
+        "prior_correct_margin": -3.75
+      },
+      "surface_surprisal": 3.3656668663024902,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.0,
+        "logit_2": 31.75,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, in order to get the rebate, the original receipt must be saved What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "in order to get the rebate, the original receipt must be saved",
+        "start": 131,
+        "end": 193,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "the rebate requires that the original receipt is not tampered with",
+      "valid": false,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 3,
+        "notes": "introduces an additional condition (not tampered with)"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.6,
+        "edit_ratio": 0.3548387096774194
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 4.323063373565674,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.25,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": -4.0,
+        "shortcut_margin": 4.0
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, the rebate requires that the original receipt is not tampered with What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate requires that the original receipt is not tampered with",
+        "start": 131,
+        "end": 197,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p04",
+      "text": "in order to receive the rebate, the original receipt must be preserved",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4761904761904762,
+        "edit_ratio": 0.4645669291338582
+      },
+      "prior_shortcut_margin": 3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 31.75,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": -3.25,
+        "shortcut_margin": 3.25,
+        "prior_shortcut_margin": 3.25,
+        "prior_correct_margin": -3.25
+      },
+      "surface_surprisal": 3.1632602214813232,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.5,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": -4.25,
+        "shortcut_margin": 4.25
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, in order to receive the rebate, the original receipt must be preserved What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "in order to receive the rebate, the original receipt must be preserved",
+        "start": 131,
+        "end": 201,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "in order to qualify for the store rebate, the original dated receipt is required",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.3284671532846716
+      },
+      "prior_shortcut_margin": 4.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 32.5,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875,
+        "prior_shortcut_margin": 4.875,
+        "prior_correct_margin": -4.875
+      },
+      "surface_surprisal": 3.6401915550231934,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.375,
+        "logit_2": 31.625,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": -5.25,
+        "shortcut_margin": 5.25
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, in order to qualify for the store rebate, the original dated receipt is required What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "in order to qualify for the store rebate, the original dated receipt is required",
+        "start": 131,
+        "end": 211,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p08",
+      "text": "the original receipt is necessary to claim the store rebate",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.641025641025641
+      },
+      "prior_shortcut_margin": 5.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 33.0,
+        "prob_1": 0.004070138093084097,
+        "prob_2": 0.9959298968315125,
+        "correct_margin": -5.5,
+        "shortcut_margin": 5.5,
+        "prior_shortcut_margin": 5.5,
+        "prior_correct_margin": -5.5
+      },
+      "surface_surprisal": 4.904740333557129,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.5,
+        "logit_2": 32.0,
+        "prob_1": 0.004070138093084097,
+        "prob_2": 0.9959298968315125,
+        "correct_margin": -5.5,
+        "shortcut_margin": 5.5
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, the original receipt is necessary to claim the store rebate What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the original receipt is necessary to claim the store rebate",
+        "start": 131,
+        "end": 190,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p03",
+      "text": "the store rebate only accepts original receipts",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.3142857142857143
+      },
+      "prior_shortcut_margin": 5.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.375,
+        "logit_2": 32.5,
+        "prob_1": 0.005911068990826607,
+        "prob_2": 0.9940890073776245,
+        "correct_margin": -5.125,
+        "shortcut_margin": 5.125,
+        "prior_shortcut_margin": 5.125,
+        "prior_correct_margin": -5.125
+      },
+      "surface_surprisal": 6.58402156829834,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.25,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": -4.0,
+        "shortcut_margin": 4.0
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, the store rebate only accepts original receipts What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the store rebate only accepts original receipts",
+        "start": 131,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p04",
+      "text": "in order to receive the rebate, the original receipt must be preserved",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4761904761904762,
+        "edit_ratio": 0.4645669291338582
+      },
+      "prior_shortcut_margin": 3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 31.75,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": -3.25,
+        "shortcut_margin": 3.25,
+        "prior_shortcut_margin": 3.25,
+        "prior_correct_margin": -3.25
+      },
+      "surface_surprisal": 3.1632602214813232,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.5,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": -4.25,
+        "shortcut_margin": 4.25
+      },
+      "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, in order to receive the rebate, the original receipt must be preserved What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "in order to receive the rebate, the original receipt must be preserved",
+        "start": 131,
+        "end": 201,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The rebate requirement specifies that the original receipt must be retained, which is relevant to the documentation process with the event-equipment clerk.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, while the store rebate requires the original dated receipt. The rebate requirement specifies that the original receipt must be retained, which is relevant to the documentation process with the event-equipment clerk. What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.25,
+      "logit_2": 31.625,
+      "prob_1": 0.03308597952127457,
+      "prob_2": 0.9669140577316284,
+      "correct_margin": -3.375,
+      "shortcut_margin": 3.375
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I am documenting a pop-up canopy purchase with the event-equipment clerk. The clerk scans proof pages and discards them, in order to receive the rebate, the original receipt must be preserved. The rebate requirement specifies that the original receipt must be retained, which is relevant to the documentation process with the event-equipment clerk. What should I hand to the event-equipment clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.875,
+      "logit_2": 31.75,
+      "prob_1": 0.020332353189587593,
+      "prob_2": 0.9796676635742188,
+      "correct_margin": -3.875,
+      "shortcut_margin": 3.875
+    }
+  }
+}

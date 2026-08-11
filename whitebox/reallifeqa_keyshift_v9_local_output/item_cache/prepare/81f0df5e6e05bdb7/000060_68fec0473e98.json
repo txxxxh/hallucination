@@ -1,0 +1,863 @@
+{
+  "item_index": 60,
+  "item_id": "60",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.36044861685187096,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The pharmacy says packs must be scanned into the back cold room immediately.",
+    "located": {
+      "text": "The pharmacy says packs must be scanned into the back cold room immediately.",
+      "start": 87,
+      "end": 163,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The pharmacy says packs must be scanned into the back cold room immediately.",
+    "located": {
+      "text": "The pharmacy says packs must be scanned into the back cold room immediately.",
+      "start": 87,
+      "end": 163,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy says packs must be scanned into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 34.5,
+      "logit_2": 29.125,
+      "prob_1": 0.9953904151916504,
+      "prob_2": 0.004609572701156139,
+      "correct_margin": 5.375,
+      "shortcut_margin": -5.375,
+      "prior_shortcut_margin": -5.375,
+      "prior_correct_margin": 5.375
+    },
+    "surface_surprisal": 6.080237865447998,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 33.0,
+      "logit_2": 27.375,
+      "prob_1": 0.9964063763618469,
+      "prob_2": 0.0035936026833951473,
+      "correct_margin": 5.625,
+      "shortcut_margin": -5.625
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The pharmacy requires that vaccine packs be scanned into the back cold room right away.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857142,
+        "edit_ratio": 0.25465838509316774
+      },
+      "prior_shortcut_margin": -5.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.0,
+        "logit_2": 28.625,
+        "prob_1": 0.9953904151916504,
+        "prob_2": 0.004609572701156139,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375,
+        "prior_shortcut_margin": -5.375,
+        "prior_correct_margin": 5.375
+      },
+      "surface_surprisal": 5.430171012878418,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.625,
+        "prob_1": 0.9964063763618469,
+        "prob_2": 0.0035936026833951473,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy requires that vaccine packs be scanned into the back cold room right away. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy requires that vaccine packs be scanned into the back cold room right away.",
+        "start": 87,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "According to the pharmacy, vaccine packs must be put into the back cold room immediately.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7857142857142856,
+        "edit_ratio": 0.19753086419753085
+      },
+      "prior_shortcut_margin": -5.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.5,
+        "logit_2": 29.375,
+        "prob_1": 0.9940890073776245,
+        "prob_2": 0.005911068990826607,
+        "correct_margin": 5.125,
+        "shortcut_margin": -5.125,
+        "prior_shortcut_margin": -5.125,
+        "prior_correct_margin": 5.125
+      },
+      "surface_surprisal": 4.431984901428223,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 28.0,
+        "prob_1": 0.9933071732521057,
+        "prob_2": 0.006692850962281227,
+        "correct_margin": 5.0,
+        "shortcut_margin": -5.0
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. According to the pharmacy, vaccine packs must be put into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "According to the pharmacy, vaccine packs must be put into the back cold room immediately.",
+        "start": 87,
+        "end": 176,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7586206896551724,
+        "edit_ratio": 0.17159763313609466
+      },
+      "prior_shortcut_margin": -6.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.75,
+        "logit_2": 28.75,
+        "prob_1": 0.9975274205207825,
+        "prob_2": 0.0024726232513785362,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0,
+        "prior_shortcut_margin": -6.0,
+        "prior_correct_margin": 6.0
+      },
+      "surface_surprisal": 5.374313831329346,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 28.125,
+        "prob_1": 0.9875683188438416,
+        "prob_2": 0.01243165135383606,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately.",
+        "start": 87,
+        "end": 182,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The pharmacy says vaccine packs must be scanned into the back cold room immediately.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.962962962962963,
+        "edit_ratio": 0.05063291139240511
+      },
+      "prior_shortcut_margin": -5.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.5,
+        "logit_2": 29.0,
+        "prob_1": 0.9959298968315125,
+        "prob_2": 0.004070138093084097,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5,
+        "prior_shortcut_margin": -5.5,
+        "prior_correct_margin": 5.5
+      },
+      "surface_surprisal": 6.2400593757629395,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.25,
+        "prob_1": 0.9968273043632507,
+        "prob_2": 0.0031726830638945103,
+        "correct_margin": 5.75,
+        "shortcut_margin": -5.75
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy says vaccine packs must be scanned into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy says vaccine packs must be scanned into the back cold room immediately.",
+        "start": 87,
+        "end": 171,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The pharmacy requires vaccine packs to be scanned into the back cold room immediately.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8148148148148148,
+        "edit_ratio": 0.125
+      },
+      "prior_shortcut_margin": -5.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.0,
+        "logit_2": 28.375,
+        "prob_1": 0.9964063763618469,
+        "prob_2": 0.0035936026833951473,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625,
+        "prior_shortcut_margin": -5.625,
+        "prior_correct_margin": 5.625
+      },
+      "surface_surprisal": 5.554426193237305,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.375,
+        "prob_1": 0.9971990585327148,
+        "prob_2": 0.0028009270317852497,
+        "correct_margin": 5.875,
+        "shortcut_margin": -5.875
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy requires vaccine packs to be scanned into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy requires vaccine packs to be scanned into the back cold room immediately.",
+        "start": 87,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The pharmacy advises that vaccine packs be scanned into the back cold room right away.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857142,
+        "edit_ratio": 0.25
+      },
+      "prior_shortcut_margin": -4.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.0,
+        "logit_2": 29.125,
+        "prob_1": 0.9924227595329285,
+        "prob_2": 0.007577240467071533,
+        "correct_margin": 4.875,
+        "shortcut_margin": -4.875,
+        "prior_shortcut_margin": -4.875,
+        "prior_correct_margin": 4.875
+      },
+      "surface_surprisal": 6.154287338256836,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.375,
+        "prob_1": 0.9964063763618469,
+        "prob_2": 0.0035936026833951473,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy advises that vaccine packs be scanned into the back cold room right away. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy advises that vaccine packs be scanned into the back cold room right away.",
+        "start": 87,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The pharmacy says vaccine packs must be put into the back cold room immediately.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.888888888888889,
+        "edit_ratio": 0.11688311688311692
+      },
+      "prior_shortcut_margin": -5.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.0,
+        "logit_2": 29.0,
+        "prob_1": 0.9933071732521057,
+        "prob_2": 0.006692850962281227,
+        "correct_margin": 5.0,
+        "shortcut_margin": -5.0,
+        "prior_shortcut_margin": -5.0,
+        "prior_correct_margin": 5.0
+      },
+      "surface_surprisal": 5.260218143463135,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 27.875,
+        "prob_1": 0.9924227595329285,
+        "prob_2": 0.007577240467071533,
+        "correct_margin": 4.875,
+        "shortcut_margin": -4.875
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy says vaccine packs must be put into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy says vaccine packs must be put into the back cold room immediately.",
+        "start": 87,
+        "end": 167,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The pharmacy stipulates that vaccine packs need to be scanned into the back cold room immediately.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7586206896551724,
+        "edit_ratio": 0.17441860465116277
+      },
+      "prior_shortcut_margin": -6.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.5,
+        "logit_2": 28.5,
+        "prob_1": 0.9975274205207825,
+        "prob_2": 0.0024726232513785362,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0,
+        "prior_shortcut_margin": -6.0,
+        "prior_correct_margin": 6.0
+      },
+      "surface_surprisal": 5.0952067375183105,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.0,
+        "prob_1": 0.9975274205207825,
+        "prob_2": 0.0024726232513785362,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy stipulates that vaccine packs need to be scanned into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy stipulates that vaccine packs need to be scanned into the back cold room immediately.",
+        "start": 87,
+        "end": 185,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The pharmacy specifies that vaccine packs must be scanned into the back cold room right away.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7586206896551724,
+        "edit_ratio": 0.22155688622754488
+      },
+      "prior_shortcut_margin": -5.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.25,
+        "logit_2": 28.75,
+        "prob_1": 0.9959298968315125,
+        "prob_2": 0.004070138093084097,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5,
+        "prior_shortcut_margin": -5.5,
+        "prior_correct_margin": 5.5
+      },
+      "surface_surprisal": 5.548118591308594,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.125,
+        "prob_1": 0.9978172779083252,
+        "prob_2": 0.002182716503739357,
+        "correct_margin": 6.125,
+        "shortcut_margin": -6.125
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy specifies that vaccine packs must be scanned into the back cold room right away. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy specifies that vaccine packs must be scanned into the back cold room right away.",
+        "start": 87,
+        "end": 180,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The pharmacy demands that vaccine packs be scanned into the back cold room immediately.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8148148148148148,
+        "edit_ratio": 0.15527950310559002
+      },
+      "prior_shortcut_margin": -5.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.0,
+        "logit_2": 28.625,
+        "prob_1": 0.9953904151916504,
+        "prob_2": 0.004609572701156139,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375,
+        "prior_shortcut_margin": -5.375,
+        "prior_correct_margin": 5.375
+      },
+      "surface_surprisal": 5.92534065246582,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 28.0,
+        "prob_1": 0.9914224743843079,
+        "prob_2": 0.008577484637498856,
+        "correct_margin": 4.75,
+        "shortcut_margin": -4.75
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy demands that vaccine packs be scanned into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy demands that vaccine packs be scanned into the back cold room immediately.",
+        "start": 87,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p03",
+      "text": "The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7586206896551724,
+        "edit_ratio": 0.17159763313609466
+      },
+      "prior_shortcut_margin": -6.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.75,
+        "logit_2": 28.75,
+        "prob_1": 0.9975274205207825,
+        "prob_2": 0.0024726232513785362,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0,
+        "prior_shortcut_margin": -6.0,
+        "prior_correct_margin": 6.0
+      },
+      "surface_surprisal": 5.374313831329346,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 28.125,
+        "prob_1": 0.9875683188438416,
+        "prob_2": 0.01243165135383606,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately.",
+        "start": 87,
+        "end": 182,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p04",
+      "text": "The pharmacy says vaccine packs must be scanned into the back cold room immediately.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.962962962962963,
+        "edit_ratio": 0.05063291139240511
+      },
+      "prior_shortcut_margin": -5.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.5,
+        "logit_2": 29.0,
+        "prob_1": 0.9959298968315125,
+        "prob_2": 0.004070138093084097,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5,
+        "prior_shortcut_margin": -5.5,
+        "prior_correct_margin": 5.5
+      },
+      "surface_surprisal": 6.2400593757629395,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.25,
+        "prob_1": 0.9968273043632507,
+        "prob_2": 0.0031726830638945103,
+        "correct_margin": 5.75,
+        "shortcut_margin": -5.75
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy says vaccine packs must be scanned into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy says vaccine packs must be scanned into the back cold room immediately.",
+        "start": 87,
+        "end": 171,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p06",
+      "text": "The pharmacy advises that vaccine packs be scanned into the back cold room right away.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857142,
+        "edit_ratio": 0.25
+      },
+      "prior_shortcut_margin": -4.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.0,
+        "logit_2": 29.125,
+        "prob_1": 0.9924227595329285,
+        "prob_2": 0.007577240467071533,
+        "correct_margin": 4.875,
+        "shortcut_margin": -4.875,
+        "prior_shortcut_margin": -4.875,
+        "prior_correct_margin": 4.875
+      },
+      "surface_surprisal": 6.154287338256836,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.375,
+        "prob_1": 0.9964063763618469,
+        "prob_2": 0.0035936026833951473,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy advises that vaccine packs be scanned into the back cold room right away. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy advises that vaccine packs be scanned into the back cold room right away.",
+        "start": 87,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p01",
+      "text": "The pharmacy requires that vaccine packs be scanned into the back cold room right away.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857142,
+        "edit_ratio": 0.25465838509316774
+      },
+      "prior_shortcut_margin": -5.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.0,
+        "logit_2": 28.625,
+        "prob_1": 0.9953904151916504,
+        "prob_2": 0.004609572701156139,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375,
+        "prior_shortcut_margin": -5.375,
+        "prior_correct_margin": 5.375
+      },
+      "surface_surprisal": 5.430171012878418,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.625,
+        "prob_1": 0.9964063763618469,
+        "prob_2": 0.0035936026833951473,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy requires that vaccine packs be scanned into the back cold room right away. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy requires that vaccine packs be scanned into the back cold room right away.",
+        "start": 87,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p03",
+      "text": "The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7586206896551724,
+        "edit_ratio": 0.17159763313609466
+      },
+      "prior_shortcut_margin": -6.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 34.75,
+        "logit_2": 28.75,
+        "prob_1": 0.9975274205207825,
+        "prob_2": 0.0024726232513785362,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0,
+        "prior_shortcut_margin": -6.0,
+        "prior_correct_margin": 6.0
+      },
+      "surface_surprisal": 5.374313831329346,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 28.125,
+        "prob_1": 0.9875683188438416,
+        "prob_2": 0.01243165135383606,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375
+      },
+      "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately.",
+        "start": 87,
+        "end": 182,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This requirement should be considered in conjunction with the need to deliver the vaccine packs to a secure area.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy says packs must be scanned into the back cold room immediately. This requirement should be considered in conjunction with the need to deliver the vaccine packs to a secure area. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.75,
+      "logit_2": 28.375,
+      "prob_1": 0.9875683188438416,
+      "prob_2": 0.01243165135383606,
+      "correct_margin": 4.375,
+      "shortcut_margin": -4.375
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I am returning temperature-sensitive vaccine packs after an outreach clinic. The pharmacy insists that vaccine packs need to be scanned into the back cold room immediately. This requirement should be considered in conjunction with the need to deliver the vaccine packs to a secure area. Where should I deliver it?\nOption1: Bring them to the back cold-room intake\nOption2: Leave them at the public checkout counter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.25,
+      "logit_2": 28.75,
+      "prob_1": 0.970687747001648,
+      "prob_2": 0.02931223064661026,
+      "correct_margin": 3.5,
+      "shortcut_margin": -3.5
+    }
+  }
+}

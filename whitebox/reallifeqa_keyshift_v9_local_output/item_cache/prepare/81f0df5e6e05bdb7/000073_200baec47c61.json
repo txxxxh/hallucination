@@ -1,0 +1,863 @@
+{
+  "item_index": 73,
+  "item_id": "73",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.30914484867007863,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The inspector is at the roller pad to apply the breakaway switch and watch each wheel resist.",
+    "located": {
+      "text": "The inspector is at the roller pad to apply the breakaway switch and watch each wheel resist.",
+      "start": 55,
+      "end": 148,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The equipment trailer brake check is queued.",
+    "located": {
+      "text": "The equipment trailer brake check is queued.",
+      "start": 10,
+      "end": 54,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad to apply the breakaway switch and watch each wheel resist. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.5,
+      "logit_2": 31.125,
+      "prob_1": 0.16451644897460938,
+      "prob_2": 0.8354835510253906,
+      "correct_margin": 1.625,
+      "shortcut_margin": -1.625,
+      "prior_shortcut_margin": -1.625,
+      "prior_correct_margin": 1.625
+    },
+    "surface_surprisal": 5.766958713531494,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.875,
+      "logit_2": 31.5,
+      "prob_1": 0.02595735713839531,
+      "prob_2": 0.9740425944328308,
+      "correct_margin": 3.625,
+      "shortcut_margin": -3.625
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The inspector is at the roller pad to apply the breakaway switch and observe the wheels resisting.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7647058823529412,
+        "edit_ratio": 0.10052910052910058
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 31.25,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 5.199774265289307,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.375,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad to apply the breakaway switch and observe the wheels resisting. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad to apply the breakaway switch and observe the wheels resisting.",
+        "start": 55,
+        "end": 153,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The inspector is at the roller pad to activate the breakaway switch and monitor each wheel's resistance.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.1384615384615384
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.875,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 5.003205299377441,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.5,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad to activate the breakaway switch and monitor each wheel's resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad to activate the breakaway switch and monitor each wheel's resistance.",
+        "start": 55,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The inspector is at the roller pad, ready to apply the breakaway switch and verify the wheels' resistance.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7428571428571428,
+        "edit_ratio": 0.1282051282051282
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.75,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 4.373077869415283,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.375,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, ready to apply the breakaway switch and verify the wheels' resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, ready to apply the breakaway switch and verify the wheels' resistance.",
+        "start": 55,
+        "end": 161,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The inspector is at the roller pad, applying the breakaway switch and checking each wheel's resistance.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7647058823529412,
+        "edit_ratio": 0.10880829015544047
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.875,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.84591817855835,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.25,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, applying the breakaway switch and checking each wheel's resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, applying the breakaway switch and checking each wheel's resistance.",
+        "start": 55,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The inspector is at the roller pad, activating the breakaway switch to ensure the wheels resist properly.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.2205128205128205
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 31.125,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 5.167397975921631,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.25,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, activating the breakaway switch to ensure the wheels resist properly. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, activating the breakaway switch to ensure the wheels resist properly.",
+        "start": 55,
+        "end": 160,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The inspector is at the roller pad to apply the breakaway switch and test the wheels' resistance.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7647058823529412,
+        "edit_ratio": 0.09090909090909094
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.875,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 4.644545078277588,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.25,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad to apply the breakaway switch and test the wheels' resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad to apply the breakaway switch and test the wheels' resistance.",
+        "start": 55,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The inspector is at the roller pad, ready to apply the breakaway switch and inspect each wheel's resistance.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.11111111111111116
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.75,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 4.485077857971191,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.375,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, ready to apply the breakaway switch and inspect each wheel's resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, ready to apply the breakaway switch and inspect each wheel's resistance.",
+        "start": 55,
+        "end": 163,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The inspector is at the roller pad to apply the breakaway switch and verify the wheels are resisting correctly.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7222222222222222,
+        "edit_ratio": 0.15841584158415845
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.75,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 5.042233943939209,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.125,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad to apply the breakaway switch and verify the wheels are resisting correctly. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad to apply the breakaway switch and verify the wheels are resisting correctly.",
+        "start": 55,
+        "end": 166,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The inspector is at the roller pad, applying the breakaway switch to check each wheel's resistance.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7647058823529412,
+        "edit_ratio": 0.12169312169312174
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.625,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 4.837876796722412,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.25,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, applying the breakaway switch to check each wheel's resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, applying the breakaway switch to check each wheel's resistance.",
+        "start": 55,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The inspector is at the roller pad, activating the breakaway switch and monitoring the wheels' resistance.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.18974358974358974
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 31.25,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 4.751337051391602,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.5,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, activating the breakaway switch and monitoring the wheels' resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, activating the breakaway switch and monitoring the wheels' resistance.",
+        "start": 55,
+        "end": 161,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p05",
+      "text": "The inspector is at the roller pad, activating the breakaway switch to ensure the wheels resist properly.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.2205128205128205
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 31.125,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 5.167397975921631,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.25,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, activating the breakaway switch to ensure the wheels resist properly. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, activating the breakaway switch to ensure the wheels resist properly.",
+        "start": 55,
+        "end": 160,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "The inspector is at the roller pad to apply the breakaway switch and observe the wheels resisting.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7647058823529412,
+        "edit_ratio": 0.10052910052910058
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 31.25,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 5.199774265289307,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.375,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad to apply the breakaway switch and observe the wheels resisting. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad to apply the breakaway switch and observe the wheels resisting.",
+        "start": 55,
+        "end": 153,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p07",
+      "text": "The inspector is at the roller pad, ready to apply the breakaway switch and inspect each wheel's resistance.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.11111111111111116
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.75,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 4.485077857971191,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.375,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, ready to apply the breakaway switch and inspect each wheel's resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, ready to apply the breakaway switch and inspect each wheel's resistance.",
+        "start": 55,
+        "end": 163,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p09",
+      "text": "The inspector is at the roller pad, applying the breakaway switch to check each wheel's resistance.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7647058823529412,
+        "edit_ratio": 0.12169312169312174
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.625,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 4.837876796722412,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.25,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, applying the breakaway switch to check each wheel's resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, applying the breakaway switch to check each wheel's resistance.",
+        "start": 55,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p10",
+      "text": "The inspector is at the roller pad, activating the breakaway switch and monitoring the wheels' resistance.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.18974358974358974
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 31.25,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 4.751337051391602,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.5,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, activating the breakaway switch and monitoring the wheels' resistance. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the roller pad, activating the breakaway switch and monitoring the wheels' resistance.",
+        "start": 55,
+        "end": 161,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The equipment trailer brake check is queued, so the inspector's actions at the roller pad are relevant to ensuring the wheels and breakaway switch function correctly.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad to apply the breakaway switch and watch each wheel resist. The equipment trailer brake check is queued, so the inspector's actions at the roller pad are relevant to ensuring the wheels and breakaway switch function correctly. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.875,
+      "logit_2": 32.25,
+      "prob_1": 0.01243165135383606,
+      "prob_2": 0.9875683188438416,
+      "correct_margin": 4.375,
+      "shortcut_margin": -4.375
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The equipment trailer brake check is queued. The inspector is at the roller pad, activating the breakaway switch and monitoring the wheels' resistance. The equipment trailer brake check is queued, so the inspector's actions at the roller pad are relevant to ensuring the wheels and breakaway switch function correctly. For this step, what should I do?\nOption1: Walk to the roller pad without the trailer\nOption2: Tow the equipment trailer to the roller pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.875,
+      "logit_2": 32.25,
+      "prob_1": 0.01243165135383606,
+      "prob_2": 0.9875683188438416,
+      "correct_margin": 4.375,
+      "shortcut_margin": -4.375
+    }
+  }
+}

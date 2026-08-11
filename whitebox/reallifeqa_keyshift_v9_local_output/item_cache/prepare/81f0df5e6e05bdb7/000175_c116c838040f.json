@@ -1,0 +1,852 @@
+{
+  "item_index": 175,
+  "item_id": "175",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.09250155672798542,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The hiking-pack fitting form is complete.",
+    "located": {
+      "text": "The hiking-pack fitting form is complete.",
+      "start": 10,
+      "end": 51,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The outfitter is at the mirror to adjust the frame stays while the pack is loaded.",
+    "located": {
+      "text": "The outfitter is at the mirror to adjust the frame stays while the pack is loaded.",
+      "start": 52,
+      "end": 134,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The hiking-pack fitting form is complete. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.375,
+      "logit_2": 30.125,
+      "prob_1": 0.14804719388484955,
+      "prob_2": 0.851952850818634,
+      "correct_margin": 1.75,
+      "shortcut_margin": -1.75,
+      "prior_shortcut_margin": -1.75,
+      "prior_correct_margin": 1.75
+    },
+    "surface_surprisal": 7.75604772567749,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 26.625,
+      "logit_2": 32.5,
+      "prob_1": 0.0028009270317852497,
+      "prob_2": 0.9971990585327148,
+      "correct_margin": 5.875,
+      "shortcut_margin": -5.875
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The hiking-pack fitting form is finished.",
+      "valid": false,
+      "review": {},
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.17500000000000004
+      },
+      "prior_shortcut_margin": -1.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 30.0,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625,
+        "prior_shortcut_margin": -1.625,
+        "prior_correct_margin": 1.625
+      },
+      "surface_surprisal": 7.730935096740723,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.625,
+        "logit_2": 32.75,
+        "prob_1": 0.002182716503739357,
+        "prob_2": 0.9978172779083252,
+        "correct_margin": 6.125,
+        "shortcut_margin": -6.125
+      },
+      "prompt": "Scenario: The hiking-pack fitting form is finished. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The hiking-pack fitting form is finished.",
+        "start": 10,
+        "end": 51,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The form is complete and ready to be reviewed.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "The word 'review' implies additional steps after the form is complete, which is not the case here."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.5294117647058824
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.125,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 3.252808094024658,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.5,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875
+      },
+      "prompt": "Scenario: The form is complete and ready to be reviewed. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The form is complete and ready to be reviewed.",
+        "start": 10,
+        "end": 56,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The form is now complete.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.375
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 29.75,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.7849860191345215,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 32.0,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25
+      },
+      "prompt": "Scenario: The form is now complete. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The form is now complete.",
+        "start": 10,
+        "end": 35,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The fitting form is complete, ready for final check.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6250000000000001,
+        "edit_ratio": 0.37777777777777777
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 30.125,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.455958843231201,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 31.875,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": 4.625,
+        "shortcut_margin": -4.625
+      },
+      "prompt": "Scenario: The fitting form is complete, ready for final check. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fitting form is complete, ready for final check.",
+        "start": 10,
+        "end": 62,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The pack fitting form is complete.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.923076923076923,
+        "edit_ratio": 0.09589041095890416
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.125,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 6.788603782653809,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 32.5,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625
+      },
+      "prompt": "Scenario: The pack fitting form is complete. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pack fitting form is complete.",
+        "start": 10,
+        "end": 44,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The form has been finished.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3333333333333333,
+        "edit_ratio": 0.6363636363636364
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 29.875,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 4.973842144012451,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.5,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: The form has been finished. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The form has been finished.",
+        "start": 10,
+        "end": 37,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The form is complete, no further adjustments needed.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.5333333333333333,
+        "edit_ratio": 0.5555555555555556
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 30.0,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.300356388092041,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.875,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375
+      },
+      "prompt": "Scenario: The form is complete, no further adjustments needed. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The form is complete, no further adjustments needed.",
+        "start": 10,
+        "end": 62,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The form is complete and finalized.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846153,
+        "edit_ratio": 0.45945945945945943
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.25,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 4.735875606536865,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.625,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125
+      },
+      "prompt": "Scenario: The form is complete and finalized. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The form is complete and finalized.",
+        "start": 10,
+        "end": 45,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The fitting form has been completed.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.28
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.0,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.92156982421875,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 32.0,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": 4.625,
+        "shortcut_margin": -4.625
+      },
+      "prompt": "Scenario: The fitting form has been completed. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fitting form has been completed.",
+        "start": 10,
+        "end": 46,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The pack fitting form is finished and ready.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.3493975903614458
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.5,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 6.092494964599609,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 32.25,
+        "prob_1": 0.004609572701156139,
+        "prob_2": 0.9953904151916504,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375
+      },
+      "prompt": "Scenario: The pack fitting form is finished and ready. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pack fitting form is finished and ready.",
+        "start": 10,
+        "end": 54,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p10",
+      "text": "The pack fitting form is finished and ready.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.3493975903614458
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.5,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 6.092494964599609,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 32.25,
+        "prob_1": 0.004609572701156139,
+        "prob_2": 0.9953904151916504,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375
+      },
+      "prompt": "Scenario: The pack fitting form is finished and ready. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pack fitting form is finished and ready.",
+        "start": 10,
+        "end": 54,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p03",
+      "text": "The form is now complete.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.375
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 29.75,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.7849860191345215,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 32.0,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25
+      },
+      "prompt": "Scenario: The form is now complete. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The form is now complete.",
+        "start": 10,
+        "end": 35,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p09",
+      "text": "The fitting form has been completed.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.28
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.0,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.92156982421875,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 32.0,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": 4.625,
+        "shortcut_margin": -4.625
+      },
+      "prompt": "Scenario: The fitting form has been completed. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fitting form has been completed.",
+        "start": 10,
+        "end": 46,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p05",
+      "text": "The pack fitting form is complete.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.923076923076923,
+        "edit_ratio": 0.09589041095890416
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.125,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 6.788603782653809,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 32.5,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625
+      },
+      "prompt": "Scenario: The pack fitting form is complete. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pack fitting form is complete.",
+        "start": 10,
+        "end": 44,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p10",
+      "text": "The pack fitting form is finished and ready.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.3493975903614458
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.5,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 6.092494964599609,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 32.25,
+        "prob_1": 0.004609572701156139,
+        "prob_2": 0.9953904151916504,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375
+      },
+      "prompt": "Scenario: The pack fitting form is finished and ready. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pack fitting form is finished and ready.",
+        "start": 10,
+        "end": 54,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The outfitter is at the mirror to adjust the frame stays while the pack is loaded, meaning the frame stays are already loaded into the pack.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The hiking-pack fitting form is complete. The outfitter is at the mirror to adjust the frame stays while the pack is loaded, meaning the frame stays are already loaded into the pack. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.25,
+      "logit_2": 32.75,
+      "prob_1": 0.004070138093084097,
+      "prob_2": 0.9959298968315125,
+      "correct_margin": 5.5,
+      "shortcut_margin": -5.5
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The pack fitting form is finished and ready. The outfitter is at the mirror to adjust the frame stays while the pack is loaded, meaning the frame stays are already loaded into the pack. The outfitter is at the mirror to adjust the frame stays while the pack is loaded. For this step, what should I bring?\nOption1: Go to the mirror without the backpack\nOption2: Bring the backpack\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.125,
+      "logit_2": 32.5,
+      "prob_1": 0.004609572701156139,
+      "prob_2": 0.9953904151916504,
+      "correct_margin": 5.375,
+      "shortcut_margin": -5.375
+    }
+  }
+}

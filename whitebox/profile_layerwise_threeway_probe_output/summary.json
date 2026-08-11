@@ -1,0 +1,173 @@
+{
+  "n_items": 972,
+  "layers": [
+    8,
+    16,
+    24,
+    32
+  ],
+  "hidden_token": "last_prompt_token",
+  "probe_target": "gold_profile_index",
+  "probe_protocol": "5-fold cross-fitted StandardScaler+PCA(64)+L2 logistic",
+  "generation_likelihood_agree": 646,
+  "generation_likelihood_disagree": 326,
+  "generation_accuracy": 0.852880658436214,
+  "likelihood_accuracy": 0.6409465020576132,
+  "gold_index_balance": {
+    "index_0": 474,
+    "index_1": 498
+  },
+  "layer_results": [
+    {
+      "layer": 8,
+      "probe_gold_accuracy": 0.565843621399177,
+      "permuted_label_accuracy_mean": 0.4990534979423869,
+      "permuted_label_accuracy_q95": 0.5268004115226338,
+      "agreement_generation_all": 0.5524691358024691,
+      "agreement_likelihood_all": 0.5401234567901234,
+      "disagreement_subset_n": 326,
+      "agreement_generation_on_disagreement": 0.5184049079754601,
+      "agreement_likelihood_on_disagreement": 0.4815950920245399,
+      "delta_generation_minus_likelihood_on_disagreement": 0.03680981595092025,
+      "delta_bootstrap_95ci": [
+        -0.0676380368098159,
+        0.147239263803681
+      ],
+      "two_sided_binomial_p": 0.5424349444917194
+    },
+    {
+      "layer": 16,
+      "probe_gold_accuracy": 0.9259259259259259,
+      "permuted_label_accuracy_mean": 0.5009979423868313,
+      "permuted_label_accuracy_q95": 0.5321502057613169,
+      "agreement_generation_all": 0.8487654320987654,
+      "agreement_likelihood_all": 0.6553497942386831,
+      "disagreement_subset_n": 326,
+      "agreement_generation_on_disagreement": 0.7883435582822086,
+      "agreement_likelihood_on_disagreement": 0.2116564417177914,
+      "delta_generation_minus_likelihood_on_disagreement": 0.5766871165644172,
+      "delta_bootstrap_95ci": [
+        0.48466257668711654,
+        0.6625766871165644
+      ],
+      "two_sided_binomial_p": 1.2808076878064822e-26
+    },
+    {
+      "layer": 24,
+      "probe_gold_accuracy": 0.8888888888888888,
+      "permuted_label_accuracy_mean": 0.5007510288065844,
+      "permuted_label_accuracy_q95": 0.5299897119341563,
+      "agreement_generation_all": 0.8693415637860082,
+      "agreement_likelihood_all": 0.647119341563786,
+      "disagreement_subset_n": 326,
+      "agreement_generation_on_disagreement": 0.8312883435582822,
+      "agreement_likelihood_on_disagreement": 0.1687116564417178,
+      "delta_generation_minus_likelihood_on_disagreement": 0.6625766871165644,
+      "delta_bootstrap_95ci": [
+        0.5766871165644172,
+        0.7423312883435583
+      ],
+      "two_sided_binomial_p": 1.9375229319941698e-35
+    },
+    {
+      "layer": 32,
+      "probe_gold_accuracy": 0.6800411522633745,
+      "permuted_label_accuracy_mean": 0.49820987654321003,
+      "permuted_label_accuracy_q95": 0.5299382716049382,
+      "agreement_generation_all": 0.6728395061728395,
+      "agreement_likelihood_all": 0.5720164609053497,
+      "disagreement_subset_n": 326,
+      "agreement_generation_on_disagreement": 0.6503067484662577,
+      "agreement_likelihood_on_disagreement": 0.3496932515337423,
+      "delta_generation_minus_likelihood_on_disagreement": 0.3006134969325153,
+      "delta_bootstrap_95ci": [
+        0.19631901840490798,
+        0.3987730061349693
+      ],
+      "two_sided_binomial_p": 6.236730903763538e-08
+    }
+  ],
+  "alignment_trajectories_on_disagreement": [
+    {
+      "trajectory": "G->G->G->G",
+      "count": 94,
+      "fraction": 0.2883435582822086
+    },
+    {
+      "trajectory": "L->G->G->G",
+      "count": 75,
+      "fraction": 0.23006134969325154
+    },
+    {
+      "trajectory": "G->G->G->L",
+      "count": 37,
+      "fraction": 0.11349693251533742
+    },
+    {
+      "trajectory": "L->G->G->L",
+      "count": 36,
+      "fraction": 0.11042944785276074
+    },
+    {
+      "trajectory": "L->L->L->G",
+      "count": 12,
+      "fraction": 0.03680981595092025
+    },
+    {
+      "trajectory": "G->L->L->L",
+      "count": 11,
+      "fraction": 0.03374233128834356
+    },
+    {
+      "trajectory": "L->L->L->L",
+      "count": 11,
+      "fraction": 0.03374233128834356
+    },
+    {
+      "trajectory": "G->L->G->G",
+      "count": 10,
+      "fraction": 0.03067484662576687
+    },
+    {
+      "trajectory": "L->L->G->L",
+      "count": 8,
+      "fraction": 0.024539877300613498
+    },
+    {
+      "trajectory": "G->L->G->L",
+      "count": 6,
+      "fraction": 0.018404907975460124
+    },
+    {
+      "trajectory": "G->L->L->G",
+      "count": 6,
+      "fraction": 0.018404907975460124
+    },
+    {
+      "trajectory": "L->G->L->G",
+      "count": 6,
+      "fraction": 0.018404907975460124
+    },
+    {
+      "trajectory": "L->L->G->G",
+      "count": 5,
+      "fraction": 0.015337423312883436
+    },
+    {
+      "trajectory": "G->G->L->G",
+      "count": 4,
+      "fraction": 0.012269938650306749
+    },
+    {
+      "trajectory": "L->G->L->L",
+      "count": 4,
+      "fraction": 0.012269938650306749
+    },
+    {
+      "trajectory": "G->G->L->L",
+      "count": 1,
+      "fraction": 0.003067484662576687
+    }
+  ],
+  "interpretation_guardrail": "A gold-trained linear probe establishes decodable answer information, not that the model causally uses it. Generation-vs-likelihood comparisons are diagnostic only on their disagreement subset."
+}

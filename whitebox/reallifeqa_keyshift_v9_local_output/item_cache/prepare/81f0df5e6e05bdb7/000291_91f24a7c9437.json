@@ -1,0 +1,863 @@
+{
+  "item_index": 291,
+  "item_id": "291",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.40402989808613954,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "I need to tell the lighting operator that the spare cable is under the console.",
+    "located": {
+      "text": "I need to tell the lighting operator that the spare cable is under the console.",
+      "start": 10,
+      "end": 89,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The operator is running cues during a live performance.",
+    "located": {
+      "text": "The operator is running cues during a live performance.",
+      "start": 90,
+      "end": 145,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I need to tell the lighting operator that the spare cable is under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.625,
+      "logit_2": 30.625,
+      "prob_1": 0.04742587357759476,
+      "prob_2": 0.9525741338729858,
+      "correct_margin": -3.0,
+      "shortcut_margin": 3.0,
+      "prior_shortcut_margin": 3.0,
+      "prior_correct_margin": -3.0
+    },
+    "surface_surprisal": 4.188236713409424,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.875,
+      "logit_2": 30.625,
+      "prob_1": 0.06008664518594742,
+      "prob_2": 0.9399133324623108,
+      "correct_margin": -2.75,
+      "shortcut_margin": 2.75
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "I need to inform the lighting operator that the spare cable is located under the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.10843373493975905
+      },
+      "prior_shortcut_margin": 3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.875,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": -3.125,
+        "shortcut_margin": 3.125,
+        "prior_shortcut_margin": 3.125,
+        "prior_correct_margin": -3.125
+      },
+      "surface_surprisal": 3.9664382934570312,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.5,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I need to inform the lighting operator that the spare cable is located under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I need to inform the lighting operator that the spare cable is located under the console.",
+        "start": 10,
+        "end": 99,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "I have to let the lighting operator know that the spare cable is hidden under the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8125,
+        "edit_ratio": 0.13772455089820357
+      },
+      "prior_shortcut_margin": 3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0,
+        "prior_shortcut_margin": 3.0,
+        "prior_correct_margin": -3.0
+      },
+      "surface_surprisal": 3.9404897689819336,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.25,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": -2.375,
+        "shortcut_margin": 2.375
+      },
+      "prompt": "Scenario: I have to let the lighting operator know that the spare cable is hidden under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have to let the lighting operator know that the spare cable is hidden under the console.",
+        "start": 10,
+        "end": 100,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "I need to communicate to the lighting operator that the spare cable is underneath the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8387096774193549,
+        "edit_ratio": 0.11111111111111116
+      },
+      "prior_shortcut_margin": 3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.375,
+        "logit_2": 30.625,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": -3.25,
+        "shortcut_margin": 3.25,
+        "prior_shortcut_margin": 3.25,
+        "prior_correct_margin": -3.25
+      },
+      "surface_surprisal": 4.118613243103027,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.375,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75
+      },
+      "prompt": "Scenario: I need to communicate to the lighting operator that the spare cable is underneath the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I need to communicate to the lighting operator that the spare cable is underneath the console.",
+        "start": 10,
+        "end": 104,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "I must tell the lighting operator that the spare cable is situated under the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8666666666666667,
+        "edit_ratio": 0.11111111111111116
+      },
+      "prior_shortcut_margin": 3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.0,
+        "logit_2": 30.625,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": -3.625,
+        "shortcut_margin": 3.625,
+        "prior_shortcut_margin": 3.625,
+        "prior_correct_margin": -3.625
+      },
+      "surface_surprisal": 4.529318332672119,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.25,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I must tell the lighting operator that the spare cable is situated under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I must tell the lighting operator that the spare cable is situated under the console.",
+        "start": 10,
+        "end": 95,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "I have to pass on to the lighting operator that the spare cable is positioned under the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7878787878787877,
+        "edit_ratio": 0.16763005780346818
+      },
+      "prior_shortcut_margin": 2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 30.25,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75,
+        "prior_shortcut_margin": 2.75,
+        "prior_correct_margin": -2.75
+      },
+      "surface_surprisal": 4.066714286804199,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.375,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I have to pass on to the lighting operator that the spare cable is positioned under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have to pass on to the lighting operator that the spare cable is positioned under the console.",
+        "start": 10,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "I need to convey to the lighting operator that the spare cable is located under the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8749999999999999,
+        "edit_ratio": 0.1124260355029586
+      },
+      "prior_shortcut_margin": 3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 30.5,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": -3.375,
+        "shortcut_margin": 3.375,
+        "prior_shortcut_margin": 3.375,
+        "prior_correct_margin": -3.375
+      },
+      "surface_surprisal": 3.8598251342773438,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.5,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75
+      },
+      "prompt": "Scenario: I need to convey to the lighting operator that the spare cable is located under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I need to convey to the lighting operator that the spare cable is located under the console.",
+        "start": 10,
+        "end": 102,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "I have to make the lighting operator aware that the spare cable is under the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8387096774193549,
+        "edit_ratio": 0.11111111111111116
+      },
+      "prior_shortcut_margin": 3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 30.625,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": -3.125,
+        "shortcut_margin": 3.125,
+        "prior_shortcut_margin": 3.125,
+        "prior_correct_margin": -3.125
+      },
+      "surface_surprisal": 3.9934258460998535,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.625,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75
+      },
+      "prompt": "Scenario: I have to make the lighting operator aware that the spare cable is under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have to make the lighting operator aware that the spare cable is under the console.",
+        "start": 10,
+        "end": 95,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "I need to advise the lighting operator that the spare cable is hidden under the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.09090909090909094
+      },
+      "prior_shortcut_margin": 3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0,
+        "prior_shortcut_margin": 3.0,
+        "prior_correct_margin": -3.0
+      },
+      "surface_surprisal": 4.4192609786987305,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.5,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I need to advise the lighting operator that the spare cable is hidden under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I need to advise the lighting operator that the spare cable is hidden under the console.",
+        "start": 10,
+        "end": 98,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "I need to notify the lighting operator that the spare cable is positioned under the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.1124260355029586
+      },
+      "prior_shortcut_margin": 3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.875,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": -3.25,
+        "shortcut_margin": 3.25,
+        "prior_shortcut_margin": 3.25,
+        "prior_correct_margin": -3.25
+      },
+      "surface_surprisal": 4.302027702331543,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.5,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I need to notify the lighting operator that the spare cable is positioned under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I need to notify the lighting operator that the spare cable is positioned under the console.",
+        "start": 10,
+        "end": 102,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "I have to alert the lighting operator that the spare cable is located under the console.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8387096774193549,
+        "edit_ratio": 0.12727272727272732
+      },
+      "prior_shortcut_margin": 3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 30.75,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": -3.625,
+        "shortcut_margin": 3.625,
+        "prior_shortcut_margin": 3.625,
+        "prior_correct_margin": -3.625
+      },
+      "surface_surprisal": 4.047657012939453,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.5,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75
+      },
+      "prompt": "Scenario: I have to alert the lighting operator that the spare cable is located under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have to alert the lighting operator that the spare cable is located under the console.",
+        "start": 10,
+        "end": 98,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p05",
+      "text": "I have to pass on to the lighting operator that the spare cable is positioned under the console.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7878787878787877,
+        "edit_ratio": 0.16763005780346818
+      },
+      "prior_shortcut_margin": 2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 30.25,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75,
+        "prior_shortcut_margin": 2.75,
+        "prior_correct_margin": -2.75
+      },
+      "surface_surprisal": 4.066714286804199,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.375,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I have to pass on to the lighting operator that the spare cable is positioned under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have to pass on to the lighting operator that the spare cable is positioned under the console.",
+        "start": 10,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "I need to inform the lighting operator that the spare cable is located under the console.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.10843373493975905
+      },
+      "prior_shortcut_margin": 3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.875,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": -3.125,
+        "shortcut_margin": 3.125,
+        "prior_shortcut_margin": 3.125,
+        "prior_correct_margin": -3.125
+      },
+      "surface_surprisal": 3.9664382934570312,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.5,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I need to inform the lighting operator that the spare cable is located under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I need to inform the lighting operator that the spare cable is located under the console.",
+        "start": 10,
+        "end": 99,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p10",
+      "text": "I have to alert the lighting operator that the spare cable is located under the console.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8387096774193549,
+        "edit_ratio": 0.12727272727272732
+      },
+      "prior_shortcut_margin": 3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 30.75,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": -3.625,
+        "shortcut_margin": 3.625,
+        "prior_shortcut_margin": 3.625,
+        "prior_correct_margin": -3.625
+      },
+      "surface_surprisal": 4.047657012939453,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.5,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75
+      },
+      "prompt": "Scenario: I have to alert the lighting operator that the spare cable is located under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have to alert the lighting operator that the spare cable is located under the console.",
+        "start": 10,
+        "end": 98,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p02",
+      "text": "I have to let the lighting operator know that the spare cable is hidden under the console.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8125,
+        "edit_ratio": 0.13772455089820357
+      },
+      "prior_shortcut_margin": 3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0,
+        "prior_shortcut_margin": 3.0,
+        "prior_correct_margin": -3.0
+      },
+      "surface_surprisal": 3.9404897689819336,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.25,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": -2.375,
+        "shortcut_margin": 2.375
+      },
+      "prompt": "Scenario: I have to let the lighting operator know that the spare cable is hidden under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have to let the lighting operator know that the spare cable is hidden under the console.",
+        "start": 10,
+        "end": 100,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p05",
+      "text": "I have to pass on to the lighting operator that the spare cable is positioned under the console.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7878787878787877,
+        "edit_ratio": 0.16763005780346818
+      },
+      "prior_shortcut_margin": 2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 30.25,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75,
+        "prior_shortcut_margin": 2.75,
+        "prior_correct_margin": -2.75
+      },
+      "surface_surprisal": 4.066714286804199,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.375,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I have to pass on to the lighting operator that the spare cable is positioned under the console. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have to pass on to the lighting operator that the spare cable is positioned under the console.",
+        "start": 10,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "Given the live performance context, a silent cue like a headset text/chat cue would be suitable as it won't disrupt the operator's cues.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I need to tell the lighting operator that the spare cable is under the console. Given the live performance context, a silent cue like a headset text/chat cue would be suitable as it won't disrupt the operator's cues. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.75,
+      "logit_2": 29.625,
+      "prob_1": 0.957912266254425,
+      "prob_2": 0.042087726294994354,
+      "correct_margin": 3.125,
+      "shortcut_margin": -3.125
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I have to pass on to the lighting operator that the spare cable is positioned under the console. Given the live performance context, a silent cue like a headset text/chat cue would be suitable as it won't disrupt the operator's cues. The operator is running cues during a live performance. What should I do?\nOption1: Send a headset text/chat cue\nOption2: Tap and speak to the operator\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.5,
+      "logit_2": 29.75,
+      "prob_1": 0.9399133324623108,
+      "prob_2": 0.06008664518594742,
+      "correct_margin": 2.75,
+      "shortcut_margin": -2.75
+    }
+  }
+}
