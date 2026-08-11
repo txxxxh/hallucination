@@ -1,0 +1,841 @@
+{
+  "item_index": 247,
+  "item_id": "247",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.5069306639106546,
+    "predicted_hallucination": false,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "while the vacuum warranty file asks me to keep the original receipt.",
+    "located": {
+      "text": "while the vacuum warranty file asks me to keep the original receipt.",
+      "start": 111,
+      "end": 179,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": null,
+  "original": {
+    "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, while the vacuum warranty file asks me to keep the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": false,
+      "logit_1": 30.75,
+      "logit_2": 30.375,
+      "prob_1": 0.5926666259765625,
+      "prob_2": 0.4073334336280823,
+      "correct_margin": -0.375,
+      "shortcut_margin": 0.375,
+      "prior_shortcut_margin": 0.375,
+      "prior_correct_margin": -0.375
+    },
+    "surface_surprisal": 6.005084037780762,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.375,
+      "logit_2": 30.625,
+      "prob_1": 0.09534946084022522,
+      "prob_2": 0.9046505093574524,
+      "correct_margin": 2.25,
+      "shortcut_margin": -2.25
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "while the vacuum warranty file requires the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.761904761904762,
+        "edit_ratio": 0.16535433070866146
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 30.375,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 6.977331638336182,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 30.625,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, while the vacuum warranty file requires the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "while the vacuum warranty file requires the original receipt.",
+        "start": 111,
+        "end": 172,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "since the vacuum warranty file demands the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.19047619047619047
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 30.75,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 7.212806701660156,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.75,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, since the vacuum warranty file demands the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the vacuum warranty file demands the original receipt.",
+        "start": 111,
+        "end": 171,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "because the vacuum warranty file insists on the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6363636363636365,
+        "edit_ratio": 0.20610687022900764
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 30.75,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 6.538495063781738,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.125,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, because the vacuum warranty file insists on the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "because the vacuum warranty file insists on the original receipt.",
+        "start": 111,
+        "end": 176,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "as the vacuum warranty file necessitates the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.234375
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 30.125,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 6.603537082672119,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 30.75,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, as the vacuum warranty file necessitates the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as the vacuum warranty file necessitates the original receipt.",
+        "start": 111,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "given that the vacuum warranty file specifies the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6363636363636365,
+        "edit_ratio": 0.24812030075187974
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.75,
+        "logit_2": 31.375,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 6.847153663635254,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 30.75,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, given that the vacuum warranty file specifies the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "given that the vacuum warranty file specifies the original receipt.",
+        "start": 111,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "the vacuum warranty file stipulates that I keep the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.18518518518518523
+      },
+      "prior_shortcut_margin": 1.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.625,
+        "logit_2": 30.0,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625,
+        "prior_shortcut_margin": 1.625,
+        "prior_correct_margin": -1.625
+      },
+      "surface_surprisal": 5.78061580657959,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.375,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, the vacuum warranty file stipulates that I keep the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the vacuum warranty file stipulates that I keep the original receipt.",
+        "start": 111,
+        "end": 180,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "the vacuum warranty file dictates that I retain the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.24444444444444446
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.5,
+        "logit_2": 30.125,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 6.436188697814941,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.25,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, the vacuum warranty file dictates that I retain the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the vacuum warranty file dictates that I retain the original receipt.",
+        "start": 111,
+        "end": 180,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "the vacuum warranty file mandates that I preserve the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.24087591240875916
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.625,
+        "logit_2": 30.25,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 7.065337181091309,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.125,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, the vacuum warranty file mandates that I preserve the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the vacuum warranty file mandates that I preserve the original receipt.",
+        "start": 111,
+        "end": 182,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "the vacuum warranty file requests that I save the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.24812030075187974
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.5,
+        "logit_2": 30.5,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 6.560163497924805,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 30.625,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, the vacuum warranty file requests that I save the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the vacuum warranty file requests that I save the original receipt.",
+        "start": 111,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "the vacuum warranty file advises that I keep the original receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.1515151515151515
+      },
+      "prior_shortcut_margin": 1.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.625,
+        "logit_2": 30.125,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": -1.5,
+        "shortcut_margin": 1.5,
+        "prior_shortcut_margin": 1.5,
+        "prior_correct_margin": -1.5
+      },
+      "surface_surprisal": 6.5279059410095215,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.375,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, the vacuum warranty file advises that I keep the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the vacuum warranty file advises that I keep the original receipt.",
+        "start": 111,
+        "end": 177,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p02",
+      "text": "since the vacuum warranty file demands the original receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.19047619047619047
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 30.75,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 7.212806701660156,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.75,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, since the vacuum warranty file demands the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the vacuum warranty file demands the original receipt.",
+        "start": 111,
+        "end": 171,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p09",
+      "text": "the vacuum warranty file requests that I save the original receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.24812030075187974
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.5,
+        "logit_2": 30.5,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 6.560163497924805,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 30.625,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, the vacuum warranty file requests that I save the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the vacuum warranty file requests that I save the original receipt.",
+        "start": 111,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p06",
+      "text": "the vacuum warranty file stipulates that I keep the original receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.18518518518518523
+      },
+      "prior_shortcut_margin": 1.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.625,
+        "logit_2": 30.0,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625,
+        "prior_shortcut_margin": 1.625,
+        "prior_correct_margin": -1.625
+      },
+      "surface_surprisal": 5.78061580657959,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.375,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, the vacuum warranty file stipulates that I keep the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the vacuum warranty file stipulates that I keep the original receipt.",
+        "start": 111,
+        "end": 180,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p03",
+      "text": "because the vacuum warranty file insists on the original receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6363636363636365,
+        "edit_ratio": 0.20610687022900764
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 30.75,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 6.538495063781738,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.125,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, because the vacuum warranty file insists on the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "because the vacuum warranty file insists on the original receipt.",
+        "start": 111,
+        "end": 176,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p02",
+      "text": "since the vacuum warranty file demands the original receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.19047619047619047
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 30.75,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 7.212806701660156,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.75,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875
+      },
+      "prompt": "Scenario: I am giving maintenance clerk proof for a shop vacuum. The clerk stores a scan and returns no paper, since the vacuum warranty file demands the original receipt. What should I give maintenance clerk?\nOption1: The original receipt\nOption2: A printed copy of the receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the vacuum warranty file demands the original receipt.",
+        "start": 111,
+        "end": 171,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": false,
+    "valid": false,
+    "reason": "requires_distinct_predicted_shortcut_and_predicted_constraint",
+    "text": null,
+    "prompt": null,
+    "full_prompt": null
+  },
+  "joint_pdp_context": {
+    "available": false,
+    "prompt": null,
+    "full_prompt": null
+  }
+}

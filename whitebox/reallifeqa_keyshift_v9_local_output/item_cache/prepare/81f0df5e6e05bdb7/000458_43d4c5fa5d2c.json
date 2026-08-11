@@ -1,0 +1,863 @@
+{
+  "item_index": 458,
+  "item_id": "458",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.15874854378502132,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The storage label must be tied to the garment bag before the closet scan.",
+    "located": {
+      "text": "The storage label must be tied to the garment bag before the closet scan.",
+      "start": 40,
+      "end": 113,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The storage label must be tied to the garment bag before the closet scan.",
+    "located": {
+      "text": "The storage label must be tied to the garment bag before the closet scan.",
+      "start": 40,
+      "end": 113,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am returning a mascot suit. The storage label must be tied to the garment bag before the closet scan. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 26.75,
+      "logit_2": 32.5,
+      "prob_1": 0.0031726830638945103,
+      "prob_2": 0.9968273043632507,
+      "correct_margin": 5.75,
+      "shortcut_margin": -5.75,
+      "prior_shortcut_margin": -5.75,
+      "prior_correct_margin": 5.75
+    },
+    "surface_surprisal": 5.253161907196045,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 25.625,
+      "logit_2": 32.25,
+      "prob_1": 0.001325022429227829,
+      "prob_2": 0.9986749291419983,
+      "correct_margin": 6.625,
+      "shortcut_margin": -6.625
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The label needs to be attached to the garment bag beforehand.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.56,
+        "edit_ratio": 0.2727272727272727
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.25,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 4.101729869842529,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.125,
+        "logit_2": 31.625,
+        "prob_1": 0.004070138093084097,
+        "prob_2": 0.9959298968315125,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: I am returning a mascot suit. The label needs to be attached to the garment bag beforehand. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label needs to be attached to the garment bag beforehand.",
+        "start": 40,
+        "end": 101,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "First, tie the label to the garment bag.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.49090909090909096
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 32.0,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 3.9705967903137207,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.375,
+        "logit_2": 31.5,
+        "prob_1": 0.005911068990826607,
+        "prob_2": 0.9940890073776245,
+        "correct_margin": 5.125,
+        "shortcut_margin": -5.125
+      },
+      "prompt": "Scenario: I am returning a mascot suit. First, tie the label to the garment bag. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "First, tie the label to the garment bag.",
+        "start": 40,
+        "end": 80,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "Before scanning, the label should be secured to the bag.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.5238095238095238
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.375,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 3.6539509296417236,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.25,
+        "logit_2": 31.625,
+        "prob_1": 0.004609572701156139,
+        "prob_2": 0.9953904151916504,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Before scanning, the label should be secured to the bag. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before scanning, the label should be secured to the bag.",
+        "start": 40,
+        "end": 96,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "You must tie the label to the garment bag before scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.3798449612403101
+      },
+      "prior_shortcut_margin": -6.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.125,
+        "logit_2": 32.75,
+        "prob_1": 0.001325022429227829,
+        "prob_2": 0.9986749291419983,
+        "correct_margin": 6.625,
+        "shortcut_margin": -6.625,
+        "prior_shortcut_margin": -6.625,
+        "prior_correct_margin": 6.625
+      },
+      "surface_surprisal": 4.993309020996094,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.625,
+        "logit_2": 31.75,
+        "prob_1": 0.002182716503739357,
+        "prob_2": 0.9978172779083252,
+        "correct_margin": 6.125,
+        "shortcut_margin": -6.125
+      },
+      "prompt": "Scenario: I am returning a mascot suit. You must tie the label to the garment bag before scanning. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "You must tie the label to the garment bag before scanning.",
+        "start": 40,
+        "end": 98,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The storage label should be attached to the garment bag prior to scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5925925925925927,
+        "edit_ratio": 0.22758620689655173
+      },
+      "prior_shortcut_margin": -3.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.75,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5,
+        "prior_shortcut_margin": -3.5,
+        "prior_correct_margin": 3.5
+      },
+      "surface_surprisal": 4.229878902435303,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 31.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375
+      },
+      "prompt": "Scenario: I am returning a mascot suit. The storage label should be attached to the garment bag prior to scanning. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The storage label should be attached to the garment bag prior to scanning.",
+        "start": 40,
+        "end": 114,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "Tie the label to the garment bag before putting it in the closet.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.32352941176470584
+      },
+      "prior_shortcut_margin": -5.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.625,
+        "logit_2": 32.25,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625,
+        "prior_shortcut_margin": -5.625,
+        "prior_correct_margin": 5.625
+      },
+      "surface_surprisal": 3.0200071334838867,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 32.0,
+        "prob_1": 0.0019267346942797303,
+        "prob_2": 0.9980732202529907,
+        "correct_margin": 6.25,
+        "shortcut_margin": -6.25
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Tie the label to the garment bag before putting it in the closet. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Tie the label to the garment bag before putting it in the closet.",
+        "start": 40,
+        "end": 105,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "Make sure the label is tied to the garment bag before scanning it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5925925925925927,
+        "edit_ratio": 0.2846715328467153
+      },
+      "prior_shortcut_margin": -7.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 33.0,
+        "prob_1": 0.0007096704212017357,
+        "prob_2": 0.9992903470993042,
+        "correct_margin": 7.25,
+        "shortcut_margin": -7.25,
+        "prior_shortcut_margin": -7.25,
+        "prior_correct_margin": 7.25
+      },
+      "surface_surprisal": 3.814145803451538,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.25,
+        "logit_2": 31.75,
+        "prob_1": 0.0015011822106316686,
+        "prob_2": 0.998498797416687,
+        "correct_margin": 6.5,
+        "shortcut_margin": -6.5
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Make sure the label is tied to the garment bag before scanning it. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Make sure the label is tied to the garment bag before scanning it.",
+        "start": 40,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "Before scanning, attach the label to the garment bag.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.49593495934959353
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.125,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 4.004549503326416,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.75,
+        "logit_2": 30.875,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Before scanning, attach the label to the garment bag. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before scanning, attach the label to the garment bag.",
+        "start": 40,
+        "end": 93,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The label needs to be tied to the garment bag before the scan.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8148148148148148,
+        "edit_ratio": 0.17293233082706772
+      },
+      "prior_shortcut_margin": -6.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.125,
+        "logit_2": 32.75,
+        "prob_1": 0.001325022429227829,
+        "prob_2": 0.9986749291419983,
+        "correct_margin": 6.625,
+        "shortcut_margin": -6.625,
+        "prior_shortcut_margin": -6.625,
+        "prior_correct_margin": 6.625
+      },
+      "surface_surprisal": 4.124472618103027,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 32.0,
+        "prob_1": 0.0019267346942797303,
+        "prob_2": 0.9980732202529907,
+        "correct_margin": 6.25,
+        "shortcut_margin": -6.25
+      },
+      "prompt": "Scenario: I am returning a mascot suit. The label needs to be tied to the garment bag before the scan. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label needs to be tied to the garment bag before the scan.",
+        "start": 40,
+        "end": 102,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "Tie the storage label to the garment bag before scanning it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.26717557251908397
+      },
+      "prior_shortcut_margin": -6.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.125,
+        "logit_2": 32.25,
+        "prob_1": 0.002182716503739357,
+        "prob_2": 0.9978172779083252,
+        "correct_margin": 6.125,
+        "shortcut_margin": -6.125,
+        "prior_shortcut_margin": -6.125,
+        "prior_correct_margin": 6.125
+      },
+      "surface_surprisal": 4.6681718826293945,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.125,
+        "logit_2": 31.875,
+        "prob_1": 0.0031726830638945103,
+        "prob_2": 0.9968273043632507,
+        "correct_margin": 5.75,
+        "shortcut_margin": -5.75
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Tie the storage label to the garment bag before scanning it. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Tie the storage label to the garment bag before scanning it.",
+        "start": 40,
+        "end": 100,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p07",
+      "text": "Make sure the label is tied to the garment bag before scanning it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5925925925925927,
+        "edit_ratio": 0.2846715328467153
+      },
+      "prior_shortcut_margin": -7.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 33.0,
+        "prob_1": 0.0007096704212017357,
+        "prob_2": 0.9992903470993042,
+        "correct_margin": 7.25,
+        "shortcut_margin": -7.25,
+        "prior_shortcut_margin": -7.25,
+        "prior_correct_margin": 7.25
+      },
+      "surface_surprisal": 3.814145803451538,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.25,
+        "logit_2": 31.75,
+        "prob_1": 0.0015011822106316686,
+        "prob_2": 0.998498797416687,
+        "correct_margin": 6.5,
+        "shortcut_margin": -6.5
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Make sure the label is tied to the garment bag before scanning it. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Make sure the label is tied to the garment bag before scanning it.",
+        "start": 40,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p06",
+      "text": "Tie the label to the garment bag before putting it in the closet.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.32352941176470584
+      },
+      "prior_shortcut_margin": -5.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.625,
+        "logit_2": 32.25,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625,
+        "prior_shortcut_margin": -5.625,
+        "prior_correct_margin": 5.625
+      },
+      "surface_surprisal": 3.0200071334838867,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 32.0,
+        "prob_1": 0.0019267346942797303,
+        "prob_2": 0.9980732202529907,
+        "correct_margin": 6.25,
+        "shortcut_margin": -6.25
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Tie the label to the garment bag before putting it in the closet. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Tie the label to the garment bag before putting it in the closet.",
+        "start": 40,
+        "end": 105,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p08",
+      "text": "Before scanning, attach the label to the garment bag.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.49593495934959353
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.125,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 4.004549503326416,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.75,
+        "logit_2": 30.875,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Before scanning, attach the label to the garment bag. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before scanning, attach the label to the garment bag.",
+        "start": 40,
+        "end": 93,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p10",
+      "text": "Tie the storage label to the garment bag before scanning it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.26717557251908397
+      },
+      "prior_shortcut_margin": -6.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.125,
+        "logit_2": 32.25,
+        "prob_1": 0.002182716503739357,
+        "prob_2": 0.9978172779083252,
+        "correct_margin": 6.125,
+        "shortcut_margin": -6.125,
+        "prior_shortcut_margin": -6.125,
+        "prior_correct_margin": 6.125
+      },
+      "surface_surprisal": 4.6681718826293945,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.125,
+        "logit_2": 31.875,
+        "prob_1": 0.0031726830638945103,
+        "prob_2": 0.9968273043632507,
+        "correct_margin": 5.75,
+        "shortcut_margin": -5.75
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Tie the storage label to the garment bag before scanning it. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Tie the storage label to the garment bag before scanning it.",
+        "start": 40,
+        "end": 100,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p07",
+      "text": "Make sure the label is tied to the garment bag before scanning it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5925925925925927,
+        "edit_ratio": 0.2846715328467153
+      },
+      "prior_shortcut_margin": -7.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 33.0,
+        "prob_1": 0.0007096704212017357,
+        "prob_2": 0.9992903470993042,
+        "correct_margin": 7.25,
+        "shortcut_margin": -7.25,
+        "prior_shortcut_margin": -7.25,
+        "prior_correct_margin": 7.25
+      },
+      "surface_surprisal": 3.814145803451538,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.25,
+        "logit_2": 31.75,
+        "prob_1": 0.0015011822106316686,
+        "prob_2": 0.998498797416687,
+        "correct_margin": 6.5,
+        "shortcut_margin": -6.5
+      },
+      "prompt": "Scenario: I am returning a mascot suit. Make sure the label is tied to the garment bag before scanning it. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Make sure the label is tied to the garment bag before scanning it.",
+        "start": 40,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This means you should bring the garment bag with the label attached to the closet.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am returning a mascot suit. The storage label must be tied to the garment bag before the closet scan. This means you should bring the garment bag with the label attached to the closet. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 25.0,
+      "logit_2": 33.0,
+      "prob_1": 0.00033535013790242374,
+      "prob_2": 0.9996646642684937,
+      "correct_margin": 8.0,
+      "shortcut_margin": -8.0
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I am returning a mascot suit. Make sure the label is tied to the garment bag before scanning it. This means you should bring the garment bag with the label attached to the closet. What should I bring to the closet?\nOption1: Only the storage label\nOption2: The garment bag with the storage label tied on\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 24.5,
+      "logit_2": 32.25,
+      "prob_1": 0.0004305570910219103,
+      "prob_2": 0.9995694756507874,
+      "correct_margin": 7.75,
+      "shortcut_margin": -7.75
+    }
+  }
+}

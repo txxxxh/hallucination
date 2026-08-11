@@ -1,0 +1,833 @@
+{
+  "item_index": 451,
+  "item_id": "451",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.5962143471756928,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The mechanic is at the rear gate because it must roll straight into the van.",
+    "located": {
+      "text": "The mechanic is at the rear gate because it must roll straight into the van.",
+      "start": 59,
+      "end": 135,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The bike shop has my assembled cargo bike ready.",
+    "located": {
+      "text": "The bike shop has my assembled cargo bike ready.",
+      "start": 10,
+      "end": 58,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because it must roll straight into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 30.75,
+      "logit_2": 30.375,
+      "prob_1": 0.5926666259765625,
+      "prob_2": 0.4073334336280823,
+      "correct_margin": 0.375,
+      "shortcut_margin": -0.375,
+      "prior_shortcut_margin": -0.375,
+      "prior_correct_margin": 0.375
+    },
+    "surface_surprisal": 4.6515212059021,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.375,
+      "logit_2": 32.0,
+      "prob_1": 0.009708477184176445,
+      "prob_2": 0.9902915358543396,
+      "correct_margin": -4.625,
+      "shortcut_margin": 4.625
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The mechanic is at the rear gate because the assembled bike needs to be loaded into the van.",
+      "valid": false,
+      "review": {},
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.27710843373493976
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.625,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 3.6265013217926025,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 31.875,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the assembled bike needs to be loaded into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the assembled bike needs to be loaded into the van.",
+        "start": 59,
+        "end": 151,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The mechanic is at the rear gate because the cargo bike has to be rolled straight into the van.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.1597633136094675
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.875,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 3.916694164276123,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 32.0,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the cargo bike has to be rolled straight into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the cargo bike has to be rolled straight into the van.",
+        "start": 59,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The mechanic is at the rear gate because it's the most efficient way to load the bike into the van.",
+      "valid": false,
+      "review": {},
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.23699421965317924
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.625,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 2.8911359310150146,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.0,
+        "logit_2": 32.0,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": -4.0,
+        "shortcut_margin": 4.0
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because it's the most efficient way to load the bike into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because it's the most efficient way to load the bike into the van.",
+        "start": 59,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The mechanic is at the rear gate because the bike needs to be loaded directly into the van.",
+      "valid": false,
+      "review": {},
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.2848484848484848
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.875,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 3.4304356575012207,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 32.25,
+        "prob_1": 0.005911068990826607,
+        "prob_2": 0.9940890073776245,
+        "correct_margin": -5.125,
+        "shortcut_margin": 5.125
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the bike needs to be loaded directly into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the bike needs to be loaded directly into the van.",
+        "start": 59,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The mechanic is at the rear gate because the assembled bike must be loaded into the van.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7500000000000001,
+        "edit_ratio": 0.2222222222222222
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.625,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 3.956704616546631,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 32.0,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": -4.5,
+        "shortcut_margin": 4.5
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the assembled bike must be loaded into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the assembled bike must be loaded into the van.",
+        "start": 59,
+        "end": 147,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The mechanic is at the rear gate because the bike has to be rolled into the van from here.",
+      "valid": false,
+      "review": {},
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6470588235294117,
+        "edit_ratio": 0.24390243902439024
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.875,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 3.72265625,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 31.75,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": -4.25,
+        "shortcut_margin": 4.25
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the bike has to be rolled into the van from here. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the bike has to be rolled into the van from here.",
+        "start": 59,
+        "end": 149,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The mechanic is at the rear gate because the cargo bike has to be loaded into the van.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.25
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.75,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 3.4348878860473633,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 32.0,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the cargo bike has to be loaded into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the cargo bike has to be loaded into the van.",
+        "start": 59,
+        "end": 145,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The mechanic is at the rear gate because the assembled bike needs to be loaded through this gate into the van.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.611111111111111,
+        "edit_ratio": 0.3152173913043478
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.625,
+        "logit_2": 30.75,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.55118465423584,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 32.25,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the assembled bike needs to be loaded through this gate into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the assembled bike needs to be loaded through this gate into the van.",
+        "start": 59,
+        "end": 169,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The mechanic is at the rear gate because the bike must be loaded directly into the van from here.",
+      "valid": false,
+      "review": {},
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.26315789473684215
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.5,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 3.683971643447876,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.375,
+        "logit_2": 32.25,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the bike must be loaded directly into the van from here. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the bike must be loaded directly into the van from here.",
+        "start": 59,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The mechanic is at the rear gate because it's the only way to load the assembled bike into the van.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.3063583815028902
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.75,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 3.3009579181671143,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 31.875,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because it's the only way to load the assembled bike into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because it's the only way to load the assembled bike into the van.",
+        "start": 59,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p05",
+      "text": "The mechanic is at the rear gate because the assembled bike must be loaded into the van.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7500000000000001,
+        "edit_ratio": 0.2222222222222222
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.625,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 3.956704616546631,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 32.0,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": -4.5,
+        "shortcut_margin": 4.5
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the assembled bike must be loaded into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the assembled bike must be loaded into the van.",
+        "start": 59,
+        "end": 147,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p02",
+      "text": "The mechanic is at the rear gate because the cargo bike has to be rolled straight into the van.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.1597633136094675
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.875,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 3.916694164276123,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 32.0,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the cargo bike has to be rolled straight into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the cargo bike has to be rolled straight into the van.",
+        "start": 59,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p08",
+      "text": "The mechanic is at the rear gate because the assembled bike needs to be loaded through this gate into the van.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.611111111111111,
+        "edit_ratio": 0.3152173913043478
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.625,
+        "logit_2": 30.75,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.55118465423584,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 32.25,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the assembled bike needs to be loaded through this gate into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the assembled bike needs to be loaded through this gate into the van.",
+        "start": 59,
+        "end": 169,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p07",
+      "text": "The mechanic is at the rear gate because the cargo bike has to be loaded into the van.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.25
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.75,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 3.4348878860473633,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 32.0,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the cargo bike has to be loaded into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the cargo bike has to be loaded into the van.",
+        "start": 59,
+        "end": 145,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p05",
+      "text": "The mechanic is at the rear gate because the assembled bike must be loaded into the van.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7500000000000001,
+        "edit_ratio": 0.2222222222222222
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.625,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 3.956704616546631,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 32.0,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": -4.5,
+        "shortcut_margin": 4.5
+      },
+      "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the assembled bike must be loaded into the van. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the rear gate because the assembled bike must be loaded into the van.",
+        "start": 59,
+        "end": 147,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": true,
+    "valid": true,
+    "reason": null,
+    "text": "Although it must roll straight into the van, that fact alone does not determine the decision, because my assembled cargo bike ready establishes the relevant requirement.",
+    "shortcut_anchor": "it must roll straight into the van",
+    "constraint_anchor": "my assembled cargo bike ready",
+    "review": {
+      "shortcut_anchor_faithful": true,
+      "constraint_anchor_faithful": true,
+      "both_keys_explicitly_linked": true,
+      "shortcut_alone_marked_insufficient": true,
+      "constraint_relevance_explicit": true,
+      "facts_preserved": true,
+      "no_new_fact": true,
+      "no_answer_or_option_leak": true,
+      "no_direct_recommendation_or_conclusion": true,
+      "no_experiment_meta_language": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "automatic_checks": {
+      "shortcut_anchor_f1": 0.6363636363636364,
+      "constraint_anchor_f1": 0.7142857142857143,
+      "max_option_token_f1": 0.18181818181818182,
+      "shortcut_informative_overlap": 6,
+      "constraint_informative_overlap": 4,
+      "word_count": 26
+    },
+    "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because it must roll straight into the van. Although it must roll straight into the van, that fact alone does not determine the decision, because my assembled cargo bike ready establishes the relevant requirement. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.375,
+      "logit_2": 32.25,
+      "prob_1": 0.0534033328294754,
+      "prob_2": 0.9465966820716858,
+      "correct_margin": -2.875,
+      "shortcut_margin": 2.875
+    }
+  },
+  "joint_pdp_context": {
+    "available": true,
+    "prompt": "Scenario: The bike shop has my assembled cargo bike ready. The mechanic is at the rear gate because the assembled bike must be loaded into the van. Although it must roll straight into the van, that fact alone does not determine the decision, because my assembled cargo bike ready establishes the relevant requirement. What should I bring to the rear gate?\nOption1: Bring the van to the rear gate\nOption2: Walk to the rear gate without the van\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.375,
+      "logit_2": 32.25,
+      "prob_1": 0.0534033328294754,
+      "prob_2": 0.9465966820716858,
+      "correct_margin": -2.875,
+      "shortcut_margin": 2.875
+    }
+  }
+}

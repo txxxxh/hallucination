@@ -1,0 +1,841 @@
+{
+  "item_index": 16,
+  "item_id": "16",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.4891966514473082,
+    "predicted_hallucination": false,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The shop electrician is waiting at the 7-pin tester to load the circuit.",
+    "located": {
+      "text": "The shop electrician is waiting at the 7-pin tester to load the circuit.",
+      "start": 68,
+      "end": 140,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": null,
+  "original": {
+    "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is waiting at the 7-pin tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.75,
+      "logit_2": 30.5,
+      "prob_1": 0.3208213150501251,
+      "prob_2": 0.6791787147521973,
+      "correct_margin": -0.75,
+      "shortcut_margin": 0.75,
+      "prior_shortcut_margin": 0.75,
+      "prior_correct_margin": -0.75
+    },
+    "surface_surprisal": 4.8122429847717285,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.375,
+      "logit_2": 30.875,
+      "prob_1": 0.3775406777858734,
+      "prob_2": 0.622459352016449,
+      "correct_margin": -0.5,
+      "shortcut_margin": 0.5
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The shop electrician is waiting by the 7-pin tester to load the circuit.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.028169014084507005
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.5,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 4.835572242736816,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.875,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is waiting by the 7-pin tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician is waiting by the 7-pin tester to load the circuit.",
+        "start": 68,
+        "end": 140,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The electrician is waiting at the tester to load the circuit.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Lacks specific location information"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": false,
+        "negation_presence_preserved": true,
+        "token_f1": 0.88,
+        "edit_ratio": 0.08396946564885499
+      },
+      "prior_shortcut_margin": 0.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 30.625,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5,
+        "prior_shortcut_margin": 0.5,
+        "prior_correct_margin": -0.5
+      },
+      "surface_surprisal": 4.355630397796631,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.875,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The electrician is waiting at the tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The electrician is waiting at the tester to load the circuit.",
+        "start": 68,
+        "end": 129,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The 7-pin tester is where the shop electrician is waiting to load the circuit.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 3,
+        "notes": "Reverses subject and object"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.896551724137931,
+        "edit_ratio": 0.31081081081081086
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.75,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 4.489448547363281,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.75,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The 7-pin tester is where the shop electrician is waiting to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The 7-pin tester is where the shop electrician is waiting to load the circuit.",
+        "start": 68,
+        "end": 146,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The shop electrician is at the 7-pin tester, ready to load the circuit.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.09999999999999998
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.375,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.403375148773193,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is at the 7-pin tester, ready to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician is at the 7-pin tester, ready to load the circuit.",
+        "start": 68,
+        "end": 139,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The electrician is waiting at the 7-pin tester to load the circuit next.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Adds unnecessary temporal information"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.07042253521126762
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.375,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 4.673911094665527,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.625,
+        "logit_2": 31.0,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The electrician is waiting at the 7-pin tester to load the circuit next. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The electrician is waiting at the 7-pin tester to load the circuit next.",
+        "start": 68,
+        "end": 140,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The shop electrician has arrived at the 7-pin tester to load the circuit.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 3,
+        "notes": "Adds unnecessary temporal information"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.09090909090909094
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.375,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.700716495513916,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.625,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician has arrived at the 7-pin tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician has arrived at the 7-pin tester to load the circuit.",
+        "start": 68,
+        "end": 141,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The 7-pin tester is the location where the shop electrician is waiting to load the circuit.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 3,
+        "notes": "Reverses subject and object"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8387096774193549,
+        "edit_ratio": 0.36645962732919257
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.75,
+        "logit_2": 31.125,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 4.1666388511657715,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.75,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The 7-pin tester is the location where the shop electrician is waiting to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The 7-pin tester is the location where the shop electrician is waiting to load the circuit.",
+        "start": 68,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The shop electrician is now waiting at the 7-pin tester to load the circuit.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9655172413793104,
+        "edit_ratio": 0.0273972602739726
+      },
+      "prior_shortcut_margin": 0.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.25,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875,
+        "prior_shortcut_margin": 0.875,
+        "prior_correct_margin": -0.875
+      },
+      "surface_surprisal": 4.866235256195068,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.75,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is now waiting at the 7-pin tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician is now waiting at the 7-pin tester to load the circuit.",
+        "start": 68,
+        "end": 144,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The electrician is waiting at the 7-pin tester to load the circuit now.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Adds unnecessary temporal information"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.06382978723404253
+      },
+      "prior_shortcut_margin": 0.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.5,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5,
+        "prior_shortcut_margin": 0.5,
+        "prior_correct_margin": -0.5
+      },
+      "surface_surprisal": 4.713693618774414,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.125,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The electrician is waiting at the 7-pin tester to load the circuit now. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The electrician is waiting at the 7-pin tester to load the circuit now.",
+        "start": 68,
+        "end": 139,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The shop electrician is present at the 7-pin tester to load the circuit.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.08450704225352113
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.5,
+        "logit_2": 30.25,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 4.77401065826416,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.75,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is present at the 7-pin tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician is present at the 7-pin tester to load the circuit.",
+        "start": 68,
+        "end": 140,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p01",
+      "text": "The shop electrician is waiting by the 7-pin tester to load the circuit.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.028169014084507005
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.5,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 4.835572242736816,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.875,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is waiting by the 7-pin tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician is waiting by the 7-pin tester to load the circuit.",
+        "start": 68,
+        "end": 140,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p10",
+      "text": "The shop electrician is present at the 7-pin tester to load the circuit.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.08450704225352113
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.5,
+        "logit_2": 30.25,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 4.77401065826416,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.75,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is present at the 7-pin tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician is present at the 7-pin tester to load the circuit.",
+        "start": 68,
+        "end": 140,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p04",
+      "text": "The shop electrician is at the 7-pin tester, ready to load the circuit.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.09999999999999998
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.375,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.403375148773193,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is at the 7-pin tester, ready to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician is at the 7-pin tester, ready to load the circuit.",
+        "start": 68,
+        "end": 139,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p08",
+      "text": "The shop electrician is now waiting at the 7-pin tester to load the circuit.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9655172413793104,
+        "edit_ratio": 0.0273972602739726
+      },
+      "prior_shortcut_margin": 0.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.25,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875,
+        "prior_shortcut_margin": 0.875,
+        "prior_correct_margin": -0.875
+      },
+      "surface_surprisal": 4.866235256195068,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.75,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is now waiting at the 7-pin tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician is now waiting at the 7-pin tester to load the circuit.",
+        "start": 68,
+        "end": 144,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p01",
+      "text": "The shop electrician is waiting by the 7-pin tester to load the circuit.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.028169014084507005
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.5,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 4.835572242736816,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.875,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: The horse trailer's marker-light complaint is written up. The shop electrician is waiting by the 7-pin tester to load the circuit. Should I tow the trailer to the tester or walk to the tester without it?\nOption1: Tow the trailer to the tester\nOption2: Walk to the tester without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shop electrician is waiting by the 7-pin tester to load the circuit.",
+        "start": 68,
+        "end": 140,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": false,
+    "valid": false,
+    "reason": "requires_distinct_predicted_shortcut_and_predicted_constraint",
+    "text": null,
+    "prompt": null,
+    "full_prompt": null
+  },
+  "joint_pdp_context": {
+    "available": false,
+    "prompt": null,
+    "full_prompt": null
+  }
+}

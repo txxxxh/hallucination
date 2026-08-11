@@ -1,0 +1,863 @@
+{
+  "item_index": 494,
+  "item_id": "494",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.4579740113997576,
+    "predicted_hallucination": false,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The field officer is at the shed apron to read the serial plate on the tractor frame before disbursement.",
+    "located": {
+      "text": "The field officer is at the shed apron to read the serial plate on the tractor frame before disbursement.",
+      "start": 65,
+      "end": 170,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The field officer is at the shed apron to read the serial plate on the tractor frame before disbursement.",
+    "located": {
+      "text": "The field officer is at the shed apron to read the serial plate on the tractor frame before disbursement.",
+      "start": 65,
+      "end": 170,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is at the shed apron to read the serial plate on the tractor frame before disbursement. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.625,
+      "logit_2": 30.875,
+      "prob_1": 0.09534946084022522,
+      "prob_2": 0.9046505093574524,
+      "correct_margin": 2.25,
+      "shortcut_margin": -2.25,
+      "prior_shortcut_margin": -2.25,
+      "prior_correct_margin": 2.25
+    },
+    "surface_surprisal": 4.756794452667236,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.875,
+      "logit_2": 30.375,
+      "prob_1": 0.07585817575454712,
+      "prob_2": 0.9241418242454529,
+      "correct_margin": 2.5,
+      "shortcut_margin": -2.5
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The field officer has arrived at the shed apron to inspect the tractor's serial number.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6285714285714286,
+        "edit_ratio": 0.34736842105263155
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 31.75,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 4.172153472900391,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.625,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer has arrived at the shed apron to inspect the tractor's serial number. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer has arrived at the shed apron to inspect the tractor's serial number.",
+        "start": 65,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The field officer is at the shed apron to check the tractor's serial plate before handing it over.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631579,
+        "edit_ratio": 0.2935323383084577
+      },
+      "prior_shortcut_margin": -2.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.125,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375,
+        "prior_shortcut_margin": -2.375,
+        "prior_correct_margin": 2.375
+      },
+      "surface_surprisal": 4.287735939025879,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.625,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is at the shed apron to check the tractor's serial plate before handing it over. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is at the shed apron to check the tractor's serial plate before handing it over.",
+        "start": 65,
+        "end": 163,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The field officer is on site at the shed apron to verify the tractor's serial number.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7222222222222222,
+        "edit_ratio": 0.3191489361702128
+      },
+      "prior_shortcut_margin": -2.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.625,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875,
+        "prior_shortcut_margin": -2.875,
+        "prior_correct_margin": 2.875
+      },
+      "surface_surprisal": 4.08957052230835,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.75,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is on site at the shed apron to verify the tractor's serial number. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is on site at the shed apron to verify the tractor's serial number.",
+        "start": 65,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The field officer is present at the shed apron to read the tractor's serial plate.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.3189189189189189
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.5,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 4.486508369445801,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.625,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is present at the shed apron to read the tractor's serial plate. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is present at the shed apron to read the tractor's serial plate.",
+        "start": 65,
+        "end": 147,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The field officer has reached the shed apron to examine the tractor's serial number.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5882352941176471,
+        "edit_ratio": 0.33689839572192515
+      },
+      "prior_shortcut_margin": -2.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 31.0,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375,
+        "prior_shortcut_margin": -2.375,
+        "prior_correct_margin": 2.375
+      },
+      "surface_surprisal": 4.746672630310059,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.375,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer has reached the shed apron to examine the tractor's serial number. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer has reached the shed apron to examine the tractor's serial number.",
+        "start": 65,
+        "end": 149,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The field officer is at the shed apron to look up the tractor's serial number.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6857142857142857,
+        "edit_ratio": 0.30386740331491713
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 31.0,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 4.237466335296631,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 30.375,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is at the shed apron to look up the tractor's serial number. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is at the shed apron to look up the tractor's serial number.",
+        "start": 65,
+        "end": 143,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The field officer is currently at the shed apron to check the tractor's serial plate.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.742857142857143,
+        "edit_ratio": 0.36170212765957444
+      },
+      "prior_shortcut_margin": -2.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.125,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25,
+        "prior_shortcut_margin": -2.25,
+        "prior_correct_margin": 2.25
+      },
+      "surface_surprisal": 4.665279865264893,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 30.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is currently at the shed apron to check the tractor's serial plate. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is currently at the shed apron to check the tractor's serial plate.",
+        "start": 65,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The field officer is at the shed apron to verify the tractor's serial number.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.28888888888888886
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 31.5,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 4.351827621459961,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.75,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is at the shed apron to verify the tractor's serial number. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is at the shed apron to verify the tractor's serial number.",
+        "start": 65,
+        "end": 142,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The field officer has arrived at the shed apron to check the tractor's serial number.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6285714285714286,
+        "edit_ratio": 0.34042553191489366
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.375,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 4.12702751159668,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.375,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer has arrived at the shed apron to check the tractor's serial number. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer has arrived at the shed apron to check the tractor's serial number.",
+        "start": 65,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The field officer is on location at the shed apron to inspect the tractor's serial plate.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.375
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.75,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 4.504976749420166,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.625,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is on location at the shed apron to inspect the tractor's serial plate. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is on location at the shed apron to inspect the tractor's serial plate.",
+        "start": 65,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p01",
+      "text": "The field officer has arrived at the shed apron to inspect the tractor's serial number.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6285714285714286,
+        "edit_ratio": 0.34736842105263155
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 31.75,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 4.172153472900391,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.625,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer has arrived at the shed apron to inspect the tractor's serial number. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer has arrived at the shed apron to inspect the tractor's serial number.",
+        "start": 65,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p04",
+      "text": "The field officer is present at the shed apron to read the tractor's serial plate.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.3189189189189189
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.5,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 4.486508369445801,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.625,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is present at the shed apron to read the tractor's serial plate. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is present at the shed apron to read the tractor's serial plate.",
+        "start": 65,
+        "end": 147,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p06",
+      "text": "The field officer is at the shed apron to look up the tractor's serial number.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6857142857142857,
+        "edit_ratio": 0.30386740331491713
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 31.0,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 4.237466335296631,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 30.375,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is at the shed apron to look up the tractor's serial number. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is at the shed apron to look up the tractor's serial number.",
+        "start": 65,
+        "end": 143,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p07",
+      "text": "The field officer is currently at the shed apron to check the tractor's serial plate.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.742857142857143,
+        "edit_ratio": 0.36170212765957444
+      },
+      "prior_shortcut_margin": -2.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.125,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25,
+        "prior_shortcut_margin": -2.25,
+        "prior_correct_margin": 2.25
+      },
+      "surface_surprisal": 4.665279865264893,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 30.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is currently at the shed apron to check the tractor's serial plate. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer is currently at the shed apron to check the tractor's serial plate.",
+        "start": 65,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p01",
+      "text": "The field officer has arrived at the shed apron to inspect the tractor's serial number.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6285714285714286,
+        "edit_ratio": 0.34736842105263155
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 31.75,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 4.172153472900391,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.625,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625
+      },
+      "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer has arrived at the shed apron to inspect the tractor's serial number. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The field officer has arrived at the shed apron to inspect the tractor's serial number.",
+        "start": 65,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The field officer's presence at the shed apron serves as a cue that the tractor's serial number needs to be verified before disbursement.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer is at the shed apron to read the serial plate on the tractor frame before disbursement. The field officer's presence at the shed apron serves as a cue that the tractor's serial number needs to be verified before disbursement. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.0,
+      "logit_2": 30.875,
+      "prob_1": 0.0534033328294754,
+      "prob_2": 0.9465966820716858,
+      "correct_margin": 2.875,
+      "shortcut_margin": -2.875
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The equipment loan for my compact tractor is approved. The field officer has arrived at the shed apron to inspect the tractor's serial number. The field officer's presence at the shed apron serves as a cue that the tractor's serial number needs to be verified before disbursement. For this step, what should I do?\nOption1: Walk to the shed apron without the tractor\nOption2: Drive the tractor to the shed apron\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.125,
+      "logit_2": 30.75,
+      "prob_1": 0.06754669547080994,
+      "prob_2": 0.9324532747268677,
+      "correct_margin": 2.625,
+      "shortcut_margin": -2.625
+    }
+  }
+}

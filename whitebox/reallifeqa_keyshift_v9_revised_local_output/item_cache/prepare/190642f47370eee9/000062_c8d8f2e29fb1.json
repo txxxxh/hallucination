@@ -1,0 +1,841 @@
+{
+  "item_index": 62,
+  "item_id": "62",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.6225959767167805,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The confirmation is done at the drive-through guard post.",
+    "located": {
+      "text": "The confirmation is done at the drive-through guard post.",
+      "start": 140,
+      "end": 197,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": null,
+  "original": {
+    "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The confirmation is done at the drive-through guard post. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 33.5,
+      "logit_2": 30.25,
+      "prob_1": 0.9626730680465698,
+      "prob_2": 0.037326883524656296,
+      "correct_margin": 3.25,
+      "shortcut_margin": -3.25,
+      "prior_shortcut_margin": -3.25,
+      "prior_correct_margin": 3.25
+    },
+    "surface_surprisal": 5.508941173553467,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 30.875,
+      "logit_2": 30.375,
+      "prob_1": 0.622459352016449,
+      "prob_2": 0.3775406777858734,
+      "correct_margin": 0.5,
+      "shortcut_margin": -0.5
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The confirmation is done by scanning the van at the drive-through guard post.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.1515151515151515
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 30.125,
+        "prob_1": 0.957912266254425,
+        "prob_2": 0.042087726294994354,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 4.9661383628845215,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 30.125,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The confirmation is done by scanning the van at the drive-through guard post. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The confirmation is done by scanning the van at the drive-through guard post.",
+        "start": 140,
+        "end": 217,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The verification process is conducted at the drive-through guard post using the van's windshield RFID sticker.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "The verification process is not exactly the same as the confirmation."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285714,
+        "edit_ratio": 0.3939393939393939
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.75,
+        "logit_2": 30.5,
+        "prob_1": 0.9626730680465698,
+        "prob_2": 0.037326883524656296,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 5.093124866485596,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.75,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The verification process is conducted at the drive-through guard post using the van's windshield RFID sticker. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The verification process is conducted at the drive-through guard post using the van's windshield RFID sticker.",
+        "start": 140,
+        "end": 250,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The confirmation is made at the drive-through guard post by checking the van's windshield RFID sticker.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6428571428571429,
+        "edit_ratio": 0.31645569620253167
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 31.25,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 5.419905185699463,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.5,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The confirmation is made at the drive-through guard post by checking the van's windshield RFID sticker. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The confirmation is made at the drive-through guard post by checking the van's windshield RFID sticker.",
+        "start": 140,
+        "end": 243,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "Security checks the van's windshield RFID sticker at the drive-through guard post.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.3868613138686131
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.75,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 5.585257530212402,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.375,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. Security checks the van's windshield RFID sticker at the drive-through guard post. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Security checks the van's windshield RFID sticker at the drive-through guard post.",
+        "start": 140,
+        "end": 222,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The drive-through guard post is where the van's windshield RFID sticker is checked and confirmed.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5185185185185185,
+        "edit_ratio": 0.631578947368421
+      },
+      "prior_shortcut_margin": -2.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 30.375,
+        "prob_1": 0.9465966820716858,
+        "prob_2": 0.0534033328294754,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875,
+        "prior_shortcut_margin": -2.875,
+        "prior_correct_margin": 2.875
+      },
+      "surface_surprisal": 5.139272212982178,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.875,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The drive-through guard post is where the van's windshield RFID sticker is checked and confirmed. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The drive-through guard post is where the van's windshield RFID sticker is checked and confirmed.",
+        "start": 140,
+        "end": 237,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The confirmation at the drive-through guard post involves scanning the van's windshield RFID sticker.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846154,
+        "edit_ratio": 0.3846153846153846
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.625,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 5.724968910217285,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.5,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The confirmation at the drive-through guard post involves scanning the van's windshield RFID sticker. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The confirmation at the drive-through guard post involves scanning the van's windshield RFID sticker.",
+        "start": 140,
+        "end": 241,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The van's windshield RFID sticker is checked and confirmed at the drive-through guard post.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846154,
+        "edit_ratio": 0.3972602739726028
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.5,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 5.170899868011475,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.125,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The van's windshield RFID sticker is checked and confirmed at the drive-through guard post. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The van's windshield RFID sticker is checked and confirmed at the drive-through guard post.",
+        "start": 140,
+        "end": 231,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The drive-through guard post is where the confirmation of the van's windshield RFID sticker takes place.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285714,
+        "edit_ratio": 0.6477987421383649
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 30.25,
+        "prob_1": 0.9241418242454529,
+        "prob_2": 0.07585817575454712,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 5.125807285308838,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.75,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The drive-through guard post is where the confirmation of the van's windshield RFID sticker takes place. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The drive-through guard post is where the confirmation of the van's windshield RFID sticker takes place.",
+        "start": 140,
+        "end": 244,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The van is scanned at the drive-through guard post to confirm the windshield RFID sticker.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846154,
+        "edit_ratio": 0.3931034482758621
+      },
+      "prior_shortcut_margin": -1.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.625,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625,
+        "prior_shortcut_margin": -1.625,
+        "prior_correct_margin": 1.625
+      },
+      "surface_surprisal": 5.316850185394287,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 30.125,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The van is scanned at the drive-through guard post to confirm the windshield RFID sticker. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The van is scanned at the drive-through guard post to confirm the windshield RFID sticker.",
+        "start": 140,
+        "end": 230,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "Security scans the van at the drive-through guard post to confirm the windshield RFID sticker.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5384615384615384,
+        "edit_ratio": 0.5033557046979866
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 31.0,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 5.067705154418945,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 30.125,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. Security scans the van at the drive-through guard post to confirm the windshield RFID sticker. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Security scans the van at the drive-through guard post to confirm the windshield RFID sticker.",
+        "start": 140,
+        "end": 234,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p01",
+      "text": "The confirmation is done by scanning the van at the drive-through guard post.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.1515151515151515
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 30.125,
+        "prob_1": 0.957912266254425,
+        "prob_2": 0.042087726294994354,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 4.9661383628845215,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 30.125,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The confirmation is done by scanning the van at the drive-through guard post. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The confirmation is done by scanning the van at the drive-through guard post.",
+        "start": 140,
+        "end": 217,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p03",
+      "text": "The confirmation is made at the drive-through guard post by checking the van's windshield RFID sticker.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6428571428571429,
+        "edit_ratio": 0.31645569620253167
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 31.25,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 5.419905185699463,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.5,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The confirmation is made at the drive-through guard post by checking the van's windshield RFID sticker. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The confirmation is made at the drive-through guard post by checking the van's windshield RFID sticker.",
+        "start": 140,
+        "end": 243,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p04",
+      "text": "Security checks the van's windshield RFID sticker at the drive-through guard post.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.3868613138686131
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.75,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 5.585257530212402,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.375,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. Security checks the van's windshield RFID sticker at the drive-through guard post. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Security checks the van's windshield RFID sticker at the drive-through guard post.",
+        "start": 140,
+        "end": 222,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p05",
+      "text": "The drive-through guard post is where the van's windshield RFID sticker is checked and confirmed.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5185185185185185,
+        "edit_ratio": 0.631578947368421
+      },
+      "prior_shortcut_margin": -2.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 30.375,
+        "prob_1": 0.9465966820716858,
+        "prob_2": 0.0534033328294754,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875,
+        "prior_shortcut_margin": -2.875,
+        "prior_correct_margin": 2.875
+      },
+      "surface_surprisal": 5.139272212982178,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.875,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The drive-through guard post is where the van's windshield RFID sticker is checked and confirmed. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The drive-through guard post is where the van's windshield RFID sticker is checked and confirmed.",
+        "start": 140,
+        "end": 237,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p01",
+      "text": "The confirmation is done by scanning the van at the drive-through guard post.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.1515151515151515
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 30.125,
+        "prob_1": 0.957912266254425,
+        "prob_2": 0.042087726294994354,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 4.9661383628845215,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 30.125,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625
+      },
+      "prompt": "Scenario: A delivery yard put my van on hold until security confirms the windshield RFID sticker matches the serial number in their system. The confirmation is done by scanning the van at the drive-through guard post. Should I walk to the guard post or drive the van through it?\nOption1: Drive the van through it\nOption2: Walk to the guard post\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The confirmation is done by scanning the van at the drive-through guard post.",
+        "start": 140,
+        "end": 217,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": false,
+    "valid": false,
+    "reason": "requires_distinct_predicted_shortcut_and_predicted_constraint",
+    "text": null,
+    "prompt": null,
+    "full_prompt": null
+  },
+  "joint_pdp_context": {
+    "available": false,
+    "prompt": null,
+    "full_prompt": null
+  }
+}

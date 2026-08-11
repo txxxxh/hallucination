@@ -1,0 +1,841 @@
+{
+  "item_index": 236,
+  "item_id": "236",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.7876526668461894,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "while the lighting rebate requires the original dated receipt.",
+    "located": {
+      "text": "while the lighting rebate requires the original dated receipt.",
+      "start": 125,
+      "end": 187,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": null,
+  "original": {
+    "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, while the lighting rebate requires the original dated receipt. What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.25,
+      "logit_2": 32.5,
+      "prob_1": 0.014063626527786255,
+      "prob_2": 0.9859364032745361,
+      "correct_margin": -4.25,
+      "shortcut_margin": 4.25,
+      "prior_shortcut_margin": 4.25,
+      "prior_correct_margin": -4.25
+    },
+    "surface_surprisal": 6.577557563781738,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.25,
+      "logit_2": 31.75,
+      "prob_1": 0.01098694372922182,
+      "prob_2": 0.9890130758285522,
+      "correct_margin": -4.5,
+      "shortcut_margin": 4.5
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "since the rebate necessitates the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.23076923076923073
+      },
+      "prior_shortcut_margin": 3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 32.25,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75,
+        "prior_shortcut_margin": 3.75,
+        "prior_correct_margin": -3.75
+      },
+      "surface_surprisal": 6.1103034019470215,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.375,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": -4.125,
+        "shortcut_margin": 4.125
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, since the rebate necessitates the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the rebate necessitates the original dated receipt",
+        "start": 125,
+        "end": 181,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "as the rebate requires the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.823529411764706,
+        "edit_ratio": 0.1454545454545455
+      },
+      "prior_shortcut_margin": 4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 32.25,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": -4.5,
+        "shortcut_margin": 4.5,
+        "prior_shortcut_margin": 4.5,
+        "prior_correct_margin": -4.5
+      },
+      "surface_surprisal": 6.0071120262146,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.875,
+        "logit_2": 31.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, as the rebate requires the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as the rebate requires the original dated receipt",
+        "start": 125,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "because the rebate demands the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.26315789473684215
+      },
+      "prior_shortcut_margin": 4.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 32.75,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": -4.625,
+        "shortcut_margin": 4.625,
+        "prior_shortcut_margin": 4.625,
+        "prior_correct_margin": -4.625
+      },
+      "surface_surprisal": 6.353852272033691,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.125,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": -3.875,
+        "shortcut_margin": 3.875
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, because the rebate demands the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "because the rebate demands the original dated receipt",
+        "start": 125,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "for the rebate to be valid, the original dated receipt is needed",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.33870967741935487
+      },
+      "prior_shortcut_margin": 3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 32.0,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": -3.875,
+        "shortcut_margin": 3.875,
+        "prior_shortcut_margin": 3.875,
+        "prior_correct_margin": -3.875
+      },
+      "surface_surprisal": 3.9342715740203857,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.625,
+        "logit_2": 31.625,
+        "prob_1": 0.006692850962281227,
+        "prob_2": 0.9933071732521057,
+        "correct_margin": -5.0,
+        "shortcut_margin": 5.0
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, for the rebate to be valid, the original dated receipt is needed What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "for the rebate to be valid, the original dated receipt is needed",
+        "start": 125,
+        "end": 189,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "the rebate's requirements specify the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.23966942148760328
+      },
+      "prior_shortcut_margin": 4.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 32.5,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875,
+        "prior_shortcut_margin": 4.875,
+        "prior_correct_margin": -4.875
+      },
+      "surface_surprisal": 7.061554431915283,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.0,
+        "logit_2": 31.375,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, the rebate's requirements specify the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate's requirements specify the original dated receipt",
+        "start": 125,
+        "end": 185,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "the original dated receipt is a prerequisite for the rebate",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.5666666666666667
+      },
+      "prior_shortcut_margin": 3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 32.25,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75,
+        "prior_shortcut_margin": 3.75,
+        "prior_correct_margin": -3.75
+      },
+      "surface_surprisal": 5.089961528778076,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 31.5,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": -3.875,
+        "shortcut_margin": 3.875
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, the original dated receipt is a prerequisite for the rebate What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the original dated receipt is a prerequisite for the rebate",
+        "start": 125,
+        "end": 184,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "the rebate stipulates that the original dated receipt is required",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.3492063492063492
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 32.5,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 4.896087169647217,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 31.625,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": -4.5,
+        "shortcut_margin": 4.5
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, the rebate stipulates that the original dated receipt is required What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate stipulates that the original dated receipt is required",
+        "start": 125,
+        "end": 190,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "the rebate necessitates keeping the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.31092436974789917
+      },
+      "prior_shortcut_margin": 5.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.375,
+        "logit_2": 33.0,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": -5.625,
+        "shortcut_margin": 5.625,
+        "prior_shortcut_margin": 5.625,
+        "prior_correct_margin": -5.625
+      },
+      "surface_surprisal": 6.391779899597168,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.25,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": -4.0,
+        "shortcut_margin": 4.0
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, the rebate necessitates keeping the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate necessitates keeping the original dated receipt",
+        "start": 125,
+        "end": 183,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "the rebate necessitates the preservation of the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.3435114503816794
+      },
+      "prior_shortcut_margin": 5.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 33.5,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": -5.625,
+        "shortcut_margin": 5.625,
+        "prior_shortcut_margin": 5.625,
+        "prior_correct_margin": -5.625
+      },
+      "surface_surprisal": 5.429446697235107,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 31.5,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": -4.0,
+        "shortcut_margin": 4.0
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, the rebate necessitates the preservation of the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate necessitates the preservation of the original dated receipt",
+        "start": 125,
+        "end": 195,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "the rebate requires retaining the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.823529411764706,
+        "edit_ratio": 0.2136752136752137
+      },
+      "prior_shortcut_margin": 5.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 33.25,
+        "prob_1": 0.004609572701156139,
+        "prob_2": 0.9953904151916504,
+        "correct_margin": -5.375,
+        "shortcut_margin": 5.375,
+        "prior_shortcut_margin": 5.375,
+        "prior_correct_margin": -5.375
+      },
+      "surface_surprisal": 6.519766330718994,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.375,
+        "logit_2": 31.125,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, the rebate requires retaining the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate requires retaining the original dated receipt",
+        "start": 125,
+        "end": 181,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p01",
+      "text": "since the rebate necessitates the original dated receipt",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.23076923076923073
+      },
+      "prior_shortcut_margin": 3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 32.25,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75,
+        "prior_shortcut_margin": 3.75,
+        "prior_correct_margin": -3.75
+      },
+      "surface_surprisal": 6.1103034019470215,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.375,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": -4.125,
+        "shortcut_margin": 4.125
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, since the rebate necessitates the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the rebate necessitates the original dated receipt",
+        "start": 125,
+        "end": 181,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p02",
+      "text": "as the rebate requires the original dated receipt",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.823529411764706,
+        "edit_ratio": 0.1454545454545455
+      },
+      "prior_shortcut_margin": 4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 32.25,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": -4.5,
+        "shortcut_margin": 4.5,
+        "prior_shortcut_margin": 4.5,
+        "prior_correct_margin": -4.5
+      },
+      "surface_surprisal": 6.0071120262146,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.875,
+        "logit_2": 31.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, as the rebate requires the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as the rebate requires the original dated receipt",
+        "start": 125,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p09",
+      "text": "the rebate necessitates the preservation of the original dated receipt",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.3435114503816794
+      },
+      "prior_shortcut_margin": 5.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 33.5,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": -5.625,
+        "shortcut_margin": 5.625,
+        "prior_shortcut_margin": 5.625,
+        "prior_correct_margin": -5.625
+      },
+      "surface_surprisal": 5.429446697235107,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 31.5,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": -4.0,
+        "shortcut_margin": 4.0
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, the rebate necessitates the preservation of the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate necessitates the preservation of the original dated receipt",
+        "start": 125,
+        "end": 195,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p07",
+      "text": "the rebate stipulates that the original dated receipt is required",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.3492063492063492
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 32.5,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 4.896087169647217,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 31.625,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": -4.5,
+        "shortcut_margin": 4.5
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, the rebate stipulates that the original dated receipt is required What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate stipulates that the original dated receipt is required",
+        "start": 125,
+        "end": 190,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p01",
+      "text": "since the rebate necessitates the original dated receipt",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.23076923076923073
+      },
+      "prior_shortcut_margin": 3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 32.25,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75,
+        "prior_shortcut_margin": 3.75,
+        "prior_correct_margin": -3.75
+      },
+      "surface_surprisal": 6.1103034019470215,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 31.375,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": -4.125,
+        "shortcut_margin": 4.125
+      },
+      "prompt": "Scenario: I am documenting a shop light purchase with the workroom-file desk. The clerk scans proof pages and discards them, since the rebate necessitates the original dated receipt What should I hand to the workroom-file desk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the rebate necessitates the original dated receipt",
+        "start": 125,
+        "end": 181,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": false,
+    "valid": false,
+    "reason": "requires_distinct_predicted_shortcut_and_predicted_constraint",
+    "text": null,
+    "prompt": null,
+    "full_prompt": null
+  },
+  "joint_pdp_context": {
+    "available": false,
+    "prompt": null,
+    "full_prompt": null
+  }
+}

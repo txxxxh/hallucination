@@ -1,0 +1,57 @@
+{
+  "n": 2925,
+  "n_correct": 1560,
+  "overall_answer_accuracy": 0.5333333333333333,
+  "parse_rate": 0.9894017094017094,
+  "protocol": "5-fold OOF StandardScaler+balanced logistic C=0.5; threshold=0.5; pre-answer last-prompt-token hidden",
+  "label": "greedy generated answer correctness; invalid parses count as wrong",
+  "fixed_layers": [
+    12,
+    13
+  ],
+  "layer_results": {
+    "12": {
+      "oof_auroc_predict_correctness": 0.5798159105851415,
+      "represented_known": {
+        "n": 1563,
+        "correct": 929,
+        "answer_accuracy": 0.5943698016634676,
+        "wilson_95ci": [
+          0.569824862938683,
+          0.6184520034534252
+        ]
+      },
+      "represented_unknown": {
+        "n": 1362,
+        "correct": 631,
+        "answer_accuracy": 0.4632892804698972,
+        "wilson_95ci": [
+          0.43694728996655036,
+          0.4898377703680928
+        ]
+      }
+    },
+    "13": {
+      "oof_auroc_predict_correctness": 0.6082206255283178,
+      "represented_known": {
+        "n": 1497,
+        "correct": 911,
+        "answer_accuracy": 0.6085504342017368,
+        "wilson_95ci": [
+          0.5835784290854849,
+          0.6329667616739529
+        ]
+      },
+      "represented_unknown": {
+        "n": 1428,
+        "correct": 649,
+        "answer_accuracy": 0.45448179271708683,
+        "wilson_95ci": [
+          0.4288129018414752,
+          0.48039492336909545
+        ]
+      }
+    }
+  },
+  "guardrail": "This tests within-dataset decodability/calibration. It is not the saved PopQA classifier and does not establish a universal knowledge direction."
+}
