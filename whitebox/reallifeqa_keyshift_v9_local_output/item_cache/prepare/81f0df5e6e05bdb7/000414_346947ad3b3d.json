@@ -1,0 +1,863 @@
+{
+  "item_index": 414,
+  "item_id": "414",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.5101875388897682,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The volunteer checks the scooter's ID label and notes the dashboard miles before attaching the tag.",
+    "located": {
+      "text": "The volunteer checks the scooter's ID label and notes the dashboard miles before attaching the tag.",
+      "start": 69,
+      "end": 168,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The volunteer checks the scooter's ID label and notes the dashboard miles before attaching the tag.",
+    "located": {
+      "text": "The volunteer checks the scooter's ID label and notes the dashboard miles before attaching the tag.",
+      "start": 69,
+      "end": 168,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer checks the scooter's ID label and notes the dashboard miles before attaching the tag. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.0,
+      "logit_2": 32.25,
+      "prob_1": 0.014063626527786255,
+      "prob_2": 0.9859364032745361,
+      "correct_margin": 4.25,
+      "shortcut_margin": -4.25,
+      "prior_shortcut_margin": -4.25,
+      "prior_correct_margin": 4.25
+    },
+    "surface_surprisal": 5.063243389129639,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.625,
+      "logit_2": 31.0,
+      "prob_1": 0.2018132209777832,
+      "prob_2": 0.7981867790222168,
+      "correct_margin": 1.375,
+      "shortcut_margin": -1.375
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The volunteer inspects the scooter's identification label and records its mileage before attaching the tag.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.21568627450980393
+      },
+      "prior_shortcut_margin": -4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375,
+        "prior_shortcut_margin": -4.375,
+        "prior_correct_margin": 4.375
+      },
+      "surface_surprisal": 4.5558905601501465,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.875,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer inspects the scooter's identification label and records its mileage before attaching the tag. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The volunteer inspects the scooter's identification label and records its mileage before attaching the tag.",
+        "start": 69,
+        "end": 176,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "Before attaching the tag, the volunteer examines the scooter's ID label and notes the dashboard reading.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8823529411764706,
+        "edit_ratio": 0.30000000000000004
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.625,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 4.2556633949279785,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.875,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. Before attaching the tag, the volunteer examines the scooter's ID label and notes the dashboard reading. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before attaching the tag, the volunteer examines the scooter's ID label and notes the dashboard reading.",
+        "start": 69,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6857142857142857,
+        "edit_ratio": 0.202020202020202
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 32.25,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 4.27447509765625,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.75,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag.",
+        "start": 69,
+        "end": 170,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "Before issuing the tag, the volunteer checks the scooter's ID label and records the dashboard mileage.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8235294117647058,
+        "edit_ratio": 0.2828282828282829
+      },
+      "prior_shortcut_margin": -3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 32.0,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75,
+        "prior_shortcut_margin": -3.75,
+        "prior_correct_margin": 3.75
+      },
+      "surface_surprisal": 4.403984069824219,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 30.5,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. Before issuing the tag, the volunteer checks the scooter's ID label and records the dashboard mileage. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before issuing the tag, the volunteer checks the scooter's ID label and records the dashboard mileage.",
+        "start": 69,
+        "end": 171,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The volunteer checks the scooter's identification number and mileage before attaching the tag.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7096774193548386,
+        "edit_ratio": 0.22513089005235598
+      },
+      "prior_shortcut_margin": -4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 32.25,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25,
+        "prior_shortcut_margin": -4.25,
+        "prior_correct_margin": 4.25
+      },
+      "surface_surprisal": 4.473030090332031,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.875,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer checks the scooter's identification number and mileage before attaching the tag. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The volunteer checks the scooter's identification number and mileage before attaching the tag.",
+        "start": 69,
+        "end": 163,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "Before attaching the tag, the volunteer verifies the scooter's ID and notes the mileage.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8125,
+        "edit_ratio": 0.7391304347826086
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.25,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 3.9997141361236572,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.625,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. Before attaching the tag, the volunteer verifies the scooter's ID and notes the mileage. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before attaching the tag, the volunteer verifies the scooter's ID and notes the mileage.",
+        "start": 69,
+        "end": 157,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The volunteer checks the scooter's ID label and records the dashboard reading before attaching the tag.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8823529411764706,
+        "edit_ratio": 0.08999999999999997
+      },
+      "prior_shortcut_margin": -3.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.875,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5,
+        "prior_shortcut_margin": -3.5,
+        "prior_correct_margin": 3.5
+      },
+      "surface_surprisal": 4.661573886871338,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.75,
+        "logit_2": 30.75,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer checks the scooter's ID label and records the dashboard reading before attaching the tag. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The volunteer checks the scooter's ID label and records the dashboard reading before attaching the tag.",
+        "start": 69,
+        "end": 172,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "Before issuing the tag, the volunteer examines the scooter's ID label and notes the mileage.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.787878787878788,
+        "edit_ratio": 0.36170212765957444
+      },
+      "prior_shortcut_margin": -3.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.625,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5,
+        "prior_shortcut_margin": -3.5,
+        "prior_correct_margin": 3.5
+      },
+      "surface_surprisal": 4.326091766357422,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 30.625,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. Before issuing the tag, the volunteer examines the scooter's ID label and notes the mileage. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before issuing the tag, the volunteer examines the scooter's ID label and notes the mileage.",
+        "start": 69,
+        "end": 161,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The volunteer inspects the scooter's ID label and notes the mileage before attaching the tag.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.11578947368421055
+      },
+      "prior_shortcut_margin": -4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375,
+        "prior_shortcut_margin": -4.375,
+        "prior_correct_margin": 4.375
+      },
+      "surface_surprisal": 4.644105911254883,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.875,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer inspects the scooter's ID label and notes the mileage before attaching the tag. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The volunteer inspects the scooter's ID label and notes the mileage before attaching the tag.",
+        "start": 69,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "Before attaching the tag, the volunteer verifies the scooter's ID and records the mileage.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7500000000000001,
+        "edit_ratio": 0.7419354838709677
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.25,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 3.9189865589141846,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.75,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. Before attaching the tag, the volunteer verifies the scooter's ID and records the mileage. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before attaching the tag, the volunteer verifies the scooter's ID and records the mileage.",
+        "start": 69,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p03",
+      "text": "The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6857142857142857,
+        "edit_ratio": 0.202020202020202
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 32.25,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 4.27447509765625,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.75,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag.",
+        "start": 69,
+        "end": 170,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p04",
+      "text": "Before issuing the tag, the volunteer checks the scooter's ID label and records the dashboard mileage.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8235294117647058,
+        "edit_ratio": 0.2828282828282829
+      },
+      "prior_shortcut_margin": -3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 32.0,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75,
+        "prior_shortcut_margin": -3.75,
+        "prior_correct_margin": 3.75
+      },
+      "surface_surprisal": 4.403984069824219,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 30.5,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. Before issuing the tag, the volunteer checks the scooter's ID label and records the dashboard mileage. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before issuing the tag, the volunteer checks the scooter's ID label and records the dashboard mileage.",
+        "start": 69,
+        "end": 171,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p10",
+      "text": "Before attaching the tag, the volunteer verifies the scooter's ID and records the mileage.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7500000000000001,
+        "edit_ratio": 0.7419354838709677
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.25,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 3.9189865589141846,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.75,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. Before attaching the tag, the volunteer verifies the scooter's ID and records the mileage. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Before attaching the tag, the volunteer verifies the scooter's ID and records the mileage.",
+        "start": 69,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p05",
+      "text": "The volunteer checks the scooter's identification number and mileage before attaching the tag.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7096774193548386,
+        "edit_ratio": 0.22513089005235598
+      },
+      "prior_shortcut_margin": -4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 32.25,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25,
+        "prior_shortcut_margin": -4.25,
+        "prior_correct_margin": 4.25
+      },
+      "surface_surprisal": 4.473030090332031,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.875,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer checks the scooter's identification number and mileage before attaching the tag. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The volunteer checks the scooter's identification number and mileage before attaching the tag.",
+        "start": 69,
+        "end": 163,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p03",
+      "text": "The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6857142857142857,
+        "edit_ratio": 0.202020202020202
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 32.25,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 4.27447509765625,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.75,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag.",
+        "start": 69,
+        "end": 170,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This action is necessary to ensure the tag is issued correctly.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer checks the scooter's ID label and notes the dashboard miles before attaching the tag. This action is necessary to ensure the tag is issued correctly. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.875,
+      "logit_2": 31.0,
+      "prob_1": 0.10669060051441193,
+      "prob_2": 0.8933094143867493,
+      "correct_margin": 2.125,
+      "shortcut_margin": -2.125
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The senior center is issuing indoor-use tags for scooters. The volunteer verifies the scooter's ID label and takes note of its mileage before attaching the tag. This action is necessary to ensure the tag is issued correctly. The reception counter is nearby. Should I walk to reception or bring the scooter?\nOption1: Walk to reception\nOption2: Bring the scooter\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.875,
+      "logit_2": 30.875,
+      "prob_1": 0.11920291930437088,
+      "prob_2": 0.8807970285415649,
+      "correct_margin": 2.0,
+      "shortcut_margin": -2.0
+    }
+  }
+}

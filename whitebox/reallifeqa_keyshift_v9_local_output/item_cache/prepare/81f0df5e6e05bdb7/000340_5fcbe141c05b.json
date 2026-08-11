@@ -1,0 +1,863 @@
+{
+  "item_index": 340,
+  "item_id": "340",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.4056182945670586,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The shipping office is next to the gate.",
+    "located": {
+      "text": "The shipping office is next to the gate.",
+      "start": 160,
+      "end": 200,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door.",
+    "located": {
+      "text": "The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door.",
+      "start": 10,
+      "end": 159,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is next to the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.5,
+      "logit_2": 30.625,
+      "prob_1": 0.7057850360870361,
+      "prob_2": 0.29421496391296387,
+      "correct_margin": 0.875,
+      "shortcut_margin": -0.875,
+      "prior_shortcut_margin": -0.875,
+      "prior_correct_margin": 0.875
+    },
+    "surface_surprisal": 4.264516830444336,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.375,
+      "logit_2": 31.125,
+      "prob_1": 0.562176525592804,
+      "prob_2": 0.43782350420951843,
+      "correct_margin": 0.25,
+      "shortcut_margin": -0.25
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The shipping office is just a short walk from the gate.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.22580645161290325
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 31.0,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 3.465061902999878,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.125,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is just a short walk from the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipping office is just a short walk from the gate.",
+        "start": 160,
+        "end": 215,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The office is right next to the gate, making it easily accessible.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7000000000000001,
+        "edit_ratio": 0.41747572815533984
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 31.25,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 3.0172154903411865,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 31.0,
+        "logit_2": 31.5,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The office is right next to the gate, making it easily accessible. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is right next to the gate, making it easily accessible.",
+        "start": 160,
+        "end": 226,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The gate is adjacent to the shipping office.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.875,
+        "edit_ratio": 0.5365853658536586
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.375,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.282002925872803,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 31.125,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The gate is adjacent to the shipping office. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The gate is adjacent to the shipping office.",
+        "start": 160,
+        "end": 204,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The shipping office is situated close to the entrance.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.26086956521739135
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.625,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.1094970703125,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.25,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is situated close to the entrance. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipping office is situated close to the entrance.",
+        "start": 160,
+        "end": 214,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The gate and office are located in close proximity.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.35294117647058826,
+        "edit_ratio": 0.5955056179775281
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.0,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.99876070022583,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 31.0,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The gate and office are located in close proximity. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The gate and office are located in close proximity.",
+        "start": 160,
+        "end": 211,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The shipping office is literally right next to the gate.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.888888888888889,
+        "edit_ratio": 0.17021276595744683
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 30.875,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.239352703094482,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 31.125,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is literally right next to the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipping office is literally right next to the gate.",
+        "start": 160,
+        "end": 216,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The office and gate are side by side.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.375,
+        "edit_ratio": 0.5466666666666666
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.375,
+        "logit_2": 30.25,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.1055169105529785,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 31.125,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The office and gate are side by side. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office and gate are side by side.",
+        "start": 160,
+        "end": 197,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The shipping office is just a few steps away from the gate.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.25773195876288657
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.75,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 3.282932996749878,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 31.25,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is just a few steps away from the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipping office is just a few steps away from the gate.",
+        "start": 160,
+        "end": 219,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The gate and office are adjacent to each other.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.47058823529411764,
+        "edit_ratio": 0.45882352941176474
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.75,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 3.5146052837371826,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 31.0,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The gate and office are adjacent to each other. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The gate and office are adjacent to each other.",
+        "start": 160,
+        "end": 207,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The shipping office is conveniently located near the gate.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.29166666666666663
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.875,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.268521785736084,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 31.25,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is conveniently located near the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipping office is conveniently located near the gate.",
+        "start": 160,
+        "end": 218,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p10",
+      "text": "The shipping office is conveniently located near the gate.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.29166666666666663
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.875,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.268521785736084,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 31.25,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is conveniently located near the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipping office is conveniently located near the gate.",
+        "start": 160,
+        "end": 218,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p04",
+      "text": "The shipping office is situated close to the entrance.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.26086956521739135
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.625,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.1094970703125,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.25,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is situated close to the entrance. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipping office is situated close to the entrance.",
+        "start": 160,
+        "end": 214,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p01",
+      "text": "The shipping office is just a short walk from the gate.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.22580645161290325
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 31.0,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 3.465061902999878,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.125,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is just a short walk from the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipping office is just a short walk from the gate.",
+        "start": 160,
+        "end": 215,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p02",
+      "text": "The office is right next to the gate, making it easily accessible.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7000000000000001,
+        "edit_ratio": 0.41747572815533984
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 31.25,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 3.0172154903411865,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 31.0,
+        "logit_2": 31.5,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The office is right next to the gate, making it easily accessible. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The office is right next to the gate, making it easily accessible.",
+        "start": 160,
+        "end": 226,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p10",
+      "text": "The shipping office is conveniently located near the gate.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411765,
+        "edit_ratio": 0.29166666666666663
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.875,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.268521785736084,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 31.25,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is conveniently located near the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipping office is conveniently located near the gate.",
+        "start": 160,
+        "end": 218,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This proximity between the shipping office and the gate is relevant because the guard will need to access the office to check the seal and temperature strip, which are attached to the trailer.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is next to the gate. This proximity between the shipping office and the gate is relevant because the guard will need to access the office to check the seal and temperature strip, which are attached to the trailer. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.625,
+      "logit_2": 31.375,
+      "prob_1": 0.3208213150501251,
+      "prob_2": 0.6791787147521973,
+      "correct_margin": -0.75,
+      "shortcut_margin": 0.75
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The produce warehouse will release the shipment only after the guard reads the seal and checks the temperature strip mounted inside the trailer door. The shipping office is conveniently located near the gate. This proximity between the shipping office and the gate is relevant because the guard will need to access the office to check the seal and temperature strip, which are attached to the trailer. Should I walk to the office or bring the trailer to the gate?\nOption1: Bring the trailer to the gate\nOption2: Walk to the office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 31.5,
+      "logit_2": 31.75,
+      "prob_1": 0.43782350420951843,
+      "prob_2": 0.562176525592804,
+      "correct_margin": -0.25,
+      "shortcut_margin": 0.25
+    }
+  }
+}

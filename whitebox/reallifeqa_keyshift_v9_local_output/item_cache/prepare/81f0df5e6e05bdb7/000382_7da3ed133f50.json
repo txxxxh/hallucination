@@ -1,0 +1,863 @@
+{
+  "item_index": 382,
+  "item_id": "382",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.31217931455326065,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The restringing ticket is ready.",
+    "located": {
+      "text": "The restringing ticket is ready.",
+      "start": 10,
+      "end": 42,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The stringer is at the machine to clamp the actual racket frame.",
+    "located": {
+      "text": "The stringer is at the machine to clamp the actual racket frame.",
+      "start": 43,
+      "end": 107,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The restringing ticket is ready. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.0,
+      "logit_2": 30.875,
+      "prob_1": 0.0534033328294754,
+      "prob_2": 0.9465966820716858,
+      "correct_margin": 2.875,
+      "shortcut_margin": -2.875,
+      "prior_shortcut_margin": -2.875,
+      "prior_correct_margin": 2.875
+    },
+    "surface_surprisal": 5.693205833435059,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.0,
+      "logit_2": 32.25,
+      "prob_1": 0.005220125894993544,
+      "prob_2": 0.9947799444198608,
+      "correct_margin": 5.25,
+      "shortcut_margin": -5.25
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The restringing job is ready.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8000000000000002,
+        "edit_ratio": 0.15254237288135597
+      },
+      "prior_shortcut_margin": -4.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 31.625,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": 4.625,
+        "shortcut_margin": -4.625,
+        "prior_shortcut_margin": -4.625,
+        "prior_correct_margin": 4.625
+      },
+      "surface_surprisal": 5.57553768157959,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 31.875,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": 4.875,
+        "shortcut_margin": -4.875
+      },
+      "prompt": "Scenario: The restringing job is ready. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The restringing job is ready.",
+        "start": 10,
+        "end": 39,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The ticket is prepared.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 1,
+        "notes": "The ticket is prepared does not convey the same information as The restringing ticket is ready."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666665,
+        "edit_ratio": 0.3207547169811321
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.125,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 6.146589756011963,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 31.75,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5
+      },
+      "prompt": "Scenario: The ticket is prepared. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The ticket is prepared.",
+        "start": 10,
+        "end": 33,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "All set for restringing.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "All set for restringing does not convey the same information as The restringing ticket is ready."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.22222222222222224,
+        "edit_ratio": 0.5185185185185186
+      },
+      "prior_shortcut_margin": -5.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.375,
+        "logit_2": 32.0,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625,
+        "prior_shortcut_margin": -5.625,
+        "prior_correct_margin": 5.625
+      },
+      "surface_surprisal": 5.547760009765625,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.75,
+        "logit_2": 31.75,
+        "prob_1": 0.006692850962281227,
+        "prob_2": 0.9933071732521057,
+        "correct_margin": 5.0,
+        "shortcut_margin": -5.0
+      },
+      "prompt": "Scenario: All set for restringing. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "All set for restringing.",
+        "start": 10,
+        "end": 34,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The stringing ticket is ready to go.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.12121212121212122
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.25,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 5.247310638427734,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 31.375,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: The stringing ticket is ready to go. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The stringing ticket is ready to go.",
+        "start": 10,
+        "end": 46,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The restringing process is about to begin.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 1,
+        "notes": "The restringing process is about to begin does not convey the same information as The restringing ticket is ready."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.36111111111111116
+      },
+      "prior_shortcut_margin": -5.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.375,
+        "logit_2": 31.625,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": 5.25,
+        "shortcut_margin": -5.25,
+        "prior_shortcut_margin": -5.25,
+        "prior_correct_margin": 5.25
+      },
+      "surface_surprisal": 3.7296762466430664,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.375,
+        "logit_2": 32.25,
+        "prob_1": 0.0028009270317852497,
+        "prob_2": 0.9971990585327148,
+        "correct_margin": 5.875,
+        "shortcut_margin": -5.875
+      },
+      "prompt": "Scenario: The restringing process is about to begin. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The restringing process is about to begin.",
+        "start": 10,
+        "end": 52,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "Everything is ready to restring the racket.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.5068493150684932
+      },
+      "prior_shortcut_margin": -6.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 31.75,
+        "prob_1": 0.0024726232513785362,
+        "prob_2": 0.9975274205207825,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0,
+        "prior_shortcut_margin": -6.0,
+        "prior_correct_margin": 6.0
+      },
+      "surface_surprisal": 4.3177690505981445,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.625,
+        "logit_2": 31.875,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": 5.25,
+        "shortcut_margin": -5.25
+      },
+      "prompt": "Scenario: Everything is ready to restring the racket. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Everything is ready to restring the racket.",
+        "start": 10,
+        "end": 53,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The restringing ticket is ready for use.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.11428571428571432
+      },
+      "prior_shortcut_margin": -2.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 30.875,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25,
+        "prior_shortcut_margin": -2.25,
+        "prior_correct_margin": 2.25
+      },
+      "surface_surprisal": 4.733561992645264,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 32.5,
+        "prob_1": 0.004070138093084097,
+        "prob_2": 0.9959298968315125,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: The restringing ticket is ready for use. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The restringing ticket is ready for use.",
+        "start": 10,
+        "end": 50,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The stringing ticket is complete.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 1,
+        "notes": "The stringing ticket is complete does not convey the same information as The restringing ticket is ready."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.2063492063492064
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.5,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 6.08851432800293,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 31.5,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125
+      },
+      "prompt": "Scenario: The stringing ticket is complete. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The stringing ticket is complete.",
+        "start": 10,
+        "end": 43,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "All necessary information is on the restringing ticket.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "All necessary information is on the restringing ticket does not convey the same information as The restringing ticket is ready."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846154,
+        "edit_ratio": 0.48235294117647054
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 31.5,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.358413219451904,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.125,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75
+      },
+      "prompt": "Scenario: All necessary information is on the restringing ticket. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "All necessary information is on the restringing ticket.",
+        "start": 10,
+        "end": 65,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The restringing job is cleared for processing.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 1,
+        "notes": "The restringing job is cleared for processing does not convey the same information as The restringing ticket is ready."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.39473684210526316
+      },
+      "prior_shortcut_margin": -3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 32.0,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625,
+        "prior_shortcut_margin": -3.625,
+        "prior_correct_margin": 3.625
+      },
+      "surface_surprisal": 5.245329856872559,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 32.0,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": 4.75,
+        "shortcut_margin": -4.75
+      },
+      "prompt": "Scenario: The restringing job is cleared for processing. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The restringing job is cleared for processing.",
+        "start": 10,
+        "end": 56,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p06",
+      "text": "Everything is ready to restring the racket.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.5068493150684932
+      },
+      "prior_shortcut_margin": -6.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 31.75,
+        "prob_1": 0.0024726232513785362,
+        "prob_2": 0.9975274205207825,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0,
+        "prior_shortcut_margin": -6.0,
+        "prior_correct_margin": 6.0
+      },
+      "surface_surprisal": 4.3177690505981445,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.625,
+        "logit_2": 31.875,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": 5.25,
+        "shortcut_margin": -5.25
+      },
+      "prompt": "Scenario: Everything is ready to restring the racket. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Everything is ready to restring the racket.",
+        "start": 10,
+        "end": 53,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "The restringing job is ready.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8000000000000002,
+        "edit_ratio": 0.15254237288135597
+      },
+      "prior_shortcut_margin": -4.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 31.625,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": 4.625,
+        "shortcut_margin": -4.625,
+        "prior_shortcut_margin": -4.625,
+        "prior_correct_margin": 4.625
+      },
+      "surface_surprisal": 5.57553768157959,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 31.875,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": 4.875,
+        "shortcut_margin": -4.875
+      },
+      "prompt": "Scenario: The restringing job is ready. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The restringing job is ready.",
+        "start": 10,
+        "end": 39,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p07",
+      "text": "The restringing ticket is ready for use.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.11428571428571432
+      },
+      "prior_shortcut_margin": -2.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 30.875,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25,
+        "prior_shortcut_margin": -2.25,
+        "prior_correct_margin": 2.25
+      },
+      "surface_surprisal": 4.733561992645264,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 32.5,
+        "prob_1": 0.004070138093084097,
+        "prob_2": 0.9959298968315125,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: The restringing ticket is ready for use. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The restringing ticket is ready for use.",
+        "start": 10,
+        "end": 50,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p04",
+      "text": "The stringing ticket is ready to go.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.12121212121212122
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.25,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 5.247310638427734,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 31.375,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: The stringing ticket is ready to go. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The stringing ticket is ready to go.",
+        "start": 10,
+        "end": 46,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p06",
+      "text": "Everything is ready to restring the racket.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.5068493150684932
+      },
+      "prior_shortcut_margin": -6.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 31.75,
+        "prob_1": 0.0024726232513785362,
+        "prob_2": 0.9975274205207825,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0,
+        "prior_shortcut_margin": -6.0,
+        "prior_correct_margin": 6.0
+      },
+      "surface_surprisal": 4.3177690505981445,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.625,
+        "logit_2": 31.875,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": 5.25,
+        "shortcut_margin": -5.25
+      },
+      "prompt": "Scenario: Everything is ready to restring the racket. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Everything is ready to restring the racket.",
+        "start": 10,
+        "end": 53,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The stringer is at the machine to clamp the actual racket frame, so the restringing ticket should be used to guide the process.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The restringing ticket is ready. The stringer is at the machine to clamp the actual racket frame, so the restringing ticket should be used to guide the process. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.625,
+      "logit_2": 31.875,
+      "prob_1": 0.09534946084022522,
+      "prob_2": 0.9046505093574524,
+      "correct_margin": 2.25,
+      "shortcut_margin": -2.25
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: Everything is ready to restring the racket. The stringer is at the machine to clamp the actual racket frame, so the restringing ticket should be used to guide the process. The stringer is at the machine to clamp the actual racket frame. What should I bring to the stringing machine?\nOption1: Only the restringing ticket\nOption2: The tennis racket\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.875,
+      "logit_2": 31.875,
+      "prob_1": 0.04742587357759476,
+      "prob_2": 0.9525741338729858,
+      "correct_margin": 3.0,
+      "shortcut_margin": -3.0
+    }
+  }
+}

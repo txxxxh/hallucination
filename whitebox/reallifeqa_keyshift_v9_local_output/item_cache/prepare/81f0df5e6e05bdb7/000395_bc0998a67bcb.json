@@ -1,0 +1,863 @@
+{
+  "item_index": 395,
+  "item_id": "395",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.6300440228046063,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The section label must be on the back before it goes on the rack.",
+    "located": {
+      "text": "The section label must be on the back before it goes on the rack.",
+      "start": 53,
+      "end": 118,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "I am turning in a classroom display board.",
+    "located": {
+      "text": "I am turning in a classroom display board.",
+      "start": 10,
+      "end": 52,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am turning in a classroom display board. The section label must be on the back before it goes on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.625,
+      "logit_2": 31.375,
+      "prob_1": 0.3208213150501251,
+      "prob_2": 0.6791787147521973,
+      "correct_margin": -0.75,
+      "shortcut_margin": 0.75,
+      "prior_shortcut_margin": 0.75,
+      "prior_correct_margin": -0.75
+    },
+    "surface_surprisal": 4.276920318603516,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.125,
+      "logit_2": 30.375,
+      "prob_1": 0.22270014882087708,
+      "prob_2": 0.7772998809814453,
+      "correct_margin": -1.25,
+      "shortcut_margin": 1.25
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The label has to be on the back before the board goes on the rack.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7586206896551724,
+        "edit_ratio": 0.17829457364341084
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.75,
+        "logit_2": 31.0,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 3.6816418170928955,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.25,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The label has to be on the back before the board goes on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label has to be on the back before the board goes on the rack.",
+        "start": 53,
+        "end": 119,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The section label must be placed on the back before the display board is put on the rack.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.75,
+        "edit_ratio": 0.22368421052631582
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.625,
+        "logit_2": 31.375,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 3.949422597885132,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.625,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The section label must be placed on the back before the display board is put on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The section label must be placed on the back before the display board is put on the rack.",
+        "start": 53,
+        "end": 142,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The label should be attached to the back of the board before it goes on the rack.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7096774193548386,
+        "edit_ratio": 0.2777777777777778
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 31.0,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 2.9112308025360107,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.0,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The label should be attached to the back of the board before it goes on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label should be attached to the back of the board before it goes on the rack.",
+        "start": 53,
+        "end": 134,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The label has to be on the back of the board before the board is placed on the rack.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6060606060606061,
+        "edit_ratio": 0.3197278911564626
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 31.0,
+        "logit_2": 31.125,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 2.7711985111236572,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.5,
+        "logit_2": 30.25,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The label has to be on the back of the board before the board is placed on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label has to be on the back of the board before the board is placed on the rack.",
+        "start": 53,
+        "end": 137,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The section label should be on the back of the display board before it goes on the rack.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8125000000000001,
+        "edit_ratio": 0.1920529801324503
+      },
+      "prior_shortcut_margin": 0.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 31.375,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875,
+        "prior_shortcut_margin": 0.875,
+        "prior_correct_margin": -0.875
+      },
+      "surface_surprisal": 3.8242459297180176,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.5,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The section label should be on the back of the display board before it goes on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The section label should be on the back of the display board before it goes on the rack.",
+        "start": 53,
+        "end": 141,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The label needs to be on the back of the board before it's put on the rack.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6875000000000001,
+        "edit_ratio": 0.26086956521739135
+      },
+      "prior_shortcut_margin": 1.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.5,
+        "logit_2": 30.625,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125,
+        "prior_shortcut_margin": 1.125,
+        "prior_correct_margin": -1.125
+      },
+      "surface_surprisal": 2.959078311920166,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 30.125,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The label needs to be on the back of the board before it's put on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label needs to be on the back of the board before it's put on the rack.",
+        "start": 53,
+        "end": 128,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The section label must be on the back before the board is turned in.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 1,
+        "notes": "Changes the scope of the constraint from 'before it goes on the rack' to 'before it's turned in'."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857143,
+        "edit_ratio": 0.23664122137404575
+      },
+      "prior_shortcut_margin": -0.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 31.375,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0,
+        "prior_shortcut_margin": -0.0,
+        "prior_correct_margin": 0.0
+      },
+      "surface_surprisal": 4.631299018859863,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.375,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The section label must be on the back before the board is turned in. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The section label must be on the back before the board is turned in.",
+        "start": 53,
+        "end": 121,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The label should be on the back of the board before it goes on the rack for display.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.75,
+        "edit_ratio": 0.2789115646258503
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 31.125,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 3.1360867023468018,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 30.125,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The label should be on the back of the board before it goes on the rack for display. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label should be on the back of the board before it goes on the rack for display.",
+        "start": 53,
+        "end": 137,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The section label has to be on the back of the board before it's put on the rack.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727273,
+        "edit_ratio": 0.18055555555555558
+      },
+      "prior_shortcut_margin": 1.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 31.0,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625,
+        "prior_shortcut_margin": 1.625,
+        "prior_correct_margin": -1.625
+      },
+      "surface_surprisal": 3.599517345428467,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.375,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The section label has to be on the back of the board before it's put on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The section label has to be on the back of the board before it's put on the rack.",
+        "start": 53,
+        "end": 134,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The label must be attached to the back of the board before it goes on the rack.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7741935483870968,
+        "edit_ratio": 0.22535211267605637
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 31.125,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 2.8447866439819336,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.125,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The label must be attached to the back of the board before it goes on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label must be attached to the back of the board before it goes on the rack.",
+        "start": 53,
+        "end": 132,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p10",
+      "text": "The label must be attached to the back of the board before it goes on the rack.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7741935483870968,
+        "edit_ratio": 0.22535211267605637
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 31.125,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 2.8447866439819336,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.125,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The label must be attached to the back of the board before it goes on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label must be attached to the back of the board before it goes on the rack.",
+        "start": 53,
+        "end": 132,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p08",
+      "text": "The label should be on the back of the board before it goes on the rack for display.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.75,
+        "edit_ratio": 0.2789115646258503
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 31.125,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 3.1360867023468018,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 30.125,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The label should be on the back of the board before it goes on the rack for display. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label should be on the back of the board before it goes on the rack for display.",
+        "start": 53,
+        "end": 137,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p09",
+      "text": "The section label has to be on the back of the board before it's put on the rack.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727273,
+        "edit_ratio": 0.18055555555555558
+      },
+      "prior_shortcut_margin": 1.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 31.0,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625,
+        "prior_shortcut_margin": 1.625,
+        "prior_correct_margin": -1.625
+      },
+      "surface_surprisal": 3.599517345428467,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.375,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The section label has to be on the back of the board before it's put on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The section label has to be on the back of the board before it's put on the rack.",
+        "start": 53,
+        "end": 134,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p02",
+      "text": "The section label must be placed on the back before the display board is put on the rack.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.75,
+        "edit_ratio": 0.22368421052631582
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.625,
+        "logit_2": 31.375,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 3.949422597885132,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.625,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The section label must be placed on the back before the display board is put on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The section label must be placed on the back before the display board is put on the rack.",
+        "start": 53,
+        "end": 142,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p10",
+      "text": "The label must be attached to the back of the board before it goes on the rack.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7741935483870968,
+        "edit_ratio": 0.22535211267605637
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 31.125,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 2.8447866439819336,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.125,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: I am turning in a classroom display board. The label must be attached to the back of the board before it goes on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The label must be attached to the back of the board before it goes on the rack.",
+        "start": 53,
+        "end": 132,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This means the label must be attached to the board before you put it on the rack.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am turning in a classroom display board. The section label must be on the back before it goes on the rack. This means the label must be attached to the board before you put it on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.0,
+      "logit_2": 29.5,
+      "prob_1": 0.9241418242454529,
+      "prob_2": 0.07585817575454712,
+      "correct_margin": 2.5,
+      "shortcut_margin": -2.5
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I am turning in a classroom display board. The label must be attached to the back of the board before it goes on the rack. This means the label must be attached to the board before you put it on the rack. What should I bring to the rack?\nOption1: The display board with the label attached\nOption2: Only the section label\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.625,
+      "logit_2": 30.125,
+      "prob_1": 0.8175744414329529,
+      "prob_2": 0.18242551386356354,
+      "correct_margin": 1.5,
+      "shortcut_margin": -1.5
+    }
+  }
+}

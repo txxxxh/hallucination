@@ -1,0 +1,863 @@
+{
+  "item_index": 413,
+  "item_id": "413",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.7856874213107393,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "I am handing proof to the finance clerk for a laptop reimbursement.",
+    "located": {
+      "text": "I am handing proof to the finance clerk for a laptop reimbursement.",
+      "start": 10,
+      "end": 77,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "I am handing proof to the finance clerk for a laptop reimbursement.",
+    "located": {
+      "text": "I am handing proof to the finance clerk for a laptop reimbursement.",
+      "start": 10,
+      "end": 77,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am handing proof to the finance clerk for a laptop reimbursement. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 31.0,
+      "logit_2": 31.375,
+      "prob_1": 0.4073334336280823,
+      "prob_2": 0.5926666259765625,
+      "correct_margin": -0.375,
+      "shortcut_margin": 0.375,
+      "prior_shortcut_margin": 0.375,
+      "prior_correct_margin": -0.375
+    },
+    "surface_surprisal": 5.155548095703125,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.875,
+      "logit_2": 30.25,
+      "prob_1": 0.08509904146194458,
+      "prob_2": 0.9149009585380554,
+      "correct_margin": -2.375,
+      "shortcut_margin": 2.375
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "I'm submitting paperwork to the finance clerk for a laptop reimbursement claim.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7199999999999999,
+        "edit_ratio": 0.18055555555555558
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 31.25,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 4.491660118103027,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.25,
+        "logit_2": 30.375,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": -2.125,
+        "shortcut_margin": 2.125
+      },
+      "prompt": "Scenario: I'm submitting paperwork to the finance clerk for a laptop reimbursement claim. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm submitting paperwork to the finance clerk for a laptop reimbursement claim.",
+        "start": 10,
+        "end": 89,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "I'm handing over documents to the finance clerk for reimbursement of a laptop purchase.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": false,
+        "naturalness": 3,
+        "notes": "uses 'purchase' instead of 'reimbursement'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7407407407407408,
+        "edit_ratio": 0.3026315789473685
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.75,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.026758193969727,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.0,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25
+      },
+      "prompt": "Scenario: I'm handing over documents to the finance clerk for reimbursement of a laptop purchase. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm handing over documents to the finance clerk for reimbursement of a laptop purchase.",
+        "start": 10,
+        "end": 97,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "I'm providing proof to the finance clerk for a laptop reimbursement request.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8,
+        "edit_ratio": 0.12056737588652477
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 31.375,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.525447368621826,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.375,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": -2.5,
+        "shortcut_margin": 2.5
+      },
+      "prompt": "Scenario: I'm providing proof to the finance clerk for a laptop reimbursement request. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm providing proof to the finance clerk for a laptop reimbursement request.",
+        "start": 10,
+        "end": 86,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.24
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 31.375,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.602880954742432,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 30.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25
+      },
+      "prompt": "Scenario: I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement.",
+        "start": 10,
+        "end": 95,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "I'm handing in the documents to the finance clerk for a laptop reimbursement claim.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7407407407407408,
+        "edit_ratio": 0.17567567567567566
+      },
+      "prior_shortcut_margin": 1.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 31.125,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125,
+        "prior_shortcut_margin": 1.125,
+        "prior_correct_margin": -1.125
+      },
+      "surface_surprisal": 4.3685150146484375,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.125,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25
+      },
+      "prompt": "Scenario: I'm handing in the documents to the finance clerk for a laptop reimbursement claim. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm handing in the documents to the finance clerk for a laptop reimbursement claim.",
+        "start": 10,
+        "end": 93,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "I'm submitting my reimbursement claim to the finance clerk for a laptop purchase.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "uses 'claim' instead of 'proof' and 'purchase' instead of 'reimbursement'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6923076923076924,
+        "edit_ratio": 0.34246575342465757
+      },
+      "prior_shortcut_margin": 2.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25,
+        "prior_shortcut_margin": 2.25,
+        "prior_correct_margin": -2.25
+      },
+      "surface_surprisal": 3.928898334503174,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.5,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I'm submitting my reimbursement claim to the finance clerk for a laptop purchase. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm submitting my reimbursement claim to the finance clerk for a laptop purchase.",
+        "start": 10,
+        "end": 91,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "I'm providing the required documents to the finance clerk for laptop reimbursement.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.22972972972972971
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 31.25,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.446078777313232,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.0,
+        "logit_2": 30.25,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25
+      },
+      "prompt": "Scenario: I'm providing the required documents to the finance clerk for laptop reimbursement. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm providing the required documents to the finance clerk for laptop reimbursement.",
+        "start": 10,
+        "end": 93,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "I'm handing over the necessary paperwork to the finance clerk for reimbursement of a laptop.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857143,
+        "edit_ratio": 0.3121019108280255
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 31.25,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 3.9863243103027344,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.0,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": -2.375,
+        "shortcut_margin": 2.375
+      },
+      "prompt": "Scenario: I'm handing over the necessary paperwork to the finance clerk for reimbursement of a laptop. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm handing over the necessary paperwork to the finance clerk for reimbursement of a laptop.",
+        "start": 10,
+        "end": 102,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "I'm submitting the claim to the finance clerk for reimbursement of a laptop purchase.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "uses 'claim' instead of 'proof' and 'purchase' instead of 'reimbursement'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666665,
+        "edit_ratio": 0.3733333333333333
+      },
+      "prior_shortcut_margin": 2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.75,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625,
+        "prior_shortcut_margin": 2.625,
+        "prior_correct_margin": -2.625
+      },
+      "surface_surprisal": 3.852342128753662,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.5,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I'm submitting the claim to the finance clerk for reimbursement of a laptop purchase. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm submitting the claim to the finance clerk for reimbursement of a laptop purchase.",
+        "start": 10,
+        "end": 95,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "I'm providing the necessary proof to the finance clerk for laptop reimbursement.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7199999999999999,
+        "edit_ratio": 0.1724137931034483
+      },
+      "prior_shortcut_margin": 1.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 31.625,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": -1.5,
+        "shortcut_margin": 1.5,
+        "prior_shortcut_margin": 1.5,
+        "prior_correct_margin": -1.5
+      },
+      "surface_surprisal": 4.708220958709717,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.375,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": -2.5,
+        "shortcut_margin": 2.5
+      },
+      "prompt": "Scenario: I'm providing the necessary proof to the finance clerk for laptop reimbursement. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm providing the necessary proof to the finance clerk for laptop reimbursement.",
+        "start": 10,
+        "end": 90,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p04",
+      "text": "I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.24
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 31.375,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.602880954742432,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 30.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25
+      },
+      "prompt": "Scenario: I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement.",
+        "start": 10,
+        "end": 95,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p03",
+      "text": "I'm providing proof to the finance clerk for a laptop reimbursement request.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8,
+        "edit_ratio": 0.12056737588652477
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 31.375,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.525447368621826,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.375,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": -2.5,
+        "shortcut_margin": 2.5
+      },
+      "prompt": "Scenario: I'm providing proof to the finance clerk for a laptop reimbursement request. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm providing proof to the finance clerk for a laptop reimbursement request.",
+        "start": 10,
+        "end": 86,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p10",
+      "text": "I'm providing the necessary proof to the finance clerk for laptop reimbursement.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7199999999999999,
+        "edit_ratio": 0.1724137931034483
+      },
+      "prior_shortcut_margin": 1.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 31.625,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": -1.5,
+        "shortcut_margin": 1.5,
+        "prior_shortcut_margin": 1.5,
+        "prior_correct_margin": -1.5
+      },
+      "surface_surprisal": 4.708220958709717,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.375,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": -2.5,
+        "shortcut_margin": 2.5
+      },
+      "prompt": "Scenario: I'm providing the necessary proof to the finance clerk for laptop reimbursement. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm providing the necessary proof to the finance clerk for laptop reimbursement.",
+        "start": 10,
+        "end": 90,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p05",
+      "text": "I'm handing in the documents to the finance clerk for a laptop reimbursement claim.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7407407407407408,
+        "edit_ratio": 0.17567567567567566
+      },
+      "prior_shortcut_margin": 1.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 31.125,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125,
+        "prior_shortcut_margin": 1.125,
+        "prior_correct_margin": -1.125
+      },
+      "surface_surprisal": 4.3685150146484375,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.125,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25
+      },
+      "prompt": "Scenario: I'm handing in the documents to the finance clerk for a laptop reimbursement claim. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm handing in the documents to the finance clerk for a laptop reimbursement claim.",
+        "start": 10,
+        "end": 93,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p04",
+      "text": "I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.24
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 31.375,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.602880954742432,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 30.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25
+      },
+      "prompt": "Scenario: I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement.",
+        "start": 10,
+        "end": 95,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The shortcut cue indicates that the finance clerk needs a scannable page, which should be interpreted in conjunction with the detected constraint that the original receipt is kept in the warranty folder.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am handing proof to the finance clerk for a laptop reimbursement. The shortcut cue indicates that the finance clerk needs a scannable page, which should be interpreted in conjunction with the detected constraint that the original receipt is kept in the warranty folder. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.375,
+      "logit_2": 31.0,
+      "prob_1": 0.16451644897460938,
+      "prob_2": 0.8354835510253906,
+      "correct_margin": -1.625,
+      "shortcut_margin": 1.625
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I'm submitting the necessary paperwork to the finance clerk for laptop reimbursement. The shortcut cue indicates that the finance clerk needs a scannable page, which should be interpreted in conjunction with the detected constraint that the original receipt is kept in the warranty folder. The clerk scans pages and returns no paper, while my warranty folder keeps the original receipt. What should I hand to the finance clerk?\nOption1: A printed copy of the receipt\nOption2: My only original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.25,
+      "logit_2": 31.25,
+      "prob_1": 0.11920291930437088,
+      "prob_2": 0.8807970285415649,
+      "correct_margin": -2.0,
+      "shortcut_margin": 2.0
+    }
+  }
+}

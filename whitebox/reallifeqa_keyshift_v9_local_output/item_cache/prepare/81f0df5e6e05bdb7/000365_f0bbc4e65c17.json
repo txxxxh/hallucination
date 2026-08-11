@@ -1,0 +1,863 @@
+{
+  "item_index": 365,
+  "item_id": "365",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.6256550114119998,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The service is live and the operator is switching cameras.",
+    "located": {
+      "text": "The service is live and the operator is switching cameras.",
+      "start": 98,
+      "end": 156,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "I need to tell the church livestream operator that the spare HDMI cable is on the rack.",
+    "located": {
+      "text": "I need to tell the church livestream operator that the spare HDMI cable is on the rack.",
+      "start": 10,
+      "end": 97,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The service is live and the operator is switching cameras. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.75,
+      "logit_2": 30.75,
+      "prob_1": 0.2689414322376251,
+      "prob_2": 0.7310585379600525,
+      "correct_margin": -1.0,
+      "shortcut_margin": 1.0,
+      "prior_shortcut_margin": 1.0,
+      "prior_correct_margin": -1.0
+    },
+    "surface_surprisal": 4.318998336791992,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.625,
+      "logit_2": 30.5,
+      "prob_1": 0.0534033328294754,
+      "prob_2": 0.9465966820716858,
+      "correct_margin": -2.875,
+      "shortcut_margin": 2.875
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The service is currently live and the operator is in the process of switching cameras.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8,
+        "edit_ratio": 0.19718309859154926
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.5,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 3.471658945083618,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The service is currently live and the operator is in the process of switching cameras. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The service is currently live and the operator is in the process of switching cameras.",
+        "start": 98,
+        "end": 184,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The livestream is underway and the operator is in the middle of a camera change.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.48,
+        "edit_ratio": 0.4411764705882353
+      },
+      "prior_shortcut_margin": -0.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.0,
+        "logit_2": 30.0,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0,
+        "prior_shortcut_margin": -0.0,
+        "prior_correct_margin": 0.0
+      },
+      "surface_surprisal": 3.2248423099517822,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.75,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The livestream is underway and the operator is in the middle of a camera change. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The livestream is underway and the operator is in the middle of a camera change.",
+        "start": 98,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The broadcast is happening right now and the operator is switching between cameras.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.3093525179856115
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 29.875,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 3.6443793773651123,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The broadcast is happening right now and the operator is switching between cameras. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The broadcast is happening right now and the operator is switching between cameras.",
+        "start": 98,
+        "end": 181,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "We're in the middle of a live service and the operator is switching cameras in real-time.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6428571428571429,
+        "edit_ratio": 0.32413793103448274
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 29.75,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 3.0829052925109863,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.875,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": -3.125,
+        "shortcut_margin": 3.125
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. We're in the middle of a live service and the operator is switching cameras in real-time. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "We're in the middle of a live service and the operator is switching cameras in real-time.",
+        "start": 98,
+        "end": 187,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The live stream is in progress and the operator is currently switching cameras.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7826086956521738,
+        "edit_ratio": 0.31851851851851853
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.375,
+        "logit_2": 29.875,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 3.5140256881713867,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.5,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The live stream is in progress and the operator is currently switching cameras. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The live stream is in progress and the operator is currently switching cameras.",
+        "start": 98,
+        "end": 177,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The service is being broadcast live and the operator is changing cameras at this moment.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7200000000000001,
+        "edit_ratio": 0.26388888888888884
+      },
+      "prior_shortcut_margin": 1.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.75,
+        "logit_2": 30.25,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": -1.5,
+        "shortcut_margin": 1.5,
+        "prior_shortcut_margin": 1.5,
+        "prior_correct_margin": -1.5
+      },
+      "surface_surprisal": 3.7426583766937256,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 30.625,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": -3.375,
+        "shortcut_margin": 3.375
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The service is being broadcast live and the operator is changing cameras at this moment. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The service is being broadcast live and the operator is changing cameras at this moment.",
+        "start": 98,
+        "end": 186,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The livestream is ongoing and the operator is switching cameras as we speak.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.303030303030303
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 30.375,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 3.611891269683838,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.625,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The livestream is ongoing and the operator is switching cameras as we speak. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The livestream is ongoing and the operator is switching cameras as we speak.",
+        "start": 98,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The live broadcast is happening and the operator is switching cameras live.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8181818181818182,
+        "edit_ratio": 0.2977099236641222
+      },
+      "prior_shortcut_margin": -0.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.125,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0,
+        "prior_shortcut_margin": -0.0,
+        "prior_correct_margin": 0.0
+      },
+      "surface_surprisal": 4.1547746658325195,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 30.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The live broadcast is happening and the operator is switching cameras live. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The live broadcast is happening and the operator is switching cameras live.",
+        "start": 98,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The service is live on air and the operator is switching cameras right now.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.1297709923664122
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.5,
+        "logit_2": 30.75,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 3.9579474925994873,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 30.625,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": -3.375,
+        "shortcut_margin": 3.375
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The service is live on air and the operator is switching cameras right now. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The service is live on air and the operator is switching cameras right now.",
+        "start": 98,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The livestream is currently live and the operator is in the midst of a camera transition.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5384615384615384,
+        "edit_ratio": 0.3793103448275862
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.125,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.203280448913574,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.625,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The livestream is currently live and the operator is in the midst of a camera transition. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The livestream is currently live and the operator is in the midst of a camera transition.",
+        "start": 98,
+        "end": 187,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p04",
+      "text": "We're in the middle of a live service and the operator is switching cameras in real-time.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6428571428571429,
+        "edit_ratio": 0.32413793103448274
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 29.75,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 3.0829052925109863,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.875,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": -3.125,
+        "shortcut_margin": 3.125
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. We're in the middle of a live service and the operator is switching cameras in real-time. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "We're in the middle of a live service and the operator is switching cameras in real-time.",
+        "start": 98,
+        "end": 187,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p02",
+      "text": "The livestream is underway and the operator is in the middle of a camera change.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.48,
+        "edit_ratio": 0.4411764705882353
+      },
+      "prior_shortcut_margin": -0.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.0,
+        "logit_2": 30.0,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0,
+        "prior_shortcut_margin": -0.0,
+        "prior_correct_margin": 0.0
+      },
+      "surface_surprisal": 3.2248423099517822,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.75,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The livestream is underway and the operator is in the middle of a camera change. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The livestream is underway and the operator is in the middle of a camera change.",
+        "start": 98,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p06",
+      "text": "The service is being broadcast live and the operator is changing cameras at this moment.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7200000000000001,
+        "edit_ratio": 0.26388888888888884
+      },
+      "prior_shortcut_margin": 1.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.75,
+        "logit_2": 30.25,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": -1.5,
+        "shortcut_margin": 1.5,
+        "prior_shortcut_margin": 1.5,
+        "prior_correct_margin": -1.5
+      },
+      "surface_surprisal": 3.7426583766937256,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 30.625,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": -3.375,
+        "shortcut_margin": 3.375
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The service is being broadcast live and the operator is changing cameras at this moment. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The service is being broadcast live and the operator is changing cameras at this moment.",
+        "start": 98,
+        "end": 186,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p09",
+      "text": "The service is live on air and the operator is switching cameras right now.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333333,
+        "edit_ratio": 0.1297709923664122
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.5,
+        "logit_2": 30.75,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 3.9579474925994873,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 30.625,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": -3.375,
+        "shortcut_margin": 3.375
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The service is live on air and the operator is switching cameras right now. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The service is live on air and the operator is switching cameras right now.",
+        "start": 98,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p04",
+      "text": "We're in the middle of a live service and the operator is switching cameras in real-time.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6428571428571429,
+        "edit_ratio": 0.32413793103448274
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 29.75,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 3.0829052925109863,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 30.875,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": -3.125,
+        "shortcut_margin": 3.125
+      },
+      "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. We're in the middle of a live service and the operator is switching cameras in real-time. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "We're in the middle of a live service and the operator is switching cameras in real-time.",
+        "start": 98,
+        "end": 187,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This situation indicates that the operator should be minimally disrupted while performing their task.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. The service is live and the operator is switching cameras. This situation indicates that the operator should be minimally disrupted while performing their task. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.25,
+      "logit_2": 30.875,
+      "prob_1": 0.06754669547080994,
+      "prob_2": 0.9324532747268677,
+      "correct_margin": -2.625,
+      "shortcut_margin": 2.625
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I need to tell the church livestream operator that the spare HDMI cable is on the rack. We're in the middle of a live service and the operator is switching cameras in real-time. This situation indicates that the operator should be minimally disrupted while performing their task. What should I do?\nOption1: Send the note through the operator chat\nOption2: Walk up and tell the operator out loud\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.5,
+      "logit_2": 30.75,
+      "prob_1": 0.09534946084022522,
+      "prob_2": 0.9046505093574524,
+      "correct_margin": -2.25,
+      "shortcut_margin": 2.25
+    }
+  }
+}

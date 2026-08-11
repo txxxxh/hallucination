@@ -1,0 +1,863 @@
+{
+  "item_index": 330,
+  "item_id": "330",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.633836070297435,
+    "predicted_hallucination": true,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The inspector is at the test bay to take the current emissions reading from the running truck.",
+    "located": {
+      "text": "The inspector is at the test bay to take the current emissions reading from the running truck.",
+      "start": 55,
+      "end": 149,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The inspector is at the test bay to take the current emissions reading from the running truck.",
+    "located": {
+      "text": "The inspector is at the test bay to take the current emissions reading from the running truck.",
+      "start": 55,
+      "end": 149,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay to take the current emissions reading from the running truck. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.625,
+      "logit_2": 30.5,
+      "prob_1": 0.13296423852443695,
+      "prob_2": 0.8670357465744019,
+      "correct_margin": 1.875,
+      "shortcut_margin": -1.875,
+      "prior_shortcut_margin": -1.875,
+      "prior_correct_margin": 1.875
+    },
+    "surface_surprisal": 4.184907913208008,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.0,
+      "logit_2": 32.0,
+      "prob_1": 0.01798621006309986,
+      "prob_2": 0.9820137619972229,
+      "correct_margin": 4.0,
+      "shortcut_margin": -4.0
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The inspector is at the test bay, ready to take the current emissions reading from the running truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9714285714285714,
+        "edit_ratio": 0.03125
+      },
+      "prior_shortcut_margin": -1.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.625,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625,
+        "prior_shortcut_margin": -1.625,
+        "prior_correct_margin": 1.625
+      },
+      "surface_surprisal": 3.8452751636505127,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 32.25,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay, ready to take the current emissions reading from the running truck. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay, ready to take the current emissions reading from the running truck.",
+        "start": 55,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The inspector is at the test bay to collect the current emissions reading from the truck that's already running.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8648648648648648,
+        "edit_ratio": 0.17647058823529416
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.125,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 4.270576000213623,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.875,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay to collect the current emissions reading from the truck that's already running. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay to collect the current emissions reading from the truck that's already running.",
+        "start": 55,
+        "end": 167,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8421052631578947,
+        "edit_ratio": 0.2018779342723005
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 32.0,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 4.063596248626709,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating.",
+        "start": 55,
+        "end": 176,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The inspector is at the test bay to take a reading of the current emissions from the truck that's currently running.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8717948717948718,
+        "edit_ratio": 0.24038461538461542
+      },
+      "prior_shortcut_margin": -3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 31.125,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875,
+        "prior_shortcut_margin": -3.875,
+        "prior_correct_margin": 3.875
+      },
+      "surface_surprisal": 3.78788423538208,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.875,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay to take a reading of the current emissions from the truck that's currently running. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay to take a reading of the current emissions from the truck that's currently running.",
+        "start": 55,
+        "end": 171,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The inspector is at the test bay, ready to take a current emissions reading from the truck that's in operation.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.18811881188118806
+      },
+      "prior_shortcut_margin": -3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 31.25,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875,
+        "prior_shortcut_margin": -3.875,
+        "prior_correct_margin": 3.875
+      },
+      "surface_surprisal": 4.074845314025879,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 32.25,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay, ready to take a current emissions reading from the truck that's in operation. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay, ready to take a current emissions reading from the truck that's in operation.",
+        "start": 55,
+        "end": 166,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The inspector is at the test bay to take the emissions reading from the truck that's currently on the move.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.22613065326633164
+      },
+      "prior_shortcut_margin": -3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 31.0,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75,
+        "prior_shortcut_margin": -3.75,
+        "prior_correct_margin": 3.75
+      },
+      "surface_surprisal": 4.125973224639893,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.375,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay to take the emissions reading from the truck that's currently on the move. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay to take the emissions reading from the truck that's currently on the move.",
+        "start": 55,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The inspector is at the test bay, ready to collect the emissions reading from the truck that's currently running.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8108108108108107,
+        "edit_ratio": 0.2549019607843137
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.0,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 3.9294800758361816,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 32.25,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay, ready to collect the emissions reading from the truck that's currently running. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay, ready to collect the emissions reading from the truck that's currently running.",
+        "start": 55,
+        "end": 168,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The inspector is at the test bay to take the current emissions reading from the truck that's in motion.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8648648648648648,
+        "edit_ratio": 0.1282051282051282
+      },
+      "prior_shortcut_margin": -4.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 31.375,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125,
+        "prior_shortcut_margin": -4.125,
+        "prior_correct_margin": 4.125
+      },
+      "surface_surprisal": 4.325738906860352,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.625,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay to take the current emissions reading from the truck that's in motion. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay to take the current emissions reading from the truck that's in motion.",
+        "start": 55,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The inspector is at the test bay to collect the current emissions reading from the running vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8823529411764706,
+        "edit_ratio": 0.09947643979057597
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.0,
+        "logit_2": 30.375,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 4.165855407714844,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 32.25,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay to collect the current emissions reading from the running vehicle. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay to collect the current emissions reading from the running vehicle.",
+        "start": 55,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The inspector is at the test bay, ready to take the emissions reading from the truck that's currently in operation.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.2524271844660194
+      },
+      "prior_shortcut_margin": -3.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.0,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5,
+        "prior_shortcut_margin": -3.5,
+        "prior_correct_margin": 3.5
+      },
+      "surface_surprisal": 3.691450834274292,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay, ready to take the emissions reading from the truck that's currently in operation. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay, ready to take the emissions reading from the truck that's currently in operation.",
+        "start": 55,
+        "end": 170,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p03",
+      "text": "The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8421052631578947,
+        "edit_ratio": 0.2018779342723005
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 32.0,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 4.063596248626709,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating.",
+        "start": 55,
+        "end": 176,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p06",
+      "text": "The inspector is at the test bay to take the emissions reading from the truck that's currently on the move.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.22613065326633164
+      },
+      "prior_shortcut_margin": -3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 31.0,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75,
+        "prior_shortcut_margin": -3.75,
+        "prior_correct_margin": 3.75
+      },
+      "surface_surprisal": 4.125973224639893,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.375,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay to take the emissions reading from the truck that's currently on the move. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay to take the emissions reading from the truck that's currently on the move.",
+        "start": 55,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p09",
+      "text": "The inspector is at the test bay to collect the current emissions reading from the running vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8823529411764706,
+        "edit_ratio": 0.09947643979057597
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.0,
+        "logit_2": 30.375,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 4.165855407714844,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 32.25,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay to collect the current emissions reading from the running vehicle. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay to collect the current emissions reading from the running vehicle.",
+        "start": 55,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p01",
+      "text": "The inspector is at the test bay, ready to take the current emissions reading from the running truck.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9714285714285714,
+        "edit_ratio": 0.03125
+      },
+      "prior_shortcut_margin": -1.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.625,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625,
+        "prior_shortcut_margin": -1.625,
+        "prior_correct_margin": 1.625
+      },
+      "surface_surprisal": 3.8452751636505127,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 32.25,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay, ready to take the current emissions reading from the running truck. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is at the test bay, ready to take the current emissions reading from the running truck.",
+        "start": 55,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p03",
+      "text": "The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8421052631578947,
+        "edit_ratio": 0.2018779342723005
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 32.0,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 4.063596248626709,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": 4.375,
+        "shortcut_margin": -4.375
+      },
+      "prompt": "Scenario: The food-truck registration packet is ready. The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating.",
+        "start": 55,
+        "end": 176,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The inspector's presence at the test bay to take the current emissions reading from the running truck implies that the emissions reading can only be taken from the running truck.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The food-truck registration packet is ready. The inspector is at the test bay to take the current emissions reading from the running truck. The inspector's presence at the test bay to take the current emissions reading from the running truck implies that the emissions reading can only be taken from the running truck. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.75,
+      "logit_2": 32.75,
+      "prob_1": 0.01798621006309986,
+      "prob_2": 0.9820137619972229,
+      "correct_margin": 4.0,
+      "shortcut_margin": -4.0
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The food-truck registration packet is ready. The inspector is waiting at the test bay to take the current emissions reading from the truck that's currently operating. The inspector's presence at the test bay to take the current emissions reading from the running truck implies that the emissions reading can only be taken from the running truck. Should I drive the food truck into the bay or walk into the bay without it?\nOption1: Walk into the bay without the food truck\nOption2: Drive the food truck into the bay\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.875,
+      "logit_2": 32.75,
+      "prob_1": 0.020332353189587593,
+      "prob_2": 0.9796676635742188,
+      "correct_margin": 3.875,
+      "shortcut_margin": -3.875
+    }
+  }
+}
