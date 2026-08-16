@@ -1,0 +1,39 @@
+{
+  "n_rows": 1800,
+  "n_with_logprobs": 1800,
+  "n_items_with_logprobs": 300,
+  "within_item_slope": {
+    "n_items_used": 300,
+    "mean_slope": 0.04136,
+    "median_slope": 0.05982,
+    "frac_negative": 0.35,
+    "mean_spearman": 0.1989,
+    "t_stat": 5.728,
+    "t_p_one_sided_less": 0.9999999876349516,
+    "wilcoxon_p_one_sided_less": 0.9999999924833208,
+    "supported": false,
+    "note": "margin = logP(NEED_MORE) - logP(SOLVE)。长度偏差对固定标签恒定, 在同题跨预算差分中抵消。斜率显著<0 = 预算越大越不想要更多 => 决策变量确实读到了声明供给。"
+  },
+  "margin_insufficient_vs_sufficient": {
+    "n_items": 134,
+    "mean_diff": -0.13884,
+    "frac_positive": 0.3881,
+    "wilcoxon_p_one_sided_greater": 0.9999091419553696,
+    "note": "预算不足时 margin 应更高(更倾向 NEED_MORE)。差值>0 且显著 = 供给敏感。"
+  },
+  "label_score_summary": {
+    "solve": {
+      "mean_logprob": -1.215,
+      "n": 1800
+    },
+    "need_more": {
+      "mean_logprob": -6.2392,
+      "n": 1800
+    },
+    "abstain": {
+      "mean_logprob": -6.4236,
+      "n": 1800
+    },
+    "note": "若各标签均值差距远大于题内 margin 的波动幅度, 说明 argmax 被长度/先验伪影主导, 应只信差分结果。"
+  }
+}

@@ -1,0 +1,573 @@
+{
+  "method": "open-ended test-time interventional multimodal span role-mediated detector v8 (top-k answer-attention selection)",
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "data": "/home/tong56/other_bench/HaluEval/qa_data.json",
+  "n_input": 1000,
+  "n_examples": 1000,
+  "n_extracted": 1000,
+  "n_failed": 0,
+  "n_refusal_or_unlabeled": 2,
+  "n_valid": 998,
+  "n_train": 748,
+  "n_test": 250,
+  "train_positive_rate": 0.39705882352941174,
+  "test_positive_rate": 0.396,
+  "support_scale_from_train": 0.3894704000733793,
+  "interventions_used_for_prediction": [
+    "delete",
+    "neutralize",
+    "mask"
+  ],
+  "span_selection": {
+    "method": "top_k_answer_to_span_attention",
+    "max_intervention_spans": 4,
+    "control_spans_used": false,
+    "layers": "last_quarter",
+    "last_n": null,
+    "score": "hybrid",
+    "hybrid_density_weight": 0.7,
+    "answer_token_aggregation": "mean",
+    "head_aggregation": "mean"
+  },
+  "test_prediction_uses_reference_features": false,
+  "references_used_for_train_pseudo_roles": true,
+  "references_used_for_final_evaluation": true,
+  "primary_feature_set": "behavior_attention",
+  "feature_sets_evaluated": [
+    "behavior_attention",
+    "behavior_spectral",
+    "behavior_gradient"
+  ],
+  "feature_set_comparison": {
+    "behavior_attention": {
+      "feature_set": "behavior_attention",
+      "feature_families": [
+        "behavior",
+        "attention"
+      ],
+      "role_head": {
+        "n_input_features": 318,
+        "n_training_spans": 2619,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.9930024147033691
+      },
+      "span_role_train_oof": {
+        "n": 2619,
+        "accuracy": 0.8003054600992745,
+        "log_loss": 0.4311370546426882,
+        "class_counts": {
+          "constraint": 858,
+          "shortcut": 625,
+          "irrelevant": 1136
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.9055235886581712,
+            "auprc": 0.7821318165241893
+          },
+          "shortcut": {
+            "auroc": 0.8830876629889668,
+            "auprc": 0.6961364371458714
+          },
+          "irrelevant": {
+            "auroc": 0.9962622159117891,
+            "auprc": 0.9950420391941882
+          }
+        },
+        "macro_ovr_auroc": 0.9282911558529756
+      },
+      "selected_threshold_from_train_oof": 0.4555860757827759,
+      "role_mechanism": {
+        "bias": -0.7881922721862793,
+        "beta_shortcut_mean": 1.9751372337341309,
+        "beta_constraint_mean": 1.7319931983947754,
+        "beta_shortcut_top1": 0.7051485180854797,
+        "beta_shortcut_topk": 1.1213504076004028,
+        "formula": "bias + b_s_mean*shortcut_mean - b_c_mean*constraint_mean + b_s_top1*shortcut_top1 + b_s_topk*shortcut_topk"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 748,
+          "positive_rate": 0.39705882352941174,
+          "threshold": 0.4555860757827759,
+          "accuracy": 0.7205882352941176,
+          "precision": 0.6189189189189189,
+          "recall": 0.7710437710437711,
+          "f1": 0.6866566716641679,
+          "confusion_matrix": [
+            [
+              310,
+              141
+            ],
+            [
+              68,
+              229
+            ]
+          ],
+          "auroc": 0.8069460308928158,
+          "auprc": 0.7677498850724422
+        },
+        "train_full": {
+          "n": 748,
+          "positive_rate": 0.39705882352941174,
+          "threshold": 0.4555860757827759,
+          "accuracy": 0.7847593582887701,
+          "precision": 0.6910112359550562,
+          "recall": 0.8282828282828283,
+          "f1": 0.7534456355283308,
+          "confusion_matrix": [
+            [
+              341,
+              110
+            ],
+            [
+              51,
+              246
+            ]
+          ],
+          "auroc": 0.883961566888396,
+          "auprc": 0.8585929757562147
+        },
+        "test": {
+          "n": 250,
+          "positive_rate": 0.396,
+          "threshold": 0.4555860757827759,
+          "accuracy": 0.7,
+          "precision": 0.5882352941176471,
+          "recall": 0.8080808080808081,
+          "f1": 0.6808510638297872,
+          "confusion_matrix": [
+            [
+              95,
+              56
+            ],
+            [
+              19,
+              80
+            ]
+          ],
+          "auroc": 0.8209244765536157,
+          "auprc": 0.7951123918814418
+        }
+      }
+    },
+    "behavior_spectral": {
+      "feature_set": "behavior_spectral",
+      "feature_families": [
+        "behavior",
+        "spectral"
+      ],
+      "role_head": {
+        "n_input_features": 1278,
+        "n_training_spans": 2619,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.906559944152832
+      },
+      "span_role_train_oof": {
+        "n": 2619,
+        "accuracy": 0.806032836960672,
+        "log_loss": 0.4745159830746952,
+        "class_counts": {
+          "constraint": 858,
+          "shortcut": 625,
+          "irrelevant": 1136
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.9150540922261537,
+            "auprc": 0.8043340633949404
+          },
+          "shortcut": {
+            "auroc": 0.8852228686058174,
+            "auprc": 0.715052894101866
+          },
+          "irrelevant": {
+            "auroc": 0.9930948638560968,
+            "auprc": 0.9900470910976281
+          }
+        },
+        "macro_ovr_auroc": 0.9311239415626892
+      },
+      "selected_threshold_from_train_oof": 0.5509693026542664,
+      "role_mechanism": {
+        "bias": -1.039894461631775,
+        "beta_shortcut_mean": 1.6533714532852173,
+        "beta_constraint_mean": 1.4680641889572144,
+        "beta_shortcut_top1": 1.5854527950286865,
+        "beta_shortcut_topk": 0.43957868218421936,
+        "formula": "bias + b_s_mean*shortcut_mean - b_c_mean*constraint_mean + b_s_top1*shortcut_top1 + b_s_topk*shortcut_topk"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 748,
+          "positive_rate": 0.39705882352941174,
+          "threshold": 0.5509693026542664,
+          "accuracy": 0.7767379679144385,
+          "precision": 0.711038961038961,
+          "recall": 0.7373737373737373,
+          "f1": 0.7239669421487603,
+          "confusion_matrix": [
+            [
+              362,
+              89
+            ],
+            [
+              78,
+              219
+            ]
+          ],
+          "auroc": 0.8343747900288919,
+          "auprc": 0.8058524430739209
+        },
+        "train_full": {
+          "n": 748,
+          "positive_rate": 0.39705882352941174,
+          "threshold": 0.5509693026542664,
+          "accuracy": 0.8262032085561497,
+          "precision": 0.7737704918032787,
+          "recall": 0.7946127946127947,
+          "f1": 0.7840531561461794,
+          "confusion_matrix": [
+            [
+              382,
+              69
+            ],
+            [
+              61,
+              236
+            ]
+          ],
+          "auroc": 0.8979745720322218,
+          "auprc": 0.8837087766817894
+        },
+        "test": {
+          "n": 250,
+          "positive_rate": 0.396,
+          "threshold": 0.5509693026542664,
+          "accuracy": 0.708,
+          "precision": 0.625,
+          "recall": 0.6565656565656566,
+          "f1": 0.6403940886699507,
+          "confusion_matrix": [
+            [
+              112,
+              39
+            ],
+            [
+              34,
+              65
+            ]
+          ],
+          "auroc": 0.7796508127633957,
+          "auprc": 0.7537563359333439
+        }
+      }
+    },
+    "behavior_gradient": {
+      "feature_set": "behavior_gradient",
+      "feature_families": [
+        "behavior",
+        "gradient"
+      ],
+      "role_head": {
+        "n_input_features": 162,
+        "n_training_spans": 2619,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.9999869465827942
+      },
+      "span_role_train_oof": {
+        "n": 2619,
+        "accuracy": 0.7796869033982436,
+        "log_loss": 0.469153472794943,
+        "class_counts": {
+          "constraint": 858,
+          "shortcut": 625,
+          "irrelevant": 1136
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.8741675700789842,
+            "auprc": 0.6995294380370405
+          },
+          "shortcut": {
+            "auroc": 0.8523201604814443,
+            "auprc": 0.6024554825553213
+          },
+          "irrelevant": {
+            "auroc": 0.9960550558916548,
+            "auprc": 0.9859031374141066
+          }
+        },
+        "macro_ovr_auroc": 0.9075142621506944
+      },
+      "selected_threshold_from_train_oof": 0.50713711977005,
+      "role_mechanism": {
+        "bias": -1.0226308107376099,
+        "beta_shortcut_mean": 1.5789989233016968,
+        "beta_constraint_mean": 1.1087567806243896,
+        "beta_shortcut_top1": 1.6052696704864502,
+        "beta_shortcut_topk": 0.14502117037773132,
+        "formula": "bias + b_s_mean*shortcut_mean - b_c_mean*constraint_mean + b_s_top1*shortcut_top1 + b_s_topk*shortcut_topk"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 748,
+          "positive_rate": 0.39705882352941174,
+          "threshold": 0.50713711977005,
+          "accuracy": 0.6844919786096256,
+          "precision": 0.5938461538461538,
+          "recall": 0.6498316498316499,
+          "f1": 0.6205787781350482,
+          "confusion_matrix": [
+            [
+              319,
+              132
+            ],
+            [
+              104,
+              193
+            ]
+          ],
+          "auroc": 0.7246522878451925,
+          "auprc": 0.6399889380007711
+        },
+        "train_full": {
+          "n": 748,
+          "positive_rate": 0.39705882352941174,
+          "threshold": 0.50713711977005,
+          "accuracy": 0.7286096256684492,
+          "precision": 0.6546052631578947,
+          "recall": 0.67003367003367,
+          "f1": 0.6622296173044925,
+          "confusion_matrix": [
+            [
+              346,
+              105
+            ],
+            [
+              98,
+              199
+            ]
+          ],
+          "auroc": 0.7979275385040352,
+          "auprc": 0.7576989754136854
+        },
+        "test": {
+          "n": 250,
+          "positive_rate": 0.396,
+          "threshold": 0.50713711977005,
+          "accuracy": 0.68,
+          "precision": 0.5855855855855856,
+          "recall": 0.6565656565656566,
+          "f1": 0.6190476190476191,
+          "confusion_matrix": [
+            [
+              105,
+              46
+            ],
+            [
+              34,
+              65
+            ]
+          ],
+          "auroc": 0.7427252659040738,
+          "auprc": 0.6765352554486139
+        }
+      }
+    }
+  },
+  "feature_set_item_test_auroc_ranking": [
+    "behavior_attention",
+    "behavior_spectral",
+    "behavior_gradient"
+  ],
+  "feature_set_span_role_oof_auroc_ranking": [
+    "behavior_spectral",
+    "behavior_attention",
+    "behavior_gradient"
+  ],
+  "role_pseudo_label_counts": {
+    "constraint": 858,
+    "shortcut": 625,
+    "irrelevant": 1136,
+    "ambiguous": 1373
+  },
+  "primary_metrics": {
+    "train_oof": {
+      "n": 748,
+      "positive_rate": 0.39705882352941174,
+      "threshold": 0.4555860757827759,
+      "accuracy": 0.7205882352941176,
+      "precision": 0.6189189189189189,
+      "recall": 0.7710437710437711,
+      "f1": 0.6866566716641679,
+      "confusion_matrix": [
+        [
+          310,
+          141
+        ],
+        [
+          68,
+          229
+        ]
+      ],
+      "auroc": 0.8069460308928158,
+      "auprc": 0.7677498850724422
+    },
+    "train_full": {
+      "n": 748,
+      "positive_rate": 0.39705882352941174,
+      "threshold": 0.4555860757827759,
+      "accuracy": 0.7847593582887701,
+      "precision": 0.6910112359550562,
+      "recall": 0.8282828282828283,
+      "f1": 0.7534456355283308,
+      "confusion_matrix": [
+        [
+          341,
+          110
+        ],
+        [
+          51,
+          246
+        ]
+      ],
+      "auroc": 0.883961566888396,
+      "auprc": 0.8585929757562147
+    },
+    "test": {
+      "n": 250,
+      "positive_rate": 0.396,
+      "threshold": 0.4555860757827759,
+      "accuracy": 0.7,
+      "precision": 0.5882352941176471,
+      "recall": 0.8080808080808081,
+      "f1": 0.6808510638297872,
+      "confusion_matrix": [
+        [
+          95,
+          56
+        ],
+        [
+          19,
+          80
+        ]
+      ],
+      "auroc": 0.8209244765536157,
+      "auprc": 0.7951123918814418
+    }
+  },
+  "primary_role_mechanism": {
+    "bias": -0.7881922721862793,
+    "beta_shortcut_mean": 1.9751372337341309,
+    "beta_constraint_mean": 1.7319931983947754,
+    "beta_shortcut_top1": 0.7051485180854797,
+    "beta_shortcut_topk": 1.1213504076004028,
+    "formula": "bias + b_s_mean*shortcut_mean - b_c_mean*constraint_mean + b_s_top1*shortcut_top1 + b_s_topk*shortcut_topk"
+  },
+  "primary_selected_threshold_from_train_oof": 0.4555860757827759,
+  "shortcut_explanatory_statistics_primary": {
+    "shortcut_evidence_by_outcome": {
+      "hallucination": {
+        "n": 99,
+        "mean": 0.5524934627717794,
+        "median": 0.5525704026222229,
+        "std": 0.20389573425188712,
+        "bootstrap_mean_95_ci": [
+          0.509599838825413,
+          0.5941786638160019
+        ]
+      },
+      "correct": {
+        "n": 151,
+        "mean": 0.29551995111679863,
+        "median": 0.28975388407707214,
+        "std": 0.18905107953106162,
+        "bootstrap_mean_95_ci": [
+          0.2648518870986603,
+          0.32567108014974283
+        ]
+      },
+      "mean_difference_hallucination_minus_correct": 0.2569735116549807,
+      "difference_bootstrap_95_ci": [
+        0.20470289550251386,
+        0.30819265192553735
+      ],
+      "label_permutation_p_value": 0.0004997501249375312,
+      "cohens_d": 1.3120956152444572,
+      "shortcut_evidence_auroc": 0.818114924075189,
+      "shortcut_evidence_auprc": 0.7708020994247168
+    },
+    "shortcut_evidence_dose_response": [
+      {
+        "quartile": 1,
+        "n": 63,
+        "shortcut_evidence_min": 0.00018075133266393095,
+        "shortcut_evidence_max": 0.2074347585439682,
+        "hallucination_rate": 0.09523809523809523
+      },
+      {
+        "quartile": 2,
+        "n": 63,
+        "shortcut_evidence_min": 0.21502268314361572,
+        "shortcut_evidence_max": 0.4090920388698578,
+        "hallucination_rate": 0.23809523809523808
+      },
+      {
+        "quartile": 3,
+        "n": 62,
+        "shortcut_evidence_min": 0.40934067964553833,
+        "shortcut_evidence_max": 0.5525704026222229,
+        "hallucination_rate": 0.46774193548387094
+      },
+      {
+        "quartile": 4,
+        "n": 62,
+        "shortcut_evidence_min": 0.5589231848716736,
+        "shortcut_evidence_max": 0.9575916528701782,
+        "hallucination_rate": 0.7903225806451613
+      }
+    ]
+  },
+  "files": {
+    "base_open_features": "/home/tong56/other_bench/HaluEval/v8_llama_1000_maxspan10_chain/base_open_features.jsonl",
+    "intervention_open_features": "/home/tong56/other_bench/HaluEval/v8_llama_1000_maxspan10_chain/intervention_open_features.jsonl",
+    "predictions": "/home/tong56/other_bench/HaluEval/v8_llama_1000_maxspan10_chain/predictions.jsonl",
+    "model_bundle": "/home/tong56/other_bench/HaluEval/v8_llama_1000_maxspan10_chain/openended_v8_bundle.joblib",
+    "item_cache": "/home/tong56/other_bench/HaluEval/v8_llama_1000_maxspan10_chain/item_cache"
+  },
+  "failed_items": [],
+  "method_notes": {
+    "open_ended_generation": true,
+    "teacher_forcing_target": "original generated answer",
+    "span_proposal": "top-k answer-to-span attention only; no control span",
+    "attention_selection_is_part_of_detector": true,
+    "behavior_support_definition": "mean token logP(original answer|base)-mean token logP(original answer|intervention)",
+    "intervention_regeneration_used": true,
+    "span_roles": [
+      "constraint",
+      "shortcut",
+      "irrelevant"
+    ],
+    "item_evidence_pooling": "usage-normalized means plus shortcut top1/topk",
+    "item_mechanism_sign_constraints": true,
+    "detector_has_global_residual_channel": false,
+    "feature_ablation_warning": "Because attention proposes the intervened spans, attention-based feature sets have a proposal-stage advantage. Use an all-span subset for a proposal-independent family ablation.",
+    "causal_audit_warning": "Prediction operators cannot also be independent causal validation operators."
+  }
+}

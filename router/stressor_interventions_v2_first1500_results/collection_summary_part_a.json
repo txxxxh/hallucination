@@ -1,0 +1,24 @@
+{
+  "schema_version": "scientist_causal_router_v2_hidden_transition_v1",
+  "n_records": 750,
+  "base_correct": 313,
+  "base_hallucinations": 347,
+  "base_unparsed": 90,
+  "knowledge_states": {
+    "unknown": 651,
+    "known": 99
+  },
+  "teacher_cause_counts": {
+    "knowledge_gap": 379,
+    "correct": 313,
+    "contextual_interference": 18,
+    "known_but_unlocalized": 40
+  },
+  "interventions_run": 58,
+  "localized_culprit_spans": 42,
+  "method": {
+    "knowledge_teacher": "balanced isolated per-scientist atomic fact probes",
+    "span_teacher": "gold recovery minus low-similarity deletion control",
+    "classifier_features": "base/probe/intervention hidden states and pre/post deltas; no gold correctness or recovery"
+  }
+}

@@ -1,0 +1,44 @@
+n=1634  层数=29  扫描层=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+类别分布: {np.str_('Z1'): 798, np.str_('Z2'): 394, np.str_('Z4'): 94, np.str_('Z6'): 348}
+Traceback (most recent call last):
+  File "/home/tong56/router/hallu-diagnose-claude/scripts/44_onevsrest_layers.py", line 220, in <module>
+    main(ap.parse_args())
+  File "/home/tong56/router/hallu-diagnose-claude/scripts/44_onevsrest_layers.py", line 146, in main
+    s.update(bootstrap_peak(F1, y, groups, layers, args.n_boot, args.seed))
+  File "/home/tong56/router/hallu-diagnose-claude/scripts/44_onevsrest_layers.py", line 110, in bootstrap_peak
+    c = scan(F1[m], y[m], groups[m], layers, seed)
+  File "/home/tong56/router/hallu-diagnose-claude/scripts/44_onevsrest_layers.py", line 79, in scan
+    a, _ = layer_auroc(F1[:, l], y, groups, seed)
+  File "/home/tong56/router/hallu-diagnose-claude/scripts/44_onevsrest_layers.py", line 68, in layer_auroc
+    clf.fit(sc.transform(X_layer[tr]), y[tr])
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/linear_model/_logistic.py", line 1384, in fit
+    fold_coefs_ = Parallel(n_jobs=self.n_jobs, verbose=self.verbose, prefer=prefer)(
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/utils/parallel.py", line 82, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/joblib/parallel.py", line 1986, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/joblib/parallel.py", line 1914, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/utils/parallel.py", line 147, in __call__
+    return self.function(*args, **kwargs)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/linear_model/_logistic.py", line 459, in _logistic_regression_path
+    opt_res = optimize.minimize(
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/scipy/optimize/_minimize.py", line 738, in minimize
+    res = _minimize_lbfgsb(fun, x0, args, jac, bounds,
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/scipy/optimize/_lbfgsb_py.py", line 441, in _minimize_lbfgsb
+    f, g = func_and_grad(x)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/scipy/optimize/_differentiable_functions.py", line 344, in fun_and_grad
+    self._update_fun()
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/scipy/optimize/_differentiable_functions.py", line 295, in _update_fun
+    fx = self._wrapped_fun(self.x)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/scipy/optimize/_differentiable_functions.py", line 21, in wrapped
+    fx = fun(np.copy(x), *args)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/scipy/optimize/_optimize.py", line 80, in __call__
+    self._compute_if_needed(x, *args)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/scipy/optimize/_optimize.py", line 74, in _compute_if_needed
+    fg = self.fun(x, *args)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/linear_model/_linear_loss.py", line 312, in loss_gradient
+    weights, intercept, raw_prediction = self.weight_intercept_raw(coef, X)
+KeyboardInterrupt

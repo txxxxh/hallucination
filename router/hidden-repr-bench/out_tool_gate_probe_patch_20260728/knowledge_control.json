@@ -1,0 +1,99 @@
+{
+  "n": 1000,
+  "knowledge_score_distribution": {
+    "mean": 0.4974,
+    "n_distinct": 9,
+    "hist": {
+      "0.0": 405,
+      "0.125": 42,
+      "0.25": 19,
+      "0.375": 22,
+      "0.5": 26,
+      "0.625": 27,
+      "0.75": 22,
+      "0.875": 34,
+      "1.0": 403
+    }
+  },
+  "overall_search_rate": 0.505,
+  "nested_model_test": {
+    "model0": "search ~ log_pop",
+    "model1": "search ~ log_pop + knowledge_score",
+    "llf0": -571.944,
+    "llf1": -557.237,
+    "LR_chi2": 29.413,
+    "df": 1,
+    "p": 5.847769205903651e-08,
+    "coef_knowledge": -0.8606,
+    "se_knowledge": 0.1592,
+    "z_knowledge": -5.406,
+    "p_knowledge": 6.443478771563495e-08,
+    "coef_log_pop": -0.6909,
+    "significant": true,
+    "note": "知识系数显著为负 = 控制流行度后, 模型实际知道的问题搜得更少 => 搜索决策跟随真实知识而非仅跟随实体眼熟度(元认知 vs 眼熟度的判决)。"
+  },
+  "within_popularity_strata": {
+    "strata": [
+      {
+        "log_pop_range": [
+          0.477,
+          1.69
+        ],
+        "n": 237,
+        "search_rate": 0.865,
+        "mean_knowledge": 0.2627,
+        "spearman_know_vs_search": -0.1619,
+        "p": 0.012578529204195688
+      },
+      {
+        "log_pop_range": [
+          1.69,
+          4.896
+        ],
+        "n": 262,
+        "search_rate": 0.5916,
+        "mean_knowledge": 0.5186,
+        "spearman_know_vs_search": -0.1584,
+        "p": 0.010240800495365555
+      },
+      {
+        "log_pop_range": [
+          4.896,
+          5.186
+        ],
+        "n": 250,
+        "search_rate": 0.42,
+        "mean_knowledge": 0.553,
+        "spearman_know_vs_search": -0.1946,
+        "p": 0.001991357764013592
+      },
+      {
+        "log_pop_range": [
+          5.186,
+          7.179
+        ],
+        "n": 251,
+        "search_rate": 0.1594,
+        "mean_knowledge": 0.6414,
+        "spearman_know_vs_search": -0.2473,
+        "p": 7.468401121161999e-05
+      }
+    ],
+    "n_strata_negative_sig": 4,
+    "note": "同一流行度区间内, 知识分数与搜索应负相关。这是不依赖回归设定的稳健版本。"
+  },
+  "unknown_subset": {
+    "n": 255,
+    "search_rate": 0.8667,
+    "mean_knowledge": 0.2603,
+    "mean_knowledge_when_search": 0.2296,
+    "mean_knowledge_when_answer": 0.5208,
+    "note": "若 '直接作答' 组的知识分数系统性高于 '搜索' 组, 说明模型在 unknown 内部仍能分辨自己碰巧知道的那些 —— 这是元认知的细粒度证据。"
+  },
+  "adding_self_consistency": {
+    "coef_consistency": -2.7058,
+    "p_consistency": 7.752345233240264e-21,
+    "LR_vs_model1": 97.24,
+    "p": 6.142754079840036e-23
+  }
+}
