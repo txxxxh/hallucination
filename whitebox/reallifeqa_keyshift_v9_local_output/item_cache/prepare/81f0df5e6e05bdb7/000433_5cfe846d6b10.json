@@ -1,0 +1,863 @@
+{
+  "item_index": 433,
+  "item_id": "433",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.45401698921108014,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The yard crew is at the pickup lane to load the bags into my vehicle.",
+    "located": {
+      "text": "The yard crew is at the pickup lane to load the bags into my vehicle.",
+      "start": 47,
+      "end": 116,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The mulch order is stamped complete.",
+    "located": {
+      "text": "The mulch order is stamped complete.",
+      "start": 10,
+      "end": 46,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup lane to load the bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.25,
+      "logit_2": 30.5,
+      "prob_1": 0.6791787147521973,
+      "prob_2": 0.3208213150501251,
+      "correct_margin": 0.75,
+      "shortcut_margin": -0.75,
+      "prior_shortcut_margin": -0.75,
+      "prior_correct_margin": 0.75
+    },
+    "surface_surprisal": 4.65138578414917,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 30.25,
+      "logit_2": 30.25,
+      "prob_1": 0.5,
+      "prob_2": 0.5,
+      "correct_margin": 0.0,
+      "shortcut_margin": -0.0
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The yard crew is at the pickup location to load the mulch bags into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.0821917808219178
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.5,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.346144199371338,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.375,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup location to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is at the pickup location to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 126,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The yard crew is loading the mulch bags into my vehicle at the pickup area.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8000000000000002,
+        "edit_ratio": 0.352112676056338
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.125,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.293293476104736,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.25,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is loading the mulch bags into my vehicle at the pickup area. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is loading the mulch bags into my vehicle at the pickup area.",
+        "start": 47,
+        "end": 122,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The yard crew is at the pickup spot to load the bags of mulch into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8749999999999999,
+        "edit_ratio": 0.11724137931034484
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.375,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 3.956042766571045,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.375,
+        "logit_2": 30.25,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup spot to load the bags of mulch into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is at the pickup spot to load the bags of mulch into my vehicle.",
+        "start": 47,
+        "end": 125,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9375,
+        "edit_ratio": 0.09333333333333338
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.75,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 4.419821739196777,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 30.375,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 130,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The yard crew is at the pickup station to load the mulch bags into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.08965517241379306
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.375,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.436342716217041,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.375,
+        "logit_2": 30.375,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup station to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is at the pickup station to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 125,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The yard crew is loading the mulch into my vehicle at the pickup location.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7586206896551724,
+        "edit_ratio": 0.4184397163120568
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.375,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 4.144418239593506,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.125,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is loading the mulch into my vehicle at the pickup location. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is loading the mulch into my vehicle at the pickup location.",
+        "start": 47,
+        "end": 121,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The yard crew is at the pickup stop to load the mulch bags into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.09859154929577463
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.125,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.454887866973877,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.25,
+        "logit_2": 30.25,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup stop to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is at the pickup stop to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 122,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The yard crew is at the pickup point to load the mulch bags into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.09090909090909094
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.375,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.290014743804932,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.375,
+        "logit_2": 30.25,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup point to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is at the pickup point to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 123,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The yard crew is loading the mulch bags into my vehicle at the pickup site.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8000000000000002,
+        "edit_ratio": 0.352112676056338
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.25,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.301211357116699,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.25,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is loading the mulch bags into my vehicle at the pickup site. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is loading the mulch bags into my vehicle at the pickup site.",
+        "start": 47,
+        "end": 122,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The yard crew is at the pickup area to load the mulch bags into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.07042253521126762
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.375,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 4.4391889572143555,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.375,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup area to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is at the pickup area to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 122,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p04",
+      "text": "The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9375,
+        "edit_ratio": 0.09333333333333338
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.75,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 4.419821739196777,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 30.375,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 130,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p02",
+      "text": "The yard crew is loading the mulch bags into my vehicle at the pickup area.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8000000000000002,
+        "edit_ratio": 0.352112676056338
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.125,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.293293476104736,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.25,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is loading the mulch bags into my vehicle at the pickup area. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is loading the mulch bags into my vehicle at the pickup area.",
+        "start": 47,
+        "end": 122,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p07",
+      "text": "The yard crew is at the pickup stop to load the mulch bags into my vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.09859154929577463
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.125,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.454887866973877,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.25,
+        "logit_2": 30.25,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup stop to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is at the pickup stop to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 122,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p10",
+      "text": "The yard crew is at the pickup area to load the mulch bags into my vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9032258064516129,
+        "edit_ratio": 0.07042253521126762
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.375,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 4.4391889572143555,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.375,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup area to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is at the pickup area to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 122,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p04",
+      "text": "The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9375,
+        "edit_ratio": 0.09333333333333338
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.75,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 4.419821739196777,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 30.375,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25
+      },
+      "prompt": "Scenario: The mulch order is stamped complete. The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle.",
+        "start": 47,
+        "end": 130,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The yard crew's presence at the pickup lane implies that the mulch order has been completed and can be loaded into my vehicle.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The mulch order is stamped complete. The yard crew is at the pickup lane to load the bags into my vehicle. The yard crew's presence at the pickup lane implies that the mulch order has been completed and can be loaded into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 30.625,
+      "logit_2": 30.375,
+      "prob_1": 0.562176525592804,
+      "prob_2": 0.43782350420951843,
+      "correct_margin": 0.25,
+      "shortcut_margin": -0.25
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The mulch order is stamped complete. The yard crew is waiting at the pickup lane to load the mulch bags into my vehicle. The yard crew's presence at the pickup lane implies that the mulch order has been completed and can be loaded into my vehicle. What should I bring to the pickup lane?\nOption1: Bring my vehicle to the pickup lane\nOption2: Walk to the pickup lane without my vehicle\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 30.75,
+      "logit_2": 30.625,
+      "prob_1": 0.531209409236908,
+      "prob_2": 0.4687906503677368,
+      "correct_margin": 0.125,
+      "shortcut_margin": -0.125
+    }
+  }
+}

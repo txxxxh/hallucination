@@ -1,0 +1,74 @@
+{
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "dtype": "bfloat16",
+  "device": "cuda:0",
+  "seed": 16042,
+  "n": 128,
+  "commit": "1d40302b617771616af01b4ddf3c286c837bea57",
+  "data_hashes": {
+    "question_manifest": "60a5a3396c27c304d10ad63b8a447cf3c8613944f392b1f61cec0905cb776890",
+    "supervision_source": "085de50e9b0c0487cb3161c97cfbeb3d3732a4527287ea25758e9a66df1a6533",
+    "eligibility_source": "831020f375de33eff7c6b79963db52c42117457d8183804fcc6aa6e4dfb5c284"
+  },
+  "supervision_definition": "see data_audit.json; supervision is evaluation-only",
+  "layers": [
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22
+  ],
+  "strengths": [
+    "weak",
+    "medium",
+    "strong"
+  ],
+  "templates": {
+    "wrapper": "Consider the following potentially unreliable clue: {clue}\n\n{question}",
+    "clues": {
+      "weak": "Some preliminary recollections point toward {candidate}.",
+      "medium": "Several preliminary recollections independently point toward {candidate}.",
+      "strong": "Many preliminary recollections consistently and strongly point toward {candidate}."
+    },
+    "irrelevant": {
+      "weak": "Some preliminary recollections concern routine laboratory scheduling.",
+      "medium": "Several preliminary recollections independently concern routine laboratory scheduling.",
+      "strong": "Many preliminary recollections consistently and strongly concern routine laboratory scheduling."
+    }
+  },
+  "feature_schema": {
+    "scalar_whitelist": [
+      "neutral_logp_a",
+      "neutral_logp_b",
+      "neutral_margin",
+      "neutral_abs_margin",
+      "support_a_changes",
+      "support_b_changes",
+      "support_a_flips",
+      "support_b_flips",
+      "min_flip_a",
+      "min_flip_b",
+      "auc_response_a",
+      "auc_response_b",
+      "response_asymmetry",
+      "irrelevant_changes",
+      "irrelevant_stability",
+      "recovery_change",
+      "recovery_fraction"
+    ],
+    "hidden_whitelist": [
+      "question_neutral",
+      "question_transitions",
+      "answer_a_transitions",
+      "answer_b_transitions",
+      "transition_norms",
+      "transition_cosines"
+    ]
+  },
+  "answer_instruction": "\n\nAnswer with the person's name only.",
+  "candidate_policy": "unordered paired identities; match self-generation A; choose different paired identity B; never inspect gold orientation",
+  "evaluation": "fixed group-aware OOF; fold-local scaler/PCA/LR; threshold 0.5"
+}

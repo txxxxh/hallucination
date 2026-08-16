@@ -1,0 +1,863 @@
+{
+  "item_index": 497,
+  "item_id": "497",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.2541965906955681,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "I am cleaning out a device drawer.",
+    "located": {
+      "text": "I am cleaning out a device drawer.",
+      "start": 10,
+      "end": 44,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The used batteries must go to the battery recycling tube by the door.",
+    "located": {
+      "text": "The used batteries must go to the battery recycling tube by the door.",
+      "start": 45,
+      "end": 114,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am cleaning out a device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.5,
+      "logit_2": 30.5,
+      "prob_1": 0.11920291930437088,
+      "prob_2": 0.8807970285415649,
+      "correct_margin": 2.0,
+      "shortcut_margin": -2.0,
+      "prior_shortcut_margin": -2.0,
+      "prior_correct_margin": 2.0
+    },
+    "surface_surprisal": 4.7762556076049805,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 24.875,
+      "logit_2": 33.5,
+      "prob_1": 0.00017952796770259738,
+      "prob_2": 0.9998205304145813,
+      "correct_margin": 8.625,
+      "shortcut_margin": -8.625
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "I'm getting rid of the stuff in the device drawer.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.33333333333333326,
+        "edit_ratio": 0.36585365853658536
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 29.75,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.428974151611328,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.5,
+        "logit_2": 33.5,
+        "prob_1": 0.00033535013790242374,
+        "prob_2": 0.9996646642684937,
+        "correct_margin": 8.0,
+        "shortcut_margin": -8.0
+      },
+      "prompt": "Scenario: I'm getting rid of the stuff in the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm getting rid of the stuff in the device drawer.",
+        "start": 10,
+        "end": 60,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "I'm clearing out the device drawer.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285714,
+        "edit_ratio": 0.10447761194029848
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.25,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 5.379265308380127,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.0,
+        "logit_2": 33.5,
+        "prob_1": 0.00020342697098385543,
+        "prob_2": 0.9997965693473816,
+        "correct_margin": 8.5,
+        "shortcut_margin": -8.5
+      },
+      "prompt": "Scenario: I'm clearing out the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm clearing out the device drawer.",
+        "start": 10,
+        "end": 45,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "I'm organizing the device drawer.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "Paraphrase implies an organizational activity, not cleaning or disposing of items."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.23076923076923073
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.5,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 6.352323532104492,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 24.75,
+        "logit_2": 33.75,
+        "prob_1": 0.00012339458044152707,
+        "prob_2": 0.9998766183853149,
+        "correct_margin": 9.0,
+        "shortcut_margin": -9.0
+      },
+      "prompt": "Scenario: I'm organizing the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm organizing the device drawer.",
+        "start": 10,
+        "end": 43,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "I'm emptying the device drawer.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.23809523809523814
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.0,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 5.116835117340088,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.0,
+        "logit_2": 33.75,
+        "prob_1": 0.00015843621804378927,
+        "prob_2": 0.999841570854187,
+        "correct_margin": 8.75,
+        "shortcut_margin": -8.75
+      },
+      "prompt": "Scenario: I'm emptying the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm emptying the device drawer.",
+        "start": 10,
+        "end": 41,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "I'm sorting the device drawer.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 1,
+        "notes": "Paraphrase implies sorting, not cleaning or disposing of items."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.25806451612903225
+      },
+      "prior_shortcut_margin": -2.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 30.5,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375,
+        "prior_shortcut_margin": -2.375,
+        "prior_correct_margin": 2.375
+      },
+      "surface_surprisal": 6.457340240478516,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 24.875,
+        "logit_2": 33.75,
+        "prob_1": 0.0001398220774717629,
+        "prob_2": 0.9998601675033569,
+        "correct_margin": 8.875,
+        "shortcut_margin": -8.875
+      },
+      "prompt": "Scenario: I'm sorting the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm sorting the device drawer.",
+        "start": 10,
+        "end": 40,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "I'm cleaning out the device storage compartment.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5333333333333333,
+        "edit_ratio": 0.275
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 30.75,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 5.156657695770264,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.25,
+        "logit_2": 33.75,
+        "prob_1": 0.00020342697098385543,
+        "prob_2": 0.9997965693473816,
+        "correct_margin": 8.5,
+        "shortcut_margin": -8.5
+      },
+      "prompt": "Scenario: I'm cleaning out the device storage compartment. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm cleaning out the device storage compartment.",
+        "start": 10,
+        "end": 58,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "I'm dealing with the clutter in the device drawer.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3529411764705882,
+        "edit_ratio": 0.3414634146341463
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 30.125,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 4.626051902770996,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.0,
+        "logit_2": 33.75,
+        "prob_1": 0.00015843621804378927,
+        "prob_2": 0.999841570854187,
+        "correct_margin": 8.75,
+        "shortcut_margin": -8.75
+      },
+      "prompt": "Scenario: I'm dealing with the clutter in the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm dealing with the clutter in the device drawer.",
+        "start": 10,
+        "end": 60,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "I'm getting rid of the junk in the device drawer.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.33333333333333326,
+        "edit_ratio": 0.3580246913580247
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.0,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.334237098693848,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.5,
+        "logit_2": 33.75,
+        "prob_1": 0.00026119028916582465,
+        "prob_2": 0.9997387528419495,
+        "correct_margin": 8.25,
+        "shortcut_margin": -8.25
+      },
+      "prompt": "Scenario: I'm getting rid of the junk in the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm getting rid of the junk in the device drawer.",
+        "start": 10,
+        "end": 59,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "I'm clearing the device storage area.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.2857142857142857,
+        "edit_ratio": 0.2753623188405797
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 30.25,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 5.255719184875488,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.625,
+        "logit_2": 33.5,
+        "prob_1": 0.0003799845289904624,
+        "prob_2": 0.9996199607849121,
+        "correct_margin": 7.875,
+        "shortcut_margin": -7.875
+      },
+      "prompt": "Scenario: I'm clearing the device storage area. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm clearing the device storage area.",
+        "start": 10,
+        "end": 47,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "I'm disposing of the items in the device drawer.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3529411764705882,
+        "edit_ratio": 0.375
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 29.75,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.348745822906494,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.5,
+        "logit_2": 33.5,
+        "prob_1": 0.00033535013790242374,
+        "prob_2": 0.9996646642684937,
+        "correct_margin": 8.0,
+        "shortcut_margin": -8.0
+      },
+      "prompt": "Scenario: I'm disposing of the items in the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm disposing of the items in the device drawer.",
+        "start": 10,
+        "end": 58,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p06",
+      "text": "I'm cleaning out the device storage compartment.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5333333333333333,
+        "edit_ratio": 0.275
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 30.75,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 5.156657695770264,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.25,
+        "logit_2": 33.75,
+        "prob_1": 0.00020342697098385543,
+        "prob_2": 0.9997965693473816,
+        "correct_margin": 8.5,
+        "shortcut_margin": -8.5
+      },
+      "prompt": "Scenario: I'm cleaning out the device storage compartment. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm cleaning out the device storage compartment.",
+        "start": 10,
+        "end": 58,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p02",
+      "text": "I'm clearing out the device drawer.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285714,
+        "edit_ratio": 0.10447761194029848
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.25,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 5.379265308380127,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.0,
+        "logit_2": 33.5,
+        "prob_1": 0.00020342697098385543,
+        "prob_2": 0.9997965693473816,
+        "correct_margin": 8.5,
+        "shortcut_margin": -8.5
+      },
+      "prompt": "Scenario: I'm clearing out the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm clearing out the device drawer.",
+        "start": 10,
+        "end": 45,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p10",
+      "text": "I'm disposing of the items in the device drawer.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3529411764705882,
+        "edit_ratio": 0.375
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 29.75,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.348745822906494,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.5,
+        "logit_2": 33.5,
+        "prob_1": 0.00033535013790242374,
+        "prob_2": 0.9996646642684937,
+        "correct_margin": 8.0,
+        "shortcut_margin": -8.0
+      },
+      "prompt": "Scenario: I'm disposing of the items in the device drawer. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm disposing of the items in the device drawer.",
+        "start": 10,
+        "end": 58,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p09",
+      "text": "I'm clearing the device storage area.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.2857142857142857,
+        "edit_ratio": 0.2753623188405797
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 30.25,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 5.255719184875488,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.625,
+        "logit_2": 33.5,
+        "prob_1": 0.0003799845289904624,
+        "prob_2": 0.9996199607849121,
+        "correct_margin": 7.875,
+        "shortcut_margin": -7.875
+      },
+      "prompt": "Scenario: I'm clearing the device storage area. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm clearing the device storage area.",
+        "start": 10,
+        "end": 47,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p06",
+      "text": "I'm cleaning out the device storage compartment.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5333333333333333,
+        "edit_ratio": 0.275
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 30.75,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 5.156657695770264,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.25,
+        "logit_2": 33.75,
+        "prob_1": 0.00020342697098385543,
+        "prob_2": 0.9997965693473816,
+        "correct_margin": 8.5,
+        "shortcut_margin": -8.5
+      },
+      "prompt": "Scenario: I'm cleaning out the device storage compartment. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm cleaning out the device storage compartment.",
+        "start": 10,
+        "end": 58,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This process should be aligned with the need to recycle used batteries.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am cleaning out a device drawer. This process should be aligned with the need to recycle used batteries. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 24.75,
+      "logit_2": 33.25,
+      "prob_1": 0.00020342697098385543,
+      "prob_2": 0.9997965693473816,
+      "correct_margin": 8.5,
+      "shortcut_margin": -8.5
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I'm cleaning out the device storage compartment. This process should be aligned with the need to recycle used batteries. The used batteries must go to the battery recycling tube by the door. What should I do?\nOption1: Throw them in the desk trash\nOption2: Put them in the battery recycling tube\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 25.25,
+      "logit_2": 33.0,
+      "prob_1": 0.0004305570910219103,
+      "prob_2": 0.9995694756507874,
+      "correct_margin": 7.75,
+      "shortcut_margin": -7.75
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "dtype": "bfloat16",
+  "seed": 16042,
+  "n": 128,
+  "layers": [
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    32
+  ],
+  "feature_whitelist": [
+    "stability_scalar",
+    "stability_hidden",
+    "basin_scalar",
+    "basin_hidden",
+    "retrieval_scalar",
+    "retrieval_hidden"
+  ],
+  "templates": {
+    "stability": [
+      "{q}\n\nAnswer with the person's name only.",
+      "Read the question carefully and answer it independently.\n\n{q}\n\nGive only the person's name.",
+      "Focus on the identifying details, not the writing style.\n\n{q}\n\nRespond only with the person's name.",
+      "Verify your recollection before answering.\n\n{q}\n\nReturn only the person's name.",
+      "Treat the order of the descriptive details as unimportant.\n\n{q}\n\nAnswer using only the person's name."
+    ],
+    "evidence": {
+      "weak": "A tentative recollection {polarity} the possibility that the answer is {candidate}.",
+      "medium": "Several independent tentative recollections {polarity} the possibility that the answer is {candidate}.",
+      "strong": "Many consistent recollections strongly {polarity} the possibility that the answer is {candidate}."
+    },
+    "wrapper": "Consider this potentially unreliable memory cue: {cue}\n\n{q}\n\nAnswer with the person's name only.",
+    "retrieval": "The candidate {candidate} may or may not be correct. From your own recollection, state exactly one concrete association (field, achievement, award, institution, or era) that would best {mode} matching this candidate to the description. Do not decide the final answer and do not discuss any other person.\n\nQuestion: {q}\nOne association:"
+  },
+  "evaluation": "descriptive random 5-fold, fold-local transforms",
+  "entity_leakage_warning": true
+}

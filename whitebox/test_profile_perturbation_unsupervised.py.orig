@@ -1,0 +1,62 @@
+import json
+import unittest
+from pathlib import Path
+
+import numpy as np
+
+import profile_perturbation_unsupervised as mod
+
+
+class PerturbationConstructionTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        data = json.loads(Path(mod.DEFAULT_DATA).read_text(encoding="utf-8"))
+        cls.item = mod.parse_item(data[0])
+        cls.conditions = {x.name: x for x in mod.build_conditions(cls.item)}
+
+    def test_parser(self):
+        self.assertEqual(len(self.item.profiles), 2)
+        self.assertEqual(self.item.right_answer, "Emmanuelle Charpentier")
+        self.assertEqual(self.item.profiles[0].name, "Emmanuelle Charpentier")
+
+    def test_question_only_has_no_profiles(self):
+        prompt = self.conditions["question_only"].prompt
+        self.assertNotIn("award_received:", prompt)
+        self.assertNotIn("name: Emmanuelle Charpentier", prompt)
+
+    def test_order_swap_preserves_both_profiles(self):
+        prompt = self.conditions["profile_order_swap"].prompt
+        self.assertLess(prompt.index("name: Christiane"), prompt.index("name: Emmanuelle"))
+
+    def test_evidence_ablation_removes_mentioned_nobel_entity(self):
+        prompt = self.conditions["without_question_evidence"].prompt
+        context = prompt.split(mod.DELIMITER, 1)[0]
+        self.assertNotIn("Nobel Prize in Physiology or Medicine", context)
+        self.assertIn("Nobel Prize in Physiology or Medicine", self.item.question)
+
+    def test_negation_flip_changes_semantics(self):
+        condition = self.conditions["negation_flip"]
+        self.assertTrue(condition.changed)
+        self.assertNotIn("never awarded the Nobel Prize", condition.prompt)
+
+    def test_negation_flip_has_broad_fallbacks(self):
+        changed, ok = mod.replace_first_pattern(
+            "This scientist was never involved in the project.", mod.NEGATION_FLIPS
+        )
+        self.assertTrue(ok)
+        self.assertEqual(changed, "This scientist was involved in the project.")
+        changed, ok = mod.replace_first_pattern(
+            "Their field was not physical chemistry.", mod.NEGATION_FLIPS
+        )
+        self.assertTrue(ok)
+        self.assertEqual(changed, "Their field was physical chemistry.")
+
+    def test_entity_paraphrase_removes_exact_surface_form_from_question(self):
+        condition = self.conditions["entity_paraphrase"]
+        self.assertTrue(condition.changed)
+        question_part = condition.prompt.split(mod.DELIMITER, 1)[1]
+        self.assertNotIn("Nobel Prize in Physiology or Medicine", question_part)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,863 @@
+{
+  "item_index": 220,
+  "item_id": "220",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.42925006258375964,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The tester is at the cone where the tug runs through short throttle bursts.",
+    "located": {
+      "text": "The tester is at the cone where the tug runs through short throttle bursts.",
+      "start": 83,
+      "end": 158,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The airport tug needs a smoke reading before the ramp permit is renewed.",
+    "located": {
+      "text": "The airport tug needs a smoke reading before the ramp permit is renewed.",
+      "start": 10,
+      "end": 82,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is at the cone where the tug runs through short throttle bursts. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.375,
+      "logit_2": 31.5,
+      "prob_1": 0.042087726294994354,
+      "prob_2": 0.957912266254425,
+      "correct_margin": 3.125,
+      "shortcut_margin": -3.125,
+      "prior_shortcut_margin": -3.125,
+      "prior_correct_margin": 3.125
+    },
+    "surface_surprisal": 5.876009941101074,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.625,
+      "logit_2": 30.5,
+      "prob_1": 0.0534033328294754,
+      "prob_2": 0.9465966820716858,
+      "correct_margin": 2.875,
+      "shortcut_margin": -2.875
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The tester is currently standing near the cone where the tug performs short throttle bursts.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7586206896551724,
+        "edit_ratio": 0.23636363636363633
+      },
+      "prior_shortcut_margin": -2.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.25,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875,
+        "prior_shortcut_margin": -2.875,
+        "prior_correct_margin": 2.875
+      },
+      "surface_surprisal": 5.693517684936523,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.125,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is currently standing near the cone where the tug performs short throttle bursts. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is currently standing near the cone where the tug performs short throttle bursts.",
+        "start": 83,
+        "end": 175,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The tester is located at the cone where the tug does short throttle runs.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.1917808219178082
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.5,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 5.977023601531982,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.0,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is located at the cone where the tug does short throttle runs. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is located at the cone where the tug does short throttle runs.",
+        "start": 83,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The tester is positioned at the cone where the tug is doing short throttle bursts.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8275862068965518,
+        "edit_ratio": 0.1483870967741936
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.375,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 5.284022331237793,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.375,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is positioned at the cone where the tug is doing short throttle bursts. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is positioned at the cone where the tug is doing short throttle bursts.",
+        "start": 83,
+        "end": 165,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The tester is at the cone where the tug goes through short bursts of throttle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.896551724137931,
+        "edit_ratio": 0.152317880794702
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.375,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 5.332929611206055,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 30.625,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is at the cone where the tug goes through short bursts of throttle. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is at the cone where the tug goes through short bursts of throttle.",
+        "start": 83,
+        "end": 161,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The tester is situated at the cone where the tug does short bursts of throttle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8275862068965518,
+        "edit_ratio": 0.26315789473684215
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.875,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 5.51942777633667,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 30.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is situated at the cone where the tug does short bursts of throttle. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is situated at the cone where the tug does short bursts of throttle.",
+        "start": 83,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The tester is near the cone where the tug is doing short throttle runs.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7857142857142857,
+        "edit_ratio": 0.1527777777777778
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.375,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 5.529892444610596,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.125,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is near the cone where the tug is doing short throttle runs. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is near the cone where the tug is doing short throttle runs.",
+        "start": 83,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The tester is at the cone where the tug performs short bursts of throttle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.22448979591836737
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.5,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 5.409286975860596,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.5,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is at the cone where the tug performs short bursts of throttle. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is at the cone where the tug performs short bursts of throttle.",
+        "start": 83,
+        "end": 157,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The tester is located at the cone where the tug does short bursts of throttle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8275862068965518,
+        "edit_ratio": 0.2582781456953642
+      },
+      "prior_shortcut_margin": -2.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.0,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875,
+        "prior_shortcut_margin": -2.875,
+        "prior_correct_margin": 2.875
+      },
+      "surface_surprisal": 5.4275922775268555,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.75,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is located at the cone where the tug does short bursts of throttle. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is located at the cone where the tug does short bursts of throttle.",
+        "start": 83,
+        "end": 161,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The tester is standing at the cone where the tug does short throttle bursts.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.15436241610738255
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.125,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 5.931798934936523,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.5,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is standing at the cone where the tug does short throttle bursts. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is standing at the cone where the tug does short throttle bursts.",
+        "start": 83,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The tester is at the cone where the tug goes through short throttle runs.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.0821917808219178
+      },
+      "prior_shortcut_margin": -3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.875,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625,
+        "prior_shortcut_margin": -3.625,
+        "prior_correct_margin": 3.625
+      },
+      "surface_surprisal": 5.916834831237793,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.625,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is at the cone where the tug goes through short throttle runs. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is at the cone where the tug goes through short throttle runs.",
+        "start": 83,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p10",
+      "text": "The tester is at the cone where the tug goes through short throttle runs.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.0821917808219178
+      },
+      "prior_shortcut_margin": -3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.875,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625,
+        "prior_shortcut_margin": -3.625,
+        "prior_correct_margin": 3.625
+      },
+      "surface_surprisal": 5.916834831237793,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.625,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is at the cone where the tug goes through short throttle runs. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is at the cone where the tug goes through short throttle runs.",
+        "start": 83,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p02",
+      "text": "The tester is located at the cone where the tug does short throttle runs.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.1917808219178082
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.5,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 5.977023601531982,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.0,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is located at the cone where the tug does short throttle runs. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is located at the cone where the tug does short throttle runs.",
+        "start": 83,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p05",
+      "text": "The tester is situated at the cone where the tug does short bursts of throttle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8275862068965518,
+        "edit_ratio": 0.26315789473684215
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.875,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 5.51942777633667,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 30.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is situated at the cone where the tug does short bursts of throttle. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is situated at the cone where the tug does short bursts of throttle.",
+        "start": 83,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p03",
+      "text": "The tester is positioned at the cone where the tug is doing short throttle bursts.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8275862068965518,
+        "edit_ratio": 0.1483870967741936
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.375,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 5.284022331237793,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.375,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is positioned at the cone where the tug is doing short throttle bursts. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is positioned at the cone where the tug is doing short throttle bursts.",
+        "start": 83,
+        "end": 165,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p10",
+      "text": "The tester is at the cone where the tug goes through short throttle runs.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9285714285714286,
+        "edit_ratio": 0.0821917808219178
+      },
+      "prior_shortcut_margin": -3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.875,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625,
+        "prior_shortcut_margin": -3.625,
+        "prior_correct_margin": 3.625
+      },
+      "surface_surprisal": 5.916834831237793,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.625,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875
+      },
+      "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is at the cone where the tug goes through short throttle runs. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tester is at the cone where the tug goes through short throttle runs.",
+        "start": 83,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The smoke reading is taken from the tug, which is why the tester needs to be at the cone.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is at the cone where the tug runs through short throttle bursts. The smoke reading is taken from the tug, which is why the tester needs to be at the cone. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.625,
+      "logit_2": 30.875,
+      "prob_1": 0.037326883524656296,
+      "prob_2": 0.9626730680465698,
+      "correct_margin": 3.25,
+      "shortcut_margin": -3.25
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The airport tug needs a smoke reading before the ramp permit is renewed. The tester is at the cone where the tug goes through short throttle runs. The smoke reading is taken from the tug, which is why the tester needs to be at the cone. For this step, what should I do?\nOption1: Walk to the cone without the tug\nOption2: Drive the tug to the cone\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.5,
+      "logit_2": 31.0,
+      "prob_1": 0.02931223064661026,
+      "prob_2": 0.970687747001648,
+      "correct_margin": 3.5,
+      "shortcut_margin": -3.5
+    }
+  }
+}

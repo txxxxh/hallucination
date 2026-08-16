@@ -1,0 +1,576 @@
+{
+  "item_index": 454,
+  "item_id": "454",
+  "fold": 0,
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.5968528971229943,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "eligibility": {
+    "base_wrong": true,
+    "pdp_effect": 0.75,
+    "strict_predicted_shortcut": true
+  },
+  "discovery_selected_heads": [
+    {
+      "layer": 14,
+      "head": 5,
+      "attention_screen_score": 3.4010656069464554e-06,
+      "mean_original_density": 0.0030869146188100176,
+      "mean_pdp_density": 0.0022237671746148002,
+      "mean_density_difference": 0.0008631474441952174,
+      "n_discovery_items": 4,
+      "mean_forward_patch_effect": 0.1875,
+      "mean_reverse_rescue_effect": 0.1875,
+      "mean_bidirectional_patch_effect": 0.1875,
+      "forward_directional_success": 0.75,
+      "reverse_directional_success": 0.5,
+      "both_directions_success": 0.5,
+      "causal_selection_score": 0.11481983169296146
+    }
+  ],
+  "original": {
+    "prediction": "2",
+    "is_correct": false,
+    "logit_1": 29.0,
+    "logit_2": 29.625,
+    "prob_1": 0.3486451506614685,
+    "prob_2": 0.6513549089431763,
+    "correct_margin": -0.625,
+    "shortcut_margin": 0.625
+  },
+  "pdp": {
+    "prediction": "1",
+    "is_correct": true,
+    "logit_1": 30.125,
+    "logit_2": 30.0,
+    "prob_1": 0.531209409236908,
+    "prob_2": 0.4687906503677368,
+    "correct_margin": 0.125,
+    "shortcut_margin": -0.125
+  },
+  "target_head_set": {
+    "heads": [
+      {
+        "layer": 14,
+        "head": 5
+      }
+    ],
+    "ablation": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.125,
+      "logit_2": 29.625,
+      "prob_1": 0.3775406777858734,
+      "prob_2": 0.622459352016449,
+      "correct_margin": -0.5,
+      "shortcut_margin": 0.5
+    },
+    "ablation_effect": 0.125,
+    "original_with_pdp_states": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.375,
+      "logit_2": 29.75,
+      "prob_1": 0.4073334336280823,
+      "prob_2": 0.5926666259765625,
+      "correct_margin": -0.375,
+      "shortcut_margin": 0.375
+    },
+    "forward_patch_effect": 0.25,
+    "pdp_with_original_states": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.75,
+      "logit_2": 30.0,
+      "prob_1": 0.43782350420951843,
+      "prob_2": 0.562176525592804,
+      "correct_margin": -0.25,
+      "shortcut_margin": 0.25
+    },
+    "reverse_rescue_effect": 0.375,
+    "bidirectional_patch_mean": 0.3125
+  },
+  "attention_matched_random_controls": [
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 30
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.0,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "ablation_effect": -0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 0
+    },
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 9
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.75,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "ablation_effect": -0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 1
+    },
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 27
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 29.75,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "ablation_effect": 0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 2
+    },
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 27
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 29.75,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "ablation_effect": 0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 3
+    },
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 27
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 29.75,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "ablation_effect": 0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 4
+    },
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 27
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 29.75,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "ablation_effect": 0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 5
+    },
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 27
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 29.75,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "ablation_effect": 0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 6
+    },
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 9
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.75,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "ablation_effect": -0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 7
+    },
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 27
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 29.75,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "ablation_effect": 0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 8
+    },
+    {
+      "heads": [
+        {
+          "layer": 14,
+          "head": 30
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.0,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "ablation_effect": -0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 29.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "forward_patch_effect": 0.0,
+      "pdp_with_original_states": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 30.0,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125
+      },
+      "reverse_rescue_effect": 0.0,
+      "bidirectional_patch_mean": 0.0,
+      "run_index": 9
+    }
+  ],
+  "dose_response": [
+    {
+      "k": 1,
+      "heads": [
+        {
+          "layer": 14,
+          "head": 5
+        }
+      ],
+      "ablation": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 29.625,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "ablation_effect": 0.125,
+      "original_with_pdp_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 29.75,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "forward_patch_effect": 0.25,
+      "pdp_with_original_states": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.0,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25
+      },
+      "reverse_rescue_effect": 0.375,
+      "bidirectional_patch_mean": 0.3125
+    }
+  ],
+  "mediation_fraction_proxy": 0.3333333333333333,
+  "validation_note": "head set discovered only on other folds"
+}

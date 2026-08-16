@@ -1,0 +1,225 @@
+{
+  "n_items": 1000,
+  "n_conditions": 9,
+  "conditions": [
+    "question_only",
+    "without_question_evidence",
+    "minimal_decisive_evidence",
+    "profile_order_swap",
+    "attribute_order_shuffle",
+    "structure_only_context",
+    "negation_paraphrase",
+    "entity_paraphrase",
+    "structured_comparison_cue"
+  ],
+  "full_correct": 642,
+  "full_wrong": 358,
+  "primary_matrix": "label_free",
+  "label_free_definition": "mean robust-z of log1p(|delta profile margin|), log1p(symmetric KL), log1p(mean hidden cosine distance)",
+  "gold_matrix_offline_only": true,
+  "selected_rank_cell_cv": 0,
+  "selected_rank_loto": 4,
+  "reported_rank_interval": [
+    0,
+    4
+  ],
+  "analysis_rank": 4,
+  "rank_cv": {
+    "0": {
+      "mean_mse": 0.6206943392851881,
+      "fold_mse": [
+        0.6047159743310465,
+        0.6337496018227262,
+        0.6190259749477722,
+        0.6328909138904383,
+        0.6130892314339571
+      ]
+    },
+    "1": {
+      "mean_mse": 0.8719621495315366,
+      "fold_mse": [
+        0.7645256798544734,
+        0.8268568205809591,
+        0.9203212348284524,
+        0.7677716274144943,
+        1.0803353849793031
+      ]
+    },
+    "2": {
+      "mean_mse": 1.1588850062248448,
+      "fold_mse": [
+        1.1252580624378306,
+        1.0833466101044382,
+        1.3966466803590387,
+        1.0124740539908013,
+        1.1766996242321157
+      ]
+    },
+    "3": {
+      "mean_mse": 1.7642005313212077,
+      "fold_mse": [
+        2.206704721472916,
+        1.677944778724831,
+        1.5914710171023985,
+        1.623839767536901,
+        1.7210423717689927
+      ]
+    },
+    "4": {
+      "mean_mse": 3.2050516719971895,
+      "fold_mse": [
+        2.7030349440368573,
+        3.141043967615671,
+        3.308464127195249,
+        3.9463638199174067,
+        2.9263515012207613
+      ]
+    },
+    "5": {
+      "mean_mse": 4.249152055775106,
+      "fold_mse": [
+        3.5770352277218835,
+        3.9477108409452883,
+        3.775281133384637,
+        5.498875555819947,
+        4.446857521003774
+      ]
+    },
+    "6": {
+      "mean_mse": 3.093492792991318,
+      "fold_mse": [
+        3.3234289312636944,
+        3.6736716825640263,
+        2.606087884627678,
+        3.01804982192899,
+        2.846225644572201
+      ]
+    }
+  },
+  "loto_mean_delta_by_rank": {
+    "0": 0.0,
+    "1": 0.009839871848319717,
+    "2": 0.019156363427881924,
+    "3": 0.04758547211486391,
+    "4": 0.05902345192202943,
+    "5": 0.05893016931194674
+  },
+  "in_sample_interaction_fraction": 0.7171480498121297,
+  "varimax_loadings": [
+    {
+      "condition": "question_only",
+      "loadings": [
+        -5.1014410457122255,
+        -9.764929217314151,
+        6.42938317628894,
+        -0.9726058675136027
+      ]
+    },
+    {
+      "condition": "without_question_evidence",
+      "loadings": [
+        -2.392707924254182,
+        -2.753502691315684,
+        17.6945971726777,
+        -0.7902040106045578
+      ]
+    },
+    {
+      "condition": "minimal_decisive_evidence",
+      "loadings": [
+        -5.960586767310087,
+        15.645823761597065,
+        -6.850335214637728,
+        -4.216139808465089
+      ]
+    },
+    {
+      "condition": "profile_order_swap",
+      "loadings": [
+        -13.101285217113778,
+        1.9626379242400522,
+        -5.292902424909319,
+        -17.37085887218553
+      ]
+    },
+    {
+      "condition": "attribute_order_shuffle",
+      "loadings": [
+        7.004411907696572,
+        -3.932879648621737,
+        -12.270635819453043,
+        2.7370175969764894
+      ]
+    },
+    {
+      "condition": "structure_only_context",
+      "loadings": [
+        -5.784795789180001,
+        12.804313646102106,
+        9.703260693012528,
+        2.802137032701821
+      ]
+    },
+    {
+      "condition": "negation_paraphrase",
+      "loadings": [
+        51.8293384457349,
+        -0.18580143624467885,
+        -0.5392955857735482,
+        0.18573529315219423
+      ]
+    },
+    {
+      "condition": "entity_paraphrase",
+      "loadings": [
+        -19.331098819218987,
+        0.46888309657935384,
+        -6.304937352740141,
+        17.8300497696733
+      ]
+    },
+    {
+      "condition": "structured_comparison_cue",
+      "loadings": [
+        -7.16183479064225,
+        -14.244545435022335,
+        -2.569134644465401,
+        -0.2051311337350309
+      ]
+    }
+  ],
+  "cluster_correctness_audit": {
+    "cluster_sizes": [
+      727,
+      273
+    ],
+    "contingency_cols_full_wrong_correct": [
+      [
+        256,
+        471
+      ],
+      [
+        102,
+        171
+      ]
+    ],
+    "ari_with_correctness": 0.004030881072854266,
+    "nmi_with_correctness": 0.0003208982333540309
+  },
+  "detector_5fold": {
+    "hidden_to_lowrank": {
+      "roc_auc": 0.5304652012739518,
+      "balanced_accuracy": 0.5326580692319741
+    },
+    "direct_hidden_pca": {
+      "roc_auc": 0.5630319010076751,
+      "balanced_accuracy": 0.5426739066116709
+    },
+    "oracle_lowrank_coordinates": {
+      "roc_auc": 0.5386884561165353,
+      "balanced_accuracy": 0.51267425468595
+    }
+  },
+  "gold_matrix_interaction_fraction_same_rank": 0.8537026877852123,
+  "warning": "Gold-oriented response uses answer identity and is not deployable. Label-free factors are sensitivity axes, not proven causal failure modes."
+}

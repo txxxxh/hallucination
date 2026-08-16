@@ -1,0 +1,31 @@
+{
+  "model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "selection": "closed-book n_facts>=1, binary_accuracy>0.5, pairwise_owner_accuracy>0.5; parse-valid candidate responses",
+  "protocol": "current127 detector; Scientist question-grouped 3x5-fold OOF",
+  "n": 1084,
+  "groups": 372,
+  "correct": 620,
+  "incorrect": 464,
+  "mean": {
+    "auroc": 0.8194718668891361,
+    "auprc": 0.862387046583168,
+    "balanced_accuracy": 0.744035038932147
+  },
+  "per_seed": [
+    {
+      "auroc": 0.8211484983314794,
+      "auprc": 0.8641257968253846,
+      "balanced_accuracy": 0.7449249165739711
+    },
+    {
+      "auroc": 0.8221009454949946,
+      "auprc": 0.8662075198900645,
+      "balanced_accuracy": 0.7451960511679644
+    },
+    {
+      "auroc": 0.8151661568409343,
+      "auprc": 0.8568278230340548,
+      "balanced_accuracy": 0.7419841490545049
+    }
+  ]
+}

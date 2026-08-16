@@ -1,0 +1,863 @@
+{
+  "item_index": 401,
+  "item_id": "401",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.46410623872569384,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The pharmacy warehouse says the medication load is ready",
+    "located": {
+      "text": "The pharmacy warehouse says the medication load is ready",
+      "start": 10,
+      "end": 66,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The pharmacy warehouse says the medication load is ready",
+    "located": {
+      "text": "The pharmacy warehouse says the medication load is ready",
+      "start": 10,
+      "end": 66,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The pharmacy warehouse says the medication load is ready, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.125,
+      "logit_2": 32.0,
+      "prob_1": 0.020332353189587593,
+      "prob_2": 0.9796676635742188,
+      "correct_margin": 3.875,
+      "shortcut_margin": -3.875,
+      "prior_shortcut_margin": -3.875,
+      "prior_correct_margin": 3.875
+    },
+    "surface_surprisal": 6.517723083496094,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.0,
+      "logit_2": 31.125,
+      "prob_1": 0.10669060051441193,
+      "prob_2": 0.8933094143867493,
+      "correct_margin": 2.125,
+      "shortcut_margin": -2.125
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The pharmacy warehouse has confirmed that the medication load is ready",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.1428571428571429
+      },
+      "prior_shortcut_margin": -4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 32.5,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25,
+        "prior_shortcut_margin": -4.25,
+        "prior_correct_margin": 4.25
+      },
+      "surface_surprisal": 5.277688503265381,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 31.5,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The pharmacy warehouse has confirmed that the medication load is ready, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy warehouse has confirmed that the medication load is ready",
+        "start": 10,
+        "end": 80,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The warehouse says the medication load is now ready for shipment",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.21666666666666667
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 32.0,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 5.592409610748291,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.125,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The warehouse says the medication load is now ready for shipment, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The warehouse says the medication load is now ready for shipment",
+        "start": 10,
+        "end": 74,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The pharmacy has announced that the medication load is ready to be released",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6363636363636364,
+        "edit_ratio": 0.26717557251908397
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.625,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 4.556114196777344,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 31.375,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375
+      },
+      "prompt": "Scenario: The pharmacy has announced that the medication load is ready to be released, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy has announced that the medication load is ready to be released",
+        "start": 10,
+        "end": 85,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The medication load is ready according to the pharmacy warehouse",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8421052631578948,
+        "edit_ratio": 0.5333333333333333
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.25,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 5.777678489685059,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 31.25,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0
+      },
+      "prompt": "Scenario: The medication load is ready according to the pharmacy warehouse, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The medication load is ready according to the pharmacy warehouse",
+        "start": 10,
+        "end": 74,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The pharmacy warehouse has informed us that the medication load is ready",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.761904761904762,
+        "edit_ratio": 0.15625
+      },
+      "prior_shortcut_margin": -4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 32.25,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25,
+        "prior_shortcut_margin": -4.25,
+        "prior_correct_margin": 4.25
+      },
+      "surface_surprisal": 4.954073429107666,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 31.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The pharmacy warehouse has informed us that the medication load is ready, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy warehouse has informed us that the medication load is ready",
+        "start": 10,
+        "end": 82,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The medication load is ready to be loaded, as confirmed by the pharmacy warehouse",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.5882352941176471
+      },
+      "prior_shortcut_margin": -3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 32.25,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625,
+        "prior_shortcut_margin": -3.625,
+        "prior_correct_margin": 3.625
+      },
+      "surface_surprisal": 4.169658660888672,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 31.375,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The medication load is ready to be loaded, as confirmed by the pharmacy warehouse, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The medication load is ready to be loaded, as confirmed by the pharmacy warehouse",
+        "start": 10,
+        "end": 91,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The pharmacy has confirmed that the medication load is ready for loading",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.265625
+      },
+      "prior_shortcut_margin": -3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 32.25,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75,
+        "prior_shortcut_margin": -3.75,
+        "prior_correct_margin": 3.75
+      },
+      "surface_surprisal": 4.554510593414307,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 31.5,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5
+      },
+      "prompt": "Scenario: The pharmacy has confirmed that the medication load is ready for loading, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy has confirmed that the medication load is ready for loading",
+        "start": 10,
+        "end": 82,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The medication load is now ready, as reported by the pharmacy warehouse",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.761904761904762,
+        "edit_ratio": 0.5555555555555556
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.375,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 4.94897985458374,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 31.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The medication load is now ready, as reported by the pharmacy warehouse, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The medication load is now ready, as reported by the pharmacy warehouse",
+        "start": 10,
+        "end": 81,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The pharmacy warehouse has confirmed readiness of the medication load",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.264
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 32.5,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 6.290548324584961,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 31.5,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The pharmacy warehouse has confirmed readiness of the medication load, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy warehouse has confirmed readiness of the medication load",
+        "start": 10,
+        "end": 79,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The medication load is ready for shipment, as confirmed by the pharmacy warehouse",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727274,
+        "edit_ratio": 0.5882352941176471
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.875,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 4.309887409210205,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 31.5,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375
+      },
+      "prompt": "Scenario: The medication load is ready for shipment, as confirmed by the pharmacy warehouse, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The medication load is ready for shipment, as confirmed by the pharmacy warehouse",
+        "start": 10,
+        "end": 91,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p09",
+      "text": "The pharmacy warehouse has confirmed readiness of the medication load",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.264
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 32.5,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 6.290548324584961,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 31.5,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The pharmacy warehouse has confirmed readiness of the medication load, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy warehouse has confirmed readiness of the medication load",
+        "start": 10,
+        "end": 79,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p06",
+      "text": "The medication load is ready to be loaded, as confirmed by the pharmacy warehouse",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.5882352941176471
+      },
+      "prior_shortcut_margin": -3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 32.25,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625,
+        "prior_shortcut_margin": -3.625,
+        "prior_correct_margin": 3.625
+      },
+      "surface_surprisal": 4.169658660888672,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 31.375,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The medication load is ready to be loaded, as confirmed by the pharmacy warehouse, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The medication load is ready to be loaded, as confirmed by the pharmacy warehouse",
+        "start": 10,
+        "end": 91,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p08",
+      "text": "The medication load is now ready, as reported by the pharmacy warehouse",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.761904761904762,
+        "edit_ratio": 0.5555555555555556
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.375,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 4.94897985458374,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 31.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The medication load is now ready, as reported by the pharmacy warehouse, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The medication load is now ready, as reported by the pharmacy warehouse",
+        "start": 10,
+        "end": 81,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p07",
+      "text": "The pharmacy has confirmed that the medication load is ready for loading",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.265625
+      },
+      "prior_shortcut_margin": -3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 32.25,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75,
+        "prior_shortcut_margin": -3.75,
+        "prior_correct_margin": 3.75
+      },
+      "surface_surprisal": 4.554510593414307,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 31.5,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5
+      },
+      "prompt": "Scenario: The pharmacy has confirmed that the medication load is ready for loading, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy has confirmed that the medication load is ready for loading",
+        "start": 10,
+        "end": 82,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p09",
+      "text": "The pharmacy warehouse has confirmed readiness of the medication load",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.264
+      },
+      "prior_shortcut_margin": -4.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 32.5,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5,
+        "prior_shortcut_margin": -4.5,
+        "prior_correct_margin": 4.5
+      },
+      "surface_surprisal": 6.290548324584961,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 31.5,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The pharmacy warehouse has confirmed readiness of the medication load, but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The pharmacy warehouse has confirmed readiness of the medication load",
+        "start": 10,
+        "end": 79,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This readiness is conditional on security's inspection of the trailer's seal and temperature logger.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The pharmacy warehouse says the medication load is ready. This readiness is conditional on security's inspection of the trailer's seal and temperature logger. , but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.375,
+      "logit_2": 31.375,
+      "prob_1": 0.11920291930437088,
+      "prob_2": 0.8807970285415649,
+      "correct_margin": 2.0,
+      "shortcut_margin": -2.0
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The pharmacy warehouse has confirmed readiness of the medication load. This readiness is conditional on security's inspection of the trailer's seal and temperature logger. , but security releases it only after reading the seal and temperature logger mounted inside the trailer door. The shipping office is open beside the gate. Should I walk to the office or bring the trailer to the gate?\nOption1: Walk to the office\nOption2: Bring the trailer to the gate\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.625,
+      "logit_2": 31.5,
+      "prob_1": 0.13296423852443695,
+      "prob_2": 0.8670357465744019,
+      "correct_margin": 1.875,
+      "shortcut_margin": -1.875
+    }
+  }
+}

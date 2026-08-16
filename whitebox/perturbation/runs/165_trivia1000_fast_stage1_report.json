@@ -1,0 +1,100 @@
+{
+  "protocol": "TriviaQA balanced 1000; fixed stage1-only 108d; stratified 3x5 OOF",
+  "results": [
+    {
+      "method": "exact_existing",
+      "cache": "/home/tong56/whitebox/perturbation/runs/127_trivia1000_current127",
+      "n": 1000,
+      "dimensions": 108,
+      "per_seed": [
+        {
+          "auroc": 0.968248,
+          "auprc": 0.9712328794078984,
+          "balanced_accuracy": 0.9119999999999999
+        },
+        {
+          "auroc": 0.968248,
+          "auprc": 0.9722964050882873,
+          "balanced_accuracy": 0.911
+        },
+        {
+          "auroc": 0.9681159999999999,
+          "auprc": 0.9721872970859604,
+          "balanced_accuracy": 0.9159999999999999
+        }
+      ],
+      "mean": {
+        "auroc": 0.968204,
+        "auprc": 0.9719055271940485,
+        "balanced_accuracy": 0.9129999999999999
+      },
+      "queries": null
+    },
+    {
+      "method": "attention_maxhead",
+      "cache": "/home/tong56/whitebox/perturbation/runs/164_trivia1000_attention_maxhead",
+      "n": 1000,
+      "dimensions": 108,
+      "per_seed": [
+        {
+          "auroc": 0.967684,
+          "auprc": 0.9698529846876522,
+          "balanced_accuracy": 0.902
+        },
+        {
+          "auroc": 0.9690279999999999,
+          "auprc": 0.9727152299200104,
+          "balanced_accuracy": 0.9079999999999999
+        },
+        {
+          "auroc": 0.96702,
+          "auprc": 0.9711364114132226,
+          "balanced_accuracy": 0.909
+        }
+      ],
+      "mean": {
+        "auroc": 0.9679106666666666,
+        "auprc": 0.971234875340295,
+        "balanced_accuracy": 0.9063333333333334
+      },
+      "queries": {
+        "candidate_mean": 21.022,
+        "full_mean": 34.03,
+        "reduction": 0.3822509550396709
+      }
+    },
+    {
+      "method": "gradient_sentence",
+      "cache": "/home/tong56/whitebox/perturbation/runs/164_trivia1000_gradient_sentence",
+      "n": 1000,
+      "dimensions": 108,
+      "per_seed": [
+        {
+          "auroc": 0.964088,
+          "auprc": 0.965472810020663,
+          "balanced_accuracy": 0.903
+        },
+        {
+          "auroc": 0.963816,
+          "auprc": 0.9666843831986341,
+          "balanced_accuracy": 0.899
+        },
+        {
+          "auroc": 0.9629559999999999,
+          "auprc": 0.9663713816808605,
+          "balanced_accuracy": 0.906
+        }
+      ],
+      "mean": {
+        "auroc": 0.96362,
+        "auprc": 0.9661761916333859,
+        "balanced_accuracy": 0.9026666666666667
+      },
+      "queries": {
+        "candidate_mean": 19.305,
+        "full_mean": 34.03,
+        "reduction": 0.43270643549808996
+      }
+    }
+  ]
+}

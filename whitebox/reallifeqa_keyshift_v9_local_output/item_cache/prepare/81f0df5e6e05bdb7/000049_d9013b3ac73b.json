@@ -1,0 +1,808 @@
+{
+  "item_index": 49,
+  "item_id": "49",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.09765268131842778,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The fin tag must be attached to the board before the rack scan.",
+    "located": {
+      "text": "The fin tag must be attached to the board before the rack scan.",
+      "start": 59,
+      "end": 122,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "I am checking a paddleboard into rental storage.",
+    "located": {
+      "text": "I am checking a paddleboard into rental storage.",
+      "start": 10,
+      "end": 58,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin tag must be attached to the board before the rack scan. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.5,
+      "logit_2": 32.0,
+      "prob_1": 0.02931223064661026,
+      "prob_2": 0.970687747001648,
+      "correct_margin": 3.5,
+      "shortcut_margin": -3.5,
+      "prior_shortcut_margin": -3.5,
+      "prior_correct_margin": 3.5
+    },
+    "surface_surprisal": 4.629483699798584,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 25.75,
+      "logit_2": 32.5,
+      "prob_1": 0.0011695101857185364,
+      "prob_2": 0.9988304972648621,
+      "correct_margin": 6.75,
+      "shortcut_margin": -6.75
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The fin must be secured to the board before scanning it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.24786324786324787
+      },
+      "prior_shortcut_margin": -4.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.0,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125,
+        "prior_shortcut_margin": -4.125,
+        "prior_correct_margin": 4.125
+      },
+      "surface_surprisal": 4.34026575088501,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.75,
+        "logit_2": 31.25,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin must be secured to the board before scanning it. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fin must be secured to the board before scanning it.",
+        "start": 59,
+        "end": 115,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "Attach the fin to the board before scanning it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545455,
+        "edit_ratio": 0.40740740740740744
+      },
+      "prior_shortcut_margin": -5.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.5,
+        "logit_2": 32.25,
+        "prob_1": 0.0031726830638945103,
+        "prob_2": 0.9968273043632507,
+        "correct_margin": 5.75,
+        "shortcut_margin": -5.75,
+        "prior_shortcut_margin": -5.75,
+        "prior_correct_margin": 5.75
+      },
+      "surface_surprisal": 3.868086099624634,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.5,
+        "logit_2": 31.75,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": 5.25,
+        "shortcut_margin": -5.25
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. Attach the fin to the board before scanning it. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Attach the fin to the board before scanning it.",
+        "start": 59,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The fin needs to be attached to the board before scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.22689075630252098
+      },
+      "prior_shortcut_margin": -4.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.75,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0,
+        "prior_shortcut_margin": -4.0,
+        "prior_correct_margin": 4.0
+      },
+      "surface_surprisal": 3.7837841510772705,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.125,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin needs to be attached to the board before scanning. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fin needs to be attached to the board before scanning.",
+        "start": 59,
+        "end": 117,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "Secure the fin to the board before scanning it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545455,
+        "edit_ratio": 0.40740740740740744
+      },
+      "prior_shortcut_margin": -5.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.125,
+        "logit_2": 32.25,
+        "prob_1": 0.005911068990826607,
+        "prob_2": 0.9940890073776245,
+        "correct_margin": 5.125,
+        "shortcut_margin": -5.125,
+        "prior_shortcut_margin": -5.125,
+        "prior_correct_margin": 5.125
+      },
+      "surface_surprisal": 4.820867538452148,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 31.25,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. Secure the fin to the board before scanning it. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Secure the fin to the board before scanning it.",
+        "start": 59,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The fin must be attached to the board prior to scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.19658119658119655
+      },
+      "prior_shortcut_margin": -4.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 32.5,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": 4.75,
+        "shortcut_margin": -4.75,
+        "prior_shortcut_margin": -4.75,
+        "prior_correct_margin": 4.75
+      },
+      "surface_surprisal": 3.8241186141967773,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.125,
+        "logit_2": 32.25,
+        "prob_1": 0.002182716503739357,
+        "prob_2": 0.9978172779083252,
+        "correct_margin": 6.125,
+        "shortcut_margin": -6.125
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin must be attached to the board prior to scanning. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fin must be attached to the board prior to scanning.",
+        "start": 59,
+        "end": 115,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "Attach the fin securely to the board before scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545455,
+        "edit_ratio": 0.38596491228070173
+      },
+      "prior_shortcut_margin": -4.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.125,
+        "logit_2": 32.0,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": 4.875,
+        "shortcut_margin": -4.875,
+        "prior_shortcut_margin": -4.875,
+        "prior_correct_margin": 4.875
+      },
+      "surface_surprisal": 4.501646995544434,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 31.5,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": 4.625,
+        "shortcut_margin": -4.625
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. Attach the fin securely to the board before scanning. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Attach the fin securely to the board before scanning.",
+        "start": 59,
+        "end": 112,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The fin tag must be attached to the board before scanning it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8,
+        "edit_ratio": 0.1311475409836066
+      },
+      "prior_shortcut_margin": -4.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.5,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": 4.625,
+        "shortcut_margin": -4.625,
+        "prior_shortcut_margin": -4.625,
+        "prior_correct_margin": 4.625
+      },
+      "surface_surprisal": 4.402040004730225,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.625,
+        "logit_2": 32.25,
+        "prob_1": 0.001325022429227829,
+        "prob_2": 0.9986749291419983,
+        "correct_margin": 6.625,
+        "shortcut_margin": -6.625
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin tag must be attached to the board before scanning it. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fin tag must be attached to the board before scanning it.",
+        "start": 59,
+        "end": 120,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "Attach the fin tag to the board before scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6363636363636364,
+        "edit_ratio": 0.33944954128440363
+      },
+      "prior_shortcut_margin": -5.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 32.25,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": 5.25,
+        "shortcut_margin": -5.25,
+        "prior_shortcut_margin": -5.25,
+        "prior_correct_margin": 5.25
+      },
+      "surface_surprisal": 4.6473069190979,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.625,
+        "logit_2": 32.5,
+        "prob_1": 0.0010322310263291001,
+        "prob_2": 0.9989677667617798,
+        "correct_margin": 6.875,
+        "shortcut_margin": -6.875
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. Attach the fin tag to the board before scanning. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Attach the fin tag to the board before scanning.",
+        "start": 59,
+        "end": 107,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The fin needs to be attached to the board before scanning it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.24590163934426235
+      },
+      "prior_shortcut_margin": -4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.875,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25,
+        "prior_shortcut_margin": -4.25,
+        "prior_correct_margin": 4.25
+      },
+      "surface_surprisal": 3.7221012115478516,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 31.25,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin needs to be attached to the board before scanning it. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fin needs to be attached to the board before scanning it.",
+        "start": 59,
+        "end": 120,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p02",
+      "text": "Attach the fin to the board before scanning it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545455,
+        "edit_ratio": 0.40740740740740744
+      },
+      "prior_shortcut_margin": -5.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.5,
+        "logit_2": 32.25,
+        "prob_1": 0.0031726830638945103,
+        "prob_2": 0.9968273043632507,
+        "correct_margin": 5.75,
+        "shortcut_margin": -5.75,
+        "prior_shortcut_margin": -5.75,
+        "prior_correct_margin": 5.75
+      },
+      "surface_surprisal": 3.868086099624634,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.5,
+        "logit_2": 31.75,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": 5.25,
+        "shortcut_margin": -5.25
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. Attach the fin to the board before scanning it. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Attach the fin to the board before scanning it.",
+        "start": 59,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p05",
+      "text": "The fin must be attached to the board prior to scanning.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.19658119658119655
+      },
+      "prior_shortcut_margin": -4.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 32.5,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": 4.75,
+        "shortcut_margin": -4.75,
+        "prior_shortcut_margin": -4.75,
+        "prior_correct_margin": 4.75
+      },
+      "surface_surprisal": 3.8241186141967773,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.125,
+        "logit_2": 32.25,
+        "prob_1": 0.002182716503739357,
+        "prob_2": 0.9978172779083252,
+        "correct_margin": 6.125,
+        "shortcut_margin": -6.125
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin must be attached to the board prior to scanning. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fin must be attached to the board prior to scanning.",
+        "start": 59,
+        "end": 115,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p03",
+      "text": "The fin needs to be attached to the board before scanning.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.22689075630252098
+      },
+      "prior_shortcut_margin": -4.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.75,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0,
+        "prior_shortcut_margin": -4.0,
+        "prior_correct_margin": 4.0
+      },
+      "surface_surprisal": 3.7837841510772705,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.125,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin needs to be attached to the board before scanning. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fin needs to be attached to the board before scanning.",
+        "start": 59,
+        "end": 117,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p01",
+      "text": "The fin must be secured to the board before scanning it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.24786324786324787
+      },
+      "prior_shortcut_margin": -4.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.0,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125,
+        "prior_shortcut_margin": -4.125,
+        "prior_correct_margin": 4.125
+      },
+      "surface_surprisal": 4.34026575088501,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.75,
+        "logit_2": 31.25,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": 4.5,
+        "shortcut_margin": -4.5
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin must be secured to the board before scanning it. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The fin must be secured to the board before scanning it.",
+        "start": 59,
+        "end": 115,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p02",
+      "text": "Attach the fin to the board before scanning it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545455,
+        "edit_ratio": 0.40740740740740744
+      },
+      "prior_shortcut_margin": -5.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.5,
+        "logit_2": 32.25,
+        "prob_1": 0.0031726830638945103,
+        "prob_2": 0.9968273043632507,
+        "correct_margin": 5.75,
+        "shortcut_margin": -5.75,
+        "prior_shortcut_margin": -5.75,
+        "prior_correct_margin": 5.75
+      },
+      "surface_surprisal": 3.868086099624634,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.5,
+        "logit_2": 31.75,
+        "prob_1": 0.005220125894993544,
+        "prob_2": 0.9947799444198608,
+        "correct_margin": 5.25,
+        "shortcut_margin": -5.25
+      },
+      "prompt": "Scenario: I am checking a paddleboard into rental storage. Attach the fin to the board before scanning it. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Attach the fin to the board before scanning it.",
+        "start": 59,
+        "end": 106,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This instruction should be interpreted in conjunction with the context of checking a paddleboard into rental storage.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am checking a paddleboard into rental storage. The fin tag must be attached to the board before the rack scan. This instruction should be interpreted in conjunction with the context of checking a paddleboard into rental storage. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 25.625,
+      "logit_2": 32.5,
+      "prob_1": 0.0010322310263291001,
+      "prob_2": 0.9989677667617798,
+      "correct_margin": 6.875,
+      "shortcut_margin": -6.875
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I am checking a paddleboard into rental storage. Attach the fin to the board before scanning it. This instruction should be interpreted in conjunction with the context of checking a paddleboard into rental storage. What should I bring to the rack?\nOption1: Only the fin tag\nOption2: The paddleboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 26.625,
+      "logit_2": 31.25,
+      "prob_1": 0.009708477184176445,
+      "prob_2": 0.9902915358543396,
+      "correct_margin": 4.625,
+      "shortcut_margin": -4.625
+    }
+  }
+}

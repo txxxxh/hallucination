@@ -1,0 +1,268 @@
+# -*- coding: utf-8 -*-
+"""
+tests/test_contracts.py  --  torch-free validation of the 61 -> 62 -> 63 -> 64
+JSONL contract and of the numpy dataflow that runs on top of it.
+
+Builds synthetic stage-1 and stage-2 records with EXACTLY the schema the real
+scripts write, then executes every field access the downstream scripts perform
+and every numpy computation they run. Catches schema drift and index-mapping
+bugs without needing a model.
+
+Run:  python tests/test_contracts.py
+"""
+from __future__ import annotations
+
+import importlib, itertools, json, os, sys, tempfile
+import numpy as np
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from spanattr.core import (Span, interaction_from_gains, redundancy_clusters,
+                           synergy_pairs, leading_coalition, nms_disjoint,
+                           topk_first_order, greedy_select, exhaustive_select,
+                           second_order_objective, spearman)
+
+stage65 = importlib.import_module("65_vocab_recovery_generation")
+FAIL = []
+
+
+def check(name, cond, detail=""):
+    print(f"  [{'PASS' if cond else 'FAIL'}] {name}" + (f"  {detail}" if detail else ""))
+    if not cond:
+        FAIL.append(name)
+
+
+# --- fields each downstream script reads (kept in sync by hand, asserted here) --
+R61_READ_BY_62 = ["item_id", "context", "question", "gold", "pred", "P",
+                  "spans", "candidates", "sigma_null", "gold_variants", "pred_variants"]
+R61_READ_BY_63 = ["item_id", "context", "question", "gold", "pred", "P",
+                  "spans", "candidates"]
+R62_READ_BY_63 = ["item_id", "S0", "u", "I", "spans", "tau"]
+R63_READ_BY_64 = ["item_id", "selection"]
+SPAN_FIELDS = ["idx", "start", "end", "text", "u_hat", "ig", "u", "att", "sig"]
+
+
+def make_r61(item_id="x1", n_ctx=20, m=6, seed=0):
+    rng = np.random.default_rng(seed)
+    ctx_start, ctx_end = 5, 5 + n_ctx
+    spans, k = [], 0
+    for w in (2, 3):
+        for s in range(ctx_start, ctx_end - w + 1):
+            spans.append(Span(idx=k, start=s, end=s + w, text=f"tok{s}_{w}"))
+            k += 1
+    # gains must be POSITIVE for the redundancy/synergy reading of I to hold
+    # (see the precondition note in spanattr/core.py)
+    u = np.abs(rng.normal(0, 1, size=len(spans)))
+    u[3] += 4.0                       # plant a dominant span
+    sigma = 0.25
+    cand = nms_disjoint(u, spans, m=m)
+    return {
+        "item_id": item_id, "pred": "kappa", "gold": "delta",
+        "context": " ".join(f"w{i}" for i in range(n_ctx)),
+        "question": "which one", "gold_variants": [], "pred_variants": [],
+        "P": ctx_end + 7, "ctx_start": ctx_start, "ctx_end": ctx_end,
+        "S0": 1.23, "u_all": float(np.abs(u).sum()), "sum_ig": float(np.abs(u).sum()),
+        "completeness_rel_err": 0.02, "sigma_null": sigma,
+        "snr": float(np.mean(np.abs(u)) / sigma), "coverage_cand": 0.8,
+        "rho_uhat_u": 0.5, "rho_ig_u": 0.7, "rho_att_u": 0.1,
+        "r_uhat_u": 0.5, "r_ig_u": 0.7,
+        "candidates": cand,
+        "spans": [dict(s.to_dict(), u_hat=float(u[i] * 0.9), ig=float(u[i] * 0.95),
+                       u=float(u[i]), att=float(abs(rng.normal())),
+                       sig=bool(abs(u[i]) > 2 * sigma))
+                  for i, s in enumerate(spans)],
+        "config": {},
+    }
+
+
+def make_r62(r61, seed=0):
+    """Replays exactly what 62_ computes, from synthetic measured gains."""
+    rng = np.random.default_rng(seed + 100)
+    cand_meta = [r61["spans"][i] for i in r61["candidates"]]
+    m = len(cand_meta)
+    u = np.array([s["u"] for s in cand_meta], dtype=float)
+    pairs = list(itertools.combinations(range(m), 2))
+    # ground truth: 0,1 redundant; 2,3 synergistic; rest additive
+    u_pair = {}
+    for (a, b) in pairs:
+        v = u[a] + u[b] + rng.normal(0, 0.02)
+        if (a, b) == (0, 1):
+            v = max(u[a], u[b])
+        if (a, b) == (2, 3):
+            v = u[a] + u[b] + 3.0
+        u_pair[(a, b)] = v
+    I = interaction_from_gains(u, u_pair)
+    sigma = r61["sigma_null"]
+    tau = 2.0 * np.sqrt(3.0) * sigma
+    w, V = np.linalg.eigh((I + I.T) / 2)
+    return {
+        "item_id": r61["item_id"], "S0": r61["S0"], "sigma_null": sigma, "tau": tau,
+        "m": m, "u": [float(x) for x in u],
+        "I": [[float(x) for x in row] for row in I],
+        "spans": [{"idx": k, "start": s["start"], "end": s["end"], "text": s["text"]}
+                  for k, s in enumerate(cand_meta)],
+        "redundancy_clusters": redundancy_clusters(I, tau),
+        "synergy_pairs": synergy_pairs(I, tau),
+        "leading_coalition": leading_coalition(I, 0.3),
+        "spectrum": {"eigvals": [float(x) for x in w],
+                     "top_eigvec": [float(x) for x in V[:, int(np.argmax(np.abs(w)))]]},
+        "n_pairs": len(pairs), "n_sig_pairs": 0, "frac_sig": 0.0,
+        "synergy_share": 0.0, "u_singles_sum": float(u.sum()),
+        "u_joint_all": float(u.sum()),
+    }
+
+
+def main() -> int:
+    print("=" * 72)
+    print("stage contract test (torch-free)")
+    print("=" * 72)
+
+    r61 = make_r61()
+    r62 = make_r62(r61)
+
+    print("\n[1] stage-1 record schema")
+    check("61 -> 62 required fields present",
+          all(f in r61 for f in R61_READ_BY_62),
+          f"missing={[f for f in R61_READ_BY_62 if f not in r61]}")
+    check("61 -> 63 required fields present",
+          all(f in r61 for f in R61_READ_BY_63))
+    check("every span carries all annotation fields",
+          all(all(f in s for f in SPAN_FIELDS) for s in r61["spans"]))
+    check("candidates index into spans", all(0 <= i < len(r61["spans"])
+                                             for i in r61["candidates"]))
+    toks = [set(range(r61["spans"][i]["start"], r61["spans"][i]["end"]))
+            for i in r61["candidates"]]
+    check("candidate spans are token-disjoint (required for union alpha)",
+          all(not (a & b) for a, b in itertools.combinations(toks, 2)))
+    check("all spans lie inside the context region",
+          all(r61["ctx_start"] <= s["start"] and s["end"] <= r61["ctx_end"]
+              for s in r61["spans"]))
+    check("span widths are exactly 2 or 3",
+          set(s["end"] - s["start"] for s in r61["spans"]) == {2, 3})
+
+    print("\n[2] stage-2 record schema and structure recovery")
+    check("62 -> 63 required fields present",
+          all(f in r62 for f in R62_READ_BY_63),
+          f"missing={[f for f in R62_READ_BY_63 if f not in r62]}")
+    I = np.array(r62["I"]); u = np.array(r62["u"])
+    check("I is square, symmetric, hollow",
+          I.shape == (r62["m"], r62["m"]) and np.allclose(I, I.T)
+          and np.allclose(np.diag(I), 0))
+    check("planted redundant pair (0,1) recovered as I<0", I[0, 1] < 0,
+          f"I_01={I[0,1]:+.3f}")
+    check("planted synergistic pair (2,3) recovered as I>0", I[2, 3] > 0,
+          f"I_23={I[2,3]:+.3f}")
+    check("redundancy cluster contains {0,1}",
+          any(set(c) >= {0, 1} for c in r62["redundancy_clusters"]),
+          f"{r62['redundancy_clusters']}")
+    check("synergy pair list surfaces (2,3)",
+          any(p[:2] == (2, 3) for p in r62["synergy_pairs"]))
+    check("JSON round-trips losslessly",
+          json.loads(json.dumps(r62))["I"] == r62["I"])
+
+    print("\n[3] stage-3 selection over the candidate pool")
+    m, k = r62["m"], 3
+    att_c = np.array([r61["spans"][j]["att"] for j in r61["candidates"]])
+    check("attention scores align with candidate list", len(att_c) == m)
+    sel = {"attention_topk": topk_first_order(att_c, k),
+           "first_order": topk_first_order(u, k),
+           "second_order": exhaustive_select(u, I, k),
+           "greedy": greedy_select(u, I, k)}
+    check("all strategies respect the at-most-k budget",
+          all(len(v) <= k for v in sel.values()), f"{ {a: len(b) for a,b in sel.items()} }")
+    check("all selections index into the candidate list",
+          all(all(0 <= i < m for i in v) for v in sel.values()))
+    check("second_order >= first_order on the 2nd-order objective",
+          second_order_objective(sel["second_order"], u, I) >=
+          second_order_objective(sel["first_order"], u, I) - 1e-9,
+          f"{second_order_objective(sel['second_order'],u,I):.3f} vs "
+          f"{second_order_objective(sel['first_order'],u,I):.3f}")
+    check("second_order finds the synergy pair that first_order misses",
+          set([2, 3]) <= set(sel["second_order"]) and
+          not set([2, 3]) <= set(sel["first_order"]),
+          f"so={sel['second_order']} fo={sel['first_order']}")
+
+    print("\n[4] stage-3 random-matched control indexing")
+    spans = [Span(**{k2: v2 for k2, v2 in s.items()}) for s in r62["spans"]]
+    off = len(spans)
+    rnd = [Span(idx=off + j, start=100 + 5 * j, end=100 + 5 * j + spans[i].width)
+           for j, i in enumerate(sel["first_order"])]
+    spans_ext = spans + rnd
+    sel["random_matched"] = [off + j for j in range(len(rnd))]
+    check("random control widths match the reference selection",
+          [spans_ext[i].width for i in sel["random_matched"]] ==
+          [spans[i].width for i in sel["first_order"]])
+    check("control indices do not collide with candidates",
+          min(sel["random_matched"]) >= m)
+    check("obj2 filters out control indices (i<m guard)",
+          second_order_objective([x for x in sel["random_matched"] if x < m], u, I) == 0.0)
+
+    print("\n[5] stage-4 position expansion")
+    positions = []
+    for si in sel["second_order"]:
+        s = r61["spans"][r61["candidates"][si]]
+        positions += list(range(s["start"], s["end"]))
+    positions = sorted(set(positions))
+    check("63 -> 64 required fields present",
+          all(f in {"item_id": 1, "selection": sel} for f in R63_READ_BY_64))
+    check("selection maps to 2-3 tokens per span",
+          len(positions) == sum(r61["spans"][r61["candidates"][i]]["end"] -
+                                r61["spans"][r61["candidates"][i]]["start"]
+                                for i in sel["second_order"]),
+          f"n_positions={len(positions)}")
+    check("all decoded positions are inside the context",
+          all(r61["ctx_start"] <= p < r61["ctx_end"] for p in positions))
+
+    print("\\n[6] stage-4 -> stage-5 recovered-edit contract")
+    stage64 = {
+        "joint_top": [
+            {"u_realized": 1.2, "score": 0.1,
+             "substitutions": [{"pos": 7, "id": 42, "tok": " fixed"}]},
+            {"u_realized": 1.0, "score": 0.3,
+             "substitutions": [{"pos": 8, "id": 43, "tok": " alternate"}]},
+        ]
+    }
+    edits = stage65.recovered_edits(stage64, top_edits=1)
+    check("65 consumes the highest-ranked exhaustive Stage-64 edit",
+          len(edits) == 1 and edits[0]["substitutions"][0]["id"] == 42)
+    legacy = {"joint_substitutions": [{"pos": 9, "id": 44}],
+              "joint_u_realized": 0.8, "joint_score": 0.4}
+    check("65 accepts legacy joint_substitutions output",
+          stage65.recovered_edits(legacy, 1)[0]["u_realized"] == 0.8)
+
+    class StubAttributor:
+        @staticmethod
+        def match_rate(gens, targets):
+            return float(any(t.lower() in gens[0].lower() for t in targets))
+
+    flags = stage65.match_flags(StubAttributor(),
+                                ["wrong answer", "the GOLD answer"], ["gold"])
+    check("65 scores every sampled generation independently",
+          flags == [False, True], f"flags={flags}")
+
+    print("\\n[7] file round-trip through a real JSONL on disk")
+    with tempfile.TemporaryDirectory() as d:
+        p61, p62 = os.path.join(d, "61.jsonl"), os.path.join(d, "62.jsonl")
+        with open(p61, "w") as f:
+            for i in range(3):
+                f.write(json.dumps(make_r61(f"x{i}", seed=i)) + "\n")
+        with open(p62, "w") as f:
+            for l in open(p61):
+                f.write(json.dumps(make_r62(json.loads(l))) + "\n")
+        idx = {json.loads(l)["item_id"]: json.loads(l) for l in open(p61)}
+        recs = [json.loads(l) for l in open(p62)]
+        check("62 records join to 61 records by item_id",
+              all(r["item_id"] in idx for r in recs), f"n={len(recs)}")
+        check("joined P is consistent", all(idx[r["item_id"]]["P"] > 0 for r in recs))
+        check("joined candidate count equals m",
+              all(len(idx[r["item_id"]]["candidates"]) == r["m"] for r in recs))
+
+    print("\n" + "=" * 72)
+    if FAIL:
+        print(f"FAILED ({len(FAIL)}): {FAIL}")
+        return 1
+    print("ALL CONTRACT TESTS PASSED")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

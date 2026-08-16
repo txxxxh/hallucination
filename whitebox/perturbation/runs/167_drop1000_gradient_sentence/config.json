@@ -1,0 +1,17 @@
+{
+  "dataset": "DROP validation natural generations",
+  "expected": 1000,
+  "method": "gradient_sentence",
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "stage": "stage1_only",
+  "detector": "fixed 108d = stage1 curves32 + hidden4x8 + layer14 PCA44",
+  "attention": {
+    "blocks": 12,
+    "keep": 7
+  },
+  "gradient": {
+    "saliency_mass": 0.75,
+    "candidate_cap": 0.6,
+    "sentence_topk": 3
+  }
+}

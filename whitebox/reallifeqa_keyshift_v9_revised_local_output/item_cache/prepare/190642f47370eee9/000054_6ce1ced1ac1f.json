@@ -1,0 +1,841 @@
+{
+  "item_index": 54,
+  "item_id": "54",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.7979562211923824,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "while the manufacturer rebate requires the original dated receipt.",
+    "located": {
+      "text": "while the manufacturer rebate requires the original dated receipt.",
+      "start": 129,
+      "end": 195,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": null,
+  "original": {
+    "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, while the manufacturer rebate requires the original dated receipt. What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.25,
+      "logit_2": 32.5,
+      "prob_1": 0.014063626527786255,
+      "prob_2": 0.9859364032745361,
+      "correct_margin": -4.25,
+      "shortcut_margin": 4.25,
+      "prior_shortcut_margin": 4.25,
+      "prior_correct_margin": -4.25
+    },
+    "surface_surprisal": 6.140318393707275,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 27.625,
+      "logit_2": 31.625,
+      "prob_1": 0.01798621006309986,
+      "prob_2": 0.9820137619972229,
+      "correct_margin": -4.0,
+      "shortcut_margin": 4.0
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "since the rebate requires the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.823529411764706,
+        "edit_ratio": 0.16239316239316237
+      },
+      "prior_shortcut_margin": 3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.375,
+        "logit_2": 32.25,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": -3.875,
+        "shortcut_margin": 3.875,
+        "prior_shortcut_margin": 3.875,
+        "prior_correct_margin": -3.875
+      },
+      "surface_surprisal": 5.732783317565918,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 31.25,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, since the rebate requires the original dated receipt What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the rebate requires the original dated receipt",
+        "start": 129,
+        "end": 181,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "because the manufacturer rebate needs the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.13178294573643412
+      },
+      "prior_shortcut_margin": 5.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.0,
+        "logit_2": 33.0,
+        "prob_1": 0.006692850962281227,
+        "prob_2": 0.9933071732521057,
+        "correct_margin": -5.0,
+        "shortcut_margin": 5.0,
+        "prior_shortcut_margin": 5.0,
+        "prior_correct_margin": -5.0
+      },
+      "surface_surprisal": 5.973149299621582,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 31.5,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": -3.875,
+        "shortcut_margin": 3.875
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, because the manufacturer rebate needs the original dated receipt What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "because the manufacturer rebate needs the original dated receipt",
+        "start": 129,
+        "end": 193,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "as the rebate program demands the original dated receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.30578512396694213
+      },
+      "prior_shortcut_margin": 5.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.25,
+        "logit_2": 32.25,
+        "prob_1": 0.006692850962281227,
+        "prob_2": 0.9933071732521057,
+        "correct_margin": -5.0,
+        "shortcut_margin": 5.0,
+        "prior_shortcut_margin": 5.0,
+        "prior_correct_margin": -5.0
+      },
+      "surface_surprisal": 5.778905868530273,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 31.375,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": -3.625,
+        "shortcut_margin": 3.625
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, as the rebate program demands the original dated receipt What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as the rebate program demands the original dated receipt",
+        "start": 129,
+        "end": 185,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "according to the rebate terms, the original dated receipt is required",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.368421052631579
+      },
+      "prior_shortcut_margin": 3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.25,
+        "logit_2": 32.0,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75,
+        "prior_shortcut_margin": 3.75,
+        "prior_correct_margin": -3.75
+      },
+      "surface_surprisal": 4.026196002960205,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 31.875,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, according to the rebate terms, the original dated receipt is required What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "according to the rebate terms, the original dated receipt is required",
+        "start": 129,
+        "end": 198,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "as per the rebate requirements, the original dated receipt is necessary",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.28888888888888886
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 32.5,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 4.7128119468688965,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.625,
+        "logit_2": 32.0,
+        "prob_1": 0.004609572701156139,
+        "prob_2": 0.9953904151916504,
+        "correct_margin": -5.375,
+        "shortcut_margin": 5.375
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, as per the rebate requirements, the original dated receipt is necessary What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as per the rebate requirements, the original dated receipt is necessary",
+        "start": 129,
+        "end": 200,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "the rebate stipulates that the original dated receipt is required",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.36923076923076925
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 32.5,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 4.896087169647217,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 31.625,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": -4.5,
+        "shortcut_margin": 4.5
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, the rebate stipulates that the original dated receipt is required What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate stipulates that the original dated receipt is required",
+        "start": 129,
+        "end": 194,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "the rebate needs the original dated receipt to be valid",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.31666666666666665
+      },
+      "prior_shortcut_margin": 5.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 32.5,
+        "prob_1": 0.006692850962281227,
+        "prob_2": 0.9933071732521057,
+        "correct_margin": -5.0,
+        "shortcut_margin": 5.0,
+        "prior_shortcut_margin": 5.0,
+        "prior_correct_margin": -5.0
+      },
+      "surface_surprisal": 5.604339599609375,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.75,
+        "logit_2": 31.875,
+        "prob_1": 0.005911068990826607,
+        "prob_2": 0.9940890073776245,
+        "correct_margin": -5.125,
+        "shortcut_margin": 5.125
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, the rebate needs the original dated receipt to be valid What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate needs the original dated receipt to be valid",
+        "start": 129,
+        "end": 184,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "the rebate rules specify that the original dated receipt must be provided",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.3913043478260869
+      },
+      "prior_shortcut_margin": 4.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.25,
+        "logit_2": 32.25,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": -4.0,
+        "shortcut_margin": 4.0,
+        "prior_shortcut_margin": 4.0,
+        "prior_correct_margin": -4.0
+      },
+      "surface_surprisal": 4.724461555480957,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.875,
+        "logit_2": 32.0,
+        "prob_1": 0.005911068990826607,
+        "prob_2": 0.9940890073776245,
+        "correct_margin": -5.125,
+        "shortcut_margin": 5.125
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, the rebate rules specify that the original dated receipt must be provided What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate rules specify that the original dated receipt must be provided",
+        "start": 129,
+        "end": 202,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "the rebate requires the original dated receipt as proof",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.23333333333333328
+      },
+      "prior_shortcut_margin": 5.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.375,
+        "logit_2": 33.0,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": -5.625,
+        "shortcut_margin": 5.625,
+        "prior_shortcut_margin": 5.625,
+        "prior_correct_margin": -5.625
+      },
+      "surface_surprisal": 5.444721221923828,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.0,
+        "logit_2": 31.875,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, the rebate requires the original dated receipt as proof What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate requires the original dated receipt as proof",
+        "start": 129,
+        "end": 184,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "the rebate terms require the original dated receipt to be submitted",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.31818181818181823
+      },
+      "prior_shortcut_margin": 3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.375,
+        "logit_2": 32.25,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": -3.875,
+        "shortcut_margin": 3.875,
+        "prior_shortcut_margin": 3.875,
+        "prior_correct_margin": -3.875
+      },
+      "surface_surprisal": 4.903943061828613,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 31.625,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": -3.875,
+        "shortcut_margin": 3.875
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, the rebate terms require the original dated receipt to be submitted What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate terms require the original dated receipt to be submitted",
+        "start": 129,
+        "end": 196,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p04",
+      "text": "according to the rebate terms, the original dated receipt is required",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.368421052631579
+      },
+      "prior_shortcut_margin": 3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.25,
+        "logit_2": 32.0,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75,
+        "prior_shortcut_margin": 3.75,
+        "prior_correct_margin": -3.75
+      },
+      "surface_surprisal": 4.026196002960205,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 31.875,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, according to the rebate terms, the original dated receipt is required What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "according to the rebate terms, the original dated receipt is required",
+        "start": 129,
+        "end": 198,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p05",
+      "text": "as per the rebate requirements, the original dated receipt is necessary",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.28888888888888886
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 32.5,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 4.7128119468688965,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 26.625,
+        "logit_2": 32.0,
+        "prob_1": 0.004609572701156139,
+        "prob_2": 0.9953904151916504,
+        "correct_margin": -5.375,
+        "shortcut_margin": 5.375
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, as per the rebate requirements, the original dated receipt is necessary What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as per the rebate requirements, the original dated receipt is necessary",
+        "start": 129,
+        "end": 200,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p09",
+      "text": "the rebate requires the original dated receipt as proof",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.23333333333333328
+      },
+      "prior_shortcut_margin": 5.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.375,
+        "logit_2": 33.0,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": -5.625,
+        "shortcut_margin": 5.625,
+        "prior_shortcut_margin": 5.625,
+        "prior_correct_margin": -5.625
+      },
+      "surface_surprisal": 5.444721221923828,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.0,
+        "logit_2": 31.875,
+        "prob_1": 0.007577240467071533,
+        "prob_2": 0.9924227595329285,
+        "correct_margin": -4.875,
+        "shortcut_margin": 4.875
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, the rebate requires the original dated receipt as proof What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate requires the original dated receipt as proof",
+        "start": 129,
+        "end": 184,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p06",
+      "text": "the rebate stipulates that the original dated receipt is required",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.36923076923076925
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 32.5,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 4.896087169647217,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 31.625,
+        "prob_1": 0.01098694372922182,
+        "prob_2": 0.9890130758285522,
+        "correct_margin": -4.5,
+        "shortcut_margin": 4.5
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, the rebate stipulates that the original dated receipt is required What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the rebate stipulates that the original dated receipt is required",
+        "start": 129,
+        "end": 194,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p04",
+      "text": "according to the rebate terms, the original dated receipt is required",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.368421052631579
+      },
+      "prior_shortcut_margin": 3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.25,
+        "logit_2": 32.0,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75,
+        "prior_shortcut_margin": 3.75,
+        "prior_correct_margin": -3.75
+      },
+      "surface_surprisal": 4.026196002960205,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.125,
+        "logit_2": 31.875,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75
+      },
+      "prompt": "Scenario: I am documenting a dehumidifier purchase with the tenant-support clerk. The clerk scans proof pages and discards them, according to the rebate terms, the original dated receipt is required What should I hand to the tenant-support clerk?\nOption1: A printed copy of the dated receipt\nOption2: The original dated receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "according to the rebate terms, the original dated receipt is required",
+        "start": 129,
+        "end": 198,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": false,
+    "valid": false,
+    "reason": "requires_distinct_predicted_shortcut_and_predicted_constraint",
+    "text": null,
+    "prompt": null,
+    "full_prompt": null
+  },
+  "joint_pdp_context": {
+    "available": false,
+    "prompt": null,
+    "full_prompt": null
+  }
+}

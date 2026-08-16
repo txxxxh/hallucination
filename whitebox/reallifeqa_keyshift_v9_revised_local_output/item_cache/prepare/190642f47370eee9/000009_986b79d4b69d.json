@@ -1,0 +1,841 @@
+{
+  "item_index": 9,
+  "item_id": "9",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.9431214439392224,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The inventory tag must be applied to the top panel before the clerk scans it.",
+    "located": {
+      "text": "The inventory tag must be applied to the top panel before the clerk scans it.",
+      "start": 52,
+      "end": 129,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": null,
+  "original": {
+    "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag must be applied to the top panel before the clerk scans it. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.25,
+      "logit_2": 31.125,
+      "prob_1": 0.531209409236908,
+      "prob_2": 0.4687906503677368,
+      "correct_margin": 0.125,
+      "shortcut_margin": -0.125,
+      "prior_shortcut_margin": -0.125,
+      "prior_correct_margin": 0.125
+    },
+    "surface_surprisal": 4.691122531890869,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.625,
+      "logit_2": 30.125,
+      "prob_1": 0.18242551386356354,
+      "prob_2": 0.8175744414329529,
+      "correct_margin": -1.5,
+      "shortcut_margin": 1.5
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The inventory tag needs to be attached to the top panel before the clerk scans it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8387096774193549,
+        "edit_ratio": 0.10828025477707004
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.625,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.236302375793457,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.25,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag needs to be attached to the top panel before the clerk scans it. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inventory tag needs to be attached to the top panel before the clerk scans it.",
+        "start": 52,
+        "end": 134,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "It is essential to apply the inventory tag to the top panel before scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6206896551724138,
+        "edit_ratio": 0.3774834437086093
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.625,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.45919132232666,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.25,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. It is essential to apply the inventory tag to the top panel before scanning. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "It is essential to apply the inventory tag to the top panel before scanning.",
+        "start": 52,
+        "end": 128,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The inventory tag should be affixed to the top panel prior to scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.2465753424657534
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 31.25,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 4.2208333015441895,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 30.25,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag should be affixed to the top panel prior to scanning. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inventory tag should be affixed to the top panel prior to scanning.",
+        "start": 52,
+        "end": 123,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The tag must be placed on the top panel before the clerk scans it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8275862068965518,
+        "edit_ratio": 0.12056737588652477
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.125,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 4.163387775421143,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.875,
+        "logit_2": 30.0,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The tag must be placed on the top panel before the clerk scans it. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tag must be placed on the top panel before the clerk scans it.",
+        "start": 52,
+        "end": 118,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The inventory tag should be attached to the top panel before scanning occurs.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6428571428571429,
+        "edit_ratio": 0.26315789473684215
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 31.125,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.772730350494385,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.375,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag should be attached to the top panel before scanning occurs. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inventory tag should be attached to the top panel before scanning occurs.",
+        "start": 52,
+        "end": 129,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The tag is required to be on the top panel before the clerk scans it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8000000000000002,
+        "edit_ratio": 0.23611111111111116
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 31.25,
+        "logit_2": 31.375,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 4.171284198760986,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.125,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The tag is required to be on the top panel before the clerk scans it. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tag is required to be on the top panel before the clerk scans it.",
+        "start": 52,
+        "end": 121,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The inventory tag must be securely fastened to the top panel before scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857142,
+        "edit_ratio": 0.22368421052631582
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 30.875,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.610423564910889,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.375,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag must be securely fastened to the top panel before scanning. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inventory tag must be securely fastened to the top panel before scanning.",
+        "start": 52,
+        "end": 129,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The inventory tag needs to be correctly positioned on the top panel before scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6206896551724138,
+        "edit_ratio": 0.28301886792452835
+      },
+      "prior_shortcut_margin": -0.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.625,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0,
+        "prior_shortcut_margin": -0.0,
+        "prior_correct_margin": 0.0
+      },
+      "surface_surprisal": 4.580106258392334,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.375,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag needs to be correctly positioned on the top panel before scanning. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inventory tag needs to be correctly positioned on the top panel before scanning.",
+        "start": 52,
+        "end": 136,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The inventory tag should be clearly visible on the top panel before scanning.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": false,
+        "naturalness": 4,
+        "notes": "The phrase 'clearly visible' adds an additional constraint that is not present in the original text."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.26315789473684215
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 31.0,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 4.737072467803955,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 30.5,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag should be clearly visible on the top panel before scanning. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inventory tag should be clearly visible on the top panel before scanning.",
+        "start": 52,
+        "end": 129,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The tag should be applied to the top panel before the clerk scans it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.896551724137931,
+        "edit_ratio": 0.125
+      },
+      "prior_shortcut_margin": -0.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 31.25,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0,
+        "prior_shortcut_margin": -0.0,
+        "prior_correct_margin": 0.0
+      },
+      "surface_surprisal": 4.453169345855713,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.75,
+        "logit_2": 30.0,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The tag should be applied to the top panel before the clerk scans it. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tag should be applied to the top panel before the clerk scans it.",
+        "start": 52,
+        "end": 121,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p07",
+      "text": "The inventory tag must be securely fastened to the top panel before scanning.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857142,
+        "edit_ratio": 0.22368421052631582
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 30.875,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.610423564910889,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.375,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag must be securely fastened to the top panel before scanning. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inventory tag must be securely fastened to the top panel before scanning.",
+        "start": 52,
+        "end": 129,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "The inventory tag needs to be attached to the top panel before the clerk scans it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8387096774193549,
+        "edit_ratio": 0.10828025477707004
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.625,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.236302375793457,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.25,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag needs to be attached to the top panel before the clerk scans it. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inventory tag needs to be attached to the top panel before the clerk scans it.",
+        "start": 52,
+        "end": 134,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p04",
+      "text": "The tag must be placed on the top panel before the clerk scans it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8275862068965518,
+        "edit_ratio": 0.12056737588652477
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.875,
+        "logit_2": 31.125,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 4.163387775421143,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.875,
+        "logit_2": 30.0,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The tag must be placed on the top panel before the clerk scans it. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tag must be placed on the top panel before the clerk scans it.",
+        "start": 52,
+        "end": 118,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p02",
+      "text": "It is essential to apply the inventory tag to the top panel before scanning.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6206896551724138,
+        "edit_ratio": 0.3774834437086093
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.625,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 4.45919132232666,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.25,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": -0.5,
+        "shortcut_margin": 0.5
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. It is essential to apply the inventory tag to the top panel before scanning. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "It is essential to apply the inventory tag to the top panel before scanning.",
+        "start": 52,
+        "end": 128,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p07",
+      "text": "The inventory tag must be securely fastened to the top panel before scanning.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857142,
+        "edit_ratio": 0.22368421052631582
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 30.875,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.610423564910889,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.375,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: I am adding a label printer to inventory. The inventory tag must be securely fastened to the top panel before scanning. What should I bring to inventory desk?\nOption1: The label printer with the inventory tag applied\nOption2: Only the inventory tag\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The inventory tag must be securely fastened to the top panel before scanning.",
+        "start": 52,
+        "end": 129,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": false,
+    "valid": false,
+    "reason": "requires_distinct_predicted_shortcut_and_predicted_constraint",
+    "text": null,
+    "prompt": null,
+    "full_prompt": null
+  },
+  "joint_pdp_context": {
+    "available": false,
+    "prompt": null,
+    "full_prompt": null
+  }
+}

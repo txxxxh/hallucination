@@ -1,0 +1,863 @@
+{
+  "item_index": 280,
+  "item_id": "280",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.41374618203834296,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The flower shipment is boxed.",
+    "located": {
+      "text": "The flower shipment is boxed.",
+      "start": 10,
+      "end": 39,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The flower shipment is boxed.",
+    "located": {
+      "text": "The flower shipment is boxed.",
+      "start": 10,
+      "end": 39,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The flower shipment is boxed. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.5,
+      "logit_2": 30.75,
+      "prob_1": 0.6791787147521973,
+      "prob_2": 0.3208213150501251,
+      "correct_margin": 0.75,
+      "shortcut_margin": -0.75,
+      "prior_shortcut_margin": -0.75,
+      "prior_correct_margin": 0.75
+    },
+    "surface_surprisal": 7.046022891998291,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.875,
+      "logit_2": 30.75,
+      "prob_1": 0.29421496391296387,
+      "prob_2": 0.7057850360870361,
+      "correct_margin": -0.875,
+      "shortcut_margin": 0.875
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The flower shipment has been boxed.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727272,
+        "edit_ratio": 0.12903225806451613
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 30.75,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 6.184345245361328,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.875,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125
+      },
+      "prompt": "Scenario: The flower shipment has been boxed. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The flower shipment has been boxed.",
+        "start": 10,
+        "end": 45,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The flowers are now in a box.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "Changes the subject from 'shipment' to 'flowers'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.16666666666666666,
+        "edit_ratio": 0.3214285714285714
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.25,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 4.02717399597168,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 31.0,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The flowers are now in a box. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The flowers are now in a box.",
+        "start": 10,
+        "end": 39,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The shipment is all boxed up.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727272,
+        "edit_ratio": 0.25
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.75,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 5.218174934387207,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.625,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: The shipment is all boxed up. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipment is all boxed up.",
+        "start": 10,
+        "end": 39,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The flowers are safely in a box.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.16666666666666666,
+        "edit_ratio": 0.35593220338983056
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.375,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 4.625877380371094,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.875,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875
+      },
+      "prompt": "Scenario: The flowers are safely in a box. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The flowers are safely in a box.",
+        "start": 10,
+        "end": 42,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The box is ready for transport.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "Changes the subject from 'shipment' to 'box'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3636363636363636,
+        "edit_ratio": 0.6551724137931034
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 29.875,
+        "prob_1": 0.9324532747268677,
+        "prob_2": 0.06754669547080994,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 4.222533226013184,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.625,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The box is ready for transport. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The box is ready for transport.",
+        "start": 10,
+        "end": 41,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The shipment is now boxed and ready.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.33333333333333337
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.625,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 4.978265762329102,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.875,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: The shipment is now boxed and ready. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipment is now boxed and ready.",
+        "start": 10,
+        "end": 46,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The flowers are packed in a box.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.16666666666666666,
+        "edit_ratio": 0.35593220338983056
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.125,
+        "logit_2": 30.25,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.2116825580596924,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.75,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The flowers are packed in a box. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The flowers are packed in a box.",
+        "start": 10,
+        "end": 42,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The box is fully loaded with flowers.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "Changes the subject from 'shipment' to 'box'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3333333333333333,
+        "edit_ratio": 0.65625
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.5,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 4.263136863708496,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.75,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75
+      },
+      "prompt": "Scenario: The box is fully loaded with flowers. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The box is fully loaded with flowers.",
+        "start": 10,
+        "end": 47,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The shipment has been packed into a box.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3076923076923077,
+        "edit_ratio": 0.4626865671641791
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.5,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 3.538156270980835,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.625,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875
+      },
+      "prompt": "Scenario: The shipment has been packed into a box. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipment has been packed into a box.",
+        "start": 10,
+        "end": 50,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The flowers are now boxed and ready to go.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.2857142857142857,
+        "edit_ratio": 0.4492753623188406
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.375,
+        "prob_1": 0.8670357465744019,
+        "prob_2": 0.13296423852443695,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 3.93973708152771,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 31.125,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: The flowers are now boxed and ready to go. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The flowers are now boxed and ready to go.",
+        "start": 10,
+        "end": 52,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p10",
+      "text": "The flowers are now boxed and ready to go.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.2857142857142857,
+        "edit_ratio": 0.4492753623188406
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.375,
+        "prob_1": 0.8670357465744019,
+        "prob_2": 0.13296423852443695,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 3.93973708152771,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 31.125,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: The flowers are now boxed and ready to go. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The flowers are now boxed and ready to go.",
+        "start": 10,
+        "end": 52,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "The flower shipment has been boxed.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727272,
+        "edit_ratio": 0.12903225806451613
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 30.75,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 6.184345245361328,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.875,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125
+      },
+      "prompt": "Scenario: The flower shipment has been boxed. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The flower shipment has been boxed.",
+        "start": 10,
+        "end": 45,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p09",
+      "text": "The shipment has been packed into a box.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3076923076923077,
+        "edit_ratio": 0.4626865671641791
+      },
+      "prior_shortcut_margin": 0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.5,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": -0.25,
+        "shortcut_margin": 0.25,
+        "prior_shortcut_margin": 0.25,
+        "prior_correct_margin": -0.25
+      },
+      "surface_surprisal": 3.538156270980835,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.75,
+        "logit_2": 30.625,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875
+      },
+      "prompt": "Scenario: The shipment has been packed into a box. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipment has been packed into a box.",
+        "start": 10,
+        "end": 50,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p03",
+      "text": "The shipment is all boxed up.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727272,
+        "edit_ratio": 0.25
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.75,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 5.218174934387207,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.25,
+        "logit_2": 30.625,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375
+      },
+      "prompt": "Scenario: The shipment is all boxed up. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The shipment is all boxed up.",
+        "start": 10,
+        "end": 39,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p10",
+      "text": "The flowers are now boxed and ready to go.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.2857142857142857,
+        "edit_ratio": 0.4492753623188406
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.375,
+        "prob_1": 0.8670357465744019,
+        "prob_2": 0.13296423852443695,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 3.93973708152771,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 31.125,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625
+      },
+      "prompt": "Scenario: The flowers are now boxed and ready to go. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The flowers are now boxed and ready to go.",
+        "start": 10,
+        "end": 52,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This boxed shipment must be readied for inspection before release.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The flower shipment is boxed. This boxed shipment must be readied for inspection before release. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.625,
+      "logit_2": 31.375,
+      "prob_1": 0.3208213150501251,
+      "prob_2": 0.6791787147521973,
+      "correct_margin": -0.75,
+      "shortcut_margin": 0.75
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The flowers are now boxed and ready to go. This boxed shipment must be readied for inspection before release. The guard at the cold dock must read the trailer set-point display before release. For this step, what should I do?\nOption1: Back the trailer to the cold dock\nOption2: Walk to the cold dock without the trailer\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 30.875,
+      "logit_2": 31.5,
+      "prob_1": 0.3486451506614685,
+      "prob_2": 0.6513549089431763,
+      "correct_margin": -0.625,
+      "shortcut_margin": 0.625
+    }
+  }
+}

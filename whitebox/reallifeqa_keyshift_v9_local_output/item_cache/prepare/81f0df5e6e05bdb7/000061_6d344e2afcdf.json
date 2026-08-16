@@ -1,0 +1,863 @@
+{
+  "item_index": 61,
+  "item_id": "61",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.3496005746616056,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "I am checking in a rolling whiteboard.",
+    "located": {
+      "text": "I am checking in a rolling whiteboard.",
+      "start": 10,
+      "end": 48,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "I am checking in a rolling whiteboard.",
+    "located": {
+      "text": "I am checking in a rolling whiteboard.",
+      "start": 10,
+      "end": 48,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am checking in a rolling whiteboard. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.125,
+      "logit_2": 31.75,
+      "prob_1": 0.02595735713839531,
+      "prob_2": 0.9740425944328308,
+      "correct_margin": 3.625,
+      "shortcut_margin": -3.625,
+      "prior_shortcut_margin": -3.625,
+      "prior_correct_margin": 3.625
+    },
+    "surface_surprisal": 4.855902194976807,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.25,
+      "logit_2": 31.875,
+      "prob_1": 0.009708477184176445,
+      "prob_2": 0.9902915358543396,
+      "correct_margin": 4.625,
+      "shortcut_margin": -4.625
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "I am submitting a rolling whiteboard for intake.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.30952380952380953
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.25,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 6.057343482971191,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 32.0,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": 4.75,
+        "shortcut_margin": -4.75
+      },
+      "prompt": "Scenario: I am submitting a rolling whiteboard for intake. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am submitting a rolling whiteboard for intake.",
+        "start": 10,
+        "end": 58,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "I have a rolling whiteboard to check in.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.3421052631578947
+      },
+      "prior_shortcut_margin": -3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.75,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875,
+        "prior_shortcut_margin": -3.875,
+        "prior_correct_margin": 3.875
+      },
+      "surface_surprisal": 4.535838603973389,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.875,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125
+      },
+      "prompt": "Scenario: I have a rolling whiteboard to check in. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have a rolling whiteboard to check in.",
+        "start": 10,
+        "end": 50,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "I'm checking in a rolling whiteboard for the room.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411764,
+        "edit_ratio": 0.16279069767441856
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.25,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 4.682345390319824,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 31.625,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25
+      },
+      "prompt": "Scenario: I'm checking in a rolling whiteboard for the room. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm checking in a rolling whiteboard for the room.",
+        "start": 10,
+        "end": 60,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "I'm submitting a rolling whiteboard for room intake.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.36363636363636365
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.375,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 6.486039161682129,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.875,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25
+      },
+      "prompt": "Scenario: I'm submitting a rolling whiteboard for room intake. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm submitting a rolling whiteboard for room intake.",
+        "start": 10,
+        "end": 62,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "I've got a rolling whiteboard that needs checking in.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411764,
+        "edit_ratio": 0.4382022471910112
+      },
+      "prior_shortcut_margin": -2.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.25,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875,
+        "prior_shortcut_margin": -2.875,
+        "prior_correct_margin": 2.875
+      },
+      "surface_surprisal": 4.4962968826293945,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.5,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: I've got a rolling whiteboard that needs checking in. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've got a rolling whiteboard that needs checking in.",
+        "start": 10,
+        "end": 63,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "I'm handing over a rolling whiteboard for processing.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.3258426966292135
+      },
+      "prior_shortcut_margin": -3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.5,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875,
+        "prior_shortcut_margin": -3.875,
+        "prior_correct_margin": 3.875
+      },
+      "surface_surprisal": 5.047358512878418,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.125,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: I'm handing over a rolling whiteboard for processing. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm handing over a rolling whiteboard for processing.",
+        "start": 10,
+        "end": 63,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "I've brought a rolling whiteboard to be checked in.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.588235294117647,
+        "edit_ratio": 0.4252873563218391
+      },
+      "prior_shortcut_margin": -3.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.375,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5,
+        "prior_shortcut_margin": -3.5,
+        "prior_correct_margin": 3.5
+      },
+      "surface_surprisal": 4.881556510925293,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.375,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375
+      },
+      "prompt": "Scenario: I've brought a rolling whiteboard to be checked in. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've brought a rolling whiteboard to be checked in.",
+        "start": 10,
+        "end": 61,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "I'm checking in a rolling whiteboard for the staff.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7058823529411764,
+        "edit_ratio": 0.1724137931034483
+      },
+      "prior_shortcut_margin": -3.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.25,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25,
+        "prior_shortcut_margin": -3.25,
+        "prior_correct_margin": 3.25
+      },
+      "surface_surprisal": 4.775557518005371,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.75,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25
+      },
+      "prompt": "Scenario: I'm checking in a rolling whiteboard for the staff. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm checking in a rolling whiteboard for the staff.",
+        "start": 10,
+        "end": 61,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "I've submitted a rolling whiteboard for room processing.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.4565217391304348
+      },
+      "prior_shortcut_margin": -3.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.5,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5,
+        "prior_shortcut_margin": -3.5,
+        "prior_correct_margin": 3.5
+      },
+      "surface_surprisal": 6.424294948577881,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.75,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: I've submitted a rolling whiteboard for room processing. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've submitted a rolling whiteboard for room processing.",
+        "start": 10,
+        "end": 66,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "I'm turning in a rolling whiteboard for intake purposes.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.588235294117647,
+        "edit_ratio": 0.32608695652173914
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.0,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 5.857935905456543,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.75,
+        "logit_2": 32.25,
+        "prob_1": 0.004070138093084097,
+        "prob_2": 0.9959298968315125,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: I'm turning in a rolling whiteboard for intake purposes. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm turning in a rolling whiteboard for intake purposes.",
+        "start": 10,
+        "end": 66,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p02",
+      "text": "I have a rolling whiteboard to check in.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.3421052631578947
+      },
+      "prior_shortcut_margin": -3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.75,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875,
+        "prior_shortcut_margin": -3.875,
+        "prior_correct_margin": 3.875
+      },
+      "surface_surprisal": 4.535838603973389,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.875,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125
+      },
+      "prompt": "Scenario: I have a rolling whiteboard to check in. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have a rolling whiteboard to check in.",
+        "start": 10,
+        "end": 50,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "I am submitting a rolling whiteboard for intake.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.30952380952380953
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.25,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 6.057343482971191,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 32.0,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": 4.75,
+        "shortcut_margin": -4.75
+      },
+      "prompt": "Scenario: I am submitting a rolling whiteboard for intake. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am submitting a rolling whiteboard for intake.",
+        "start": 10,
+        "end": 58,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p10",
+      "text": "I'm turning in a rolling whiteboard for intake purposes.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.588235294117647,
+        "edit_ratio": 0.32608695652173914
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.0,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 5.857935905456543,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.75,
+        "logit_2": 32.25,
+        "prob_1": 0.004070138093084097,
+        "prob_2": 0.9959298968315125,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: I'm turning in a rolling whiteboard for intake purposes. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm turning in a rolling whiteboard for intake purposes.",
+        "start": 10,
+        "end": 66,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p07",
+      "text": "I've brought a rolling whiteboard to be checked in.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.588235294117647,
+        "edit_ratio": 0.4252873563218391
+      },
+      "prior_shortcut_margin": -3.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.375,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5,
+        "prior_shortcut_margin": -3.5,
+        "prior_correct_margin": 3.5
+      },
+      "surface_surprisal": 4.881556510925293,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.375,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375
+      },
+      "prompt": "Scenario: I've brought a rolling whiteboard to be checked in. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've brought a rolling whiteboard to be checked in.",
+        "start": 10,
+        "end": 61,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p06",
+      "text": "I'm handing over a rolling whiteboard for processing.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.3258426966292135
+      },
+      "prior_shortcut_margin": -3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.5,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875,
+        "prior_shortcut_margin": -3.875,
+        "prior_correct_margin": 3.875
+      },
+      "surface_surprisal": 5.047358512878418,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.125,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: I'm handing over a rolling whiteboard for processing. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm handing over a rolling whiteboard for processing.",
+        "start": 10,
+        "end": 63,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The room-number tag must be attached to the whiteboard before staff move it inside.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am checking in a rolling whiteboard. The room-number tag must be attached to the whiteboard before staff move it inside. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.375,
+      "logit_2": 31.75,
+      "prob_1": 0.01243165135383606,
+      "prob_2": 0.9875683188438416,
+      "correct_margin": 4.375,
+      "shortcut_margin": -4.375
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I'm handing over a rolling whiteboard for processing. The room-number tag must be attached to the whiteboard before staff move it inside. The room-number tag must be attached to the back before staff move it inside. What should I bring to room intake?\nOption1: Only the room-number tag\nOption2: The whiteboard with the tag attached\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.5,
+      "logit_2": 31.25,
+      "prob_1": 0.022977370768785477,
+      "prob_2": 0.977022647857666,
+      "correct_margin": 3.75,
+      "shortcut_margin": -3.75
+    }
+  }
+}

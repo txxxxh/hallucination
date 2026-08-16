@@ -1,0 +1,893 @@
+{
+  "item_index": 168,
+  "item_id": "168",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.3556139308322417,
+    "predicted_hallucination": false,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The bike-room slot is approved.",
+    "located": {
+      "text": "The bike-room slot is approved.",
+      "start": 10,
+      "end": 41,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame.",
+    "located": {
+      "text": "Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame.",
+      "start": 42,
+      "end": 134,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The bike-room slot is approved. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.0,
+      "logit_2": 30.625,
+      "prob_1": 0.7981867790222168,
+      "prob_2": 0.2018132209777832,
+      "correct_margin": 1.375,
+      "shortcut_margin": -1.375,
+      "prior_shortcut_margin": -1.375,
+      "prior_correct_margin": 1.375
+    },
+    "surface_surprisal": 7.7615203857421875,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.125,
+      "logit_2": 30.375,
+      "prob_1": 0.6791787147521973,
+      "prob_2": 0.3208213150501251,
+      "correct_margin": 0.75,
+      "shortcut_margin": -0.75
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The bike room slot has been cleared.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846153,
+        "edit_ratio": 0.23076923076923073
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.5,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 6.2303948402404785,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 30.25,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The bike room slot has been cleared. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike room slot has been cleared.",
+        "start": 10,
+        "end": 46,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The bike slot in the facilities room has been approved.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.625,
+        "edit_ratio": 0.40476190476190477
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.625,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 5.292352676391602,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.375,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: The bike slot in the facilities room has been approved. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike slot in the facilities room has been approved.",
+        "start": 10,
+        "end": 65,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The bike storage slot has been confirmed.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.4
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.75,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 5.905825138092041,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 30.5,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: The bike storage slot has been confirmed. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike storage slot has been confirmed.",
+        "start": 10,
+        "end": 51,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The bike room access slot is now available.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857143,
+        "edit_ratio": 0.3055555555555556
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.125,
+        "prob_1": 0.8670357465744019,
+        "prob_2": 0.13296423852443695,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 5.785274028778076,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.5,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The bike room access slot is now available. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike room access slot is now available.",
+        "start": 10,
+        "end": 53,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The bike facility slot has been given the green light.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.37499999999999994,
+        "edit_ratio": 0.5421686746987953
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.375,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 5.098548412322998,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.0,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The bike facility slot has been given the green light. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike facility slot has been given the green light.",
+        "start": 10,
+        "end": 64,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The bike parking slot has been approved for use.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5333333333333333,
+        "edit_ratio": 0.3246753246753247
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.5,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 4.650391578674316,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.5,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: The bike parking slot has been approved for use. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike parking slot has been approved for use.",
+        "start": 10,
+        "end": 58,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The bike storage area slot is now accessible.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.43243243243243246
+      },
+      "prior_shortcut_margin": -2.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.125,
+        "prob_1": 0.8933094143867493,
+        "prob_2": 0.10669060051441193,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125,
+        "prior_shortcut_margin": -2.125,
+        "prior_correct_margin": 2.125
+      },
+      "surface_surprisal": 5.848444938659668,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.625,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The bike storage area slot is now accessible. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike storage area slot is now accessible.",
+        "start": 10,
+        "end": 55,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The bike room access slot has been cleared for use.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.375
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.625,
+        "prob_1": 0.8670357465744019,
+        "prob_2": 0.13296423852443695,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 5.2438273429870605,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 30.25,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The bike room access slot has been cleared for use. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike room access slot has been cleared for use.",
+        "start": 10,
+        "end": 61,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The bike facility slot has been approved for use.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5333333333333333,
+        "edit_ratio": 0.3589743589743589
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.375,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 5.506294250488281,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.375,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: The bike facility slot has been approved for use. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike facility slot has been approved for use.",
+        "start": 10,
+        "end": 59,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The bike parking slot has been given the green light.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The candidate paraphrase is semantically equivalent to the original prompt, preserves entities, quantities, negation, modality, temporal and spatial relations, and the correct answer. It does not introduce new constraints or leak the answer. The naturalness score is 5, indicating that the paraphrase is very natural."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.37499999999999994,
+        "edit_ratio": 0.5121951219512195
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.5,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 4.56620979309082,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.25,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: The bike parking slot has been given the green light. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike parking slot has been given the green light.",
+        "start": 10,
+        "end": 63,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p07",
+      "text": "The bike storage area slot is now accessible.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.43243243243243246
+      },
+      "prior_shortcut_margin": -2.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.125,
+        "prob_1": 0.8933094143867493,
+        "prob_2": 0.10669060051441193,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125,
+        "prior_shortcut_margin": -2.125,
+        "prior_correct_margin": 2.125
+      },
+      "surface_surprisal": 5.848444938659668,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.625,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The bike storage area slot is now accessible. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike storage area slot is now accessible.",
+        "start": 10,
+        "end": 55,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "The bike room slot has been cleared.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846153,
+        "edit_ratio": 0.23076923076923073
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.5,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 6.2303948402404785,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 30.25,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The bike room slot has been cleared. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike room slot has been cleared.",
+        "start": 10,
+        "end": 46,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p05",
+      "text": "The bike facility slot has been given the green light.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.37499999999999994,
+        "edit_ratio": 0.5421686746987953
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.375,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 5.098548412322998,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.0,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The bike facility slot has been given the green light. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike facility slot has been given the green light.",
+        "start": 10,
+        "end": 64,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p02",
+      "text": "The bike slot in the facilities room has been approved.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.625,
+        "edit_ratio": 0.40476190476190477
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.625,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 5.292352676391602,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.375,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: The bike slot in the facilities room has been approved. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike slot in the facilities room has been approved.",
+        "start": 10,
+        "end": 65,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p07",
+      "text": "The bike storage area slot is now accessible.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.43243243243243246
+      },
+      "prior_shortcut_margin": -2.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 30.125,
+        "prob_1": 0.8933094143867493,
+        "prob_2": 0.10669060051441193,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125,
+        "prior_shortcut_margin": -2.125,
+        "prior_correct_margin": 2.125
+      },
+      "surface_surprisal": 5.848444938659668,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.625,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: The bike storage area slot is now accessible. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The bike storage area slot is now accessible.",
+        "start": 10,
+        "end": 55,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": true,
+    "valid": true,
+    "reason": null,
+    "text": "Although the bike-room slot is approved, that fact alone does not determine the decision, because Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame.",
+    "shortcut_anchor": "The bike-room slot is approved",
+    "constraint_anchor": "Facilities is at the rack gate",
+    "review": {
+      "shortcut_anchor_faithful": true,
+      "constraint_anchor_faithful": true,
+      "both_keys_explicitly_linked": true,
+      "shortcut_alone_marked_insufficient": true,
+      "constraint_relevance_explicit": true,
+      "facts_preserved": true,
+      "no_new_fact": true,
+      "no_answer_or_option_leak": true,
+      "no_direct_recommendation_or_conclusion": true,
+      "no_experiment_meta_language": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "automatic_checks": {
+      "shortcut_anchor_f1": 1.0,
+      "constraint_anchor_f1": 0.5,
+      "max_option_token_f1": 0.33333333333333337,
+      "shortcut_informative_overlap": 3,
+      "constraint_informative_overlap": 10,
+      "word_count": 32
+    },
+    "prompt": "Scenario: The bike-room slot is approved. Although the bike-room slot is approved, that fact alone does not determine the decision, because Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 31.625,
+      "logit_2": 32.25,
+      "prob_1": 0.3486451506614685,
+      "prob_2": 0.6513549089431763,
+      "correct_margin": -0.625,
+      "shortcut_margin": 0.625
+    }
+  },
+  "joint_pdp_context": {
+    "available": true,
+    "prompt": "Scenario: The bike storage area slot is now accessible. Although the bike-room slot is approved, that fact alone does not determine the decision, because Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. Facilities is at the rack gate to scan the RFID sticker already attached to my e-bike frame. For this step, what should I do?\nOption1: Bring the e-bike to the rack gate\nOption2: Walk to the rack gate without the e-bike\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 31.875,
+      "logit_2": 32.25,
+      "prob_1": 0.4073334336280823,
+      "prob_2": 0.5926666259765625,
+      "correct_margin": -0.375,
+      "shortcut_margin": 0.375
+    }
+  }
+}

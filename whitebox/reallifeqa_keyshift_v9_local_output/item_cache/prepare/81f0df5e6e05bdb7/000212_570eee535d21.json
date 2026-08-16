@@ -1,0 +1,863 @@
+{
+  "item_index": 212,
+  "item_id": "212",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.47527585621834056,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The yard worker signs the release only after the sheets are lying flat in my truck and strapped.",
+    "located": {
+      "text": "The yard worker signs the release only after the sheets are lying flat in my truck and strapped.",
+      "start": 39,
+      "end": 135,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The drywall order is staged.",
+    "located": {
+      "text": "The drywall order is staged.",
+      "start": 10,
+      "end": 38,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The drywall order is staged. The yard worker signs the release only after the sheets are lying flat in my truck and strapped. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.625,
+      "logit_2": 31.5,
+      "prob_1": 0.531209409236908,
+      "prob_2": 0.4687906503677368,
+      "correct_margin": 0.125,
+      "shortcut_margin": -0.125,
+      "prior_shortcut_margin": -0.125,
+      "prior_correct_margin": 0.125
+    },
+    "surface_surprisal": 5.43319034576416,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.25,
+      "logit_2": 30.625,
+      "prob_1": 0.6513549089431763,
+      "prob_2": 0.3486451506614685,
+      "correct_margin": 0.625,
+      "shortcut_margin": -0.625
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The yard worker signs the release once the sheets are safely loaded and secured in my truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7428571428571428,
+        "edit_ratio": 0.25806451612903225
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 31.25,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 4.955778121948242,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.25,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release once the sheets are safely loaded and secured in my truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release once the sheets are safely loaded and secured in my truck.",
+        "start": 39,
+        "end": 131,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "After the drywall sheets are flat and strapped into the truck, the yard worker signs the release.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.6526315789473685
+      },
+      "prior_shortcut_margin": -1.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 31.375,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625,
+        "prior_shortcut_margin": -1.625,
+        "prior_correct_margin": 1.625
+      },
+      "surface_surprisal": 4.4853620529174805,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.875,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The drywall order is staged. After the drywall sheets are flat and strapped into the truck, the yard worker signs the release. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "After the drywall sheets are flat and strapped into the truck, the yard worker signs the release.",
+        "start": 39,
+        "end": 136,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The yard worker only signs the release after the drywall sheets are properly loaded and tied down in the truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631577,
+        "edit_ratio": 0.3268292682926829
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 31.5,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 3.858325958251953,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.375,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker only signs the release after the drywall sheets are properly loaded and tied down in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker only signs the release after the drywall sheets are properly loaded and tied down in the truck.",
+        "start": 39,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The yard worker signs the release after ensuring the drywall sheets are securely loaded and fastened in the truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7027027027027027,
+        "edit_ratio": 0.3076923076923077
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 31.25,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 3.8597943782806396,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.5,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release after ensuring the drywall sheets are securely loaded and fastened in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release after ensuring the drywall sheets are securely loaded and fastened in the truck.",
+        "start": 39,
+        "end": 153,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The yard worker signs the release after the drywall sheets are stowed away and strapped in the truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.29230769230769227
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 31.5,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 4.292708396911621,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.75,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release after the drywall sheets are stowed away and strapped in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release after the drywall sheets are stowed away and strapped in the truck.",
+        "start": 39,
+        "end": 140,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The yard worker only signs the release once the drywall sheets are loaded flat and tied down in the truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631577,
+        "edit_ratio": 0.31000000000000005
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 31.375,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 4.205871105194092,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.625,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker only signs the release once the drywall sheets are loaded flat and tied down in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker only signs the release once the drywall sheets are loaded flat and tied down in the truck.",
+        "start": 39,
+        "end": 145,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The yard worker signs the release only after the drywall sheets are loaded and secured in the truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.24742268041237114
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 31.875,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 3.684277296066284,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.625,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release only after the drywall sheets are loaded and secured in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release only after the drywall sheets are loaded and secured in the truck.",
+        "start": 39,
+        "end": 139,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The yard worker signs the release after verifying that the drywall sheets are safely loaded and strapped into the truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6842105263157895,
+        "edit_ratio": 0.31775700934579443
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 31.5,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 3.871256113052368,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.5,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release after verifying that the drywall sheets are safely loaded and strapped into the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release after verifying that the drywall sheets are safely loaded and strapped into the truck.",
+        "start": 39,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The yard worker signs the release after the drywall sheets are loaded and fastened in the truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7428571428571428,
+        "edit_ratio": 0.25263157894736843
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 31.5,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 3.924203634262085,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.5,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release after the drywall sheets are loaded and fastened in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release after the drywall sheets are loaded and fastened in the truck.",
+        "start": 39,
+        "end": 135,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.29949238578680204
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 31.25,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.11459493637085,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.625,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck.",
+        "start": 39,
+        "end": 142,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p10",
+      "text": "The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.29949238578680204
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 31.25,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.11459493637085,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.625,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck.",
+        "start": 39,
+        "end": 142,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p02",
+      "text": "After the drywall sheets are flat and strapped into the truck, the yard worker signs the release.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.6526315789473685
+      },
+      "prior_shortcut_margin": -1.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 31.375,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625,
+        "prior_shortcut_margin": -1.625,
+        "prior_correct_margin": 1.625
+      },
+      "surface_surprisal": 4.4853620529174805,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.875,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The drywall order is staged. After the drywall sheets are flat and strapped into the truck, the yard worker signs the release. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "After the drywall sheets are flat and strapped into the truck, the yard worker signs the release.",
+        "start": 39,
+        "end": 136,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p07",
+      "text": "The yard worker signs the release only after the drywall sheets are loaded and secured in the truck.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.24742268041237114
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 31.875,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 3.684277296066284,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.625,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release only after the drywall sheets are loaded and secured in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release only after the drywall sheets are loaded and secured in the truck.",
+        "start": 39,
+        "end": 139,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p03",
+      "text": "The yard worker only signs the release after the drywall sheets are properly loaded and tied down in the truck.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631577,
+        "edit_ratio": 0.3268292682926829
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 31.5,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 3.858325958251953,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.375,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker only signs the release after the drywall sheets are properly loaded and tied down in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker only signs the release after the drywall sheets are properly loaded and tied down in the truck.",
+        "start": 39,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p10",
+      "text": "The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.29949238578680204
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 31.25,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.11459493637085,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.625,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: The drywall order is staged. The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck.",
+        "start": 39,
+        "end": 142,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The drywall order is staged, so the yard worker's action should be understood in the context of a loaded and secured truck.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The drywall order is staged. The yard worker signs the release only after the sheets are lying flat in my truck and strapped. The drywall order is staged, so the yard worker's action should be understood in the context of a loaded and secured truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.25,
+      "logit_2": 31.0,
+      "prob_1": 0.562176525592804,
+      "prob_2": 0.43782350420951843,
+      "correct_margin": 0.25,
+      "shortcut_margin": -0.25
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The drywall order is staged. The yard worker signs the release after the drywall sheets are flat and securely fastened in the truck. The drywall order is staged, so the yard worker's action should be understood in the context of a loaded and secured truck. Should I drive the truck to the loading lane or walk there without it?\nOption1: Drive the truck to the loading lane\nOption2: Walk to the loading lane without the truck\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.25,
+      "logit_2": 31.125,
+      "prob_1": 0.7549149990081787,
+      "prob_2": 0.24508501589298248,
+      "correct_margin": 1.125,
+      "shortcut_margin": -1.125
+    }
+  }
+}

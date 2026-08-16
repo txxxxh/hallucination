@@ -1,0 +1,863 @@
+{
+  "item_index": 485,
+  "item_id": "485",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.18809573160219528,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "I am returning a medicine cooler to the clinic.",
+    "located": {
+      "text": "I am returning a medicine cooler to the clinic.",
+      "start": 10,
+      "end": 57,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The nurse says coolers must go to the medication room intake, not the reception window.",
+    "located": {
+      "text": "The nurse says coolers must go to the medication room intake, not the reception window.",
+      "start": 58,
+      "end": 145,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am returning a medicine cooler to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.0,
+      "logit_2": 30.375,
+      "prob_1": 0.6513549089431763,
+      "prob_2": 0.3486451506614685,
+      "correct_margin": 0.625,
+      "shortcut_margin": -0.625,
+      "prior_shortcut_margin": -0.625,
+      "prior_correct_margin": 0.625
+    },
+    "surface_surprisal": 4.883264064788818,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 33.25,
+      "logit_2": 26.5,
+      "prob_1": 0.9988304972648621,
+      "prob_2": 0.0011695101857185364,
+      "correct_margin": 6.75,
+      "shortcut_margin": -6.75
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "I am returning a medicine container to the clinic.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8888888888888888,
+        "edit_ratio": 0.0736842105263158
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.5,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.116621494293213,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.5,
+        "prob_1": 0.9959298968315125,
+        "prob_2": 0.004070138093084097,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: I am returning a medicine container to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am returning a medicine container to the clinic.",
+        "start": 10,
+        "end": 60,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "I need to return a medicine box to the clinic.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "Incorrect entity type (box instead of cooler)"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.20879120879120883
+      },
+      "prior_shortcut_margin": -0.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.5,
+        "prob_1": 0.531209409236908,
+        "prob_2": 0.4687906503677368,
+        "correct_margin": 0.125,
+        "shortcut_margin": -0.125,
+        "prior_shortcut_margin": -0.125,
+        "prior_correct_margin": 0.125
+      },
+      "surface_surprisal": 3.839390277862549,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.875,
+        "prob_1": 0.9953904151916504,
+        "prob_2": 0.004609572701156139,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375
+      },
+      "prompt": "Scenario: I need to return a medicine box to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I need to return a medicine box to the clinic.",
+        "start": 10,
+        "end": 56,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "I am bringing a medicine container back to the clinic.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631577,
+        "edit_ratio": 0.19191919191919193
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.5,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.003288269042969,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.625,
+        "prob_1": 0.9953904151916504,
+        "prob_2": 0.004609572701156139,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375
+      },
+      "prompt": "Scenario: I am bringing a medicine container back to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am bringing a medicine container back to the clinic.",
+        "start": 10,
+        "end": 64,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "I have to return a medicine bag to the clinic.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "Incorrect entity type (bag instead of cooler)"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.20879120879120883
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.5,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 3.8280060291290283,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 28.125,
+        "prob_1": 0.9924227595329285,
+        "prob_2": 0.007577240467071533,
+        "correct_margin": 4.875,
+        "shortcut_margin": -4.875
+      },
+      "prompt": "Scenario: I have to return a medicine bag to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I have to return a medicine bag to the clinic.",
+        "start": 10,
+        "end": 56,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "I am returning a medical supply to the clinic.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 3,
+        "notes": "Incorrect entity type (medical supply instead of cooler)"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.1648351648351648
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.125,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 3.978886842727661,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.0,
+        "prob_1": 0.9975274205207825,
+        "prob_2": 0.0024726232513785362,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0
+      },
+      "prompt": "Scenario: I am returning a medical supply to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am returning a medical supply to the clinic.",
+        "start": 10,
+        "end": 56,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "I am handing back a medicine container to the clinic.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631577,
+        "edit_ratio": 0.20408163265306123
+      },
+      "prior_shortcut_margin": -0.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.5,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0,
+        "prior_shortcut_margin": -0.0,
+        "prior_correct_margin": 0.0
+      },
+      "surface_surprisal": 4.2385454177856445,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.75,
+        "prob_1": 0.9959298968315125,
+        "prob_2": 0.004070138093084097,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: I am handing back a medicine container to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am handing back a medicine container to the clinic.",
+        "start": 10,
+        "end": 63,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "I am returning a package of medicine to the clinic.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "Incorrect entity type (package instead of cooler)"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8421052631578948,
+        "edit_ratio": 0.1875
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.375,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 3.695854663848877,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 26.875,
+        "prob_1": 0.9978172779083252,
+        "prob_2": 0.002182716503739357,
+        "correct_margin": 6.125,
+        "shortcut_margin": -6.125
+      },
+      "prompt": "Scenario: I am returning a package of medicine to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am returning a package of medicine to the clinic.",
+        "start": 10,
+        "end": 61,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "I need to bring a medicine container back to the clinic.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.26732673267326734
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.75,
+        "logit_2": 30.875,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.6492037773132324,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.75,
+        "prob_1": 0.9959298968315125,
+        "prob_2": 0.004070138093084097,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: I need to bring a medicine container back to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I need to bring a medicine container back to the clinic.",
+        "start": 10,
+        "end": 66,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "I am returning a medicine kit to the clinic.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "Incorrect entity type (kit instead of cooler)"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8888888888888888,
+        "edit_ratio": 0.101123595505618
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.25,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 4.185083389282227,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.75,
+        "prob_1": 0.9947799444198608,
+        "prob_2": 0.005220125894993544,
+        "correct_margin": 5.25,
+        "shortcut_margin": -5.25
+      },
+      "prompt": "Scenario: I am returning a medicine kit to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am returning a medicine kit to the clinic.",
+        "start": 10,
+        "end": 54,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "I am bringing a medical supply back to the clinic.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 3,
+        "notes": "Incorrect entity type (medical supply instead of cooler)"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.28421052631578947
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.125,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 3.7226390838623047,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.375,
+        "prob_1": 0.9971990585327148,
+        "prob_2": 0.0028009270317852497,
+        "correct_margin": 5.875,
+        "shortcut_margin": -5.875
+      },
+      "prompt": "Scenario: I am bringing a medical supply back to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am bringing a medical supply back to the clinic.",
+        "start": 10,
+        "end": 60,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p03",
+      "text": "I am bringing a medicine container back to the clinic.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631577,
+        "edit_ratio": 0.19191919191919193
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.5,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.003288269042969,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.625,
+        "prob_1": 0.9953904151916504,
+        "prob_2": 0.004609572701156139,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375
+      },
+      "prompt": "Scenario: I am bringing a medicine container back to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am bringing a medicine container back to the clinic.",
+        "start": 10,
+        "end": 64,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "I am returning a medicine container to the clinic.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8888888888888888,
+        "edit_ratio": 0.0736842105263158
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.5,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.116621494293213,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.5,
+        "prob_1": 0.9959298968315125,
+        "prob_2": 0.004070138093084097,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: I am returning a medicine container to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am returning a medicine container to the clinic.",
+        "start": 10,
+        "end": 60,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p08",
+      "text": "I need to bring a medicine container back to the clinic.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.26732673267326734
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.75,
+        "logit_2": 30.875,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 3.6492037773132324,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.75,
+        "prob_1": 0.9959298968315125,
+        "prob_2": 0.004070138093084097,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: I need to bring a medicine container back to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I need to bring a medicine container back to the clinic.",
+        "start": 10,
+        "end": 66,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p06",
+      "text": "I am handing back a medicine container to the clinic.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631577,
+        "edit_ratio": 0.20408163265306123
+      },
+      "prior_shortcut_margin": -0.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.5,
+        "prob_1": 0.5,
+        "prob_2": 0.5,
+        "correct_margin": 0.0,
+        "shortcut_margin": -0.0,
+        "prior_shortcut_margin": -0.0,
+        "prior_correct_margin": 0.0
+      },
+      "surface_surprisal": 4.2385454177856445,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 27.75,
+        "prob_1": 0.9959298968315125,
+        "prob_2": 0.004070138093084097,
+        "correct_margin": 5.5,
+        "shortcut_margin": -5.5
+      },
+      "prompt": "Scenario: I am handing back a medicine container to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am handing back a medicine container to the clinic.",
+        "start": 10,
+        "end": 63,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p03",
+      "text": "I am bringing a medicine container back to the clinic.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7368421052631577,
+        "edit_ratio": 0.19191919191919193
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.5,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.003288269042969,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 27.625,
+        "prob_1": 0.9953904151916504,
+        "prob_2": 0.004609572701156139,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375
+      },
+      "prompt": "Scenario: I am bringing a medicine container back to the clinic. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I am bringing a medicine container back to the clinic.",
+        "start": 10,
+        "end": 64,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This shortcut cue indicates that the cooler needs to be returned to the clinic, where the nurse's instructions regarding its disposal will be clarified.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am returning a medicine cooler to the clinic. This shortcut cue indicates that the cooler needs to be returned to the clinic, where the nurse's instructions regarding its disposal will be clarified. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.75,
+      "logit_2": 27.125,
+      "prob_1": 0.9964063763618469,
+      "prob_2": 0.0035936026833951473,
+      "correct_margin": 5.625,
+      "shortcut_margin": -5.625
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I am bringing a medicine container back to the clinic. This shortcut cue indicates that the cooler needs to be returned to the clinic, where the nurse's instructions regarding its disposal will be clarified. The nurse says coolers must go to the medication room intake, not the reception window. Where should I put it?\nOption1: Bring it to the medication room intake\nOption2: Hand it to the reception window\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.75,
+      "logit_2": 28.0,
+      "prob_1": 0.9914224743843079,
+      "prob_2": 0.008577484637498856,
+      "correct_margin": 4.75,
+      "shortcut_margin": -4.75
+    }
+  }
+}

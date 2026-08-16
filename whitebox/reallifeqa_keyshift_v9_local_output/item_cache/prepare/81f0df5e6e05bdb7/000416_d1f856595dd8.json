@@ -1,0 +1,863 @@
+{
+  "item_index": 416,
+  "item_id": "416",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.4582014325326007,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The forklift driver is at the loading dock to lower the cartons into my vehicle before release.",
+    "located": {
+      "text": "The forklift driver is at the loading dock to lower the cartons into my vehicle before release.",
+      "start": 42,
+      "end": 137,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The forklift driver is at the loading dock to lower the cartons into my vehicle before release.",
+    "located": {
+      "text": "The forklift driver is at the loading dock to lower the cartons into my vehicle before release.",
+      "start": 42,
+      "end": 137,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is at the loading dock to lower the cartons into my vehicle before release. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.625,
+      "logit_2": 31.25,
+      "prob_1": 0.06754669547080994,
+      "prob_2": 0.9324532747268677,
+      "correct_margin": 2.625,
+      "shortcut_margin": -2.625,
+      "prior_shortcut_margin": -2.625,
+      "prior_correct_margin": 2.625
+    },
+    "surface_surprisal": 4.269118785858154,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 26.125,
+      "logit_2": 32.25,
+      "prob_1": 0.002182716503739357,
+      "prob_2": 0.9978172779083252,
+      "correct_margin": 6.125,
+      "shortcut_margin": -6.125
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The forklift driver is waiting at the loading dock to unload the cartons into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.1648351648351648
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.375,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 3.0761184692382812,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.875,
+        "logit_2": 32.5,
+        "prob_1": 0.001325022429227829,
+        "prob_2": 0.9986749291419983,
+        "correct_margin": 6.625,
+        "shortcut_margin": -6.625
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is waiting at the loading dock to unload the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is waiting at the loading dock to unload the cartons into my vehicle.",
+        "start": 42,
+        "end": 131,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The forklift driver is positioned at the loading dock to lower the cartons into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9090909090909091,
+        "edit_ratio": 0.14130434782608692
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 31.125,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 3.4987258911132812,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.625,
+        "logit_2": 32.5,
+        "prob_1": 0.0028009270317852497,
+        "prob_2": 0.9971990585327148,
+        "correct_margin": 5.875,
+        "shortcut_margin": -5.875
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is positioned at the loading dock to lower the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is positioned at the loading dock to lower the cartons into my vehicle.",
+        "start": 42,
+        "end": 133,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The forklift driver is located at the loading dock, ready to transfer the cartons to my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7647058823529412,
+        "edit_ratio": 0.21276595744680848
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 31.0,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 2.911500930786133,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.25,
+        "logit_2": 32.5,
+        "prob_1": 0.0019267346942797303,
+        "prob_2": 0.9980732202529907,
+        "correct_margin": 6.25,
+        "shortcut_margin": -6.25
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is located at the loading dock, ready to transfer the cartons to my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is located at the loading dock, ready to transfer the cartons to my vehicle.",
+        "start": 42,
+        "end": 138,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The forklift driver is at the loading dock to unload the cartons from the pallet into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.19999999999999996
+      },
+      "prior_shortcut_margin": -2.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 31.0,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375,
+        "prior_shortcut_margin": -2.375,
+        "prior_correct_margin": 2.375
+      },
+      "surface_surprisal": 3.028608560562134,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.5,
+        "logit_2": 32.25,
+        "prob_1": 0.0011695101857185364,
+        "prob_2": 0.9988304972648621,
+        "correct_margin": 6.75,
+        "shortcut_margin": -6.75
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is at the loading dock to unload the cartons from the pallet into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is at the loading dock to unload the cartons from the pallet into my vehicle.",
+        "start": 42,
+        "end": 139,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The forklift driver is stationed at the loading dock, preparing to lower the cartons into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8823529411764706,
+        "edit_ratio": 0.18134715025906734
+      },
+      "prior_shortcut_margin": -2.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125,
+        "prior_shortcut_margin": -2.125,
+        "prior_correct_margin": 2.125
+      },
+      "surface_surprisal": 3.2576169967651367,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.5,
+        "logit_2": 32.5,
+        "prob_1": 0.0024726232513785362,
+        "prob_2": 0.9975274205207825,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is stationed at the loading dock, preparing to lower the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is stationed at the loading dock, preparing to lower the cartons into my vehicle.",
+        "start": 42,
+        "end": 143,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The forklift driver is situated at the loading dock to transfer the cartons to my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.787878787878788,
+        "edit_ratio": 0.1912568306010929
+      },
+      "prior_shortcut_margin": -2.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.125,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375,
+        "prior_shortcut_margin": -2.375,
+        "prior_correct_margin": 2.375
+      },
+      "surface_surprisal": 3.4049947261810303,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.25,
+        "logit_2": 32.5,
+        "prob_1": 0.0019267346942797303,
+        "prob_2": 0.9980732202529907,
+        "correct_margin": 6.25,
+        "shortcut_margin": -6.25
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is situated at the loading dock to transfer the cartons to my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is situated at the loading dock to transfer the cartons to my vehicle.",
+        "start": 42,
+        "end": 132,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The forklift driver is present at the loading dock to unload the cartons into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.1648351648351648
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 31.5,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 3.2024078369140625,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 32.5,
+        "prob_1": 0.0011695101857185364,
+        "prob_2": 0.9988304972648621,
+        "correct_margin": 6.75,
+        "shortcut_margin": -6.75
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is present at the loading dock to unload the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is present at the loading dock to unload the cartons into my vehicle.",
+        "start": 42,
+        "end": 131,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The forklift driver is available at the loading dock to lower the cartons into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9090909090909091,
+        "edit_ratio": 0.13661202185792354
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 31.5,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 3.7813117504119873,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 32.5,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is available at the loading dock to lower the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is available at the loading dock to lower the cartons into my vehicle.",
+        "start": 42,
+        "end": 132,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The forklift driver is accessible at the loading dock to unload the cartons into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.17837837837837833
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 31.5,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 3.8044686317443848,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.25,
+        "logit_2": 32.75,
+        "prob_1": 0.0015011822106316686,
+        "prob_2": 0.998498797416687,
+        "correct_margin": 6.5,
+        "shortcut_margin": -6.5
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is accessible at the loading dock to unload the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is accessible at the loading dock to unload the cartons into my vehicle.",
+        "start": 42,
+        "end": 134,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The forklift driver is at the loading dock, ready to assist with unloading the cartons into my vehicle.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7999999999999999,
+        "edit_ratio": 0.2205128205128205
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.625,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 2.9440221786499023,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.25,
+        "logit_2": 32.75,
+        "prob_1": 0.0015011822106316686,
+        "prob_2": 0.998498797416687,
+        "correct_margin": 6.5,
+        "shortcut_margin": -6.5
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is at the loading dock, ready to assist with unloading the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is at the loading dock, ready to assist with unloading the cartons into my vehicle.",
+        "start": 42,
+        "end": 145,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p07",
+      "text": "The forklift driver is present at the loading dock to unload the cartons into my vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.1648351648351648
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 31.5,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 3.2024078369140625,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 32.5,
+        "prob_1": 0.0011695101857185364,
+        "prob_2": 0.9988304972648621,
+        "correct_margin": 6.75,
+        "shortcut_margin": -6.75
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is present at the loading dock to unload the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is present at the loading dock to unload the cartons into my vehicle.",
+        "start": 42,
+        "end": 131,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p05",
+      "text": "The forklift driver is stationed at the loading dock, preparing to lower the cartons into my vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8823529411764706,
+        "edit_ratio": 0.18134715025906734
+      },
+      "prior_shortcut_margin": -2.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125,
+        "prior_shortcut_margin": -2.125,
+        "prior_correct_margin": 2.125
+      },
+      "surface_surprisal": 3.2576169967651367,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.5,
+        "logit_2": 32.5,
+        "prob_1": 0.0024726232513785362,
+        "prob_2": 0.9975274205207825,
+        "correct_margin": 6.0,
+        "shortcut_margin": -6.0
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is stationed at the loading dock, preparing to lower the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is stationed at the loading dock, preparing to lower the cartons into my vehicle.",
+        "start": 42,
+        "end": 143,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p08",
+      "text": "The forklift driver is available at the loading dock to lower the cartons into my vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9090909090909091,
+        "edit_ratio": 0.13661202185792354
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.125,
+        "logit_2": 31.5,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 3.7813117504119873,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 32.5,
+        "prob_1": 0.0035936026833951473,
+        "prob_2": 0.9964063763618469,
+        "correct_margin": 5.625,
+        "shortcut_margin": -5.625
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is available at the loading dock to lower the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is available at the loading dock to lower the cartons into my vehicle.",
+        "start": 42,
+        "end": 132,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p01",
+      "text": "The forklift driver is waiting at the loading dock to unload the cartons into my vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.1648351648351648
+      },
+      "prior_shortcut_margin": -2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.375,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": 2.625,
+        "shortcut_margin": -2.625,
+        "prior_shortcut_margin": -2.625,
+        "prior_correct_margin": 2.625
+      },
+      "surface_surprisal": 3.0761184692382812,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.875,
+        "logit_2": 32.5,
+        "prob_1": 0.001325022429227829,
+        "prob_2": 0.9986749291419983,
+        "correct_margin": 6.625,
+        "shortcut_margin": -6.625
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is waiting at the loading dock to unload the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is waiting at the loading dock to unload the cartons into my vehicle.",
+        "start": 42,
+        "end": 131,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p07",
+      "text": "The forklift driver is present at the loading dock to unload the cartons into my vehicle.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8484848484848485,
+        "edit_ratio": 0.1648351648351648
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 31.5,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 3.2024078369140625,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.75,
+        "logit_2": 32.5,
+        "prob_1": 0.0011695101857185364,
+        "prob_2": 0.9988304972648621,
+        "correct_margin": 6.75,
+        "shortcut_margin": -6.75
+      },
+      "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is present at the loading dock to unload the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The forklift driver is present at the loading dock to unload the cartons into my vehicle.",
+        "start": 42,
+        "end": 131,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The presence of the forklift driver at the loading dock implies that it is now possible to proceed with loading the cartons into my vehicle.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is at the loading dock to lower the cartons into my vehicle before release. The presence of the forklift driver at the loading dock implies that it is now possible to proceed with loading the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 26.625,
+      "logit_2": 32.75,
+      "prob_1": 0.002182716503739357,
+      "prob_2": 0.9978172779083252,
+      "correct_margin": 6.125,
+      "shortcut_margin": -6.125
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The flooring pallet is cleared. The forklift driver is present at the loading dock to unload the cartons into my vehicle. The presence of the forklift driver at the loading dock implies that it is now possible to proceed with loading the cartons into my vehicle. What should I bring to the loading dock?\nOption1: Walk to the loading dock without my vehicle\nOption2: Bring my vehicle to the loading dock\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 26.125,
+      "logit_2": 33.25,
+      "prob_1": 0.0008040859247557819,
+      "prob_2": 0.9991958737373352,
+      "correct_margin": 7.125,
+      "shortcut_margin": -7.125
+    }
+  }
+}

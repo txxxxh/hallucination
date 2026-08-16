@@ -1,0 +1,863 @@
+{
+  "item_index": 211,
+  "item_id": "211",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.3952242792911617,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "My colleague is sitting in a courtroom where calls and speech are prohibited.",
+    "located": {
+      "text": "My colleague is sitting in a courtroom where calls and speech are prohibited.",
+      "start": 89,
+      "end": 166,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "My colleague is sitting in a courtroom where calls and speech are prohibited.",
+    "located": {
+      "text": "My colleague is sitting in a courtroom where calls and speech are prohibited.",
+      "start": 89,
+      "end": 166,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is sitting in a courtroom where calls and speech are prohibited. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.5,
+      "logit_2": 31.125,
+      "prob_1": 0.06754669547080994,
+      "prob_2": 0.9324532747268677,
+      "correct_margin": 2.625,
+      "shortcut_margin": -2.625,
+      "prior_shortcut_margin": -2.625,
+      "prior_correct_margin": 2.625
+    },
+    "surface_surprisal": 4.587871551513672,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.0,
+      "logit_2": 30.875,
+      "prob_1": 0.020332353189587593,
+      "prob_2": 0.9796676635742188,
+      "correct_margin": 3.875,
+      "shortcut_margin": -3.875
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "My colleague is in a courtroom where speaking is not allowed.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.36764705882352944
+      },
+      "prior_shortcut_margin": -1.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 30.375,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625,
+        "prior_shortcut_margin": -1.625,
+        "prior_correct_margin": 1.625
+      },
+      "surface_surprisal": 3.6582770347595215,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.125,
+        "logit_2": 31.125,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is in a courtroom where speaking is not allowed. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is in a courtroom where speaking is not allowed.",
+        "start": 89,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "There's a rule against talking in the courtroom where my colleague is.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5384615384615384,
+        "edit_ratio": 0.4758620689655172
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.25,
+        "logit_2": 30.5,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 4.308420181274414,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.125,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. There's a rule against talking in the courtroom where my colleague is. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "There's a rule against talking in the courtroom where my colleague is.",
+        "start": 89,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "My colleague is in a place where no talking is permitted.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.4999999999999999,
+        "edit_ratio": 0.3939393939393939
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 30.625,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 3.434542417526245,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.625,
+        "logit_2": 31.625,
+        "prob_1": 0.006692850962281227,
+        "prob_2": 0.9933071732521057,
+        "correct_margin": 5.0,
+        "shortcut_margin": -5.0
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is in a place where no talking is permitted. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is in a place where no talking is permitted.",
+        "start": 89,
+        "end": 146,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "My colleague is seated in a courtroom where speech is prohibited.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7500000000000001,
+        "edit_ratio": 0.17142857142857137
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 30.25,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.543776988983154,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.0,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is seated in a courtroom where speech is prohibited. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is seated in a courtroom where speech is prohibited.",
+        "start": 89,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "In the courtroom where my colleague is, it's not allowed to speak.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.46153846153846156,
+        "edit_ratio": 0.5714285714285714
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 30.5,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 3.6718130111694336,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.5,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. In the courtroom where my colleague is, it's not allowed to speak. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "In the courtroom where my colleague is, it's not allowed to speak.",
+        "start": 89,
+        "end": 155,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "My colleague is in a courtroom where loud talking is not tolerated.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "This paraphrase introduces a subtle distinction between 'loud talking' and 'talking'."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.5599999999999999,
+        "edit_ratio": 0.3661971830985915
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.125,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 3.9168620109558105,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 30.75,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is in a courtroom where loud talking is not tolerated. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is in a courtroom where loud talking is not tolerated.",
+        "start": 89,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The courtroom where my colleague is located has a no-talking policy.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.48000000000000004,
+        "edit_ratio": 0.5804195804195804
+      },
+      "prior_shortcut_margin": -2.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.0,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25,
+        "prior_shortcut_margin": -2.25,
+        "prior_correct_margin": 2.25
+      },
+      "surface_surprisal": 3.988036870956421,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.125,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. The courtroom where my colleague is located has a no-talking policy. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The courtroom where my colleague is located has a no-talking policy.",
+        "start": 89,
+        "end": 157,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "My colleague is in a place where conversations are not allowed.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.4057971014492754
+      },
+      "prior_shortcut_margin": -2.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 30.875,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375,
+        "prior_shortcut_margin": -2.375,
+        "prior_correct_margin": 2.375
+      },
+      "surface_surprisal": 3.389864206314087,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 31.625,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": 4.625,
+        "shortcut_margin": -4.625
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is in a place where conversations are not allowed. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is in a place where conversations are not allowed.",
+        "start": 89,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "There's a strict no-speaking rule in the courtroom where my colleague is.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.5185185185185186,
+        "edit_ratio": 0.5135135135135135
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.0,
+        "logit_2": 30.625,
+        "prob_1": 0.3486451506614685,
+        "prob_2": 0.6513549089431763,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 4.061022758483887,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.0,
+        "logit_2": 31.75,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": 4.75,
+        "shortcut_margin": -4.75
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. There's a strict no-speaking rule in the courtroom where my colleague is. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "There's a strict no-speaking rule in the courtroom where my colleague is.",
+        "start": 89,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "My colleague is in a courtroom where talking is strictly forbidden.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.352112676056338
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.5,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 3.793976306915283,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 30.75,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is in a courtroom where talking is strictly forbidden. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is in a courtroom where talking is strictly forbidden.",
+        "start": 89,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p10",
+      "text": "My colleague is in a courtroom where talking is strictly forbidden.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.352112676056338
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.5,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 3.793976306915283,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 30.75,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is in a courtroom where talking is strictly forbidden. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is in a courtroom where talking is strictly forbidden.",
+        "start": 89,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p04",
+      "text": "My colleague is seated in a courtroom where speech is prohibited.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7500000000000001,
+        "edit_ratio": 0.17142857142857137
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 30.25,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.543776988983154,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.0,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is seated in a courtroom where speech is prohibited. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is seated in a courtroom where speech is prohibited.",
+        "start": 89,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p02",
+      "text": "There's a rule against talking in the courtroom where my colleague is.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5384615384615384,
+        "edit_ratio": 0.4758620689655172
+      },
+      "prior_shortcut_margin": -0.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 30.25,
+        "logit_2": 30.5,
+        "prob_1": 0.43782350420951843,
+        "prob_2": 0.562176525592804,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25,
+        "prior_shortcut_margin": -0.25,
+        "prior_correct_margin": 0.25
+      },
+      "surface_surprisal": 4.308420181274414,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.125,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. There's a rule against talking in the courtroom where my colleague is. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "There's a rule against talking in the courtroom where my colleague is.",
+        "start": 89,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p10",
+      "text": "My colleague is in a courtroom where talking is strictly forbidden.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.352112676056338
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.5,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 3.793976306915283,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 30.75,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is in a courtroom where talking is strictly forbidden. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is in a courtroom where talking is strictly forbidden.",
+        "start": 89,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p10",
+      "text": "My colleague is in a courtroom where talking is strictly forbidden.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.352112676056338
+      },
+      "prior_shortcut_margin": -1.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.5,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5,
+        "prior_shortcut_margin": -1.5,
+        "prior_correct_margin": 1.5
+      },
+      "surface_surprisal": 3.793976306915283,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.25,
+        "logit_2": 30.75,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is in a courtroom where talking is strictly forbidden. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "My colleague is in a courtroom where talking is strictly forbidden.",
+        "start": 89,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The prohibition on calls and speech in the courtroom implies that sending a text message is the best way to communicate with my colleague.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is sitting in a courtroom where calls and speech are prohibited. The prohibition on calls and speech in the courtroom implies that sending a text message is the best way to communicate with my colleague. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 24.125,
+      "logit_2": 33.0,
+      "prob_1": 0.0001398220774717629,
+      "prob_2": 0.9998601675033569,
+      "correct_margin": 8.875,
+      "shortcut_margin": -8.875
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I need to tell my colleague that the printed exhibits are at the clerk's desk. My colleague is in a courtroom where talking is strictly forbidden. The prohibition on calls and speech in the courtroom implies that sending a text message is the best way to communicate with my colleague. What should I do?\nOption1: Call the colleague\nOption2: Send a text message\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 24.5,
+      "logit_2": 32.75,
+      "prob_1": 0.00026119028916582465,
+      "prob_2": 0.9997387528419495,
+      "correct_margin": 8.25,
+      "shortcut_margin": -8.25
+    }
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "item_index": 362,
+  "item_id": "362",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.603248664098256,
+    "predicted_hallucination": true,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The ride-on floor scrubber sometimes powers up only after the key is turned twice.",
+    "located": {
+      "text": "The ride-on floor scrubber sometimes powers up only after the key is turned twice.",
+      "start": 10,
+      "end": 92,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The ride-on floor scrubber sometimes powers up only after the key is turned twice.",
+    "located": {
+      "text": "The ride-on floor scrubber sometimes powers up only after the key is turned twice.",
+      "start": 10,
+      "end": 92,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The ride-on floor scrubber sometimes powers up only after the key is turned twice. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.625,
+      "logit_2": 30.375,
+      "prob_1": 0.14804719388484955,
+      "prob_2": 0.851952850818634,
+      "correct_margin": 1.75,
+      "shortcut_margin": -1.75,
+      "prior_shortcut_margin": -1.75,
+      "prior_correct_margin": 1.75
+    },
+    "surface_surprisal": 4.104594707489014,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.25,
+      "logit_2": 30.75,
+      "prob_1": 0.18242551386356354,
+      "prob_2": 0.8175744414329529,
+      "correct_margin": 1.5,
+      "shortcut_margin": -1.5
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The ride-on floor scrubber occasionally requires two key turns to power up.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.4580645161290322
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.0,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 5.194934368133545,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.75,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The ride-on floor scrubber occasionally requires two key turns to power up. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The ride-on floor scrubber occasionally requires two key turns to power up.",
+        "start": 10,
+        "end": 85,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "Sometimes, the scrubber's key needs to be turned twice before it starts.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.42857142857142855,
+        "edit_ratio": 0.5629139072847682
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 28.875,
+        "prob_1": 0.3775406777858734,
+        "prob_2": 0.622459352016449,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 3.7786271572113037,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.875,
+        "logit_2": 30.75,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: Sometimes, the scrubber's key needs to be turned twice before it starts. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Sometimes, the scrubber's key needs to be turned twice before it starts.",
+        "start": 10,
+        "end": 82,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The ride-on floor scrubber needs two key turns to activate.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.3525179856115108
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 30.375,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 5.424340724945068,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 31.0,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: The ride-on floor scrubber needs two key turns to activate. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The ride-on floor scrubber needs two key turns to activate.",
+        "start": 10,
+        "end": 69,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The key must be turned twice for the scrubber to power up.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5185185185185186,
+        "edit_ratio": 0.6811594202898551
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.25,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 4.429221153259277,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.375,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The key must be turned twice for the scrubber to power up. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The key must be turned twice for the scrubber to power up.",
+        "start": 10,
+        "end": 68,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "Two key turns are required to get the ride-on floor scrubber going.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.42857142857142855,
+        "edit_ratio": 0.5918367346938775
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 29.75,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 4.451066493988037,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.625,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: Two key turns are required to get the ride-on floor scrubber going. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Two key turns are required to get the ride-on floor scrubber going.",
+        "start": 10,
+        "end": 77,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The ride-on floor scrubber needs two key turns to operate.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.3623188405797102
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.375,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 5.047580718994141,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 31.0,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: The ride-on floor scrubber needs two key turns to operate. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The ride-on floor scrubber needs two key turns to operate.",
+        "start": 10,
+        "end": 68,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The scrubber's key needs to be turned twice to start.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3846153846153846,
+        "edit_ratio": 0.5037593984962406
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 29.875,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.588954448699951,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.375,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The scrubber's key needs to be turned twice to start. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The scrubber's key needs to be turned twice to start.",
+        "start": 10,
+        "end": 63,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The ride-on floor scrubber sometimes requires two key turns to activate successfully.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.32121212121212117
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 30.0,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 4.932682037353516,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.75,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The ride-on floor scrubber sometimes requires two key turns to activate successfully. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The ride-on floor scrubber sometimes requires two key turns to activate successfully.",
+        "start": 10,
+        "end": 95,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "Two key turns are needed for the ride-on floor scrubber to power up.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4827586206896552,
+        "edit_ratio": 0.5
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.125,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 4.422085762023926,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.75,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: Two key turns are needed for the ride-on floor scrubber to power up. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Two key turns are needed for the ride-on floor scrubber to power up.",
+        "start": 10,
+        "end": 78,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The key needs to be turned twice for the ride-on floor scrubber to work.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.5789473684210527
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 29.75,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 3.6976590156555176,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 30.75,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: The key needs to be turned twice for the ride-on floor scrubber to work. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The key needs to be turned twice for the ride-on floor scrubber to work.",
+        "start": 10,
+        "end": 82,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p04",
+      "text": "The key must be turned twice for the scrubber to power up.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5185185185185186,
+        "edit_ratio": 0.6811594202898551
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.25,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 4.429221153259277,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.375,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The key must be turned twice for the scrubber to power up. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The key must be turned twice for the scrubber to power up.",
+        "start": 10,
+        "end": 68,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "The ride-on floor scrubber occasionally requires two key turns to power up.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.4580645161290322
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.0,
+        "logit_2": 30.0,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 5.194934368133545,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.75,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: The ride-on floor scrubber occasionally requires two key turns to power up. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The ride-on floor scrubber occasionally requires two key turns to power up.",
+        "start": 10,
+        "end": 85,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p05",
+      "text": "Two key turns are required to get the ride-on floor scrubber going.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.42857142857142855,
+        "edit_ratio": 0.5918367346938775
+      },
+      "prior_shortcut_margin": 0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 29.75,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": -0.625,
+        "shortcut_margin": 0.625,
+        "prior_shortcut_margin": 0.625,
+        "prior_correct_margin": -0.625
+      },
+      "surface_surprisal": 4.451066493988037,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.625,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: Two key turns are required to get the ride-on floor scrubber going. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Two key turns are required to get the ride-on floor scrubber going.",
+        "start": 10,
+        "end": 77,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p03",
+      "text": "The ride-on floor scrubber needs two key turns to activate.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.3525179856115108
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 30.375,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 5.424340724945068,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 31.0,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: The ride-on floor scrubber needs two key turns to activate. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The ride-on floor scrubber needs two key turns to activate.",
+        "start": 10,
+        "end": 69,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p04",
+      "text": "The key must be turned twice for the scrubber to power up.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5185185185185186,
+        "edit_ratio": 0.6811594202898551
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.25,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 4.429221153259277,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.375,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: The key must be turned twice for the scrubber to power up. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The key must be turned twice for the scrubber to power up.",
+        "start": 10,
+        "end": 68,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This indicates that the maintenance team should observe the startup behavior on the scrubber itself.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The ride-on floor scrubber sometimes powers up only after the key is turned twice. This indicates that the maintenance team should observe the startup behavior on the scrubber itself. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.375,
+      "logit_2": 31.25,
+      "prob_1": 0.13296423852443695,
+      "prob_2": 0.8670357465744019,
+      "correct_margin": 1.875,
+      "shortcut_margin": -1.875
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The key must be turned twice for the scrubber to power up. This indicates that the maintenance team should observe the startup behavior on the scrubber itself. Maintenance wants to watch the display and hear the relay during startup in the bay. Should I walk to the bay or drive the scrubber there?\nOption1: Walk to the bay\nOption2: Drive the scrubber there\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.5,
+      "logit_2": 30.75,
+      "prob_1": 0.22270014882087708,
+      "prob_2": 0.7772998809814453,
+      "correct_margin": 1.25,
+      "shortcut_margin": -1.25
+    }
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "item_index": 193,
+  "item_id": "193",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.42837765472540407,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The tech is at the service mat to watch the joystick display while the chair boots.",
+    "located": {
+      "text": "The tech is at the service mat to watch the joystick display while the chair boots.",
+      "start": 57,
+      "end": 140,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The powered wheelchair startup case is active.",
+    "located": {
+      "text": "The powered wheelchair startup case is active.",
+      "start": 10,
+      "end": 56,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The powered wheelchair startup case is active. The tech is at the service mat to watch the joystick display while the chair boots. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.5,
+      "logit_2": 31.875,
+      "prob_1": 0.01243165135383606,
+      "prob_2": 0.9875683188438416,
+      "correct_margin": 4.375,
+      "shortcut_margin": -4.375,
+      "prior_shortcut_margin": -4.375,
+      "prior_correct_margin": 4.375
+    },
+    "surface_surprisal": 5.996355056762695,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.25,
+      "logit_2": 31.25,
+      "prob_1": 0.04742587357759476,
+      "prob_2": 0.9525741338729858,
+      "correct_margin": 3.0,
+      "shortcut_margin": -3.0
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The tech is already at the service mat, watching the joystick display as the chair boots.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8125,
+        "edit_ratio": 0.12426035502958577
+      },
+      "prior_shortcut_margin": -5.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 26.875,
+        "logit_2": 32.25,
+        "prob_1": 0.004609572701156139,
+        "prob_2": 0.9953904151916504,
+        "correct_margin": 5.375,
+        "shortcut_margin": -5.375,
+        "prior_shortcut_margin": -5.375,
+        "prior_correct_margin": 5.375
+      },
+      "surface_surprisal": 5.444576740264893,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.375,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is already at the service mat, watching the joystick display as the chair boots. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is already at the service mat, watching the joystick display as the chair boots.",
+        "start": 57,
+        "end": 146,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The tech is positioned at the service mat to monitor the joystick display as the chair starts up.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7647058823529411,
+        "edit_ratio": 0.2134831460674157
+      },
+      "prior_shortcut_margin": -4.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 32.5,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": 4.625,
+        "shortcut_margin": -4.625,
+        "prior_shortcut_margin": -4.625,
+        "prior_correct_margin": 4.625
+      },
+      "surface_surprisal": 5.183420181274414,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 31.75,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is positioned at the service mat to monitor the joystick display as the chair starts up. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is positioned at the service mat to monitor the joystick display as the chair starts up.",
+        "start": 57,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The tech is at the service mat, keeping an eye on the joystick display as the chair boots up.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.742857142857143,
+        "edit_ratio": 0.19075144508670516
+      },
+      "prior_shortcut_margin": -3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.625,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875,
+        "prior_shortcut_margin": -3.875,
+        "prior_correct_margin": 3.875
+      },
+      "surface_surprisal": 4.575028896331787,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.25,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is at the service mat, keeping an eye on the joystick display as the chair boots up. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is at the service mat, keeping an eye on the joystick display as the chair boots up.",
+        "start": 57,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The tech is at the service mat, observing the joystick display as the powered wheelchair is booting.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.23333333333333328
+      },
+      "prior_shortcut_margin": -4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 31.625,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25,
+        "prior_shortcut_margin": -4.25,
+        "prior_correct_margin": 4.25
+      },
+      "surface_surprisal": 5.219369411468506,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.5,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is at the service mat, observing the joystick display as the powered wheelchair is booting. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is at the service mat, observing the joystick display as the powered wheelchair is booting.",
+        "start": 57,
+        "end": 157,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The tech is at the service mat to observe the joystick display while the wheelchair is booting up.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7647058823529411,
+        "edit_ratio": 0.15083798882681565
+      },
+      "prior_shortcut_margin": -4.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.625,
+        "prob_1": 0.01590639166533947,
+        "prob_2": 0.9840936064720154,
+        "correct_margin": 4.125,
+        "shortcut_margin": -4.125,
+        "prior_shortcut_margin": -4.125,
+        "prior_correct_margin": 4.125
+      },
+      "surface_surprisal": 5.065728664398193,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.25,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is at the service mat to observe the joystick display while the wheelchair is booting up. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is at the service mat to observe the joystick display while the wheelchair is booting up.",
+        "start": 57,
+        "end": 155,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The tech has moved to the service mat, watching the joystick display as the chair is booting.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727272,
+        "edit_ratio": 0.17919075144508667
+      },
+      "prior_shortcut_margin": -4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.875,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25,
+        "prior_shortcut_margin": -4.25,
+        "prior_correct_margin": 4.25
+      },
+      "surface_surprisal": 5.4320478439331055,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.5,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech has moved to the service mat, watching the joystick display as the chair is booting. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech has moved to the service mat, watching the joystick display as the chair is booting.",
+        "start": 57,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The tech is located at the service mat to watch the joystick display during the wheelchair's startup process.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.742857142857143,
+        "edit_ratio": 0.21052631578947367
+      },
+      "prior_shortcut_margin": -3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 32.5,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875,
+        "prior_shortcut_margin": -3.875,
+        "prior_correct_margin": 3.875
+      },
+      "surface_surprisal": 5.032712936401367,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 32.25,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is located at the service mat to watch the joystick display during the wheelchair's startup process. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is located at the service mat to watch the joystick display during the wheelchair's startup process.",
+        "start": 57,
+        "end": 166,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The tech is at the service mat, monitoring the joystick display as the wheelchair begins to boot.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727272,
+        "edit_ratio": 0.20903954802259883
+      },
+      "prior_shortcut_margin": -5.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.125,
+        "logit_2": 32.25,
+        "prob_1": 0.005911068990826607,
+        "prob_2": 0.9940890073776245,
+        "correct_margin": 5.125,
+        "shortcut_margin": -5.125,
+        "prior_shortcut_margin": -5.125,
+        "prior_correct_margin": 5.125
+      },
+      "surface_surprisal": 5.263598442077637,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.75,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is at the service mat, monitoring the joystick display as the wheelchair begins to boot. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is at the service mat, monitoring the joystick display as the wheelchair begins to boot.",
+        "start": 57,
+        "end": 154,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The tech is at the service mat, observing the joystick display as the chair boots up now.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.787878787878788,
+        "edit_ratio": 0.17159763313609466
+      },
+      "prior_shortcut_margin": -4.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.5,
+        "logit_2": 31.5,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0,
+        "prior_shortcut_margin": -4.0,
+        "prior_correct_margin": 4.0
+      },
+      "surface_surprisal": 5.727263450622559,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.5,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is at the service mat, observing the joystick display as the chair boots up now. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is at the service mat, observing the joystick display as the chair boots up now.",
+        "start": 57,
+        "end": 146,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The tech has arrived at the service mat, watching the joystick display as the wheelchair boots.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6875,
+        "edit_ratio": 0.1657142857142857
+      },
+      "prior_shortcut_margin": -6.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.625,
+        "logit_2": 32.5,
+        "prob_1": 0.0010322310263291001,
+        "prob_2": 0.9989677667617798,
+        "correct_margin": 6.875,
+        "shortcut_margin": -6.875,
+        "prior_shortcut_margin": -6.875,
+        "prior_correct_margin": 6.875
+      },
+      "surface_surprisal": 5.718987941741943,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.75,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech has arrived at the service mat, watching the joystick display as the wheelchair boots. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech has arrived at the service mat, watching the joystick display as the wheelchair boots.",
+        "start": 57,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p10",
+      "text": "The tech has arrived at the service mat, watching the joystick display as the wheelchair boots.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6875,
+        "edit_ratio": 0.1657142857142857
+      },
+      "prior_shortcut_margin": -6.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.625,
+        "logit_2": 32.5,
+        "prob_1": 0.0010322310263291001,
+        "prob_2": 0.9989677667617798,
+        "correct_margin": 6.875,
+        "shortcut_margin": -6.875,
+        "prior_shortcut_margin": -6.875,
+        "prior_correct_margin": 6.875
+      },
+      "surface_surprisal": 5.718987941741943,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.75,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech has arrived at the service mat, watching the joystick display as the wheelchair boots. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech has arrived at the service mat, watching the joystick display as the wheelchair boots.",
+        "start": 57,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p04",
+      "text": "The tech is at the service mat, observing the joystick display as the powered wheelchair is booting.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.23333333333333328
+      },
+      "prior_shortcut_margin": -4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.375,
+        "logit_2": 31.625,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25,
+        "prior_shortcut_margin": -4.25,
+        "prior_correct_margin": 4.25
+      },
+      "surface_surprisal": 5.219369411468506,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.5,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is at the service mat, observing the joystick display as the powered wheelchair is booting. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is at the service mat, observing the joystick display as the powered wheelchair is booting.",
+        "start": 57,
+        "end": 157,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p07",
+      "text": "The tech is located at the service mat to watch the joystick display during the wheelchair's startup process.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.742857142857143,
+        "edit_ratio": 0.21052631578947367
+      },
+      "prior_shortcut_margin": -3.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 32.5,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875,
+        "prior_shortcut_margin": -3.875,
+        "prior_correct_margin": 3.875
+      },
+      "surface_surprisal": 5.032712936401367,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 32.25,
+        "prob_1": 0.01798621006309986,
+        "prob_2": 0.9820137619972229,
+        "correct_margin": 4.0,
+        "shortcut_margin": -4.0
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech is located at the service mat to watch the joystick display during the wheelchair's startup process. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech is located at the service mat to watch the joystick display during the wheelchair's startup process.",
+        "start": 57,
+        "end": 166,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p06",
+      "text": "The tech has moved to the service mat, watching the joystick display as the chair is booting.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727272,
+        "edit_ratio": 0.17919075144508667
+      },
+      "prior_shortcut_margin": -4.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.625,
+        "logit_2": 31.875,
+        "prob_1": 0.014063626527786255,
+        "prob_2": 0.9859364032745361,
+        "correct_margin": 4.25,
+        "shortcut_margin": -4.25,
+        "prior_shortcut_margin": -4.25,
+        "prior_correct_margin": 4.25
+      },
+      "surface_surprisal": 5.4320478439331055,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.5,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech has moved to the service mat, watching the joystick display as the chair is booting. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech has moved to the service mat, watching the joystick display as the chair is booting.",
+        "start": 57,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p10",
+      "text": "The tech has arrived at the service mat, watching the joystick display as the wheelchair boots.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6875,
+        "edit_ratio": 0.1657142857142857
+      },
+      "prior_shortcut_margin": -6.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 25.625,
+        "logit_2": 32.5,
+        "prob_1": 0.0010322310263291001,
+        "prob_2": 0.9989677667617798,
+        "correct_margin": 6.875,
+        "shortcut_margin": -6.875,
+        "prior_shortcut_margin": -6.875,
+        "prior_correct_margin": 6.875
+      },
+      "surface_surprisal": 5.718987941741943,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.75,
+        "prob_1": 0.020332353189587593,
+        "prob_2": 0.9796676635742188,
+        "correct_margin": 3.875,
+        "shortcut_margin": -3.875
+      },
+      "prompt": "Scenario: The powered wheelchair startup case is active. The tech has arrived at the service mat, watching the joystick display as the wheelchair boots. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The tech has arrived at the service mat, watching the joystick display as the wheelchair boots.",
+        "start": 57,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The tech's presence at the service mat is relevant because the powered wheelchair startup case is active.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The powered wheelchair startup case is active. The tech is at the service mat to watch the joystick display while the chair boots. The tech's presence at the service mat is relevant because the powered wheelchair startup case is active. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.0,
+      "logit_2": 31.75,
+      "prob_1": 0.06008664518594742,
+      "prob_2": 0.9399133324623108,
+      "correct_margin": 2.75,
+      "shortcut_margin": -2.75
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The powered wheelchair startup case is active. The tech has arrived at the service mat, watching the joystick display as the wheelchair boots. The tech's presence at the service mat is relevant because the powered wheelchair startup case is active. For this step, what should I do?\nOption1: Go to the service mat without the chair\nOption2: Bring the powered wheelchair to the service mat\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.375,
+      "logit_2": 31.75,
+      "prob_1": 0.03308597952127457,
+      "prob_2": 0.9669140577316284,
+      "correct_margin": 3.375,
+      "shortcut_margin": -3.375
+    }
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "item_index": 331,
+  "item_id": "331",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.6455296279970197,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "while the speaker warranty portal asks me to keep the original receipt.",
+    "located": {
+      "text": "while the speaker warranty portal asks me to keep the original receipt.",
+      "start": 119,
+      "end": 190,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "I am giving meeting-room clerk proof for a conference speaker.",
+    "located": {
+      "text": "I am giving meeting-room clerk proof for a conference speaker.",
+      "start": 10,
+      "end": 72,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, while the speaker warranty portal asks me to keep the original receipt. What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.5,
+      "logit_2": 31.25,
+      "prob_1": 0.06008664518594742,
+      "prob_2": 0.9399133324623108,
+      "correct_margin": -2.75,
+      "shortcut_margin": 2.75,
+      "prior_shortcut_margin": 2.75,
+      "prior_correct_margin": -2.75
+    },
+    "surface_surprisal": 5.985640525817871,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.625,
+      "logit_2": 30.25,
+      "prob_1": 0.16451644897460938,
+      "prob_2": 0.8354835510253906,
+      "correct_margin": -1.625,
+      "shortcut_margin": 1.625
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "since the speaker's warranty portal requires an original copy",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.45454545454545453,
+        "edit_ratio": 0.3129770992366412
+      },
+      "prior_shortcut_margin": 2.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.625,
+        "logit_2": 31.5,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875,
+        "prior_shortcut_margin": 2.875,
+        "prior_correct_margin": -2.875
+      },
+      "surface_surprisal": 6.095895290374756,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 31.0,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": -3.125,
+        "shortcut_margin": 3.125
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, since the speaker's warranty portal requires an original copy What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the speaker's warranty portal requires an original copy",
+        "start": 119,
+        "end": 180,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "given that the speaker's warranty portal needs the original",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.3023255813953488
+      },
+      "prior_shortcut_margin": 2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.75,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625,
+        "prior_shortcut_margin": 2.625,
+        "prior_correct_margin": -2.625
+      },
+      "surface_surprisal": 6.106863498687744,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.0,
+        "logit_2": 30.875,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, given that the speaker's warranty portal needs the original What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "given that the speaker's warranty portal needs the original",
+        "start": 119,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "as the speaker's warranty portal demands the original document",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.28787878787878785
+      },
+      "prior_shortcut_margin": 3.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 31.875,
+        "prob_1": 0.022977370768785477,
+        "prob_2": 0.977022647857666,
+        "correct_margin": -3.75,
+        "shortcut_margin": 3.75,
+        "prior_shortcut_margin": 3.75,
+        "prior_correct_margin": -3.75
+      },
+      "surface_surprisal": 6.430128574371338,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.0,
+        "logit_2": 30.625,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, as the speaker's warranty portal demands the original document What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as the speaker's warranty portal demands the original document",
+        "start": 119,
+        "end": 181,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "because the speaker's warranty portal insists on the original",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.2824427480916031
+      },
+      "prior_shortcut_margin": 2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.625,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": -2.5,
+        "shortcut_margin": 2.5,
+        "prior_shortcut_margin": 2.5,
+        "prior_correct_margin": -2.5
+      },
+      "surface_surprisal": 6.155226230621338,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 31.125,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, because the speaker's warranty portal insists on the original What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "because the speaker's warranty portal insists on the original",
+        "start": 119,
+        "end": 180,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "since the warranty portal for the speaker requires the original",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.368421052631579
+      },
+      "prior_shortcut_margin": 1.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.875,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625,
+        "prior_shortcut_margin": 1.625,
+        "prior_correct_margin": -1.625
+      },
+      "surface_surprisal": 5.863968849182129,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.75,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, since the warranty portal for the speaker requires the original What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the warranty portal for the speaker requires the original",
+        "start": 119,
+        "end": 182,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "the speaker's warranty portal needs the original to be valid",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.29230769230769227
+      },
+      "prior_shortcut_margin": 4.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 32.25,
+        "prob_1": 0.01243165135383606,
+        "prob_2": 0.9875683188438416,
+        "correct_margin": -4.375,
+        "shortcut_margin": 4.375,
+        "prior_shortcut_margin": 4.375,
+        "prior_correct_margin": -4.375
+      },
+      "surface_surprisal": 6.62874174118042,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.25,
+        "logit_2": 30.5,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, the speaker's warranty portal needs the original to be valid What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the speaker's warranty portal needs the original to be valid",
+        "start": 119,
+        "end": 179,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "the speaker's warranty portal requires the original copy of the receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5833333333333334,
+        "edit_ratio": 0.2907801418439716
+      },
+      "prior_shortcut_margin": 4.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.625,
+        "logit_2": 32.25,
+        "prob_1": 0.009708477184176445,
+        "prob_2": 0.9902915358543396,
+        "correct_margin": -4.625,
+        "shortcut_margin": 4.625,
+        "prior_shortcut_margin": 4.625,
+        "prior_correct_margin": -4.625
+      },
+      "surface_surprisal": 5.206295013427734,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 30.25,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": -1.75,
+        "shortcut_margin": 1.75
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, the speaker's warranty portal requires the original copy of the receipt What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the speaker's warranty portal requires the original copy of the receipt",
+        "start": 119,
+        "end": 190,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "as the speaker's warranty portal needs the original receipt to be kept",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.2571428571428571
+      },
+      "prior_shortcut_margin": 4.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 32.25,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75,
+        "prior_shortcut_margin": 4.75,
+        "prior_correct_margin": -4.75
+      },
+      "surface_surprisal": 5.694197654724121,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 31.125,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, as the speaker's warranty portal needs the original receipt to be kept What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as the speaker's warranty portal needs the original receipt to be kept",
+        "start": 119,
+        "end": 189,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "since the speaker's warranty portal insists on the original receipt",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6086956521739131,
+        "edit_ratio": 0.18248175182481752
+      },
+      "prior_shortcut_margin": 2.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 31.375,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": -2.375,
+        "shortcut_margin": 2.375,
+        "prior_shortcut_margin": 2.375,
+        "prior_correct_margin": -2.375
+      },
+      "surface_surprisal": 5.967843055725098,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": -2.125,
+        "shortcut_margin": 2.125
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, since the speaker's warranty portal insists on the original receipt What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the speaker's warranty portal insists on the original receipt",
+        "start": 119,
+        "end": 186,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "given that the speaker's warranty portal requires the original copy",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5217391304347826,
+        "edit_ratio": 0.3138686131386861
+      },
+      "prior_shortcut_margin": 2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.875,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75,
+        "prior_shortcut_margin": 2.75,
+        "prior_correct_margin": -2.75
+      },
+      "surface_surprisal": 5.789003849029541,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 31.0,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": -3.25,
+        "shortcut_margin": 3.25
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, given that the speaker's warranty portal requires the original copy What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "given that the speaker's warranty portal requires the original copy",
+        "start": 119,
+        "end": 186,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p05",
+      "text": "since the warranty portal for the speaker requires the original",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.368421052631579
+      },
+      "prior_shortcut_margin": 1.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.875,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625,
+        "prior_shortcut_margin": 1.625,
+        "prior_correct_margin": -1.625
+      },
+      "surface_surprisal": 5.863968849182129,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.75,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, since the warranty portal for the speaker requires the original What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the warranty portal for the speaker requires the original",
+        "start": 119,
+        "end": 182,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p10",
+      "text": "given that the speaker's warranty portal requires the original copy",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5217391304347826,
+        "edit_ratio": 0.3138686131386861
+      },
+      "prior_shortcut_margin": 2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.875,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": -2.75,
+        "shortcut_margin": 2.75,
+        "prior_shortcut_margin": 2.75,
+        "prior_correct_margin": -2.75
+      },
+      "surface_surprisal": 5.789003849029541,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.75,
+        "logit_2": 31.0,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": -3.25,
+        "shortcut_margin": 3.25
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, given that the speaker's warranty portal requires the original copy What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "given that the speaker's warranty portal requires the original copy",
+        "start": 119,
+        "end": 186,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p08",
+      "text": "as the speaker's warranty portal needs the original receipt to be kept",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.64,
+        "edit_ratio": 0.2571428571428571
+      },
+      "prior_shortcut_margin": 4.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.5,
+        "logit_2": 32.25,
+        "prob_1": 0.008577484637498856,
+        "prob_2": 0.9914224743843079,
+        "correct_margin": -4.75,
+        "shortcut_margin": 4.75,
+        "prior_shortcut_margin": 4.75,
+        "prior_correct_margin": -4.75
+      },
+      "surface_surprisal": 5.694197654724121,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.125,
+        "logit_2": 31.125,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, as the speaker's warranty portal needs the original receipt to be kept What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as the speaker's warranty portal needs the original receipt to be kept",
+        "start": 119,
+        "end": 189,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p02",
+      "text": "given that the speaker's warranty portal needs the original",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.3023255813953488
+      },
+      "prior_shortcut_margin": 2.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.75,
+        "prob_1": 0.06754669547080994,
+        "prob_2": 0.9324532747268677,
+        "correct_margin": -2.625,
+        "shortcut_margin": 2.625,
+        "prior_shortcut_margin": 2.625,
+        "prior_correct_margin": -2.625
+      },
+      "surface_surprisal": 6.106863498687744,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.0,
+        "logit_2": 30.875,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, given that the speaker's warranty portal needs the original What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "given that the speaker's warranty portal needs the original",
+        "start": 119,
+        "end": 178,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p05",
+      "text": "since the warranty portal for the speaker requires the original",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.368421052631579
+      },
+      "prior_shortcut_margin": 1.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.875,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625,
+        "prior_shortcut_margin": 1.625,
+        "prior_correct_margin": -1.625
+      },
+      "surface_surprisal": 5.863968849182129,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 27.875,
+        "logit_2": 30.75,
+        "prob_1": 0.0534033328294754,
+        "prob_2": 0.9465966820716858,
+        "correct_margin": -2.875,
+        "shortcut_margin": 2.875
+      },
+      "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, since the warranty portal for the speaker requires the original What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "since the warranty portal for the speaker requires the original",
+        "start": 119,
+        "end": 182,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The clerk only needs a scan, but the warranty portal requires the original document to be kept by me.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, while the speaker warranty portal asks me to keep the original receipt. The clerk only needs a scan, but the warranty portal requires the original document to be kept by me. What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 29.125,
+      "logit_2": 30.375,
+      "prob_1": 0.22270014882087708,
+      "prob_2": 0.7772998809814453,
+      "correct_margin": -1.25,
+      "shortcut_margin": 1.25
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I am giving meeting-room clerk proof for a conference speaker. The clerk stores a scan and returns no paper, since the warranty portal for the speaker requires the original. The clerk only needs a scan, but the warranty portal requires the original document to be kept by me. What should I give meeting-room clerk?\nOption1: A printed copy of the receipt\nOption2: The original receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.75,
+      "logit_2": 30.75,
+      "prob_1": 0.11920291930437088,
+      "prob_2": 0.8807970285415649,
+      "correct_margin": -2.0,
+      "shortcut_margin": 2.0
+    }
+  }
+}

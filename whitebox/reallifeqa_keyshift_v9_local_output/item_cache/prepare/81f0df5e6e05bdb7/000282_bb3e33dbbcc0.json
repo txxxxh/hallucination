@@ -1,0 +1,863 @@
+{
+  "item_index": 282,
+  "item_id": "282",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.2740910731278411,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "but no tool at the wall.",
+    "located": {
+      "text": "but no tool at the wall.",
+      "start": 143,
+      "end": 167,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The wall hooks use small screws, and the room coordinator left the screws in a cup",
+    "located": {
+      "text": "The wall hooks use small screws, and the room coordinator left the screws in a cup",
+      "start": 60,
+      "end": 142,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup but no tool at the wall. For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.625,
+      "logit_2": 30.125,
+      "prob_1": 0.18242551386356354,
+      "prob_2": 0.8175744414329529,
+      "correct_margin": -1.5,
+      "shortcut_margin": 1.5,
+      "prior_shortcut_margin": 1.5,
+      "prior_correct_margin": -1.5
+    },
+    "surface_surprisal": 5.8420844078063965,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.875,
+      "logit_2": 30.125,
+      "prob_1": 0.851952850818634,
+      "prob_2": 0.14804719388484955,
+      "correct_margin": 1.75,
+      "shortcut_margin": -1.75
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "but no suitable tool was left at the wall",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8,
+        "edit_ratio": 0.28125
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.875,
+        "logit_2": 30.125,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.977402687072754,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.25,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup but no suitable tool was left at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "but no suitable tool was left at the wall",
+        "start": 143,
+        "end": 184,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "there's no tool to use at the wall",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.26315789473684215
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 29.75,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.93485164642334,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.75,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup there's no tool to use at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "there's no tool to use at the wall",
+        "start": 143,
+        "end": 177,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "no tool was provided at the wall",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7692307692307692,
+        "edit_ratio": 0.3090909090909091
+      },
+      "prior_shortcut_margin": 0.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.25,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": -0.875,
+        "shortcut_margin": 0.875,
+        "prior_shortcut_margin": 0.875,
+        "prior_correct_margin": -0.875
+      },
+      "surface_surprisal": 5.0168890953063965,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 30.25,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup no tool was provided at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "no tool was provided at the wall",
+        "start": 143,
+        "end": 175,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "the wall is without a tool",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.6734693877551021
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 30.0,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 6.239512920379639,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.375,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup the wall is without a tool For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the wall is without a tool",
+        "start": 143,
+        "end": 169,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "no tool is available at the wall",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7692307692307692,
+        "edit_ratio": 0.3090909090909091
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.5,
+        "logit_2": 29.75,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.059636116027832,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.375,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup no tool is available at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "no tool is available at the wall",
+        "start": 143,
+        "end": 175,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "a tool is not left at the wall",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.3584905660377359
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.25,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 5.033152103424072,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.625,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup a tool is not left at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "a tool is not left at the wall",
+        "start": 143,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "no tool has been left at the wall",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857143,
+        "edit_ratio": 0.3214285714285714
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.75,
+        "logit_2": 30.0,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.170598983764648,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.125,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup no tool has been left at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "no tool has been left at the wall",
+        "start": 143,
+        "end": 176,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "the wall is missing a tool",
+      "valid": false,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": false,
+        "token_f1": 0.5,
+        "edit_ratio": 0.6734693877551021
+      },
+      "prior_shortcut_margin": 0.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.375,
+        "logit_2": 30.5,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125,
+        "prior_shortcut_margin": 0.125,
+        "prior_correct_margin": -0.125
+      },
+      "surface_surprisal": 6.33334493637085,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.625,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup the wall is missing a tool For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the wall is missing a tool",
+        "start": 143,
+        "end": 169,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "no suitable tool was left available at the wall",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.4571428571428572
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 29.875,
+        "prob_1": 0.3208213150501251,
+        "prob_2": 0.6791787147521973,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 5.046374797821045,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.5,
+        "logit_2": 30.25,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup no suitable tool was left available at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "no suitable tool was left available at the wall",
+        "start": 143,
+        "end": 190,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "a tool was not left at the wall",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.37037037037037035
+      },
+      "prior_shortcut_margin": 1.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.5,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125,
+        "prior_shortcut_margin": 1.125,
+        "prior_correct_margin": -1.125
+      },
+      "surface_surprisal": 5.257952690124512,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.625,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup a tool was not left at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "a tool was not left at the wall",
+        "start": 143,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p06",
+      "text": "a tool is not left at the wall",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.3584905660377359
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.25,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 5.033152103424072,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.625,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup a tool is not left at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "a tool is not left at the wall",
+        "start": 143,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p10",
+      "text": "a tool was not left at the wall",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.37037037037037035
+      },
+      "prior_shortcut_margin": 1.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 30.5,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125,
+        "prior_shortcut_margin": 1.125,
+        "prior_correct_margin": -1.125
+      },
+      "surface_surprisal": 5.257952690124512,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.875,
+        "logit_2": 30.625,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup a tool was not left at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "a tool was not left at the wall",
+        "start": 143,
+        "end": 174,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p07",
+      "text": "no tool has been left at the wall",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7142857142857143,
+        "edit_ratio": 0.3214285714285714
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.75,
+        "logit_2": 30.0,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.170598983764648,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.125,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup no tool has been left at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "no tool has been left at the wall",
+        "start": 143,
+        "end": 176,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p01",
+      "text": "but no suitable tool was left at the wall",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8,
+        "edit_ratio": 0.28125
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.875,
+        "logit_2": 30.125,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.977402687072754,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.25,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup but no suitable tool was left at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "but no suitable tool was left at the wall",
+        "start": 143,
+        "end": 184,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p06",
+      "text": "a tool is not left at the wall",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5714285714285715,
+        "edit_ratio": 0.3584905660377359
+      },
+      "prior_shortcut_margin": 0.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.875,
+        "logit_2": 30.25,
+        "prob_1": 0.4073334336280823,
+        "prob_2": 0.5926666259765625,
+        "correct_margin": -0.375,
+        "shortcut_margin": 0.375,
+        "prior_shortcut_margin": 0.375,
+        "prior_correct_margin": -0.375
+      },
+      "surface_surprisal": 5.033152103424072,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.5,
+        "logit_2": 30.625,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125
+      },
+      "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup a tool is not left at the wall For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "a tool is not left at the wall",
+        "start": 143,
+        "end": 173,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This indicates that you'll need to bring a tool, like a screwdriver, to use with the screws.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup but no tool at the wall. This indicates that you'll need to bring a tool, like a screwdriver, to use with the screws. For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 33.25,
+      "logit_2": 28.5,
+      "prob_1": 0.9914224743843079,
+      "prob_2": 0.008577484637498856,
+      "correct_margin": 4.75,
+      "shortcut_margin": -4.75
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I need to hang a framed poster in a seminar room. The wall hooks use small screws, and the room coordinator left the screws in a cup a tool is not left at the wall. This indicates that you'll need to bring a tool, like a screwdriver, to use with the screws. For this step, what should I bring?\nOption1: Bring a screwdriver\nOption2: Bring only the screws\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 33.0,
+      "logit_2": 29.375,
+      "prob_1": 0.9740425944328308,
+      "prob_2": 0.02595735713839531,
+      "correct_margin": 3.625,
+      "shortcut_margin": -3.625
+    }
+  }
+}

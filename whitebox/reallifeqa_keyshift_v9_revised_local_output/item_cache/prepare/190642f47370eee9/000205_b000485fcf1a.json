@@ -1,0 +1,841 @@
+{
+  "item_index": 205,
+  "item_id": "205",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.5798764624074549,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "while the vehicle placard must remain active on the dash.",
+    "located": {
+      "text": "while the vehicle placard must remain active on the dash.",
+      "start": 102,
+      "end": 159,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": null,
+  "original": {
+    "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, while the vehicle placard must remain active on the dash. What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": false,
+      "logit_1": 32.0,
+      "logit_2": 30.125,
+      "prob_1": 0.8670357465744019,
+      "prob_2": 0.13296423852443695,
+      "correct_margin": -1.875,
+      "shortcut_margin": 1.875,
+      "prior_shortcut_margin": 1.875,
+      "prior_correct_margin": -1.875
+    },
+    "surface_surprisal": 5.13723087310791,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.75,
+      "logit_2": 30.625,
+      "prob_1": 0.29421496391296387,
+      "prob_2": 0.7057850360870361,
+      "correct_margin": 0.875,
+      "shortcut_margin": -0.875
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "while the vehicle placard must be displayed on the dash",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8000000000000002,
+        "edit_ratio": 0.1711711711711712
+      },
+      "prior_shortcut_margin": 1.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.0,
+        "logit_2": 30.125,
+        "prob_1": 0.8670357465744019,
+        "prob_2": 0.13296423852443695,
+        "correct_margin": -1.875,
+        "shortcut_margin": 1.875,
+        "prior_shortcut_margin": 1.875,
+        "prior_correct_margin": -1.875
+      },
+      "surface_surprisal": 3.863713026046753,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 30.5,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, while the vehicle placard must be displayed on the dash What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "while the vehicle placard must be displayed on the dash",
+        "start": 102,
+        "end": 157,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "where the vehicle placard must be kept on the dashboard",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.2072072072072072
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.25,
+        "logit_2": 29.875,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 3.925551652908325,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 30.25,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard must be kept on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard must be kept on the dashboard",
+        "start": 102,
+        "end": 157,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "where the vehicle placard should remain visible on the dashboard",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.21666666666666667
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 29.875,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 4.513935089111328,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 30.375,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard should remain visible on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard should remain visible on the dashboard",
+        "start": 102,
+        "end": 166,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "where the vehicle placard needs to be displayed on the dashboard",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.47619047619047616,
+        "edit_ratio": 0.30000000000000004
+      },
+      "prior_shortcut_margin": 1.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 29.5,
+        "prob_1": 0.8670357465744019,
+        "prob_2": 0.13296423852443695,
+        "correct_margin": -1.875,
+        "shortcut_margin": 1.875,
+        "prior_shortcut_margin": 1.875,
+        "prior_correct_margin": -1.875
+      },
+      "surface_surprisal": 3.637739419937134,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 30.5,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard needs to be displayed on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard needs to be displayed on the dashboard",
+        "start": 102,
+        "end": 166,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "where the vehicle placard must be shown on the dashboard",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.2321428571428571
+      },
+      "prior_shortcut_margin": 1.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.5,
+        "logit_2": 30.0,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": -1.5,
+        "shortcut_margin": 1.5,
+        "prior_shortcut_margin": 1.5,
+        "prior_correct_margin": -1.5
+      },
+      "surface_surprisal": 4.0907511711120605,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 30.375,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard must be shown on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard must be shown on the dashboard",
+        "start": 102,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "while the vehicle placard is required to be displayed on the dashboard",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.3015873015873016
+      },
+      "prior_shortcut_margin": 2.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.25,
+        "logit_2": 29.875,
+        "prob_1": 0.9149009585380554,
+        "prob_2": 0.08509904146194458,
+        "correct_margin": -2.375,
+        "shortcut_margin": 2.375,
+        "prior_shortcut_margin": 2.375,
+        "prior_correct_margin": -2.375
+      },
+      "surface_surprisal": 3.0922060012817383,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.75,
+        "logit_2": 30.625,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, while the vehicle placard is required to be displayed on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "while the vehicle placard is required to be displayed on the dashboard",
+        "start": 102,
+        "end": 172,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "where the vehicle placard should be kept on the dashboard",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.327433628318584
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 30.75,
+        "logit_2": 29.75,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.181264400482178,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.25,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard should be kept on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard should be kept on the dashboard",
+        "start": 102,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "where the vehicle placard needs to be shown on the dashboard",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.47619047619047616,
+        "edit_ratio": 0.2931034482758621
+      },
+      "prior_shortcut_margin": 1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 29.625,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": -1.75,
+        "shortcut_margin": 1.75,
+        "prior_shortcut_margin": 1.75,
+        "prior_correct_margin": -1.75
+      },
+      "surface_surprisal": 3.9230754375457764,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.5,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard needs to be shown on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard needs to be shown on the dashboard",
+        "start": 102,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "where the vehicle placard must be visible on the dashboard",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.21052631578947367
+      },
+      "prior_shortcut_margin": 2.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.5,
+        "logit_2": 30.25,
+        "prob_1": 0.9046505093574524,
+        "prob_2": 0.09534946084022522,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25,
+        "prior_shortcut_margin": 2.25,
+        "prior_correct_margin": -2.25
+      },
+      "surface_surprisal": 4.0676960945129395,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.375,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard must be visible on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard must be visible on the dashboard",
+        "start": 102,
+        "end": 160,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "where the vehicle placard should remain on the dashboard",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.631578947368421,
+        "edit_ratio": 0.2142857142857143
+      },
+      "prior_shortcut_margin": 1.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 30.75,
+        "logit_2": 29.625,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": -1.125,
+        "shortcut_margin": 1.125,
+        "prior_shortcut_margin": 1.125,
+        "prior_correct_margin": -1.125
+      },
+      "surface_surprisal": 4.516957759857178,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 30.125,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard should remain on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard should remain on the dashboard",
+        "start": 102,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p07",
+      "text": "where the vehicle placard should be kept on the dashboard",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.327433628318584
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 30.75,
+        "logit_2": 29.75,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.181264400482178,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.25,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard should be kept on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard should be kept on the dashboard",
+        "start": 102,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p05",
+      "text": "where the vehicle placard must be shown on the dashboard",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.2321428571428571
+      },
+      "prior_shortcut_margin": 1.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.5,
+        "logit_2": 30.0,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": -1.5,
+        "shortcut_margin": 1.5,
+        "prior_shortcut_margin": 1.5,
+        "prior_correct_margin": -1.5
+      },
+      "surface_surprisal": 4.0907511711120605,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.25,
+        "logit_2": 30.375,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard must be shown on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard must be shown on the dashboard",
+        "start": 102,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p06",
+      "text": "while the vehicle placard is required to be displayed on the dashboard",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.3015873015873016
+      },
+      "prior_shortcut_margin": 2.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.25,
+        "logit_2": 29.875,
+        "prob_1": 0.9149009585380554,
+        "prob_2": 0.08509904146194458,
+        "correct_margin": -2.375,
+        "shortcut_margin": 2.375,
+        "prior_shortcut_margin": 2.375,
+        "prior_correct_margin": -2.375
+      },
+      "surface_surprisal": 3.0922060012817383,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.75,
+        "logit_2": 30.625,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, while the vehicle placard is required to be displayed on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "while the vehicle placard is required to be displayed on the dashboard",
+        "start": 102,
+        "end": 172,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p01",
+      "text": "while the vehicle placard must be displayed on the dash",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8000000000000002,
+        "edit_ratio": 0.1711711711711712
+      },
+      "prior_shortcut_margin": 1.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 32.0,
+        "logit_2": 30.125,
+        "prob_1": 0.8670357465744019,
+        "prob_2": 0.13296423852443695,
+        "correct_margin": -1.875,
+        "shortcut_margin": 1.875,
+        "prior_shortcut_margin": 1.875,
+        "prior_correct_margin": -1.875
+      },
+      "surface_surprisal": 3.863713026046753,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.5,
+        "logit_2": 30.5,
+        "prob_1": 0.2689414322376251,
+        "prob_2": 0.7310585379600525,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, while the vehicle placard must be displayed on the dash What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "while the vehicle placard must be displayed on the dash",
+        "start": 102,
+        "end": 157,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p07",
+      "text": "where the vehicle placard should be kept on the dashboard",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.327433628318584
+      },
+      "prior_shortcut_margin": 1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 30.75,
+        "logit_2": 29.75,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": -1.0,
+        "shortcut_margin": 1.0,
+        "prior_shortcut_margin": 1.0,
+        "prior_correct_margin": -1.0
+      },
+      "surface_surprisal": 4.181264400482178,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.375,
+        "logit_2": 30.25,
+        "prob_1": 0.29421496391296387,
+        "prob_2": 0.7057850360870361,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875
+      },
+      "prompt": "Scenario: I am updating my contractor parking file. The site clerk scans paper proof and discards it, where the vehicle placard should be kept on the dashboard What should I submit to the site clerk?\nOption1: The physical vehicle placard\nOption2: A paper copy of the vehicle placard\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "where the vehicle placard should be kept on the dashboard",
+        "start": 102,
+        "end": 159,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": false,
+    "valid": false,
+    "reason": "requires_distinct_predicted_shortcut_and_predicted_constraint",
+    "text": null,
+    "prompt": null,
+    "full_prompt": null
+  },
+  "joint_pdp_context": {
+    "available": false,
+    "prompt": null,
+    "full_prompt": null
+  }
+}

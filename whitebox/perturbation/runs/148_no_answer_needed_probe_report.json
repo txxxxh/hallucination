@@ -1,0 +1,644 @@
+{
+  "method": "No Answer Needed: question-final residual activation before generation + linear LogisticRegression",
+  "features": "question-only chat prompt; no answer, profile, candidate, or probe-derived feature",
+  "label": "known iff n_discriminative_facts>=1 and binary_accuracy>0.5 and pairwise_owner_accuracy>0.5; label only",
+  "n": 2894,
+  "n_unknown": 1818,
+  "n_known": 1076,
+  "layer_sweep_protocol": "every 2 hidden states, stratified 3-fold OOF (paper protocol)",
+  "layer_sweep": [
+    {
+      "hidden_state_index": 16,
+      "transformer_block_output": 15,
+      "auroc": 0.7378686288703219,
+      "accuracy": 0.6962681409813407,
+      "balanced_accuracy": 0.6484397045652521,
+      "macro_f1": 0.6530891699549762,
+      "confusion_rows_unknown_known": [
+        [
+          1518,
+          300
+        ],
+        [
+          579,
+          497
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7238912732474965,
+        0.6235884567126725
+      ],
+      "recall_unknown_known": [
+        0.834983498349835,
+        0.46189591078066916
+      ],
+      "f1_unknown_known": [
+        0.7754789272030651,
+        0.5306994127068874
+      ],
+      "per_seed_auroc": [
+        0.7378686288703219
+      ]
+    },
+    {
+      "hidden_state_index": 14,
+      "transformer_block_output": 13,
+      "auroc": 0.7352931854523742,
+      "accuracy": 0.7035245335176227,
+      "balanced_accuracy": 0.6532669995624097,
+      "macro_f1": 0.6583832883999134,
+      "confusion_rows_unknown_known": [
+        [
+          1544,
+          274
+        ],
+        [
+          584,
+          492
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7255639097744361,
+        0.6422976501305483
+      ],
+      "recall_unknown_known": [
+        0.8492849284928493,
+        0.45724907063197023
+      ],
+      "f1_unknown_known": [
+        0.7825646224024329,
+        0.5342019543973942
+      ],
+      "per_seed_auroc": [
+        0.7352931854523742
+      ]
+    },
+    {
+      "hidden_state_index": 10,
+      "transformer_block_output": 9,
+      "auroc": 0.728751824996626,
+      "accuracy": 0.6886662059433311,
+      "balanced_accuracy": 0.6264579524866984,
+      "macro_f1": 0.628209754914451,
+      "confusion_rows_unknown_known": [
+        [
+          1580,
+          238
+        ],
+        [
+          663,
+          413
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7044137316094516,
+        0.6344086021505376
+      ],
+      "recall_unknown_known": [
+        0.8690869086908691,
+        0.38382899628252787
+      ],
+      "f1_unknown_known": [
+        0.7781334646638759,
+        0.47828604516502604
+      ],
+      "per_seed_auroc": [
+        0.728751824996626
+      ]
+    },
+    {
+      "hidden_state_index": 12,
+      "transformer_block_output": 11,
+      "auroc": 0.7284333451932555,
+      "accuracy": 0.6903939184519696,
+      "balanced_accuracy": 0.6312469072186029,
+      "macro_f1": 0.633998707080288,
+      "confusion_rows_unknown_known": [
+        [
+          1567,
+          251
+        ],
+        [
+          645,
+          431
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7084086799276673,
+        0.6319648093841642
+      ],
+      "recall_unknown_known": [
+        0.8619361936193619,
+        0.40055762081784385
+      ],
+      "f1_unknown_known": [
+        0.777667493796526,
+        0.49032992036405004
+      ],
+      "per_seed_auroc": [
+        0.7284333451932555
+      ]
+    },
+    {
+      "hidden_state_index": 18,
+      "transformer_block_output": 17,
+      "auroc": 0.7280274495851071,
+      "accuracy": 0.6993780234968902,
+      "balanced_accuracy": 0.6564149909414734,
+      "macro_f1": 0.6611538571273996,
+      "confusion_rows_unknown_known": [
+        [
+          1498,
+          320
+        ],
+        [
+          550,
+          526
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7314453125,
+        0.6217494089834515
+      ],
+      "recall_unknown_known": [
+        0.823982398239824,
+        0.4888475836431227
+      ],
+      "f1_unknown_known": [
+        0.7749612002069323,
+        0.5473465140478668
+      ],
+      "per_seed_auroc": [
+        0.7280274495851071
+      ]
+    },
+    {
+      "hidden_state_index": 20,
+      "transformer_block_output": 19,
+      "auroc": 0.7202505101811297,
+      "accuracy": 0.6945404284727021,
+      "balanced_accuracy": 0.6559784231211225,
+      "macro_f1": 0.6600339767223307,
+      "confusion_rows_unknown_known": [
+        [
+          1466,
+          352
+        ],
+        [
+          532,
+          544
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7337337337337337,
+        0.6071428571428571
+      ],
+      "recall_unknown_known": [
+        0.8063806380638063,
+        0.5055762081784386
+      ],
+      "f1_unknown_known": [
+        0.7683438155136268,
+        0.5517241379310345
+      ],
+      "per_seed_auroc": [
+        0.7202505101811297
+      ]
+    },
+    {
+      "hidden_state_index": 8,
+      "transformer_block_output": 7,
+      "auroc": 0.7160453498881487,
+      "accuracy": 0.6817553559087768,
+      "balanced_accuracy": 0.6114745768257124,
+      "macro_f1": 0.6091957056561315,
+      "confusion_rows_unknown_known": [
+        [
+          1610,
+          208
+        ],
+        [
+          713,
+          363
+        ]
+      ],
+      "precision_unknown_known": [
+        0.693069306930693,
+        0.6357267950963222
+      ],
+      "recall_unknown_known": [
+        0.8855885588558856,
+        0.33736059479553904
+      ],
+      "f1_unknown_known": [
+        0.777589954117363,
+        0.4408014571948998
+      ],
+      "per_seed_auroc": [
+        0.7160453498881487
+      ]
+    },
+    {
+      "hidden_state_index": 22,
+      "transformer_block_output": 21,
+      "auroc": 0.7116939853836685,
+      "accuracy": 0.677954388389772,
+      "balanced_accuracy": 0.6441046985739467,
+      "macro_f1": 0.6467605318011492,
+      "confusion_rows_unknown_known": [
+        [
+          1411,
+          407
+        ],
+        [
+          525,
+          551
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7288223140495868,
+        0.5751565762004175
+      ],
+      "recall_unknown_known": [
+        0.7761276127612762,
+        0.5120817843866171
+      ],
+      "f1_unknown_known": [
+        0.7517314864144912,
+        0.5417895771878073
+      ],
+      "per_seed_auroc": [
+        0.7116939853836685
+      ]
+    },
+    {
+      "hidden_state_index": 24,
+      "transformer_block_output": 23,
+      "auroc": 0.6973337668339324,
+      "accuracy": 0.6731167933655839,
+      "balanced_accuracy": 0.6394956874869644,
+      "macro_f1": 0.6419366145604453,
+      "confusion_rows_unknown_known": [
+        [
+          1401,
+          417
+        ],
+        [
+          529,
+          547
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7259067357512954,
+        0.5674273858921162
+      ],
+      "recall_unknown_known": [
+        0.7706270627062707,
+        0.508364312267658
+      ],
+      "f1_unknown_known": [
+        0.7475987193169691,
+        0.5362745098039216
+      ],
+      "per_seed_auroc": [
+        0.6973337668339324
+      ]
+    },
+    {
+      "hidden_state_index": 26,
+      "transformer_block_output": 25,
+      "auroc": 0.694980185750917,
+      "accuracy": 0.6668970283344852,
+      "balanced_accuracy": 0.6335969098768612,
+      "macro_f1": 0.6357714321524064,
+      "confusion_rows_unknown_known": [
+        [
+          1388,
+          430
+        ],
+        [
+          534,
+          542
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7221644120707597,
+        0.5576131687242798
+      ],
+      "recall_unknown_known": [
+        0.7634763476347635,
+        0.5037174721189591
+      ],
+      "f1_unknown_known": [
+        0.7422459893048128,
+        0.529296875
+      ],
+      "per_seed_auroc": [
+        0.694980185750917
+      ]
+    },
+    {
+      "hidden_state_index": 6,
+      "transformer_block_output": 5,
+      "auroc": 0.6917688051333014,
+      "accuracy": 0.6637871458189357,
+      "balanced_accuracy": 0.5749833347647032,
+      "macro_f1": 0.5553804991003751,
+      "confusion_rows_unknown_known": [
+        [
+          1675,
+          143
+        ],
+        [
+          830,
+          246
+        ]
+      ],
+      "precision_unknown_known": [
+        0.6686626746506986,
+        0.6323907455012854
+      ],
+      "recall_unknown_known": [
+        0.9213421342134214,
+        0.22862453531598512
+      ],
+      "f1_unknown_known": [
+        0.7749248207263475,
+        0.33583617747440275
+      ],
+      "per_seed_auroc": [
+        0.6917688051333014
+      ]
+    },
+    {
+      "hidden_state_index": 28,
+      "transformer_block_output": 27,
+      "auroc": 0.682423493278696,
+      "accuracy": 0.6551485832757429,
+      "balanced_accuracy": 0.6240563182712324,
+      "macro_f1": 0.6255222595635217,
+      "confusion_rows_unknown_known": [
+        [
+          1355,
+          463
+        ],
+        [
+          535,
+          541
+        ]
+      ],
+      "precision_unknown_known": [
+        0.716931216931217,
+        0.5388446215139442
+      ],
+      "recall_unknown_known": [
+        0.7453245324532454,
+        0.5027881040892194
+      ],
+      "f1_unknown_known": [
+        0.7308522114347357,
+        0.5201923076923077
+      ],
+      "per_seed_auroc": [
+        0.682423493278696
+      ]
+    },
+    {
+      "hidden_state_index": 30,
+      "transformer_block_output": 29,
+      "auroc": 0.6700600357433513,
+      "accuracy": 0.6579129232895646,
+      "balanced_accuracy": 0.6262565382932346,
+      "macro_f1": 0.6278926358312795,
+      "confusion_rows_unknown_known": [
+        [
+          1363,
+          455
+        ],
+        [
+          535,
+          541
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7181243414120126,
+        0.5431726907630522
+      ],
+      "recall_unknown_known": [
+        0.7497249724972497,
+        0.5027881040892194
+      ],
+      "f1_unknown_known": [
+        0.7335844994617868,
+        0.5222007722007722
+      ],
+      "per_seed_auroc": [
+        0.6700600357433513
+      ]
+    },
+    {
+      "hidden_state_index": 4,
+      "transformer_block_output": 3,
+      "auroc": 0.6605102424740614,
+      "accuracy": 0.6385625431928127,
+      "balanced_accuracy": 0.5228543765157185,
+      "macro_f1": 0.4501736413833188,
+      "confusion_rows_unknown_known": [
+        [
+          1771,
+          47
+        ],
+        [
+          999,
+          77
+        ]
+      ],
+      "precision_unknown_known": [
+        0.6393501805054151,
+        0.6209677419354839
+      ],
+      "recall_unknown_known": [
+        0.9741474147414741,
+        0.07156133828996282
+      ],
+      "f1_unknown_known": [
+        0.7720139494333043,
+        0.12833333333333333
+      ],
+      "per_seed_auroc": [
+        0.6605102424740614
+      ]
+    },
+    {
+      "hidden_state_index": 32,
+      "transformer_block_output": 31,
+      "auroc": 0.6469705056007461,
+      "accuracy": 0.6351071181755356,
+      "balanced_accuracy": 0.6069667840389987,
+      "macro_f1": 0.6074627778208783,
+      "confusion_rows_unknown_known": [
+        [
+          1303,
+          515
+        ],
+        [
+          541,
+          535
+        ]
+      ],
+      "precision_unknown_known": [
+        0.7066160520607375,
+        0.5095238095238095
+      ],
+      "recall_unknown_known": [
+        0.7167216721672167,
+        0.4972118959107807
+      ],
+      "f1_unknown_known": [
+        0.7116329874385582,
+        0.5032925682031985
+      ],
+      "per_seed_auroc": [
+        0.6469705056007461
+      ]
+    },
+    {
+      "hidden_state_index": 2,
+      "transformer_block_output": 1,
+      "auroc": 0.6321169756380842,
+      "accuracy": 0.6281962681409814,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.38582342954159593,
+      "confusion_rows_unknown_known": [
+        [
+          1818,
+          0
+        ],
+        [
+          1076,
+          0
+        ]
+      ],
+      "precision_unknown_known": [
+        0.6281962681409814,
+        0.0
+      ],
+      "recall_unknown_known": [
+        1.0,
+        0.0
+      ],
+      "f1_unknown_known": [
+        0.7716468590831919,
+        0.0
+      ],
+      "per_seed_auroc": [
+        0.6321169756380842
+      ]
+    },
+    {
+      "hidden_state_index": 0,
+      "transformer_block_output": null,
+      "auroc": 0.49969021065675345,
+      "accuracy": 0.6281962681409814,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.38582342954159593,
+      "confusion_rows_unknown_known": [
+        [
+          1818,
+          0
+        ],
+        [
+          1076,
+          0
+        ]
+      ],
+      "precision_unknown_known": [
+        0.6281962681409814,
+        0.0
+      ],
+      "recall_unknown_known": [
+        1.0,
+        0.0
+      ],
+      "f1_unknown_known": [
+        0.7716468590831919,
+        0.0
+      ],
+      "per_seed_auroc": [
+        0.49969021065675345
+      ]
+    }
+  ],
+  "selected_hidden_state_index": 16,
+  "selected_transformer_block_output": 15,
+  "selected_repeated_stratified_5fold": {
+    "auroc": 0.7447668093946942,
+    "accuracy": 0.7024879060124395,
+    "balanced_accuracy": 0.6547177951995943,
+    "macro_f1": 0.6598134699576537,
+    "confusion_rows_unknown_known": [
+      [
+        1529,
+        289
+      ],
+      [
+        572,
+        504
+      ]
+    ],
+    "precision_unknown_known": [
+      0.7277486910994765,
+      0.6355611601513241
+    ],
+    "recall_unknown_known": [
+      0.841034103410341,
+      0.4684014869888476
+    ],
+    "f1_unknown_known": [
+      0.7803010972186782,
+      0.5393258426966292
+    ],
+    "per_seed_auroc": [
+      0.7325398432036513,
+      0.7431698095460104,
+      0.7431294244666102,
+      0.7456501691061299,
+      0.7384222623005795
+    ]
+  },
+  "selected_repeated_identity_grouped_5fold": {
+    "auroc": 0.5034225076782771,
+    "accuracy": 0.5950241879751209,
+    "balanced_accuracy": 0.4906664458267388,
+    "macro_f1": 0.4344670554526974,
+    "confusion_rows_unknown_known": [
+      [
+        1632,
+        186
+      ],
+      [
+        986,
+        90
+      ]
+    ],
+    "precision_unknown_known": [
+      0.6233766233766234,
+      0.32608695652173914
+    ],
+    "recall_unknown_known": [
+      0.8976897689768977,
+      0.08364312267657993
+    ],
+    "f1_unknown_known": [
+      0.7357980162308386,
+      0.13313609467455623
+    ],
+    "per_seed_auroc": [
+      0.5155687037105198,
+      0.4926703636906441,
+      0.5467296264942479,
+      0.49991514021290606,
+      0.47363570000122684
+    ]
+  }
+}

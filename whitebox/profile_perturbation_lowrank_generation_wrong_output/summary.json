@@ -1,0 +1,274 @@
+{
+  "selection": "full_wrong",
+  "label_source": "generation_modal",
+  "preselection_full_context_counts": {
+    "correct": 829,
+    "wrong": 143
+  },
+  "four_cell_table": {
+    "rows": "question_only_teacher_forced_correct_[false,true]",
+    "cols": "full_context_generation_modal_correct_[false,true]",
+    "counts": [
+      [
+        82,
+        451
+      ],
+      [
+        61,
+        378
+      ]
+    ],
+    "note": "Mixed-mode table: no question-only generation samples exist."
+  },
+  "n_items": 143,
+  "n_conditions": 9,
+  "conditions": [
+    "question_only",
+    "without_question_evidence",
+    "minimal_decisive_evidence",
+    "profile_order_swap",
+    "attribute_order_shuffle",
+    "structure_only_context",
+    "negation_paraphrase",
+    "entity_paraphrase",
+    "structured_comparison_cue"
+  ],
+  "full_correct": 0,
+  "full_wrong": 143,
+  "primary_matrix": "label_free",
+  "label_free_definition": "mean robust-z of log1p(|delta profile margin|), log1p(symmetric KL), log1p(mean hidden cosine distance)",
+  "gold_matrix_offline_only": true,
+  "selected_rank_cell_cv": 0,
+  "selected_rank_loto": 3,
+  "reported_rank_interval": [
+    0,
+    3
+  ],
+  "analysis_rank": 3,
+  "rank_cv": {
+    "0": {
+      "mean_mse": 0.7021036839769061,
+      "fold_mse": [
+        0.7496977850832053,
+        0.7903207929218533,
+        0.764546937642216,
+        0.561123455531712,
+        0.6448294487055444
+      ]
+    },
+    "1": {
+      "mean_mse": 1.7920211237790469,
+      "fold_mse": [
+        2.5039609816651605,
+        1.09653515001839,
+        1.8048047748907303,
+        1.0405804363235616,
+        2.514224275997391
+      ]
+    },
+    "2": {
+      "mean_mse": 2.5616478588075493,
+      "fold_mse": [
+        1.9202073425325743,
+        1.3331567626903118,
+        1.595540820522308,
+        3.925712483649707,
+        4.033621884642848
+      ]
+    },
+    "3": {
+      "mean_mse": 3.668114961217462,
+      "fold_mse": [
+        4.364724844803357,
+        2.7382322891365893,
+        3.5201934817558125,
+        3.278795423248741,
+        4.438628767142809
+      ]
+    },
+    "4": {
+      "mean_mse": 4.79088471234404,
+      "fold_mse": [
+        3.6635209072977117,
+        4.573268724029325,
+        4.273537619169855,
+        4.268102596462848,
+        7.175993714760459
+      ]
+    },
+    "5": {
+      "mean_mse": 4.215570363619591,
+      "fold_mse": [
+        3.435977145143697,
+        4.751995961770361,
+        3.675318180501365,
+        4.853213690876861,
+        4.361346839805672
+      ]
+    },
+    "6": {
+      "mean_mse": 2.7657535745716944,
+      "fold_mse": [
+        2.5599491776013243,
+        3.615307709955594,
+        2.839068781739973,
+        2.1339909992660937,
+        2.6804512042954873
+      ]
+    }
+  },
+  "loto_mean_delta_by_rank": {
+    "0": 0.0,
+    "1": 0.012075616988204203,
+    "2": -0.01655916306449961,
+    "3": 0.024835768057793764,
+    "4": 0.00019170487011469875,
+    "5": -0.008261552917915034
+  },
+  "interaction_spectrum_audit": {
+    "singular_values": [
+      12.410659462680742,
+      10.46742367548449,
+      10.307465811309307,
+      8.676866568823913,
+      7.2505603355197135,
+      6.487022996048902,
+      5.4196618507399235,
+      4.963131950572806,
+      3.540037907869197e-07
+    ],
+    "variance_fraction": [
+      0.259396176088435,
+      0.18452425351042065,
+      0.1789277320921825,
+      0.12679428801652343,
+      0.08853540802085404,
+      0.07087037427030907,
+      0.049467302919673405,
+      0.0414844650816017,
+      2.1105209940323884e-16
+    ],
+    "cumulative_variance_fraction": [
+      0.259396176088435,
+      0.4439204295988557,
+      0.6228481616910382,
+      0.7496424497075616,
+      0.8381778577284156,
+      0.9090482319987246,
+      0.958515534918398,
+      0.9999999999999998,
+      1.0
+    ],
+    "effective_rank_entropy": 6.78414830791564,
+    "stable_rank": 3.8551069452121514,
+    "permutation_null_q95": [
+      11.198240926631525,
+      10.389736355602425,
+      9.746948475476342,
+      8.967507420951277,
+      8.006245187787627,
+      7.368479414610736,
+      6.886880314444548,
+      6.419158011909431,
+      4.932894170762347
+    ],
+    "n_singular_values_above_null_q95": 3,
+    "permutations": 500
+  },
+  "in_sample_interaction_fraction": 0.6397327800820694,
+  "varimax_loadings": [
+    {
+      "condition": "question_only",
+      "loadings": [
+        -2.9381266220629465,
+        -0.5817798184431034,
+        -1.018601604104102
+      ]
+    },
+    {
+      "condition": "without_question_evidence",
+      "loadings": [
+        -3.388696103342734,
+        -3.5068185025932377,
+        -0.24210821198680307
+      ]
+    },
+    {
+      "condition": "minimal_decisive_evidence",
+      "loadings": [
+        9.535333629664471,
+        -0.5627848281386153,
+        1.1376209018368992
+      ]
+    },
+    {
+      "condition": "profile_order_swap",
+      "loadings": [
+        2.0288914269685074,
+        0.6908090857410472,
+        8.567459168449293
+      ]
+    },
+    {
+      "condition": "attribute_order_shuffle",
+      "loadings": [
+        -1.260817907652535,
+        9.257406204995716,
+        0.22437008708825845
+      ]
+    },
+    {
+      "condition": "structure_only_context",
+      "loadings": [
+        2.9864778815520667,
+        -1.2661479856995097,
+        -2.3828410421352975
+      ]
+    },
+    {
+      "condition": "negation_paraphrase",
+      "loadings": [
+        -4.524436902572946,
+        -5.976730845148028,
+        0.827778524479147
+      ]
+    },
+    {
+      "condition": "entity_paraphrase",
+      "loadings": [
+        1.4303102055033448,
+        1.9680070110732213,
+        -6.180564164720998
+      ]
+    },
+    {
+      "condition": "structured_comparison_cue",
+      "loadings": [
+        -3.868935608057231,
+        -0.02196032178749268,
+        -0.9331136589064001
+      ]
+    }
+  ],
+  "cluster_correctness_audit": {
+    "cluster_sizes": [
+      124,
+      19
+    ],
+    "contingency_cols_full_wrong_correct": [
+      [
+        124,
+        0
+      ],
+      [
+        19,
+        0
+      ]
+    ],
+    "ari_with_correctness": 0.0,
+    "nmi_with_correctness": 0.0
+  },
+  "detector_5fold": {},
+  "gold_matrix_interaction_fraction_same_rank": 0.7993446973098359,
+  "warning": "Gold-oriented response uses answer identity and is not deployable. Label-free factors are sensitivity axes, not proven causal failure modes."
+}

@@ -1,0 +1,841 @@
+{
+  "item_index": 456,
+  "item_id": "456",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.5521703274503623,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "while the service warranty asks me to keep the original thermal receipt.",
+    "located": {
+      "text": "while the service warranty asks me to keep the original thermal receipt.",
+      "start": 91,
+      "end": 163,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": null,
+  "original": {
+    "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, while the service warranty asks me to keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": false,
+      "logit_1": 30.875,
+      "logit_2": 30.25,
+      "prob_1": 0.6513549089431763,
+      "prob_2": 0.3486451506614685,
+      "correct_margin": -0.625,
+      "shortcut_margin": 0.625,
+      "prior_shortcut_margin": 0.625,
+      "prior_correct_margin": -0.625
+    },
+    "surface_surprisal": 5.198395252227783,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 27.75,
+      "logit_2": 30.25,
+      "prob_1": 0.07585817575454712,
+      "prob_2": 0.9241418242454529,
+      "correct_margin": 2.5,
+      "shortcut_margin": -2.5
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "while the service warranty requires me to keep the original thermal receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9166666666666666,
+        "edit_ratio": 0.06849315068493156
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 29.875,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 5.042621612548828,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.375,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, while the service warranty requires me to keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "while the service warranty requires me to keep the original thermal receipt.",
+        "start": 91,
+        "end": 167,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "as the service warranty demands, I need to keep the original thermal receipt.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": false,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "Demands implies a stronger obligation than requires"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7199999999999999,
+        "edit_ratio": 0.136986301369863
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 30.0,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 4.550581455230713,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.625,
+        "logit_2": 30.75,
+        "prob_1": 0.24508501589298248,
+        "prob_2": 0.7549149990081787,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, as the service warranty demands, I need to keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "as the service warranty demands, I need to keep the original thermal receipt.",
+        "start": 91,
+        "end": 168,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "the service warranty insists that I keep the original thermal receipt.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": false,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Insists implies a stronger obligation than requires"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.15714285714285714
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.875,
+        "logit_2": 30.5,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 5.454050540924072,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 30.375,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty insists that I keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty insists that I keep the original thermal receipt.",
+        "start": 91,
+        "end": 161,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "the service warranty asks that I keep the original thermal receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7826086956521738,
+        "edit_ratio": 0.10948905109489049
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 30.625,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 5.593293190002441,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.0,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty asks that I keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty asks that I keep the original thermal receipt.",
+        "start": 91,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "the service warranty requests that I keep the original thermal receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.16312056737588654
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.75,
+        "logit_2": 30.375,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 5.853338241577148,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 30.25,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty requests that I keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty requests that I keep the original thermal receipt.",
+        "start": 91,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "the service warranty requires that I keep the original thermal receipt.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.17730496453900713
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.75,
+        "logit_2": 30.5,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 5.278402805328369,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.25,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty requires that I keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty requires that I keep the original thermal receipt.",
+        "start": 91,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "the service warranty advises me to keep the original thermal receipt.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": false,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 3,
+        "notes": "Advises is a weaker obligation than requires"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8695652173913043,
+        "edit_ratio": 0.07913669064748197
+      },
+      "prior_shortcut_margin": 1.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.875,
+        "logit_2": 30.25,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": -1.625,
+        "shortcut_margin": 1.625,
+        "prior_shortcut_margin": 1.625,
+        "prior_correct_margin": -1.625
+      },
+      "surface_surprisal": 5.627730846405029,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 30.125,
+        "prob_1": 0.18242551386356354,
+        "prob_2": 0.8175744414329529,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty advises me to keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty advises me to keep the original thermal receipt.",
+        "start": 91,
+        "end": 160,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "the service warranty instructs me to keep the original thermal receipt.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": false,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Instructs implies a stronger obligation than requires"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8695652173913043,
+        "edit_ratio": 0.1063829787234043
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 30.125,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 5.176149368286133,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.125,
+        "prob_1": 0.22270014882087708,
+        "prob_2": 0.7772998809814453,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty instructs me to keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty instructs me to keep the original thermal receipt.",
+        "start": 91,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "the service warranty expects me to keep the original thermal receipt.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": false,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Expect implies a weaker obligation than requires"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8695652173913043,
+        "edit_ratio": 0.1079136690647482
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.75,
+        "logit_2": 30.5,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 5.586158275604248,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.125,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty expects me to keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty expects me to keep the original thermal receipt.",
+        "start": 91,
+        "end": 160,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "the service warranty tells me to keep the original thermal receipt.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": false,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 3,
+        "notes": "Tells is a weaker obligation than requires"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8695652173913043,
+        "edit_ratio": 0.0948905109489051
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.5,
+        "logit_2": 30.25,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 5.365126609802246,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 30.0,
+        "prob_1": 0.16451644897460938,
+        "prob_2": 0.8354835510253906,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty tells me to keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty tells me to keep the original thermal receipt.",
+        "start": 91,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p04",
+      "text": "the service warranty asks that I keep the original thermal receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7826086956521738,
+        "edit_ratio": 0.10948905109489049
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 30.625,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 5.593293190002441,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.0,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty asks that I keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty asks that I keep the original thermal receipt.",
+        "start": 91,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "while the service warranty requires me to keep the original thermal receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9166666666666666,
+        "edit_ratio": 0.06849315068493156
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.125,
+        "logit_2": 29.875,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 5.042621612548828,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.375,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, while the service warranty requires me to keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "while the service warranty requires me to keep the original thermal receipt.",
+        "start": 91,
+        "end": 167,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p05",
+      "text": "the service warranty requests that I keep the original thermal receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.16312056737588654
+      },
+      "prior_shortcut_margin": 1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.75,
+        "logit_2": 30.375,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375,
+        "prior_shortcut_margin": 1.375,
+        "prior_correct_margin": -1.375
+      },
+      "surface_surprisal": 5.853338241577148,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 30.25,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty requests that I keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty requests that I keep the original thermal receipt.",
+        "start": 91,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p06",
+      "text": "the service warranty requires that I keep the original thermal receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6956521739130435,
+        "edit_ratio": 0.17730496453900713
+      },
+      "prior_shortcut_margin": 1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.75,
+        "logit_2": 30.5,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": -1.25,
+        "shortcut_margin": 1.25,
+        "prior_shortcut_margin": 1.25,
+        "prior_correct_margin": -1.25
+      },
+      "surface_surprisal": 5.278402805328369,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 30.25,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty requires that I keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty requires that I keep the original thermal receipt.",
+        "start": 91,
+        "end": 162,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p04",
+      "text": "the service warranty asks that I keep the original thermal receipt.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7826086956521738,
+        "edit_ratio": 0.10948905109489049
+      },
+      "prior_shortcut_margin": 0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": false,
+        "logit_1": 31.375,
+        "logit_2": 30.625,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": -0.75,
+        "shortcut_margin": 0.75,
+        "prior_shortcut_margin": 0.75,
+        "prior_correct_margin": -0.75
+      },
+      "surface_surprisal": 5.593293190002441,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.0,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75
+      },
+      "prompt": "Scenario: I am giving accounting proof for a power-tool expense. Accounting stores a scan, the service warranty asks that I keep the original thermal receipt. What should I give accounting?\nOption1: The original thermal receipt\nOption2: A printed copy of the thermal receipt\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "the service warranty asks that I keep the original thermal receipt.",
+        "start": 91,
+        "end": 158,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": false,
+    "valid": false,
+    "reason": "requires_distinct_predicted_shortcut_and_predicted_constraint",
+    "text": null,
+    "prompt": null,
+    "full_prompt": null
+  },
+  "joint_pdp_context": {
+    "available": false,
+    "prompt": null,
+    "full_prompt": null
+  }
+}

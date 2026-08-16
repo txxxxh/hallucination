@@ -1,0 +1,863 @@
+{
+  "item_index": 77,
+  "item_id": "77",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.48016851034719793,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "top_span_fallback"
+  },
+  "shortcut": {
+    "text": "The mooring form is complete.",
+    "located": {
+      "text": "The mooring form is complete.",
+      "start": 10,
+      "end": 39,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration.",
+    "located": {
+      "text": "The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration.",
+      "start": 40,
+      "end": 159,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The mooring form is complete. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.0,
+      "logit_2": 30.875,
+      "prob_1": 0.0534033328294754,
+      "prob_2": 0.9465966820716858,
+      "correct_margin": 2.875,
+      "shortcut_margin": -2.875,
+      "prior_shortcut_margin": -2.875,
+      "prior_correct_margin": 2.875
+    },
+    "surface_surprisal": 5.567023754119873,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.25,
+      "logit_2": 31.25,
+      "prob_1": 0.04742587357759476,
+      "prob_2": 0.9525741338729858,
+      "correct_margin": 3.0,
+      "shortcut_margin": -3.0
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The mooring form is now complete.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.9090909090909091,
+        "edit_ratio": 0.06666666666666665
+      },
+      "prior_shortcut_margin": -3.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.375,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5,
+        "prior_shortcut_margin": -3.5,
+        "prior_correct_margin": 3.5
+      },
+      "surface_surprisal": 5.268929958343506,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.625,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: The mooring form is now complete. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mooring form is now complete.",
+        "start": 10,
+        "end": 43,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The form has been fully completed.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3636363636363636,
+        "edit_ratio": 0.3770491803278688
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.625,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 4.099247932434082,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.5,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The form has been fully completed. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The form has been fully completed.",
+        "start": 10,
+        "end": 44,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The mooring form has been filled out.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.3125
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.125,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 4.217371940612793,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.125,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: The mooring form has been filled out. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mooring form has been filled out.",
+        "start": 10,
+        "end": 47,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The boat registration form is complete.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 1,
+        "notes": "Changes the subject from mooring form to boat registration form."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7272727272727272,
+        "edit_ratio": 0.2727272727272727
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.125,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 5.328413009643555,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.5,
+        "logit_2": 31.875,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375
+      },
+      "prompt": "Scenario: The boat registration form is complete. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The boat registration form is complete.",
+        "start": 10,
+        "end": 49,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The mooring paperwork is finished.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.3770491803278688
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.0,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 6.03122091293335,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.5,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: The mooring paperwork is finished. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mooring paperwork is finished.",
+        "start": 10,
+        "end": 44,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The form has been completed and signed.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 1,
+        "notes": "Adds a new constraint (signature) not present in the original."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3333333333333333,
+        "edit_ratio": 0.4242424242424242
+      },
+      "prior_shortcut_margin": -3.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 31.0,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125,
+        "prior_shortcut_margin": -3.125,
+        "prior_correct_margin": 3.125
+      },
+      "surface_surprisal": 3.53706693649292,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.625,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375
+      },
+      "prompt": "Scenario: The form has been completed and signed. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The form has been completed and signed.",
+        "start": 10,
+        "end": 49,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The mooring form has been finalized.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.33333333333333337
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.375,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 5.221884727478027,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.5,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: The mooring form has been finalized. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mooring form has been finalized.",
+        "start": 10,
+        "end": 46,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The registration process is complete.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 1,
+        "notes": "Changes the subject from mooring form to registration process."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6,
+        "edit_ratio": 0.4375
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 30.75,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 4.140038967132568,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.625,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5
+      },
+      "prompt": "Scenario: The registration process is complete. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The registration process is complete.",
+        "start": 10,
+        "end": 47,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The mooring form has been completed successfully.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.2894736842105263
+      },
+      "prior_shortcut_margin": -3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.625,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625,
+        "prior_shortcut_margin": -3.625,
+        "prior_correct_margin": 3.625
+      },
+      "surface_surprisal": 4.683264255523682,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.375,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: The mooring form has been completed successfully. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mooring form has been completed successfully.",
+        "start": 10,
+        "end": 59,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The boat's mooring form is now complete.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7692307692307693,
+        "edit_ratio": 0.16417910447761197
+      },
+      "prior_shortcut_margin": -3.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.75,
+        "logit_2": 31.25,
+        "prob_1": 0.02931223064661026,
+        "prob_2": 0.970687747001648,
+        "correct_margin": 3.5,
+        "shortcut_margin": -3.5,
+        "prior_shortcut_margin": -3.5,
+        "prior_correct_margin": 3.5
+      },
+      "surface_surprisal": 4.936478614807129,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.75,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375
+      },
+      "prompt": "Scenario: The boat's mooring form is now complete. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The boat's mooring form is now complete.",
+        "start": 10,
+        "end": 50,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p09",
+      "text": "The mooring form has been completed successfully.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.2894736842105263
+      },
+      "prior_shortcut_margin": -3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.625,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625,
+        "prior_shortcut_margin": -3.625,
+        "prior_correct_margin": 3.625
+      },
+      "surface_surprisal": 4.683264255523682,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.375,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: The mooring form has been completed successfully. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mooring form has been completed successfully.",
+        "start": 10,
+        "end": 59,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p07",
+      "text": "The mooring form has been finalized.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5454545454545454,
+        "edit_ratio": 0.33333333333333337
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.375,
+        "prob_1": 0.03308597952127457,
+        "prob_2": 0.9669140577316284,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 5.221884727478027,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 31.5,
+        "prob_1": 0.037326883524656296,
+        "prob_2": 0.9626730680465698,
+        "correct_margin": 3.25,
+        "shortcut_margin": -3.25
+      },
+      "prompt": "Scenario: The mooring form has been finalized. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mooring form has been finalized.",
+        "start": 10,
+        "end": 46,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p02",
+      "text": "The form has been fully completed.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3636363636363636,
+        "edit_ratio": 0.3770491803278688
+      },
+      "prior_shortcut_margin": -2.75,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 27.875,
+        "logit_2": 30.625,
+        "prob_1": 0.06008664518594742,
+        "prob_2": 0.9399133324623108,
+        "correct_margin": 2.75,
+        "shortcut_margin": -2.75,
+        "prior_shortcut_margin": -2.75,
+        "prior_correct_margin": 2.75
+      },
+      "surface_surprisal": 4.099247932434082,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.5,
+        "prob_1": 0.042087726294994354,
+        "prob_2": 0.957912266254425,
+        "correct_margin": 3.125,
+        "shortcut_margin": -3.125
+      },
+      "prompt": "Scenario: The form has been fully completed. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The form has been fully completed.",
+        "start": 10,
+        "end": 44,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p03",
+      "text": "The mooring form has been filled out.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.3125
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.125,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 4.217371940612793,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.125,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: The mooring form has been filled out. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mooring form has been filled out.",
+        "start": 10,
+        "end": 47,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p09",
+      "text": "The mooring form has been completed successfully.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.2894736842105263
+      },
+      "prior_shortcut_margin": -3.625,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.0,
+        "logit_2": 31.625,
+        "prob_1": 0.02595735713839531,
+        "prob_2": 0.9740425944328308,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625,
+        "prior_shortcut_margin": -3.625,
+        "prior_correct_margin": 3.625
+      },
+      "surface_surprisal": 4.683264255523682,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 31.375,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0
+      },
+      "prompt": "Scenario: The mooring form has been completed successfully. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mooring form has been completed successfully.",
+        "start": 10,
+        "end": 59,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The harbor clerk's position at the ramp is only relevant if the mooring form is indeed complete.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: The mooring form is complete. The harbor clerk's position at the ramp is only relevant if the mooring form is indeed complete. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.375,
+      "logit_2": 31.25,
+      "prob_1": 0.0534033328294754,
+      "prob_2": 0.9465966820716858,
+      "correct_margin": 2.875,
+      "shortcut_margin": -2.875
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: The mooring form has been completed successfully. The harbor clerk's position at the ramp is only relevant if the mooring form is indeed complete. The harbor clerk is standing at the ramp to read the hull number on my boat's stern and compare it to the registration. Should I bring the boat to the ramp or walk to the ramp without it?\nOption1: Walk to the ramp without the boat\nOption2: Bring the boat to the ramp\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.5,
+      "logit_2": 31.375,
+      "prob_1": 0.0534033328294754,
+      "prob_2": 0.9465966820716858,
+      "correct_margin": 2.875,
+      "shortcut_margin": -2.875
+    }
+  }
+}

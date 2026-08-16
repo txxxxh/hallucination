@@ -1,0 +1,245 @@
+# -*- coding: utf-8 -*-
+"""Stage 65: generate from the concrete vocabulary edits recovered by Stage 64.
+
+Stage 64 remains the exhaustive search/measurement stage. This script is only
+held-out answer validation: it reads Stage-64 substitutions, writes their token
+ids into the real prompt, samples answers, and measures whether they match gold.
+
+Usage:
+  python 64b_vocab_recovery_generation.py \
+      --in64 runs/64a.jsonl --in61 runs/61.jsonl --out runs/64b.jsonl
+"""
+from __future__ import annotations
+
+import argparse
+import importlib
+import json
+import os
+import sys
+import time
+
+import numpy as np
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from spanattr.core import Item, SpanAttributor, bootstrap_ci, set_seed
+
+
+def generate_discrete(att, prompt_ids, n, temperature, max_new_tokens, seed):
+    """Sample from a concrete token prompt; no embedding intervention is used."""
+    import torch
+
+    answers = []
+    for k in range(n):
+        torch.manual_seed(seed + k)
+        with torch.no_grad():
+            out = att.model.generate(
+                input_ids=prompt_ids.unsqueeze(0),
+                attention_mask=torch.ones_like(prompt_ids).unsqueeze(0),
+                max_new_tokens=max_new_tokens,
+                do_sample=True,
+                temperature=temperature,
+                top_p=0.95,
+                pad_token_id=getattr(att.tok, "pad_token_id", 0) or 0,
+            )
+        answers.append(
+            att.tok.decode(out[0, prompt_ids.shape[0]:].tolist()).strip()
+        )
+    return answers
+
+
+def recovered_edits(row, top_edits):
+    """Return Stage-64 exhaustive solutions, keeping backward compatibility."""
+    if row.get("joint_top"):
+        return row["joint_top"][:top_edits]
+    if row.get("joint_substitutions"):
+        return [{
+            "u_realized": row.get("joint_u_realized"),
+            "score": row.get("joint_score"),
+            "substitutions": row["joint_substitutions"],
+        }]
+    return []
+
+
+def match_flags(att, generations, targets):
+    return [
+        bool(att.match_rate([generation], targets) > 0)
+        for generation in generations
+    ]
+
+
+def main() -> int:
+    import torch
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--in64", default="runs/64a_vocab_decode.jsonl")
+    ap.add_argument("--in61", default="runs/61_grad_span_proposal.jsonl")
+    ap.add_argument("--items", default=None,
+                    help="optional source JSON carrying eval_gold for correctness")
+    ap.add_argument("--out", default="runs/64b_vocab_recovery_generation.jsonl")
+    ap.add_argument("--model", default="meta-llama/Llama-3.1-8B-Instruct")
+    ap.add_argument("--dtype", default="bfloat16")
+    ap.add_argument("--device", default=None)
+    ap.add_argument("--baseline", default="mean")
+    ap.add_argument("--max_rows", type=int, default=16)
+    ap.add_argument("--length_norm", type=int, default=1)
+    ap.add_argument("--top_edits", type=int, default=1,
+                    help="number of Stage-64 exhaustive solutions to validate")
+    ap.add_argument("--n_gen", type=int, default=3,
+                    help="sampled generations for baseline and each recovered edit")
+    ap.add_argument("--temperature", type=float, default=1.0)
+    ap.add_argument("--max_new_tokens", type=int, default=24)
+    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--seed", type=int, default=0)
+    args = ap.parse_args()
+
+    if args.n_gen < 1:
+        ap.error("--n_gen must be >= 1")
+    if args.temperature <= 0:
+        ap.error("--temperature must be > 0; Stage 64b validates by sampling")
+    if args.top_edits < 1:
+        ap.error("--top_edits must be >= 1")
+
+    set_seed(args.seed)
+    if args.device is None:
+        args.device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    load_model = importlib.import_module("64a_vocab_decode").load_model
+    model, tok = load_model(args.model, args.dtype, args.device)
+    att = SpanAttributor(
+        model, tok, device=args.device, baseline=args.baseline,
+        length_norm=bool(args.length_norm), max_rows=args.max_rows,
+    )
+
+    stage61 = {r["item_id"]: r for r in map(json.loads, open(args.in61))}
+    stage64 = list(map(json.loads, open(args.in64)))
+    eval_items = {}
+    if args.items:
+        eval_items = {str(x.get("item_id", x.get("key"))): x
+                      for x in json.load(open(args.items))}
+    if args.limit:
+        stage64 = stage64[:args.limit]
+
+    os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
+    answer_gold_rates, gold_rises, correction_rates = [], [], []
+    t0 = time.time()
+
+    with open(args.out, "w") as fh:
+        for row_idx, decoded in enumerate(stage64):
+            base = stage61[decoded["item_id"]]
+            item = Item(
+                decoded["item_id"], base["context"], base["question"],
+                base["gold"], base["pred"],
+                context_prefix=base.get("context_prefix", ""),
+                gold_variants=base.get("gold_variants", []),
+                pred_variants=base.get("pred_variants", []),
+            )
+            prep = att.prepare(item)
+            if "P" in base:
+                assert prep.prompt_ids.shape[0] == base["P"], "prompt length drift"
+
+            eval_item = eval_items.get(item.item_id, {})
+            eval_gold = str(eval_item.get(
+                "eval_gold", eval_item.get("rgt_ans", item.gold)))
+            eval_variants = list(eval_item.get("eval_gold_variants", []))
+            gold_targets = [eval_gold] + eval_variants
+            pred_targets = [item.pred] + item.pred_variants
+            sample_seed = args.seed + row_idx * 10000
+            baseline_gens = generate_discrete(
+                att, prep.prompt_ids, args.n_gen, args.temperature,
+                args.max_new_tokens, sample_seed,
+            )
+            baseline_gold = match_flags(att, baseline_gens, gold_targets)
+            baseline_pred = match_flags(att, baseline_gens, pred_targets)
+            baseline_p_gold = float(np.mean(baseline_gold))
+            baseline_p_pred = float(np.mean(baseline_pred))
+
+            output = {
+                "item_id": item.item_id,
+                "source_strategy": decoded.get("strategy"),
+                "n_gen": args.n_gen,
+                "temperature": args.temperature,
+                "eval_gold": eval_gold,
+                "baseline": {
+                    "generations": baseline_gens,
+                    "gold_match": baseline_gold,
+                    "pred_match": baseline_pred,
+                    "p_gold": baseline_p_gold,
+                    "p_pred": baseline_p_pred,
+                },
+                "edits": [],
+            }
+
+            for edit_rank, edit in enumerate(recovered_edits(decoded, args.top_edits)):
+                ids = prep.prompt_ids.clone()
+                substitutions = edit["substitutions"]
+                for sub in substitutions:
+                    pos, token_id = int(sub["pos"]), int(sub["id"])
+                    if not 0 <= pos < ids.shape[0]:
+                        raise IndexError(f"{item.item_id}: substitution pos {pos} out of range")
+                    ids[pos] = token_id
+
+                generations = generate_discrete(
+                    att, ids, args.n_gen, args.temperature,
+                    args.max_new_tokens, sample_seed,
+                )
+                gold_match = match_flags(att, generations, gold_targets)
+                pred_match = match_flags(att, generations, pred_targets)
+                p_gold = float(np.mean(gold_match))
+                p_pred = float(np.mean(pred_match))
+                correction = float(np.mean([
+                    (not baseline_gold[k]) and gold_match[k]
+                    for k in range(args.n_gen)
+                ]))
+                output["edits"].append({
+                    "rank": edit_rank + 1,
+                    "source_u_realized": edit.get("u_realized"),
+                    "source_score": edit.get("score"),
+                    "substitutions": substitutions,
+                    "generations": generations,
+                    "gold_match": gold_match,
+                    "pred_match": pred_match,
+                    "p_gold": p_gold,
+                    "p_pred": p_pred,
+                    "rise_p_gold": p_gold - baseline_p_gold,
+                    "drop_p_pred": baseline_p_pred - p_pred,
+                    "correction_rate_paired": correction,
+                    "any_correct": any(gold_match),
+                })
+
+            if output["edits"]:
+                best = output["edits"][0]
+                answer_gold_rates.append(best["p_gold"])
+                gold_rises.append(best["rise_p_gold"])
+                correction_rates.append(best["correction_rate_paired"])
+
+            fh.write(json.dumps(output, ensure_ascii=False) + "\n")
+            fh.flush()
+            best_text = (
+                f"p_gold={output['edits'][0]['p_gold']:.3f} "
+                f"rise={output['edits'][0]['rise_p_gold']:+.3f}"
+                if output["edits"] else "no recovered edit"
+            )
+            print(f"[{row_idx + 1}/{len(stage64)}] {item.item_id}: {best_text}",
+                  flush=True)
+
+    def report(name, values):
+        if not values:
+            print(f"  {name:<36} n/a")
+            return
+        lo, hi = bootstrap_ci(values)
+        print(f"  {name:<36} mean={np.mean(values):.3f} "
+              f"95%CI=[{lo:.3f},{hi:.3f}] n={len(values)}")
+
+    print("\n" + "=" * 70)
+    print("STAGE-65 RECOVERED-WORD GENERATION REPORT")
+    print("=" * 70)
+    report("P(gold) after recovered edit", answer_gold_rates)
+    report("rise in P(gold)", gold_rises)
+    report("paired wrong-to-gold rate", correction_rates)
+    print(f"\nWrote {args.out}   ({time.time() - t0:.1f}s)")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

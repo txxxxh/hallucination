@@ -1,0 +1,893 @@
+{
+  "item_index": 76,
+  "item_id": "76",
+  "split": "test",
+  "gold": "2",
+  "detector": {
+    "hallucination_probability": 0.5172885438324462,
+    "predicted_hallucination": false,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "Yard staff are at the test pad to read the hour meter and test the brake-away battery.",
+    "located": {
+      "text": "Yard staff are at the test pad to read the hour meter and test the brake-away battery.",
+      "start": 50,
+      "end": 136,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The generator-trailer return is logged.",
+    "located": {
+      "text": "The generator-trailer return is logged.",
+      "start": 10,
+      "end": 49,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: The generator-trailer return is logged. Yard staff are at the test pad to read the hour meter and test the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.625,
+      "logit_2": 30.75,
+      "prob_1": 0.10669060051441193,
+      "prob_2": 0.8933094143867493,
+      "correct_margin": 2.125,
+      "shortcut_margin": -2.125,
+      "prior_shortcut_margin": -2.125,
+      "prior_correct_margin": 2.125
+    },
+    "surface_surprisal": 4.200955867767334,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 28.875,
+      "logit_2": 31.0,
+      "prob_1": 0.10669060051441193,
+      "prob_2": 0.8933094143867493,
+      "correct_margin": 2.125,
+      "shortcut_margin": -2.125
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "Yard staff are at the test pad to inspect the hour meter and verify the brake-away battery.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8888888888888888,
+        "edit_ratio": 0.0971428571428572
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 30.625,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.41152811050415,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Yard staff are at the test pad to inspect the hour meter and verify the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Yard staff are at the test pad to inspect the hour meter and verify the brake-away battery.",
+        "start": 50,
+        "end": 141,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The yard staff are at the test pad, checking the hour meter and the brake-away battery.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.12941176470588234
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.75,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 4.848936080932617,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. The yard staff are at the test pad, checking the hour meter and the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard staff are at the test pad, checking the hour meter and the brake-away battery.",
+        "start": 50,
+        "end": 137,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "Yard staff are on the test pad to examine the hour meter and check the brake-away battery.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Changes the location of yard staff from 'at the test pad' to 'on the test pad'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8333333333333334,
+        "edit_ratio": 0.10344827586206895
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 30.5,
+        "prob_1": 0.13296423852443695,
+        "prob_2": 0.8670357465744019,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 4.457072734832764,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 29.125,
+        "logit_2": 31.25,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Yard staff are on the test pad to examine the hour meter and check the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Yard staff are on the test pad to examine the hour meter and check the brake-away battery.",
+        "start": 50,
+        "end": 140,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "Staff are at the test pad to read the hour meter and test the brake-away battery for the generator.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Adds unnecessary phrase 'for the generator'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8947368421052632,
+        "edit_ratio": 0.12568306010928965
+      },
+      "prior_shortcut_margin": -2.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 30.625,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25,
+        "prior_shortcut_margin": -2.25,
+        "prior_correct_margin": 2.25
+      },
+      "surface_surprisal": 4.27108097076416,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.125,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Staff are at the test pad to read the hour meter and test the brake-away battery for the generator. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Staff are at the test pad to read the hour meter and test the brake-away battery for the generator.",
+        "start": 50,
+        "end": 149,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The test pad is being visited by yard staff to read the hour meter and check the brake-away battery.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Changes the subject from 'yard staff' to 'the test pad'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.30434782608695654
+      },
+      "prior_shortcut_margin": -3.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 31.125,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": 3.0,
+        "shortcut_margin": -3.0,
+        "prior_shortcut_margin": -3.0,
+        "prior_correct_margin": 3.0
+      },
+      "surface_surprisal": 5.0496134757995605,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 30.625,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. The test pad is being visited by yard staff to read the hour meter and check the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The test pad is being visited by yard staff to read the hour meter and check the brake-away battery.",
+        "start": 50,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "Yard staff are at the test pad, where they're checking the hour meter and testing the brake-away battery.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.12765957446808507
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 30.75,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.070428371429443,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.125,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Yard staff are at the test pad, where they're checking the hour meter and testing the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Yard staff are at the test pad, where they're checking the hour meter and testing the brake-away battery.",
+        "start": 50,
+        "end": 155,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "At the test pad, yard staff are reading the hour meter and checking the brake-away battery.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Changes the phrase from 'are at the test pad' to 'are reading at the test pad'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.24137931034482762
+      },
+      "prior_shortcut_margin": -2.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.125,
+        "logit_2": 30.375,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25,
+        "prior_shortcut_margin": -2.25,
+        "prior_correct_margin": 2.25
+      },
+      "surface_surprisal": 4.999592304229736,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. At the test pad, yard staff are reading the hour meter and checking the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "At the test pad, yard staff are reading the hour meter and checking the brake-away battery.",
+        "start": 50,
+        "end": 141,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "Yard staff have arrived at the test pad to check the hour meter and test the brake-away battery.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Changes the phrase from 'are at the test pad' to 'have arrived at the test pad'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8648648648648649,
+        "edit_ratio": 0.0888888888888889
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.75,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 4.158844470977783,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 31.0,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Yard staff have arrived at the test pad to check the hour meter and test the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Yard staff have arrived at the test pad to check the hour meter and test the brake-away battery.",
+        "start": 50,
+        "end": 146,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "Staff are on the test pad to check the hour meter and the brake-away battery for the generator.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Adds unnecessary phrase 'for the generator'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7567567567567567,
+        "edit_ratio": 0.2178770949720671
+      },
+      "prior_shortcut_margin": -2.25,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.375,
+        "logit_2": 30.625,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25,
+        "prior_shortcut_margin": -2.25,
+        "prior_correct_margin": 2.25
+      },
+      "surface_surprisal": 4.592654705047607,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 31.125,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Staff are on the test pad to check the hour meter and the brake-away battery for the generator. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Staff are on the test pad to check the hour meter and the brake-away battery for the generator.",
+        "start": 50,
+        "end": 145,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "Yard staff are at the test pad to verify the hour meter reading and check the brake-away battery.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "Changes the phrase from 'are at the test pad' to 'are at the test pad to verify'"
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8648648648648649,
+        "edit_ratio": 0.1270718232044199
+      },
+      "prior_shortcut_margin": -2.125,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 30.75,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125,
+        "prior_shortcut_margin": -2.125,
+        "prior_correct_margin": 2.125
+      },
+      "surface_surprisal": 4.1197614669799805,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Yard staff are at the test pad to verify the hour meter reading and check the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Yard staff are at the test pad to verify the hour meter reading and check the brake-away battery.",
+        "start": 50,
+        "end": 147,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p02",
+      "text": "The yard staff are at the test pad, checking the hour meter and the brake-away battery.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.12941176470588234
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.75,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 4.848936080932617,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. The yard staff are at the test pad, checking the hour meter and the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard staff are at the test pad, checking the hour meter and the brake-away battery.",
+        "start": 50,
+        "end": 137,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p01",
+      "text": "Yard staff are at the test pad to inspect the hour meter and verify the brake-away battery.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8888888888888888,
+        "edit_ratio": 0.0971428571428572
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 30.625,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.41152811050415,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Yard staff are at the test pad to inspect the hour meter and verify the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Yard staff are at the test pad to inspect the hour meter and verify the brake-away battery.",
+        "start": 50,
+        "end": 141,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p06",
+      "text": "Yard staff are at the test pad, where they're checking the hour meter and testing the brake-away battery.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.12765957446808507
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.75,
+        "logit_2": 30.75,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.070428371429443,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.125,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Yard staff are at the test pad, where they're checking the hour meter and testing the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Yard staff are at the test pad, where they're checking the hour meter and testing the brake-away battery.",
+        "start": 50,
+        "end": 155,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p01",
+      "text": "Yard staff are at the test pad to inspect the hour meter and verify the brake-away battery.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8888888888888888,
+        "edit_ratio": 0.0971428571428572
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.625,
+        "logit_2": 30.625,
+        "prob_1": 0.11920291930437088,
+        "prob_2": 0.8807970285415649,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.41152811050415,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. Yard staff are at the test pad to inspect the hour meter and verify the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "Yard staff are at the test pad to inspect the hour meter and verify the brake-away battery.",
+        "start": 50,
+        "end": 141,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p02",
+      "text": "The yard staff are at the test pad, checking the hour meter and the brake-away battery.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.12941176470588234
+      },
+      "prior_shortcut_margin": -2.5,
+      "prior_probe": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.25,
+        "logit_2": 30.75,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5,
+        "prior_shortcut_margin": -2.5,
+        "prior_correct_margin": 2.5
+      },
+      "surface_surprisal": 4.848936080932617,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": true,
+        "logit_1": 28.875,
+        "logit_2": 31.0,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: The generator-trailer return is logged. The yard staff are at the test pad, checking the hour meter and the brake-away battery. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The yard staff are at the test pad, checking the hour meter and the brake-away battery.",
+        "start": 50,
+        "end": 137,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": true,
+    "valid": true,
+    "reason": null,
+    "text": "Although yard staff are at the test pad, that fact alone does not determine the decision, because the generator-trailer return is logged and its meter and battery are on the generator trailer.",
+    "shortcut_anchor": "yard staff are at the test pad",
+    "constraint_anchor": "generator-trailer return is logged",
+    "review": {
+      "shortcut_anchor_faithful": true,
+      "constraint_anchor_faithful": true,
+      "both_keys_explicitly_linked": true,
+      "shortcut_alone_marked_insufficient": true,
+      "constraint_relevance_explicit": true,
+      "facts_preserved": true,
+      "no_new_fact": true,
+      "no_answer_or_option_leak": true,
+      "no_direct_recommendation_or_conclusion": true,
+      "no_experiment_meta_language": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "automatic_checks": {
+      "shortcut_anchor_f1": 0.56,
+      "constraint_anchor_f1": 0.9090909090909091,
+      "max_option_token_f1": 0.25,
+      "shortcut_informative_overlap": 6,
+      "constraint_informative_overlap": 3,
+      "word_count": 32
+    },
+    "prompt": "Scenario: The generator-trailer return is logged. Yard staff are at the test pad to read the hour meter and test the brake-away battery. Although yard staff are at the test pad, that fact alone does not determine the decision, because the generator-trailer return is logged and its meter and battery are on the generator trailer. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 30.0,
+      "logit_2": 31.875,
+      "prob_1": 0.13296423852443695,
+      "prob_2": 0.8670357465744019,
+      "correct_margin": 1.875,
+      "shortcut_margin": -1.875
+    }
+  },
+  "joint_pdp_context": {
+    "available": true,
+    "prompt": "Scenario: The generator-trailer return is logged. The yard staff are at the test pad, checking the hour meter and the brake-away battery. Although yard staff are at the test pad, that fact alone does not determine the decision, because the generator-trailer return is logged and its meter and battery are on the generator trailer. Should I tow the generator trailer to the pad or walk there without it?\nOption1: Walk to the pad without the generator trailer\nOption2: Tow the generator trailer to the pad\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": true,
+      "logit_1": 29.875,
+      "logit_2": 31.875,
+      "prob_1": 0.11920291930437088,
+      "prob_2": 0.8807970285415649,
+      "correct_margin": 2.0,
+      "shortcut_margin": -2.0
+    }
+  }
+}

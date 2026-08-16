@@ -1,0 +1,841 @@
+{
+  "item_index": 201,
+  "item_id": "201",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.7604339021662527,
+    "predicted_hallucination": true,
+    "shortcut_source": "predicted_shortcut",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The mechanic is at the dock aisle to watch the dashboard lights when the tug is keyed on.",
+    "located": {
+      "text": "The mechanic is at the dock aisle to watch the dashboard lights when the tug is keyed on.",
+      "start": 52,
+      "end": 141,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": null,
+  "original": {
+    "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is at the dock aisle to watch the dashboard lights when the tug is keyed on. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.5,
+      "logit_2": 31.0,
+      "prob_1": 0.622459352016449,
+      "prob_2": 0.3775406777858734,
+      "correct_margin": 0.5,
+      "shortcut_margin": -0.5,
+      "prior_shortcut_margin": -0.5,
+      "prior_correct_margin": 0.5
+    },
+    "surface_surprisal": 4.995885372161865,
+    "full_prompt": {
+      "prediction": "2",
+      "is_correct": false,
+      "logit_1": 28.875,
+      "logit_2": 31.25,
+      "prob_1": 0.08509904146194458,
+      "prob_2": 0.9149009585380554,
+      "correct_margin": -2.375,
+      "shortcut_margin": 2.375
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The mechanic is standing at the dock aisle to monitor the dashboard lights as the tug is powered up.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": "The paraphrase changes the verb from 'keyed on' to 'powered up', which is not semantically equivalent."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7567567567567567,
+        "edit_ratio": 0.1871657754010695
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 31.125,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 4.419663429260254,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 31.375,
+        "prob_1": 0.08509904146194458,
+        "prob_2": 0.9149009585380554,
+        "correct_margin": -2.375,
+        "shortcut_margin": 2.375
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is standing at the dock aisle to monitor the dashboard lights as the tug is powered up. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is standing at the dock aisle to monitor the dashboard lights as the tug is powered up.",
+        "start": 52,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The mechanic is located at the dock aisle, observing the dashboard lights as the tug is turned on.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.19565217391304346
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.75,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 4.54630708694458,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 31.375,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": -2.125,
+        "shortcut_margin": 2.125
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is located at the dock aisle, observing the dashboard lights as the tug is turned on. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is located at the dock aisle, observing the dashboard lights as the tug is turned on.",
+        "start": 52,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "The mechanic is present at the dock aisle, watching the dashboard lights as the tug's engine is started.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "The paraphrase uses 'engine' instead of 'tug', which is not semantically equivalent."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7027027027027027,
+        "edit_ratio": 0.21052631578947367
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.75,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 4.079450607299805,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.75,
+        "logit_2": 31.0,
+        "prob_1": 0.09534946084022522,
+        "prob_2": 0.9046505093574524,
+        "correct_margin": -2.25,
+        "shortcut_margin": 2.25
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is present at the dock aisle, watching the dashboard lights as the tug's engine is started. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is present at the dock aisle, watching the dashboard lights as the tug's engine is started.",
+        "start": 52,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug is keyed in.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.1693989071038251
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.5,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.187493801116943,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 31.0,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug is keyed in. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug is keyed in.",
+        "start": 52,
+        "end": 149,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The mechanic is situated at the dock aisle, monitoring the dashboard lights as the tug is activated.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "The paraphrase uses 'activated' instead of 'keyed on', which is not semantically equivalent."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7428571428571428,
+        "edit_ratio": 0.22580645161290325
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.75,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 4.788031101226807,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.375,
+        "logit_2": 31.125,
+        "prob_1": 0.14804719388484955,
+        "prob_2": 0.851952850818634,
+        "correct_margin": -1.75,
+        "shortcut_margin": 1.75
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is situated at the dock aisle, monitoring the dashboard lights as the tug is activated. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is situated at the dock aisle, monitoring the dashboard lights as the tug is activated.",
+        "start": 52,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "The mechanic is standing nearby at the dock aisle, observing the dashboard lights when the tug is turned on.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "The paraphrase uses 'nearby' instead of 'at the dock aisle', which is not semantically equivalent."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8108108108108109,
+        "edit_ratio": 0.19587628865979378
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.25,
+        "logit_2": 31.0,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 4.6631178855896,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.625,
+        "prob_1": 0.07585817575454712,
+        "prob_2": 0.9241418242454529,
+        "correct_margin": -2.5,
+        "shortcut_margin": 2.5
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is standing nearby at the dock aisle, observing the dashboard lights when the tug is turned on. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is standing nearby at the dock aisle, observing the dashboard lights when the tug is turned on.",
+        "start": 52,
+        "end": 160,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The mechanic is at the dock aisle, observing the dashboard lights as the tug's ignition is turned.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7222222222222222,
+        "edit_ratio": 0.2282608695652174
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.625,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.528115749359131,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.625,
+        "logit_2": 31.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is at the dock aisle, observing the dashboard lights as the tug's ignition is turned. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the dock aisle, observing the dashboard lights as the tug's ignition is turned.",
+        "start": 52,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "The mechanic is located at the dock aisle, watching the dashboard lights as the tug's engine is engaged.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "The paraphrase uses 'engine' instead of 'tug', which is not semantically equivalent."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7027027027027027,
+        "edit_ratio": 0.19999999999999996
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 30.75,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.32623815536499,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.25,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": -2.125,
+        "shortcut_margin": 2.125
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is located at the dock aisle, watching the dashboard lights as the tug's engine is engaged. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is located at the dock aisle, watching the dashboard lights as the tug's engine is engaged.",
+        "start": 52,
+        "end": 156,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The mechanic is present at the dock aisle, monitoring the dashboard lights as the tug is powered up.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7222222222222222,
+        "edit_ratio": 0.20430107526881724
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 30.75,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.433722972869873,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 31.125,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": -2.125,
+        "shortcut_margin": 2.125
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is present at the dock aisle, monitoring the dashboard lights as the tug is powered up. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is present at the dock aisle, monitoring the dashboard lights as the tug is powered up.",
+        "start": 52,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug's engine is started up.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": false,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "temporal_spatial_relation_preserved": true,
+        "correct_answer_preserved": false,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 4,
+        "notes": "The paraphrase uses 'started up' instead of 'keyed on', which is not semantically equivalent."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7000000000000001,
+        "edit_ratio": 0.25773195876288657
+      },
+      "prior_shortcut_margin": -1.125,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.5,
+        "prob_1": 0.7549149990081787,
+        "prob_2": 0.24508501589298248,
+        "correct_margin": 1.125,
+        "shortcut_margin": -1.125,
+        "prior_shortcut_margin": -1.125,
+        "prior_correct_margin": 1.125
+      },
+      "surface_surprisal": 3.4608399868011475,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.125,
+        "logit_2": 31.25,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": -2.125,
+        "shortcut_margin": 2.125
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug's engine is started up. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug's engine is started up.",
+        "start": 52,
+        "end": 160,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p04",
+      "text": "The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug is keyed in.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.1693989071038251
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.5,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.187493801116943,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 31.0,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug is keyed in. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug is keyed in.",
+        "start": 52,
+        "end": 149,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p09",
+      "text": "The mechanic is present at the dock aisle, monitoring the dashboard lights as the tug is powered up.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7222222222222222,
+        "edit_ratio": 0.20430107526881724
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 30.75,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.433722972869873,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.0,
+        "logit_2": 31.125,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": -2.125,
+        "shortcut_margin": 2.125
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is present at the dock aisle, monitoring the dashboard lights as the tug is powered up. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is present at the dock aisle, monitoring the dashboard lights as the tug is powered up.",
+        "start": 52,
+        "end": 152,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p07",
+      "text": "The mechanic is at the dock aisle, observing the dashboard lights as the tug's ignition is turned.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7222222222222222,
+        "edit_ratio": 0.2282608695652174
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.625,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.528115749359131,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 28.625,
+        "logit_2": 31.625,
+        "prob_1": 0.04742587357759476,
+        "prob_2": 0.9525741338729858,
+        "correct_margin": -3.0,
+        "shortcut_margin": 3.0
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is at the dock aisle, observing the dashboard lights as the tug's ignition is turned. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the dock aisle, observing the dashboard lights as the tug's ignition is turned.",
+        "start": 52,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p02",
+      "text": "The mechanic is located at the dock aisle, observing the dashboard lights as the tug is turned on.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7777777777777778,
+        "edit_ratio": 0.19565217391304346
+      },
+      "prior_shortcut_margin": -1.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.75,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25,
+        "prior_shortcut_margin": -1.25,
+        "prior_correct_margin": 1.25
+      },
+      "surface_surprisal": 4.54630708694458,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.25,
+        "logit_2": 31.375,
+        "prob_1": 0.10669060051441193,
+        "prob_2": 0.8933094143867493,
+        "correct_margin": -2.125,
+        "shortcut_margin": 2.125
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is located at the dock aisle, observing the dashboard lights as the tug is turned on. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is located at the dock aisle, observing the dashboard lights as the tug is turned on.",
+        "start": 52,
+        "end": 150,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p04",
+      "text": "The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug is keyed in.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.7894736842105262,
+        "edit_ratio": 0.1693989071038251
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.5,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.187493801116943,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 29.625,
+        "logit_2": 31.0,
+        "prob_1": 0.2018132209777832,
+        "prob_2": 0.7981867790222168,
+        "correct_margin": -1.375,
+        "shortcut_margin": 1.375
+      },
+      "prompt": "Scenario: The electric tug wake-up issue is logged. The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug is keyed in. For this step, what should I do?\nOption1: Drive the electric tug to the dock aisle\nOption2: Walk to the dock aisle without the tug\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The mechanic is at the dock aisle, keeping an eye on the dashboard lights as the tug is keyed in.",
+        "start": 52,
+        "end": 149,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "available": false,
+    "valid": false,
+    "reason": "requires_distinct_predicted_shortcut_and_predicted_constraint",
+    "text": null,
+    "prompt": null,
+    "full_prompt": null
+  },
+  "joint_pdp_context": {
+    "available": false,
+    "prompt": null,
+    "full_prompt": null
+  }
+}

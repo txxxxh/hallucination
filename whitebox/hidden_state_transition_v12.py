@@ -42,6 +42,7 @@ import math
 import random
 import re
 import traceback
+import unicodedata
 import warnings
 from dataclasses import dataclass
 from pathlib import Path
@@ -71,7 +72,7 @@ from sklearn.preprocessing import StandardScaler
 from tqdm.auto import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer, set_seed
 
-CACHE_SCHEMA_VERSION = "openended_v12_static_hidden_v2"
+CACHE_SCHEMA_VERSION = "openended_v12_static_hidden_v3_punctuation_normalization"
 ROLE_NAMES = ["constraint", "shortcut", "irrelevant"]
 ROLE_TO_ID = {name: index for index, name in enumerate(ROLE_NAMES)}
 OPERATORS = ("delete", "neutralize", "mask")
@@ -466,12 +467,31 @@ def build_examples(
 # -------------------------------------------------------------------------
 
 def normalize_answer(text: str) -> str:
-    text = text.lower().strip()
+    # Model generations commonly add terminal punctuation even when the gold
+    # answer is a bare entity (for example, ``Delhi.`` versus ``Delhi``).
+    # Treat all Unicode punctuation as formatting, rather than retaining ASCII
+    # periods and hyphens as the previous implementation did.
+    text = unicodedata.normalize("NFKC", str(text)).casefold().strip()
+    # Deleting apostrophes keeps possessives/contractions as one token; turning
+    # them into spaces would make "Arthur's" and "Arthurs" unnecessarily differ.
+    text = "".join(
+        "" if char in {"'", "’", "‘", "`", "´"}
+        else " " if unicodedata.category(char).startswith("P")
+        else char
+        for char in text
+    )
     text = re.sub(r"\b(a|an|the)\b", " ", text)
-    text = re.sub(r"[^\w\s.-]", " ", text)
     return " ".join(text.split())
 
 
+def punctuation_insensitive_key(text: str) -> str:
+    """Compact normalized text for exact punctuation-only equivalence.
+
+    Compacting whitespace after punctuation removal also makes forms such as
+    ``U.S.``/``US`` and ``Jean-Luc``/``Jean Luc`` compare equal. Token F1
+    continues to use the word-preserving normalized representation.
+    """
+    return "".join(char for char in normalize_answer(text) if char.isalnum())
 def token_f1(first: str, second: str) -> float:
     first_tokens = normalize_answer(first).split()
     second_tokens = normalize_answer(second).split()
@@ -505,6 +525,8 @@ def exact_or_contained(prediction: str, reference: str) -> bool:
     ref = normalize_answer(reference)
     if not pred or not ref:
         return False
+    if punctuation_insensitive_key(pred) == punctuation_insensitive_key(ref):
+        return True
     return (
         pred == ref
         or (len(ref.split()) >= 2 and ref in pred)

@@ -1,0 +1,133 @@
+# spanattr — 干预驱动的细粒度 span 归因
+
+用**扰动效应**而非 attention 质量来定义关键词。四阶段流水线，接入现有 `hallu-diagnose/` 编号体系（61–64）。
+
+---
+
+## 0. 测试状态（重要，请先读）
+
+本环境磁盘不足以安装 torch，所以：
+
+| 测试 | 状态 | 覆盖 |
+|---|---|---|
+| `python -m spanattr.selftest` | ✅ **25 项全部实测通过** | 符号约定、二阶目标、贪心/穷举、冗余聚类、NMS、统计工具 |
+| `python tests/test_contracts.py` | ✅ **28 项全部实测通过** | 61→62→63→64 的 JSONL schema、索引映射、控制组构造、磁盘往返 |
+| `python -m spanattr.core --smoke` | ⚠️ **未实测**（需 torch） | 随机权重 toy Llama 上的前向/梯度/IG completeness |
+| `61–64 --smoke` | ⚠️ **未实测**（需 torch） | 各阶段端到端 |
+
+所有文件通过 `py_compile`。**首次在你的机器上跑，请先按顺序执行 `--smoke`**，它们用一个 2 层随机 Llama 在 CPU 上跑，几秒完成，可在烧 GPU 之前抓出接口问题。
+
+编写测试的过程抓出了三个真实问题，都已修掉并固化为断言：
+
+1. **贪心在超模（协同）实例上必然失败** — 它先拿单体增益最大的 span，永远发现不了协同对。所以 `63_` 在 C(m,k) 可承受时一律用穷举，只在超限时退化为贪心并告警。
+2. **冗余/协同的符号解读预设 $u_i>0$。** 对 $u_i<0$ 的 span（支持 gold 的证据），"任一即可"不再蕴含 $I_{ij}<0$。$I$ 的算术不受影响，但簇级叙事必须限制在 $u_i>0$ 子集上。`61_` 因此报告 $u$ 的符号分布。
+3. 候选 span **必须 token 互斥**（NMS 保证），否则 union 语义下 $I_{ij}$ 不可解释。
+
+---
+
+## 1. 框架
+
+一切都在**门控空间** $\alpha\in[0,1]^P$ 里做：
+
+$$E(\alpha)_t = E_t + \alpha_t(\bar e_t - E_t)$$
+
+$\bar e$ 是中性化基线（**保长度**，不删 token，因此不引入位置移动）。一阶梯度、IG、有限差分交互量都是同一个量的不同阶，量纲与符号天然一致。
+
+**目标（teacher-forced margin）**
+
+$$S(\alpha)=\underbrace{\text{logsumexp}_v\,\text{lp}(\hat y_v)}_{\text{幻觉答案语义类}}-\underbrace{\text{logsumexp}_v\,\text{lp}(y^*_v)}_{\text{gold 语义类}}$$
+
+**增益函数（下游只用这个，$S$ 只出现在定义式里）**
+
+$$u(\mathcal S)=S(\mathbf 0)-S(\mathbf 1_{\mathcal S})$$
+
+**交互量与符号约定**
+
+$$I_{ij}=u(\{i,j\})-u(\{i\})-u(\{j\})$$
+
+| | 含义 | 结构 |
+|---|---|---|
+| $I_{ij}<0$ | **冗余**（互为替代，证据重复） | 次模，贪心有 $1-1/e$ 保证 |
+| $I_{ij}>0$ | **协同**（多 token 单元，top-k 结构上找不到） | 超模，贪心失效 |
+
+$$\text{选择准则：}\quad \max_{|\mathcal S|\le k}\ \sum_{i\in\mathcal S}u_i+\sum_{i<j\in\mathcal S}I_{ij}$$
+
+> 上一轮讨论中我把冗余/协同的符号写反了，根因是把 Shapley 交互指数文献里"增益函数"的惯例直接搬到了 $S$ 上。**结构性修法是让 $S$ 完全不出现在任何下游表达式里**，而不是去逐处改符号。代码与文档现在只用 $u$，`selftest.py` 用带已知真值的合成集合函数把这条钉死。
+
+---
+
+## 2. 流水线
+
+```
+61_grad_span_proposal.py   2/3-word 滑窗 → 一阶梯度 / IG / 实测 u / attention 基线
+                            → σ_null 噪声底 → NMS 得 m 个互斥候选
+62_interaction_matrix.py   候选内全 pairwise 有限差分 → I 矩阵 → 冗余簇 / 协同对 / 主特征向量
+63_subset_select.py        五策略头对头 + 位置匹配 null + 两层验证
+64a_vocab_decode.py        梯度方向 → 词表投影 → 指数级联合穷举与真实 margin
+64b_vocab_recovery_generation.py 恢复词写回 prompt → 3 次采样生成 → gold/pred 判定
+```
+
+```bash
+python -m spanattr.selftest          # 先跑，无需 torch
+python tests/test_contracts.py
+python 61_grad_span_proposal.py --smoke   # 再跑，需 torch，CPU 几秒
+bash run_all.sh                       # 真跑（MODEL=... ITEMS=... 可覆盖）
+```
+
+### 61 的关键产出
+**校准 ρ**：廉价一阶代理（$\hat u$、IG）与**实测** $u$ 的 Spearman。脚本内置决策规则：
+
+- IG ρ **> 0.90** → 一阶已经解释掉效应，62/63 的二阶机器是过度工程，砍掉写进 limitation。
+- IG ρ **≤ 0.90** → 存在实质未解释方差，继续。
+
+IG 用中性化算子作为 baseline，因此满足 completeness：$\sum_t \mathrm{IG}_t = u(\text{all})$，脚本运行时校验并报告 `completeness_rel_err`。这也让"top-k 覆盖了多少总效应"成为有意义的量。
+
+### 62 的关键产出
+$I$ 矩阵**只需前向传播**（$m$ 个单体 + $\binom{m}{2}$ 个配对 + 1 个基线；$m{=}12$ → 79 行）。这意味着同一套代码可以原封不动地跑 DeepSeek 或任何 API 模型，跨模型对比是干净的。
+
+噪声阈值直接由随机、互斥且宽度匹配的 span pair 的经验交互量
+$I_{\mathrm{null}}$ 估计，默认取 $|I_{\mathrm{null}}|$ 的 95% 分位数。单 span
+效应在位置间的方差包含真实语义信号，不能当作测量噪声再按
+$\sqrt{3}$ 传播。**若 `frac_sig < 5%`，这是负结果：交互实质不存在，加性模型足够，不要去聚类噪声。**
+
+谱分析保留**特征向量**而非排序后的特征值——span 身份得以保留，正是排序谱会摧毁的东西。
+
+### 63 的关键产出
+五个策略在同一候选池、同一预算 $k$ 下对比：
+
+`attention_topk`（现方案）· `first_order` · `second_order` · `greedy` · `random_matched`（**位置与长度匹配的随机对照，必须有**）
+
+**两层测量，职责严格分离：**
+
+- **Tier 1**（廉价、稠密、teacher-forced）：$u(\mathcal S)$。**只用于搜索。** 有偏的搜索启发式代价是统计效力，不是效度——因为每个选出的集合都会被 Tier 2 复核。
+- **Tier 2**（昂贵、稀疏、generation）：采样生成下 $P(\hat y)$ 的下降与 $P(y^*)$ 的上升。**所有对外声明都建立在 Tier 2 上。**
+
+脚本报告两层的 Spearman ρ 及 bootstrap CI，这个数决定论文框架：ρ ≥ 0.6 → teacher-forced 归因可作为廉价代理直接汇报；ρ 低 → Tier 1 降格为纯搜索启发式，所有 headline 数字退到 Tier 2。**两种结果都站得住，但是不同的论文，所以必须报。** 这也对你另一个 66.5% 一致率的发现构成直接补充证据——注意 66.5% 是**阈值化标签**的一致率，连续量上的相关可能高得多。
+
+### 64 的关键产出
+**算子隔离**：选择用中性化（61/62/63），验证用离散词替换（64）。两者不共享任何机制，所以这里的正结果不可能是"同一算子既造伪标签又造特征"的循环产物——这正是 v8 缺的那一环。
+
+词表投影用**归一化方向匹配** $\langle w_v-e_t,\,-g_t\rangle/\|w_v-e_t\|$。不归一化的话 argmax 会被 embedding 范数主导，也就是被词频主导，那就又变成一个频率检测器了。
+
+### 65 的关键产出
+65 不改变 64 的联合穷举，只读取其 `joint_top` 恢复结果并把 token id
+真实写回原 prompt。默认对原 prompt 和恢复后 prompt 各做 3 次 temperature
+sampling，保存生成文本、gold/pred 命中、`p_gold`、`rise_p_gold`、
+`drop_p_pred` 和配对的 `correction_rate_paired`。
+
+---
+
+## 3. 已知取舍
+
+- `length_norm=True` 时 `_class_logprob` 是对各变体**平均** logprob 的 logsumexp，是个让不同长度变体可比的启发式，不是严格混合分布。要严格形式设 `--length_norm 0`。
+- 默认候选是原始文本上的 2/3-word 滑窗，再通过 tokenizer offset mapping
+  映射回 token gate；可用 `--span_unit tokens` 恢复旧的 2/3-token 模式。
+- 细粒度下**默认算子必须是保长度的 neutralize**；span 越短，delete 的语法破坏相对信息量越大，且位置移动会把位置混淆重新引进来。`delete` 只作为 robustness check。
+- $m$ 太大时 `--exh_cap` 会让 `second_order` 退化为贪心，而贪心在协同实例上必然失败（见测试 §4）。$m\le 16,k\le 3$ 时穷举只有 560 种组合，无成本。
+
+## 4. 结果回来后
+
+把 61 的校准 ρ、`topk_null_ratio`/`topk_min_null_ratio`、62 的
+`frac_sig`/`synergy_share`、63 的头对头表贴给我。Stage 1 用 NMS 后
+top-k 的平均及末位 `|u|` 相对随机 span `|u|` 的 95% 分位数判断头部信号，
+不再用全体 span 的平均 SNR 决定是否继续。

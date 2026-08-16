@@ -1,0 +1,863 @@
+{
+  "item_index": 195,
+  "item_id": "195",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.30897774859258836,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "The inventory sticker must be on the box lid before the librarian scans it.",
+    "located": {
+      "text": "The inventory sticker must be on the box lid before the librarian scans it.",
+      "start": 41,
+      "end": 116,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "I am checking in a board game.",
+    "located": {
+      "text": "I am checking in a board game.",
+      "start": 10,
+      "end": 40,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am checking in a board game. The inventory sticker must be on the box lid before the librarian scans it. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.875,
+      "logit_2": 31.0,
+      "prob_1": 0.7057850360870361,
+      "prob_2": 0.29421496391296387,
+      "correct_margin": 0.875,
+      "shortcut_margin": -0.875,
+      "prior_shortcut_margin": -0.875,
+      "prior_correct_margin": 0.875
+    },
+    "surface_surprisal": 5.124054908752441,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.125,
+      "logit_2": 29.75,
+      "prob_1": 0.7981867790222168,
+      "prob_2": 0.2018132209777832,
+      "correct_margin": 1.375,
+      "shortcut_margin": -1.375
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "The sticker must be visible on the box before scanning.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.328125
+      },
+      "prior_shortcut_margin": -1.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 30.875,
+        "prob_1": 0.8670357465744019,
+        "prob_2": 0.13296423852443695,
+        "correct_margin": 1.875,
+        "shortcut_margin": -1.875,
+        "prior_shortcut_margin": -1.875,
+        "prior_correct_margin": 1.875
+      },
+      "surface_surprisal": 4.729403018951416,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.625,
+        "logit_2": 30.25,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker must be visible on the box before scanning. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker must be visible on the box before scanning.",
+        "start": 41,
+        "end": 96,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "The sticker needs to be on the box lid before the librarian scans it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.12676056338028174
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.625,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.27832555770874,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.125,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker needs to be on the box lid before the librarian scans it. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker needs to be on the box lid before the librarian scans it.",
+        "start": 41,
+        "end": 110,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "For the scan to be successful, the sticker should be on the box.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5185185185185186,
+        "edit_ratio": 0.5441176470588236
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 29.875,
+        "prob_1": 0.9669140577316284,
+        "prob_2": 0.03308597952127457,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 3.1919100284576416,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 29.5,
+        "prob_1": 0.8933094143867493,
+        "prob_2": 0.10669060051441193,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: I am checking in a board game. For the scan to be successful, the sticker should be on the box. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "For the scan to be successful, the sticker should be on the box.",
+        "start": 41,
+        "end": 105,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "The sticker must be attached to the box before scanning takes place.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5384615384615384,
+        "edit_ratio": 0.3900709219858156
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.5,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 3.643612861633301,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.375,
+        "logit_2": 29.75,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker must be attached to the box before scanning takes place. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker must be attached to the box before scanning takes place.",
+        "start": 41,
+        "end": 109,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "The sticker has to be on the box lid before scanning is done.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5925925925925927,
+        "edit_ratio": 0.31343283582089554
+      },
+      "prior_shortcut_margin": -1.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.625,
+        "prob_1": 0.7981867790222168,
+        "prob_2": 0.2018132209777832,
+        "correct_margin": 1.375,
+        "shortcut_margin": -1.375,
+        "prior_shortcut_margin": -1.375,
+        "prior_correct_margin": 1.375
+      },
+      "surface_surprisal": 4.131539821624756,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 29.75,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker has to be on the box lid before scanning is done. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker has to be on the box lid before scanning is done.",
+        "start": 41,
+        "end": 102,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "To complete the check-in, the sticker must be on the box.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846153,
+        "edit_ratio": 0.4728682170542635
+      },
+      "prior_shortcut_margin": -2.25,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 30.5,
+        "prob_1": 0.9046505093574524,
+        "prob_2": 0.09534946084022522,
+        "correct_margin": 2.25,
+        "shortcut_margin": -2.25,
+        "prior_shortcut_margin": -2.25,
+        "prior_correct_margin": 2.25
+      },
+      "surface_surprisal": 3.624939203262329,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.0,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: I am checking in a board game. To complete the check-in, the sticker must be on the box. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "To complete the check-in, the sticker must be on the box.",
+        "start": 41,
+        "end": 98,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "The sticker must be present on the box before scanning is initiated.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846153,
+        "edit_ratio": 0.34751773049645385
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 31.25,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 4.0545525550842285,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.375,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker must be present on the box before scanning is initiated. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker must be present on the box before scanning is initiated.",
+        "start": 41,
+        "end": 109,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "For the check-in process, the sticker should be on the box lid.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5925925925925927,
+        "edit_ratio": 0.4666666666666667
+      },
+      "prior_shortcut_margin": -1.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.875,
+        "prob_1": 0.8354835510253906,
+        "prob_2": 0.16451644897460938,
+        "correct_margin": 1.625,
+        "shortcut_margin": -1.625,
+        "prior_shortcut_margin": -1.625,
+        "prior_correct_margin": 1.625
+      },
+      "surface_surprisal": 3.969970941543579,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.75,
+        "logit_2": 30.5,
+        "prob_1": 0.562176525592804,
+        "prob_2": 0.43782350420951843,
+        "correct_margin": 0.25,
+        "shortcut_margin": -0.25
+      },
+      "prompt": "Scenario: I am checking in a board game. For the check-in process, the sticker should be on the box lid. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "For the check-in process, the sticker should be on the box lid.",
+        "start": 41,
+        "end": 104,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "The sticker must be visible on the box lid before scanning is complete.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666666,
+        "edit_ratio": 0.3194444444444444
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.75,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 4.7327446937561035,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 30.5,
+        "logit_2": 30.0,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker must be visible on the box lid before scanning is complete. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker must be visible on the box lid before scanning is complete.",
+        "start": 41,
+        "end": 112,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "The sticker needs to be on the box lid for the librarian to scan it.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.689655172413793,
+        "edit_ratio": 0.17730496453900713
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.625,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 3.764683246612549,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.0,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker needs to be on the box lid for the librarian to scan it. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker needs to be on the box lid for the librarian to scan it.",
+        "start": 41,
+        "end": 109,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p03",
+      "text": "For the scan to be successful, the sticker should be on the box.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5185185185185186,
+        "edit_ratio": 0.5441176470588236
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 29.875,
+        "prob_1": 0.9669140577316284,
+        "prob_2": 0.03308597952127457,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 3.1919100284576416,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 29.5,
+        "prob_1": 0.8933094143867493,
+        "prob_2": 0.10669060051441193,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: I am checking in a board game. For the scan to be successful, the sticker should be on the box. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "For the scan to be successful, the sticker should be on the box.",
+        "start": 41,
+        "end": 105,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p07",
+      "text": "The sticker must be present on the box before scanning is initiated.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6153846153846153,
+        "edit_ratio": 0.34751773049645385
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 31.25,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 4.0545525550842285,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.375,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker must be present on the box before scanning is initiated. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker must be present on the box before scanning is initiated.",
+        "start": 41,
+        "end": 109,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p02",
+      "text": "The sticker needs to be on the box lid before the librarian scans it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.8571428571428571,
+        "edit_ratio": 0.12676056338028174
+      },
+      "prior_shortcut_margin": -0.5,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.125,
+        "logit_2": 30.625,
+        "prob_1": 0.622459352016449,
+        "prob_2": 0.3775406777858734,
+        "correct_margin": 0.5,
+        "shortcut_margin": -0.5,
+        "prior_shortcut_margin": -0.5,
+        "prior_correct_margin": 0.5
+      },
+      "surface_surprisal": 4.27832555770874,
+      "full_prompt": {
+        "prediction": "2",
+        "is_correct": false,
+        "logit_1": 30.0,
+        "logit_2": 30.125,
+        "prob_1": 0.4687906503677368,
+        "prob_2": 0.531209409236908,
+        "correct_margin": -0.125,
+        "shortcut_margin": 0.125
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker needs to be on the box lid before the librarian scans it. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker needs to be on the box lid before the librarian scans it.",
+        "start": 41,
+        "end": 110,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p10",
+      "text": "The sticker needs to be on the box lid for the librarian to scan it.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.689655172413793,
+        "edit_ratio": 0.17730496453900713
+      },
+      "prior_shortcut_margin": -0.625,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.625,
+        "prob_1": 0.6513549089431763,
+        "prob_2": 0.3486451506614685,
+        "correct_margin": 0.625,
+        "shortcut_margin": -0.625,
+        "prior_shortcut_margin": -0.625,
+        "prior_correct_margin": 0.625
+      },
+      "surface_surprisal": 3.764683246612549,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.0,
+        "logit_2": 30.0,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0
+      },
+      "prompt": "Scenario: I am checking in a board game. The sticker needs to be on the box lid for the librarian to scan it. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "The sticker needs to be on the box lid for the librarian to scan it.",
+        "start": 41,
+        "end": 109,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p03",
+      "text": "For the scan to be successful, the sticker should be on the box.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5185185185185186,
+        "edit_ratio": 0.5441176470588236
+      },
+      "prior_shortcut_margin": -3.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.25,
+        "logit_2": 29.875,
+        "prob_1": 0.9669140577316284,
+        "prob_2": 0.03308597952127457,
+        "correct_margin": 3.375,
+        "shortcut_margin": -3.375,
+        "prior_shortcut_margin": -3.375,
+        "prior_correct_margin": 3.375
+      },
+      "surface_surprisal": 3.1919100284576416,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 29.5,
+        "prob_1": 0.8933094143867493,
+        "prob_2": 0.10669060051441193,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: I am checking in a board game. For the scan to be successful, the sticker should be on the box. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "For the scan to be successful, the sticker should be on the box.",
+        "start": 41,
+        "end": 105,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "This information is relevant to the detected constraint that I am checking in a board game, as the sticker's placement affects the scanning process.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am checking in a board game. The inventory sticker must be on the box lid before the librarian scans it. This information is relevant to the detected constraint that I am checking in a board game, as the sticker's placement affects the scanning process. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 31.75,
+      "logit_2": 29.375,
+      "prob_1": 0.9149009585380554,
+      "prob_2": 0.08509904146194458,
+      "correct_margin": 2.375,
+      "shortcut_margin": -2.375
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I am checking in a board game. For the scan to be successful, the sticker should be on the box. This information is relevant to the detected constraint that I am checking in a board game, as the sticker's placement affects the scanning process. What should I bring to the desk?\nOption1: The game box with the sticker attached\nOption2: Only the inventory sticker\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.25,
+      "logit_2": 28.875,
+      "prob_1": 0.9669140577316284,
+      "prob_2": 0.03308597952127457,
+      "correct_margin": 3.375,
+      "shortcut_margin": -3.375
+    }
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "item_index": 319,
+  "item_id": "319",
+  "split": "test",
+  "gold": "1",
+  "detector": {
+    "hallucination_probability": 0.3361164752981442,
+    "predicted_hallucination": false,
+    "shortcut_source": "top_span_fallback",
+    "constraint_source": "predicted_constraint"
+  },
+  "shortcut": {
+    "text": "I am returning used catering trays.",
+    "located": {
+      "text": "I am returning used catering trays.",
+      "start": 10,
+      "end": 45,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "constraint": {
+    "text": "The venue says food-contact items go to the dish return door, not the event office.",
+    "located": {
+      "text": "The venue says food-contact items go to the dish return door, not the event office.",
+      "start": 46,
+      "end": 129,
+      "match_method": "exact",
+      "match_score": 1.0
+    }
+  },
+  "original": {
+    "prompt": "Scenario: I am returning used catering trays. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "prior_probe": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.25,
+      "logit_2": 30.375,
+      "prob_1": 0.8670357465744019,
+      "prob_2": 0.13296423852443695,
+      "correct_margin": 1.875,
+      "shortcut_margin": -1.875,
+      "prior_shortcut_margin": -1.875,
+      "prior_correct_margin": 1.875
+    },
+    "surface_surprisal": 6.17991828918457,
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.25,
+      "logit_2": 29.75,
+      "prob_1": 0.9241418242454529,
+      "prob_2": 0.07585817575454712,
+      "correct_margin": 2.5,
+      "shortcut_margin": -2.5
+    }
+  },
+  "all_paraphrase_candidates": [
+    {
+      "candidate_id": "p01",
+      "text": "I'm bringing back used catering equipment.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p01",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.36
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.875,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 5.751404762268066,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.625,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: I'm bringing back used catering equipment. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm bringing back used catering equipment.",
+        "start": 10,
+        "end": 52,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p02",
+      "text": "I've got catering trays to return.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p02",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.4328358208955224
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 31.125,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 5.646585941314697,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.0,
+        "prob_1": 0.9241418242454529,
+        "prob_2": 0.07585817575454712,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5
+      },
+      "prompt": "Scenario: I've got catering trays to return. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've got catering trays to return.",
+        "start": 10,
+        "end": 44,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p03",
+      "text": "I'm returning some used serving dishes.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p03",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "The paraphrase is not related to food-contact items or the venue's guidelines."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.2777777777777778
+      },
+      "prior_shortcut_margin": -1.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.25,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75,
+        "prior_shortcut_margin": -1.75,
+        "prior_correct_margin": 1.75
+      },
+      "surface_surprisal": 5.3563055992126465,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 29.0,
+        "prob_1": 0.977022647857666,
+        "prob_2": 0.022977370768785477,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75
+      },
+      "prompt": "Scenario: I'm returning some used serving dishes. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm returning some used serving dishes.",
+        "start": 10,
+        "end": 49,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p04",
+      "text": "I've got used catering trays that need to be taken back.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p04",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4444444444444444,
+        "edit_ratio": 0.4606741573033708
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.625,
+        "logit_2": 30.75,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 4.115075588226318,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 30.0,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0
+      },
+      "prompt": "Scenario: I've got used catering trays that need to be taken back. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've got used catering trays that need to be taken back.",
+        "start": 10,
+        "end": 66,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p05",
+      "text": "I'm bringing back some catering equipment that's been used.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p05",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.3529411764705882,
+        "edit_ratio": 0.4565217391304348
+      },
+      "prior_shortcut_margin": -0.75,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.5,
+        "prob_1": 0.6791787147521973,
+        "prob_2": 0.3208213150501251,
+        "correct_margin": 0.75,
+        "shortcut_margin": -0.75,
+        "prior_shortcut_margin": -0.75,
+        "prior_correct_margin": 0.75
+      },
+      "surface_surprisal": 4.429684162139893,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 29.75,
+        "prob_1": 0.8933094143867493,
+        "prob_2": 0.10669060051441193,
+        "correct_margin": 2.125,
+        "shortcut_margin": -2.125
+      },
+      "prompt": "Scenario: I'm bringing back some catering equipment that's been used. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm bringing back some catering equipment that's been used.",
+        "start": 10,
+        "end": 69,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p06",
+      "text": "I've got catering items to return after the event.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p06",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "The paraphrase does not mention the venue's guidelines or food-contact items."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.25,
+        "edit_ratio": 0.5903614457831325
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.75,
+        "logit_2": 31.375,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 4.518526077270508,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 33.0,
+        "logit_2": 29.375,
+        "prob_1": 0.9740425944328308,
+        "prob_2": 0.02595735713839531,
+        "correct_margin": 3.625,
+        "shortcut_margin": -3.625
+      },
+      "prompt": "Scenario: I've got catering items to return after the event. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've got catering items to return after the event.",
+        "start": 10,
+        "end": 60,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p07",
+      "text": "I'm returning used trays from the catering service.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p07",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.30952380952380953
+      },
+      "prior_shortcut_margin": -2.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 29.875,
+        "prob_1": 0.9465966820716858,
+        "prob_2": 0.0534033328294754,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875,
+        "prior_shortcut_margin": -2.875,
+        "prior_correct_margin": 2.875
+      },
+      "surface_surprisal": 4.555063247680664,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 29.0,
+        "prob_1": 0.977022647857666,
+        "prob_2": 0.022977370768785477,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75
+      },
+      "prompt": "Scenario: I'm returning used trays from the catering service. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm returning used trays from the catering service.",
+        "start": 10,
+        "end": 61,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p08",
+      "text": "I've got used catering items to take back.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p08",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4,
+        "edit_ratio": 0.43999999999999995
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 31.0,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 5.396458148956299,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.375,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: I've got used catering items to take back. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've got used catering items to take back.",
+        "start": 10,
+        "end": 52,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p09",
+      "text": "I'm bringing back catering trays that have been used.",
+      "valid": true,
+      "review": {
+        "candidate_id": "p09",
+        "semantic_equivalent": true,
+        "entities_preserved": true,
+        "quantities_preserved": true,
+        "negation_modality_preserved": true,
+        "correct_answer_preserved": true,
+        "no_new_constraint": true,
+        "no_answer_leak": true,
+        "naturalness": 5,
+        "notes": ""
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.5,
+        "edit_ratio": 0.41860465116279066
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.875,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 4.666078090667725,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.125,
+        "prob_1": 0.851952850818634,
+        "prob_2": 0.14804719388484955,
+        "correct_margin": 1.75,
+        "shortcut_margin": -1.75
+      },
+      "prompt": "Scenario: I'm bringing back catering trays that have been used. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm bringing back catering trays that have been used.",
+        "start": 10,
+        "end": 63,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    {
+      "candidate_id": "p10",
+      "text": "I've got used serving items to return to the venue.",
+      "valid": false,
+      "review": {
+        "candidate_id": "p10",
+        "semantic_equivalent": false,
+        "entities_preserved": false,
+        "quantities_preserved": false,
+        "negation_modality_preserved": false,
+        "correct_answer_preserved": false,
+        "no_new_constraint": false,
+        "no_answer_leak": false,
+        "naturalness": 2,
+        "notes": "The paraphrase does not mention the venue's guidelines or food-contact items."
+      },
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.23529411764705885,
+        "edit_ratio": 0.7142857142857143
+      },
+      "prior_shortcut_margin": -2.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.5,
+        "prob_1": 0.8807970285415649,
+        "prob_2": 0.11920291930437088,
+        "correct_margin": 2.0,
+        "shortcut_margin": -2.0,
+        "prior_shortcut_margin": -2.0,
+        "prior_correct_margin": 2.0
+      },
+      "surface_surprisal": 4.647396564483643,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.125,
+        "prob_1": 0.9149009585380554,
+        "prob_2": 0.08509904146194458,
+        "correct_margin": 2.375,
+        "shortcut_margin": -2.375
+      },
+      "prompt": "Scenario: I've got used serving items to return to the venue. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've got used serving items to return to the venue.",
+        "start": 10,
+        "end": 61,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  ],
+  "selected": {
+    "prior_low": {
+      "candidate_id": "p07",
+      "text": "I'm returning used trays from the catering service.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.30952380952380953
+      },
+      "prior_shortcut_margin": -2.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 29.875,
+        "prob_1": 0.9465966820716858,
+        "prob_2": 0.0534033328294754,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875,
+        "prior_shortcut_margin": -2.875,
+        "prior_correct_margin": 2.875
+      },
+      "surface_surprisal": 4.555063247680664,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 29.0,
+        "prob_1": 0.977022647857666,
+        "prob_2": 0.022977370768785477,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75
+      },
+      "prompt": "Scenario: I'm returning used trays from the catering service. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm returning used trays from the catering service.",
+        "start": 10,
+        "end": 61,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_mid": {
+      "candidate_id": "p02",
+      "text": "I've got catering trays to return.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.4328358208955224
+      },
+      "prior_shortcut_margin": -0.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 31.125,
+        "prob_1": 0.7057850360870361,
+        "prob_2": 0.29421496391296387,
+        "correct_margin": 0.875,
+        "shortcut_margin": -0.875,
+        "prior_shortcut_margin": -0.875,
+        "prior_correct_margin": 0.875
+      },
+      "surface_surprisal": 5.646585941314697,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.5,
+        "logit_2": 30.0,
+        "prob_1": 0.9241418242454529,
+        "prob_2": 0.07585817575454712,
+        "correct_margin": 2.5,
+        "shortcut_margin": -2.5
+      },
+      "prompt": "Scenario: I've got catering trays to return. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've got catering trays to return.",
+        "start": 10,
+        "end": 44,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "prior_high": {
+      "candidate_id": "p01",
+      "text": "I'm bringing back used catering equipment.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4615384615384615,
+        "edit_ratio": 0.36
+      },
+      "prior_shortcut_margin": -0.375,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.25,
+        "logit_2": 30.875,
+        "prob_1": 0.5926666259765625,
+        "prob_2": 0.4073334336280823,
+        "correct_margin": 0.375,
+        "shortcut_margin": -0.375,
+        "prior_shortcut_margin": -0.375,
+        "prior_correct_margin": 0.375
+      },
+      "surface_surprisal": 5.751404762268066,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.625,
+        "prob_1": 0.7772998809814453,
+        "prob_2": 0.22270014882087708,
+        "correct_margin": 1.25,
+        "shortcut_margin": -1.25
+      },
+      "prompt": "Scenario: I'm bringing back used catering equipment. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm bringing back used catering equipment.",
+        "start": 10,
+        "end": 52,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "common_control": {
+      "candidate_id": "p08",
+      "text": "I've got used catering items to take back.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.4,
+        "edit_ratio": 0.43999999999999995
+      },
+      "prior_shortcut_margin": -1.0,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.0,
+        "logit_2": 31.0,
+        "prob_1": 0.7310585379600525,
+        "prob_2": 0.2689414322376251,
+        "correct_margin": 1.0,
+        "shortcut_margin": -1.0,
+        "prior_shortcut_margin": -1.0,
+        "prior_correct_margin": 1.0
+      },
+      "surface_surprisal": 5.396458148956299,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 31.875,
+        "logit_2": 30.375,
+        "prob_1": 0.8175744414329529,
+        "prob_2": 0.18242551386356354,
+        "correct_margin": 1.5,
+        "shortcut_margin": -1.5
+      },
+      "prompt": "Scenario: I've got used catering items to take back. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I've got used catering items to take back.",
+        "start": 10,
+        "end": 52,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    },
+    "pdp": {
+      "candidate_id": "p07",
+      "text": "I'm returning used trays from the catering service.",
+      "valid": true,
+      "automatic_checks": {
+        "numbers_exactly_preserved": true,
+        "negation_presence_preserved": true,
+        "token_f1": 0.6666666666666667,
+        "edit_ratio": 0.30952380952380953
+      },
+      "prior_shortcut_margin": -2.875,
+      "prior_probe": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 29.875,
+        "prob_1": 0.9465966820716858,
+        "prob_2": 0.0534033328294754,
+        "correct_margin": 2.875,
+        "shortcut_margin": -2.875,
+        "prior_shortcut_margin": -2.875,
+        "prior_correct_margin": 2.875
+      },
+      "surface_surprisal": 4.555063247680664,
+      "full_prompt": {
+        "prediction": "1",
+        "is_correct": true,
+        "logit_1": 32.75,
+        "logit_2": 29.0,
+        "prob_1": 0.977022647857666,
+        "prob_2": 0.022977370768785477,
+        "correct_margin": 3.75,
+        "shortcut_margin": -3.75
+      },
+      "prompt": "Scenario: I'm returning used trays from the catering service. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+      "located_span": {
+        "text": "I'm returning used trays from the catering service.",
+        "start": 10,
+        "end": 61,
+        "match_method": "replacement",
+        "match_score": 1.0
+      }
+    }
+  },
+  "contextual_key_link": {
+    "text": "The used catering trays should be returned in accordance with the venue's guidelines for food-contact items.",
+    "valid": true,
+    "review": {
+      "constraint_relation_correct": true,
+      "facts_preserved": true,
+      "no_direct_answer_or_option_number": true,
+      "no_contradiction": true,
+      "naturalness": 5,
+      "notes": ""
+    },
+    "prompt": "Scenario: I am returning used catering trays. The used catering trays should be returned in accordance with the venue's guidelines for food-contact items. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.25,
+      "logit_2": 30.125,
+      "prob_1": 0.8933094143867493,
+      "prob_2": 0.10669060051441193,
+      "correct_margin": 2.125,
+      "shortcut_margin": -2.125
+    }
+  },
+  "joint_pdp_context": {
+    "prompt": "Scenario: I'm returning used trays from the catering service. The used catering trays should be returned in accordance with the venue's guidelines for food-contact items. The venue says food-contact items go to the dish return door, not the event office. Where should I put it?\nOption1: Take them to the dish return door\nOption2: Take them to the event office\nQuestion: Which one should I choose? Answer 1 for Option1 and 2 for Option2.",
+    "full_prompt": {
+      "prediction": "1",
+      "is_correct": true,
+      "logit_1": 32.0,
+      "logit_2": 29.875,
+      "prob_1": 0.8933094143867493,
+      "prob_2": 0.10669060051441193,
+      "correct_margin": 2.125,
+      "shortcut_margin": -2.125
+    }
+  }
+}

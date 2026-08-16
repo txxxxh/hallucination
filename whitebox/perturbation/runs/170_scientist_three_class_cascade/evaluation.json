@@ -1,0 +1,55 @@
+{
+  "n": 2894,
+  "class_definition": {
+    "0": "unknown regardless of answer correctness",
+    "1": "known and answer correct (true)",
+    "2": "known and answer incorrect (hallucination)"
+  },
+  "class_counts": {
+    "unknown": 1818,
+    "true": 623,
+    "hallucination": 453
+  },
+  "stage1": "169 calibrated question-only hidden ensemble OOF",
+  "stage2": "frozen 103 config on strict-known subset: mean layer14 PCA64 + base_probe, C=.1, 5 seeds grouped 5-fold OOF",
+  "conditional_known_hallucination_auroc": 0.9123127783742412,
+  "conditional_known_hallucination_auprc": 0.9015323871612151,
+  "three_class_ovr_macro_auroc": 0.8114550394751011,
+  "three_class_ovr_weighted_auroc": 0.7838133960391259,
+  "three_class_ovr_micro_auroc": 0.8714535327720915,
+  "per_class": {
+    "unknown": {
+      "auroc": 0.7487015430167552,
+      "auprc": 0.8283540176698643
+    },
+    "true": {
+      "auroc": 0.8447703721923365,
+      "auprc": 0.7485824340178716
+    },
+    "hallucination": {
+      "auroc": 0.8408932032162116,
+      "auprc": 0.7121273341483357
+    }
+  },
+  "accuracy": 0.7429163787145819,
+  "balanced_accuracy": 0.6250282147331448,
+  "macro_f1": 0.6581993240517121,
+  "confusion_rows_unknown_true_hallucination": [
+    [
+      1621,
+      197,
+      0
+    ],
+    [
+      266,
+      306,
+      51
+    ],
+    [
+      206,
+      24,
+      223
+    ]
+  ],
+  "warning": "stage1 uses random stratified OOF and permits entity leakage; stage2 uses candidate-grouped OOF; 103 configuration was selected on the same known dataset"
+}
