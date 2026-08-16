@@ -1,0 +1,42 @@
+{
+  "label_source": "/home/tong56/whitebox/perturbation/runs/77_closedbook_fact_probe_results.jsonl",
+  "question_and_qid_source": "/home/tong56/whitebox/perturbation/runs/76_closedbook_fact_probe_manifest.jsonl",
+  "record_filter_source": "/home/tong56/whitebox/tool_gate_correctness_names_llama31_8b/records.jsonl",
+  "filter": "parse_valid missing or true",
+  "label_rule": "n_discriminative_facts>=1 AND binary_accuracy>0.5 AND pairwise_owner_accuracy>0.5",
+  "n": 2894,
+  "known": 1076,
+  "unknown": 1818,
+  "manifest_n": 2925,
+  "probe_n": 2925,
+  "records_n": 2925,
+  "groups": 28,
+  "group_size_min": 1,
+  "group_size_max": 2858,
+  "group_size_histogram": {
+    "1": 22,
+    "2": 4,
+    "6": 1,
+    "2858": 1
+  },
+  "manifest_fields": [
+    "key",
+    "n_discriminative_facts",
+    "probes",
+    "question",
+    "right_answer",
+    "right_qid",
+    "wrong_answer",
+    "wrong_qid"
+  ],
+  "probe_label_fields": [
+    "n_discriminative_facts",
+    "binary_accuracy",
+    "pairwise_owner_accuracy"
+  ],
+  "hashes": {
+    "/home/tong56/whitebox/perturbation/runs/76_closedbook_fact_probe_manifest.jsonl": "60a5a3396c27c304d10ad63b8a447cf3c8613944f392b1f61cec0905cb776890",
+    "/home/tong56/whitebox/perturbation/runs/77_closedbook_fact_probe_results.jsonl": "085de50e9b0c0487cb3161c97cfbeb3d3732a4527287ea25758e9a66df1a6533",
+    "/home/tong56/whitebox/tool_gate_correctness_names_llama31_8b/records.jsonl": "831020f375de33eff7c6b79963db52c42117457d8183804fcc6aa6e4dfb5c284"
+  }
+}

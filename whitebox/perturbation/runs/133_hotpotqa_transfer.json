@@ -1,0 +1,163 @@
+{
+  "dataset": "HotpotQA distractor validation; all supporting paragraphs retained, distractors packed to 3600 chars",
+  "protocol": "frozen current127 configuration; 3x5 stratified OOF; no HotpotQA hyperparameter selection",
+  "n": 200,
+  "correct": 100,
+  "incorrect": 100,
+  "fixed_config": "nonoverlap stage1 32 + physical-delete minimal stage2 12 + delete delta 3 + dual hidden PCA32 + layer14 PCA48; LR C=.03",
+  "decoy_audit": {
+    "same_generation_process_for_both_labels": true,
+    "matches_gold": 0
+  },
+  "results": {
+    "fixed_detector": {
+      "mean": {
+        "auroc": 0.6329,
+        "auprc": 0.6043316600853019,
+        "balanced_accuracy": 0.5916666666666667
+      },
+      "per_seed": [
+        {
+          "auroc": 0.606,
+          "auprc": 0.5876735157035072,
+          "balanced_accuracy": 0.575
+        },
+        {
+          "auroc": 0.6842,
+          "auprc": 0.642792063431326,
+          "balanced_accuracy": 0.635
+        },
+        {
+          "auroc": 0.6085,
+          "auprc": 0.5825294011210727,
+          "balanced_accuracy": 0.565
+        }
+      ]
+    },
+    "answer_length_only": {
+      "mean": {
+        "auroc": 0.6840166666666668,
+        "auprc": 0.6818989279416554,
+        "balanced_accuracy": 0.6066666666666666
+      },
+      "per_seed": [
+        {
+          "auroc": 0.6688500000000002,
+          "auprc": 0.6500535197444248,
+          "balanced_accuracy": 0.61
+        },
+        {
+          "auroc": 0.6948000000000001,
+          "auprc": 0.704479290302076,
+          "balanced_accuracy": 0.61
+        },
+        {
+          "auroc": 0.6884,
+          "auprc": 0.6911639737784656,
+          "balanced_accuracy": 0.6
+        }
+      ]
+    },
+    "unperturbed_scores_only": {
+      "mean": {
+        "auroc": 0.5415666666666666,
+        "auprc": 0.543214357308172,
+        "balanced_accuracy": 0.5599999999999999
+      },
+      "per_seed": [
+        {
+          "auroc": 0.5105999999999999,
+          "auprc": 0.5128972824092369,
+          "balanced_accuracy": 0.5449999999999999
+        },
+        {
+          "auroc": 0.5535000000000001,
+          "auprc": 0.5526915542626254,
+          "balanced_accuracy": 0.575
+        },
+        {
+          "auroc": 0.5606,
+          "auprc": 0.5640542352526536,
+          "balanced_accuracy": 0.56
+        }
+      ]
+    }
+  },
+  "fixed_detector_slices": [
+    {
+      "seed": 42,
+      "level": {
+        "hard": {
+          "n": 200,
+          "auroc": 0.606,
+          "auprc": 0.5876735157035072,
+          "balanced_accuracy": 0.575
+        }
+      },
+      "type": {
+        "bridge": {
+          "n": 156,
+          "auroc": 0.5967369808833224,
+          "auprc": 0.550928009034154,
+          "balanced_accuracy": 0.5677323665128543
+        },
+        "comparison": {
+          "n": 44,
+          "auroc": 0.6132478632478633,
+          "auprc": 0.7272796631896811,
+          "balanced_accuracy": 0.5598290598290598
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "level": {
+        "hard": {
+          "n": 200,
+          "auroc": 0.6842,
+          "auprc": 0.642792063431326,
+          "balanced_accuracy": 0.635
+        }
+      },
+      "type": {
+        "bridge": {
+          "n": 156,
+          "auroc": 0.6567237969676994,
+          "auprc": 0.581465611727576,
+          "balanced_accuracy": 0.6252471984179302
+        },
+        "comparison": {
+          "n": 44,
+          "auroc": 0.7713675213675214,
+          "auprc": 0.8596257955980995,
+          "balanced_accuracy": 0.6346153846153846
+        }
+      }
+    },
+    {
+      "seed": 44,
+      "level": {
+        "hard": {
+          "n": 200,
+          "auroc": 0.6085,
+          "auprc": 0.5825294011210727,
+          "balanced_accuracy": 0.565
+        }
+      },
+      "type": {
+        "bridge": {
+          "n": 156,
+          "auroc": 0.5810810810810811,
+          "auprc": 0.5231335299231931,
+          "balanced_accuracy": 0.5533948582729071
+        },
+        "comparison": {
+          "n": 44,
+          "auroc": 0.6987179487179488,
+          "auprc": 0.7998682805047962,
+          "balanced_accuracy": 0.5790598290598291
+        }
+      }
+    }
+  ]
+}

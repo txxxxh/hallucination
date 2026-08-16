@@ -1,0 +1,704 @@
+{
+  "config": {
+    "in82": "runs/82_active_n30_r32_q4.jsonl",
+    "items": "data/items_n128_generation_flip.json",
+    "basis": "runs/81_q0000_active_basis.pt",
+    "out": "runs/95_active_abs_pair_screening_n5_m5.json",
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "samples": 5,
+    "m": 5,
+    "rank": 32,
+    "steps": 2,
+    "directions": 4,
+    "repeats": 2,
+    "mu": 0.25,
+    "lr": 0.35,
+    "budgets": [
+      3,
+      5,
+      8
+    ],
+    "max_rows": 16,
+    "seed": 42
+  },
+  "elapsed_seconds": 185.96630716323853,
+  "items": [
+    {
+      "item_id": "question_1199",
+      "m": 5,
+      "n_pairs": 10,
+      "span_ids": [
+        80,
+        111,
+        83,
+        69,
+        76
+      ],
+      "span_text": [
+        "crystallography, they advanced",
+        "in Chemistry. Who",
+        "the understanding of",
+        "biophysicist, and university",
+        "to the field"
+      ],
+      "single_u": [
+        5.623139262199402,
+        9.263409972190857,
+        2.753523826599121,
+        8.763162970542908,
+        6.994184494018555
+      ],
+      "joint_u": [
+        9.22666072845459,
+        8.28531265258789,
+        8.795873641967773,
+        7.293105959892273,
+        9.410452842712402,
+        9.48012638092041,
+        9.22666072845459,
+        9.04825496673584,
+        7.602656841278076,
+        9.5177001953125
+      ],
+      "interaction": [
+        -5.659888505935669,
+        -0.09135043621063232,
+        -5.590428590774536,
+        -5.324217796325684,
+        -2.6064809560775757,
+        -8.546446561813354,
+        -7.030933737754822,
+        -2.468431830406189,
+        -2.1450514793395996,
+        -6.239647269248962
+      ],
+      "pair_seconds": 24.695709228515625,
+      "methods": {
+        "active_singleton_sum": {
+          "3": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              3,
+              4
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          },
+          "5": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              3,
+              4
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              3,
+              4
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          }
+        },
+        "max_singleton": {
+          "3": {
+            "recall": false,
+            "regret": 0.037573814392089844,
+            "selected_pair": [
+              1,
+              3
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          },
+          "5": {
+            "recall": false,
+            "regret": 0.037573814392089844,
+            "selected_pair": [
+              1,
+              3
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              3,
+              4
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          }
+        }
+      }
+    },
+    {
+      "item_id": "question_1400",
+      "m": 5,
+      "n_pairs": 10,
+      "span_ids": [
+        52,
+        36,
+        14,
+        64,
+        71
+      ],
+      "span_text": [
+        "a nuclear physicist",
+        "Humboldt-Universität zu",
+        "and university",
+        "earned them the",
+        "However, this physicist"
+      ],
+      "single_u": [
+        9.123887062072754,
+        8.414405822753906,
+        7.564773082733154,
+        15.434446334838867,
+        9.078420639038086
+      ],
+      "joint_u": [
+        11.563692092895508,
+        9.595733344554901,
+        16.815460205078125,
+        10.11146354675293,
+        8.755207061767578,
+        17.58818405866623,
+        11.383309364318848,
+        16.815460205078125,
+        11.0355806350708,
+        16.815460205078125
+      ],
+      "interaction": [
+        -5.974600791931152,
+        -7.092926800251007,
+        -7.742873191833496,
+        -8.09084415435791,
+        -7.223971843719482,
+        -6.260668098926544,
+        -6.1095170974731445,
+        -6.1837592124938965,
+        -5.6076130867004395,
+        -7.697406768798828
+      ],
+      "pair_seconds": 19.966026544570923,
+      "methods": {
+        "active_singleton_sum": {
+          "3": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              1,
+              3
+            ],
+            "true_pair": [
+              1,
+              3
+            ]
+          },
+          "5": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              1,
+              3
+            ],
+            "true_pair": [
+              1,
+              3
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              1,
+              3
+            ],
+            "true_pair": [
+              1,
+              3
+            ]
+          }
+        },
+        "max_singleton": {
+          "3": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              1,
+              3
+            ],
+            "true_pair": [
+              1,
+              3
+            ]
+          },
+          "5": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              1,
+              3
+            ],
+            "true_pair": [
+              1,
+              3
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              1,
+              3
+            ],
+            "true_pair": [
+              1,
+              3
+            ]
+          }
+        }
+      }
+    },
+    {
+      "item_id": "question_1498",
+      "m": 5,
+      "n_pairs": 10,
+      "span_ids": [
+        138,
+        125,
+        106,
+        131,
+        169
+      ],
+      "span_text": [
+        "Fellow of the",
+        "and the American",
+        "distinguished career, they",
+        "Gold Medal, while",
+        "of Technology. Who"
+      ],
+      "single_u": [
+        4.4973931312561035,
+        4.3169755935668945,
+        4.547136306762695,
+        5.415716171264648,
+        5.136544704437256
+      ],
+      "joint_u": [
+        5.910224437713623,
+        5.119379043579102,
+        6.362644672393799,
+        6.504929065704346,
+        5.314336776733398,
+        6.694641590118408,
+        7.979485034942627,
+        5.533125400543213,
+        7.224955081939697,
+        12.136947631835938
+      ],
+      "interaction": [
+        -2.904144287109375,
+        -3.9251503944396973,
+        -3.550464630126953,
+        -3.1290087699890137,
+        -3.5497751235961914,
+        -3.0380501747131348,
+        -1.4740352630615234,
+        -4.429727077484131,
+        -2.458725929260254,
+        1.5846867561340332
+      ],
+      "pair_seconds": 27.73475432395935,
+      "methods": {
+        "active_singleton_sum": {
+          "3": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              3,
+              4
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          },
+          "5": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              3,
+              4
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              3,
+              4
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          }
+        },
+        "max_singleton": {
+          "3": {
+            "recall": false,
+            "regret": 5.442306041717529,
+            "selected_pair": [
+              1,
+              3
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          },
+          "5": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              3,
+              4
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              3,
+              4
+            ],
+            "true_pair": [
+              3,
+              4
+            ]
+          }
+        }
+      }
+    },
+    {
+      "item_id": "question_0503",
+      "m": 5,
+      "n_pairs": 10,
+      "span_ids": [
+        77,
+        67,
+        51,
+        56,
+        27
+      ],
+      "span_text": [
+        "career. Highly decorated",
+        "significant contributions to",
+        "receive the",
+        "Chemistry. Who",
+        "Prize, the"
+      ],
+      "single_u": [
+        6.869261741638184,
+        6.5196554362773895,
+        8.226555824279785,
+        5.636944770812988,
+        7.328481197357178
+      ],
+      "joint_u": [
+        9.094365119934082,
+        11.077262878417969,
+        7.65478515625,
+        8.342745780944824,
+        8.79172420501709,
+        6.864780426025391,
+        11.712749481201172,
+        9.256881445646286,
+        9.416825294494629,
+        7.845716953277588
+      ],
+      "interaction": [
+        -4.294552057981491,
+        -4.0185546875,
+        -4.851421356201172,
+        -5.854997158050537,
+        -5.954487055540085,
+        -5.291819781064987,
+        -2.1353871524333954,
+        -4.606619149446487,
+        -6.138211727142334,
+        -5.119709014892578
+      ],
+      "pair_seconds": 24.205379724502563,
+      "methods": {
+        "active_singleton_sum": {
+          "3": {
+            "recall": false,
+            "regret": 0.6354866027832031,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_pair": [
+              1,
+              4
+            ]
+          },
+          "5": {
+            "recall": false,
+            "regret": 0.6354866027832031,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_pair": [
+              1,
+              4
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              1,
+              4
+            ],
+            "true_pair": [
+              1,
+              4
+            ]
+          }
+        },
+        "max_singleton": {
+          "3": {
+            "recall": false,
+            "regret": 0.6354866027832031,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_pair": [
+              1,
+              4
+            ]
+          },
+          "5": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              1,
+              4
+            ],
+            "true_pair": [
+              1,
+              4
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              1,
+              4
+            ],
+            "true_pair": [
+              1,
+              4
+            ]
+          }
+        }
+      }
+    },
+    {
+      "item_id": "question_1803",
+      "m": 5,
+      "n_pairs": 10,
+      "span_ids": [
+        112,
+        39,
+        162,
+        132,
+        54
+      ],
+      "span_text": [
+        "decorated career, they",
+        "Prize, and",
+        "Harvard University or",
+        "the Remsen Award",
+        "the Royal"
+      ],
+      "single_u": [
+        7.484846115112305,
+        5.075772285461426,
+        5.802453994750977,
+        3.2838385105133057,
+        4.01081657409668
+      ],
+      "joint_u": [
+        7.255194664001465,
+        8.030787467956543,
+        7.192619323730469,
+        8.34169864654541,
+        6.503391265869141,
+        5.016549110412598,
+        5.075284957885742,
+        6.398950576782227,
+        6.923135280609131,
+        4.580294631421566
+      ],
+      "interaction": [
+        -5.305423736572266,
+        -5.256512641906738,
+        -3.5760653018951416,
+        -3.153964042663574,
+        -4.374835014343262,
+        -3.343061685562134,
+        -4.011303901672363,
+        -2.6873419284820557,
+        -2.8901352882385254,
+        -2.7143604531884193
+      ],
+      "pair_seconds": 30.024545431137085,
+      "methods": {
+        "active_singleton_sum": {
+          "3": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              0,
+              4
+            ],
+            "true_pair": [
+              0,
+              4
+            ]
+          },
+          "5": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              0,
+              4
+            ],
+            "true_pair": [
+              0,
+              4
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              0,
+              4
+            ],
+            "true_pair": [
+              0,
+              4
+            ]
+          }
+        },
+        "max_singleton": {
+          "3": {
+            "recall": false,
+            "regret": 0.3109111785888672,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_pair": [
+              0,
+              4
+            ]
+          },
+          "5": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              0,
+              4
+            ],
+            "true_pair": [
+              0,
+              4
+            ]
+          },
+          "8": {
+            "recall": true,
+            "regret": 0.0,
+            "selected_pair": [
+              0,
+              4
+            ],
+            "true_pair": [
+              0,
+              4
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "active_singleton_sum": {
+      "3": {
+        "recall": 0.8,
+        "regret": 0.12709732055664064
+      },
+      "5": {
+        "recall": 0.8,
+        "regret": 0.12709732055664064
+      },
+      "8": {
+        "recall": 1.0,
+        "regret": 0.0
+      }
+    },
+    "max_singleton": {
+      "3": {
+        "recall": 0.2,
+        "regret": 1.285255527496338
+      },
+      "5": {
+        "recall": 0.8,
+        "regret": 0.007514762878417969
+      },
+      "8": {
+        "recall": 1.0,
+        "regret": 0.0
+      }
+    }
+  }
+}

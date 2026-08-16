@@ -1,0 +1,1741 @@
+{
+  "config": {
+    "in61": "runs/61.jsonl",
+    "out": "runs/93_top2_optimization_pilot_n5_m24.json",
+    "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "samples": 5,
+    "m": 24,
+    "hvp_rank": 8,
+    "hvp_eps": 0.2,
+    "steps": 20,
+    "restarts": 6,
+    "lr": 0.15,
+    "binary_penalty": 0.1,
+    "budgets": [
+      10,
+      20,
+      40
+    ],
+    "max_rows": 16,
+    "seed": 42
+  },
+  "elapsed_seconds": 137.76411724090576,
+  "items": [
+    {
+      "item_id": "question_1199",
+      "m": 20,
+      "n_pairs": 190,
+      "exact_seconds": 5.502039194107056,
+      "source_ids": [
+        47,
+        6,
+        4,
+        56,
+        63,
+        0,
+        60,
+        31,
+        18,
+        23,
+        38,
+        76,
+        81,
+        43,
+        2,
+        73,
+        20,
+        45,
+        40,
+        36
+      ],
+      "span_text": [
+        "individual never",
+        "impact as",
+        "a profound",
+        "a chemist, crystallographer",
+        "Dedicating their career",
+        "This distinguished",
+        "and university teacher",
+        "and received",
+        "to the",
+        "they advanced",
+        "work. However",
+        "complex molecular structures",
+        "numerous prestigious honors",
+        "achievements in",
+        "scientist had",
+        "the understanding of",
+        "field of",
+        "science, this",
+        "despite their",
+        "for their"
+      ],
+      "continuous_pairs": [
+        [
+          3,
+          13
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          10,
+          17
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          4,
+          17
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          13,
+          16
+        ]
+      ],
+      "continuous_traces": [
+        {
+          "best_continuous_score": -1.9024616479873657,
+          "pair": [
+            4,
+            17
+          ]
+        },
+        {
+          "best_continuous_score": -1.9278864860534668,
+          "pair": [
+            3,
+            7
+          ]
+        },
+        {
+          "best_continuous_score": -1.8522390127182007,
+          "pair": [
+            10,
+            17
+          ]
+        },
+        {
+          "best_continuous_score": -1.8533096313476562,
+          "pair": [
+            3,
+            13
+          ]
+        },
+        {
+          "best_continuous_score": -1.801438331604004,
+          "pair": [
+            6,
+            12
+          ]
+        },
+        {
+          "best_continuous_score": -1.7779630422592163,
+          "pair": [
+            9,
+            16
+          ]
+        }
+      ],
+      "methods": {
+        "singleton_sum": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              1,
+              2
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.049277663230895996
+          },
+          "20": {
+            "best_effect_recall": true,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              1,
+              12
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.0
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              1,
+              12
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.0
+          }
+        },
+        "gradient": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              3,
+              19
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.2749277353286743
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              3,
+              8
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.2509450912475586
+          },
+          "40": {
+            "best_effect_recall": false,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              4,
+              7
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.22523200511932373
+          }
+        },
+        "hvp_quadratic": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              1,
+              16
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.500055193901062
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              4,
+              9
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.09983515739440918
+          },
+          "40": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              4,
+              9
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.09983515739440918
+          }
+        },
+        "hybrid": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              3,
+              8
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.2509450912475586
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              3,
+              8
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.2509450912475586
+          },
+          "40": {
+            "best_effect_recall": false,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              1,
+              2
+            ],
+            "true_best_pair": [
+              1,
+              12
+            ],
+            "effect_regret": 0.049277663230895996
+          }
+        }
+      }
+    },
+    {
+      "item_id": "question_1400",
+      "m": 14,
+      "n_pairs": 91,
+      "exact_seconds": 2.1588306427001953,
+      "source_ids": [
+        50,
+        45,
+        25,
+        17,
+        22,
+        55,
+        27,
+        40,
+        30,
+        7,
+        33,
+        36,
+        12,
+        35
+      ],
+      "span_text": [
+        "and university teacher",
+        "as a nuclear",
+        "prestigious Albert",
+        "Their significant",
+        "earned them",
+        "achievements in physics",
+        "Einstein Award",
+        "prominent scientist made",
+        "this physicist",
+        "lasting contributions",
+        "studied at",
+        "Born in Budapest",
+        "physicist, inventor",
+        "the Humboldt-Universität"
+      ],
+      "continuous_pairs": [
+        [
+          10,
+          13
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "continuous_traces": [
+        {
+          "best_continuous_score": 0.5183059573173523,
+          "pair": [
+            10,
+            13
+          ]
+        },
+        {
+          "best_continuous_score": 0.5579889416694641,
+          "pair": [
+            10,
+            11
+          ]
+        },
+        {
+          "best_continuous_score": 0.5578081607818604,
+          "pair": [
+            9,
+            10
+          ]
+        },
+        {
+          "best_continuous_score": 0.5288506746292114,
+          "pair": [
+            11,
+            12
+          ]
+        },
+        {
+          "best_continuous_score": 0.47851812839508057,
+          "pair": [
+            7,
+            12
+          ]
+        },
+        {
+          "best_continuous_score": 0.5176986455917358,
+          "pair": [
+            10,
+            13
+          ]
+        }
+      ],
+      "methods": {
+        "singleton_sum": {
+          "10": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              12
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.0
+          },
+          "20": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              12
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.0
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              12
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.0
+          }
+        },
+        "gradient": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              7,
+              13
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.7807146310806274
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              7,
+              13
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.7807146310806274
+          },
+          "40": {
+            "best_effect_recall": false,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              7,
+              13
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.7807146310806274
+          }
+        },
+        "hvp_quadratic": {
+          "10": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              12
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.0
+          },
+          "20": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              12
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.0
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              11,
+              12
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.0
+          }
+        },
+        "hybrid": {
+          "10": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              12
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.0
+          },
+          "20": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              12
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.0
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              12
+            ],
+            "true_best_pair": [
+              11,
+              12
+            ],
+            "effect_regret": 0.0
+          }
+        }
+      }
+    },
+    {
+      "item_id": "question_1498",
+      "m": 24,
+      "n_pairs": 276,
+      "exact_seconds": 9.414751529693604,
+      "source_ids": [
+        74,
+        62,
+        112,
+        65,
+        59,
+        51,
+        102,
+        19,
+        99,
+        21,
+        57,
+        117,
+        86,
+        34,
+        106,
+        28,
+        15,
+        68,
+        26,
+        71,
+        85,
+        109,
+        31,
+        125
+      ],
+      "span_text": [
+        "Harvard University. Over",
+        "This prominent chemist",
+        "did not receive",
+        "and university teacher",
+        "Institute of",
+        "any part",
+        "Despite their extensive",
+        "distinguished career",
+        "also being elected",
+        "they received",
+        "the California",
+        "of their education",
+        "Medal, the Remsen",
+        "Medal, while",
+        "on the chemical",
+        "the American",
+        "the course",
+        "completed part of",
+        "Award, and",
+        "their education at",
+        "numerous prestigious honors",
+        "sciences, this individual",
+        "of Chemists",
+        "Technology. Who is"
+      ],
+      "continuous_pairs": [
+        [
+          5,
+          21
+        ],
+        [
+          9,
+          17
+        ],
+        [
+          9,
+          19
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          17,
+          21
+        ],
+        [
+          19,
+          23
+        ],
+        [
+          9,
+          21
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          3,
+          19
+        ],
+        [
+          2,
+          19
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          19,
+          21
+        ],
+        [
+          9,
+          23
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          10,
+          19
+        ]
+      ],
+      "continuous_traces": [
+        {
+          "best_continuous_score": 0.5526707172393799,
+          "pair": [
+            4,
+            10
+          ]
+        },
+        {
+          "best_continuous_score": 1.51864492893219,
+          "pair": [
+            9,
+            21
+          ]
+        },
+        {
+          "best_continuous_score": 1.0235977172851562,
+          "pair": [
+            5,
+            21
+          ]
+        },
+        {
+          "best_continuous_score": 0.9869537353515625,
+          "pair": [
+            9,
+            19
+          ]
+        },
+        {
+          "best_continuous_score": 1.4009486436843872,
+          "pair": [
+            19,
+            23
+          ]
+        },
+        {
+          "best_continuous_score": 0.989382803440094,
+          "pair": [
+            9,
+            17
+          ]
+        }
+      ],
+      "methods": {
+        "singleton_sum": {
+          "10": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              7
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.0
+          },
+          "20": {
+            "best_effect_recall": true,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              0,
+              7
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.0
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              0,
+              7
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.0
+          }
+        },
+        "gradient": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              10
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.527854323387146
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              10
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.527854323387146
+          },
+          "40": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              4
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.14504218101501465
+          }
+        },
+        "hvp_quadratic": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              1,
+              23
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.7722361087799072
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              10
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.527854323387146
+          },
+          "40": {
+            "best_effect_recall": false,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              0,
+              10
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.527854323387146
+          }
+        },
+        "hybrid": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              19,
+              23
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 1.2680013179779053
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              19,
+              23
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 1.2680013179779053
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              7
+            ],
+            "true_best_pair": [
+              0,
+              7
+            ],
+            "effect_regret": 0.0
+          }
+        }
+      }
+    },
+    {
+      "item_id": "question_0503",
+      "m": 23,
+      "n_pairs": 253,
+      "exact_seconds": 7.259376287460327,
+      "source_ids": [
+        108,
+        24,
+        114,
+        75,
+        63,
+        45,
+        1,
+        96,
+        52,
+        71,
+        22,
+        57,
+        89,
+        26,
+        66,
+        20,
+        39,
+        102,
+        32,
+        18,
+        9,
+        59,
+        34
+      ],
+      "span_text": [
+        "they did not",
+        "received the",
+        "Prize in Chemistry",
+        "a distinguished career",
+        "and university teacher",
+        "the scientific",
+        "prominent chemist",
+        "Clarivate Citation Laureate",
+        "the Nobel",
+        "field of chemistry",
+        "research, they",
+        "Who is",
+        "Linus Pauling Award",
+        "Centenary Prize",
+        "made significant contributions",
+        "for their",
+        "However, despite",
+        "extensive impact on",
+        "and were",
+        "Highly decorated",
+        "to the",
+        "this person",
+        "named a"
+      ],
+      "continuous_pairs": [
+        [
+          17,
+          19
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          6,
+          21
+        ],
+        [
+          7,
+          17
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          2,
+          17
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          6,
+          13
+        ]
+      ],
+      "continuous_traces": [
+        {
+          "best_continuous_score": -0.33780381083488464,
+          "pair": [
+            7,
+            17
+          ]
+        },
+        {
+          "best_continuous_score": -0.49278759956359863,
+          "pair": [
+            16,
+            17
+          ]
+        },
+        {
+          "best_continuous_score": -0.36267223954200745,
+          "pair": [
+            17,
+            19
+          ]
+        },
+        {
+          "best_continuous_score": -0.24631662666797638,
+          "pair": [
+            6,
+            21
+          ]
+        },
+        {
+          "best_continuous_score": -0.33745312690734863,
+          "pair": [
+            2,
+            8
+          ]
+        },
+        {
+          "best_continuous_score": -0.40642741322517395,
+          "pair": [
+            2,
+            9
+          ]
+        }
+      ],
+      "methods": {
+        "singleton_sum": {
+          "10": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              7,
+              22
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.0
+          },
+          "20": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              7,
+              22
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.0
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              7,
+              22
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.0
+          }
+        },
+        "gradient": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              6,
+              8
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.6302132606506348
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              6,
+              8
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.6302132606506348
+          },
+          "40": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              7,
+              8
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.401239812374115
+          }
+        },
+        "hvp_quadratic": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              17
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.6455026268959045
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              11,
+              17
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.6455026268959045
+          },
+          "40": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              12,
+              19
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.3465142250061035
+          }
+        },
+        "hybrid": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              7,
+              17
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.32807886600494385
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              7,
+              17
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.32807886600494385
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              7,
+              22
+            ],
+            "true_best_pair": [
+              7,
+              22
+            ],
+            "effect_regret": 0.0
+          }
+        }
+      }
+    },
+    {
+      "item_id": "question_1803",
+      "m": 24,
+      "n_pairs": 276,
+      "exact_seconds": 10.191110134124756,
+      "source_ids": [
+        63,
+        89,
+        67,
+        53,
+        48,
+        36,
+        32,
+        34,
+        23,
+        118,
+        38,
+        47,
+        21,
+        42,
+        40,
+        70,
+        18,
+        12,
+        0,
+        50,
+        26,
+        15,
+        105,
+        122
+      ],
+      "span_text": [
+        "chemist and university",
+        "the National Medal",
+        "made profound contributions",
+        "nor did",
+        "Harvard University",
+        "Award, the",
+        "Science, the",
+        "Linus Pauling",
+        "they received",
+        "pursue an additional",
+        "Centenary Prize",
+        "also elected",
+        "decorated career",
+        "Remsen Award",
+        "and the",
+        "to their field",
+        "Throughout their",
+        "earning the",
+        "This distinguished",
+        "or Columbia",
+        "accolades, including",
+        "Prize in",
+        "and they were",
+        "as a playwright"
+      ],
+      "continuous_pairs": [
+        [
+          14,
+          15
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          4,
+          17
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          1,
+          22
+        ],
+        [
+          4,
+          22
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          15,
+          17
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          18,
+          22
+        ],
+        [
+          5,
+          22
+        ]
+      ],
+      "continuous_traces": [
+        {
+          "best_continuous_score": -0.47232455015182495,
+          "pair": [
+            5,
+            7
+          ]
+        },
+        {
+          "best_continuous_score": -0.4302532374858856,
+          "pair": [
+            2,
+            11
+          ]
+        },
+        {
+          "best_continuous_score": -0.17961964011192322,
+          "pair": [
+            4,
+            17
+          ]
+        },
+        {
+          "best_continuous_score": -0.559211790561676,
+          "pair": [
+            1,
+            16
+          ]
+        },
+        {
+          "best_continuous_score": -0.23239895701408386,
+          "pair": [
+            1,
+            22
+          ]
+        },
+        {
+          "best_continuous_score": -0.3663688600063324,
+          "pair": [
+            14,
+            15
+          ]
+        }
+      ],
+      "methods": {
+        "singleton_sum": {
+          "10": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.0
+          },
+          "20": {
+            "best_effect_recall": true,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.0
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": true,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.0
+          }
+        },
+        "gradient": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              2,
+              5
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.42800894379615784
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              5,
+              15
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.41017311811447144
+          },
+          "40": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              1,
+              22
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.3427574336528778
+          }
+        },
+        "hvp_quadratic": {
+          "10": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              5
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.06425529718399048
+          },
+          "20": {
+            "best_effect_recall": false,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              5
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.06425529718399048
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.0
+          }
+        },
+        "hybrid": {
+          "10": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.0
+          },
+          "20": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.0
+          },
+          "40": {
+            "best_effect_recall": true,
+            "best_interaction_recall": false,
+            "selected_pair": [
+              0,
+              2
+            ],
+            "true_best_pair": [
+              0,
+              2
+            ],
+            "effect_regret": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "singleton_sum": {
+      "10": {
+        "best_effect_recall": 0.8,
+        "best_interaction_recall": 0.2,
+        "effect_regret": 0.009855532646179199
+      },
+      "20": {
+        "best_effect_recall": 1.0,
+        "best_interaction_recall": 0.6,
+        "effect_regret": 0.0
+      },
+      "40": {
+        "best_effect_recall": 1.0,
+        "best_interaction_recall": 0.6,
+        "effect_regret": 0.0
+      }
+    },
+    "gradient": {
+      "10": {
+        "best_effect_recall": 0.0,
+        "best_interaction_recall": 0.0,
+        "effect_regret": 0.528343778848648
+      },
+      "20": {
+        "best_effect_recall": 0.0,
+        "best_interaction_recall": 0.2,
+        "effect_regret": 0.5199800848960876
+      },
+      "40": {
+        "best_effect_recall": 0.0,
+        "best_interaction_recall": 0.4,
+        "effect_regret": 0.3789972126483917
+      }
+    },
+    "hvp_quadratic": {
+      "10": {
+        "best_effect_recall": 0.2,
+        "best_interaction_recall": 0.0,
+        "effect_regret": 0.39640984535217283
+      },
+      "20": {
+        "best_effect_recall": 0.2,
+        "best_interaction_recall": 0.0,
+        "effect_regret": 0.26748948097229003
+      },
+      "40": {
+        "best_effect_recall": 0.4,
+        "best_interaction_recall": 0.4,
+        "effect_regret": 0.19484074115753175
+      }
+    },
+    "hybrid": {
+      "10": {
+        "best_effect_recall": 0.4,
+        "best_interaction_recall": 0.0,
+        "effect_regret": 0.36940505504608157
+      },
+      "20": {
+        "best_effect_recall": 0.4,
+        "best_interaction_recall": 0.2,
+        "effect_regret": 0.36940505504608157
+      },
+      "40": {
+        "best_effect_recall": 0.8,
+        "best_interaction_recall": 0.2,
+        "effect_regret": 0.009855532646179199
+      }
+    }
+  }
+}

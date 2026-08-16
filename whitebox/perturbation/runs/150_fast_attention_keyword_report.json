@@ -1,0 +1,98 @@
+{
+  "n_items": 128,
+  "n_spans": 15061,
+  "target": "rank spans by absolute exact single-span perturbation effect |u|",
+  "protocol": "5-fold item-grouped OOF for learned attention rankers; exact LOO effects are labels only; attention methods require two candidate forward passes and no span perturbation enumeration",
+  "methods": {
+    "mean_all_pred": {
+      "spearman": 0.10258857338883237,
+      "hit1": 0.015625,
+      "hit3": 0.046875,
+      "hit5": 0.0859375,
+      "hit10": 0.1640625,
+      "top1_effect_ratio": 0.3899147781367476,
+      "top5_effect_recall": 0.4384179894235446
+    },
+    "last4_pred": {
+      "spearman": 0.08702262726697707,
+      "hit1": 0.015625,
+      "hit3": 0.03125,
+      "hit5": 0.0703125,
+      "hit10": 0.1640625,
+      "top1_effect_ratio": 0.361001286111355,
+      "top5_effect_recall": 0.40951400308708813
+    },
+    "max_head_pred": {
+      "spearman": 0.10299767412153062,
+      "hit1": 0.0234375,
+      "hit3": 0.0625,
+      "hit5": 0.0859375,
+      "hit10": 0.140625,
+      "top1_effect_ratio": 0.378074396786113,
+      "top5_effect_recall": 0.44543659765217425
+    },
+    "contrast_abs_mean": {
+      "spearman": 0.08960467684267431,
+      "hit1": 0.0234375,
+      "hit3": 0.046875,
+      "hit5": 0.0859375,
+      "hit10": 0.171875,
+      "top1_effect_ratio": 0.4012172237788489,
+      "top5_effect_recall": 0.4345034242558815
+    },
+    "contrast_abs_maxhead": {
+      "spearman": 0.09147089648164879,
+      "hit1": 0.03125,
+      "hit3": 0.0546875,
+      "hit5": 0.078125,
+      "hit10": 0.140625,
+      "top1_effect_ratio": 0.39008270401145895,
+      "top5_effect_recall": 0.442302296210527
+    },
+    "ridge_attention_layers": {
+      "spearman": 0.07970535146168234,
+      "hit1": 0.015625,
+      "hit3": 0.078125,
+      "hit5": 0.1171875,
+      "hit10": 0.2109375,
+      "top1_effect_ratio": 0.37000675912290876,
+      "top5_effect_recall": 0.4527422128031751
+    },
+    "extra_trees_attention_layers": {
+      "spearman": 0.09245867037258121,
+      "hit1": 0.0390625,
+      "hit3": 0.1015625,
+      "hit5": 0.15625,
+      "hit10": 0.2265625,
+      "top1_effect_ratio": 0.4360087896467587,
+      "top5_effect_recall": 0.4555028793319186
+    },
+    "hist_attention_layers": {
+      "spearman": 0.07643616971138523,
+      "hit1": 0.0390625,
+      "hit3": 0.046875,
+      "hit5": 0.09375,
+      "hit10": 0.1640625,
+      "top1_effect_ratio": 0.4044320278250695,
+      "top5_effect_recall": 0.4435168905201725
+    },
+    "first_order_gate_gradient": {
+      "spearman": 0.03449684446746003,
+      "hit1": 0.03125,
+      "hit3": 0.0703125,
+      "hit5": 0.078125,
+      "hit10": 0.15625,
+      "top1_effect_ratio": 0.37422433624809526,
+      "top5_effect_recall": 0.4032916114709455
+    },
+    "integrated_gradients_32": {
+      "spearman": 0.03313187334713484,
+      "hit1": 0.03125,
+      "hit3": 0.0703125,
+      "hit5": 0.09375,
+      "hit10": 0.1484375,
+      "top1_effect_ratio": 0.35286120945526467,
+      "top5_effect_recall": 0.3942754232545048
+    }
+  }
+}

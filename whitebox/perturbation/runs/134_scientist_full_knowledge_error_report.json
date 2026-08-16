@@ -1,0 +1,65 @@
+{
+  "protocol": "5-fold StratifiedGroupKFold; groups are connected components over both candidate QIDs; features oriented to model prediction only",
+  "label_definition": "correct / known-but-wrong / unknown-and-wrong; known iff n_facts>=1 and binary_accuracy>0.5 and pairwise_owner_accuracy>0.5",
+  "n": 2925,
+  "identity_components": 30,
+  "class_counts": {
+    "0": 1560,
+    "1": 461,
+    "2": 904
+  },
+  "models": {
+    "linear": {
+      "three_class_accuracy": 0.668034188034188,
+      "three_class_macro_f1": 0.6369861113641161,
+      "three_class_balanced_accuracy": 0.6812832851043359,
+      "confusion_rows_true_cols_pred": [
+        [
+          1199,
+          201,
+          160
+        ],
+        [
+          22,
+          414,
+          25
+        ],
+        [
+          437,
+          126,
+          341
+        ]
+      ],
+      "error_auroc": 0.813318540433925,
+      "error_balanced_accuracy_at_0.5": 0.7301282051282052,
+      "unknown_vs_known_error_auroc": 0.8978893517363177,
+      "unknown_vs_known_error_balanced_accuracy_at_0.5": 0.8652902021384831
+    },
+    "tree": {
+      "three_class_accuracy": 0.5326495726495727,
+      "three_class_macro_f1": 0.2365801713897435,
+      "three_class_balanced_accuracy": 0.33438993312584775,
+      "confusion_rows_true_cols_pred": [
+        [
+          1553,
+          0,
+          7
+        ],
+        [
+          458,
+          2,
+          1
+        ],
+        [
+          901,
+          0,
+          3
+        ]
+      ],
+      "error_auroc": 0.5021024701793932,
+      "error_balanced_accuracy_at_0.5": 0.49963369963369964,
+      "unknown_vs_known_error_auroc": 0.5033161845161538,
+      "unknown_vs_known_error_balanced_accuracy_at_0.5": 0.5021691973969631
+    }
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "protocol": "outer 3x5 grouped OOF; layer/pooling/PCA/C selected only by inner 3-fold grouped OOF",
+  "grid": {
+    "layers": [
+      6,
+      10,
+      14,
+      18,
+      22,
+      26,
+      30,
+      32
+    ],
+    "pooling": [
+      "last",
+      "mean"
+    ],
+    "pca": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "C": [
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0
+    ]
+  },
+  "n": 1084,
+  "groups": 372,
+  "mean": {
+    "auroc": 0.8485029662588062,
+    "auprc": 0.8850816466266633,
+    "balanced_accuracy": 0.7665878754171301
+  },
+  "per_seed": [
+    {
+      "seed": 42,
+      "auroc": 0.8491970244716351,
+      "auprc": 0.8863229200574065,
+      "balanced_accuracy": 0.7661359844271413
+    },
+    {
+      "seed": 43,
+      "auroc": 0.8529199110122359,
+      "auprc": 0.8880991952936071,
+      "balanced_accuracy": 0.7739502224694104
+    },
+    {
+      "seed": 44,
+      "auroc": 0.8433919632925473,
+      "auprc": 0.8808228245289765,
+      "balanced_accuracy": 0.7596774193548388
+    }
+  ],
+  "outer_fold_choices": [
+    {
+      "seed": 42,
+      "fold": 1,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 0.3,
+      "inner_auroc": 0.8422525734686412
+    },
+    {
+      "seed": 42,
+      "fold": 2,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8187679315177638
+    },
+    {
+      "seed": 42,
+      "fold": 3,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8589229115641304
+    },
+    {
+      "seed": 42,
+      "fold": 4,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8412842571677592
+    },
+    {
+      "seed": 42,
+      "fold": 5,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8506030756328717
+    },
+    {
+      "seed": 43,
+      "fold": 1,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 0.03,
+      "inner_auroc": 0.8577834879624777
+    },
+    {
+      "seed": 43,
+      "fold": 2,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8412484824515472
+    },
+    {
+      "seed": 43,
+      "fold": 3,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8317512087425945
+    },
+    {
+      "seed": 43,
+      "fold": 4,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8555501155286291
+    },
+    {
+      "seed": 43,
+      "fold": 5,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8551452328191109
+    },
+    {
+      "seed": 44,
+      "fold": 1,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8303340688633911
+    },
+    {
+      "seed": 44,
+      "fold": 2,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8051170511609689
+    },
+    {
+      "seed": 44,
+      "fold": 3,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8527733170216378
+    },
+    {
+      "seed": 44,
+      "fold": 4,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8328759845056155
+    },
+    {
+      "seed": 44,
+      "fold": 5,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 1.0,
+      "inner_auroc": 0.8509290261756819
+    }
+  ]
+}

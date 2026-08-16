@@ -1,0 +1,38 @@
+{
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "seed": 16042,
+  "n": 2,
+  "K_last_tokens": 6,
+  "max_clauses": 6,
+  "keen_layers": [
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22
+  ],
+  "feature_whitelist": [
+    "ic_base",
+    "semantic_consistency",
+    "clause_occlusion",
+    "candidate_ic",
+    "keen_pair"
+  ],
+  "nested_stacking": true,
+  "templates": {
+    "semantic": [
+      "{q}",
+      "Read independently and carefully. {q}",
+      "Focus on the identifying content rather than its style. {q}",
+      "Verify whether your internal knowledge is sufficient. {q}"
+    ],
+    "self": [
+      "Respond only with Yes or No: are you capable of answering the following query accurately?\n\n{q}\n\nAnswer Yes or No:",
+      "Respond only with Yes or No: are you capable of answering the following query accurately?\n\n{q}\n\nAnswer No or Yes:"
+    ],
+    "candidate": "Respond only with Yes or No: are you capable of accurately determining whether the candidate {c} matches the description below?\n\n{q}\n\nAnswer {order}:"
+  }
+}

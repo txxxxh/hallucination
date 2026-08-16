@@ -1,0 +1,229 @@
+{
+  "protocol": "outer 3x5 grouped OOF; expanded hyperparameters selected by inner 3-fold grouped OOF",
+  "grid": {
+    "layers": [
+      10,
+      14,
+      18
+    ],
+    "pooling": [
+      "last",
+      "mean"
+    ],
+    "pca": [
+      32,
+      64,
+      96,
+      128
+    ],
+    "C": [
+      0.03,
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "modes": [
+      "hidden",
+      "hidden_scalar"
+    ],
+    "scalar_weights": [
+      0.25,
+      0.5,
+      1.0
+    ]
+  },
+  "mean": {
+    "auroc": 0.8642125509825732,
+    "auprc": 0.8931158954922985,
+    "balanced_accuracy": 0.779604653318502
+  },
+  "per_seed": [
+    {
+      "seed": 42,
+      "auroc": 0.8640746662958843,
+      "auprc": 0.8918055767594806,
+      "balanced_accuracy": 0.7779824805339266
+    },
+    {
+      "seed": 43,
+      "auroc": 0.864450083426029,
+      "auprc": 0.8929492427481833,
+      "balanced_accuracy": 0.7766476640711902
+    },
+    {
+      "seed": 44,
+      "auroc": 0.8641129032258064,
+      "auprc": 0.8945928669692319,
+      "balanced_accuracy": 0.7841838153503893
+    }
+  ],
+  "choices": [
+    {
+      "seed": 42,
+      "fold": 1,
+      "pool": "last",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.03,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.8548219346413588
+    },
+    {
+      "seed": 42,
+      "fold": 2,
+      "pool": "last",
+      "layer": 14,
+      "pca": 96,
+      "C": 0.1,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.838298344705632
+    },
+    {
+      "seed": 42,
+      "fold": 3,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.03,
+      "mode": "hidden_scalar",
+      "scalar_weight": 0.25,
+      "inner_auroc": 0.8638324818853055
+    },
+    {
+      "seed": 42,
+      "fold": 4,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.3,
+      "mode": "hidden_scalar",
+      "scalar_weight": 0.25,
+      "inner_auroc": 0.8454683137394826
+    },
+    {
+      "seed": 42,
+      "fold": 5,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.03,
+      "mode": "hidden_scalar",
+      "scalar_weight": 0.25,
+      "inner_auroc": 0.8633710994950567
+    },
+    {
+      "seed": 43,
+      "fold": 1,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.03,
+      "mode": "hidden_scalar",
+      "scalar_weight": 0.25,
+      "inner_auroc": 0.8554823915381076
+    },
+    {
+      "seed": 43,
+      "fold": 2,
+      "pool": "last",
+      "layer": 14,
+      "pca": 96,
+      "C": 0.03,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.8420384305966533
+    },
+    {
+      "seed": 43,
+      "fold": 3,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 10.0,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.8377132412335839
+    },
+    {
+      "seed": 43,
+      "fold": 4,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.03,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.868470891556238
+    },
+    {
+      "seed": 43,
+      "fold": 5,
+      "pool": "last",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.1,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.856394596209357
+    },
+    {
+      "seed": 44,
+      "fold": 1,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 96,
+      "C": 3.0,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.8633203552699598
+    },
+    {
+      "seed": 44,
+      "fold": 2,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.1,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.8512149625030532
+    },
+    {
+      "seed": 44,
+      "fold": 3,
+      "pool": "last",
+      "layer": 14,
+      "pca": 64,
+      "C": 10.0,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.8662270792227202
+    },
+    {
+      "seed": 44,
+      "fold": 4,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.1,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.8755864241949377
+    },
+    {
+      "seed": 44,
+      "fold": 5,
+      "pool": "mean",
+      "layer": 14,
+      "pca": 128,
+      "C": 0.03,
+      "mode": "hidden",
+      "scalar_weight": 0,
+      "inner_auroc": 0.8637148081154162
+    }
+  ]
+}

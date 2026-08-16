@@ -1,0 +1,40 @@
+{
+  "features": "paper LLMsKnow: model.layers.16.mlp output at exact_answer_before_first_token",
+  "label": "probe known/unknown only; no probe value in X",
+  "protocol": "5 seeds x stratified 5-fold OOF; raw LogisticRegression",
+  "n": 2894,
+  "threshold": 0.37499999999999994,
+  "per_seed_thresholds": [
+    0.37499999999999994,
+    0.38999999999999996,
+    0.33999999999999997,
+    0.33999999999999997,
+    0.37999999999999995
+  ],
+  "auroc": 0.7747708785748463,
+  "accuracy": 0.7066344160331721,
+  "balanced_accuracy": 0.7052425967503814,
+  "macro_f1": 0.6960924411064583,
+  "confusion_rows_unknown_known": [
+    [
+      1292,
+      526
+    ],
+    [
+      323,
+      753
+    ]
+  ],
+  "precision_unknown_known": [
+    0.8,
+    0.5887412040656763
+  ],
+  "recall_unknown_known": [
+    0.7106710671067107,
+    0.699814126394052
+  ],
+  "f1_unknown_known": [
+    0.752694436353044,
+    0.6394904458598726
+  ]
+}
