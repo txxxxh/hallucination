@@ -1,0 +1,290 @@
+{
+  "key": "question_1611",
+  "group": "Q1534144",
+  "generation_correct": false,
+  "right": "Roger Adams",
+  "wrong": "Robert Burns Woodward",
+  "base_margin_wrong_minus_right": 0.389468252658844,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 341,
+      "char_end": 369,
+      "text": "including the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 98,
+      "token_end": 103
+    },
+    {
+      "char_start": 373,
+      "char_end": 396,
+      "text": "Science, the Davy Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Davy Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 107
+    },
+    {
+      "char_start": 420,
+      "char_end": 443,
+      "text": "the Willard Gibbs Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Willard Gibbs Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 110,
+      "token_end": 116
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.389468252658844,
+      "wrong_score": -0.1512671709060669,
+      "right_score": -0.5407354235649109
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the National Medal"
+      ],
+      "u": 0.01487499475479126,
+      "margin": 0.37459325790405273,
+      "wrong_score": -0.17280054092407227,
+      "right_score": -0.547393798828125
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Science, the Davy Medal"
+      ],
+      "u": -0.147355854511261,
+      "margin": 0.536824107170105,
+      "wrong_score": -0.14025168120861053,
+      "right_score": -0.6770758032798767
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Davy Medal"
+      ],
+      "u": -0.12199121713638306,
+      "margin": 0.511459469795227,
+      "wrong_score": -0.11474033445119858,
+      "right_score": -0.6261997818946838
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Willard Gibbs Award"
+      ],
+      "u": -0.4560137391090393,
+      "margin": 0.8454819917678833,
+      "wrong_score": -0.1991308629512787,
+      "right_score": -1.0446128845214844
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u": -0.1230400800704956,
+      "margin": 0.5125083327293396,
+      "wrong_score": -0.371712863445282,
+      "right_score": -0.8842211961746216
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the Davy Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u": -0.6264728903770447,
+      "margin": 1.0159411430358887,
+      "wrong_score": -0.2174089252948761,
+      "right_score": -1.2333500385284424
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Davy Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u": -0.6554680466651917,
+      "margin": 1.0449362993240356,
+      "wrong_score": -0.23326455056667328,
+      "right_score": -1.2782008647918701
+    }
+  ],
+  "single_u": [
+    0.01487499475479126,
+    -0.147355854511261,
+    -0.4560137391090393
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the National Medal",
+        "Science, the Davy Medal"
+      ],
+      "u_i": 0.01487499475479126,
+      "u_j": -0.147355854511261,
+      "local_fd": 0.01048964262008667,
+      "banzhaf": -0.175739586353302,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the National Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u_i": 0.01487499475479126,
+      "u_j": -0.4560137391090393,
+      "local_fd": 0.31809866428375244,
+      "banzhaf": 0.13186943531036377,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Science, the Davy Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u_i": -0.147355854511261,
+      "u_j": -0.4560137391090393,
+      "local_fd": -0.023103296756744385,
+      "banzhaf": -0.20933252573013306,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Davy Medal",
+        "the Willard Gibbs Award"
+      ],
+      "order": 3,
+      "harsanyi": -0.37245845794677734
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "the Willard Gibbs Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.31809866428375244
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the Davy Medal",
+        "the Willard Gibbs Award"
+      ],
+      "order": 2,
+      "harsanyi": -0.023103296756744385
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Davy Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.01048964262008667
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.0449362993240356,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

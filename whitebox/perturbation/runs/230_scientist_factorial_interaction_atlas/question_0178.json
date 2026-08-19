@@ -1,0 +1,287 @@
+{
+  "key": "question_0178",
+  "group": "Q179777",
+  "generation_correct": false,
+  "right": "Harold Clayton Urey",
+  "wrong": "Linus Pauling",
+  "base_margin_wrong_minus_right": 0.4067923426628113,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 305,
+      "char_end": 329,
+      "text": "received the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 95,
+      "token_end": 100
+    },
+    {
+      "char_start": 472,
+      "char_end": 496,
+      "text": "elected a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 130,
+      "token_end": 134
+    },
+    {
+      "char_start": 542,
+      "char_end": 547,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 142,
+      "token_end": 143
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.4067923426628113,
+      "wrong_score": -0.029507562518119812,
+      "right_score": -0.4362998902797699
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "received the Nobel Prize"
+      ],
+      "u": -0.21817439794540405,
+      "margin": 0.6249667406082153,
+      "wrong_score": -0.018924515694379807,
+      "right_score": -0.6438912749290466
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "elected a Foreign Member"
+      ],
+      "u": -0.14175844192504883,
+      "margin": 0.5485507845878601,
+      "wrong_score": -0.018036475405097008,
+      "right_score": -0.5665872693061829
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "elected a Foreign Member"
+      ],
+      "u": -0.16738498210906982,
+      "margin": 0.5741773247718811,
+      "wrong_score": -0.017472052946686745,
+      "right_score": -0.5916493535041809
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.14233112335205078,
+      "margin": 0.5491234660148621,
+      "wrong_score": -0.019712436944246292,
+      "right_score": -0.5688359141349792
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "never"
+      ],
+      "u": -0.36897003650665283,
+      "margin": 0.7757623791694641,
+      "wrong_score": -0.010760733857750893,
+      "right_score": -0.7865231037139893
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member",
+        "never"
+      ],
+      "u": -0.2147499918937683,
+      "margin": 0.6215423345565796,
+      "wrong_score": -0.024270087480545044,
+      "right_score": -0.645812451839447
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "elected a Foreign Member",
+        "never"
+      ],
+      "u": -0.2369714379310608,
+      "margin": 0.6437637805938721,
+      "wrong_score": -0.02694685198366642,
+      "right_score": -0.6707106232643127
+    }
+  ],
+  "single_u": [
+    -0.21817439794540405,
+    -0.14175844192504883,
+    -0.14233112335205078
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "received the Nobel Prize",
+        "elected a Foreign Member"
+      ],
+      "u_i": -0.21817439794540405,
+      "u_j": -0.14175844192504883,
+      "local_fd": 0.19254785776138306,
+      "banzhaf": 0.1984826624393463,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "received the Nobel Prize",
+        "never"
+      ],
+      "u_i": -0.21817439794540405,
+      "u_j": -0.14233112335205078,
+      "local_fd": -0.008464515209197998,
+      "banzhaf": -0.002529710531234741,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "elected a Foreign Member",
+        "never"
+      ],
+      "u_i": -0.14175844192504883,
+      "u_j": -0.14233112335205078,
+      "local_fd": 0.0693395733833313,
+      "banzhaf": 0.07527437806129456,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "elected a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.19254785776138306
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.0693395733833313
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "elected a Foreign Member",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": 0.011869609355926514
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.008464515209197998
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6437637805938721,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "key": "question_0017",
+  "group": "Q60108",
+  "generation_correct": false,
+  "right": "Günter Blobel",
+  "wrong": "Christiane Nüsslein-Volhard",
+  "base_margin_wrong_minus_right": -0.223441481590271,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 216,
+      "char_end": 242,
+      "text": "the University of Tübingen",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Tübingen",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 86
+    },
+    {
+      "char_start": 243,
+      "char_end": 274,
+      "text": "and Goethe University Frankfurt",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Goethe University Frankfurt",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 85,
+      "token_end": 92
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.223441481590271,
+      "wrong_score": -0.25704583525657654,
+      "right_score": -0.03360435366630554
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Tübingen"
+      ],
+      "u": -0.32844388484954834,
+      "margin": 0.10500239580869675,
+      "wrong_score": -0.06746190041303635,
+      "right_score": -0.1724642962217331
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and Goethe University Frankfurt"
+      ],
+      "u": -0.28969958424568176,
+      "margin": 0.06625810265541077,
+      "wrong_score": -0.07934597134590149,
+      "right_score": -0.14560407400131226
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Tübingen",
+        "and Goethe University Frankfurt"
+      ],
+      "u": -0.22146743535995483,
+      "margin": -0.001974038779735565,
+      "wrong_score": -0.11965753138065338,
+      "right_score": -0.11768349260091782
+    }
+  ],
+  "single_u": [
+    -0.32844388484954834,
+    -0.28969958424568176
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Tübingen",
+        "and Goethe University Frankfurt"
+      ],
+      "u_i": -0.32844388484954834,
+      "u_j": -0.28969958424568176,
+      "local_fd": 0.39667603373527527,
+      "banzhaf": 0.39667603373527527,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Tübingen",
+        "and Goethe University Frankfurt"
+      ],
+      "order": 2,
+      "harsanyi": 0.39667603373527527
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Tübingen"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and Goethe University Frankfurt"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.001974038779735565,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 22,
+    "n_excluded": 16,
+    "max_candidates": 6
+  }
+}

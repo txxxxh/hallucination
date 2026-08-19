@@ -1,0 +1,290 @@
+{
+  "key": "question_0290",
+  "group": "Q701506",
+  "generation_correct": false,
+  "right": "Robert Weinberg",
+  "wrong": "Emmanuelle Charpentier",
+  "base_margin_wrong_minus_right": 0.2094089239835739,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 276,
+      "char_end": 306,
+      "text": "awarded the Breakthrough Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Breakthrough Prize in Life Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 87,
+      "token_end": 94
+    },
+    {
+      "char_start": 329,
+      "char_end": 351,
+      "text": "Wolf Prize in Medicine",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 98,
+      "token_end": 103
+    },
+    {
+      "char_start": 353,
+      "char_end": 377,
+      "text": "the Princess of Asturias",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Princess of Asturias Award for Technical and Scientific Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 102,
+      "token_end": 107
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.2094089239835739,
+      "wrong_score": -0.10166223347187042,
+      "right_score": -0.31107115745544434
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Breakthrough Prize"
+      ],
+      "u": -0.45521247386932373,
+      "margin": 0.6646214127540588,
+      "wrong_score": -0.03819841891527176,
+      "right_score": -0.70281982421875
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Wolf Prize in Medicine"
+      ],
+      "u": -0.08094359934329987,
+      "margin": 0.2903525233268738,
+      "wrong_score": -0.08608078211545944,
+      "right_score": -0.3764333128929138
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Breakthrough Prize",
+        "Wolf Prize in Medicine"
+      ],
+      "u": -0.21988536417484283,
+      "margin": 0.42929428815841675,
+      "wrong_score": -0.05487401783466339,
+      "right_score": -0.48416829109191895
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Princess of Asturias"
+      ],
+      "u": 0.14945447444915771,
+      "margin": 0.0599544495344162,
+      "wrong_score": -0.14401786029338837,
+      "right_score": -0.20397230982780457
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Breakthrough Prize",
+        "the Princess of Asturias"
+      ],
+      "u": -0.3238103985786438,
+      "margin": 0.5332193374633789,
+      "wrong_score": -0.04224503040313721,
+      "right_score": -0.5754643678665161
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Wolf Prize in Medicine",
+        "the Princess of Asturias"
+      ],
+      "u": 0.14863210916519165,
+      "margin": 0.06077681481838226,
+      "wrong_score": -0.1429494023323059,
+      "right_score": -0.20372621715068817
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Breakthrough Prize",
+        "Wolf Prize in Medicine",
+        "the Princess of Asturias"
+      ],
+      "u": -0.4077971577644348,
+      "margin": 0.6172060966491699,
+      "wrong_score": -0.033187929540872574,
+      "right_score": -0.6503940224647522
+    }
+  ],
+  "single_u": [
+    -0.45521247386932373,
+    -0.08094359934329987,
+    0.14945447444915771
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Breakthrough Prize",
+        "Wolf Prize in Medicine"
+      ],
+      "u_i": -0.45521247386932373,
+      "u_j": -0.08094359934329987,
+      "local_fd": 0.31627070903778076,
+      "banzhaf": 0.1165531575679779,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "awarded the Breakthrough Prize",
+        "the Princess of Asturias"
+      ],
+      "u_i": -0.45521247386932373,
+      "u_j": 0.14945447444915771,
+      "local_fd": -0.018052399158477783,
+      "banzhaf": -0.21776995062828064,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Wolf Prize in Medicine",
+        "the Princess of Asturias"
+      ],
+      "u_i": -0.08094359934329987,
+      "u_j": 0.14945447444915771,
+      "local_fd": 0.0801212340593338,
+      "banzhaf": -0.11959632486104965,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Breakthrough Prize",
+        "Wolf Prize in Medicine",
+        "the Princess of Asturias"
+      ],
+      "order": 3,
+      "harsanyi": -0.3994351029396057
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Breakthrough Prize",
+        "Wolf Prize in Medicine"
+      ],
+      "order": 2,
+      "harsanyi": 0.31627070903778076
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Wolf Prize in Medicine",
+        "the Princess of Asturias"
+      ],
+      "order": 2,
+      "harsanyi": 0.0801212340593338
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Breakthrough Prize",
+        "the Princess of Asturias"
+      ],
+      "order": 2,
+      "harsanyi": -0.018052399158477783
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6172060966491699,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

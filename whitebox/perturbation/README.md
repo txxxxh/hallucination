@@ -4,18 +4,22 @@
 
 ---
 
-## 0. 测试状态（重要，请先读）
+## 0. 当前状态（2026-08-11）
 
-本环境磁盘不足以安装 torch，所以：
+当前 whitebox 环境已经可以加载 torch 和 Llama-3.1-8B；61–89 的主要脚本均已完成
+语法检查，61–64 的纯逻辑测试也已跑通。首次换模型、数据或 tokenizer 时仍应先跑 smoke，
+不要直接复用旧 span/token 索引。
 
 | 测试 | 状态 | 覆盖 |
 |---|---|---|
 | `python -m spanattr.selftest` | ✅ **25 项全部实测通过** | 符号约定、二阶目标、贪心/穷举、冗余聚类、NMS、统计工具 |
 | `python tests/test_contracts.py` | ✅ **28 项全部实测通过** | 61→62→63→64 的 JSONL schema、索引映射、控制组构造、磁盘往返 |
-| `python -m spanattr.core --smoke` | ⚠️ **未实测**（需 torch） | 随机权重 toy Llama 上的前向/梯度/IG completeness |
-| `61–64 --smoke` | ⚠️ **未实测**（需 torch） | 各阶段端到端 |
+| `python -m spanattr.core --smoke` | 可运行 | 随机权重 toy Llama 上的前向/梯度/IG completeness |
+| `61–64 --smoke` | 可运行 | 各阶段端到端 |
+| `81_active_subspace_diagnosis.py --smoke` | 已产生 smoke 产物 | active basis 的拟合、保存和报告 |
 
-所有文件通过 `py_compile`。**首次在你的机器上跑，请先按顺序执行 `--smoke`**，它们用一个 2 层随机 Llama 在 CPU 上跑，几秒完成，可在烧 GPU 之前抓出接口问题。
+**首次在新环境跑，请先按顺序执行 `--smoke`**。`runs/*.pt`、`runs/**/*.npz`
+是体积较大的中间张量，不纳入 Git；JSON/JSONL 报告才是可追踪结果。
 
 编写测试的过程抓出了三个真实问题，都已修掉并固化为断言：
 
@@ -65,6 +69,16 @@ $$\text{选择准则：}\quad \max_{|\mathcal S|\le k}\ \sum_{i\in\mathcal S}u_i
 63_subset_select.py        五策略头对头 + 位置匹配 null + 两层验证
 64a_vocab_decode.py        梯度方向 → 词表投影 → 指数级联合穷举与真实 margin
 64b_vocab_recovery_generation.py 恢复词写回 prompt → 3 次采样生成 → gold/pred 判定
+
+80–89 是后续两条支线：
+
+80/87/89                 固定 detector 配置，在不同 knowledge 子集做 grouped OOF
+81_active_subspace_diagnosis.py  校准集 span gradient SVD → 冻结 active basis
+82_zo_active_keywords.py  held-out span 在 random/vocab/active 子空间内做 forward-only ZO
+83_compare_zo_subspaces.py 汇总子空间搜索与 mean span 的排序/效应差异
+84–86                   span selection × direction construction → 离散替换 → generation
+87_projection_aware_decode.py 三种投影 + projection-aware 离散搜索
+88_tokenwise_active_projection.py span 内每个 token 使用独立 active 系数并投影
 ```
 
 ```bash
@@ -115,6 +129,68 @@ $\sqrt{3}$ 传播。**若 `frac_sig < 5%`，这是负结果：交互实质不存
 sampling，保存生成文本、gold/pred 命中、`p_gold`、`rise_p_gold`、
 `drop_p_pred` 和配对的 `correction_rate_paired`。
 
+
+### 80–89：active subspace、离散投影与 detector
+
+这部分有两个名字接近但目的不同的 `81`：
+
+- `81_zo_span_keywords.py`：每个 span 直接在完整 embedding 空间搜索一个共享方向，用于早期 ZO-vs-mean 对照。
+- `81_active_subspace_diagnosis.py`：在校准题的逐 span gradient 上做 SVD，保存全局 active basis。basis 必须在 held-out 评估前冻结；`82_zo_active_keywords.py` 只做前向查询。
+
+active basis 把 4096 维搜索限制到 rank-$r$ 子空间，是为了降低 ZO 查询方差和查询数，并非理论硬限制：
+
+| calibration | gradient 数 | 90%/95% effective rank | rank 16/32 能量 |
+|---|---:|---:|---:|
+| `ex1` | 89 | 17 / 23 | 89.6% / 98.4% |
+| `question_0000` | 185 | 29 / 41 | 78.4% / 91.6% |
+
+因此 rank 16/32 是计算预算与覆盖率的折中。跨题时优先用 rank 32，并把 rank 16/64 作为敏感性分析。
+
+#### 三个比较轴
+
+1. **span selection**：mean neutralization 按实测 $u$ 排 span；active/ZO 按子空间内可找到的连续效应排 span。
+2. **direction construction**：逐位置 gradient direction 是每个 token 的局部一阶下降方向；shared active direction 是整个 span 共用一个低秩方向；token-wise active 允许每个 token 在同一个 basis 内有独立系数。
+3. **projection/validation**：连续 embedding 的 margin 改善不等于离散 token 替换后的改善。词表是稀疏点集，nearest token 不会复制目标向量；最终必须用真实 teacher-forced margin 重排，并用自由生成验证。
+
+所以“当前 shared-active direction 不如逐位置 gradient direction”只描述 direction construction，**不能推出 active span selection 不如 mean span selection**。判断后者必须在同一投影器、同一编辑预算和同一 held-out 题集上做交叉实验。
+
+#### 84–88 的离散化实验
+
+- `84_active_vocab_decode.py` 做 `mean/active span × gradient/active direction` 四格交叉，再用真实 margin 穷举候选组合。
+- `85_active_word_generation.py` 将候选写回 prompt 并重新生成；`86_...` 汇总 `rise_p_gold`、`drop_p_pred` 和 paired correction。
+- `87_projection_aware_decode.py` 比较方向匹配、目标 embedding 最近邻、候选并集的真实 margin 重排；projection-aware 路径只搜索可实现 token displacement。
+- `88_tokenwise_active_projection.py` 让 span 内各 token 使用独立 rank-$r$ 系数，但共同受 span 级 Frobenius budget 约束。它解决 shared direction 表达力不足，不自动解决词表稀疏。
+
+`question_1400` 的诊断中，shared continuous active 只改善约 0.04 margin 且未跨界；token-wise continuous active 改善约 11.51 并跨界，但当前离散候选反而让 margin 变差。这说明 projection gap 是当前主要瓶颈，也说明增加连续自由度本身不能保证离散成功。它是单题诊断，不能作为 active-vs-mean 的总体结论。
+
+```bash
+cd /home/tong56/whitebox/perturbation
+source ../activate_whitebox.sh
+
+# 校准题与 held-out 题必须分开
+python 81_active_subspace_diagnosis.py \
+  --items data/items_n128_generation_flip.json --item_id question_0000 \
+  --basis_out runs/81_q0000_active_basis.pt \
+  --report runs/81_q0000_active_report.json
+
+# 30 题 active/mean span 搜索 + token-wise 投影
+bash run_82_88_n30.sh
+
+# 小规模四格离散替换与 generation 验证
+bash run_84_86_active_words.sh
+```
+
+#### detector 的冻结评估
+
+固定 `top11 / layer16 / PCA8 / C=0.5`，使用 `StratifiedGroupKFold(5)` 产生严格 OOF 预测；PCA、标准化和逻辑回归均只在每折训练集拟合。
+
+| 子集 | n | full AUROC | margin-only AUROC | lift | group-bootstrap 95% CI |
+|---|---:|---:|---:|---:|---:|
+| probe-perfect (`87`) | 343 | 0.837 | 0.808 | +0.029 | [+0.001, +0.054] |
+| both knowledge scores > 0.5 (`89`) | 1084 | 0.851 | 0.789 | +0.063 | [+0.041, +0.084] |
+
+这支持 hidden-delta/perturbation 特征在 margin 之外提供增量信号；它不直接回答 active span 是否优于 mean span。
+
 ---
 
 ## 3. 已知取舍
@@ -125,9 +201,12 @@ sampling，保存生成文本、gold/pred 命中、`p_gold`、`rise_p_gold`、
 - 细粒度下**默认算子必须是保长度的 neutralize**；span 越短，delete 的语法破坏相对信息量越大，且位置移动会把位置混淆重新引进来。`delete` 只作为 robustness check。
 - $m$ 太大时 `--exh_cap` 会让 `second_order` 退化为贪心，而贪心在协同实例上必然失败（见测试 §4）。$m\le 16,k\le 3$ 时穷举只有 560 种组合，无成本。
 
-## 4. 结果回来后
+## 4. 下一步实验判据
 
 把 61 的校准 ρ、`topk_null_ratio`/`topk_min_null_ratio`、62 的
 `frac_sig`/`synergy_share`、63 的头对头表贴给我。Stage 1 用 NMS 后
 top-k 的平均及末位 `|u|` 相对随机 span `|u|` 的 95% 分位数判断头部信号，
 不再用全体 span 的平均 SNR 决定是否继续。
+
+
+对 active-vs-mean 扩展实验，至少同时报告：连续 `u_realized`、连续跨界率、离散 `u_realized`、离散跨界率、generation correction rate，以及按题配对的 active-minus-mean 差值和 bootstrap CI。没有离散与 generation 两层验证时，只能称为方向搜索诊断。

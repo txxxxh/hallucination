@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Resumable 4-model x 4-dataset x 2-method paper experiment matrix.
 set -uo pipefail
+# INVALIDATED: this legacy runner reuses Llama labels across backbones.
+echo "ERROR: invalid cross-model protocol. Use run_paper4_self_matrix.sh" >&2
+exit 64
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON_BIN="${PYTHON_BIN:-/home/tong56/venvs/whitebox/bin/python}"

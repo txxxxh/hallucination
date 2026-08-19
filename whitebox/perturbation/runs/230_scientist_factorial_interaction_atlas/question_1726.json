@@ -1,0 +1,146 @@
+{
+  "key": "question_1726",
+  "group": "Q1144326",
+  "generation_correct": false,
+  "right": "Yuri Oganessian",
+  "wrong": "Ilya Frank",
+  "base_margin_wrong_minus_right": 0.43342453241348267,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 254,
+      "char_end": 276,
+      "text": "awarded the USSR State",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "USSR State Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 85,
+      "token_end": 89
+    },
+    {
+      "char_start": 288,
+      "char_end": 304,
+      "text": "Order of the Red",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 90,
+      "token_end": 94
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.43342453241348267,
+      "wrong_score": -0.041643377393484116,
+      "right_score": -0.4750679135322571
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the USSR State"
+      ],
+      "u": -0.18185323476791382,
+      "margin": 0.6152777671813965,
+      "wrong_score": -0.02853778749704361,
+      "right_score": -0.6438155770301819
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Order of the Red"
+      ],
+      "u": 0.01848277449607849,
+      "margin": 0.4149417579174042,
+      "wrong_score": -0.03633389621973038,
+      "right_score": -0.45127564668655396
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the USSR State",
+        "Order of the Red"
+      ],
+      "u": -0.2277783751487732,
+      "margin": 0.6612029075622559,
+      "wrong_score": -0.03451698273420334,
+      "right_score": -0.6957198977470398
+    }
+  ],
+  "single_u": [
+    -0.18185323476791382,
+    0.01848277449607849
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the USSR State",
+        "Order of the Red"
+      ],
+      "u_i": -0.18185323476791382,
+      "u_j": 0.01848277449607849,
+      "local_fd": -0.06440791487693787,
+      "banzhaf": -0.06440791487693787,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the USSR State",
+        "Order of the Red"
+      ],
+      "order": 2,
+      "harsanyi": -0.06440791487693787
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6612029075622559,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

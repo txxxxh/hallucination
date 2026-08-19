@@ -1,0 +1,290 @@
+{
+  "key": "question_1557",
+  "group": "Q899517",
+  "generation_correct": false,
+  "right": "Allen J. Bard",
+  "wrong": "Mario J. Molina",
+  "base_margin_wrong_minus_right": -0.6491997241973877,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 139,
+      "char_end": 162,
+      "text": "was a prominent chemist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 65
+    },
+    {
+      "char_start": 163,
+      "char_end": 191,
+      "text": "and university teacher whose",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 64,
+      "token_end": 69
+    },
+    {
+      "char_start": 352,
+      "char_end": 379,
+      "text": "including the Willard Gibbs",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Willard Gibbs Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 99,
+      "token_end": 102
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.6491997241973877,
+      "wrong_score": -0.6605542302131653,
+      "right_score": -0.011354510672390461
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "was a prominent chemist"
+      ],
+      "u": 0.5256655216217041,
+      "margin": -1.1748652458190918,
+      "wrong_score": -1.1791083812713623,
+      "right_score": -0.004243096336722374
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and university teacher whose"
+      ],
+      "u": 1.5757358074188232,
+      "margin": -2.224935531616211,
+      "wrong_score": -2.2279677391052246,
+      "right_score": -0.0030322724487632513
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher whose"
+      ],
+      "u": 1.4757506847381592,
+      "margin": -2.124950408935547,
+      "wrong_score": -2.1285808086395264,
+      "right_score": -0.003630483290180564
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "including the Willard Gibbs"
+      ],
+      "u": -0.2019977867603302,
+      "margin": -0.4472019374370575,
+      "wrong_score": -0.4728218615055084,
+      "right_score": -0.025619912892580032
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "including the Willard Gibbs"
+      ],
+      "u": 0.05006223917007446,
+      "margin": -0.6992619633674622,
+      "wrong_score": -0.7074925303459167,
+      "right_score": -0.008230560459196568
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher whose",
+        "including the Willard Gibbs"
+      ],
+      "u": 1.200968623161316,
+      "margin": -1.8501683473587036,
+      "wrong_score": -1.8512191772460938,
+      "right_score": -0.0010508517734706402
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher whose",
+        "including the Willard Gibbs"
+      ],
+      "u": 1.3258730173110962,
+      "margin": -1.9750727415084839,
+      "wrong_score": -1.9761161804199219,
+      "right_score": -0.001043432974256575
+    }
+  ],
+  "single_u": [
+    0.5256655216217041,
+    1.5757358074188232,
+    -0.2019977867603302
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher whose"
+      ],
+      "u_i": 0.5256655216217041,
+      "u_j": 1.5757358074188232,
+      "local_fd": -0.6256506443023682,
+      "banzhaf": -0.37640315294265747,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "was a prominent chemist",
+        "including the Willard Gibbs"
+      ],
+      "u_i": 0.5256655216217041,
+      "u_j": -0.2019977867603302,
+      "local_fd": -0.27360549569129944,
+      "banzhaf": -0.02435798943042755,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and university teacher whose",
+        "including the Willard Gibbs"
+      ],
+      "u_i": 1.5757358074188232,
+      "u_j": -0.2019977867603302,
+      "local_fd": -0.17276939749717712,
+      "banzhaf": 0.07647810876369476,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher whose"
+      ],
+      "order": 2,
+      "harsanyi": -0.6256506443023682
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher whose",
+        "including the Willard Gibbs"
+      ],
+      "order": 3,
+      "harsanyi": 0.4984950125217438
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "including the Willard Gibbs"
+      ],
+      "order": 2,
+      "harsanyi": -0.27360549569129944
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher whose",
+        "including the Willard Gibbs"
+      ],
+      "order": 2,
+      "harsanyi": -0.17276939749717712
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.9750727415084839,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

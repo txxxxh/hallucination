@@ -1,0 +1,290 @@
+{
+  "key": "question_1328",
+  "group": "Q1534144",
+  "generation_correct": false,
+  "right": "Roger Adams",
+  "wrong": "Elias James Corey",
+  "base_margin_wrong_minus_right": 2.3784384727478027,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 318,
+      "char_end": 346,
+      "text": "including the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 90,
+      "token_end": 95
+    },
+    {
+      "char_start": 350,
+      "char_end": 378,
+      "text": "Science, the Priestley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Priestley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 94,
+      "token_end": 99
+    },
+    {
+      "char_start": 380,
+      "char_end": 403,
+      "text": "the Willard Gibbs Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Willard Gibbs Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 98,
+      "token_end": 104
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 2.3784384727478027,
+      "wrong_score": -0.0029767195228487253,
+      "right_score": -2.3814151287078857
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the National Medal"
+      ],
+      "u": -1.0008354187011719,
+      "margin": 3.3792738914489746,
+      "wrong_score": -0.0038694683462381363,
+      "right_score": -3.383143424987793
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Science, the Priestley Medal"
+      ],
+      "u": 0.6134629249572754,
+      "margin": 1.7649755477905273,
+      "wrong_score": -0.012162307277321815,
+      "right_score": -1.7771378755569458
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Priestley Medal"
+      ],
+      "u": 0.6193464994430542,
+      "margin": 1.7590919733047485,
+      "wrong_score": -0.01213000901043415,
+      "right_score": -1.7712219953536987
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Willard Gibbs Award"
+      ],
+      "u": -1.5682241916656494,
+      "margin": 3.946662664413452,
+      "wrong_score": -0.007199526764452457,
+      "right_score": -3.953862190246582
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u": -1.5434880256652832,
+      "margin": 3.921926498413086,
+      "wrong_score": -0.0465637631714344,
+      "right_score": -3.9684903621673584
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the Priestley Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u": -0.9617271423339844,
+      "margin": 3.340165615081787,
+      "wrong_score": -0.07293713092803955,
+      "right_score": -3.413102865219116
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Priestley Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u": -0.7973971366882324,
+      "margin": 3.175835609436035,
+      "wrong_score": -0.0494261160492897,
+      "right_score": -3.225261688232422
+    }
+  ],
+  "single_u": [
+    -1.0008354187011719,
+    0.6134629249572754,
+    -1.5682241916656494
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the National Medal",
+        "Science, the Priestley Medal"
+      ],
+      "u_i": -1.0008354187011719,
+      "u_j": 0.6134629249572754,
+      "local_fd": 1.0067189931869507,
+      "banzhaf": 0.5731564164161682,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the National Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u_i": -1.0008354187011719,
+      "u_j": -1.5682241916656494,
+      "local_fd": 1.025571584701538,
+      "banzhaf": 0.5920090079307556,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Science, the Priestley Medal",
+        "the Willard Gibbs Award"
+      ],
+      "u_i": 0.6134629249572754,
+      "u_j": -1.5682241916656494,
+      "local_fd": -0.0069658756256103516,
+      "banzhaf": -0.4405284523963928,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "the Willard Gibbs Award"
+      ],
+      "order": 2,
+      "harsanyi": 1.025571584701538
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Priestley Medal"
+      ],
+      "order": 2,
+      "harsanyi": 1.0067189931869507
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Priestley Medal",
+        "the Willard Gibbs Award"
+      ],
+      "order": 3,
+      "harsanyi": -0.8671251535415649
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the Priestley Medal",
+        "the Willard Gibbs Award"
+      ],
+      "order": 2,
+      "harsanyi": -0.0069658756256103516
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 3.175835609436035,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

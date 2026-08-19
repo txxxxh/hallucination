@@ -1,0 +1,288 @@
+{
+  "key": "question_1877",
+  "group": "Q233974",
+  "generation_correct": false,
+  "right": "Jocelyn Bell Burnell",
+  "wrong": "Edward Witten",
+  "base_margin_wrong_minus_right": 0.14924097061157227,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 242,
+      "char_end": 269,
+      "text": "holds an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 88
+    },
+    {
+      "char_start": 303,
+      "char_end": 324,
+      "text": "as an Honorary Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Learned Society of Wales",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 92,
+      "token_end": 97
+    },
+    {
+      "char_start": 379,
+      "char_end": 402,
+      "text": "of a Breakthrough Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Breakthrough Prize in Fundamental Physics",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 105,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.14924097061157227,
+      "wrong_score": -0.08665099740028381,
+      "right_score": -0.23589196801185608
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "holds an honorary doctorate"
+      ],
+      "u": -0.5796002149581909,
+      "margin": 0.7288411855697632,
+      "wrong_score": -0.04081948101520538,
+      "right_score": -0.7696606516838074
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as an Honorary Fellow"
+      ],
+      "u": -0.3987627625465393,
+      "margin": 0.5480037331581116,
+      "wrong_score": -0.0217384435236454,
+      "right_score": -0.5697422027587891
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "holds an honorary doctorate",
+        "as an Honorary Fellow"
+      ],
+      "u": -0.5764864683151245,
+      "margin": 0.7257274389266968,
+      "wrong_score": -0.007672857493162155,
+      "right_score": -0.733400285243988
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "of a Breakthrough Prize"
+      ],
+      "u": -0.36587923765182495,
+      "margin": 0.5151202082633972,
+      "wrong_score": -0.054253146052360535,
+      "right_score": -0.569373369216919
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "holds an honorary doctorate",
+        "of a Breakthrough Prize"
+      ],
+      "u": -0.537061333656311,
+      "margin": 0.6863023042678833,
+      "wrong_score": -0.042608585208654404,
+      "right_score": -0.7289108633995056
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "of a Breakthrough Prize"
+      ],
+      "u": -0.5594758987426758,
+      "margin": 0.708716869354248,
+      "wrong_score": -0.03992249444127083,
+      "right_score": -0.7486393451690674
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "holds an honorary doctorate",
+        "as an Honorary Fellow",
+        "of a Breakthrough Prize"
+      ],
+      "u": -0.41585278511047363,
+      "margin": 0.5650937557220459,
+      "wrong_score": -0.07386135309934616,
+      "right_score": -0.6389551162719727
+    }
+  ],
+  "single_u": [
+    -0.5796002149581909,
+    -0.3987627625465393,
+    -0.36587923765182495
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "holds an honorary doctorate",
+        "as an Honorary Fellow"
+      ],
+      "u_i": -0.5796002149581909,
+      "u_j": -0.3987627625465393,
+      "local_fd": 0.4018765091896057,
+      "banzhaf": 0.358340859413147,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "holds an honorary doctorate",
+        "of a Breakthrough Prize"
+      ],
+      "u_i": -0.5796002149581909,
+      "u_j": -0.36587923765182495,
+      "local_fd": 0.40841811895370483,
+      "banzhaf": 0.3648824691772461,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as an Honorary Fellow",
+        "of a Breakthrough Prize"
+      ],
+      "u_i": -0.3987627625465393,
+      "u_j": -0.36587923765182495,
+      "local_fd": 0.20516610145568848,
+      "banzhaf": 0.16163045167922974,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "holds an honorary doctorate",
+        "of a Breakthrough Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.40841811895370483
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "holds an honorary doctorate",
+        "as an Honorary Fellow"
+      ],
+      "order": 2,
+      "harsanyi": 0.4018765091896057
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "of a Breakthrough Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.20516610145568848
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "holds an honorary doctorate",
+        "as an Honorary Fellow",
+        "of a Breakthrough Prize"
+      ],
+      "order": 3,
+      "harsanyi": -0.08707129955291748
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5650937557220459,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

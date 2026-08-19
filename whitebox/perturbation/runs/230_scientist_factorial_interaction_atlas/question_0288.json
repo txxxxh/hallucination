@@ -1,0 +1,287 @@
+{
+  "key": "question_0288",
+  "group": "Q675726",
+  "generation_correct": false,
+  "right": "James Hector",
+  "wrong": "Thomas Henry Huxley",
+  "base_margin_wrong_minus_right": -1.348760962486267,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 322,
+      "char_end": 346,
+      "text": "awarded the Clarke Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Clarke Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 102,
+      "token_end": 107
+    },
+    {
+      "char_start": 358,
+      "char_end": 379,
+      "text": "Fellow of the Linnean",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Linnean Society of London",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 109,
+      "token_end": 114
+    },
+    {
+      "char_start": 415,
+      "char_end": 418,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 122
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.348760962486267,
+      "wrong_score": -1.3513325452804565,
+      "right_score": -0.002571528311818838
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Clarke Medal"
+      ],
+      "u": -1.0580796003341675,
+      "margin": -0.290681391954422,
+      "wrong_score": -0.38859251141548157,
+      "right_score": -0.09791111201047897
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Linnean"
+      ],
+      "u": -0.8468288779258728,
+      "margin": -0.5019320845603943,
+      "wrong_score": -0.5405318140983582,
+      "right_score": -0.03859972208738327
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Clarke Medal",
+        "Fellow of the Linnean"
+      ],
+      "u": -1.1180791854858398,
+      "margin": -0.23068180680274963,
+      "wrong_score": -0.34734004735946655,
+      "right_score": -0.11665824800729752
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": -0.8525841236114502,
+      "margin": -0.4961768090724945,
+      "wrong_score": -0.5414476990699768,
+      "right_score": -0.0452708899974823
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Clarke Medal",
+        "not"
+      ],
+      "u": -1.0529265403747559,
+      "margin": -0.2958344519138336,
+      "wrong_score": -0.42732739448547363,
+      "right_score": -0.13149294257164001
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Linnean",
+        "not"
+      ],
+      "u": -1.1311566829681396,
+      "margin": -0.21760432422161102,
+      "wrong_score": -0.34890875220298767,
+      "right_score": -0.13130442798137665
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Clarke Medal",
+        "Fellow of the Linnean",
+        "not"
+      ],
+      "u": -1.2044798135757446,
+      "margin": -0.14428117871284485,
+      "wrong_score": -0.31950488686561584,
+      "right_score": -0.175223708152771
+    }
+  ],
+  "single_u": [
+    -1.0580796003341675,
+    -0.8468288779258728,
+    -0.8525841236114502
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Clarke Medal",
+        "Fellow of the Linnean"
+      ],
+      "u_i": -1.0580796003341675,
+      "u_j": -0.8468288779258728,
+      "local_fd": 0.7868292927742004,
+      "banzhaf": 0.45692428946495056,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "awarded the Clarke Medal",
+        "not"
+      ],
+      "u_i": -1.0580796003341675,
+      "u_j": -0.8525841236114502,
+      "local_fd": 0.8577371835708618,
+      "banzhaf": 0.5278321504592896,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Linnean",
+        "not"
+      ],
+      "u_i": -0.8468288779258728,
+      "u_j": -0.8525841236114502,
+      "local_fd": 0.5682563185691833,
+      "banzhaf": 0.23835131525993347,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Clarke Medal",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.8577371835708618
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Clarke Medal",
+        "Fellow of the Linnean"
+      ],
+      "order": 2,
+      "harsanyi": 0.7868292927742004
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Clarke Medal",
+        "Fellow of the Linnean",
+        "not"
+      ],
+      "order": 3,
+      "harsanyi": -0.6598100066184998
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Linnean",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.5682563185691833
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.14428117871284485,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

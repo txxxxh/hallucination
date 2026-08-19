@@ -1,0 +1,299 @@
+{
+  "key": "question_0795",
+  "group": "Q311003",
+  "generation_correct": false,
+  "right": "Craig Venter",
+  "wrong": "Frances Arnold",
+  "base_margin_wrong_minus_right": -2.166790008544922,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 121,
+      "char_end": 145,
+      "text": "This biochemist has made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biochemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 53,
+      "token_end": 58
+    },
+    {
+      "char_start": 178,
+      "char_end": 204,
+      "text": "field of synthetic biology",
+      "kind": "attribute",
+      "field": "field",
+      "value": "synthetic biology",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 61,
+      "token_end": 67
+    },
+    {
+      "char_start": 220,
+      "char_end": 256,
+      "text": "advancing modern scientific research",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Princess of Asturias Award for Technical and Scientific Research",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 68,
+      "token_end": 74
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.166790008544922,
+      "wrong_score": -2.1701998710632324,
+      "right_score": -0.0034098706673830748
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This biochemist has made"
+      ],
+      "u": -0.49975037574768066,
+      "margin": -1.6670396327972412,
+      "wrong_score": -1.7010252475738525,
+      "right_score": -0.033985596150159836
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "field of synthetic biology"
+      ],
+      "u": 0.5840287208557129,
+      "margin": -2.7508187294006348,
+      "wrong_score": -2.7595138549804688,
+      "right_score": -0.008695205673575401
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This biochemist has made",
+        "field of synthetic biology"
+      ],
+      "u": 0.5004849433898926,
+      "margin": -2.6672749519348145,
+      "wrong_score": -2.6735219955444336,
+      "right_score": -0.006246967241168022
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "advancing modern scientific research"
+      ],
+      "u": 0.25023698806762695,
+      "margin": -2.417026996612549,
+      "wrong_score": -2.4267239570617676,
+      "right_score": -0.009696917608380318
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This biochemist has made",
+        "advancing modern scientific research"
+      ],
+      "u": -2.1668081283569336,
+      "margin": 1.800060272216797e-05,
+      "wrong_score": -0.2825908064842224,
+      "right_score": -0.2826088070869446
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "field of synthetic biology",
+        "advancing modern scientific research"
+      ],
+      "u": -0.4583430290222168,
+      "margin": -1.708446979522705,
+      "wrong_score": -1.7306158542633057,
+      "right_score": -0.022168904542922974
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This biochemist has made",
+        "field of synthetic biology",
+        "advancing modern scientific research"
+      ],
+      "u": -1.0417479276657104,
+      "margin": -1.1250420808792114,
+      "wrong_score": -1.1486965417861938,
+      "right_score": -0.023654503747820854
+    }
+  ],
+  "single_u": [
+    -0.49975037574768066,
+    0.5840287208557129,
+    0.25023698806762695
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This biochemist has made",
+        "field of synthetic biology"
+      ],
+      "u_i": -0.49975037574768066,
+      "u_j": 0.5840287208557129,
+      "local_fd": 0.41620659828186035,
+      "banzhaf": 1.1249234676361084,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This biochemist has made",
+        "advancing modern scientific research"
+      ],
+      "u_i": -0.49975037574768066,
+      "u_j": 0.25023698806762695,
+      "local_fd": -1.9172947406768799,
+      "banzhaf": -1.2085778713226318,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "field of synthetic biology",
+        "advancing modern scientific research"
+      ],
+      "u_i": 0.5840287208557129,
+      "u_j": 0.25023698806762695,
+      "local_fd": -1.2926087379455566,
+      "banzhaf": -0.5838919281959534,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This biochemist has made",
+        "advancing modern scientific research"
+      ],
+      "order": 2,
+      "harsanyi": -1.9172947406768799
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This biochemist has made",
+        "field of synthetic biology",
+        "advancing modern scientific research"
+      ],
+      "order": 3,
+      "harsanyi": 1.4174336194992065
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "field of synthetic biology",
+        "advancing modern scientific research"
+      ],
+      "order": 2,
+      "harsanyi": -1.2926087379455566
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This biochemist has made",
+        "field of synthetic biology"
+      ],
+      "order": 2,
+      "harsanyi": 0.41620659828186035
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "field of synthetic biology"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -1.1250420808792114,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

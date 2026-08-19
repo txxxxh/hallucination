@@ -1,0 +1,122 @@
+{
+  "protocol": "common-key Scientist/Llama audit; unsupervised axis scores; global rank thresholds 30/70; categories are multi-label hypotheses",
+  "n": 1076,
+  "n_error": 453,
+  "error_rate": 0.42100371747211895,
+  "coverage": {
+    "U": 2894,
+    "R": 1076,
+    "E": 1076,
+    "semantic": 1076,
+    "P_cache": 1084,
+    "intersection": 1076
+  },
+  "score_definitions": {
+    "U": "semantic pooled entropy",
+    "R": "group-OOF delta-trajectory error probability",
+    "E": "alternative minus chosen MiniCheck whole-support",
+    "P": "maximum positive generated-minus-alternative margin support removable by span neutralization"
+  },
+  "metrics": {
+    "u_score": {
+      "auroc_error": 0.6044809173018117,
+      "mean_error": 0.6762255850931229,
+      "mean_correct": 0.5867365905608859
+    },
+    "r_score": {
+      "auroc_error": 0.8157778179357167,
+      "mean_error": 0.6631407684112993,
+      "mean_correct": 0.39149688266373656
+    },
+    "e_score": {
+      "auroc_error": 0.9775103731499297,
+      "mean_error": 0.037702433044341684,
+      "mean_correct": -0.03804232453386244
+    },
+    "p_score": {
+      "auroc_error": 0.281205375966891,
+      "mean_error": 0.4876904241888728,
+      "mean_correct": 1.114292573034285
+    }
+  },
+  "spearman": {
+    "u_score__r_score": 0.2567833787901095,
+    "u_score__e_score": 0.1302690189277022,
+    "u_score__p_score": -0.29234396944163643,
+    "r_score__e_score": 0.4259508210972864,
+    "r_score__p_score": -0.39882999064810165,
+    "e_score__p_score": -0.2812739560339552
+  },
+  "error_dominant_axis_counts": {
+    "E": 194,
+    "U": 84,
+    "R": 147,
+    "P": 28
+  },
+  "error_high_axis_overlap": {
+    "E": 76,
+    "URE": 66,
+    "none": 40,
+    "UP": 2,
+    "UREP": 15,
+    "UEP": 6,
+    "UE": 34,
+    "RE": 91,
+    "P": 10,
+    "REP": 12,
+    "R": 45,
+    "EP": 16,
+    "UR": 22,
+    "U": 12,
+    "RP": 4,
+    "URP": 2
+  },
+  "validations": {
+    "U_semantic": {
+      "prediction": "U-high should have lower consistency under resampling/neighbour prompts",
+      "original_consistency": {
+        "low_n": 342,
+        "low_mean": 0.92953216374269,
+        "high_n": 327,
+        "high_mean": 0.736697247706422,
+        "high_minus_low": -0.192834916036268
+      },
+      "neighbour_consistency": {
+        "low_n": 342,
+        "low_mean": 0.8646198830409356,
+        "high_n": 327,
+        "high_mean": 0.5886850152905199,
+        "high_minus_low": -0.27593486775041576
+      },
+      "note": "descriptive convergence, not independent causal validation; U is defined from the same sample family"
+    },
+    "P_physical_delete": {
+      "prediction": "among errors, P-high should receive larger repair gain from deleting the selected span",
+      "delete_repair_gain": {
+        "low_n": 218,
+        "low_mean": -0.6608132081567695,
+        "high_n": 67,
+        "high_mean": 0.059277148389104584,
+        "high_minus_low": 0.720090356545874
+      },
+      "note": "physical deletion is distinct from stage-1 neutralization, but span selection is shared"
+    },
+    "R_direction_intervention": {
+      "prediction": "among errors, R-high should have larger causal-minus-placebo repair from the held-out error direction",
+      "specific_repair": {
+        "low_n": 12,
+        "low_mean": -0.1783629059791565,
+        "high_n": 44,
+        "high_mean": 0.15455962852998215,
+        "high_minus_low": 0.33292253450913867
+      },
+      "n_overlap": 83
+    }
+  },
+  "limitations": [
+    "dominant-axis assignment is forced and is not a ground-truth label",
+    "30/70 cutoffs are exploratory and must be frozen before confirmatory evaluation",
+    "E requires a new explicit evidence-completion intervention",
+    "U and P checks reuse parts of their discovery pipeline and therefore require stronger held-out controls"
+  ]
+}

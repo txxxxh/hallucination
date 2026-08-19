@@ -1,0 +1,286 @@
+{
+  "key": "question_2246",
+  "group": "Q187224",
+  "generation_correct": false,
+  "right": "Pierre-Gilles de Gennes",
+  "wrong": "Theodor Wolfgang Hänsch",
+  "base_margin_wrong_minus_right": 0.3924243152141571,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 171,
+      "char_end": 197,
+      "text": "professor has made lasting",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "professor",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 69,
+      "token_end": 74
+    },
+    {
+      "char_start": 422,
+      "char_end": 425,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 120,
+      "token_end": 122
+    },
+    {
+      "char_start": 426,
+      "char_end": 455,
+      "text": "receive the Gottfried Wilhelm",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Gottfried Wilhelm Leibniz Prize",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 122,
+      "token_end": 125
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.3924243152141571,
+      "wrong_score": -0.011899336241185665,
+      "right_score": -0.40432363748550415
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "professor has made lasting"
+      ],
+      "u": 0.0561298131942749,
+      "margin": 0.3362945020198822,
+      "wrong_score": -0.02804194763302803,
+      "right_score": -0.36433646082878113
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": -0.3923414647579193,
+      "margin": 0.7847657799720764,
+      "wrong_score": -0.004296810366213322,
+      "right_score": -0.7890626192092896
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "professor has made lasting",
+        "not"
+      ],
+      "u": -0.2689647972583771,
+      "margin": 0.6613891124725342,
+      "wrong_score": -0.014131888747215271,
+      "right_score": -0.6755210161209106
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "receive the Gottfried Wilhelm"
+      ],
+      "u": -0.5713814496994019,
+      "margin": 0.9638057947158813,
+      "wrong_score": -0.002438245341181755,
+      "right_score": -0.9662440419197083
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "professor has made lasting",
+        "receive the Gottfried Wilhelm"
+      ],
+      "u": -0.4634101688861847,
+      "margin": 0.8558344841003418,
+      "wrong_score": -0.004548999015241861,
+      "right_score": -0.8603835105895996
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "not",
+        "receive the Gottfried Wilhelm"
+      ],
+      "u": -0.5699729919433594,
+      "margin": 0.9623973369598389,
+      "wrong_score": -0.00671518687158823,
+      "right_score": -0.9691125154495239
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "professor has made lasting",
+        "not",
+        "receive the Gottfried Wilhelm"
+      ],
+      "u": -0.40888550877571106,
+      "margin": 0.8013098239898682,
+      "wrong_score": -0.01323920488357544,
+      "right_score": -0.8145490288734436
+    }
+  ],
+  "single_u": [
+    0.0561298131942749,
+    -0.3923414647579193,
+    -0.5713814496994019
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "professor has made lasting",
+        "not"
+      ],
+      "u_i": 0.0561298131942749,
+      "u_j": -0.3923414647579193,
+      "local_fd": 0.06724685430526733,
+      "banzhaf": 0.06018152832984924,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "professor has made lasting",
+        "receive the Gottfried Wilhelm"
+      ],
+      "u_i": 0.0561298131942749,
+      "u_j": -0.5713814496994019,
+      "local_fd": 0.05184149742126465,
+      "banzhaf": 0.044776156544685364,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "not",
+        "receive the Gottfried Wilhelm"
+      ],
+      "u_i": -0.3923414647579193,
+      "u_j": -0.5713814496994019,
+      "local_fd": 0.3937499225139618,
+      "banzhaf": 0.3866845965385437,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "not",
+        "receive the Gottfried Wilhelm"
+      ],
+      "order": 2,
+      "harsanyi": 0.3937499225139618
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "professor has made lasting",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.06724685430526733
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "professor has made lasting",
+        "receive the Gottfried Wilhelm"
+      ],
+      "order": 2,
+      "harsanyi": 0.05184146761894226
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "professor has made lasting",
+        "not",
+        "receive the Gottfried Wilhelm"
+      ],
+      "order": 3,
+      "harsanyi": -0.014130651950836182
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8013098239898682,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

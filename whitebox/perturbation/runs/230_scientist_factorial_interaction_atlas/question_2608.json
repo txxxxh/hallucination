@@ -1,0 +1,290 @@
+{
+  "key": "question_2608",
+  "group": "Q907372",
+  "generation_correct": false,
+  "right": "Alexander Vinogradov",
+  "wrong": "Vitaly Lazarevich Ginzburg",
+  "base_margin_wrong_minus_right": 0.3703436553478241,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 324,
+      "char_end": 344,
+      "text": "and the State Stalin",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "State Stalin Prize, 1st degree",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 109,
+      "token_end": 113
+    },
+    {
+      "char_start": 452,
+      "char_end": 468,
+      "text": "Order of the Red",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 139,
+      "token_end": 142
+    },
+    {
+      "char_start": 491,
+      "char_end": 513,
+      "text": "the Medal \"For Valiant",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal \"For Valiant Labour in the Great Patriotic War 1941–1945\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 146,
+      "token_end": 150
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.3703436553478241,
+      "wrong_score": -0.03958636149764061,
+      "right_score": -0.409930020570755
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and the State Stalin"
+      ],
+      "u": -0.06606647372245789,
+      "margin": 0.436410129070282,
+      "wrong_score": -0.025655409321188927,
+      "right_score": -0.46206554770469666
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Order of the Red"
+      ],
+      "u": 0.04157111048698425,
+      "margin": 0.32877254486083984,
+      "wrong_score": -0.04472542926669121,
+      "right_score": -0.37349796295166016
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and the State Stalin",
+        "Order of the Red"
+      ],
+      "u": 0.06876450777053833,
+      "margin": 0.30157914757728577,
+      "wrong_score": -0.050517868250608444,
+      "right_score": -0.3520970046520233
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Medal \"For Valiant"
+      ],
+      "u": -0.18797138333320618,
+      "margin": 0.5583150386810303,
+      "wrong_score": -0.01953837275505066,
+      "right_score": -0.5778534412384033
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "and the State Stalin",
+        "the Medal \"For Valiant"
+      ],
+      "u": -0.22068628668785095,
+      "margin": 0.591029942035675,
+      "wrong_score": -0.014530176296830177,
+      "right_score": -0.6055601239204407
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "the Medal \"For Valiant"
+      ],
+      "u": -0.3686177432537079,
+      "margin": 0.738961398601532,
+      "wrong_score": -0.013111232779920101,
+      "right_score": -0.7520726323127747
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "and the State Stalin",
+        "Order of the Red",
+        "the Medal \"For Valiant"
+      ],
+      "u": -0.19355133175849915,
+      "margin": 0.5638949871063232,
+      "wrong_score": -0.020946456119418144,
+      "right_score": -0.5848414301872253
+    }
+  ],
+  "single_u": [
+    -0.06606647372245789,
+    0.04157111048698425,
+    -0.18797138333320618
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "and the State Stalin",
+        "Order of the Red"
+      ],
+      "u_i": -0.06606647372245789,
+      "u_j": 0.04157111048698425,
+      "local_fd": 0.09325987100601196,
+      "banzhaf": 0.15052059292793274,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "and the State Stalin",
+        "the Medal \"For Valiant"
+      ],
+      "u_i": -0.06606647372245789,
+      "u_j": -0.18797138333320618,
+      "local_fd": 0.03335157036781311,
+      "banzhaf": 0.09061229228973389,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Order of the Red",
+        "the Medal \"For Valiant"
+      ],
+      "u_i": 0.04157111048698425,
+      "u_j": -0.18797138333320618,
+      "local_fd": -0.22221747040748596,
+      "banzhaf": -0.16495674848556519,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "the Medal \"For Valiant"
+      ],
+      "order": 2,
+      "harsanyi": -0.22221747040748596
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "and the State Stalin",
+        "Order of the Red",
+        "the Medal \"For Valiant"
+      ],
+      "order": 3,
+      "harsanyi": 0.11452144384384155
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and the State Stalin",
+        "Order of the Red"
+      ],
+      "order": 2,
+      "harsanyi": 0.09325987100601196
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "and the State Stalin",
+        "the Medal \"For Valiant"
+      ],
+      "order": 2,
+      "harsanyi": 0.03335157036781311
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5638949871063232,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

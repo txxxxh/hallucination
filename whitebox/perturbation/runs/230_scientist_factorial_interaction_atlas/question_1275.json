@@ -1,0 +1,295 @@
+{
+  "key": "question_1275",
+  "group": "Q107690",
+  "generation_correct": false,
+  "right": "Jean-Marie Lehn",
+  "wrong": "Claude Cohen-Tannoudji",
+  "base_margin_wrong_minus_right": -0.03032614290714264,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 581,
+      "char_end": 608,
+      "text": "in honorary doctorates from",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate from the University of Cambridge",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 140,
+      "token_end": 146
+    },
+    {
+      "char_start": 644,
+      "char_end": 674,
+      "text": "including the Université libre",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctor of the Université libre de Bruxelles",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 151,
+      "token_end": 156
+    },
+    {
+      "char_start": 700,
+      "char_end": 728,
+      "text": "University of Jerusalem, and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctor of the Hebrew University of Jerusalem",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 158,
+      "token_end": 164
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.03032614290714264,
+      "wrong_score": -0.13555917143821716,
+      "right_score": -0.10523302853107452
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in honorary doctorates from"
+      ],
+      "u": 0.20911818742752075,
+      "margin": -0.2394443303346634,
+      "wrong_score": -0.2867507040500641,
+      "right_score": -0.047306373715400696
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Université libre"
+      ],
+      "u": 0.14993365108966827,
+      "margin": -0.1802597939968109,
+      "wrong_score": -0.23635315895080566,
+      "right_score": -0.05609336495399475
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in honorary doctorates from",
+        "including the Université libre"
+      ],
+      "u": 0.15599972009658813,
+      "margin": -0.18632586300373077,
+      "wrong_score": -0.23412983119487762,
+      "right_score": -0.04780397191643715
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "University of Jerusalem, and"
+      ],
+      "u": -1.0317479372024536,
+      "margin": 1.0014218091964722,
+      "wrong_score": -0.003115061903372407,
+      "right_score": -1.0045368671417236
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in honorary doctorates from",
+        "University of Jerusalem, and"
+      ],
+      "u": -0.931764543056488,
+      "margin": 0.9014384150505066,
+      "wrong_score": -0.004131910391151905,
+      "right_score": -0.9055703282356262
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Université libre",
+        "University of Jerusalem, and"
+      ],
+      "u": -1.0076180696487427,
+      "margin": 0.9772918820381165,
+      "wrong_score": -0.00371025362983346,
+      "right_score": -0.981002151966095
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in honorary doctorates from",
+        "including the Université libre",
+        "University of Jerusalem, and"
+      ],
+      "u": -0.8858941197395325,
+      "margin": 0.855567991733551,
+      "wrong_score": -0.014842625707387924,
+      "right_score": -0.8704106211662292
+    }
+  ],
+  "single_u": [
+    0.20911818742752075,
+    0.14993365108966827,
+    -1.0317479372024536
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "in honorary doctorates from",
+        "including the Université libre"
+      ],
+      "u_i": 0.20911818742752075,
+      "u_j": 0.14993365108966827,
+      "local_fd": -0.2030521184206009,
+      "banzhaf": -0.09065578132867813,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "in honorary doctorates from",
+        "University of Jerusalem, and"
+      ],
+      "u_i": 0.20911818742752075,
+      "u_j": -1.0317479372024536,
+      "local_fd": -0.10913479328155518,
+      "banzhaf": 0.0032615438103675842,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Université libre",
+        "University of Jerusalem, and"
+      ],
+      "u_i": 0.14993365108966827,
+      "u_j": -1.0317479372024536,
+      "local_fd": -0.12580382823944092,
+      "banzhaf": -0.013407468795776367,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in honorary doctorates from",
+        "including the Université libre",
+        "University of Jerusalem, and"
+      ],
+      "order": 3,
+      "harsanyi": 0.22479267418384552
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in honorary doctorates from",
+        "including the Université libre"
+      ],
+      "order": 2,
+      "harsanyi": -0.2030521184206009
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Université libre",
+        "University of Jerusalem, and"
+      ],
+      "order": 2,
+      "harsanyi": -0.12580378353595734
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in honorary doctorates from",
+        "University of Jerusalem, and"
+      ],
+      "order": 2,
+      "harsanyi": -0.10913479328155518
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.855567991733551,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

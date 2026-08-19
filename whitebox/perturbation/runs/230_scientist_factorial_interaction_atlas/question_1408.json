@@ -1,0 +1,296 @@
+{
+  "key": "question_1408",
+  "group": "Q899517",
+  "generation_correct": false,
+  "right": "Allen J. Bard",
+  "wrong": "Peter Debije",
+  "base_margin_wrong_minus_right": -0.18773801624774933,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 371,
+      "char_end": 399,
+      "text": "including the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 102,
+      "token_end": 106
+    },
+    {
+      "char_start": 403,
+      "char_end": 429,
+      "text": "Science, the Willard Gibbs",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Willard Gibbs Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 105,
+      "token_end": 111
+    },
+    {
+      "char_start": 430,
+      "char_end": 450,
+      "text": "Award, the William H",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "William H. Nichols Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 110,
+      "token_end": 116
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.18773801624774933,
+      "wrong_score": -0.33173224329948425,
+      "right_score": -0.14399422705173492
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the National Medal"
+      ],
+      "u": 0.24053283035755157,
+      "margin": -0.4282708466053009,
+      "wrong_score": -0.5075569152832031,
+      "right_score": -0.07928606867790222
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Science, the Willard Gibbs"
+      ],
+      "u": 0.43377965688705444,
+      "margin": -0.6215176582336426,
+      "wrong_score": -0.6746434569358826,
+      "right_score": -0.05312581732869148
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Willard Gibbs"
+      ],
+      "u": 0.2301270216703415,
+      "margin": -0.4178650379180908,
+      "wrong_score": -0.5014737248420715,
+      "right_score": -0.08360868692398071
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Award, the William H"
+      ],
+      "u": -0.15240298211574554,
+      "margin": -0.035335034132003784,
+      "wrong_score": -0.23390929400920868,
+      "right_score": -0.1985742598772049
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Award, the William H"
+      ],
+      "u": -0.08349741995334625,
+      "margin": -0.10424059629440308,
+      "wrong_score": -0.26970601081848145,
+      "right_score": -0.16546541452407837
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the Willard Gibbs",
+        "Award, the William H"
+      ],
+      "u": -0.41300854086875916,
+      "margin": 0.22527052462100983,
+      "wrong_score": -0.16113652288913727,
+      "right_score": -0.3864070475101471
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Willard Gibbs",
+        "Award, the William H"
+      ],
+      "u": -0.39744293689727783,
+      "margin": 0.2097049355506897,
+      "wrong_score": -0.13317039608955383,
+      "right_score": -0.34287533164024353
+    }
+  ],
+  "single_u": [
+    0.24053283035755157,
+    0.43377965688705444,
+    -0.15240298211574554
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the National Medal",
+        "Science, the Willard Gibbs"
+      ],
+      "u_i": 0.24053283035755157,
+      "u_j": 0.43377965688705444,
+      "local_fd": -0.4441854655742645,
+      "banzhaf": -0.24876272678375244,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the National Medal",
+        "Award, the William H"
+      ],
+      "u_i": 0.24053283035755157,
+      "u_j": -0.15240298211574554,
+      "local_fd": -0.17162726819515228,
+      "banzhaf": 0.0237954780459404,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Science, the Willard Gibbs",
+        "Award, the William H"
+      ],
+      "u_i": 0.43377965688705444,
+      "u_j": -0.15240298211574554,
+      "local_fd": -0.6943851709365845,
+      "banzhaf": -0.4989624619483948,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the Willard Gibbs",
+        "Award, the William H"
+      ],
+      "order": 2,
+      "harsanyi": -0.694385215640068
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Willard Gibbs"
+      ],
+      "order": 2,
+      "harsanyi": -0.4441854655742645
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, the Willard Gibbs",
+        "Award, the William H"
+      ],
+      "order": 3,
+      "harsanyi": 0.39084550738334656
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Award, the William H"
+      ],
+      "order": 2,
+      "harsanyi": -0.17162726819515228
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.2097049355506897,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

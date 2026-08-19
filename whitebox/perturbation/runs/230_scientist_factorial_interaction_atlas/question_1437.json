@@ -1,0 +1,290 @@
+{
+  "key": "question_1437",
+  "group": "Q469904",
+  "generation_correct": false,
+  "right": "Robert Gallo",
+  "wrong": "Drew Weissman",
+  "base_margin_wrong_minus_right": 2.1670849323272705,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 204,
+      "char_end": 237,
+      "text": "contributions to medical research",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Lasker Award for Basic Medical Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 72
+    },
+    {
+      "char_start": 336,
+      "char_end": 360,
+      "text": "the Princess of Asturias",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Princess of Asturias Award for Technical and Scientific Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 90,
+      "token_end": 95
+    },
+    {
+      "char_start": 483,
+      "char_end": 514,
+      "text": "and the Lasker-DeBakey Clinical",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Lasker-DeBakey Clinical Medical Research Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 124,
+      "token_end": 130
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 2.1670849323272705,
+      "wrong_score": -0.0011807644041255116,
+      "right_score": -2.1682655811309814
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "contributions to medical research"
+      ],
+      "u": 0.166090726852417,
+      "margin": 2.0009942054748535,
+      "wrong_score": -0.004311262629926205,
+      "right_score": -2.005305528640747
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Princess of Asturias"
+      ],
+      "u": 0.1230931282043457,
+      "margin": 2.043991804122925,
+      "wrong_score": -0.017472753301262856,
+      "right_score": -2.061464548110962
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "contributions to medical research",
+        "the Princess of Asturias"
+      ],
+      "u": 0.12424850463867188,
+      "margin": 2.0428364276885986,
+      "wrong_score": -0.008348183706402779,
+      "right_score": -2.05118465423584
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Lasker-DeBakey Clinical"
+      ],
+      "u": -0.16841888427734375,
+      "margin": 2.3355038166046143,
+      "wrong_score": -0.006363702472299337,
+      "right_score": -2.341867446899414
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "contributions to medical research",
+        "and the Lasker-DeBakey Clinical"
+      ],
+      "u": 0.11957120895385742,
+      "margin": 2.047513723373413,
+      "wrong_score": -0.011850693263113499,
+      "right_score": -2.0593643188476562
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Princess of Asturias",
+        "and the Lasker-DeBakey Clinical"
+      ],
+      "u": -0.04938197135925293,
+      "margin": 2.2164669036865234,
+      "wrong_score": -0.025641536340117455,
+      "right_score": -2.2421083450317383
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "contributions to medical research",
+        "the Princess of Asturias",
+        "and the Lasker-DeBakey Clinical"
+      ],
+      "u": 0.3684513568878174,
+      "margin": 1.7986335754394531,
+      "wrong_score": -0.016172217205166817,
+      "right_score": -1.8148057460784912
+    }
+  ],
+  "single_u": [
+    0.166090726852417,
+    0.1230931282043457,
+    -0.16841888427734375
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "contributions to medical research",
+        "the Princess of Asturias"
+      ],
+      "u_i": 0.166090726852417,
+      "u_j": 0.1230931282043457,
+      "local_fd": -0.16493535041809082,
+      "banzhaf": -0.01754605770111084,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "contributions to medical research",
+        "and the Lasker-DeBakey Clinical"
+      ],
+      "u_i": 0.166090726852417,
+      "u_j": -0.16841888427734375,
+      "local_fd": 0.12189936637878418,
+      "banzhaf": 0.26928865909576416,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Princess of Asturias",
+        "and the Lasker-DeBakey Clinical"
+      ],
+      "u_i": 0.1230931282043457,
+      "u_j": -0.16841888427734375,
+      "local_fd": -0.004056215286254883,
+      "banzhaf": 0.1433330774307251,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "contributions to medical research",
+        "the Princess of Asturias",
+        "and the Lasker-DeBakey Clinical"
+      ],
+      "order": 3,
+      "harsanyi": 0.29477858543395996
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "contributions to medical research",
+        "the Princess of Asturias"
+      ],
+      "order": 2,
+      "harsanyi": -0.16493535041809082
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "contributions to medical research",
+        "and the Lasker-DeBakey Clinical"
+      ],
+      "order": 2,
+      "harsanyi": 0.12189936637878418
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Princess of Asturias",
+        "and the Lasker-DeBakey Clinical"
+      ],
+      "order": 2,
+      "harsanyi": -0.004056215286254883
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.7986335754394531,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

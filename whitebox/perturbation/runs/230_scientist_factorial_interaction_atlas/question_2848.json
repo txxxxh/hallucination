@@ -1,0 +1,291 @@
+{
+  "key": "question_2848",
+  "group": "Q107964",
+  "generation_correct": false,
+  "right": "Thomas J. Sargent",
+  "wrong": "Peter Diamond",
+  "base_margin_wrong_minus_right": -2.258507490158081,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 367,
+      "char_end": 397,
+      "text": "in Economics. Widely respected",
+      "kind": "attribute",
+      "field": "field",
+      "value": "economics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 101,
+      "token_end": 110
+    },
+    {
+      "char_start": 668,
+      "char_end": 671,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 156,
+      "token_end": 157
+    },
+    {
+      "char_start": 696,
+      "char_end": 728,
+      "text": "from the Massachusetts Institute",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Massachusetts Institute of Technology",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 162,
+      "token_end": 165
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.258507490158081,
+      "wrong_score": -2.2687630653381348,
+      "right_score": -0.010255553759634495
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in Economics. Widely respected"
+      ],
+      "u": -2.6411924362182617,
+      "margin": 0.3826849162578583,
+      "wrong_score": -0.07943146675825119,
+      "right_score": -0.46211639046669006
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": 0.31519579887390137,
+      "margin": -2.5737032890319824,
+      "wrong_score": -2.5891926288604736,
+      "right_score": -0.015489262528717518
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Economics. Widely respected",
+        "not"
+      ],
+      "u": -2.705113410949707,
+      "margin": 0.44660598039627075,
+      "wrong_score": -0.051638077944517136,
+      "right_score": -0.498244047164917
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "from the Massachusetts Institute"
+      ],
+      "u": -1.3880720138549805,
+      "margin": -0.8704354166984558,
+      "wrong_score": -0.9197216629981995,
+      "right_score": -0.049286242574453354
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in Economics. Widely respected",
+        "from the Massachusetts Institute"
+      ],
+      "u": -2.268106698989868,
+      "margin": 0.009599223732948303,
+      "wrong_score": -0.22149764001369476,
+      "right_score": -0.23109686374664307
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "not",
+        "from the Massachusetts Institute"
+      ],
+      "u": -1.3340790271759033,
+      "margin": -0.9244284629821777,
+      "wrong_score": -0.9733806252479553,
+      "right_score": -0.048952192068099976
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in Economics. Widely respected",
+        "not",
+        "from the Massachusetts Institute"
+      ],
+      "u": -2.492804527282715,
+      "margin": 0.234296977519989,
+      "wrong_score": -0.11143306642770767,
+      "right_score": -0.3457300364971161
+    }
+  ],
+  "single_u": [
+    -2.6411924362182617,
+    0.31519579887390137,
+    -1.3880720138549805
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "in Economics. Widely respected",
+        "not"
+      ],
+      "u_i": -2.6411924362182617,
+      "u_j": 0.31519579887390137,
+      "local_fd": -0.3791167736053467,
+      "banzhaf": -0.32890379428863525,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "in Economics. Widely respected",
+        "from the Massachusetts Institute"
+      ],
+      "u_i": -2.6411924362182617,
+      "u_j": -1.3880720138549805,
+      "local_fd": 1.761157751083374,
+      "banzhaf": 1.8113707304000854,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "not",
+        "from the Massachusetts Institute"
+      ],
+      "u_i": 0.31519579887390137,
+      "u_j": -1.3880720138549805,
+      "local_fd": -0.2612028121948242,
+      "banzhaf": -0.2109898328781128,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in Economics. Widely respected",
+        "from the Massachusetts Institute"
+      ],
+      "order": 2,
+      "harsanyi": 1.761157751083374
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Economics. Widely respected",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": -0.3791167736053467
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "not",
+        "from the Massachusetts Institute"
+      ],
+      "order": 2,
+      "harsanyi": -0.2612028121948242
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in Economics. Widely respected",
+        "not",
+        "from the Massachusetts Institute"
+      ],
+      "order": 3,
+      "harsanyi": 0.10042595863342285
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.234296977519989,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 17,
+    "n_excluded": 11,
+    "max_candidates": 6
+  }
+}

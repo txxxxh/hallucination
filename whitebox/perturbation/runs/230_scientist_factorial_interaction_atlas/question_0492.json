@@ -1,0 +1,145 @@
+{
+  "key": "question_0492",
+  "group": "Q185110",
+  "generation_correct": false,
+  "right": "Igor Vasilyevich Kurchatov",
+  "wrong": "Yakov Borisovich Zel'dovich",
+  "base_margin_wrong_minus_right": -0.17551563680171967,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 199,
+      "char_end": 217,
+      "text": "at Peter the Great",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Peter the Great Saint Petersburg State Polytechnical University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 80,
+      "token_end": 85
+    },
+    {
+      "char_start": 218,
+      "char_end": 254,
+      "text": "Saint Petersburg State Polytechnical",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Saint Petersburg State University",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 85,
+      "token_end": 94
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.17551563680171967,
+      "wrong_score": -0.20372049510478973,
+      "right_score": -0.028204862028360367
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "at Peter the Great"
+      ],
+      "u": 0.09242869913578033,
+      "margin": -0.2679443359375,
+      "wrong_score": -0.29123252630233765,
+      "right_score": -0.023288195952773094
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Saint Petersburg State Polytechnical"
+      ],
+      "u": 0.2029249221086502,
+      "margin": -0.3784405589103699,
+      "wrong_score": -0.39437487721443176,
+      "right_score": -0.015934308990836143
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at Peter the Great",
+        "Saint Petersburg State Polytechnical"
+      ],
+      "u": 0.06398947536945343,
+      "margin": -0.2395051121711731,
+      "wrong_score": -0.2634950876235962,
+      "right_score": -0.023989977315068245
+    }
+  ],
+  "single_u": [
+    0.09242869913578033,
+    0.2029249221086502
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "at Peter the Great",
+        "Saint Petersburg State Polytechnical"
+      ],
+      "u_i": 0.09242869913578033,
+      "u_j": 0.2029249221086502,
+      "local_fd": -0.2313641458749771,
+      "banzhaf": -0.2313641458749771,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at Peter the Great",
+        "Saint Petersburg State Polytechnical"
+      ],
+      "order": 2,
+      "harsanyi": -0.2313641458749771
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2395051121711731,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

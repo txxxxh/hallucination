@@ -1,0 +1,290 @@
+{
+  "key": "question_1716",
+  "group": "Q110106",
+  "generation_correct": false,
+  "right": "Julius Axelrod",
+  "wrong": "Richard Axel",
+  "base_margin_wrong_minus_right": 0.9291820526123047,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 307,
+      "char_end": 332,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 90,
+      "token_end": 95
+    },
+    {
+      "char_start": 394,
+      "char_end": 422,
+      "text": "Award, and the Bristol-Myers",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Bristol-Myers Squibb Award for Distinguished Achievement in Neuroscience Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 104,
+      "token_end": 111
+    },
+    {
+      "char_start": 529,
+      "char_end": 551,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 129,
+      "token_end": 134
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.9291820526123047,
+      "wrong_score": -0.015169722959399223,
+      "right_score": -0.9443517923355103
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": -0.0944288969039917,
+      "margin": 1.0236109495162964,
+      "wrong_score": -0.015186757780611515,
+      "right_score": -1.0387977361679077
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Award, and the Bristol-Myers"
+      ],
+      "u": -0.09311830997467041,
+      "margin": 1.022300362586975,
+      "wrong_score": -0.016130737960338593,
+      "right_score": -1.0384310483932495
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Award, and the Bristol-Myers"
+      ],
+      "u": -0.029116928577423096,
+      "margin": 0.9582989811897278,
+      "wrong_score": -0.02114955335855484,
+      "right_score": -0.9794485569000244
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.16264379024505615,
+      "margin": 0.7665382623672485,
+      "wrong_score": -0.029472511261701584,
+      "right_score": -0.7960107922554016
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the American"
+      ],
+      "u": 0.22686362266540527,
+      "margin": 0.7023184299468994,
+      "wrong_score": -0.03408359736204147,
+      "right_score": -0.7364020347595215
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Award, and the Bristol-Myers",
+        "Fellow of the American"
+      ],
+      "u": -0.031617820262908936,
+      "margin": 0.9607998728752136,
+      "wrong_score": -0.01610030233860016,
+      "right_score": -0.9769001603126526
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Award, and the Bristol-Myers",
+        "Fellow of the American"
+      ],
+      "u": 0.13281160593032837,
+      "margin": 0.7963704466819763,
+      "wrong_score": -0.0300397127866745,
+      "right_score": -0.826410174369812
+    }
+  ],
+  "single_u": [
+    -0.0944288969039917,
+    -0.09311830997467041,
+    0.16264379024505615
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Nobel Prize",
+        "Award, and the Bristol-Myers"
+      ],
+      "u_i": -0.0944288969039917,
+      "u_j": -0.09311830997467041,
+      "local_fd": 0.158430278301239,
+      "banzhaf": 0.1293199360370636,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the American"
+      ],
+      "u_i": -0.0944288969039917,
+      "u_j": 0.16264379024505615,
+      "local_fd": 0.15864872932434082,
+      "banzhaf": 0.1295383870601654,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Award, and the Bristol-Myers",
+        "Fellow of the American"
+      ],
+      "u_i": -0.09311830997467041,
+      "u_j": 0.16264379024505615,
+      "local_fd": -0.10114330053329468,
+      "banzhaf": -0.1302536427974701,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.15864872932434082
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Award, and the Bristol-Myers"
+      ],
+      "order": 2,
+      "harsanyi": 0.158430278301239
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Award, and the Bristol-Myers",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.10114330053329468
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Award, and the Bristol-Myers",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": -0.05822068452835083
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7963704466819763,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

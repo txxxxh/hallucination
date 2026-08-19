@@ -44,11 +44,11 @@ def stats(rows):
  n=len(rows);c=sum(x["correct"]for x in rows);w=sum(x["outcome"]=="wrong"for x in rows);u=n-c-w
  return {"n":n,"correct":c,"accuracy":c/n if n else None,"wrong":w,"unmatched":u}
 def main():
- ap=argparse.ArgumentParser();ap.add_argument("--root",type=Path,default=Path(__file__).parent/"multidomain_v5");ap.add_argument("--out",type=Path,default=Path(__file__).parent/"multidomain_v5/gpt52_eval");ap.add_argument("--model",default="gpt-5.2-2025-12-11");ap.add_argument("--key-file",type=Path,default=Path("/home/tong56/.openai_api_key"));ap.add_argument("--workers",type=int,default=16);ap.add_argument("--retries",type=int,default=8);ap.add_argument("--timeout",type=int,default=120);ap.add_argument("--resume",action="store_true");ap.add_argument("--limit",type=int,default=0);a=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument("--root",type=Path,default=Path(__file__).parent/"multidomain_v5");ap.add_argument("--out",type=Path,default=Path(__file__).parent/"multidomain_v5/gpt52_eval");ap.add_argument("--model",default="gpt-5.2-2025-12-11");ap.add_argument("--key-file",type=Path,default=Path("/home/tong56/.openai_api_key"));ap.add_argument("--workers",type=int,default=16);ap.add_argument("--retries",type=int,default=8);ap.add_argument("--timeout",type=int,default=120);ap.add_argument("--resume",action="store_true");ap.add_argument("--limit",type=int,default=0);ap.add_argument("--domains",nargs="+",choices=("athlete","musician","building"),default=["athlete","musician","building"]);a=ap.parse_args()
  if not os.environ.get("OPENAI_API_KEY") and a.key_file.exists():os.environ["OPENAI_API_KEY"]=a.key_file.read_text().strip()
  if not os.environ.get("OPENAI_API_KEY"):raise RuntimeError("OPENAI_API_KEY is not set")
  tasks=[]
- for d in("athlete","musician","building"):
+ for d in a.domains:
   rows=[json.loads(x)for x in open(a.root/d/"primary_questions.jsonl")][:a.limit or None]
   tasks += [(x,d,c)for x in rows for c in("names","profiles")]
  a.out.mkdir(parents=True,exist_ok=True);path=a.out/"results.jsonl";done={}
@@ -62,9 +62,9 @@ def main():
    with lock:done[key]=r;f.write(json.dumps(r,ensure_ascii=False)+"\n");f.flush()
    if i%25==0 or i==len(pending):print(f"[{i}/{len(pending)}] stored={len(done)}/{len(tasks)}",flush=True)
  rows=[done[(d,x["id"],c)]for x,d,c in tasks];by_domain={};by_field={}
- for d in("athlete","musician","building"):
+ for d in a.domains:
   by_domain[d]={c:stats([x for x in rows if x["domain"]==d and x["condition"]==c])for c in("names","profiles")};by_domain[d]["profiles_gain_points"]=100*(by_domain[d]["profiles"]["accuracy"]-by_domain[d]["names"]["accuracy"])
- for d in("athlete","musician","building"):
+ for d in a.domains:
   for field in sorted({x["field"]for x in rows if x["domain"]==d}):by_field[d+"/"+field]={c:stats([x for x in rows if x["domain"]==d and x["field"]==field and x["condition"]==c])for c in("names","profiles")}
  usage={k:sum(x.get("usage",{}).get(k,0)or 0 for x in rows)for k in("input_tokens","output_tokens","total_tokens")}
  report={"model":a.model,"calls":len(rows),"overall":{c:stats([x for x in rows if x["condition"]==c])for c in("names","profiles")},"by_domain":by_domain,"by_domain_and_field":by_field,"usage":usage}

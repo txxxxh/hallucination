@@ -1,0 +1,285 @@
+{
+  "key": "question_2252",
+  "group": "Q469904",
+  "generation_correct": false,
+  "right": "Robert Gallo",
+  "wrong": "Karl Deisseroth",
+  "base_margin_wrong_minus_right": 0.6883363127708435,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 355,
+      "char_end": 378,
+      "text": "in Medicine, the Canada",
+      "kind": "attribute",
+      "field": "field",
+      "value": "medicine",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 102,
+      "token_end": 107
+    },
+    {
+      "char_start": 536,
+      "char_end": 541,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 133,
+      "token_end": 135
+    },
+    {
+      "char_start": 542,
+      "char_end": 566,
+      "text": "worked as a psychiatrist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "psychiatrist",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 135,
+      "token_end": 139
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.6883363127708435,
+      "wrong_score": -0.0246716421097517,
+      "right_score": -0.713007926940918
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in Medicine, the Canada"
+      ],
+      "u": -0.6508157849311829,
+      "margin": 1.3391520977020264,
+      "wrong_score": -0.009895531460642815,
+      "right_score": -1.3490476608276367
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.24725621938705444,
+      "margin": 0.935592532157898,
+      "wrong_score": -0.0208254624158144,
+      "right_score": -0.956417977809906
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Medicine, the Canada",
+        "never"
+      ],
+      "u": -0.3714396357536316,
+      "margin": 1.059775948524475,
+      "wrong_score": -0.023146791383624077,
+      "right_score": -1.0829226970672607
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "worked as a psychiatrist"
+      ],
+      "u": -0.20015674829483032,
+      "margin": 0.8884930610656738,
+      "wrong_score": -0.01598200760781765,
+      "right_score": -0.9044750928878784
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in Medicine, the Canada",
+        "worked as a psychiatrist"
+      ],
+      "u": -1.1902415752410889,
+      "margin": 1.8785778284072876,
+      "wrong_score": -0.0030480308923870325,
+      "right_score": -1.8816258907318115
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "worked as a psychiatrist"
+      ],
+      "u": -0.24724698066711426,
+      "margin": 0.9355832934379578,
+      "wrong_score": -0.03151901811361313,
+      "right_score": -0.9671022891998291
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in Medicine, the Canada",
+        "never",
+        "worked as a psychiatrist"
+      ],
+      "u": -0.5587837100028992,
+      "margin": 1.2471200227737427,
+      "wrong_score": -0.07750384509563446,
+      "right_score": -1.3246238231658936
+    }
+  ],
+  "single_u": [
+    -0.6508157849311829,
+    -0.24725621938705444,
+    -0.20015674829483032
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "in Medicine, the Canada",
+        "never"
+      ],
+      "u_i": -0.6508157849311829,
+      "u_j": -0.24725621938705444,
+      "local_fd": 0.5266323685646057,
+      "banzhaf": 0.6025902032852173,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "in Medicine, the Canada",
+        "worked as a psychiatrist"
+      ],
+      "u_i": -0.6508157849311829,
+      "u_j": -0.20015674829483032,
+      "local_fd": -0.3392690420150757,
+      "banzhaf": -0.2633111774921417,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "never",
+        "worked as a psychiatrist"
+      ],
+      "u_i": -0.24725621938705444,
+      "u_j": -0.20015674829483032,
+      "local_fd": 0.2001659870147705,
+      "banzhaf": 0.27612385153770447,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Medicine, the Canada",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.5266323685646057
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in Medicine, the Canada",
+        "worked as a psychiatrist"
+      ],
+      "order": 2,
+      "harsanyi": -0.3392690420150757
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "worked as a psychiatrist"
+      ],
+      "order": 2,
+      "harsanyi": 0.2001659870147705
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in Medicine, the Canada",
+        "never",
+        "worked as a psychiatrist"
+      ],
+      "order": 3,
+      "harsanyi": 0.15191572904586792
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.2471200227737427,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

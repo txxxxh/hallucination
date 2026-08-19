@@ -1,0 +1,290 @@
+{
+  "key": "question_0735",
+  "group": "Q528631",
+  "generation_correct": false,
+  "right": "Frederick Abel",
+  "wrong": "George Porter",
+  "base_margin_wrong_minus_right": -0.919995129108429,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 172,
+      "char_end": 191,
+      "text": "career as a chemist",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 62,
+      "token_end": 67
+    },
+    {
+      "char_start": 356,
+      "char_end": 375,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 94,
+      "token_end": 99
+    },
+    {
+      "char_start": 469,
+      "char_end": 501,
+      "text": "Bakerian Medal. However, despite",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Society Bakerian Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 114,
+      "token_end": 121
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.919995129108429,
+      "wrong_score": -0.964342474937439,
+      "right_score": -0.04434734955430031
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "career as a chemist"
+      ],
+      "u": 0.5353390574455261,
+      "margin": -1.455334186553955,
+      "wrong_score": -1.4732592105865479,
+      "right_score": -0.01792507991194725
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.06363099813461304,
+      "margin": -0.8563641309738159,
+      "wrong_score": -0.9120877385139465,
+      "right_score": -0.05572362616658211
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "career as a chemist",
+        "Fellow of the Royal"
+      ],
+      "u": 0.1797458529472351,
+      "margin": -1.099740982055664,
+      "wrong_score": -1.12940514087677,
+      "right_score": -0.02966415509581566
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Bakerian Medal. However, despite"
+      ],
+      "u": 0.040611326694488525,
+      "margin": -0.9606064558029175,
+      "wrong_score": -1.0779685974121094,
+      "right_score": -0.11736216396093369
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "career as a chemist",
+        "Bakerian Medal. However, despite"
+      ],
+      "u": 0.27696698904037476,
+      "margin": -1.1969621181488037,
+      "wrong_score": -1.3207505941390991,
+      "right_score": -0.1237885057926178
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "u": -0.4713496267795563,
+      "margin": -0.4486455023288727,
+      "wrong_score": -0.7059634923934937,
+      "right_score": -0.25731799006462097
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "career as a chemist",
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "u": -0.00198286771774292,
+      "margin": -0.918012261390686,
+      "wrong_score": -1.1001625061035156,
+      "right_score": -0.1821502298116684
+    }
+  ],
+  "single_u": [
+    0.5353390574455261,
+    -0.06363099813461304,
+    0.040611326694488525
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "career as a chemist",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.5353390574455261,
+      "u_j": -0.06363099813461304,
+      "local_fd": -0.291962206363678,
+      "banzhaf": -0.029475554823875427,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "career as a chemist",
+        "Bakerian Medal. However, despite"
+      ],
+      "u_i": 0.5353390574455261,
+      "u_j": 0.040611326694488525,
+      "local_fd": -0.2989833950996399,
+      "banzhaf": -0.03649674355983734,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "u_i": -0.06363099813461304,
+      "u_j": 0.040611326694488525,
+      "local_fd": -0.44832995533943176,
+      "banzhaf": -0.1858433037996292,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "career as a chemist",
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "order": 3,
+      "harsanyi": 0.5249733030796051
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": -0.44832995533943176
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "career as a chemist",
+        "Bakerian Medal. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": -0.2989833950996399
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "career as a chemist",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.291962206363678
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.918012261390686,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

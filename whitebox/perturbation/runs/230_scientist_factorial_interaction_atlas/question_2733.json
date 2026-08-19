@@ -1,0 +1,146 @@
+{
+  "key": "question_2733",
+  "group": "Q335213",
+  "generation_correct": false,
+  "right": "Martin Rees, Baron Rees of Ludlow",
+  "wrong": "Alexander R. Todd, Baron Todd",
+  "base_margin_wrong_minus_right": 0.04696280509233475,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 237,
+      "char_end": 256,
+      "text": "member of the House",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "member of the House of Lords",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 87,
+      "token_end": 92
+    },
+    {
+      "char_start": 304,
+      "char_end": 326,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 107
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.04696280509233475,
+      "wrong_score": -0.10434887558221817,
+      "right_score": -0.15131168067455292
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "member of the House"
+      ],
+      "u": -0.09440375119447708,
+      "margin": 0.14136655628681183,
+      "wrong_score": -0.061550501734018326,
+      "right_score": -0.20291705429553986
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": 0.014992572367191315,
+      "margin": 0.03197023272514343,
+      "wrong_score": -0.08970394730567932,
+      "right_score": -0.12167418003082275
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "member of the House",
+        "President of the Royal"
+      ],
+      "u": -0.1245705708861351,
+      "margin": 0.17153337597846985,
+      "wrong_score": -0.04958609864115715,
+      "right_score": -0.2211194783449173
+    }
+  ],
+  "single_u": [
+    -0.09440375119447708,
+    0.014992572367191315
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "member of the House",
+        "President of the Royal"
+      ],
+      "u_i": -0.09440375119447708,
+      "u_j": 0.014992572367191315,
+      "local_fd": -0.045159392058849335,
+      "banzhaf": -0.045159392058849335,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "member of the House",
+        "President of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.045159392058849335
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.17153337597846985,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

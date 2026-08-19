@@ -1,0 +1,142 @@
+{
+  "key": "question_1310",
+  "group": "Q7442",
+  "generation_correct": false,
+  "right": "Carolyn R. Bertozzi",
+  "wrong": "Richard Smalley",
+  "base_margin_wrong_minus_right": -0.21086429059505463,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 216,
+      "char_end": 238,
+      "text": "the field of chemistry",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 72,
+      "token_end": 78
+    },
+    {
+      "char_start": 545,
+      "char_end": 550,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 134,
+      "token_end": 136
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.21086429059505463,
+      "wrong_score": -0.28337299823760986,
+      "right_score": -0.07250870764255524
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of chemistry"
+      ],
+      "u": 0.034121379256248474,
+      "margin": -0.2449856698513031,
+      "wrong_score": -0.3395099341869354,
+      "right_score": -0.09452427178621292
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.10475897043943405,
+      "margin": -0.10610532015562057,
+      "wrong_score": -0.2162434160709381,
+      "right_score": -0.11013809591531754
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "never"
+      ],
+      "u": 0.01636277139186859,
+      "margin": -0.22722706198692322,
+      "wrong_score": -0.2989717125892639,
+      "right_score": -0.0717446431517601
+    }
+  ],
+  "single_u": [
+    0.034121379256248474,
+    -0.10475897043943405
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of chemistry",
+        "never"
+      ],
+      "u_i": 0.034121379256248474,
+      "u_j": -0.10475897043943405,
+      "local_fd": 0.08700036257505417,
+      "banzhaf": 0.08700036257505417,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.08700036257505417
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.22722706198692322,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

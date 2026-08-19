@@ -1,0 +1,299 @@
+{
+  "key": "question_1695",
+  "group": "Q48973",
+  "generation_correct": false,
+  "right": "Glenn T. Seaborg",
+  "wrong": "Kyriacos Costa Nicolaou",
+  "base_margin_wrong_minus_right": 0.24626891314983368,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 231,
+      "char_end": 253,
+      "text": "the field of chemistry",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 81,
+      "token_end": 86
+    },
+    {
+      "char_start": 308,
+      "char_end": 327,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 98,
+      "token_end": 103
+    },
+    {
+      "char_start": 366,
+      "char_end": 390,
+      "text": "both the Centenary Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Centenary Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 108,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.24626891314983368,
+      "wrong_score": -0.0317971296608448,
+      "right_score": -0.2780660390853882
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of chemistry"
+      ],
+      "u": 0.15519821643829346,
+      "margin": 0.09107070416212082,
+      "wrong_score": -0.11530842632055283,
+      "right_score": -0.20637913048267365
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.4123270511627197,
+      "margin": -0.16605813801288605,
+      "wrong_score": -0.21686741709709167,
+      "right_score": -0.050809282809495926
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "as a Foreign Member"
+      ],
+      "u": 0.4201895594596863,
+      "margin": -0.1739206612110138,
+      "wrong_score": -0.24494832754135132,
+      "right_score": -0.07102766633033752
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "both the Centenary Prize"
+      ],
+      "u": -0.019727513194084167,
+      "margin": 0.26599642634391785,
+      "wrong_score": -0.04054319113492966,
+      "right_score": -0.3065396249294281
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "both the Centenary Prize"
+      ],
+      "u": 0.08163835108280182,
+      "margin": 0.16463056206703186,
+      "wrong_score": -0.12418647855520248,
+      "right_score": -0.28881704807281494
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "both the Centenary Prize"
+      ],
+      "u": 0.2483569085597992,
+      "margin": -0.002087995409965515,
+      "wrong_score": -0.2355813831090927,
+      "right_score": -0.2334933876991272
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "as a Foreign Member",
+        "both the Centenary Prize"
+      ],
+      "u": 0.1300993114709854,
+      "margin": 0.11616960167884827,
+      "wrong_score": -0.26312151551246643,
+      "right_score": -0.3792911171913147
+    }
+  ],
+  "single_u": [
+    0.15519821643829346,
+    0.4123270511627197,
+    -0.019727513194084167
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of chemistry",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.15519821643829346,
+      "u_j": 0.4123270511627197,
+      "local_fd": -0.1473357081413269,
+      "banzhaf": -0.18347957730293274,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the field of chemistry",
+        "both the Centenary Prize"
+      ],
+      "u_i": 0.15519821643829346,
+      "u_j": -0.019727513194084167,
+      "local_fd": -0.05383235216140747,
+      "banzhaf": -0.0899762213230133,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as a Foreign Member",
+        "both the Centenary Prize"
+      ],
+      "u_i": 0.4123270511627197,
+      "u_j": -0.019727513194084167,
+      "local_fd": -0.14424262940883636,
+      "banzhaf": -0.1803865134716034,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.1473357081413269
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "both the Centenary Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.14424262940883636
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "as a Foreign Member",
+        "both the Centenary Prize"
+      ],
+      "order": 3,
+      "harsanyi": -0.07228775322437286
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "both the Centenary Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.05383235216140747
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.11616960167884827,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

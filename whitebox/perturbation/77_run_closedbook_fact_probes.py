@@ -16,6 +16,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="/tmp/Meta-Llama-3.1-8B-Instruct")
     ap.add_argument("--batch-size", type=int, default=64)
+    ap.add_argument("--output", type=Path, default=OUTPUT)
+    ap.add_argument("--summary", type=Path, default=SUMMARY)
     args = ap.parse_args()
 
     import torch
@@ -74,7 +76,8 @@ def main():
             "binary_accuracy": binary_accuracy, "pairwise_owner_accuracy": pair_accuracy,
             "known": known, "probes": probes,
         })
-    with open(OUTPUT, "w") as f:
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open("w") as f:
         for row in output_rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
@@ -97,7 +100,8 @@ def main():
             and r["pairwise_owner_accuracy"] >= threshold
             for r in output_rows
         )
-    json.dump(summary, open(SUMMARY, "w"), indent=2)
+    args.summary.parent.mkdir(parents=True, exist_ok=True)
+    with args.summary.open("w") as f: json.dump(summary, f, indent=2)
     print(json.dumps(summary, indent=2))
 
 

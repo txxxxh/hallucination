@@ -1,0 +1,295 @@
+{
+  "key": "question_0529",
+  "group": "Q60108",
+  "generation_correct": false,
+  "right": "Günter Blobel",
+  "wrong": "Sydney Brenner",
+  "base_margin_wrong_minus_right": -0.14797553420066833,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 277,
+      "char_end": 301,
+      "text": "received the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 89,
+      "token_end": 94
+    },
+    {
+      "char_start": 329,
+      "char_end": 352,
+      "text": "the Albert Lasker Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Lasker Award for Basic Medical Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 101,
+      "token_end": 107
+    },
+    {
+      "char_start": 415,
+      "char_end": 433,
+      "text": "Award, and the Max",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Max Planck Research Award",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 117,
+      "token_end": 120
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.14797553420066833,
+      "wrong_score": -0.24662578105926514,
+      "right_score": -0.0986502468585968
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "received the Nobel Prize"
+      ],
+      "u": -0.1468285173177719,
+      "margin": -0.0011470168828964233,
+      "wrong_score": -0.15365511178970337,
+      "right_score": -0.15250809490680695
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Albert Lasker Award"
+      ],
+      "u": -0.11182001233100891,
+      "margin": -0.036155521869659424,
+      "wrong_score": -0.17139720916748047,
+      "right_score": -0.13524168729782104
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "the Albert Lasker Award"
+      ],
+      "u": -0.21050505340099335,
+      "margin": 0.06252951920032501,
+      "wrong_score": -0.12558415532112122,
+      "right_score": -0.18811367452144623
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Award, and the Max"
+      ],
+      "u": -0.5459885597229004,
+      "margin": 0.39801302552223206,
+      "wrong_score": -0.05688658729195595,
+      "right_score": -0.4548996090888977
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "Award, and the Max"
+      ],
+      "u": -0.163187175989151,
+      "margin": 0.015211641788482666,
+      "wrong_score": -0.14616689085960388,
+      "right_score": -0.16137853264808655
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Albert Lasker Award",
+        "Award, and the Max"
+      ],
+      "u": -0.3566107749938965,
+      "margin": 0.20863524079322815,
+      "wrong_score": -0.06255907565355301,
+      "right_score": -0.27119430899620056
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "the Albert Lasker Award",
+        "Award, and the Max"
+      ],
+      "u": -0.16369380056858063,
+      "margin": 0.015718266367912292,
+      "wrong_score": -0.14201998710632324,
+      "right_score": -0.15773825347423553
+    }
+  ],
+  "single_u": [
+    -0.1468285173177719,
+    -0.11182001233100891,
+    -0.5459885597229004
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "received the Nobel Prize",
+        "the Albert Lasker Award"
+      ],
+      "u_i": -0.1468285173177719,
+      "u_j": -0.11182001233100891,
+      "local_fd": 0.048143476247787476,
+      "banzhaf": -0.07087047398090363,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "received the Nobel Prize",
+        "Award, and the Max"
+      ],
+      "u_i": -0.1468285173177719,
+      "u_j": -0.5459885597229004,
+      "local_fd": 0.5296298861503601,
+      "banzhaf": 0.4106159508228302,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Albert Lasker Award",
+        "Award, and the Max"
+      ],
+      "u_i": -0.11182001233100891,
+      "u_j": -0.5459885597229004,
+      "local_fd": 0.3011977970600128,
+      "banzhaf": 0.1821838617324829,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "Award, and the Max"
+      ],
+      "order": 2,
+      "harsanyi": 0.5296299010515213
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Albert Lasker Award",
+        "Award, and the Max"
+      ],
+      "order": 2,
+      "harsanyi": 0.3011977970600128
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "the Albert Lasker Award",
+        "Award, and the Max"
+      ],
+      "order": 3,
+      "harsanyi": -0.238027885556221
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the Nobel Prize",
+        "the Albert Lasker Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.048143476247787476
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.015718266367912292,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

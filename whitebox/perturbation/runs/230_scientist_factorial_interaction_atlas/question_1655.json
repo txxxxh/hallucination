@@ -1,0 +1,171 @@
+{
+  "key": "question_1655",
+  "group": "Q122298",
+  "generation_correct": false,
+  "right": "Karl Alexander Müller",
+  "wrong": "Walter Kohn",
+  "base_margin_wrong_minus_right": 0.1594618856906891,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 127,
+      "char_end": 164,
+      "text": "This distinguished university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 51,
+      "token_end": 58
+    },
+    {
+      "char_start": 165,
+      "char_end": 198,
+      "text": "and physicist made groundbreaking",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 57,
+      "token_end": 63
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.1594618856906891,
+      "wrong_score": -0.10995817929506302,
+      "right_score": -0.2694200575351715
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished university teacher"
+      ],
+      "u": 0.3455289602279663,
+      "margin": -0.18606707453727722,
+      "wrong_score": -0.2988424003124237,
+      "right_score": -0.11277531832456589
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and physicist made groundbreaking"
+      ],
+      "u": 0.782196044921875,
+      "margin": -0.6227341890335083,
+      "wrong_score": -0.6475331783294678,
+      "right_score": -0.024798981845378876
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "and physicist made groundbreaking"
+      ],
+      "u": 0.40742912888526917,
+      "margin": -0.24796724319458008,
+      "wrong_score": -0.3321678638458252,
+      "right_score": -0.08420062810182571
+    }
+  ],
+  "single_u": [
+    0.3455289602279663,
+    0.782196044921875
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished university teacher",
+        "and physicist made groundbreaking"
+      ],
+      "u_i": 0.3455289602279663,
+      "u_j": 0.782196044921875,
+      "local_fd": -0.7202959060668945,
+      "banzhaf": -0.7202959060668945,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "and physicist made groundbreaking"
+      ],
+      "order": 2,
+      "harsanyi": -0.7202958762645721
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished university teacher"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and physicist made groundbreaking"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "and physicist made groundbreaking"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.24796724319458008,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 4,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

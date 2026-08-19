@@ -1,0 +1,289 @@
+{
+  "key": "question_1893",
+  "group": "Q103835",
+  "generation_correct": false,
+  "right": "Peter Debije",
+  "wrong": "Paul Josef Crutzen",
+  "base_margin_wrong_minus_right": 1.0550813674926758,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 125,
+      "char_end": 160,
+      "text": "This distinguished scientist served",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 67
+    },
+    {
+      "char_start": 348,
+      "char_end": 372,
+      "text": "elected a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 103
+    },
+    {
+      "char_start": 411,
+      "char_end": 434,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 108,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.0550813674926758,
+      "wrong_score": -0.016156155616044998,
+      "right_score": -1.071237564086914
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished scientist served"
+      ],
+      "u": 0.459716260433197,
+      "margin": 0.5953651070594788,
+      "wrong_score": -0.060504019260406494,
+      "right_score": -0.6558691263198853
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "elected a Foreign Member"
+      ],
+      "u": 0.49590957164764404,
+      "margin": 0.5591717958450317,
+      "wrong_score": -0.06586478650569916,
+      "right_score": -0.6250365972518921
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished scientist served",
+        "elected a Foreign Member"
+      ],
+      "u": 0.6152167916297913,
+      "margin": 0.4398645758628845,
+      "wrong_score": -0.06959218531847,
+      "right_score": -0.5094567537307739
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.6375522613525391,
+      "margin": 1.6926336288452148,
+      "wrong_score": -0.036942001432180405,
+      "right_score": -1.7295756340026855
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist served",
+        "awarded the Nobel Prize"
+      ],
+      "u": 0.20085883140563965,
+      "margin": 0.8542225360870361,
+      "wrong_score": -0.04159875586628914,
+      "right_score": -0.8958212733268738
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member",
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.7159456014633179,
+      "margin": 1.7710269689559937,
+      "wrong_score": -0.040256500244140625,
+      "right_score": -1.8112834692001343
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist served",
+        "elected a Foreign Member",
+        "awarded the Nobel Prize"
+      ],
+      "u": 0.40671730041503906,
+      "margin": 0.6483640670776367,
+      "wrong_score": -0.06140158325433731,
+      "right_score": -0.7097656726837158
+    }
+  ],
+  "single_u": [
+    0.459716260433197,
+    0.49590957164764404,
+    -0.6375522613525391
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished scientist served",
+        "elected a Foreign Member"
+      ],
+      "u_i": 0.459716260433197,
+      "u_j": 0.49590957164764404,
+      "local_fd": -0.3404090404510498,
+      "banzhaf": -0.02807861566543579,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished scientist served",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": 0.459716260433197,
+      "u_j": -0.6375522613525391,
+      "local_fd": 0.3786948323249817,
+      "banzhaf": 0.6910252571105957,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "elected a Foreign Member",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": 0.49590957164764404,
+      "u_j": -0.6375522613525391,
+      "local_fd": -0.5743029117584229,
+      "banzhaf": -0.26197248697280884,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist served",
+        "elected a Foreign Member",
+        "awarded the Nobel Prize"
+      ],
+      "order": 3,
+      "harsanyi": 0.624660849571228
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.5743029117584229
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist served",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.3786948323249817
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished scientist served",
+        "elected a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.3404090404510498
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6483640670776367,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

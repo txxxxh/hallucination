@@ -1,0 +1,152 @@
+{
+  "key": "question_2679",
+  "group": "Q179282",
+  "generation_correct": false,
+  "right": "Steven Weinberg",
+  "wrong": "Claude Cohen-Tannoudji",
+  "base_margin_wrong_minus_right": -0.9439006447792053,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 247,
+      "char_end": 267,
+      "text": "the field of physics",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 79,
+      "token_end": 83
+    },
+    {
+      "char_start": 309,
+      "char_end": 327,
+      "text": "of the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 91,
+      "token_end": 97
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9439006447792053,
+      "wrong_score": -0.9488434791564941,
+      "right_score": -0.004942860454320908
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of physics"
+      ],
+      "u": -1.750954270362854,
+      "margin": 0.8070536255836487,
+      "wrong_score": -0.040396519005298615,
+      "right_score": -0.8474501371383667
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Nobel Prize"
+      ],
+      "u": -1.299832820892334,
+      "margin": 0.35593220591545105,
+      "wrong_score": -0.05810776725411415,
+      "right_score": -0.4140399694442749
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of physics",
+        "of the Nobel Prize"
+      ],
+      "u": -2.6175804138183594,
+      "margin": 1.6736797094345093,
+      "wrong_score": -0.005751481279730797,
+      "right_score": -1.6794312000274658
+    }
+  ],
+  "single_u": [
+    -1.750954270362854,
+    -1.299832820892334
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of physics",
+        "of the Nobel Prize"
+      ],
+      "u_i": -1.750954270362854,
+      "u_j": -1.299832820892334,
+      "local_fd": 0.4332066774368286,
+      "banzhaf": 0.4332066774368286,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of physics",
+        "of the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.4332066774368286
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.6736797094345093,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

@@ -48,7 +48,28 @@ def multidomain_rows():
                  other=r["other"], prompt_mode=True) for r in mod.rows()]
 
 
+def generic_rows(path):
+    rows = [json.loads(line) for line in path.open() if line.strip()]
+    required = {"key", "group", "correct", "context", "question", "pred", "other", "prompt_mode", "model"}
+    for row in rows:
+        missing = required - row.keys()
+        if missing:
+            raise ValueError(f"{path}: {row.get('key')} missing {sorted(missing)}")
+    return rows
+
+
 def load_rows(args):
+    # Self-detection protocol: every dataset must be an explicit per-model manifest.
+    # Never fall back to historical Llama generations/labels.
+    if args.manifest is None:
+        raise ValueError("--manifest is mandatory: implicit historical manifests are cross-model and invalid")
+    rows = generic_rows(args.manifest)
+    if any(r["model"] != args.model for r in rows):
+        raise ValueError(f"manifest model does not match --model {args.model}")
+    return rows
+
+
+def legacy_load_rows_disabled(args):
     if args.dataset == "scientist":
         return scientist_rows()
     if args.dataset == "trivia":

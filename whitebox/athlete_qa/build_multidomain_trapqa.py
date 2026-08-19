@@ -83,7 +83,7 @@ def enrich(domain,rows,cache):
  return out
 
 def linear(p):return "; ".join(f"{LABELS[k]}: {', '.join(v)}" for k,v in sorted(p["attributes"].items()))
-def mine(domain,profiles,n,seed):
+def mine(domain,profiles,n,seed,candidate_offset=0,allowed_fields=None):
  texts=[linear(x) for x in profiles];X=TfidfVectorizer(ngram_range=(1,2),min_df=1).fit_transform(texts);S=cosine_similarity(X);lam=float(np.median([x["tag_count"]for x in profiles]));cs=[]
  # Nearest 30 neighbours are enough and avoid quadratic candidate materialization.
  for i,a in enumerate(profiles):
@@ -96,11 +96,12 @@ def mine(domain,profiles,n,seed):
      holder,non=(a,b) if target in av else (b,a);dense=min(a["tag_count"],b["tag_count"]);score=float(S[i,j])*dense/(dense+lam)
      cs.append((score,f,target,holder,non))
  cs.sort(key=lambda z:z[0],reverse=True);rng=np.random.default_rng(seed);picked=[];pairs=set();cnt=Counter();fields=Counter()
- for score,f,target,holder,non in cs:
+ for score,f,target,holder,non in cs[candidate_offset:]:
+  if allowed_fields and f not in allowed_fields:continue
   pair=tuple(sorted((holder["qid"],non["qid"])))
   if pair in pairs or cnt[holder["qid"]]>=4 or cnt[non["qid"]]>=4:continue
   # Keep relation families reasonably balanced.
-  if fields[f]>n//len(DOMAINS[domain]["props"])+20:continue
+  if fields[f]>n//(len(allowed_fields) if allowed_fields else len(DOMAINS[domain]["props"]))+20:continue
   picked.append((score,f,target,holder,non));pairs.add(pair);cnt[holder["qid"]]+=1;cnt[non["qid"]]+=1;fields[f]+=1
   if len(picked)==n:break
  items=[];noun=DOMAINS[domain]["noun"]

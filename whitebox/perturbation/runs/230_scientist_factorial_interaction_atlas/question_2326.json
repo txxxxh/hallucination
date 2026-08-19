@@ -1,0 +1,296 @@
+{
+  "key": "question_2326",
+  "group": "Q92609",
+  "generation_correct": false,
+  "right": "Fred Brooks",
+  "wrong": "Frances E. Allen",
+  "base_margin_wrong_minus_right": -0.29774582386016846,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 326,
+      "char_end": 347,
+      "text": "with the Turing Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Turing Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 90,
+      "token_end": 95
+    },
+    {
+      "char_start": 357,
+      "char_end": 373,
+      "text": "as an ACM Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "ACM Fellow",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 96,
+      "token_end": 99
+    },
+    {
+      "char_start": 379,
+      "char_end": 403,
+      "text": "named a Computer History",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Computer History Museum Fellow",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 99,
+      "token_end": 104
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.29774582386016846,
+      "wrong_score": -0.3852135241031647,
+      "right_score": -0.08746768534183502
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "with the Turing Award"
+      ],
+      "u": 0.10628089308738708,
+      "margin": -0.40402671694755554,
+      "wrong_score": -0.48741674423217773,
+      "right_score": -0.08339002728462219
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as an ACM Fellow"
+      ],
+      "u": 0.32165229320526123,
+      "margin": -0.6193981170654297,
+      "wrong_score": -0.6707484722137451,
+      "right_score": -0.05135038122534752
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Turing Award",
+        "as an ACM Fellow"
+      ],
+      "u": -0.27498286962509155,
+      "margin": -0.022762969136238098,
+      "wrong_score": -0.23543845117092133,
+      "right_score": -0.21267548203468323
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "named a Computer History"
+      ],
+      "u": -0.5211406946182251,
+      "margin": 0.22339488565921783,
+      "wrong_score": -0.1292523592710495,
+      "right_score": -0.35264724493026733
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Turing Award",
+        "named a Computer History"
+      ],
+      "u": -0.9065555930137634,
+      "margin": 0.608809769153595,
+      "wrong_score": -0.07147539407014847,
+      "right_score": -0.6802851557731628
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as an ACM Fellow",
+        "named a Computer History"
+      ],
+      "u": -0.8366822600364685,
+      "margin": 0.5389364361763,
+      "wrong_score": -0.08059100061655045,
+      "right_score": -0.6195274591445923
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Turing Award",
+        "as an ACM Fellow",
+        "named a Computer History"
+      ],
+      "u": -0.8087871074676514,
+      "margin": 0.5110412836074829,
+      "wrong_score": -0.08975883573293686,
+      "right_score": -0.600800096988678
+    }
+  ],
+  "single_u": [
+    0.10628089308738708,
+    0.32165229320526123,
+    -0.5211406946182251
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "with the Turing Award",
+        "as an ACM Fellow"
+      ],
+      "u_i": 0.10628089308738708,
+      "u_j": 0.32165229320526123,
+      "local_fd": -0.7029160261154175,
+      "banzhaf": -0.144802987575531,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "with the Turing Award",
+        "named a Computer History"
+      ],
+      "u_i": 0.10628089308738708,
+      "u_j": -0.5211406946182251,
+      "local_fd": -0.491695761680603,
+      "banzhaf": 0.06641727685928345,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as an ACM Fellow",
+        "named a Computer History"
+      ],
+      "u_i": 0.32165229320526123,
+      "u_j": -0.5211406946182251,
+      "local_fd": -0.6371937990188599,
+      "banzhaf": -0.07908077538013458,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Turing Award",
+        "as an ACM Fellow",
+        "named a Computer History"
+      ],
+      "order": 3,
+      "harsanyi": 1.1162261068820953
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Turing Award",
+        "as an ACM Fellow"
+      ],
+      "order": 2,
+      "harsanyi": -0.7029160559177399
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as an ACM Fellow",
+        "named a Computer History"
+      ],
+      "order": 2,
+      "harsanyi": -0.6371938586235046
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Turing Award",
+        "named a Computer History"
+      ],
+      "order": 2,
+      "harsanyi": -0.4916957914829254
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5110412836074829,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

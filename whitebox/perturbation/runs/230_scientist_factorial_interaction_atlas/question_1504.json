@@ -1,0 +1,152 @@
+{
+  "key": "question_1504",
+  "group": "Q151556",
+  "generation_correct": false,
+  "right": "Richard Owen",
+  "wrong": "Charles Darwin",
+  "base_margin_wrong_minus_right": -0.43747299909591675,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 170,
+      "char_end": 197,
+      "text": "the University of Edinburgh",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Edinburgh",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 64,
+      "token_end": 72
+    },
+    {
+      "char_start": 290,
+      "char_end": 315,
+      "text": "received the Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 92,
+      "token_end": 98
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.43747299909591675,
+      "wrong_score": -0.6204663515090942,
+      "right_score": -0.18299336731433868
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Edinburgh"
+      ],
+      "u": 1.250002145767212,
+      "margin": -1.6874750852584839,
+      "wrong_score": -1.7317156791687012,
+      "right_score": -0.044240552932024
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "received the Copley Medal"
+      ],
+      "u": -0.6250357031822205,
+      "margin": 0.1875627040863037,
+      "wrong_score": -0.289238840341568,
+      "right_score": -0.4768015444278717
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Edinburgh",
+        "received the Copley Medal"
+      ],
+      "u": -1.6876225471496582,
+      "margin": 1.2501494884490967,
+      "wrong_score": -0.06852296739816666,
+      "right_score": -1.3186724185943604
+    }
+  ],
+  "single_u": [
+    1.250002145767212,
+    -0.6250357031822205
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Edinburgh",
+        "received the Copley Medal"
+      ],
+      "u_i": 1.250002145767212,
+      "u_j": -0.6250357031822205,
+      "local_fd": -2.312588930130005,
+      "banzhaf": -2.312588930130005,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Edinburgh",
+        "received the Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": -2.3125889897346497
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.2501494884490967,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

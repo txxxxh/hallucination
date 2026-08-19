@@ -1,0 +1,289 @@
+{
+  "key": "question_1334",
+  "group": "Q17714",
+  "generation_correct": false,
+  "right": "Stephen Hawking",
+  "wrong": "William Thomson, 1st Baron Kelvin",
+  "base_margin_wrong_minus_right": 0.5803874135017395,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 230,
+      "char_end": 257,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 79,
+      "token_end": 83
+    },
+    {
+      "char_start": 276,
+      "char_end": 302,
+      "text": "prolific career, they made",
+      "kind": "attribute",
+      "field": "notable_work",
+      "value": "The Dreams That Stuff Is Made of: The Most Astounding Papers of Quantum Physics and How They Shook the Scientific World",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 86,
+      "token_end": 92
+    },
+    {
+      "char_start": 426,
+      "char_end": 445,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 114,
+      "token_end": 118
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.5803874135017395,
+      "wrong_score": -0.03958947956562042,
+      "right_score": -0.6199768781661987
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": 0.11250874400138855,
+      "margin": 0.46787866950035095,
+      "wrong_score": -0.060971420258283615,
+      "right_score": -0.5288500785827637
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "prolific career, they made"
+      ],
+      "u": 0.2155265510082245,
+      "margin": 0.364860862493515,
+      "wrong_score": -0.11026254296302795,
+      "right_score": -0.47512340545654297
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "prolific career, they made"
+      ],
+      "u": 0.31704869866371155,
+      "margin": 0.26333871483802795,
+      "wrong_score": -0.11516734957695007,
+      "right_score": -0.378506064414978
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.12239158153533936,
+      "margin": 0.45799583196640015,
+      "wrong_score": -0.07285856455564499,
+      "right_score": -0.5308544039726257
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u": -0.4610063433647156,
+      "margin": 1.041393756866455,
+      "wrong_score": -0.02433066815137863,
+      "right_score": -1.0657243728637695
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "prolific career, they made",
+        "Fellow of the Royal"
+      ],
+      "u": 0.19486594200134277,
+      "margin": 0.38552147150039673,
+      "wrong_score": -0.05804521217942238,
+      "right_score": -0.4435666799545288
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "prolific career, they made",
+        "Fellow of the Royal"
+      ],
+      "u": 0.08931329846382141,
+      "margin": 0.4910741150379181,
+      "wrong_score": -0.05094506964087486,
+      "right_score": -0.5420191884040833
+    }
+  ],
+  "single_u": [
+    0.11250874400138855,
+    0.2155265510082245,
+    0.12239158153533936
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "prolific career, they made"
+      ],
+      "u_i": 0.11250874400138855,
+      "u_j": 0.2155265510082245,
+      "local_fd": -0.01098659634590149,
+      "banzhaf": 0.23342935740947723,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.11250874400138855,
+      "u_j": 0.12239158153533936,
+      "local_fd": -0.6959066390991211,
+      "banzhaf": -0.45149070024490356,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "prolific career, they made",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.2155265510082245,
+      "u_j": 0.12239158153533936,
+      "local_fd": -0.14305219054222107,
+      "banzhaf": 0.10136374831199646,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.6959066689014435
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "prolific career, they made",
+        "Fellow of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": 0.48883187770843506
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "prolific career, they made",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.14305219054222107
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "prolific career, they made"
+      ],
+      "order": 2,
+      "harsanyi": -0.01098659634590149
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.4910741150379181,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "key": "question_2687",
+  "group": "Q44461",
+  "generation_correct": false,
+  "right": "Richard Dawkins",
+  "wrong": "Julian Sorell Huxley",
+  "base_margin_wrong_minus_right": 1.780432939529419,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 196,
+      "char_end": 223,
+      "text": "educated at Balliol College",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Balliol College",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 79,
+      "token_end": 85
+    },
+    {
+      "char_start": 291,
+      "char_end": 311,
+      "text": "Humanist of the Year",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Humanist of the Year",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 98
+    },
+    {
+      "char_start": 329,
+      "char_end": 348,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 99,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.780432939529419,
+      "wrong_score": -0.017248891294002533,
+      "right_score": -1.7976818084716797
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Balliol College"
+      ],
+      "u": 0.1080312728881836,
+      "margin": 1.6724016666412354,
+      "wrong_score": -0.017613442614674568,
+      "right_score": -1.6900150775909424
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Humanist of the Year"
+      ],
+      "u": -0.3816852569580078,
+      "margin": 2.1621181964874268,
+      "wrong_score": -0.013593139126896858,
+      "right_score": -2.1757113933563232
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Balliol College",
+        "Humanist of the Year"
+      ],
+      "u": -0.22184491157531738,
+      "margin": 2.0022778511047363,
+      "wrong_score": -0.012894051149487495,
+      "right_score": -2.015172004699707
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.25878143310546875,
+      "margin": 2.0392143726348877,
+      "wrong_score": -0.00856527779251337,
+      "right_score": -2.0477795600891113
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Balliol College",
+        "Fellow of the Royal"
+      ],
+      "u": -0.42615389823913574,
+      "margin": 2.2065868377685547,
+      "wrong_score": -0.007722899783402681,
+      "right_score": -2.2143096923828125
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Humanist of the Year",
+        "Fellow of the Royal"
+      ],
+      "u": -0.5066275596618652,
+      "margin": 2.287060499191284,
+      "wrong_score": -0.008524002507328987,
+      "right_score": -2.2955844402313232
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Balliol College",
+        "Humanist of the Year",
+        "Fellow of the Royal"
+      ],
+      "u": -0.5926787853240967,
+      "margin": 2.3731117248535156,
+      "wrong_score": -0.0069992984645068645,
+      "right_score": -2.3801109790802
+    }
+  ],
+  "single_u": [
+    0.1080312728881836,
+    -0.3816852569580078,
+    -0.25878143310546875
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Balliol College",
+        "Humanist of the Year"
+      ],
+      "u_i": 0.1080312728881836,
+      "u_j": -0.3816852569580078,
+      "local_fd": 0.051809072494506836,
+      "banzhaf": 0.06656515598297119,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "educated at Balliol College",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.1080312728881836,
+      "u_j": -0.25878143310546875,
+      "local_fd": -0.2754037380218506,
+      "banzhaf": -0.26064765453338623,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Humanist of the Year",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.3816852569580078,
+      "u_j": -0.25878143310546875,
+      "local_fd": 0.13383913040161133,
+      "banzhaf": 0.14859521389007568,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Balliol College",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.2754037380218506
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Humanist of the Year",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.13383913040161133
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Balliol College",
+        "Humanist of the Year"
+      ],
+      "order": 2,
+      "harsanyi": 0.051809072494506836
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Balliol College",
+        "Humanist of the Year",
+        "Fellow of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": 0.02951216697692871
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 2.3731117248535156,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}
