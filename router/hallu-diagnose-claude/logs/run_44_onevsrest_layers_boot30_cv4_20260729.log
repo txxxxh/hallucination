@@ -1,0 +1,67 @@
+n=1634  层数=29  扫描层=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+类别分布: {np.str_('Z1'): 798, np.str_('Z2'): 394, np.str_('Z4'): 94, np.str_('Z6'): 348}
+  Z1: peak L24 (AUROC 0.998) onset L1 centroid 14.52
+  Z2: peak L1 (AUROC 1.0) onset L1 centroid 14.5
+  Z4: peak L1 (AUROC 1.0) onset L1 centroid 14.5
+  Z6: peak L24 (AUROC 0.9971) onset L1 centroid 14.54
+
+形态: {
+ "by_peak_layer": [
+  [
+   "Z2",
+   1
+  ],
+  [
+   "Z4",
+   1
+  ],
+  [
+   "Z1",
+   24
+  ],
+  [
+   "Z6",
+   24
+  ]
+ ],
+ "by_onset_layer": [
+  [
+   "Z1",
+   1
+  ],
+  [
+   "Z2",
+   1
+  ],
+  [
+   "Z4",
+   1
+  ],
+  [
+   "Z6",
+   1
+  ]
+ ],
+ "by_centroid": [
+  [
+   "Z2",
+   14.5
+  ],
+  [
+   "Z4",
+   14.5
+  ],
+  [
+   "Z1",
+   14.52
+  ],
+  [
+   "Z6",
+   14.54
+  ]
+ ],
+ "layer_span_peak": 23,
+ "note": "与 tool-gate 独立观察到的 '知道@早层 / 行动@深层' 比较: 若知识类(Z1)靠前、校准/决策类(Z6)靠后, 即形态一致。峰值常有平台, 请以 onset 与 centroid 为主, peak 为辅; 并核对 bootstrap CI 是否重叠 —— 重叠则不能声称顺序差异。"
+}
+
+-> data/results/onevsrest_layers.json

@@ -1,0 +1,62 @@
+[2026-07-27T17:01:34Z] START 41_train_router
+n=1634  layers=29  labels=Counter({np.str_('Z1'): 798, np.str_('Z2'): 394, np.str_('Z6'): 348, np.str_('Z4'): 94})
+
+===== split: random  (train=1307 test=327) =====
+  逐层probe: best layer=14 macroF1=0.991 | 曲线=[(0, 0.166), (1, 0.974), (2, 0.968), (3, 0.965), (4, 0.977), (5, 0.968), (6, 0.974), (7, 0.968), (8, 0.974), (9, 0.974), (10, 0.983), (11, 0.983), (12, 0.986), (13, 0.983), (14, 0.991), (15, 0.983), (16, 0.979), (17, 0.976), (18, 0.982), (19, 0.97), (20, 0.973), (21, 0.973), (22, 0.97), (23, 0.97), (24, 0.973), (25, 0.971), (26, 0.973), (27, 0.975), (28, 0.954)]
+  全特征GBDT: macroF1=0.986  perclass-AUROC={np.str_('Z1'): 0.999, np.str_('Z2'): 1.0, np.str_('Z4'): 1.0, np.str_('Z6'): 0.998}
+  baseline: F4-only=0.732  多数类=0.166
+  误诊样例: [('z1fresh-a0dbf9db91', np.str_('Z1'), np.str_('Z6')), ('z6fr-c1a37f9f3c', np.str_('Z6'), np.str_('Z1')), ('z6fr-e1473af4d2', np.str_('Z6'), np.str_('Z1')), ('z6fr-2b05ac36a5', np.str_('Z6'), np.str_('Z1')), ('z6fr-6ab670904d', np.str_('Z6'), np.str_('Z1'))]
+
+===== split: leave-template({'Z1': 'popqa-genre', 'Z2': "gsmic-Jean's father-10000", 'Z4': 'math-Intermediate Algebra', 'Z6': 'freshqa-fp'})  (train=1448 test=186) =====
+  逐层probe: best layer=6 macroF1=0.781 | 曲线=[(0, 0.179), (1, 0.651), (2, 0.76), (3, 0.753), (4, 0.678), (5, 0.764), (6, 0.781), (7, 0.745), (8, 0.609), (9, 0.707), (10, 0.695), (11, 0.69), (12, 0.699), (13, 0.69), (14, 0.64), (15, 0.567), (16, 0.501), (17, 0.634), (18, 0.65), (19, 0.688), (20, 0.707), (21, 0.703), (22, 0.707), (23, 0.699), (24, 0.696), (25, 0.701), (26, 0.697), (27, 0.708), (28, 0.679)]
+  全特征GBDT: macroF1=0.736  perclass-AUROC={np.str_('Z1'): 0.645, np.str_('Z2'): 1.0, np.str_('Z4'): 1.0, np.str_('Z6'): 0.579}
+  baseline: F4-only=0.654  多数类=0.179
+  误诊样例: [('z1pop-9c9008b367', np.str_('Z1'), np.str_('Z6')), ('z6fr-599ec540c6', np.str_('Z6'), np.str_('Z1')), ('z6fr-29e822f6cb', np.str_('Z6'), np.str_('Z1')), ('z6fr-f8740effa0', np.str_('Z6'), np.str_('Z1')), ('z6fr-f33a1052ad', np.str_('Z6'), np.str_('Z1'))]
+
+===== split: leave-domain(factual)  (train=478 test=1156) =====
+  逐层probe: best layer=28 macroF1=0.038 | 曲线=[(0, 0.006), (1, 0.0), (2, 0.0), (3, 0.0), (4, 0.006), (5, 0.0), (6, 0.0), (7, 0.0), (8, 0.006), (9, 0.001), (10, 0.006), (11, 0.0), (12, 0.006), (13, 0.006), (14, 0.004), (15, 0.008), (16, 0.0), (17, 0.007), (18, 0.004), (19, 0.005), (20, 0.013), (21, 0.005), (22, 0.006), (23, 0.0), (24, 0.0), (25, 0.0), (26, 0.0), (27, 0.0), (28, 0.038)]
+  全特征GBDT: macroF1=0.007  perclass-AUROC={np.str_('Z2'): 0.694}
+  baseline: F4-only=0.004  多数类=0.006
+  误诊样例: [('z1pop-2b5ab9c7b6', np.str_('Z1'), np.str_('Z2')), ('z1pop-c744707b2c', np.str_('Z1'), np.str_('Z2')), ('z1pop-a8a037cbf7', np.str_('Z1'), np.str_('Z2')), ('z1pop-4d9150209e', np.str_('Z1'), np.str_('Z2')), ('z1pop-6886727f77', np.str_('Z1'), np.str_('Z2'))]
+
+===== split: leave-domain(math)  (train=1156 test=478) =====
+  逐层probe: best layer=0 macroF1=0.0 | 曲线=[(0, 0.0), (1, 0.0), (2, 0.0), (3, 0.0), (4, 0.0), (5, 0.0), (6, 0.0), (7, 0.0), (8, 0.0), (9, 0.0), (10, 0.0), (11, 0.0), (12, 0.0), (13, 0.0), (14, 0.0), (15, 0.0), (16, 0.0), (17, 0.0), (18, 0.0), (19, 0.0), (20, 0.0), (21, 0.0), (22, 0.0), (23, 0.0), (24, 0.0), (25, 0.0), (26, 0.0), (27, 0.0), (28, 0.0)]
+  全特征GBDT: macroF1=0.001  perclass-AUROC={np.str_('Z2'): 0.075}
+  baseline: F4-only=0.000  多数类=0.000
+  误诊样例: [('z2ic-8a61f90def', np.str_('Z2'), np.str_('Z6')), ('z2ic-647bf40f92', np.str_('Z2'), np.str_('Z6')), ('z2ic-a6cf638397', np.str_('Z2'), np.str_('Z6')), ('z2ic-68b47225b6', np.str_('Z2'), np.str_('Z6')), ('z2ic-2bf353da7a', np.str_('Z2'), np.str_('Z6'))]
+
+[save] data/features/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit/router_results.json
+>>> 对比线: symptom-MAP 准确率见 `11_annotate_symptom.py --stats` 输出; router 的 template/domain 划分 F1 必须显著高于它, §5 主张才成立 <<<
+[2026-07-27T17:18:46Z] DONE 41; START 42_patch_validate z2
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   1%|          | 2/339 [00:00<00:28, 12.02it/s]Loading weights:   8%|▊         | 28/339 [00:00<00:02, 118.60it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:02, 124.51it/s]Loading weights:  20%|██        | 69/339 [00:00<00:01, 173.31it/s]Loading weights:  36%|███▌      | 122/339 [00:00<00:00, 290.42it/s]Loading weights:  45%|████▌     | 153/339 [00:00<00:00, 275.92it/s]Loading weights:  59%|█████▉    | 201/339 [00:00<00:00, 335.21it/s]Loading weights:  75%|███████▍  | 254/339 [00:00<00:00, 392.13it/s]Loading weights:  87%|████████▋ | 295/339 [00:01<00:00, 349.32it/s]Loading weights:  98%|█████████▊| 332/339 [00:01<00:00, 327.00it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 283.87it/s]
+[patch:z2] n_samples=82
+  layer  8: mean recovery=3.286  frac>0.5=97.6%
+  layer 12: mean recovery=2.674  frac>0.5=98.8%
+  layer 16: mean recovery=2.605  frac>0.5=98.8%
+  layer 20: mean recovery=2.307  frac>0.5=100.0%
+  layer 24: mean recovery=1.539  frac>0.5=97.6%
+[2026-07-27T17:20:02Z] DONE 42; START 50_routed_mitigation
+Traceback (most recent call last):
+  File "/home/tong56/router/hallu-diagnose-claude/scripts/50_routed_mitigation.py", line 119, in <module>
+    main(a.model, a.features, a.holdout_templates, a.max_per_stressor)
+  File "/home/tong56/router/hallu-diagnose-claude/scripts/50_routed_mitigation.py", line 50, in main
+    clf, sc, feats, tr_idx, te_idx = train_router(feat_dir, holdout_templates)
+  File "/home/tong56/router/hallu-diagnose-claude/scripts/50_routed_mitigation.py", line 45, in train_router
+    clf = LogisticRegression(max_iter=3000, C=0.5).fit(sc.transform(Xtr), ytr)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/linear_model/_logistic.py", line 1247, in fit
+    X, y = validate_data(
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/utils/validation.py", line 2971, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/utils/validation.py", line 1368, in check_X_y
+    X = check_array(
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/utils/validation.py", line 1105, in check_array
+    _assert_all_finite(
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/utils/validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "/home/tong56/venvs/whitebox/lib/python3.10/site-packages/sklearn/utils/validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+LogisticRegression does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values

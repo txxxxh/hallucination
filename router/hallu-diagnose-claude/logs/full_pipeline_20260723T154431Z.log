@@ -1,0 +1,35 @@
+=== Hallu-Diagnose full pipeline (Z3 skipped) ===
+root=/home/tong56/router/hallu-diagnose-claude
+python=/home/tong56/venvs/whitebox/bin/python
+eval_model=unsloth/DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit
+gen_model=Qwen/Qwen2.5-7B-Instruct
+judge_model=Qwen/Qwen2.5-7B-Instruct
+per_source_limit=1000 batch_size=1
+log=/home/tong56/router/hallu-diagnose-claude/logs/full_pipeline_20260723T154431Z.log
+[SKIP] preflight (completed marker exists)
+[SKIP] download_data (completed marker exists)
+[SKIP] build_z1 (completed marker exists)
+[validate] data/processed/z1_pool.jsonl: 1601 rows
+[SKIP] build_z2 (completed marker exists)
+[validate] data/processed/z2_pool.jsonl: 5916 rows
+[SKIP] build_z4 (INCLUDE_Z4=0)
+[2026-07-23T15:44:31Z] START build_z6
+[write] 1836 -> /home/tong56/router/hallu-diagnose-claude/data/processed/z6_pool.jsonl
+[2026-07-23T15:44:31Z] DONE  build_z6
+[validate] data/processed/z6_pool.jsonl: 1836 rows
+[INFO] Z3 omitted: scripts/03_build_z3.py requires reviewed keep labels.
+[2026-07-23T15:44:31Z] START screen_z1
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   1%|          | 2/339 [00:00<00:43,  7.71it/s]Loading weights:   5%|▍         | 16/339 [00:00<00:06, 51.25it/s]Loading weights:  10%|█         | 34/339 [00:00<00:03, 92.17it/s]Loading weights:  15%|█▌        | 52/339 [00:00<00:02, 119.04it/s]Loading weights:  23%|██▎       | 78/339 [00:00<00:01, 162.19it/s]Loading weights:  37%|███▋      | 126/339 [00:00<00:00, 258.60it/s]Loading weights:  46%|████▌     | 155/339 [00:00<00:00, 260.11it/s]Loading weights:  61%|██████    | 206/339 [00:00<00:00, 334.05it/s]Loading weights:  75%|███████▍  | 254/339 [00:01<00:00, 376.79it/s]Loading weights:  87%|████████▋ | 294/339 [00:01<00:00, 360.45it/s]Loading weights:  98%|█████████▊| 332/339 [00:01<00:00, 303.93it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 243.62it/s]
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=131072) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+/home/tong56/venvs/whitebox/lib/python3.10/site-packages/bitsandbytes/backends/cuda/ops.py:468: FutureWarning: _check_is_size will be removed in a future PyTorch release along with guard_size_oblivious.     Use _check(i >= 0) instead.
+  torch._check_is_size(blocksize)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=131072) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=131072) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=131072) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=131072) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=131072) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=131072) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+[transformers] Both `max_new_tokens` (=512) and `max_length`(=131072) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+Terminated
+[FAILED] step=screen_z1 exit=143 log=/home/tong56/router/hallu-diagnose-claude/logs/full_pipeline_20260723T154431Z.log

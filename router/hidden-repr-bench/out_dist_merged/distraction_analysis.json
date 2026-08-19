@@ -1,0 +1,147 @@
+{
+  "n_pairs": 100,
+  "budgets": [
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "acc_threshold": 0.5,
+  "M1_demand_shift": {
+    "n": 100,
+    "median_log2_delta": 0.0,
+    "mean_log2_delta": 0.25,
+    "median_fold_change": 1.0,
+    "n_increase": 22,
+    "n_decrease": 9,
+    "n_tie": 69,
+    "sign_test_p": 0.014724686741828918,
+    "wilcoxon_stat": 374.5,
+    "p_one_sided_greater": 0.004757177327243186,
+    "censored_clean": 3,
+    "censored_distracted": 4,
+    "note": "Δ=log2 b*(dist)-log2 b*(clean)。>0 且显著 = 干扰抬高计算需求(资源税)。b*不存在者按右删失记为 8192, 会**低估**真实位移。"
+  },
+  "M2_failure_decomposition": {
+    "budget_remediable": 60,
+    "capability_limit": 29,
+    "total_dist_failures": 89,
+    "frac_budget_remediable": 0.6742,
+    "frac_capability_limit": 0.3258,
+    "by_budget": {
+      "128": {
+        "remediable": 41,
+        "capability": 4,
+        "frac_remediable": 0.9111
+      },
+      "256": {
+        "remediable": 14,
+        "capability": 5,
+        "frac_remediable": 0.7368
+      },
+      "512": {
+        "remediable": 2,
+        "capability": 5,
+        "frac_remediable": 0.2857
+      },
+      "1024": {
+        "remediable": 2,
+        "capability": 5,
+        "frac_remediable": 0.2857
+      },
+      "2048": {
+        "remediable": 1,
+        "capability": 5,
+        "frac_remediable": 0.1667
+      },
+      "4096": {
+        "remediable": 0,
+        "capability": 5,
+        "frac_remediable": 0.0
+      }
+    },
+    "note": "干扰版失败中'加预算可修'的占比。高 => Z2 大部分可归约为 Z4(资源不足); 低 => 干扰确实破坏了必要信息, 原有的 Z2 定位成立。"
+  },
+  "M3_gap_closure": {
+    "by_budget": {
+      "128": {
+        "acc_clean": 0.6225,
+        "acc_distracted": 0.49,
+        "gap": 0.1325
+      },
+      "256": {
+        "acc_clean": 0.7525,
+        "acc_distracted": 0.71,
+        "gap": 0.0425
+      },
+      "512": {
+        "acc_clean": 0.905,
+        "acc_distracted": 0.875,
+        "gap": 0.03
+      },
+      "1024": {
+        "acc_clean": 0.925,
+        "acc_distracted": 0.9125,
+        "gap": 0.0125
+      },
+      "2048": {
+        "acc_clean": 0.9325,
+        "acc_distracted": 0.915,
+        "gap": 0.0175
+      },
+      "4096": {
+        "acc_clean": 0.9325,
+        "acc_distracted": 0.925,
+        "gap": 0.0075
+      }
+    },
+    "gap_at_min_budget": 0.1325,
+    "gap_at_max_budget": 0.0075,
+    "closed_fraction": 0.9434,
+    "note": "缺口随预算收敛到 0 = 纯资源税; 残留显著缺口 = 存在预算无法弥补的信息损伤。"
+  },
+  "M5_actual_thinking": {
+    "by_budget": {
+      "128": {
+        "used_clean": 120.4,
+        "used_distracted": 123.2,
+        "cap_rate_clean": 0.713,
+        "cap_rate_distracted": 0.818
+      },
+      "256": {
+        "used_clean": 186.0,
+        "used_distracted": 209.2,
+        "cap_rate_clean": 0.443,
+        "cap_rate_distracted": 0.61
+      },
+      "512": {
+        "used_clean": 294.9,
+        "used_distracted": 360.6,
+        "cap_rate_clean": 0.398,
+        "cap_rate_distracted": 0.547
+      },
+      "1024": {
+        "used_clean": 424.0,
+        "used_distracted": 544.7,
+        "cap_rate_clean": 0.128,
+        "cap_rate_distracted": 0.203
+      },
+      "2048": {
+        "used_clean": 482.9,
+        "used_distracted": 637.3,
+        "cap_rate_clean": 0.033,
+        "cap_rate_distracted": 0.05
+      },
+      "4096": {
+        "used_clean": 525.8,
+        "used_distracted": 706.6,
+        "cap_rate_clean": 0.015,
+        "cap_rate_distracted": 0.025
+      }
+    },
+    "note": "同一预算下干扰版用掉更多 token / 触顶率更高 = 资源税的直接行为证据。"
+  },
+  "verdict": "not supported: 无证据表明干扰抬高计算需求, 原 Z2 定位保留"
+}

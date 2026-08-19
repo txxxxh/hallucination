@@ -492,8 +492,6 @@ def punctuation_insensitive_key(text: str) -> str:
     continues to use the word-preserving normalized representation.
     """
     return "".join(char for char in normalize_answer(text) if char.isalnum())
-
-
 def token_f1(first: str, second: str) -> float:
     first_tokens = normalize_answer(first).split()
     second_tokens = normalize_answer(second).split()

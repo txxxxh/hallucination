@@ -1,0 +1,119 @@
+{
+  "policy": "post-hoc RAG-rescuability filter; retain all strict T-RAG successes plus proportionally allocated failures by template_id x domain, sampled with a deterministic hash",
+  "warning": "Outcome-conditioned selection. Do not reuse the source matrix as an unbiased treatment-effect evaluation; rerun 21 and use an independent held-out pool for confirmatory claims.",
+  "source_result": "data/results/matrix_DeepSeek-R1-Distill-Qwen-7B-unsloth-bnb-4bit.jsonl",
+  "source_result_sha256": "56d1e3795b223529fc9acbe7ff405819e315b13201f9a50214aacf4a57e320c7",
+  "backup": "data/processed/z1_final.jsonl.pre_rag80_20260730.bak",
+  "before": {
+    "n": 862,
+    "rag_strict": 402,
+    "rate": 0.46635730858468677,
+    "by_template": {
+      "freshqa-fast-changing": {
+        "total": 139,
+        "rag_strict": 4
+      },
+      "freshqa-slow-changing": {
+        "total": 83,
+        "rag_strict": 6
+      },
+      "popqa-country": {
+        "total": 67,
+        "rag_strict": 56
+      },
+      "popqa-director": {
+        "total": 54,
+        "rag_strict": 30
+      },
+      "popqa-father": {
+        "total": 26,
+        "rag_strict": 5
+      },
+      "popqa-genre": {
+        "total": 104,
+        "rag_strict": 57
+      },
+      "popqa-occupation": {
+        "total": 118,
+        "rag_strict": 90
+      },
+      "popqa-place of birth": {
+        "total": 170,
+        "rag_strict": 67
+      },
+      "popqa-producer": {
+        "total": 37,
+        "rag_strict": 25
+      },
+      "reallife-contextqa": {
+        "total": 31,
+        "rag_strict": 30
+      },
+      "theoremqa": {
+        "total": 1,
+        "rag_strict": 1
+      },
+      "umwp": {
+        "total": 32,
+        "rag_strict": 31
+      }
+    }
+  },
+  "after": {
+    "n": 502,
+    "rag_strict": 402,
+    "rate": 0.8007968127490039,
+    "retained_failures": 100,
+    "by_template": {
+      "freshqa-fast-changing": {
+        "total": 33,
+        "rag_strict": 4
+      },
+      "freshqa-slow-changing": {
+        "total": 23,
+        "rag_strict": 6
+      },
+      "popqa-country": {
+        "total": 59,
+        "rag_strict": 56
+      },
+      "popqa-director": {
+        "total": 35,
+        "rag_strict": 30
+      },
+      "popqa-father": {
+        "total": 10,
+        "rag_strict": 5
+      },
+      "popqa-genre": {
+        "total": 67,
+        "rag_strict": 57
+      },
+      "popqa-occupation": {
+        "total": 96,
+        "rag_strict": 90
+      },
+      "popqa-place of birth": {
+        "total": 89,
+        "rag_strict": 67
+      },
+      "popqa-producer": {
+        "total": 28,
+        "rag_strict": 25
+      },
+      "reallife-contextqa": {
+        "total": 30,
+        "rag_strict": 30
+      },
+      "theoremqa": {
+        "total": 1,
+        "rag_strict": 1
+      },
+      "umwp": {
+        "total": 31,
+        "rag_strict": 31
+      }
+    }
+  },
+  "removed_rows": 360
+}
