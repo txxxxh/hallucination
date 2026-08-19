@@ -1,0 +1,290 @@
+{
+  "key": "question_2811",
+  "group": "Q332442",
+  "generation_correct": false,
+  "right": "Sidney Webb",
+  "wrong": "Hugh Dalton",
+  "base_margin_wrong_minus_right": 1.2857509851455688,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 217,
+      "char_end": 236,
+      "text": "Member of the Privy",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "Member of the Privy Council of the United Kingdom",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 78,
+      "token_end": 82
+    },
+    {
+      "char_start": 313,
+      "char_end": 331,
+      "text": "member of the 34th",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "member of the 34th Parliament of the United Kingdom",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 97,
+      "token_end": 100
+    },
+    {
+      "char_start": 332,
+      "char_end": 356,
+      "text": "Parliament of the United",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "member of the 41st Parliament of the United Kingdom",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 99,
+      "token_end": 104
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.2857509851455688,
+      "wrong_score": -0.014984297566115856,
+      "right_score": -1.3007352352142334
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Member of the Privy"
+      ],
+      "u": 0.1697978973388672,
+      "margin": 1.1159530878067017,
+      "wrong_score": -0.0250904131680727,
+      "right_score": -1.1410435438156128
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "member of the 34th"
+      ],
+      "u": -0.4483836889266968,
+      "margin": 1.7341346740722656,
+      "wrong_score": -0.03881499916315079,
+      "right_score": -1.7729496955871582
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Member of the Privy",
+        "member of the 34th"
+      ],
+      "u": -0.039037466049194336,
+      "margin": 1.3247884511947632,
+      "wrong_score": -0.027794308960437775,
+      "right_score": -1.3525828123092651
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Parliament of the United"
+      ],
+      "u": 0.17034602165222168,
+      "margin": 1.1154049634933472,
+      "wrong_score": -0.025330446660518646,
+      "right_score": -1.140735387802124
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Member of the Privy",
+        "Parliament of the United"
+      ],
+      "u": 0.08427214622497559,
+      "margin": 1.2014788389205933,
+      "wrong_score": -0.020982615649700165,
+      "right_score": -1.222461462020874
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "member of the 34th",
+        "Parliament of the United"
+      ],
+      "u": -0.16756463050842285,
+      "margin": 1.4533156156539917,
+      "wrong_score": -0.016343168914318085,
+      "right_score": -1.4696587324142456
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Member of the Privy",
+        "member of the 34th",
+        "Parliament of the United"
+      ],
+      "u": 0.0011434555053710938,
+      "margin": 1.2846075296401978,
+      "wrong_score": -0.02075614407658577,
+      "right_score": -1.305363655090332
+    }
+  ],
+  "single_u": [
+    0.1697978973388672,
+    -0.4483836889266968,
+    0.17034602165222168
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Member of the Privy",
+        "member of the 34th"
+      ],
+      "u_i": 0.1697978973388672,
+      "u_j": -0.4483836889266968,
+      "local_fd": 0.23954832553863525,
+      "banzhaf": 0.24716514348983765,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Member of the Privy",
+        "Parliament of the United"
+      ],
+      "u_i": 0.1697978973388672,
+      "u_j": 0.17034602165222168,
+      "local_fd": -0.2558717727661133,
+      "banzhaf": -0.2482549548149109,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "member of the 34th",
+        "Parliament of the United"
+      ],
+      "u_i": -0.4483836889266968,
+      "u_j": 0.17034602165222168,
+      "local_fd": 0.11047303676605225,
+      "banzhaf": 0.11808985471725464,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Member of the Privy",
+        "Parliament of the United"
+      ],
+      "order": 2,
+      "harsanyi": -0.2558717727661133
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Member of the Privy",
+        "member of the 34th"
+      ],
+      "order": 2,
+      "harsanyi": 0.23954832553863525
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "member of the 34th",
+        "Parliament of the United"
+      ],
+      "order": 2,
+      "harsanyi": 0.11047303676605225
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Member of the Privy",
+        "member of the 34th",
+        "Parliament of the United"
+      ],
+      "order": 3,
+      "harsanyi": 0.015233635902404785
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.2846075296401978,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

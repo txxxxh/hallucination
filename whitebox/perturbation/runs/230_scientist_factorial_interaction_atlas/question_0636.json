@@ -1,0 +1,300 @@
+{
+  "key": "question_0636",
+  "group": "Q901783",
+  "generation_correct": false,
+  "right": "Gilbert Stork",
+  "wrong": "Henry Taube",
+  "base_margin_wrong_minus_right": 0.14061158895492554,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 317,
+      "char_end": 342,
+      "text": "Award, the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 95,
+      "token_end": 101
+    },
+    {
+      "char_start": 418,
+      "char_end": 439,
+      "text": "NAS Award in Chemical",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 115,
+      "token_end": 119
+    },
+    {
+      "char_start": 473,
+      "char_end": 492,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 123,
+      "token_end": 126
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.14061158895492554,
+      "wrong_score": -0.14598113298416138,
+      "right_score": -0.2865927219390869
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Award, the National Medal"
+      ],
+      "u": 0.22096076607704163,
+      "margin": -0.08034917712211609,
+      "wrong_score": -0.2580663561820984,
+      "right_score": -0.1777171790599823
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "NAS Award in Chemical"
+      ],
+      "u": -0.2746807932853699,
+      "margin": 0.4152923822402954,
+      "wrong_score": -0.06933890283107758,
+      "right_score": -0.4846312701702118
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "NAS Award in Chemical"
+      ],
+      "u": -0.11606734991073608,
+      "margin": 0.2566789388656616,
+      "wrong_score": -0.10065042227506638,
+      "right_score": -0.3573293685913086
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -0.139393150806427,
+      "margin": 0.28000473976135254,
+      "wrong_score": -0.10098143666982651,
+      "right_score": -0.38098618388175964
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "as a Foreign Member"
+      ],
+      "u": -0.026347234845161438,
+      "margin": 0.16695882380008698,
+      "wrong_score": -0.12233583629131317,
+      "right_score": -0.28929466009140015
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "NAS Award in Chemical",
+        "as a Foreign Member"
+      ],
+      "u": -0.25611481070518494,
+      "margin": 0.3967263996601105,
+      "wrong_score": -0.059489309787750244,
+      "right_score": -0.4562157094478607
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "NAS Award in Chemical",
+        "as a Foreign Member"
+      ],
+      "u": -0.08271172642707825,
+      "margin": 0.22332331538200378,
+      "wrong_score": -0.10875710844993591,
+      "right_score": -0.3320804238319397
+    }
+  ],
+  "single_u": [
+    0.22096076607704163,
+    -0.2746807932853699,
+    -0.139393150806427
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Award, the National Medal",
+        "NAS Award in Chemical"
+      ],
+      "u_i": 0.22096076607704163,
+      "u_j": -0.2746807932853699,
+      "local_fd": -0.06234732270240784,
+      "banzhaf": -0.0009950771927833557,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Award, the National Medal",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.22096076607704163,
+      "u_j": -0.139393150806427,
+      "local_fd": -0.10791485011577606,
+      "banzhaf": -0.04656260460615158,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "NAS Award in Chemical",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.2746807932853699,
+      "u_j": -0.139393150806427,
+      "local_fd": 0.15795913338661194,
+      "banzhaf": 0.21931137144565582,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "NAS Award in Chemical",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.15795913338661194
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "NAS Award in Chemical",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": 0.12270449101924896
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.10791485011577606
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "NAS Award in Chemical"
+      ],
+      "order": 2,
+      "harsanyi": -0.06234732270240784
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Award, the National Medal"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.22332331538200378,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

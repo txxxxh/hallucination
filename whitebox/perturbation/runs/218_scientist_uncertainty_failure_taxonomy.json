@@ -1,0 +1,71 @@
+{
+  "definition": "systematic error = generated wrong candidate also has higher teacher-forced mean sequence likelihood than the alternative",
+  "categories": {
+    "correct": {
+      "n": 623,
+      "mean_nll": 0.14320244625590373,
+      "mean_chosen_gap": 0.7599660779998059,
+      "swap_flip_rate": 0.2712680577849117,
+      "mean_representation_error_score": 0.39149688266373656,
+      "representation_detect_rate_at_0.5": 0.27287319422150885
+    },
+    "systematic_error": {
+      "n": 250,
+      "mean_nll": 0.05055291349068284,
+      "mean_chosen_gap": 0.7199167168107815,
+      "swap_flip_rate": 0.396,
+      "mean_representation_error_score": 0.616103915493874,
+      "representation_detect_rate_at_0.5": 0.68
+    },
+    "generation_likelihood_inconsistent_error": {
+      "n": 203,
+      "mean_nll": 0.6717878033595132,
+      "mean_chosen_gap": -0.6224299815949053,
+      "swap_flip_rate": 0.24630541871921183,
+      "mean_representation_error_score": 0.7210679271766015,
+      "representation_detect_rate_at_0.5": 0.8571428571428571
+    }
+  },
+  "certainty_prefixes": {
+    "0.25": {
+      "n": 269,
+      "errors": 56,
+      "systematic_error_fraction": 1.0,
+      "strong_wrong_gap_gt_0.5_fraction": 0.9821428571428571,
+      "swap_flip_rate": 0.23214285714285715,
+      "representation_detect_rate_at_0.5": 0.6428571428571429
+    },
+    "0.5": {
+      "n": 538,
+      "errors": 162,
+      "systematic_error_fraction": 1.0,
+      "strong_wrong_gap_gt_0.5_fraction": 0.7592592592592593,
+      "swap_flip_rate": 0.3333333333333333,
+      "representation_detect_rate_at_0.5": 0.6358024691358025
+    },
+    "0.75": {
+      "n": 807,
+      "errors": 297,
+      "systematic_error_fraction": 0.8417508417508418,
+      "strong_wrong_gap_gt_0.5_fraction": 0.4276094276094276,
+      "swap_flip_rate": 0.39730639730639733,
+      "representation_detect_rate_at_0.5": 0.6936026936026936
+    },
+    "1.0": {
+      "n": 1076,
+      "errors": 453,
+      "systematic_error_fraction": 0.5518763796909493,
+      "strong_wrong_gap_gt_0.5_fraction": 0.2803532008830022,
+      "swap_flip_rate": 0.32891832229580575,
+      "representation_detect_rate_at_0.5": 0.7593818984547461
+    }
+  },
+  "median_nll_false_negatives": {
+    "n": 162,
+    "systematic_fraction": 1.0,
+    "strong_wrong_gap_gt_0.5_fraction": 0.7592592592592593,
+    "representation_detect_rate": 0.6358024691358025,
+    "also_representation_false_negative_n": 59,
+    "both_false_negative_systematic_fraction": 1.0
+  }
+}

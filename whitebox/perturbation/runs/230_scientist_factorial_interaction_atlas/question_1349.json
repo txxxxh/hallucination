@@ -1,0 +1,299 @@
+{
+  "key": "question_1349",
+  "group": "Q103598",
+  "generation_correct": false,
+  "right": "Luc Montagnier",
+  "wrong": "Louis Pasteur",
+  "base_margin_wrong_minus_right": -0.674681544303894,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 281,
+      "char_end": 299,
+      "text": "a Grand Officer of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Grand Officer of the Legion of Honour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 91,
+      "token_end": 95
+    },
+    {
+      "char_start": 300,
+      "char_end": 320,
+      "text": "the Legion of Honour",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight of the Legion of Honour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 102
+    },
+    {
+      "char_start": 326,
+      "char_end": 355,
+      "text": "awarded an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate at the Laval University",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 102,
+      "token_end": 104
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.674681544303894,
+      "wrong_score": -0.715206503868103,
+      "right_score": -0.040524933487176895
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "a Grand Officer of"
+      ],
+      "u": -0.33163732290267944,
+      "margin": -0.3430442214012146,
+      "wrong_score": -0.4515320658683777,
+      "right_score": -0.10848785936832428
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Legion of Honour"
+      ],
+      "u": -0.5884622931480408,
+      "margin": -0.08621925115585327,
+      "wrong_score": -0.3942369818687439,
+      "right_score": -0.3080177307128906
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "a Grand Officer of",
+        "the Legion of Honour"
+      ],
+      "u": -0.5064288377761841,
+      "margin": -0.16825273633003235,
+      "wrong_score": -0.5264168977737427,
+      "right_score": -0.3581641614437103
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded an honorary doctorate"
+      ],
+      "u": 0.07764428853988647,
+      "margin": -0.7523258328437805,
+      "wrong_score": -0.7874991297721863,
+      "right_score": -0.03517330065369606
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "a Grand Officer of",
+        "awarded an honorary doctorate"
+      ],
+      "u": -0.8053114414215088,
+      "margin": 0.13062992691993713,
+      "wrong_score": -0.18515023589134216,
+      "right_score": -0.3157801628112793
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Legion of Honour",
+        "awarded an honorary doctorate"
+      ],
+      "u": -0.49855121970176697,
+      "margin": -0.17613032460212708,
+      "wrong_score": -0.4852062165737152,
+      "right_score": -0.30907589197158813
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "a Grand Officer of",
+        "the Legion of Honour",
+        "awarded an honorary doctorate"
+      ],
+      "u": -0.33299535512924194,
+      "margin": -0.3416861891746521,
+      "wrong_score": -0.7608480453491211,
+      "right_score": -0.419161856174469
+    }
+  ],
+  "single_u": [
+    -0.33163732290267944,
+    -0.5884622931480408,
+    0.07764428853988647
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "a Grand Officer of",
+        "the Legion of Honour"
+      ],
+      "u_i": -0.33163732290267944,
+      "u_j": -0.5884622931480408,
+      "local_fd": 0.41367077827453613,
+      "banzhaf": 0.7310911417007446,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "a Grand Officer of",
+        "awarded an honorary doctorate"
+      ],
+      "u_i": -0.33163732290267944,
+      "u_j": 0.07764428853988647,
+      "local_fd": -0.5513184070587158,
+      "banzhaf": -0.23389801383018494,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Legion of Honour",
+        "awarded an honorary doctorate"
+      ],
+      "u_i": -0.5884622931480408,
+      "u_j": 0.07764428853988647,
+      "local_fd": 0.012266784906387329,
+      "banzhaf": 0.3296871781349182,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "a Grand Officer of",
+        "the Legion of Honour",
+        "awarded an honorary doctorate"
+      ],
+      "order": 3,
+      "harsanyi": 0.6348408162593842
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "a Grand Officer of",
+        "awarded an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": -0.5513184070587158
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "a Grand Officer of",
+        "the Legion of Honour"
+      ],
+      "order": 2,
+      "harsanyi": 0.41367077827453613
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Legion of Honour",
+        "awarded an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": 0.012266784906387329
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Legion of Honour"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.3416861891746521,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

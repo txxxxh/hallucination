@@ -1,0 +1,208 @@
+{
+  "protocol": "Unperturbed teacher-forced generated-answer uncertainty. Known/unknown is independently defined by closed-book fact probes. LR uses 3x5-fold candidate-component-grouped OOF; no perturbation features.",
+  "n": 2894,
+  "components": 28,
+  "counts": {
+    "known_correct": 623,
+    "known_error": 453,
+    "unknown_correct": 937,
+    "unknown_error": 881
+  },
+  "features": [
+    "mean_token_logprob",
+    "minimum_token_logprob",
+    "token_logprob_std",
+    "mean_token_entropy",
+    "max_token_entropy",
+    "mean_top2_logit_margin",
+    "answer_token_count"
+  ],
+  "results": {
+    "mean_token_nll": {
+      "all": {
+        "n": 2894,
+        "errors": 1334,
+        "error_rate": 0.4609536973047685,
+        "auroc": 0.6507486641294737,
+        "auprc": 0.5981367781977096
+      },
+      "unknown": {
+        "n": 1818,
+        "errors": 881,
+        "error_rate": 0.4845984598459846,
+        "auroc": 0.6337769852585775,
+        "auprc": 0.6036599513500442
+      },
+      "known": {
+        "n": 1076,
+        "errors": 453,
+        "error_rate": 0.42100371747211895,
+        "auroc": 0.6739836793412208,
+        "auprc": 0.5889349162916172
+      },
+      "gap": {
+        "unknown_minus_known_auroc": -0.040206694082643324,
+        "bootstrap_95ci": [
+          -0.08029861808945621,
+          -0.0004053671555553381
+        ],
+        "draws": 2000
+      }
+    },
+    "worst_token_nll": {
+      "all": {
+        "n": 2894,
+        "errors": 1334,
+        "error_rate": 0.4609536973047685,
+        "auroc": 0.6515828624149465,
+        "auprc": 0.6017511040997854
+      },
+      "unknown": {
+        "n": 1818,
+        "errors": 881,
+        "error_rate": 0.4845984598459846,
+        "auroc": 0.6314583820413642,
+        "auprc": 0.6020590591898591
+      },
+      "known": {
+        "n": 1076,
+        "errors": 453,
+        "error_rate": 0.42100371747211895,
+        "auroc": 0.6789549959428671,
+        "auprc": 0.5983854709107238
+      },
+      "gap": {
+        "unknown_minus_known_auroc": -0.04749661390150295,
+        "bootstrap_95ci": [
+          -0.08632201713489472,
+          -0.005910581166594761
+        ],
+        "draws": 2000
+      }
+    },
+    "mean_token_entropy": {
+      "all": {
+        "n": 2894,
+        "errors": 1334,
+        "error_rate": 0.4609536973047685,
+        "auroc": 0.5894730519355706,
+        "auprc": 0.5268475347602347
+      },
+      "unknown": {
+        "n": 1818,
+        "errors": 881,
+        "error_rate": 0.4845984598459846,
+        "auroc": 0.5811577752553916,
+        "auprc": 0.5504342563156948
+      },
+      "known": {
+        "n": 1076,
+        "errors": 453,
+        "error_rate": 0.42100371747211895,
+        "auroc": 0.5993536934083106,
+        "auprc": 0.4869098773903005
+      },
+      "gap": {
+        "unknown_minus_known_auroc": -0.01819591815291899,
+        "bootstrap_95ci": [
+          -0.061590651402916266,
+          0.024529035298552212
+        ],
+        "draws": 2000
+      }
+    },
+    "max_token_entropy": {
+      "all": {
+        "n": 2894,
+        "errors": 1334,
+        "error_rate": 0.4609536973047685,
+        "auroc": 0.5851627071079845,
+        "auprc": 0.5239122605931541
+      },
+      "unknown": {
+        "n": 1818,
+        "errors": 881,
+        "error_rate": 0.4845984598459846,
+        "auroc": 0.5698942576411544,
+        "auprc": 0.5270022607843522
+      },
+      "known": {
+        "n": 1076,
+        "errors": 453,
+        "error_rate": 0.42100371747211895,
+        "auroc": 0.603290352527647,
+        "auprc": 0.5195522145270257
+      },
+      "gap": {
+        "unknown_minus_known_auroc": -0.03339609488649253,
+        "bootstrap_95ci": [
+          -0.07464844191092769,
+          0.009353644507592124
+        ],
+        "draws": 2000
+      }
+    },
+    "negative_top2_margin": {
+      "all": {
+        "n": 2894,
+        "errors": 1334,
+        "error_rate": 0.4609536973047685,
+        "auroc": 0.5623796274939453,
+        "auprc": 0.5085852818823795
+      },
+      "unknown": {
+        "n": 1818,
+        "errors": 881,
+        "error_rate": 0.4845984598459846,
+        "auroc": 0.5345646319732233,
+        "auprc": 0.5137046424882806
+      },
+      "known": {
+        "n": 1076,
+        "errors": 453,
+        "error_rate": 0.42100371747211895,
+        "auroc": 0.6034763782736102,
+        "auprc": 0.5016502847988925
+      },
+      "gap": {
+        "unknown_minus_known_auroc": -0.06891174630038688,
+        "bootstrap_95ci": [
+          -0.11074593934088324,
+          -0.027489038100131404
+        ],
+        "draws": 2000
+      }
+    },
+    "logit_uncertainty_lr_oof": {
+      "all": {
+        "n": 2894,
+        "errors": 1334,
+        "error_rate": 0.4609536973047685,
+        "auroc": 0.3454441048706416,
+        "auprc": 0.36172869754080617
+      },
+      "unknown": {
+        "n": 1818,
+        "errors": 881,
+        "error_rate": 0.4845984598459846,
+        "auroc": 0.36430659348247174,
+        "auprc": 0.39725123200394924
+      },
+      "known": {
+        "n": 1076,
+        "errors": 453,
+        "error_rate": 0.42100371747211895,
+        "auroc": 0.3190465560433564,
+        "auprc": 0.3140735185492327
+      },
+      "gap": {
+        "unknown_minus_known_auroc": 0.04526003743911533,
+        "bootstrap_95ci": [
+          0.00607735400105127,
+          0.08513731932949177
+        ],
+        "draws": 2000
+      }
+    }
+  }
+}

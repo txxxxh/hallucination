@@ -1,0 +1,152 @@
+{
+  "key": "question_1565",
+  "group": "Q233355",
+  "generation_correct": false,
+  "right": "Robert S. Mulliken",
+  "wrong": "Lars Onsager",
+  "base_margin_wrong_minus_right": -0.09980599582195282,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 351,
+      "char_end": 371,
+      "text": "Award, and the Peter",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Peter Debye Award in Physical Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 102,
+      "token_end": 106
+    },
+    {
+      "char_start": 443,
+      "char_end": 465,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 118,
+      "token_end": 123
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.09980599582195282,
+      "wrong_score": -0.19585518538951874,
+      "right_score": -0.09604918956756592
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Award, and the Peter"
+      ],
+      "u": 1.0930001735687256e-05,
+      "margin": -0.09981692582368851,
+      "wrong_score": -0.19850261509418488,
+      "right_score": -0.09868568927049637
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.24997703731060028,
+      "margin": 0.15017104148864746,
+      "wrong_score": -0.08155450969934464,
+      "right_score": -0.2317255586385727
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, and the Peter",
+        "Fellow of the American"
+      ],
+      "u": -0.1749337613582611,
+      "margin": 0.07512776553630829,
+      "wrong_score": -0.10953392088413239,
+      "right_score": -0.18466168642044067
+    }
+  ],
+  "single_u": [
+    1.0930001735687256e-05,
+    -0.24997703731060028
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Award, and the Peter",
+        "Fellow of the American"
+      ],
+      "u_i": 1.0930001735687256e-05,
+      "u_j": -0.24997703731060028,
+      "local_fd": 0.07503233850002289,
+      "banzhaf": 0.07503233850002289,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, and the Peter",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.07503234595060349
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.07512776553630829,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

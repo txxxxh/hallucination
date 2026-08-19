@@ -1,0 +1,290 @@
+{
+  "key": "question_2693",
+  "group": "Q65226",
+  "generation_correct": false,
+  "right": "Max Volmer",
+  "wrong": "Karl Ziegler",
+  "base_margin_wrong_minus_right": -0.43904340267181396,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 133,
+      "char_end": 156,
+      "text": "was a prominent chemist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 65
+    },
+    {
+      "char_start": 157,
+      "char_end": 183,
+      "text": "and university teacher who",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 65,
+      "token_end": 70
+    },
+    {
+      "char_start": 212,
+      "char_end": 237,
+      "text": "the University of Marburg",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Marburg",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 73,
+      "token_end": 77
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.43904340267181396,
+      "wrong_score": -0.47163280844688416,
+      "right_score": -0.03258940577507019
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "was a prominent chemist"
+      ],
+      "u": -0.11328160762786865,
+      "margin": -0.3257617950439453,
+      "wrong_score": -0.38643595576286316,
+      "right_score": -0.06067415326833725
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and university teacher who"
+      ],
+      "u": -0.11409208178520203,
+      "margin": -0.32495132088661194,
+      "wrong_score": -0.38731861114501953,
+      "right_score": -0.06236730143427849
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher who"
+      ],
+      "u": -0.21041904389858246,
+      "margin": -0.2286243587732315,
+      "wrong_score": -0.326275497674942,
+      "right_score": -0.09765113890171051
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the University of Marburg"
+      ],
+      "u": 0.22998106479644775,
+      "margin": -0.6690244674682617,
+      "wrong_score": -0.6842867732048035,
+      "right_score": -0.015262308530509472
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "the University of Marburg"
+      ],
+      "u": -0.1770230531692505,
+      "margin": -0.2620203495025635,
+      "wrong_score": -0.3455525040626526,
+      "right_score": -0.08353213965892792
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher who",
+        "the University of Marburg"
+      ],
+      "u": 0.07306694984436035,
+      "margin": -0.5121103525161743,
+      "wrong_score": -0.5435458421707153,
+      "right_score": -0.03143547475337982
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher who",
+        "the University of Marburg"
+      ],
+      "u": -0.00700417160987854,
+      "margin": -0.4320392310619354,
+      "wrong_score": -0.4769546687602997,
+      "right_score": -0.04491543397307396
+    }
+  ],
+  "single_u": [
+    -0.11328160762786865,
+    -0.11409208178520203,
+    0.22998106479644775
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher who"
+      ],
+      "u_i": -0.11328160762786865,
+      "u_j": -0.11409208178520203,
+      "local_fd": 0.01695464551448822,
+      "banzhaf": 0.1719438135623932,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "was a prominent chemist",
+        "the University of Marburg"
+      ],
+      "u_i": -0.11328160762786865,
+      "u_j": 0.22998106479644775,
+      "local_fd": -0.2937225103378296,
+      "banzhaf": -0.13873332738876343,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and university teacher who",
+        "the University of Marburg"
+      ],
+      "u_i": -0.11409208178520203,
+      "u_j": 0.22998106479644775,
+      "local_fd": -0.042822033166885376,
+      "banzhaf": 0.11216713488101959,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher who",
+        "the University of Marburg"
+      ],
+      "order": 3,
+      "harsanyi": 0.30997835099697113
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "the University of Marburg"
+      ],
+      "order": 2,
+      "harsanyi": -0.2937225103378296
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher who",
+        "the University of Marburg"
+      ],
+      "order": 2,
+      "harsanyi": -0.042822033166885376
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher who"
+      ],
+      "order": 2,
+      "harsanyi": 0.01695464551448822
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.4320392310619354,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

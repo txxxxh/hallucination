@@ -14,8 +14,8 @@ Major changes from the forced-choice v9 design
        - mean log P(hallucinated_answer | prompt).
 4. Shortcut/constraint spans can come from frozen v7 predictions. If they are
    absent, an optional sequence-margin occlusion fallback localizes them.
-5. PDP paraphrases are validated and ranked using sequence-level prior and
-   full-context margins.
+5. PDP paraphrases use generate-until-enough batches: five candidates are
+   generated per round and reviewed together by an independent LLM call.
 6. Internal causal validation uses sequence-level activation patching over all
    answer-predicting positions, gradient x activation-difference pre-screening,
    repeated cross-fitting, layer-matched random controls, and stability counts.
@@ -31,7 +31,8 @@ python keyshift_halueval_open_v10.py \
   --output-dir other_bench/HaluEval/keyshift_v10_open \
   --stage all \
   --editor-backend local \
-  --paraphrase-candidates 10 \
+  --paraphrase-candidates 5 \
+  --paraphrase-max-rounds 4 \
   --causal-folds 4 \
   --causal-repeats 3 \
   --resume
@@ -102,14 +103,12 @@ NEGATION_RE = re.compile(r"\b(?:no|not|never|none|neither|without|cannot|can't|w
 MODAL_RE = re.compile(r"\b(?:must|shall|required|need(?:s|ed)? to|should|may|might|can|cannot|only|before|after|unless|until)\b", re.I)
 
 PARAPHRASE_REVIEW_FIELDS = (
-    "semantic_equivalent",
-    "entities_preserved",
-    "quantities_preserved",
-    "negation_modality_preserved",
-    "temporal_spatial_relation_preserved",
-    "correct_answer_preserved",
-    "no_new_constraint",
-    "no_answer_leak",
+    "meaning_preserved",
+    "no_added_fact",
+    "no_removed_fact",
+    "answer_preserved",
+    "fits_context",
+    "no_new_answer_leak",
 )
 
 
@@ -1108,77 +1107,209 @@ class Editor:
         self.cache.set(namespace, payload, text)
         return text
 
-    def paraphrases(self, span: str, n: int) -> list[str]:
-        prompt = f"""Generate {n} natural English paraphrases of the SOURCE sentence.
-Preserve every entity, number, negation, modality, temporal relation, spatial relation, and factual implication.
-Do not add explanations, recommendations, answer hints, or new constraints.
-Return JSON only in this format: {{\"paraphrases\": [\"...\"]}}.
+    @staticmethod
+    def _replacement_context(item: HaluItem, span: Span, window: int = 360) -> dict[str, str]:
+        source_text = item.knowledge if span.container == "knowledge" else item.question
+        return {
+            "left": source_text[max(0, span.start - window):span.start],
+            "source": source_text[span.start:span.end],
+            "right": source_text[span.end:min(len(source_text), span.end + window)],
+        }
+
+    def paraphrase_batch(
+        self,
+        item: HaluItem,
+        span: Span,
+        n: int,
+        round_index: int,
+        avoid: Sequence[str],
+    ) -> list[str]:
+        context = self._replacement_context(item, span)
+        avoid_block = "\n".join(f"- {x}" for x in avoid[-20:]) or "(none)"
+        prompt = f"""Generate exactly {n} natural English replacements for SOURCE.
+Each candidate must be able to replace SOURCE directly between LEFT_CONTEXT and RIGHT_CONTEXT.
+
+Preserve every factual proposition expressed by SOURCE, but do not require the same words.
+Allowed changes include synonyms, syntactic reordering, active/passive alternation,
+equivalent abbreviations, equivalent date/number formatting, and changes in information order.
+
+Do not add, remove, strengthen, weaken, generalize, specialize, or contradict any fact.
+Do not change entity identity, predicate arguments, quantities, negation, modality,
+temporal relations, spatial relations, or the answer to QUESTION.
+Do not turn the replacement into an explicit answer to QUESTION unless SOURCE already does so.
+Keep the same grammatical role as SOURCE so the surrounding text remains fluent.
+Make genuine surface-form changes rather than punctuation-only edits.
+
+Do not repeat any AVOID candidate.
+Return JSON only: {{"paraphrases": ["...", "..."]}}.
+
+CONTAINER:
+{span.container}
+
+QUESTION:
+{item.question}
+
+LEFT_CONTEXT:
+{context['left']}
 
 SOURCE:
-{span}
+{context['source']}
+
+RIGHT_CONTEXT:
+{context['right']}
+
+AVOID:
+{avoid_block}
 """
         errors = []
         for attempt in range(1, self.args.editor_max_retries + 1):
-            raw = self.complete(f"paraphrases_attempt_{attempt}", prompt, self.args.editor_temperature if attempt == 1 else 0.0, 1000)
+            temperature = self.args.editor_temperature if attempt == 1 else 0.0
+            raw = self.complete(
+                f"paraphrase_batch_r{round_index}_attempt_{attempt}",
+                prompt,
+                temperature,
+                self.args.paraphrase_generation_max_tokens,
+            )
             try:
                 obj = extract_json_object(raw)
                 values = obj.get("paraphrases")
                 if not isinstance(values, list):
                     raise ValueError("paraphrases is not a list")
-                out = []
+                out: list[str] = []
+                seen = set()
                 for value in values:
-                    if isinstance(value, str) and value.strip() and value.strip() not in out:
-                        out.append(value.strip())
-                if out:
-                    return out[:n]
-                raise ValueError("no non-empty paraphrases")
+                    if not isinstance(value, str):
+                        continue
+                    candidate = normalize_space(value)
+                    key = candidate.casefold()
+                    if candidate and key not in seen:
+                        out.append(candidate)
+                        seen.add(key)
+                if not out:
+                    raise ValueError("no non-empty paraphrases")
+                return out[:n]
             except Exception as exc:
                 errors.append(str(exc))
         raise RuntimeError("paraphrase generation failed: " + " | ".join(errors))
 
-    def review_paraphrase(self, item: HaluItem, source: str, candidate: str) -> dict[str, Any]:
-        prompt = f"""Evaluate whether CANDIDATE is a safe semantic-preserving replacement for SOURCE inside the HaluEval open QA item.
-Return JSON only. Use booleans for all fields and an integer naturalness score from 1 to 5.
-Required fields: {', '.join(PARAPHRASE_REVIEW_FIELDS)}, naturalness, notes.
-Be strict about entity identity, predicate arguments, temporal/spatial relations, modality, and not leaking either reference answer.
+    def review_paraphrase_batch(
+        self,
+        item: HaluItem,
+        span: Span,
+        candidates: Sequence[Mapping[str, str]],
+        round_index: int,
+    ) -> dict[str, dict[str, Any]]:
+        context = self._replacement_context(item, span)
+        candidate_json = json.dumps(list(candidates), ensure_ascii=False, indent=2)
+        prompt = f"""Evaluate each candidate independently as a replacement for SOURCE in this HaluEval item.
+Return one evaluation for every candidate_id.
 
-KNOWLEDGE:
+A candidate is valid only when all of the following hold:
+1. meaning_preserved: all task-relevant factual propositions in SOURCE are preserved;
+2. no_added_fact: no factual proposition is introduced;
+3. no_removed_fact: no factual proposition from SOURCE is omitted;
+4. answer_preserved: replacing SOURCE leaves the answer to QUESTION unchanged;
+5. fits_context: the replacement is grammatical and referentially coherent between
+   LEFT_CONTEXT and RIGHT_CONTEXT;
+6. no_new_answer_leak: it does not newly reveal either reference answer beyond what SOURCE already reveals.
+
+Allow synonyms, syntactic reordering, active/passive alternation, equivalent names or
+abbreviations, equivalent date/number formatting, and changes in information order.
+Do not require lexical overlap. Do not reject a candidate merely because it is more
+substantially rewritten. Judge factual equivalence, not string identity.
+
+For each candidate return:
+candidate_id, meaning_preserved, no_added_fact, no_removed_fact,
+answer_preserved, fits_context, no_new_answer_leak, naturalness (1-5),
+confidence (0-1), and a short reason. Return JSON only:
+{{"evaluations": [{{...}}, ...]}}.
+
+FULL KNOWLEDGE:
 {item.knowledge}
 
 QUESTION:
 {item.question}
 
-RIGHT REFERENCE ANSWER (for preservation checking only):
+RIGHT REFERENCE ANSWER (validation only):
 {item.right_answer}
 
-HALLUCINATED REFERENCE ANSWER (for leak checking only):
+HALLUCINATED REFERENCE ANSWER (validation only):
 {item.hallucinated_answer}
 
-SOURCE:
-{source}
+CONTAINER:
+{span.container}
 
-CANDIDATE:
-{candidate}
+LEFT_CONTEXT:
+{context['left']}
+
+SOURCE:
+{context['source']}
+
+RIGHT_CONTEXT:
+{context['right']}
+
+CANDIDATES:
+{candidate_json}
 """
+        expected_ids = {str(x["candidate_id"]) for x in candidates}
         errors = []
         for attempt in range(1, self.args.editor_max_retries + 1):
-            raw = self.complete(f"review_attempt_{attempt}", prompt, 0.0, 700)
+            raw = self.complete(
+                f"paraphrase_batch_review_r{round_index}_attempt_{attempt}",
+                prompt,
+                0.0,
+                self.args.paraphrase_review_max_tokens,
+            )
             try:
                 obj = extract_json_object(raw)
-                result: dict[str, Any] = {}
-                for field in PARAPHRASE_REVIEW_FIELDS:
-                    if not isinstance(obj.get(field), bool):
-                        raise ValueError(f"{field} missing or not boolean")
-                    result[field] = bool(obj[field])
-                naturalness = int(obj.get("naturalness"))
-                if not 1 <= naturalness <= 5:
-                    raise ValueError("naturalness outside 1..5")
-                result["naturalness"] = naturalness
-                result["notes"] = str(obj.get("notes", ""))
-                return result
+                values = obj.get("evaluations")
+                if not isinstance(values, list):
+                    raise ValueError("evaluations is not a list")
+                parsed: dict[str, dict[str, Any]] = {}
+                for entry in values:
+                    if not isinstance(entry, Mapping):
+                        continue
+                    cid = str(entry.get("candidate_id", ""))
+                    if cid not in expected_ids:
+                        continue
+                    row: dict[str, Any] = {}
+                    for field in PARAPHRASE_REVIEW_FIELDS:
+                        if not isinstance(entry.get(field), bool):
+                            raise ValueError(f"{cid}: {field} missing or not boolean")
+                        row[field] = bool(entry[field])
+                    naturalness = int(entry.get("naturalness"))
+                    confidence = float(entry.get("confidence"))
+                    if not 1 <= naturalness <= 5:
+                        raise ValueError(f"{cid}: naturalness outside 1..5")
+                    if not 0.0 <= confidence <= 1.0:
+                        raise ValueError(f"{cid}: confidence outside 0..1")
+                    row["naturalness"] = naturalness
+                    row["confidence"] = confidence
+                    row["reason"] = str(entry.get("reason", ""))
+                    parsed[cid] = row
+                if not parsed:
+                    raise ValueError("no valid evaluation rows")
+                # Missing candidates are explicitly marked invalid rather than silently accepted.
+                for cid in expected_ids:
+                    if cid not in parsed:
+                        parsed[cid] = {
+                            **{f: False for f in PARAPHRASE_REVIEW_FIELDS},
+                            "naturalness": 0,
+                            "confidence": 0.0,
+                            "reason": "judge omitted this candidate",
+                        }
+                return parsed
             except Exception as exc:
                 errors.append(str(exc))
-        return {**{f: False for f in PARAPHRASE_REVIEW_FIELDS}, "naturalness": 0, "notes": "validator failed: " + " | ".join(errors)}
+        return {
+            cid: {
+                **{f: False for f in PARAPHRASE_REVIEW_FIELDS},
+                "naturalness": 0,
+                "confidence": 0.0,
+                "reason": "batch validator failed: " + " | ".join(errors),
+            }
+            for cid in expected_ids
+        }
 
     def context_link(self, item: HaluItem, shortcut: Span, constraint: Span) -> str | None:
         prompt = f"""Write one natural English sentence, 16-45 words, that can be appended to the knowledge.
@@ -1211,47 +1342,93 @@ CONSTRAINT FACT:
         return sentence
 
 
-def deterministic_paraphrase_checks(item: HaluItem, source: str, candidate: str, args: argparse.Namespace) -> dict[str, Any]:
-    source_numbers = NUMBER_RE.findall(source)
-    candidate_numbers = NUMBER_RE.findall(candidate)
-    source_neg = bool(NEGATION_RE.search(source))
-    candidate_neg = bool(NEGATION_RE.search(candidate))
-    source_modals = {x.lower() for x in MODAL_RE.findall(source)}
-    candidate_modals = {x.lower() for x in MODAL_RE.findall(candidate)}
-
-    # Capitalized and mixed-case tokens provide a conservative entity anchor.
-    entity_tokens = {
-        token for token in WORD_RE.findall(source)
-        if any(c.isupper() for c in token) or any(c.isdigit() for c in token)
-    }
-    candidate_tokens_case = set(WORD_RE.findall(candidate))
-    entity_anchor_preserved = entity_tokens.issubset(candidate_tokens_case)
-    answer_overlap = max(token_f1(candidate, item.right_answer), token_f1(candidate, item.hallucinated_answer))
-
-    return {
-        "numbers_exactly_preserved": source_numbers == candidate_numbers,
-        "negation_presence_preserved": source_neg == candidate_neg,
-        "modal_anchors_preserved": not source_modals or source_modals.issubset(candidate_modals),
-        "entity_anchor_preserved": entity_anchor_preserved,
-        "token_f1": token_f1(source, candidate),
-        "edit_ratio": edit_ratio(source, candidate),
-        "max_answer_token_f1": answer_overlap,
-        "no_near_answer_copy": answer_overlap <= args.max_answer_token_f1,
-    }
+def _normalized_word_string(text: str) -> str:
+    return " ".join(m.group(0).casefold() for m in WORD_RE.finditer(text))
 
 
-def candidate_valid(review: Mapping[str, Any], checks: Mapping[str, Any], args: argparse.Namespace) -> bool:
-    return (
-        all(bool(review.get(f)) for f in PARAPHRASE_REVIEW_FIELDS)
-        and int(review.get("naturalness", 0)) >= args.min_naturalness
-        and bool(checks.get("numbers_exactly_preserved"))
-        and bool(checks.get("negation_presence_preserved"))
-        and bool(checks.get("modal_anchors_preserved"))
-        and bool(checks.get("entity_anchor_preserved"))
-        and bool(checks.get("no_near_answer_copy"))
-        and float(checks.get("token_f1", 0.0)) >= args.min_paraphrase_token_f1
-        and float(checks.get("edit_ratio", 1.0)) <= args.max_edit_ratio
+def _contains_reference_phrase(text: str, reference: str) -> bool:
+    haystack = _normalized_word_string(text)
+    needle = _normalized_word_string(reference)
+    if not needle:
+        return False
+    return f" {needle} " in f" {haystack} "
+
+
+def deterministic_paraphrase_checks(
+    item: HaluItem,
+    source: str,
+    candidate: str,
+    args: argparse.Namespace,
+) -> dict[str, Any]:
+    source_clean = normalize_space(source)
+    candidate_clean = normalize_space(candidate)
+    source_words = len(WORD_RE.findall(source_clean))
+    candidate_words = len(WORD_RE.findall(candidate_clean))
+    length_ratio = candidate_words / max(source_words, 1)
+    distance = edit_ratio(source_clean.casefold(), candidate_clean.casefold())
+
+    source_numbers = NUMBER_RE.findall(source_clean)
+    candidate_numbers = NUMBER_RE.findall(candidate_clean)
+    source_neg = bool(NEGATION_RE.search(source_clean))
+    candidate_neg = bool(NEGATION_RE.search(candidate_clean))
+    source_modals = {x.lower() for x in MODAL_RE.findall(source_clean)}
+    candidate_modals = {x.lower() for x in MODAL_RE.findall(candidate_clean)}
+
+    right_newly_introduced = (
+        _contains_reference_phrase(candidate_clean, item.right_answer)
+        and not _contains_reference_phrase(source_clean, item.right_answer)
     )
+    hall_newly_introduced = (
+        _contains_reference_phrase(candidate_clean, item.hallucinated_answer)
+        and not _contains_reference_phrase(source_clean, item.hallucinated_answer)
+    )
+
+    # Number/entity/negation diagnostics are retained for audit, but they are not
+    # hard validity gates. Semantic equivalence is decided by the independent LLM judge.
+    return {
+        "non_empty": bool(candidate_clean),
+        "minimum_words": candidate_words >= args.min_candidate_words,
+        "not_exact_copy": candidate_clean.casefold() != source_clean.casefold(),
+        "surface_change_ok": distance >= args.min_edit_ratio,
+        "edit_ratio_within_limit": distance <= args.max_edit_ratio,
+        "length_ratio_within_limit": args.min_length_ratio <= length_ratio <= args.max_length_ratio,
+        "no_new_reference_answer_copy": not (right_newly_introduced or hall_newly_introduced),
+        "right_answer_newly_introduced": right_newly_introduced,
+        "hallucinated_answer_newly_introduced": hall_newly_introduced,
+        "source_word_count": source_words,
+        "candidate_word_count": candidate_words,
+        "length_ratio": length_ratio,
+        "token_f1": token_f1(source_clean, candidate_clean),
+        "edit_ratio": distance,
+        "numbers_exactly_preserved_diagnostic": source_numbers == candidate_numbers,
+        "negation_presence_preserved_diagnostic": source_neg == candidate_neg,
+        "modal_anchors_preserved_diagnostic": not source_modals or source_modals.issubset(candidate_modals),
+    }
+
+
+def candidate_valid(
+    review: Mapping[str, Any],
+    checks: Mapping[str, Any],
+    args: argparse.Namespace,
+) -> bool:
+    semantic_ok = all(bool(review.get(f)) for f in PARAPHRASE_REVIEW_FIELDS)
+    judge_ok = (
+        int(review.get("naturalness", 0)) >= args.min_naturalness
+        and float(review.get("confidence", 0.0)) >= args.judge_min_confidence
+    )
+    safety_ok = all(
+        bool(checks.get(field))
+        for field in (
+            "non_empty",
+            "minimum_words",
+            "not_exact_copy",
+            "surface_change_ok",
+            "edit_ratio_within_limit",
+            "length_ratio_within_limit",
+            "no_new_reference_answer_copy",
+        )
+    )
+    return semantic_ok and judge_ok and safety_ok
 
 
 # ---------------------------------------------------------------------------
@@ -1359,40 +1536,124 @@ def prepare_semantic_item(
         return result
 
     original_surprisal = scorer.surface_surprisal(shortcut.text)
-    generated = editor.paraphrases(shortcut.text, args.paraphrase_candidates)
-    candidate_rows = []
-    for i, text in enumerate(generated, 1):
-        checks = deterministic_paraphrase_checks(item, shortcut.text, text, args)
-        review = editor.review_paraphrase(item, shortcut.text, text)
-        valid = candidate_valid(review, checks, args)
-        row: dict[str, Any] = {
-            "candidate_id": f"p{i:02d}",
-            "text": text,
-            "review": review,
-            "automatic_checks": checks,
-            "valid": valid,
-        }
-        if valid:
-            surprisal = scorer.surface_surprisal(text)
-            row["surface_surprisal"] = surprisal
-            row["surprisal_increase"] = surprisal - original_surprisal
-            if row["surprisal_increase"] > args.max_surprisal_increase:
-                row["valid"] = False
-                row["invalid_reason"] = "surprisal_increase"
-            else:
-                probe = scorer.pair_score(prior_probe_user_prompt(text, item.question), item.right_answer, item.hallucinated_answer)
-                k, q = replace_container_span(item, shortcut, text)
-                full = score_variant(item, scorer, k, q, False, args)
-                row["prior_probe"] = asdict(probe)
-                row["prior_shortcut_margin"] = -probe.correct_margin
-                row["full"] = full
-        candidate_rows.append(row)
+    candidate_rows: list[dict[str, Any]] = []
+    valid_rows: list[dict[str, Any]] = []
+    generation_rounds: list[dict[str, Any]] = []
+    seen_candidates: set[str] = set()
+    accepted_texts: list[str] = []
+    next_candidate_index = 1
 
-    valid_rows = [r for r in candidate_rows if r.get("valid") and "prior_probe" in r]
+    for round_index in range(1, args.paraphrase_max_rounds + 1):
+        if len(valid_rows) >= args.min_valid_paraphrases:
+            break
+        round_meta: dict[str, Any] = {
+            "round": round_index,
+            "valid_before": len(valid_rows),
+            "requested": args.paraphrase_candidates,
+        }
+        try:
+            generated = editor.paraphrase_batch(
+                item=item,
+                span=shortcut,
+                n=args.paraphrase_candidates,
+                round_index=round_index,
+                avoid=accepted_texts + [r["text"] for r in candidate_rows[-20:]],
+            )
+        except Exception as exc:
+            round_meta.update({"status": "generation_error", "error": f"{type(exc).__name__}: {exc}"})
+            generation_rounds.append(round_meta)
+            continue
+
+        batch: list[dict[str, str]] = []
+        duplicate_count = 0
+        for generated_text in generated:
+            candidate_text = normalize_space(generated_text)
+            key = candidate_text.casefold()
+            if not candidate_text or key in seen_candidates:
+                duplicate_count += 1
+                continue
+            seen_candidates.add(key)
+            candidate_id = f"p{next_candidate_index:03d}"
+            next_candidate_index += 1
+            batch.append({"candidate_id": candidate_id, "text": candidate_text})
+
+        round_meta["generated"] = len(generated)
+        round_meta["fresh"] = len(batch)
+        round_meta["duplicates_removed"] = duplicate_count
+        if not batch:
+            round_meta["status"] = "no_fresh_candidates"
+            generation_rounds.append(round_meta)
+            continue
+
+        reviews = editor.review_paraphrase_batch(item, shortcut, batch, round_index)
+        round_valid = 0
+        for candidate in batch:
+            candidate_id = candidate["candidate_id"]
+            candidate_text = candidate["text"]
+            review = reviews.get(candidate_id, {
+                **{f: False for f in PARAPHRASE_REVIEW_FIELDS},
+                "naturalness": 0,
+                "confidence": 0.0,
+                "reason": "missing judge result",
+            })
+            checks = deterministic_paraphrase_checks(item, shortcut.text, candidate_text, args)
+            valid = candidate_valid(review, checks, args)
+            row: dict[str, Any] = {
+                "candidate_id": candidate_id,
+                "generation_round": round_index,
+                "text": candidate_text,
+                "review": review,
+                "automatic_checks": checks,
+                "valid": valid,
+            }
+            if valid:
+                surprisal = scorer.surface_surprisal(candidate_text)
+                row["surface_surprisal"] = surprisal
+                row["surprisal_increase"] = surprisal - original_surprisal
+                if row["surprisal_increase"] > args.max_surprisal_increase:
+                    row["valid"] = False
+                    row["invalid_reason"] = "surprisal_increase"
+                else:
+                    probe = scorer.pair_score(
+                        prior_probe_user_prompt(candidate_text, item.question),
+                        item.right_answer,
+                        item.hallucinated_answer,
+                    )
+                    k, q = replace_container_span(item, shortcut, candidate_text)
+                    full = score_variant(item, scorer, k, q, False, args)
+                    row["prior_probe"] = asdict(probe)
+                    row["prior_shortcut_margin"] = -probe.correct_margin
+                    row["full"] = full
+                    valid_rows.append(row)
+                    accepted_texts.append(candidate_text)
+                    round_valid += 1
+            candidate_rows.append(row)
+
+        round_meta.update({
+            "status": "complete",
+            "judged": len(batch),
+            "new_valid": round_valid,
+            "valid_after": len(valid_rows),
+        })
+        generation_rounds.append(round_meta)
+
     result["all_paraphrase_candidates"] = candidate_rows
+    result["paraphrase_generation"] = {
+        "strategy": "generate_until_enough_with_batch_llm_judge",
+        "batch_size": args.paraphrase_candidates,
+        "max_rounds": args.paraphrase_max_rounds,
+        "target_valid": args.min_valid_paraphrases,
+        "rounds_attempted": len(generation_rounds),
+        "total_unique_candidates": len(candidate_rows),
+        "valid_candidates": len(valid_rows),
+        "rounds": generation_rounds,
+    }
     if len(valid_rows) < args.min_valid_paraphrases:
         result["status"] = "insufficient_valid_paraphrases"
-        result["reason"] = f"only_{len(valid_rows)}_valid_paraphrases"
+        result["reason"] = (
+            f"only_{len(valid_rows)}_valid_paraphrases_after_"
+            f"{len(generation_rounds)}_rounds"
+        )
         return result
 
     by_prior = sorted(valid_rows, key=lambda r: float(r["prior_shortcut_margin"]))
@@ -1402,10 +1663,19 @@ def prepare_semantic_item(
     original_prior = scorer.pair_score(prior_probe_user_prompt(shortcut.text, item.question), item.right_answer, item.hallucinated_answer)
     common = min(valid_rows, key=lambda r: abs(float(r["prior_shortcut_margin"]) - (-original_prior.correct_margin)))
 
-    # PDP minimizes shortcut prior, then maximizes full correct margin within a small prior band.
+    # PDP is selected without looking at the full-context outcome. Among the
+    # lowest-prior band, prefer the most natural and least surprising candidate.
     low_value = float(prior_low["prior_shortcut_margin"])
     band = [r for r in valid_rows if float(r["prior_shortcut_margin"]) <= low_value + args.pdp_prior_band]
-    pdp = max(band, key=lambda r: float(r["full"]["pair"]["correct_margin"]))
+    pdp = min(
+        band,
+        key=lambda r: (
+            -int(r.get("review", {}).get("naturalness", 0)),
+            float(r.get("surface_surprisal", float("inf"))),
+            float(r.get("automatic_checks", {}).get("edit_ratio", float("inf"))),
+            str(r.get("candidate_id", "")),
+        ),
+    )
     consensus = by_prior[: min(args.pdp_consensus_k, len(by_prior))]
 
     selected = {
@@ -2102,12 +2372,25 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--editor-api-key", default=None)
     p.add_argument("--editor-temperature", type=float, default=0.7)
     p.add_argument("--editor-max-retries", type=int, default=3)
-    p.add_argument("--paraphrase-candidates", type=int, default=10)
+    p.add_argument(
+        "--paraphrase-candidates", type=int, default=5,
+        help="number of candidates generated in each generate-until-enough round",
+    )
+    p.add_argument("--paraphrase-max-rounds", type=int, default=4)
+    p.add_argument("--paraphrase-generation-max-tokens", type=int, default=1200)
+    p.add_argument("--paraphrase-review-max-tokens", type=int, default=1400)
     p.add_argument("--min-valid-paraphrases", type=int, default=3)
-    p.add_argument("--min-naturalness", type=int, default=4)
-    p.add_argument("--min-paraphrase-token-f1", type=float, default=0.45)
-    p.add_argument("--max-edit-ratio", type=float, default=0.55)
-    p.add_argument("--max-answer-token-f1", type=float, default=0.80)
+    p.add_argument("--min-naturalness", type=int, default=3)
+    p.add_argument("--judge-min-confidence", type=float, default=0.75)
+    p.add_argument("--min-candidate-words", type=int, default=3)
+    p.add_argument("--min-edit-ratio", type=float, default=0.03)
+    p.add_argument("--max-edit-ratio", type=float, default=0.95)
+    p.add_argument("--min-length-ratio", type=float, default=0.40)
+    p.add_argument("--max-length-ratio", type=float, default=2.50)
+    # Deprecated compatibility flags. They are retained so older launch scripts
+    # do not fail, but they no longer determine semantic validity.
+    p.add_argument("--min-paraphrase-token-f1", type=float, default=0.0, help=argparse.SUPPRESS)
+    p.add_argument("--max-answer-token-f1", type=float, default=1.0, help=argparse.SUPPRESS)
     p.add_argument("--max-surprisal-increase", type=float, default=2.0)
     p.add_argument("--pdp-prior-band", type=float, default=0.15)
     p.add_argument("--pdp-consensus-k", type=int, default=3)
@@ -2250,7 +2533,7 @@ def main() -> int:
         write_json(outdir / "internal_exclusions.json", internal_summary.get("exclusions", []))
 
     summary = {
-        "method": "KeyShift v10 HaluEval open-answer sequence-level semantic counterfactual and causal validation",
+        "method": "KeyShift v10 revised: HaluEval open-answer generate-until-enough semantic counterfactual and causal validation",
         "data_format": {
             "canonical_fields": ["knowledge", "question", "right_answer", "hallucinated_answer"],
             "primary_observable": "length-normalized teacher-forced sequence log-probability margin: mean_logP(right)-mean_logP(hallucinated)",

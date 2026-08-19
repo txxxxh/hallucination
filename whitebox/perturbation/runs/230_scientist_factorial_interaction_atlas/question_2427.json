@@ -1,0 +1,156 @@
+{
+  "key": "question_2427",
+  "group": "Q153232",
+  "generation_correct": false,
+  "right": "Jean le Rond d'Alembert",
+  "wrong": "Henri Poincaré",
+  "base_margin_wrong_minus_right": -0.054255738854408264,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 225,
+      "char_end": 248,
+      "text": "the University of Paris",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Paris",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 83,
+      "token_end": 89
+    },
+    {
+      "char_start": 407,
+      "char_end": 427,
+      "text": "seat at the Académie",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "seat 24 of the Académie française",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 121,
+      "token_end": 127
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.054255738854408264,
+      "wrong_score": -0.14203576743602753,
+      "right_score": -0.08778002858161926
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Paris"
+      ],
+      "u": 0.33651041984558105,
+      "margin": -0.3907661736011505,
+      "wrong_score": -0.41817784309387207,
+      "right_score": -0.02741166204214096
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "seat at the Académie"
+      ],
+      "u": -0.11520037055015564,
+      "margin": 0.060944631695747375,
+      "wrong_score": -0.13219039142131805,
+      "right_score": -0.19313502311706543
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Paris",
+        "seat at the Académie"
+      ],
+      "u": 0.15075892210006714,
+      "margin": -0.2050146609544754,
+      "wrong_score": -0.29071223735809326,
+      "right_score": -0.08569757640361786
+    }
+  ],
+  "single_u": [
+    0.33651041984558105,
+    -0.11520037055015564
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Paris",
+        "seat at the Académie"
+      ],
+      "u_i": 0.33651041984558105,
+      "u_j": -0.11520037055015564,
+      "local_fd": -0.07055112719535828,
+      "banzhaf": -0.07055112719535828,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Paris",
+        "seat at the Académie"
+      ],
+      "order": 2,
+      "harsanyi": -0.07055112719535828
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Paris"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.2050146609544754,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

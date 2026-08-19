@@ -1,0 +1,290 @@
+{
+  "key": "question_0248",
+  "group": "Q899214",
+  "generation_correct": false,
+  "right": "Tobin J. Marks",
+  "wrong": "Elias James Corey",
+  "base_margin_wrong_minus_right": 0.645377516746521,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 182,
+      "char_end": 212,
+      "text": "at the Massachusetts Institute",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Massachusetts Institute of Technology",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 70
+    },
+    {
+      "char_start": 316,
+      "char_end": 340,
+      "text": "to the chemical sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 87,
+      "token_end": 93
+    },
+    {
+      "char_start": 408,
+      "char_end": 436,
+      "text": "including the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 109,
+      "token_end": 117
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.645377516746521,
+      "wrong_score": -0.005114532075822353,
+      "right_score": -0.6504920721054077
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "at the Massachusetts Institute"
+      ],
+      "u": -0.1461382508277893,
+      "margin": 0.7915157675743103,
+      "wrong_score": -0.003684079507365823,
+      "right_score": -0.7951998710632324
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "to the chemical sciences"
+      ],
+      "u": -0.08295518159866333,
+      "margin": 0.7283326983451843,
+      "wrong_score": -0.004547861870378256,
+      "right_score": -0.7328805327415466
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "to the chemical sciences"
+      ],
+      "u": -0.2079681158065796,
+      "margin": 0.8533456325531006,
+      "wrong_score": -0.005231138318777084,
+      "right_score": -0.858576774597168
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "including the National Medal"
+      ],
+      "u": 0.05429697036743164,
+      "margin": 0.5910805463790894,
+      "wrong_score": -0.014701339416205883,
+      "right_score": -0.6057819128036499
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "including the National Medal"
+      ],
+      "u": 0.10261964797973633,
+      "margin": 0.5427578687667847,
+      "wrong_score": -0.021914783865213394,
+      "right_score": -0.5646726489067078
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "to the chemical sciences",
+        "including the National Medal"
+      ],
+      "u": 0.08144676685333252,
+      "margin": 0.5639307498931885,
+      "wrong_score": -0.02913498505949974,
+      "right_score": -0.5930657386779785
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "to the chemical sciences",
+        "including the National Medal"
+      ],
+      "u": 0.10535550117492676,
+      "margin": 0.5400220155715942,
+      "wrong_score": -0.028256824240088463,
+      "right_score": -0.5682788491249084
+    }
+  ],
+  "single_u": [
+    -0.1461382508277893,
+    -0.08295518159866333,
+    0.05429697036743164
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "at the Massachusetts Institute",
+        "to the chemical sciences"
+      ],
+      "u_i": -0.1461382508277893,
+      "u_j": -0.08295518159866333,
+      "local_fd": 0.021125316619873047,
+      "banzhaf": -0.0016443133354187012,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "at the Massachusetts Institute",
+        "including the National Medal"
+      ],
+      "u_i": -0.1461382508277893,
+      "u_j": 0.05429697036743164,
+      "local_fd": 0.194460928440094,
+      "banzhaf": 0.17169129848480225,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "to the chemical sciences",
+        "including the National Medal"
+      ],
+      "u_i": -0.08295518159866333,
+      "u_j": 0.05429697036743164,
+      "local_fd": 0.11010497808456421,
+      "banzhaf": 0.08733534812927246,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "including the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.194460928440094
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "to the chemical sciences",
+        "including the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.11010497808456421
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "to the chemical sciences",
+        "including the National Medal"
+      ],
+      "order": 3,
+      "harsanyi": -0.045539259910583496
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "to the chemical sciences"
+      ],
+      "order": 2,
+      "harsanyi": 0.021125316619873047
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5400220155715942,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

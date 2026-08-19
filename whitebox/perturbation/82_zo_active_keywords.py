@@ -64,6 +64,7 @@ def main():
     p.add_argument("--steps",type=int,default=4); p.add_argument("--directions",type=int,default=8)
     p.add_argument("--mu",type=float,default=.25); p.add_argument("--lr",type=float,default=.35)
     p.add_argument("--topk",type=int,default=5); p.add_argument("--seed",type=int,default=42)
+    p.add_argument("--limit",type=int,default=0)
     p.add_argument("--smoke",action="store_true"); a=p.parse_args(); set_seed(a.seed)
     a.device=a.device or ("cuda" if torch.cuda.is_available() else "cpu"); extra={}
     if a.smoke:
@@ -76,6 +77,7 @@ def main():
         model,tok=loader(a.model,a.dtype,a.device)
         items=[Item.from_dict(x) for x in json.load(open(a.items))]
         if a.item_id: items=[x for x in items if x.item_id in set(a.item_id)]
+        if a.limit: items=items[:a.limit]
     att=SpanAttributor(model,tok,device=a.device,baseline="mean",length_norm=True,max_rows=16,**extra)
     saved=torch.load(a.basis,map_location="cpu",weights_only=True)
     overlap=set(saved["calibration_item_ids"]) & {x.item_id for x in items}

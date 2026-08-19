@@ -1,0 +1,289 @@
+{
+  "key": "question_0831",
+  "group": "Q689486",
+  "generation_correct": false,
+  "right": "Vladimir Aleksandrovich Kotelnikov",
+  "wrong": "Vitaly Lazarevich Ginzburg",
+  "base_margin_wrong_minus_right": 0.3362540602684021,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 480,
+      "char_end": 502,
+      "text": "the Medal \"For Valiant",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal \"For Valiant Labour in the Great Patriotic War 1941–1945\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 151,
+      "token_end": 157
+    },
+    {
+      "char_start": 575,
+      "char_end": 594,
+      "text": "of the Soviet Union",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "deputy of the Supreme Soviet of the Soviet Union",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 172,
+      "token_end": 176
+    },
+    {
+      "char_start": 619,
+      "char_end": 639,
+      "text": "the Order \"For Merit",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order \"For Merit to the Fatherland\", 1st class",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 180,
+      "token_end": 185
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.3362540602684021,
+      "wrong_score": -0.009881945326924324,
+      "right_score": -0.3461360037326813
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Medal \"For Valiant"
+      ],
+      "u": 0.1210145354270935,
+      "margin": 0.2152395248413086,
+      "wrong_score": -0.012976578436791897,
+      "right_score": -0.22821609675884247
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Soviet Union"
+      ],
+      "u": -0.013823211193084717,
+      "margin": 0.3500772714614868,
+      "wrong_score": -0.012615240179002285,
+      "right_score": -0.3626925051212311
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Medal \"For Valiant",
+        "of the Soviet Union"
+      ],
+      "u": 0.020520269870758057,
+      "margin": 0.31573379039764404,
+      "wrong_score": -0.018005969002842903,
+      "right_score": -0.3337397575378418
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Order \"For Merit"
+      ],
+      "u": -0.0489160418510437,
+      "margin": 0.3851701021194458,
+      "wrong_score": -0.01414702832698822,
+      "right_score": -0.3993171453475952
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Medal \"For Valiant",
+        "the Order \"For Merit"
+      ],
+      "u": -0.05492806434631348,
+      "margin": 0.3911821246147156,
+      "wrong_score": -0.03959148749709129,
+      "right_score": -0.43077361583709717
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Soviet Union",
+        "the Order \"For Merit"
+      ],
+      "u": -0.13796675205230713,
+      "margin": 0.47422081232070923,
+      "wrong_score": -0.0875517874956131,
+      "right_score": -0.5617725849151611
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Medal \"For Valiant",
+        "of the Soviet Union",
+        "the Order \"For Merit"
+      ],
+      "u": -0.07526743412017822,
+      "margin": 0.4115214943885803,
+      "wrong_score": -0.06050759181380272,
+      "right_score": -0.47202908992767334
+    }
+  ],
+  "single_u": [
+    0.1210145354270935,
+    -0.013823211193084717,
+    -0.0489160418510437
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Medal \"For Valiant",
+        "of the Soviet Union"
+      ],
+      "u_i": 0.1210145354270935,
+      "u_j": -0.013823211193084717,
+      "local_fd": -0.08667105436325073,
+      "banzhaf": -0.008979856967926025,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Medal \"For Valiant",
+        "the Order \"For Merit"
+      ],
+      "u_i": 0.1210145354270935,
+      "u_j": -0.0489160418510437,
+      "local_fd": -0.12702655792236328,
+      "banzhaf": -0.049335360527038574,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "of the Soviet Union",
+        "the Order \"For Merit"
+      ],
+      "u_i": -0.013823211193084717,
+      "u_j": -0.0489160418510437,
+      "local_fd": -0.07522749900817871,
+      "banzhaf": 0.002463698387145996,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Medal \"For Valiant",
+        "of the Soviet Union",
+        "the Order \"For Merit"
+      ],
+      "order": 3,
+      "harsanyi": 0.15538239479064941
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Medal \"For Valiant",
+        "the Order \"For Merit"
+      ],
+      "order": 2,
+      "harsanyi": -0.12702655792236328
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Medal \"For Valiant",
+        "of the Soviet Union"
+      ],
+      "order": 2,
+      "harsanyi": -0.08667105436325073
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Soviet Union",
+        "the Order \"For Merit"
+      ],
+      "order": 2,
+      "harsanyi": -0.07522749900817871
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.4115214943885803,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

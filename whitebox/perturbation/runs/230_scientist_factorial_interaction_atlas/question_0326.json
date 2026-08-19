@@ -1,0 +1,152 @@
+{
+  "key": "question_0326",
+  "group": "Q185110",
+  "generation_correct": false,
+  "right": "Igor Vasilyevich Kurchatov",
+  "wrong": "Nikolay Basov",
+  "base_margin_wrong_minus_right": -0.10003606975078583,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 207,
+      "char_end": 228,
+      "text": "deputy of the Supreme",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "deputy of the Supreme Soviet of the Soviet Union",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 80,
+      "token_end": 86
+    },
+    {
+      "char_start": 366,
+      "char_end": 387,
+      "text": "the Hammer and Sickle",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "\"Hammer and Sickle\" gold medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 117
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.10003606975078583,
+      "wrong_score": -0.15894101560115814,
+      "right_score": -0.058904942125082016
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "deputy of the Supreme"
+      ],
+      "u": 0.09426425397396088,
+      "margin": -0.1943003237247467,
+      "wrong_score": -0.24290673434734344,
+      "right_score": -0.04860640689730644
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Hammer and Sickle"
+      ],
+      "u": -0.1761387586593628,
+      "margin": 0.07610268890857697,
+      "wrong_score": -0.06592601537704468,
+      "right_score": -0.14202870428562164
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "deputy of the Supreme",
+        "the Hammer and Sickle"
+      ],
+      "u": -0.1172223910689354,
+      "margin": 0.017186321318149567,
+      "wrong_score": -0.103574737906456,
+      "right_score": -0.12076105922460556
+    }
+  ],
+  "single_u": [
+    0.09426425397396088,
+    -0.1761387586593628
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "deputy of the Supreme",
+        "the Hammer and Sickle"
+      ],
+      "u_i": 0.09426425397396088,
+      "u_j": -0.1761387586593628,
+      "local_fd": -0.03534787893295288,
+      "banzhaf": -0.03534787893295288,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "deputy of the Supreme",
+        "the Hammer and Sickle"
+      ],
+      "order": 2,
+      "harsanyi": -0.03534788638353348
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.017186321318149567,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

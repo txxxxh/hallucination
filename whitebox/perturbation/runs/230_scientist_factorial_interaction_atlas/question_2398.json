@@ -1,0 +1,146 @@
+{
+  "key": "question_2398",
+  "group": "Q41390",
+  "generation_correct": false,
+  "right": "Kurt Gödel",
+  "wrong": "Norbert Wiener",
+  "base_margin_wrong_minus_right": 1.0002658367156982,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 323,
+      "char_end": 346,
+      "text": "with the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 93,
+      "token_end": 99
+    },
+    {
+      "char_start": 379,
+      "char_end": 405,
+      "text": "deliver the Josiah Willard",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Josiah Willard Gibbs Lectureship",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 100,
+      "token_end": 105
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.0002658367156982,
+      "wrong_score": -0.010911268182098866,
+      "right_score": -1.0111770629882812
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "with the National Medal"
+      ],
+      "u": 0.18755638599395752,
+      "margin": 0.8127094507217407,
+      "wrong_score": -0.04341065138578415,
+      "right_score": -0.8561201095581055
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "deliver the Josiah Willard"
+      ],
+      "u": -0.3436952829360962,
+      "margin": 1.3439611196517944,
+      "wrong_score": -0.009500112384557724,
+      "right_score": -1.3534612655639648
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the National Medal",
+        "deliver the Josiah Willard"
+      ],
+      "u": -0.18752837181091309,
+      "margin": 1.1877942085266113,
+      "wrong_score": -0.013673924840986729,
+      "right_score": -1.2014681100845337
+    }
+  ],
+  "single_u": [
+    0.18755638599395752,
+    -0.3436952829360962
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "with the National Medal",
+        "deliver the Josiah Willard"
+      ],
+      "u_i": 0.18755638599395752,
+      "u_j": -0.3436952829360962,
+      "local_fd": -0.031389474868774414,
+      "banzhaf": -0.031389474868774414,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the National Medal",
+        "deliver the Josiah Willard"
+      ],
+      "order": 2,
+      "harsanyi": -0.031389474868774414
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.1877942085266113,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

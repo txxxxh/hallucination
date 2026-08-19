@@ -1,0 +1,152 @@
+{
+  "key": "question_1544",
+  "group": "Q323320",
+  "generation_correct": false,
+  "right": "Kip Stephen Thorne",
+  "wrong": "Arthur Stanley Eddington",
+  "base_margin_wrong_minus_right": -1.0490566492080688,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 137,
+      "char_end": 177,
+      "text": "This distinguished physicist, astronomer",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "astronomer",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 73
+    },
+    {
+      "char_start": 179,
+      "char_end": 211,
+      "text": "and astrophysicist made profound",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "astrophysicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 73,
+      "token_end": 78
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.0490566492080688,
+      "wrong_score": -1.0689259767532349,
+      "right_score": -0.019869301468133926
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist, astronomer"
+      ],
+      "u": -1.4495863914489746,
+      "margin": 0.4005297124385834,
+      "wrong_score": -0.04166353866457939,
+      "right_score": -0.44219323992729187
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and astrophysicist made profound"
+      ],
+      "u": -1.3744858503341675,
+      "margin": 0.325429230928421,
+      "wrong_score": -0.043579038232564926,
+      "right_score": -0.36900827288627625
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist, astronomer",
+        "and astrophysicist made profound"
+      ],
+      "u": -1.7749488353729248,
+      "margin": 0.7258921265602112,
+      "wrong_score": -0.008218185044825077,
+      "right_score": -0.7341102957725525
+    }
+  ],
+  "single_u": [
+    -1.4495863914489746,
+    -1.3744858503341675
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished physicist, astronomer",
+        "and astrophysicist made profound"
+      ],
+      "u_i": -1.4495863914489746,
+      "u_j": -1.3744858503341675,
+      "local_fd": 1.0491234064102173,
+      "banzhaf": 1.0491234064102173,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist, astronomer",
+        "and astrophysicist made profound"
+      ],
+      "order": 2,
+      "harsanyi": 1.0491234064102173
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7258921265602112,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 4,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

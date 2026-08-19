@@ -1,0 +1,45 @@
+{
+  "protocol": "Full Scientist probe-known set; same model and exact prompt template. Candidate sequence likelihoods under original, option-swapped, and candidate-name-anonymized prompts; no detector training.",
+  "n": 1076,
+  "errors": 453,
+  "error_detection": {
+    "answer_nll": {
+      "auroc": 0.6739836793412208,
+      "auprc": 0.5889349162916172
+    },
+    "negative_chosen_full_gap": {
+      "auroc": 0.6605543921564458,
+      "auprc": 0.5847665914023186
+    },
+    "negative_chosen_sum_gap": {
+      "auroc": 0.6738029686165707,
+      "auprc": 0.5976670013344569
+    },
+    "negative_chosen_divergent_gap": {
+      "auroc": 0.6730996141294526,
+      "auprc": 0.5965600384876011
+    },
+    "swap_gap_change": {
+      "auroc": 0.49997696824097604,
+      "auprc": 0.42554729843651284
+    },
+    "copy_boost_asymmetry": {
+      "auroc": 0.3251588305535772,
+      "auprc": 0.31628281794660384
+    }
+  },
+  "descriptives": {
+    "candidate_argmax_accuracy_original": 0.620817843866171,
+    "candidate_argmax_accuracy_swapped": 0.6263940520446096,
+    "swap_flip_rate_correct": 0.2712680577849117,
+    "swap_flip_rate_error": 0.32891832229580575,
+    "chosen_full_gap_mean_correct": 0.7599660779998059,
+    "chosen_full_gap_mean_error": 0.11837945461132364,
+    "chosen_divergent_gap_mean_correct": 2.8330153149699706,
+    "chosen_divergent_gap_mean_error": 0.39987065408956546,
+    "copy_boost_mean_correct": 2.576827862533253,
+    "copy_boost_mean_error": 2.1906352629969885,
+    "confident_wrong_fraction_gap_gt_0": 0.5518763796909493,
+    "confident_wrong_fraction_gap_gt_0_5": 0.2803532008830022
+  }
+}

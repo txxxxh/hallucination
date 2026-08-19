@@ -1,0 +1,289 @@
+{
+  "key": "question_1615",
+  "group": "Q184746",
+  "generation_correct": false,
+  "right": "Jane Goodall",
+  "wrong": "Emmanuelle Charpentier",
+  "base_margin_wrong_minus_right": 1.794169306755066,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 129,
+      "char_end": 162,
+      "text": "This prominent university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 57,
+      "token_end": 63
+    },
+    {
+      "char_start": 315,
+      "char_end": 339,
+      "text": "the Princess of Asturias",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Princess of Asturias Awards",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 91,
+      "token_end": 96
+    },
+    {
+      "char_start": 340,
+      "char_end": 363,
+      "text": "Award for Technical and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Princess of Asturias Award for Technical and Scientific Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 95,
+      "token_end": 101
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.794169306755066,
+      "wrong_score": -0.002190026920288801,
+      "right_score": -1.7963593006134033
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent university teacher"
+      ],
+      "u": 0.27989256381988525,
+      "margin": 1.5142767429351807,
+      "wrong_score": -0.013997295871376991,
+      "right_score": -1.5282740592956543
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Princess of Asturias"
+      ],
+      "u": 0.07929003238677979,
+      "margin": 1.7148792743682861,
+      "wrong_score": -0.004664658568799496,
+      "right_score": -1.7195439338684082
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent university teacher",
+        "the Princess of Asturias"
+      ],
+      "u": -0.3691674470901489,
+      "margin": 2.163336753845215,
+      "wrong_score": -0.0306958369910717,
+      "right_score": -2.194032669067383
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Award for Technical and"
+      ],
+      "u": -0.9042989015579224,
+      "margin": 2.6984682083129883,
+      "wrong_score": -0.05061404034495354,
+      "right_score": -2.749082326889038
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent university teacher",
+        "Award for Technical and"
+      ],
+      "u": 0.7663239240646362,
+      "margin": 1.0278453826904297,
+      "wrong_score": -0.19727307558059692,
+      "right_score": -1.2251185178756714
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Princess of Asturias",
+        "Award for Technical and"
+      ],
+      "u": -0.421425461769104,
+      "margin": 2.21559476852417,
+      "wrong_score": -0.21895229816436768,
+      "right_score": -2.434546947479248
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent university teacher",
+        "the Princess of Asturias",
+        "Award for Technical and"
+      ],
+      "u": 0.16194462776184082,
+      "margin": 1.632224678993225,
+      "wrong_score": -0.23756960034370422,
+      "right_score": -1.869794249534607
+    }
+  ],
+  "single_u": [
+    0.27989256381988525,
+    0.07929003238677979,
+    -0.9042989015579224
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This prominent university teacher",
+        "the Princess of Asturias"
+      ],
+      "u_i": 0.27989256381988525,
+      "u_j": 0.07929003238677979,
+      "local_fd": -0.728350043296814,
+      "banzhaf": -0.9078013896942139,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This prominent university teacher",
+        "Award for Technical and"
+      ],
+      "u_i": 0.27989256381988525,
+      "u_j": -0.9042989015579224,
+      "local_fd": 1.3907302618026733,
+      "banzhaf": 1.2112789154052734,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Princess of Asturias",
+        "Award for Technical and"
+      ],
+      "u_i": 0.07929003238677979,
+      "u_j": -0.9042989015579224,
+      "local_fd": 0.4035834074020386,
+      "banzhaf": 0.22413206100463867,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent university teacher",
+        "Award for Technical and"
+      ],
+      "order": 2,
+      "harsanyi": 1.3907302618026733
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent university teacher",
+        "the Princess of Asturias"
+      ],
+      "order": 2,
+      "harsanyi": -0.728350043296814
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Princess of Asturias",
+        "Award for Technical and"
+      ],
+      "order": 2,
+      "harsanyi": 0.4035834074020386
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent university teacher",
+        "the Princess of Asturias",
+        "Award for Technical and"
+      ],
+      "order": 3,
+      "harsanyi": -0.3589026927947998
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.632224678993225,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 6,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

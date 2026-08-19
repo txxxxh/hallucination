@@ -1,0 +1,289 @@
+{
+  "key": "question_1125",
+  "group": "Q106762",
+  "generation_correct": false,
+  "right": "George Porter",
+  "wrong": "Lord Rayleigh",
+  "base_margin_wrong_minus_right": 3.1256401538848877,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 223,
+      "char_end": 250,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 73,
+      "token_end": 79
+    },
+    {
+      "char_start": 332,
+      "char_end": 356,
+      "text": "serving as the President",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "president",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 94,
+      "token_end": 100
+    },
+    {
+      "char_start": 402,
+      "char_end": 421,
+      "text": "member of the House",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "member of the House of Lords",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 106,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 3.1256401538848877,
+      "wrong_score": -0.0017173723317682743,
+      "right_score": -3.1273574829101562
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": 2.9496724605560303,
+      "margin": 0.17596760392189026,
+      "wrong_score": -0.22283589839935303,
+      "right_score": -0.3988035023212433
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "serving as the President"
+      ],
+      "u": 0.373460054397583,
+      "margin": 2.7521800994873047,
+      "wrong_score": -0.004179610405117273,
+      "right_score": -2.756359815597534
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "serving as the President"
+      ],
+      "u": 1.8609672784805298,
+      "margin": 1.264672875404358,
+      "wrong_score": -0.04545968025922775,
+      "right_score": -1.3101325035095215
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "member of the House"
+      ],
+      "u": 1.1778494119644165,
+      "margin": 1.9477907419204712,
+      "wrong_score": -0.0138642443343997,
+      "right_score": -1.9616550207138062
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "member of the House"
+      ],
+      "u": 2.7598981857299805,
+      "margin": 0.3657420873641968,
+      "wrong_score": -0.2158064842224121,
+      "right_score": -0.5815485715866089
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "serving as the President",
+        "member of the House"
+      ],
+      "u": 0.24640560150146484,
+      "margin": 2.879234552383423,
+      "wrong_score": -0.00633440725505352,
+      "right_score": -2.885568857192993
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "serving as the President",
+        "member of the House"
+      ],
+      "u": 2.5044355392456055,
+      "margin": 0.6212044954299927,
+      "wrong_score": -0.16556912660598755,
+      "right_score": -0.7867736220359802
+    }
+  ],
+  "single_u": [
+    2.9496724605560303,
+    0.373460054397583,
+    1.1778494119644165
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "serving as the President"
+      ],
+      "u_i": 2.9496724605560303,
+      "u_j": 0.373460054397583,
+      "local_fd": -1.4621652364730835,
+      "banzhaf": -0.3930920362472534,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "member of the House"
+      ],
+      "u_i": 2.9496724605560303,
+      "u_j": 1.1778494119644165,
+      "local_fd": -1.3676236867904663,
+      "banzhaf": -0.29855048656463623,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "serving as the President",
+        "member of the House"
+      ],
+      "u_i": 0.373460054397583,
+      "u_j": 1.1778494119644165,
+      "local_fd": -1.3049038648605347,
+      "banzhaf": -0.23583060503005981,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "serving as the President",
+        "member of the House"
+      ],
+      "order": 3,
+      "harsanyi": 2.13814640045166
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "serving as the President"
+      ],
+      "order": 2,
+      "harsanyi": -1.4621652364730835
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "member of the House"
+      ],
+      "order": 2,
+      "harsanyi": -1.3676236867904663
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "serving as the President",
+        "member of the House"
+      ],
+      "order": 2,
+      "harsanyi": -1.3049038648605347
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6212044954299927,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

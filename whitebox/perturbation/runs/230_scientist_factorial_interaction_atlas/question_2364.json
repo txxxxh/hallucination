@@ -1,0 +1,171 @@
+{
+  "key": "question_2364",
+  "group": "Q6694",
+  "generation_correct": false,
+  "right": "Alexander von Humboldt",
+  "wrong": "Paul Josef Crutzen",
+  "base_margin_wrong_minus_right": 0.3222959339618683,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 271,
+      "char_end": 299,
+      "text": "as a prominent meteorologist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "meteorologist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 86,
+      "token_end": 92
+    },
+    {
+      "char_start": 381,
+      "char_end": 400,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 106,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.3222959339618683,
+      "wrong_score": -0.06230046972632408,
+      "right_score": -0.38459640741348267
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as a prominent meteorologist"
+      ],
+      "u": 0.3509613275527954,
+      "margin": -0.028665393590927124,
+      "wrong_score": -0.19825546443462372,
+      "right_score": -0.1695900708436966
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.47754716873168945,
+      "margin": -0.15525123476982117,
+      "wrong_score": -0.2927064597606659,
+      "right_score": -0.13745522499084473
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a prominent meteorologist",
+        "as a Foreign Member"
+      ],
+      "u": 0.4061775803565979,
+      "margin": -0.08388164639472961,
+      "wrong_score": -0.2217656821012497,
+      "right_score": -0.13788403570652008
+    }
+  ],
+  "single_u": [
+    0.3509613275527954,
+    0.47754716873168945
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as a prominent meteorologist",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.3509613275527954,
+      "u_j": 0.47754716873168945,
+      "local_fd": -0.42233091592788696,
+      "banzhaf": -0.42233091592788696,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a prominent meteorologist",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.42233091592788696
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as a prominent meteorologist"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a prominent meteorologist",
+        "as a Foreign Member"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.08388164639472961,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

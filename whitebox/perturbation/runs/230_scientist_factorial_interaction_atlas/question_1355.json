@@ -1,0 +1,304 @@
+{
+  "key": "question_1355",
+  "group": "Q153224",
+  "generation_correct": false,
+  "right": "Andrey Nikolaevich Kolmogorov",
+  "wrong": "Pyotr Kapitsa",
+  "base_margin_wrong_minus_right": 0.24014878273010254,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 241,
+      "char_end": 262,
+      "text": "the Hero of Socialist",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Hero of Socialist Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 92,
+      "token_end": 96
+    },
+    {
+      "char_start": 263,
+      "char_end": 283,
+      "text": "Labour, the Order of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 98
+    },
+    {
+      "char_start": 421,
+      "char_end": 450,
+      "text": "doctorate from the University",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "doctor honoris causa from the University of Paris",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 123,
+      "token_end": 130
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.24014878273010254,
+      "wrong_score": -0.020094575360417366,
+      "right_score": -0.26024335622787476
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Hero of Socialist"
+      ],
+      "u": 0.020084649324417114,
+      "margin": 0.22006413340568542,
+      "wrong_score": -0.03208320587873459,
+      "right_score": -0.2521473467350006
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Labour, the Order of"
+      ],
+      "u": 0.013184323906898499,
+      "margin": 0.22696445882320404,
+      "wrong_score": -0.02245427668094635,
+      "right_score": -0.2494187355041504
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Hero of Socialist",
+        "Labour, the Order of"
+      ],
+      "u": 0.019077718257904053,
+      "margin": 0.2210710644721985,
+      "wrong_score": -0.03009152226150036,
+      "right_score": -0.251162588596344
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "doctorate from the University"
+      ],
+      "u": 0.5458807945251465,
+      "margin": -0.30573201179504395,
+      "wrong_score": -0.35417723655700684,
+      "right_score": -0.04844522476196289
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Hero of Socialist",
+        "doctorate from the University"
+      ],
+      "u": 0.4174458682537079,
+      "margin": -0.17729708552360535,
+      "wrong_score": -0.23969896137714386,
+      "right_score": -0.062401872128248215
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Labour, the Order of",
+        "doctorate from the University"
+      ],
+      "u": 0.5354944467544556,
+      "margin": -0.29534563422203064,
+      "wrong_score": -0.34101390838623047,
+      "right_score": -0.045668281614780426
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Hero of Socialist",
+        "Labour, the Order of",
+        "doctorate from the University"
+      ],
+      "u": 0.5025964975357056,
+      "margin": -0.2624477446079254,
+      "wrong_score": -0.31658288836479187,
+      "right_score": -0.05413515120744705
+    }
+  ],
+  "single_u": [
+    0.020084649324417114,
+    0.013184323906898499,
+    0.5458807945251465
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Hero of Socialist",
+        "Labour, the Order of"
+      ],
+      "u_i": 0.020084649324417114,
+      "u_j": 0.013184323906898499,
+      "local_fd": -0.01419125497341156,
+      "banzhaf": 0.04067286103963852,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Hero of Socialist",
+        "doctorate from the University"
+      ],
+      "u_i": 0.020084649324417114,
+      "u_j": 0.5458807945251465,
+      "local_fd": -0.1485195755958557,
+      "banzhaf": -0.09365545958280563,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Labour, the Order of",
+        "doctorate from the University"
+      ],
+      "u_i": 0.013184323906898499,
+      "u_j": 0.5458807945251465,
+      "local_fd": -0.023570656776428223,
+      "banzhaf": 0.03129345178604126,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Hero of Socialist",
+        "doctorate from the University"
+      ],
+      "order": 2,
+      "harsanyi": -0.1485195755958557
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Hero of Socialist",
+        "Labour, the Order of",
+        "doctorate from the University"
+      ],
+      "order": 3,
+      "harsanyi": 0.10972823202610016
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Labour, the Order of",
+        "doctorate from the University"
+      ],
+      "order": 2,
+      "harsanyi": -0.023570671677589417
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Hero of Socialist",
+        "Labour, the Order of"
+      ],
+      "order": 2,
+      "harsanyi": -0.01419125497341156
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "doctorate from the University"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "doctorate from the University"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.2624477446079254,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

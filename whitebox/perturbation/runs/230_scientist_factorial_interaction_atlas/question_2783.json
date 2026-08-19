@@ -1,0 +1,288 @@
+{
+  "key": "question_2783",
+  "group": "Q17280087",
+  "generation_correct": false,
+  "right": "Emmanuelle Charpentier",
+  "wrong": "Otto Hahn",
+  "base_margin_wrong_minus_right": -0.8812288641929626,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 126,
+      "char_end": 158,
+      "text": "This distinguished scientist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 57,
+      "token_end": 63
+    },
+    {
+      "char_start": 378,
+      "char_end": 393,
+      "text": "and the Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 109,
+      "token_end": 113
+    },
+    {
+      "char_start": 505,
+      "char_end": 527,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 132,
+      "token_end": 138
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.8812288641929626,
+      "wrong_score": -0.8910683989524841,
+      "right_score": -0.009839540347456932
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished scientist and"
+      ],
+      "u": -0.42532414197921753,
+      "margin": -0.4559047222137451,
+      "wrong_score": -0.5502099394798279,
+      "right_score": -0.09430521726608276
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Pour le"
+      ],
+      "u": 0.3112615942955017,
+      "margin": -1.1924904584884644,
+      "wrong_score": -1.2068744897842407,
+      "right_score": -0.014384052716195583
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished scientist and",
+        "and the Pour le"
+      ],
+      "u": -0.4592329263687134,
+      "margin": -0.42199593782424927,
+      "wrong_score": -0.5089097619056702,
+      "right_score": -0.0869138166308403
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.05834364891052246,
+      "margin": -0.9395725131034851,
+      "wrong_score": -0.9460117816925049,
+      "right_score": -0.006439294200390577
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist and",
+        "Fellow of the American"
+      ],
+      "u": -0.6493962407112122,
+      "margin": -0.2318326234817505,
+      "wrong_score": -0.29750964045524597,
+      "right_score": -0.06567702442407608
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Pour le",
+        "Fellow of the American"
+      ],
+      "u": 0.3396070599555969,
+      "margin": -1.2208359241485596,
+      "wrong_score": -1.228304147720337,
+      "right_score": -0.0074681914411485195
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist and",
+        "and the Pour le",
+        "Fellow of the American"
+      ],
+      "u": -0.45627638697624207,
+      "margin": -0.4249524772167206,
+      "wrong_score": -0.47380581498146057,
+      "right_score": -0.04885333031415939
+    }
+  ],
+  "single_u": [
+    -0.42532414197921753,
+    0.3112615942955017,
+    0.05834364891052246
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished scientist and",
+        "and the Pour le"
+      ],
+      "u_i": -0.42532414197921753,
+      "u_j": 0.3112615942955017,
+      "local_fd": -0.34517037868499756,
+      "banzhaf": -0.21665696799755096,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished scientist and",
+        "Fellow of the American"
+      ],
+      "u_i": -0.42532414197921753,
+      "u_j": 0.05834364891052246,
+      "local_fd": -0.2824157476425171,
+      "banzhaf": -0.1539023369550705,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and the Pour le",
+        "Fellow of the American"
+      ],
+      "u_i": 0.3112615942955017,
+      "u_j": 0.05834364891052246,
+      "local_fd": -0.029998183250427246,
+      "banzhaf": 0.09851524233818054,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished scientist and",
+        "and the Pour le"
+      ],
+      "order": 2,
+      "harsanyi": -0.34517037868499756
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist and",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.2824157476425171
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist and",
+        "and the Pour le",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.2570268213748932
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Pour le",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.029998183250427246
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.4249524772167206,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

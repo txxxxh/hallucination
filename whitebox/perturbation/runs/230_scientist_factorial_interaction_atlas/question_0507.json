@@ -1,0 +1,294 @@
+{
+  "key": "question_0507",
+  "group": "Q901783",
+  "generation_correct": false,
+  "right": "Gilbert Stork",
+  "wrong": "Ryōji Noyori",
+  "base_margin_wrong_minus_right": -0.043003812432289124,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 151,
+      "char_end": 178,
+      "text": "professor has made profound",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "professor",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 63,
+      "token_end": 67
+    },
+    {
+      "char_start": 179,
+      "char_end": 213,
+      "text": "contributions to organic chemistry",
+      "kind": "attribute",
+      "field": "field",
+      "value": "organic chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 66,
+      "token_end": 73
+    },
+    {
+      "char_start": 406,
+      "char_end": 426,
+      "text": "Roger Adams Award in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Roger Adams Award in Organic Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 112,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.043003812432289124,
+      "wrong_score": -0.1513717919588089,
+      "right_score": -0.10836797952651978
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "professor has made profound"
+      ],
+      "u": 0.22805969417095184,
+      "margin": -0.27106350660324097,
+      "wrong_score": -0.3055325746536255,
+      "right_score": -0.034469056874513626
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "contributions to organic chemistry"
+      ],
+      "u": -0.046737924218177795,
+      "margin": 0.003734111785888672,
+      "wrong_score": -0.13008053600788116,
+      "right_score": -0.13381464779376984
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "professor has made profound",
+        "contributions to organic chemistry"
+      ],
+      "u": -0.27477705478668213,
+      "margin": 0.2317732572555542,
+      "wrong_score": -0.05820006504654884,
+      "right_score": -0.28997331857681274
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Roger Adams Award in"
+      ],
+      "u": -0.03633980453014374,
+      "margin": -0.006664007902145386,
+      "wrong_score": -0.14143189787864685,
+      "right_score": -0.13476788997650146
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "professor has made profound",
+        "Roger Adams Award in"
+      ],
+      "u": 0.22312800586223602,
+      "margin": -0.26613181829452515,
+      "wrong_score": -0.3068114221096039,
+      "right_score": -0.04067960008978844
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "contributions to organic chemistry",
+        "Roger Adams Award in"
+      ],
+      "u": -0.21388700604438782,
+      "margin": 0.1708831936120987,
+      "wrong_score": -0.077954962849617,
+      "right_score": -0.2488381564617157
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "professor has made profound",
+        "contributions to organic chemistry",
+        "Roger Adams Award in"
+      ],
+      "u": -0.38166218996047974,
+      "margin": 0.3386583924293518,
+      "wrong_score": -0.04542408883571625,
+      "right_score": -0.38408249616622925
+    }
+  ],
+  "single_u": [
+    0.22805969417095184,
+    -0.046737924218177795,
+    -0.03633980453014374
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "professor has made profound",
+        "contributions to organic chemistry"
+      ],
+      "u_i": 0.22805969417095184,
+      "u_j": -0.046737924218177795,
+      "local_fd": -0.45609885454177856,
+      "banzhaf": -0.4416709244251251,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "professor has made profound",
+        "Roger Adams Award in"
+      ],
+      "u_i": 0.22805969417095184,
+      "u_j": -0.03633980453014374,
+      "local_fd": 0.03140811622142792,
+      "banzhaf": 0.045836031436920166,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "contributions to organic chemistry",
+        "Roger Adams Award in"
+      ],
+      "u_i": -0.046737924218177795,
+      "u_j": -0.03633980453014374,
+      "local_fd": -0.13080927729606628,
+      "banzhaf": -0.11638136953115463,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "professor has made profound",
+        "contributions to organic chemistry"
+      ],
+      "order": 2,
+      "harsanyi": -0.4560988247394562
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "contributions to organic chemistry",
+        "Roger Adams Award in"
+      ],
+      "order": 2,
+      "harsanyi": -0.13080927729606628
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "professor has made profound",
+        "Roger Adams Award in"
+      ],
+      "order": 2,
+      "harsanyi": 0.03140811622142792
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "professor has made profound",
+        "contributions to organic chemistry",
+        "Roger Adams Award in"
+      ],
+      "order": 3,
+      "harsanyi": 0.028855830430984497
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3386583924293518,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 17,
+    "n_excluded": 11,
+    "max_candidates": 6
+  }
+}

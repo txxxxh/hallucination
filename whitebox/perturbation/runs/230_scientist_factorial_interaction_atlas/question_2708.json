@@ -1,0 +1,142 @@
+{
+  "key": "question_2708",
+  "group": "Q49351",
+  "generation_correct": false,
+  "right": "Robert Robinson",
+  "wrong": "Peter Debije",
+  "base_margin_wrong_minus_right": -1.0526686906814575,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 388,
+      "char_end": 415,
+      "text": "However, this scientist did",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 104,
+      "token_end": 112
+    },
+    {
+      "char_start": 416,
+      "char_end": 419,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 111,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.0526686906814575,
+      "wrong_score": -1.0732227563858032,
+      "right_score": -0.020554037764668465
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "However, this scientist did"
+      ],
+      "u": -0.222245454788208,
+      "margin": -0.8304232358932495,
+      "wrong_score": -0.9877210855484009,
+      "right_score": -0.15729787945747375
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": 0.012325406074523926,
+      "margin": -1.0649940967559814,
+      "wrong_score": -1.0891804695129395,
+      "right_score": -0.0241863951086998
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "However, this scientist did",
+        "not"
+      ],
+      "u": -0.09640192985534668,
+      "margin": -0.9562667608261108,
+      "wrong_score": -1.1069509983062744,
+      "right_score": -0.15068426728248596
+    }
+  ],
+  "single_u": [
+    -0.222245454788208,
+    0.012325406074523926
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "However, this scientist did",
+        "not"
+      ],
+      "u_i": -0.222245454788208,
+      "u_j": 0.012325406074523926,
+      "local_fd": 0.1135181188583374,
+      "banzhaf": 0.1135181188583374,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "However, this scientist did",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.1135181188583374
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.9562667608261108,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

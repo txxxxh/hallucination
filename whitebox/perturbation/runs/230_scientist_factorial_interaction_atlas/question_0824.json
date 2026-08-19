@@ -1,0 +1,152 @@
+{
+  "key": "question_0824",
+  "group": "Q425980",
+  "generation_correct": false,
+  "right": "Frank Albert Cotton",
+  "wrong": "Harold Kroto",
+  "base_margin_wrong_minus_right": -0.40882837772369385,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 142,
+      "char_end": 165,
+      "text": "was a prominent chemist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 65
+    },
+    {
+      "char_start": 166,
+      "char_end": 194,
+      "text": "and university teacher whose",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 64,
+      "token_end": 70
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.40882837772369385,
+      "wrong_score": -0.4795614778995514,
+      "right_score": -0.07073309272527695
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "was a prominent chemist"
+      ],
+      "u": -0.15493518114089966,
+      "margin": -0.2538931965827942,
+      "wrong_score": -0.360604852437973,
+      "right_score": -0.10671164840459824
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and university teacher whose"
+      ],
+      "u": -0.5945008993148804,
+      "margin": 0.1856725513935089,
+      "wrong_score": -0.13124415278434753,
+      "right_score": -0.31691670417785645
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher whose"
+      ],
+      "u": -0.44996070861816406,
+      "margin": 0.041132330894470215,
+      "wrong_score": -0.18597309291362762,
+      "right_score": -0.22710542380809784
+    }
+  ],
+  "single_u": [
+    -0.15493518114089966,
+    -0.5945008993148804
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher whose"
+      ],
+      "u_i": -0.15493518114089966,
+      "u_j": -0.5945008993148804,
+      "local_fd": 0.29947537183761597,
+      "banzhaf": 0.29947537183761597,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "was a prominent chemist",
+        "and university teacher whose"
+      ],
+      "order": 2,
+      "harsanyi": 0.29947537183761597
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.041132330894470215,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

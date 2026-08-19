@@ -1,0 +1,293 @@
+{
+  "key": "question_1371",
+  "group": "Q123280",
+  "generation_correct": false,
+  "right": "Francis Crick",
+  "wrong": "César Milstein",
+  "base_margin_wrong_minus_right": -0.07616083323955536,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 333,
+      "char_end": 358,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 102
+    },
+    {
+      "char_start": 386,
+      "char_end": 409,
+      "text": "the Albert Lasker Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Lasker Award for Basic Medical Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 106,
+      "token_end": 112
+    },
+    {
+      "char_start": 654,
+      "char_end": 659,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 154,
+      "token_end": 156
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.07616083323955536,
+      "wrong_score": -0.19585786759853363,
+      "right_score": -0.11969703435897827
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": -0.32752394676208496,
+      "margin": 0.2513630986213684,
+      "wrong_score": -0.08291275799274445,
+      "right_score": -0.33427584171295166
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Albert Lasker Award"
+      ],
+      "u": -0.4365774393081665,
+      "margin": 0.36041659116744995,
+      "wrong_score": -0.04473302885890007,
+      "right_score": -0.4051496088504791
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Albert Lasker Award"
+      ],
+      "u": -0.27172553539276123,
+      "margin": 0.19556471705436707,
+      "wrong_score": -0.07749249786138535,
+      "right_score": -0.273057222366333
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.3483971953392029,
+      "margin": 0.2722363770008087,
+      "wrong_score": -0.05706989765167236,
+      "right_score": -0.3293062746524811
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "never"
+      ],
+      "u": -0.7636260390281677,
+      "margin": 0.6874651908874512,
+      "wrong_score": -0.01764257811009884,
+      "right_score": -0.7051077485084534
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Albert Lasker Award",
+        "never"
+      ],
+      "u": -0.8608516454696655,
+      "margin": 0.784690797328949,
+      "wrong_score": -0.00887586735188961,
+      "right_score": -0.7935666441917419
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Albert Lasker Award",
+        "never"
+      ],
+      "u": -0.7698689699172974,
+      "margin": 0.6937081217765808,
+      "wrong_score": -0.011378115974366665,
+      "right_score": -0.7050862312316895
+    }
+  ],
+  "single_u": [
+    -0.32752394676208496,
+    -0.4365774393081665,
+    -0.3483971953392029
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Nobel Prize",
+        "the Albert Lasker Award"
+      ],
+      "u_i": -0.32752394676208496,
+      "u_j": -0.4365774393081665,
+      "local_fd": 0.49237585067749023,
+      "banzhaf": 0.4992936849594116,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Nobel Prize",
+        "never"
+      ],
+      "u_i": -0.32752394676208496,
+      "u_j": -0.3483971953392029,
+      "local_fd": -0.08770489692687988,
+      "banzhaf": -0.0807870626449585,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Albert Lasker Award",
+        "never"
+      ],
+      "u_i": -0.4365774393081665,
+      "u_j": -0.3483971953392029,
+      "local_fd": -0.07587701082229614,
+      "banzhaf": -0.06895917654037476,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Albert Lasker Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.49237585067749023
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.08770489692687988
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Albert Lasker Award",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.07587701082229614
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Albert Lasker Award",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": 0.013835668563842773
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6937081217765808,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

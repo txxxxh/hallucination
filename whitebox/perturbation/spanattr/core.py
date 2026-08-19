@@ -563,8 +563,8 @@ class SpanAttributor:
         ae = self.emb_layer(ans_ids).detach().unsqueeze(0).expand(B, A, self.d)
         seq = torch.cat([pe, ae.to(pe.dtype)], dim=1)
         mask = torch.ones(B, P + A, device=self.device, dtype=torch.long)
-        logits = self.model(inputs_embeds=seq, attention_mask=mask).logits
-        lg = logits[:, P - 1: P + A - 1, :].float()      # predicts answer tokens
+        logits = self.model(inputs_embeds=seq, attention_mask=mask, logits_to_keep=A + 1).logits
+        lg = logits[:, :A, :].float()      # predicts answer tokens
         lp = torch.log_softmax(lg, dim=-1)
         tgt = ans_ids.unsqueeze(0).expand(B, A)
         tok_lp = lp.gather(-1, tgt.unsqueeze(-1)).squeeze(-1)
@@ -585,10 +585,28 @@ class SpanAttributor:
         """alpha: [B,P] -> S: [B].  Tier-1 (teacher-forced) score."""
         ctx = torch.enable_grad() if grad else torch.no_grad()
         with ctx:
-            pe = self._embeds(prep, alpha)
-            s = (self._class_logprob(pe, prep.pred_variant_ids)
-                 - self._class_logprob(pe, prep.gold_variant_ids))
+            pred_score, gold_score = self.class_scores(prep, alpha)
+            s = pred_score - gold_score
         return s
+
+    def class_scores(self, prep: Prepared, alpha):
+        """Return both semantic-class scores before margin subtraction."""
+        pe = self._embeds(prep, alpha)
+        return (self._class_logprob(pe, prep.pred_variant_ids),
+                self._class_logprob(pe, prep.gold_variant_ids))
+
+    def class_scores_batched(self, prep: Prepared, alphas):
+        """Batched, detached candidate scores for downstream detectors."""
+        pred, gold = [], []
+        for i in range(0, alphas.shape[0], self.max_rows):
+            with torch.no_grad():
+                p, g = self.class_scores(prep, alphas[i:i + self.max_rows])
+            pred.append(p.detach().float().cpu())
+            gold.append(g.detach().float().cpu())
+        if not pred:
+            empty = torch.zeros(0)
+            return empty, empty
+        return torch.cat(pred), torch.cat(gold)
 
     def S_batched(self, prep: Prepared, alphas):
         out = []

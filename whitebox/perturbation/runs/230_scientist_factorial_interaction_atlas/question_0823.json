@@ -1,0 +1,296 @@
+{
+  "key": "question_0823",
+  "group": "Q311003",
+  "generation_correct": false,
+  "right": "Craig Venter",
+  "wrong": "James D. Watson",
+  "base_margin_wrong_minus_right": -0.5469917058944702,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 122,
+      "char_end": 151,
+      "text": "This prominent biochemist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biochemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 57,
+      "token_end": 62
+    },
+    {
+      "char_start": 201,
+      "char_end": 222,
+      "text": "the field of genetics",
+      "kind": "attribute",
+      "field": "field",
+      "value": "genetics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 71,
+      "token_end": 74
+    },
+    {
+      "char_start": 295,
+      "char_end": 324,
+      "text": "including the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 88,
+      "token_end": 94
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5469917058944702,
+      "wrong_score": -0.604052722454071,
+      "right_score": -0.05706103891134262
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent biochemist and"
+      ],
+      "u": 1.0448999404907227,
+      "margin": -1.5918916463851929,
+      "wrong_score": -1.609290599822998,
+      "right_score": -0.017399009317159653
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the field of genetics"
+      ],
+      "u": 0.06618189811706543,
+      "margin": -0.6131736040115356,
+      "wrong_score": -0.7139706015586853,
+      "right_score": -0.10079701989889145
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent biochemist and",
+        "the field of genetics"
+      ],
+      "u": 0.4049454927444458,
+      "margin": -0.951937198638916,
+      "wrong_score": -1.0053151845932007,
+      "right_score": -0.05337799713015556
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "including the Canada Gairdner"
+      ],
+      "u": -1.2163991928100586,
+      "margin": 0.6694074273109436,
+      "wrong_score": -0.09287958592176437,
+      "right_score": -0.7622870206832886
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent biochemist and",
+        "including the Canada Gairdner"
+      ],
+      "u": -1.0086774826049805,
+      "margin": 0.46168577671051025,
+      "wrong_score": -0.1971503496170044,
+      "right_score": -0.6588361263275146
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of genetics",
+        "including the Canada Gairdner"
+      ],
+      "u": -1.1013679504394531,
+      "margin": 0.5543762445449829,
+      "wrong_score": -0.16174519062042236,
+      "right_score": -0.7161214351654053
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent biochemist and",
+        "the field of genetics",
+        "including the Canada Gairdner"
+      ],
+      "u": -1.4105541706085205,
+      "margin": 0.8635624051094055,
+      "wrong_score": -0.18677359819412231,
+      "right_score": -1.0503360033035278
+    }
+  ],
+  "single_u": [
+    1.0448999404907227,
+    0.06618189811706543,
+    -1.2163991928100586
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This prominent biochemist and",
+        "the field of genetics"
+      ],
+      "u_i": 1.0448999404907227,
+      "u_j": 0.06618189811706543,
+      "local_fd": -0.7061363458633423,
+      "banzhaf": -0.6115221381187439,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This prominent biochemist and",
+        "including the Canada Gairdner"
+      ],
+      "u_i": 1.0448999404907227,
+      "u_j": -1.2163991928100586,
+      "local_fd": -0.8371782302856445,
+      "banzhaf": -0.7425640225410461,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the field of genetics",
+        "including the Canada Gairdner"
+      ],
+      "u_i": 0.06618189811706543,
+      "u_j": -1.2163991928100586,
+      "local_fd": 0.04884934425354004,
+      "banzhaf": 0.14346355199813843,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent biochemist and",
+        "including the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": -0.8371782302856445
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent biochemist and",
+        "the field of genetics"
+      ],
+      "order": 2,
+      "harsanyi": -0.7061363458633423
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent biochemist and",
+        "the field of genetics",
+        "including the Canada Gairdner"
+      ],
+      "order": 3,
+      "harsanyi": 0.18922841548919678
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of genetics",
+        "including the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": 0.04884934425354004
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8635624051094055,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

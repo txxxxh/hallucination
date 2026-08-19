@@ -1,0 +1,288 @@
+{
+  "key": "question_1701",
+  "group": "Q561752",
+  "generation_correct": false,
+  "right": "Yulii Borisovich Khariton",
+  "wrong": "Vitaly Lazarevich Ginzburg",
+  "base_margin_wrong_minus_right": 0.4862752854824066,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 146,
+      "char_end": 174,
+      "text": "This prominent scientist was",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 71,
+      "token_end": 78
+    },
+    {
+      "char_start": 267,
+      "char_end": 288,
+      "text": "from the Soviet Union",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "deputy of the Supreme Soviet of the Soviet Union",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 100,
+      "token_end": 104
+    },
+    {
+      "char_start": 440,
+      "char_end": 462,
+      "text": "the Medal \"For Valiant",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal \"For Valiant Labour in the Great Patriotic War 1941–1945\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 134,
+      "token_end": 139
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.4862752854824066,
+      "wrong_score": -0.003931960556656122,
+      "right_score": -0.4902072548866272
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent scientist was"
+      ],
+      "u": -0.26444366574287415,
+      "margin": 0.7507189512252808,
+      "wrong_score": -0.00404506316408515,
+      "right_score": -0.7547640204429626
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "from the Soviet Union"
+      ],
+      "u": 0.476083904504776,
+      "margin": 0.010191380977630615,
+      "wrong_score": -0.077426977455616,
+      "right_score": -0.08761835843324661
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent scientist was",
+        "from the Soviet Union"
+      ],
+      "u": -0.17173776030540466,
+      "margin": 0.6580130457878113,
+      "wrong_score": -0.004907071124762297,
+      "right_score": -0.6629201173782349
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Medal \"For Valiant"
+      ],
+      "u": 0.015588313341140747,
+      "margin": 0.47068697214126587,
+      "wrong_score": -0.005941238719969988,
+      "right_score": -0.47662821412086487
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent scientist was",
+        "the Medal \"For Valiant"
+      ],
+      "u": -0.015132874250411987,
+      "margin": 0.5014081597328186,
+      "wrong_score": -0.005756404250860214,
+      "right_score": -0.5071645379066467
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "from the Soviet Union",
+        "the Medal \"For Valiant"
+      ],
+      "u": 0.4344322681427002,
+      "margin": 0.05184301733970642,
+      "wrong_score": -0.062448687851428986,
+      "right_score": -0.1142917051911354
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent scientist was",
+        "from the Soviet Union",
+        "the Medal \"For Valiant"
+      ],
+      "u": 0.09901043772697449,
+      "margin": 0.38726484775543213,
+      "wrong_score": -0.012895173393189907,
+      "right_score": -0.400160014629364
+    }
+  ],
+  "single_u": [
+    -0.26444366574287415,
+    0.476083904504776,
+    0.015588313341140747
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This prominent scientist was",
+        "from the Soviet Union"
+      ],
+      "u_i": -0.26444366574287415,
+      "u_j": 0.476083904504776,
+      "local_fd": -0.3833779990673065,
+      "banzhaf": -0.34403932094573975,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This prominent scientist was",
+        "the Medal \"For Valiant"
+      ],
+      "u_i": -0.26444366574287415,
+      "u_j": 0.015588313341140747,
+      "local_fd": 0.2337224781513214,
+      "banzhaf": 0.2730611562728882,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "from the Soviet Union",
+        "the Medal \"For Valiant"
+      ],
+      "u_i": 0.476083904504776,
+      "u_j": 0.015588313341140747,
+      "local_fd": -0.05723994970321655,
+      "banzhaf": -0.01790127158164978,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent scientist was",
+        "from the Soviet Union"
+      ],
+      "order": 2,
+      "harsanyi": -0.3833779990673065
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent scientist was",
+        "the Medal \"For Valiant"
+      ],
+      "order": 2,
+      "harsanyi": 0.2337224781513214
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent scientist was",
+        "from the Soviet Union",
+        "the Medal \"For Valiant"
+      ],
+      "order": 3,
+      "harsanyi": 0.07867735624313354
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "from the Soviet Union",
+        "the Medal \"For Valiant"
+      ],
+      "order": 2,
+      "harsanyi": -0.05723994970321655
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.38726484775543213,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

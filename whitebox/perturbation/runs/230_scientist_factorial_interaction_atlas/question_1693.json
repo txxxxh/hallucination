@@ -1,0 +1,146 @@
+{
+  "key": "question_1693",
+  "group": "Q48973",
+  "generation_correct": false,
+  "right": "Glenn T. Seaborg",
+  "wrong": "James Fraser Stoddart",
+  "base_margin_wrong_minus_right": 0.5142741799354553,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 240,
+      "char_end": 263,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 86,
+      "token_end": 90
+    },
+    {
+      "char_start": 299,
+      "char_end": 314,
+      "text": "and the Glenn T",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Glenn T. Seaborg Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 98
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.5142741799354553,
+      "wrong_score": -0.012136825360357761,
+      "right_score": -0.5264109969139099
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.6976417899131775,
+      "margin": 1.2119159698486328,
+      "wrong_score": -0.016228973865509033,
+      "right_score": -1.2281450033187866
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Glenn T"
+      ],
+      "u": -0.605508029460907,
+      "margin": 1.1197822093963623,
+      "wrong_score": -0.02727276086807251,
+      "right_score": -1.14705491065979
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "and the Glenn T"
+      ],
+      "u": -0.824492871761322,
+      "margin": 1.3387670516967773,
+      "wrong_score": -0.0036061459686607122,
+      "right_score": -1.342373251914978
+    }
+  ],
+  "single_u": [
+    -0.6976417899131775,
+    -0.605508029460907
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Nobel Prize",
+        "and the Glenn T"
+      ],
+      "u_i": -0.6976417899131775,
+      "u_j": -0.605508029460907,
+      "local_fd": 0.47865694761276245,
+      "banzhaf": 0.47865694761276245,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "and the Glenn T"
+      ],
+      "order": 2,
+      "harsanyi": 0.47865694761276245
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.3387670516967773,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

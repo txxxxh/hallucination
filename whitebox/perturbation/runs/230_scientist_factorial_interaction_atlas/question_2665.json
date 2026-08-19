@@ -1,0 +1,146 @@
+{
+  "key": "question_2665",
+  "group": "Q935993",
+  "generation_correct": false,
+  "right": "Karl Deisseroth",
+  "wrong": "Bert Vogelstein",
+  "base_margin_wrong_minus_right": -0.9554977416992188,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 238,
+      "char_end": 261,
+      "text": "impact on life sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Breakthrough Prize in Life Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 79,
+      "token_end": 86
+    },
+    {
+      "char_start": 318,
+      "char_end": 353,
+      "text": "Canada Gairdner International Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 96,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9554977416992188,
+      "wrong_score": -0.9585453271865845,
+      "right_score": -0.0030475647654384375
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "impact on life sciences"
+      ],
+      "u": -0.025814056396484375,
+      "margin": -0.9296836853027344,
+      "wrong_score": -0.9361759424209595,
+      "right_score": -0.006492255721241236
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Canada Gairdner International Award"
+      ],
+      "u": -0.1284133791923523,
+      "margin": -0.8270843625068665,
+      "wrong_score": -0.8324506878852844,
+      "right_score": -0.00536632165312767
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "impact on life sciences",
+        "Canada Gairdner International Award"
+      ],
+      "u": -0.1537715196609497,
+      "margin": -0.801726222038269,
+      "wrong_score": -0.8109901547431946,
+      "right_score": -0.009263916872441769
+    }
+  ],
+  "single_u": [
+    -0.025814056396484375,
+    -0.1284133791923523
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "impact on life sciences",
+        "Canada Gairdner International Award"
+      ],
+      "u_i": -0.025814056396484375,
+      "u_j": -0.1284133791923523,
+      "local_fd": 0.0004559159278869629,
+      "banzhaf": 0.0004559159278869629,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "impact on life sciences",
+        "Canada Gairdner International Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.0004559159278869629
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.801726222038269,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

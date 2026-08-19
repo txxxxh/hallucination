@@ -1,0 +1,291 @@
+{
+  "key": "question_2423",
+  "group": "Q164384",
+  "generation_correct": false,
+  "right": "Theodore von Kármán",
+  "wrong": "Christiane Nüsslein-Volhard",
+  "base_margin_wrong_minus_right": -1.2341234683990479,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 141,
+      "char_end": 168,
+      "text": "This renowned scientist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 64,
+      "token_end": 69
+    },
+    {
+      "char_start": 527,
+      "char_end": 544,
+      "text": "Order of Merit of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of Merit of Baden-Württemberg",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 130,
+      "token_end": 133
+    },
+    {
+      "char_start": 634,
+      "char_end": 639,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 150,
+      "token_end": 152
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.2341234683990479,
+      "wrong_score": -1.2350295782089233,
+      "right_score": -0.0009061184246093035
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This renowned scientist and"
+      ],
+      "u": -1.0391254425048828,
+      "margin": -0.19499804079532623,
+      "wrong_score": -0.23113073408603668,
+      "right_score": -0.03613268956542015
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Order of Merit of"
+      ],
+      "u": -0.7193882465362549,
+      "margin": -0.514735221862793,
+      "wrong_score": -0.5218169689178467,
+      "right_score": -0.007081745192408562
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This renowned scientist and",
+        "Order of Merit of"
+      ],
+      "u": -1.7232019901275635,
+      "margin": 0.48907846212387085,
+      "wrong_score": -0.01708829402923584,
+      "right_score": -0.5061667561531067
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.7346471548080444,
+      "margin": -0.4994763433933258,
+      "wrong_score": -0.5037193298339844,
+      "right_score": -0.00424298457801342
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This renowned scientist and",
+        "never"
+      ],
+      "u": -1.7980546951293945,
+      "margin": 0.5639312863349915,
+      "wrong_score": -0.013058789074420929,
+      "right_score": -0.5769900679588318
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Order of Merit of",
+        "never"
+      ],
+      "u": -0.7194400429725647,
+      "margin": -0.5146834254264832,
+      "wrong_score": -0.5196861028671265,
+      "right_score": -0.005002687219530344
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This renowned scientist and",
+        "Order of Merit of",
+        "never"
+      ],
+      "u": -1.8827455043792725,
+      "margin": 0.6486220955848694,
+      "wrong_score": -0.016582932323217392,
+      "right_score": -0.6652050018310547
+    }
+  ],
+  "single_u": [
+    -1.0391254425048828,
+    -0.7193882465362549,
+    -0.7346471548080444
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This renowned scientist and",
+        "Order of Merit of"
+      ],
+      "u_i": -1.0391254425048828,
+      "u_j": -0.7193882465362549,
+      "local_fd": 0.03531169891357422,
+      "banzhaf": -0.032293111085891724,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This renowned scientist and",
+        "never"
+      ],
+      "u_i": -1.0391254425048828,
+      "u_j": -0.7346471548080444,
+      "local_fd": -0.024282097816467285,
+      "banzhaf": -0.09188690781593323,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Order of Merit of",
+        "never"
+      ],
+      "u_i": -0.7193882465362549,
+      "u_j": -0.7346471548080444,
+      "local_fd": 0.7345953583717346,
+      "banzhaf": 0.6669905185699463,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Order of Merit of",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.7345953583717346
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This renowned scientist and",
+        "Order of Merit of",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.13520961999893188
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This renowned scientist and",
+        "Order of Merit of"
+      ],
+      "order": 2,
+      "harsanyi": 0.03531169891357422
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This renowned scientist and",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.024282097816467285
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6486220955848694,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

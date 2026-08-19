@@ -1,0 +1,150 @@
+{
+  "key": "question_1034",
+  "group": "Q5327",
+  "generation_correct": false,
+  "right": "Adolf Butenandt",
+  "wrong": "Theodor Wolfgang Hänsch",
+  "base_margin_wrong_minus_right": -0.02104973793029785,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 365,
+      "char_end": 389,
+      "text": "Arts order, the Bavarian",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Bavarian Order of Merit",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 106,
+      "token_end": 111
+    },
+    {
+      "char_start": 455,
+      "char_end": 473,
+      "text": "Cross of the Order",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Officer's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 120,
+      "token_end": 124
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.02104973793029785,
+      "wrong_score": -0.1302219033241272,
+      "right_score": -0.10917216539382935
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Arts order, the Bavarian"
+      ],
+      "u": 0.2500045597553253,
+      "margin": -0.27105429768562317,
+      "wrong_score": -0.32550346851348877,
+      "right_score": -0.0544491671025753
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Cross of the Order"
+      ],
+      "u": 0.1881357580423355,
+      "margin": -0.20918549597263336,
+      "wrong_score": -0.31198927760124207,
+      "right_score": -0.1028037816286087
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Arts order, the Bavarian",
+        "Cross of the Order"
+      ],
+      "u": -0.2292669117450714,
+      "margin": 0.20821717381477356,
+      "wrong_score": -0.05526643246412277,
+      "right_score": -0.26348361372947693
+    }
+  ],
+  "single_u": [
+    0.2500045597553253,
+    0.1881357580423355
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Arts order, the Bavarian",
+        "Cross of the Order"
+      ],
+      "u_i": 0.2500045597553253,
+      "u_j": 0.1881357580423355,
+      "local_fd": -0.667407214641571,
+      "banzhaf": -0.667407214641571,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Arts order, the Bavarian",
+        "Cross of the Order"
+      ],
+      "order": 2,
+      "harsanyi": -0.6674072295427322
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.20821717381477356,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

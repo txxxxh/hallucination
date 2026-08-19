@@ -1,0 +1,289 @@
+{
+  "key": "question_0418",
+  "group": "Q164384",
+  "generation_correct": false,
+  "right": "Theodore von Kármán",
+  "wrong": "Theodor Wolfgang Hänsch",
+  "base_margin_wrong_minus_right": 0.8571099042892456,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 317,
+      "char_end": 343,
+      "text": "and the Knight Commander's",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight Commander's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 101,
+      "token_end": 106
+    },
+    {
+      "char_start": 344,
+      "char_end": 362,
+      "text": "Cross of the Order",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Grand Cross of the Civil Order of Alfonso X the Wise",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 105,
+      "token_end": 108
+    },
+    {
+      "char_start": 366,
+      "char_end": 386,
+      "text": "Merit of the Federal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Officer's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 108,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.8571099042892456,
+      "wrong_score": -0.001608387567102909,
+      "right_score": -0.8587182760238647
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and the Knight Commander's"
+      ],
+      "u": 0.17913061380386353,
+      "margin": 0.6779792904853821,
+      "wrong_score": -0.007490172050893307,
+      "right_score": -0.6854694485664368
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Cross of the Order"
+      ],
+      "u": 0.2145053744316101,
+      "margin": 0.6426045298576355,
+      "wrong_score": -0.00376541493460536,
+      "right_score": -0.6463699340820312
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "u": -0.017043709754943848,
+      "margin": 0.8741536140441895,
+      "wrong_score": -0.0075379605405032635,
+      "right_score": -0.881691575050354
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Merit of the Federal"
+      ],
+      "u": -0.08881169557571411,
+      "margin": 0.9459215998649597,
+      "wrong_score": -0.0062752533704042435,
+      "right_score": -0.9521968364715576
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "and the Knight Commander's",
+        "Merit of the Federal"
+      ],
+      "u": -0.08875006437301636,
+      "margin": 0.945859968662262,
+      "wrong_score": -0.004444863647222519,
+      "right_score": -0.9503048062324524
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Cross of the Order",
+        "Merit of the Federal"
+      ],
+      "u": -0.17740023136138916,
+      "margin": 1.0345101356506348,
+      "wrong_score": -0.004998859018087387,
+      "right_score": -1.0395089387893677
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "and the Knight Commander's",
+        "Cross of the Order",
+        "Merit of the Federal"
+      ],
+      "u": -0.10698515176773071,
+      "margin": 0.9640950560569763,
+      "wrong_score": -0.00432952493429184,
+      "right_score": -0.9684245586395264
+    }
+  ],
+  "single_u": [
+    0.17913061380386353,
+    0.2145053744316101,
+    -0.08881169557571411
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "and the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "u_i": 0.17913061380386353,
+      "u_j": 0.2145053744316101,
+      "local_fd": -0.4106796979904175,
+      "banzhaf": -0.1701631247997284,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "and the Knight Commander's",
+        "Merit of the Federal"
+      ],
+      "u_i": 0.17913061380386353,
+      "u_j": -0.08881169557571411,
+      "local_fd": -0.17906898260116577,
+      "banzhaf": 0.061447590589523315,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Cross of the Order",
+        "Merit of the Federal"
+      ],
+      "u_i": 0.2145053744316101,
+      "u_j": -0.08881169557571411,
+      "local_fd": -0.30309391021728516,
+      "banzhaf": -0.06257733702659607,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "and the Knight Commander's",
+        "Cross of the Order",
+        "Merit of the Federal"
+      ],
+      "order": 3,
+      "harsanyi": 0.4810331463813782
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "order": 2,
+      "harsanyi": -0.4106796979904175
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Cross of the Order",
+        "Merit of the Federal"
+      ],
+      "order": 2,
+      "harsanyi": -0.30309391021728516
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "and the Knight Commander's",
+        "Merit of the Federal"
+      ],
+      "order": 2,
+      "harsanyi": -0.17906898260116577
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.9640950560569763,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

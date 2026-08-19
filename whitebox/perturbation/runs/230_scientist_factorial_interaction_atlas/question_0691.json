@@ -1,0 +1,150 @@
+{
+  "key": "question_0691",
+  "group": "Q71013",
+  "generation_correct": false,
+  "right": "Theodor Wolfgang Hänsch",
+  "wrong": "Emmanuelle Charpentier",
+  "base_margin_wrong_minus_right": -0.4166455864906311,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 411,
+      "char_end": 429,
+      "text": "the Order of Merit",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Officer of the National Order of Merit",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 120,
+      "token_end": 125
+    },
+    {
+      "char_start": 430,
+      "char_end": 453,
+      "text": "of the Federal Republic",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Officer's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 124,
+      "token_end": 130
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.4166455864906311,
+      "wrong_score": -0.43055129051208496,
+      "right_score": -0.013905714266002178
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Order of Merit"
+      ],
+      "u": -0.1458272635936737,
+      "margin": -0.2708183228969574,
+      "wrong_score": -0.3032572567462921,
+      "right_score": -0.032438937574625015
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Federal Republic"
+      ],
+      "u": -0.9612704515457153,
+      "margin": 0.5446248650550842,
+      "wrong_score": -0.060357581824064255,
+      "right_score": -0.6049824357032776
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Order of Merit",
+        "of the Federal Republic"
+      ],
+      "u": -0.5846694707870483,
+      "margin": 0.16802388429641724,
+      "wrong_score": -0.12211733311414719,
+      "right_score": -0.290141224861145
+    }
+  ],
+  "single_u": [
+    -0.1458272635936737,
+    -0.9612704515457153
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Order of Merit",
+        "of the Federal Republic"
+      ],
+      "u_i": -0.1458272635936737,
+      "u_j": -0.9612704515457153,
+      "local_fd": 0.5224282741546631,
+      "banzhaf": 0.5224282741546631,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Order of Merit",
+        "of the Federal Republic"
+      ],
+      "order": 2,
+      "harsanyi": 0.5224282443523407
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.16802388429641724,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

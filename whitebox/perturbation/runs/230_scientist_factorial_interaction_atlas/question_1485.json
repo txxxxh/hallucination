@@ -1,0 +1,144 @@
+{
+  "key": "question_1485",
+  "group": "Q573246",
+  "generation_correct": false,
+  "right": "Anthony Fauci",
+  "wrong": "Emmanuelle Charpentier",
+  "base_margin_wrong_minus_right": 0.932583212852478,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 164,
+      "char_end": 187,
+      "text": "and researcher has made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "researcher",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 63,
+      "token_end": 67
+    },
+    {
+      "char_start": 373,
+      "char_end": 396,
+      "text": "Prize for Medicine, the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Medicine",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 106
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.932583212852478,
+      "wrong_score": -0.02345975860953331,
+      "right_score": -0.9560429453849792
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and researcher has made"
+      ],
+      "u": -0.714684247970581,
+      "margin": 1.647267460823059,
+      "wrong_score": -0.020747583359479904,
+      "right_score": -1.6680150032043457
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Prize for Medicine, the"
+      ],
+      "u": -0.18301606178283691,
+      "margin": 1.115599274635315,
+      "wrong_score": -0.0328129306435585,
+      "right_score": -1.1484122276306152
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and researcher has made",
+        "Prize for Medicine, the"
+      ],
+      "u": -0.6419792175292969,
+      "margin": 1.574562430381775,
+      "wrong_score": -0.04703964293003082,
+      "right_score": -1.6216020584106445
+    }
+  ],
+  "single_u": [
+    -0.714684247970581,
+    -0.18301606178283691
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "and researcher has made",
+        "Prize for Medicine, the"
+      ],
+      "u_i": -0.714684247970581,
+      "u_j": -0.18301606178283691,
+      "local_fd": 0.2557210922241211,
+      "banzhaf": 0.2557210922241211,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and researcher has made",
+        "Prize for Medicine, the"
+      ],
+      "order": 2,
+      "harsanyi": 0.2557210922241211
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.574562430381775,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

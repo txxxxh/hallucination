@@ -1,0 +1,293 @@
+{
+  "key": "question_1151",
+  "group": "Q173994",
+  "generation_correct": false,
+  "right": "Jean Tirole",
+  "wrong": "Joseph E. Stiglitz",
+  "base_margin_wrong_minus_right": -0.1657443344593048,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 278,
+      "char_end": 308,
+      "text": "at the Massachusetts Institute",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Massachusetts Institute of Technology",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 87
+    },
+    {
+      "char_start": 540,
+      "char_end": 564,
+      "text": "the Nobel Memorial Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Prize in Economic Sciences in Memory of Alfred Nobel",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 130,
+      "token_end": 134
+    },
+    {
+      "char_start": 735,
+      "char_end": 740,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 166,
+      "token_end": 168
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.1657443344593048,
+      "wrong_score": -0.24506762623786926,
+      "right_score": -0.07932329922914505
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "at the Massachusetts Institute"
+      ],
+      "u": 0.14613020420074463,
+      "margin": -0.31187453866004944,
+      "wrong_score": -0.35750851035118103,
+      "right_score": -0.045633964240550995
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Nobel Memorial Prize"
+      ],
+      "u": -0.05983531475067139,
+      "margin": -0.10590901970863342,
+      "wrong_score": -0.23009523749351501,
+      "right_score": -0.12418621778488159
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "the Nobel Memorial Prize"
+      ],
+      "u": -0.24236631393432617,
+      "margin": 0.07662197947502136,
+      "wrong_score": -0.17012980580329895,
+      "right_score": -0.2467517852783203
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.13561348617076874,
+      "margin": -0.030130848288536072,
+      "wrong_score": -0.1651383936405182,
+      "right_score": -0.13500754535198212
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "never"
+      ],
+      "u": -0.08821235597133636,
+      "margin": -0.07753197848796844,
+      "wrong_score": -0.20638848841190338,
+      "right_score": -0.12885650992393494
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Nobel Memorial Prize",
+        "never"
+      ],
+      "u": -0.49383044242858887,
+      "margin": 0.32808610796928406,
+      "wrong_score": -0.06865015625953674,
+      "right_score": -0.3967362642288208
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "the Nobel Memorial Prize",
+        "never"
+      ],
+      "u": -0.3534231185913086,
+      "margin": 0.18767878413200378,
+      "wrong_score": -0.12356552481651306,
+      "right_score": -0.31124430894851685
+    }
+  ],
+  "single_u": [
+    0.14613020420074463,
+    -0.05983531475067139,
+    -0.13561348617076874
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "at the Massachusetts Institute",
+        "the Nobel Memorial Prize"
+      ],
+      "u_i": 0.14613020420074463,
+      "u_j": -0.05983531475067139,
+      "local_fd": -0.3286612033843994,
+      "banzhaf": -0.11782749742269516,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "at the Massachusetts Institute",
+        "never"
+      ],
+      "u_i": 0.14613020420074463,
+      "u_j": -0.13561348617076874,
+      "local_fd": -0.09872907400131226,
+      "banzhaf": 0.1121046245098114,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Nobel Memorial Prize",
+        "never"
+      ],
+      "u_i": -0.05983531475067139,
+      "u_j": -0.13561348617076874,
+      "local_fd": -0.29838162660598755,
+      "banzhaf": -0.08754793554544449,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "the Nobel Memorial Prize",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": 0.4216673970222473
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "the Nobel Memorial Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.3286612033843994
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Nobel Memorial Prize",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.29838164150714874
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "at the Massachusetts Institute",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.09872907400131226
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.18767878413200378,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

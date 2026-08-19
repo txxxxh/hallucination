@@ -1,0 +1,296 @@
+{
+  "key": "question_2093",
+  "group": "Q512459",
+  "generation_correct": false,
+  "right": "Isabella Karle",
+  "wrong": "Melvin Calvin",
+  "base_margin_wrong_minus_right": -0.041714996099472046,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 122,
+      "char_end": 146,
+      "text": "This notable chemist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 61
+    },
+    {
+      "char_start": 147,
+      "char_end": 182,
+      "text": "university teacher made significant",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 60,
+      "token_end": 68
+    },
+    {
+      "char_start": 241,
+      "char_end": 271,
+      "text": "the prestigious National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 74,
+      "token_end": 80
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.041714996099472046,
+      "wrong_score": -0.2330073118209839,
+      "right_score": -0.19129231572151184
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This notable chemist and"
+      ],
+      "u": 0.25047972798347473,
+      "margin": -0.2921947240829468,
+      "wrong_score": -0.3829016387462616,
+      "right_score": -0.09070689976215363
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher made significant"
+      ],
+      "u": 0.8397922515869141,
+      "margin": -0.8815072774887085,
+      "wrong_score": -0.9020345211029053,
+      "right_score": -0.020527256652712822
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable chemist and",
+        "university teacher made significant"
+      ],
+      "u": 1.2942084074020386,
+      "margin": -1.335923433303833,
+      "wrong_score": -1.3424943685531616,
+      "right_score": -0.006570911034941673
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the prestigious National Medal"
+      ],
+      "u": -0.2992296516895294,
+      "margin": 0.2575146555900574,
+      "wrong_score": -0.09932359308004379,
+      "right_score": -0.35683825612068176
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This notable chemist and",
+        "the prestigious National Medal"
+      ],
+      "u": -0.1959572285413742,
+      "margin": 0.15424223244190216,
+      "wrong_score": -0.14033125340938568,
+      "right_score": -0.29457348585128784
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher made significant",
+        "the prestigious National Medal"
+      ],
+      "u": -0.2950548827648163,
+      "margin": 0.25333988666534424,
+      "wrong_score": -0.10785973072052002,
+      "right_score": -0.36119961738586426
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This notable chemist and",
+        "university teacher made significant",
+        "the prestigious National Medal"
+      ],
+      "u": -0.17948849499225616,
+      "margin": 0.13777349889278412,
+      "wrong_score": -0.1593790501356125,
+      "right_score": -0.2971525490283966
+    }
+  ],
+  "single_u": [
+    0.25047972798347473,
+    0.8397922515869141,
+    -0.2992296516895294
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This notable chemist and",
+        "university teacher made significant"
+      ],
+      "u_i": 0.25047972798347473,
+      "u_j": 0.8397922515869141,
+      "local_fd": 0.20393645763397217,
+      "banzhaf": 0.10811521112918854,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This notable chemist and",
+        "the prestigious National Medal"
+      ],
+      "u_i": 0.25047972798347473,
+      "u_j": -0.2992296516895294,
+      "local_fd": -0.14720728993415833,
+      "banzhaf": -0.24302853643894196,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "university teacher made significant",
+        "the prestigious National Medal"
+      ],
+      "u_i": 0.8397922515869141,
+      "u_j": -0.2992296516895294,
+      "local_fd": -0.8356175422668457,
+      "banzhaf": -0.9314388036727905,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher made significant",
+        "the prestigious National Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.8356174826622009
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable chemist and",
+        "university teacher made significant"
+      ],
+      "order": 2,
+      "harsanyi": 0.20393642783164978
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This notable chemist and",
+        "university teacher made significant",
+        "the prestigious National Medal"
+      ],
+      "order": 3,
+      "harsanyi": -0.19164246320724487
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This notable chemist and",
+        "the prestigious National Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.14720730483531952
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.13777349889278412,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "key": "question_2078",
+  "group": "Q937",
+  "generation_correct": false,
+  "right": "Albert Einstein",
+  "wrong": "Ahmed H. Zewail",
+  "base_margin_wrong_minus_right": 2.880232334136963,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 343,
+      "char_end": 373,
+      "text": "received an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate of Lund University",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 97,
+      "token_end": 103
+    },
+    {
+      "char_start": 374,
+      "char_end": 396,
+      "text": "from the University of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary doctorate from the University of Geneva",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 106
+    },
+    {
+      "char_start": 397,
+      "char_end": 430,
+      "text": "Madrid Complutense. Despite their",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctor of the University of Madrid Complutense",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 107,
+      "token_end": 112
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 2.880232334136963,
+      "wrong_score": -0.002531103789806366,
+      "right_score": -2.882763385772705
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "received an honorary doctorate"
+      ],
+      "u": -0.25426435470581055,
+      "margin": 3.1344966888427734,
+      "wrong_score": -0.0035582538694143295,
+      "right_score": -3.138054847717285
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "from the University of"
+      ],
+      "u": 1.40407395362854,
+      "margin": 1.4761583805084229,
+      "wrong_score": -0.015565932728350163,
+      "right_score": -1.4917243719100952
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received an honorary doctorate",
+        "from the University of"
+      ],
+      "u": 2.2852749824523926,
+      "margin": 0.5949572324752808,
+      "wrong_score": -0.07990863919258118,
+      "right_score": -0.6748659014701843
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Madrid Complutense. Despite their"
+      ],
+      "u": 0.8626716136932373,
+      "margin": 2.0175607204437256,
+      "wrong_score": -0.007852128706872463,
+      "right_score": -2.0254127979278564
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received an honorary doctorate",
+        "Madrid Complutense. Despite their"
+      ],
+      "u": 1.515967607498169,
+      "margin": 1.364264726638794,
+      "wrong_score": -0.13962367177009583,
+      "right_score": -1.5038883686065674
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "from the University of",
+        "Madrid Complutense. Despite their"
+      ],
+      "u": 2.0849215984344482,
+      "margin": 0.7953106760978699,
+      "wrong_score": -0.14176742732524872,
+      "right_score": -0.9370781183242798
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received an honorary doctorate",
+        "from the University of",
+        "Madrid Complutense. Despite their"
+      ],
+      "u": 2.0955681800842285,
+      "margin": 0.7846642136573792,
+      "wrong_score": -0.3406292796134949,
+      "right_score": -1.125293493270874
+    }
+  ],
+  "single_u": [
+    -0.25426435470581055,
+    1.40407395362854,
+    0.8626716136932373
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "received an honorary doctorate",
+        "from the University of"
+      ],
+      "u_i": -0.25426435470581055,
+      "u_j": 1.40407395362854,
+      "local_fd": 1.135465383529663,
+      "banzhaf": 0.24640798568725586,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "received an honorary doctorate",
+        "Madrid Complutense. Despite their"
+      ],
+      "u_i": -0.25426435470581055,
+      "u_j": 0.8626716136932373,
+      "local_fd": 0.9075603485107422,
+      "banzhaf": 0.01850295066833496,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "from the University of",
+        "Madrid Complutense. Despite their"
+      ],
+      "u_i": 1.40407395362854,
+      "u_j": 0.8626716136932373,
+      "local_fd": -0.1818239688873291,
+      "banzhaf": -1.0708813667297363,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received an honorary doctorate",
+        "from the University of",
+        "Madrid Complutense. Despite their"
+      ],
+      "order": 3,
+      "harsanyi": -1.7781147956848145
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received an honorary doctorate",
+        "from the University of"
+      ],
+      "order": 2,
+      "harsanyi": 1.135465383529663
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received an honorary doctorate",
+        "Madrid Complutense. Despite their"
+      ],
+      "order": 2,
+      "harsanyi": 0.9075603485107422
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "from the University of",
+        "Madrid Complutense. Despite their"
+      ],
+      "order": 2,
+      "harsanyi": -0.1818239688873291
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7846642136573792,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "key": "question_2361",
+  "group": "Q715584",
+  "generation_correct": false,
+  "right": "Stuart A. Rice",
+  "wrong": "Carolyn R. Bertozzi",
+  "base_margin_wrong_minus_right": 0.1461617648601532,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 232,
+      "char_end": 262,
+      "text": "Educated at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 78,
+      "token_end": 84
+    },
+    {
+      "char_start": 346,
+      "char_end": 369,
+      "text": "including the ACS Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "ACS Award in Pure Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 97,
+      "token_end": 103
+    },
+    {
+      "char_start": 392,
+      "char_end": 409,
+      "text": "the Wolf Prize in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 106,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.1461617648601532,
+      "wrong_score": -0.07335160672664642,
+      "right_score": -0.21951337158679962
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Educated at Harvard University"
+      ],
+      "u": -0.4396499693393707,
+      "margin": 0.5858117341995239,
+      "wrong_score": -0.02621668018400669,
+      "right_score": -0.6120284199714661
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the ACS Award"
+      ],
+      "u": -0.7333617210388184,
+      "margin": 0.8795234560966492,
+      "wrong_score": -0.00849238783121109,
+      "right_score": -0.888015866279602
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "including the ACS Award"
+      ],
+      "u": -0.5837017297744751,
+      "margin": 0.7298635244369507,
+      "wrong_score": -0.015952378511428833,
+      "right_score": -0.7458158731460571
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Wolf Prize in"
+      ],
+      "u": -0.09358830749988556,
+      "margin": 0.23975007236003876,
+      "wrong_score": -0.08047343790531158,
+      "right_score": -0.32022351026535034
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "the Wolf Prize in"
+      ],
+      "u": -0.2363627851009369,
+      "margin": 0.3825245499610901,
+      "wrong_score": -0.14853155612945557,
+      "right_score": -0.5310561060905457
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the ACS Award",
+        "the Wolf Prize in"
+      ],
+      "u": -0.315317839384079,
+      "margin": 0.4614796042442322,
+      "wrong_score": -0.1788834184408188,
+      "right_score": -0.6403630375862122
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "including the ACS Award",
+        "the Wolf Prize in"
+      ],
+      "u": -0.23367762565612793,
+      "margin": 0.37983939051628113,
+      "wrong_score": -0.21651342511177063,
+      "right_score": -0.5963528156280518
+    }
+  ],
+  "single_u": [
+    -0.4396499693393707,
+    -0.7333617210388184,
+    -0.09358830749988556
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Educated at Harvard University",
+        "including the ACS Award"
+      ],
+      "u_i": -0.4396499693393707,
+      "u_j": -0.7333617210388184,
+      "local_fd": 0.5893099308013916,
+      "banzhaf": 0.4068623185157776,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Educated at Harvard University",
+        "the Wolf Prize in"
+      ],
+      "u_i": -0.4396499693393707,
+      "u_j": -0.09358830749988556,
+      "local_fd": 0.2968754768371582,
+      "banzhaf": 0.11442786455154419,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the ACS Award",
+        "the Wolf Prize in"
+      ],
+      "u_i": -0.7333617210388184,
+      "u_j": -0.09358830749988556,
+      "local_fd": 0.5116322040557861,
+      "banzhaf": 0.3291845917701721,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "including the ACS Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.589309960603714
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the ACS Award",
+        "the Wolf Prize in"
+      ],
+      "order": 2,
+      "harsanyi": 0.5116321891546249
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "including the ACS Award",
+        "the Wolf Prize in"
+      ],
+      "order": 3,
+      "harsanyi": -0.3648952692747116
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "the Wolf Prize in"
+      ],
+      "order": 2,
+      "harsanyi": 0.2968754917383194
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.37983939051628113,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

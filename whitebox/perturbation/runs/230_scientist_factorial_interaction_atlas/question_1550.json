@@ -1,0 +1,293 @@
+{
+  "key": "question_1550",
+  "group": "Q155790",
+  "generation_correct": false,
+  "right": "Eugene Wigner",
+  "wrong": "Elliott H. Lieb",
+  "base_margin_wrong_minus_right": -0.03509096801280975,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 352,
+      "char_end": 377,
+      "text": "Medal, the Josiah Willard",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Josiah Willard Gibbs Lectureship",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 103,
+      "token_end": 107
+    },
+    {
+      "char_start": 410,
+      "char_end": 429,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 110,
+      "token_end": 113
+    },
+    {
+      "char_start": 548,
+      "char_end": 553,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 135,
+      "token_end": 137
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.03509096801280975,
+      "wrong_score": -0.14199119806289673,
+      "right_score": -0.10690023005008698
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Medal, the Josiah Willard"
+      ],
+      "u": 0.08225719630718231,
+      "margin": -0.11734816431999207,
+      "wrong_score": -0.1919696033000946,
+      "right_score": -0.07462143898010254
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.02891509234905243,
+      "margin": -0.06400606036186218,
+      "wrong_score": -0.15952041745185852,
+      "right_score": -0.09551435708999634
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Medal, the Josiah Willard",
+        "as a Foreign Member"
+      ],
+      "u": -0.1704113632440567,
+      "margin": 0.13532039523124695,
+      "wrong_score": -0.0666520893573761,
+      "right_score": -0.20197248458862305
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.5631303787231445,
+      "margin": 0.5280393958091736,
+      "wrong_score": -0.013821087777614594,
+      "right_score": -0.5418604612350464
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Medal, the Josiah Willard",
+        "never"
+      ],
+      "u": 0.16948841512203217,
+      "margin": -0.20457938313484192,
+      "wrong_score": -0.24801552295684814,
+      "right_score": -0.04343613237142563
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "never"
+      ],
+      "u": 0.10940007865428925,
+      "margin": -0.144491046667099,
+      "wrong_score": -0.20697954297065735,
+      "right_score": -0.06248849630355835
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Medal, the Josiah Willard",
+        "as a Foreign Member",
+        "never"
+      ],
+      "u": -0.055000655353069305,
+      "margin": 0.019909687340259552,
+      "wrong_score": -0.12409097701311111,
+      "right_score": -0.14400066435337067
+    }
+  ],
+  "single_u": [
+    0.08225719630718231,
+    0.02891509234905243,
+    -0.5631303787231445
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Medal, the Josiah Willard",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.08225719630718231,
+      "u_j": 0.02891509234905243,
+      "local_fd": -0.28158366680145264,
+      "banzhaf": -0.589301586151123,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Medal, the Josiah Willard",
+        "never"
+      ],
+      "u_i": 0.08225719630718231,
+      "u_j": -0.5631303787231445,
+      "local_fd": 0.6503615975379944,
+      "banzhaf": 0.3426436483860016,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as a Foreign Member",
+        "never"
+      ],
+      "u_i": 0.02891509234905243,
+      "u_j": -0.5631303787231445,
+      "local_fd": 0.6436153650283813,
+      "banzhaf": 0.33589741587638855,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Medal, the Josiah Willard",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.6503615975379944
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.6436153650283813
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Medal, the Josiah Willard",
+        "as a Foreign Member",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.6154358759522438
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Medal, the Josiah Willard",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.28158365190029144
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.019909687340259552,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

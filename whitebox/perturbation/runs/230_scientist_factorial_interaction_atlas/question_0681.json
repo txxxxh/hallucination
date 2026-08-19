@@ -1,0 +1,289 @@
+{
+  "key": "question_0681",
+  "group": "Q1144326",
+  "generation_correct": false,
+  "right": "Yuri Oganessian",
+  "wrong": "Zhores Ivanovich Alferov",
+  "base_margin_wrong_minus_right": 1.78752863407135,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 278,
+      "char_end": 303,
+      "text": "of the Russian Federation",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "State Prize of the Russian Federation",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 104
+    },
+    {
+      "char_start": 332,
+      "char_end": 348,
+      "text": "Order of the Red",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 108,
+      "token_end": 112
+    },
+    {
+      "char_start": 395,
+      "char_end": 415,
+      "text": "the Order \"For Merit",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of Merit of the Republic of Poland",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 121,
+      "token_end": 125
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.78752863407135,
+      "wrong_score": -0.04668305814266205,
+      "right_score": -1.8342117071151733
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "of the Russian Federation"
+      ],
+      "u": 0.38409972190856934,
+      "margin": 1.4034289121627808,
+      "wrong_score": -0.053068749606609344,
+      "right_score": -1.4564976692199707
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Order of the Red"
+      ],
+      "u": 0.27301621437072754,
+      "margin": 1.5145124197006226,
+      "wrong_score": -0.0488957054913044,
+      "right_score": -1.5634081363677979
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the Russian Federation",
+        "Order of the Red"
+      ],
+      "u": 1.0161666870117188,
+      "margin": 0.7713618874549866,
+      "wrong_score": -0.05987926200032234,
+      "right_score": -0.8312411308288574
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Order \"For Merit"
+      ],
+      "u": -0.33602654933929443,
+      "margin": 2.1235551834106445,
+      "wrong_score": -0.0504557229578495,
+      "right_score": -2.174010992050171
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "of the Russian Federation",
+        "the Order \"For Merit"
+      ],
+      "u": 0.05060923099517822,
+      "margin": 1.7369194030761719,
+      "wrong_score": -0.055675823241472244,
+      "right_score": -1.7925952672958374
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "the Order \"For Merit"
+      ],
+      "u": -0.4587908983230591,
+      "margin": 2.246319532394409,
+      "wrong_score": -0.03684062510728836,
+      "right_score": -2.2831602096557617
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "of the Russian Federation",
+        "Order of the Red",
+        "the Order \"For Merit"
+      ],
+      "u": -0.10230731964111328,
+      "margin": 1.8898359537124634,
+      "wrong_score": -0.14875419437885284,
+      "right_score": -2.0385901927948
+    }
+  ],
+  "single_u": [
+    0.38409972190856934,
+    0.27301621437072754,
+    -0.33602654933929443
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "of the Russian Federation",
+        "Order of the Red"
+      ],
+      "u_i": 0.38409972190856934,
+      "u_j": 0.27301621437072754,
+      "local_fd": 0.3590507507324219,
+      "banzhaf": 0.1644492745399475,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "of the Russian Federation",
+        "the Order \"For Merit"
+      ],
+      "u_i": 0.38409972190856934,
+      "u_j": -0.33602654933929443,
+      "local_fd": 0.0025360584259033203,
+      "banzhaf": -0.19206541776657104,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Order of the Red",
+        "the Order \"For Merit"
+      ],
+      "u_i": 0.27301621437072754,
+      "u_j": -0.33602654933929443,
+      "local_fd": -0.3957805633544922,
+      "banzhaf": -0.5903820395469666,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "the Order \"For Merit"
+      ],
+      "order": 2,
+      "harsanyi": -0.3957805633544922
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "of the Russian Federation",
+        "Order of the Red",
+        "the Order \"For Merit"
+      ],
+      "order": 3,
+      "harsanyi": -0.38920295238494873
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the Russian Federation",
+        "Order of the Red"
+      ],
+      "order": 2,
+      "harsanyi": 0.3590507507324219
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "of the Russian Federation",
+        "the Order \"For Merit"
+      ],
+      "order": 2,
+      "harsanyi": 0.0025360584259033203
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.8898359537124634,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

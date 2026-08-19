@@ -1,0 +1,290 @@
+{
+  "key": "question_0113",
+  "group": "Q901783",
+  "generation_correct": false,
+  "right": "Gilbert Stork",
+  "wrong": "K. Barry Sharpless",
+  "base_margin_wrong_minus_right": 1.4684232473373413,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 362,
+      "char_end": 379,
+      "text": "the Wolf Prize in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 107,
+      "token_end": 111
+    },
+    {
+      "char_start": 425,
+      "char_end": 451,
+      "text": "Award in Chemical Sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 119,
+      "token_end": 126
+    },
+    {
+      "char_start": 565,
+      "char_end": 582,
+      "text": "and the Sir Derek",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Sir Derek Barton Gold medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 142,
+      "token_end": 146
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.4684232473373413,
+      "wrong_score": -0.002684039995074272,
+      "right_score": -1.4711072444915771
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Wolf Prize in"
+      ],
+      "u": 0.4029313325881958,
+      "margin": 1.0654919147491455,
+      "wrong_score": -0.012723715975880623,
+      "right_score": -1.0782155990600586
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Award in Chemical Sciences"
+      ],
+      "u": 0.3108929395675659,
+      "margin": 1.1575303077697754,
+      "wrong_score": -0.006933749653398991,
+      "right_score": -1.1644641160964966
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Wolf Prize in",
+        "Award in Chemical Sciences"
+      ],
+      "u": 0.18472981452941895,
+      "margin": 1.2836934328079224,
+      "wrong_score": -0.010238797403872013,
+      "right_score": -1.2939321994781494
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Sir Derek"
+      ],
+      "u": 0.3418020009994507,
+      "margin": 1.1266212463378906,
+      "wrong_score": -0.0057184468023478985,
+      "right_score": -1.1323397159576416
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Wolf Prize in",
+        "and the Sir Derek"
+      ],
+      "u": 0.187555193901062,
+      "margin": 1.2808680534362793,
+      "wrong_score": -0.005659047048538923,
+      "right_score": -1.286527156829834
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Award in Chemical Sciences",
+        "and the Sir Derek"
+      ],
+      "u": 0.1256016492843628,
+      "margin": 1.3428215980529785,
+      "wrong_score": -0.004582691937685013,
+      "right_score": -1.3474042415618896
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Wolf Prize in",
+        "Award in Chemical Sciences",
+        "and the Sir Derek"
+      ],
+      "u": 0.37522995471954346,
+      "margin": 1.0931932926177979,
+      "wrong_score": -0.00879967212677002,
+      "right_score": -1.1019929647445679
+    }
+  ],
+  "single_u": [
+    0.4029313325881958,
+    0.3108929395675659,
+    0.3418020009994507
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Wolf Prize in",
+        "Award in Chemical Sciences"
+      ],
+      "u_i": 0.4029313325881958,
+      "u_j": 0.3108929395675659,
+      "local_fd": -0.5290944576263428,
+      "banzhaf": -0.06260967254638672,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Wolf Prize in",
+        "and the Sir Derek"
+      ],
+      "u_i": 0.4029313325881958,
+      "u_j": 0.3418020009994507,
+      "local_fd": -0.5571781396865845,
+      "banzhaf": -0.09069335460662842,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Award in Chemical Sciences",
+        "and the Sir Derek"
+      ],
+      "u_i": 0.3108929395675659,
+      "u_j": 0.3418020009994507,
+      "local_fd": -0.5270932912826538,
+      "banzhaf": -0.060608506202697754,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Wolf Prize in",
+        "Award in Chemical Sciences",
+        "and the Sir Derek"
+      ],
+      "order": 3,
+      "harsanyi": 0.9329695701599121
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Wolf Prize in",
+        "and the Sir Derek"
+      ],
+      "order": 2,
+      "harsanyi": -0.5571781396865845
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Wolf Prize in",
+        "Award in Chemical Sciences"
+      ],
+      "order": 2,
+      "harsanyi": -0.5290944576263428
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Award in Chemical Sciences",
+        "and the Sir Derek"
+      ],
+      "order": 2,
+      "harsanyi": -0.5270932912826538
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.0931932926177979,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

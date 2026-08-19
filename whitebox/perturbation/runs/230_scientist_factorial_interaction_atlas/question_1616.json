@@ -1,0 +1,171 @@
+{
+  "key": "question_1616",
+  "group": "Q233974",
+  "generation_correct": false,
+  "right": "Jocelyn Bell Burnell",
+  "wrong": "Murray Gell-Mann",
+  "base_margin_wrong_minus_right": 0.14561426639556885,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 131,
+      "char_end": 159,
+      "text": "This prominent physicist has",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 62,
+      "token_end": 69
+    },
+    {
+      "char_start": 176,
+      "char_end": 203,
+      "text": "with the Richtmyer Memorial",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Richtmyer Memorial Lecture Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 70,
+      "token_end": 75
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.14561426639556885,
+      "wrong_score": -0.05880860611796379,
+      "right_score": -0.20442287623882294
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent physicist has"
+      ],
+      "u": -0.020967453718185425,
+      "margin": 0.16658172011375427,
+      "wrong_score": -0.054570071399211884,
+      "right_score": -0.22115179896354675
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Richtmyer Memorial"
+      ],
+      "u": 0.10407751798629761,
+      "margin": 0.04153674840927124,
+      "wrong_score": -0.09871472418308258,
+      "right_score": -0.14025147259235382
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent physicist has",
+        "with the Richtmyer Memorial"
+      ],
+      "u": 0.20822960138320923,
+      "margin": -0.06261533498764038,
+      "wrong_score": -0.15292418003082275,
+      "right_score": -0.09030884504318237
+    }
+  ],
+  "single_u": [
+    -0.020967453718185425,
+    0.10407751798629761
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This prominent physicist has",
+        "with the Richtmyer Memorial"
+      ],
+      "u_i": -0.020967453718185425,
+      "u_j": 0.10407751798629761,
+      "local_fd": 0.12511953711509705,
+      "banzhaf": 0.12511953711509705,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent physicist has",
+        "with the Richtmyer Memorial"
+      ],
+      "order": 2,
+      "harsanyi": 0.12511953711509705
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent physicist has",
+        "with the Richtmyer Memorial"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent physicist has"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Richtmyer Memorial"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.06261533498764038,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 6,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

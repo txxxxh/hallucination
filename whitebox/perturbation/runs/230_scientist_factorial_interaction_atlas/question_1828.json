@@ -1,0 +1,290 @@
+{
+  "key": "question_1828",
+  "group": "Q901783",
+  "generation_correct": false,
+  "right": "Gilbert Stork",
+  "wrong": "Donald J. Cram",
+  "base_margin_wrong_minus_right": 0.5337399244308472,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 338,
+      "char_end": 359,
+      "text": "the National Medal of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 102,
+      "token_end": 106
+    },
+    {
+      "char_start": 360,
+      "char_end": 382,
+      "text": "Science, the NAS Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 105,
+      "token_end": 109
+    },
+    {
+      "char_start": 409,
+      "char_end": 427,
+      "text": "the Arthur C. Cope",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Arthur C. Cope Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 114,
+      "token_end": 118
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.5337399244308472,
+      "wrong_score": -0.027458731085062027,
+      "right_score": -0.5611986517906189
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the National Medal of"
+      ],
+      "u": 0.2377799153327942,
+      "margin": 0.295960009098053,
+      "wrong_score": -0.05994773656129837,
+      "right_score": -0.35590773820877075
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Science, the NAS Award"
+      ],
+      "u": -0.1866450309753418,
+      "margin": 0.720384955406189,
+      "wrong_score": -0.016059109941124916,
+      "right_score": -0.7364440560340881
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the National Medal of",
+        "Science, the NAS Award"
+      ],
+      "u": -0.6533950567245483,
+      "margin": 1.1871349811553955,
+      "wrong_score": -0.0047150058671832085,
+      "right_score": -1.191849946975708
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Arthur C. Cope"
+      ],
+      "u": -0.24914032220840454,
+      "margin": 0.7828802466392517,
+      "wrong_score": -0.012819427065551281,
+      "right_score": -0.7956996560096741
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the National Medal of",
+        "the Arthur C. Cope"
+      ],
+      "u": 0.025107264518737793,
+      "margin": 0.5086326599121094,
+      "wrong_score": -0.03495477885007858,
+      "right_score": -0.5435874462127686
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the NAS Award",
+        "the Arthur C. Cope"
+      ],
+      "u": -0.2166815996170044,
+      "margin": 0.7504215240478516,
+      "wrong_score": -0.1205219179391861,
+      "right_score": -0.8709434270858765
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the National Medal of",
+        "Science, the NAS Award",
+        "the Arthur C. Cope"
+      ],
+      "u": -0.2547645568847656,
+      "margin": 0.7885044813156128,
+      "wrong_score": -0.09915440529584885,
+      "right_score": -0.8876588940620422
+    }
+  ],
+  "single_u": [
+    0.2377799153327942,
+    -0.1866450309753418,
+    -0.24914032220840454
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the National Medal of",
+        "Science, the NAS Award"
+      ],
+      "u_i": 0.2377799153327942,
+      "u_j": -0.1866450309753418,
+      "local_fd": -0.7045299410820007,
+      "banzhaf": -0.5084302425384521,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the National Medal of",
+        "the Arthur C. Cope"
+      ],
+      "u_i": 0.2377799153327942,
+      "u_j": -0.24914032220840454,
+      "local_fd": 0.036467671394348145,
+      "banzhaf": 0.23256736993789673,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Science, the NAS Award",
+        "the Arthur C. Cope"
+      ],
+      "u_i": -0.1866450309753418,
+      "u_j": -0.24914032220840454,
+      "local_fd": 0.21910375356674194,
+      "banzhaf": 0.4152034521102905,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the National Medal of",
+        "Science, the NAS Award"
+      ],
+      "order": 2,
+      "harsanyi": -0.7045299410820007
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the National Medal of",
+        "Science, the NAS Award",
+        "the Arthur C. Cope"
+      ],
+      "order": 3,
+      "harsanyi": 0.39219939708709717
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the NAS Award",
+        "the Arthur C. Cope"
+      ],
+      "order": 2,
+      "harsanyi": 0.21910375356674194
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the National Medal of",
+        "the Arthur C. Cope"
+      ],
+      "order": 2,
+      "harsanyi": 0.036467671394348145
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7885044813156128,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}
