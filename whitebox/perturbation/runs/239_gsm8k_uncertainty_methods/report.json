@@ -1,0 +1,53 @@
+{
+  "protocol": "fixed balanced GSM8K CoT n=300; answer-canonicalized sampling uncertainty; original greedy label; label-free rank fusion",
+  "n": 300,
+  "errors": 150,
+  "metrics": {
+    "answer_entropy_3": {
+      "auroc": 0.7050000000000001,
+      "auprc": 0.6402051282051282
+    },
+    "variation_ratio_3": {
+      "auroc": 0.7050000000000001,
+      "auprc": 0.6402051282051282
+    },
+    "greedy_answer_disagreement_3": {
+      "auroc": 0.7997555555555556,
+      "auprc": 0.7209639593104173
+    },
+    "answer_entropy_6": {
+      "auroc": 0.7421555555555555,
+      "auprc": 0.6873158396001557
+    },
+    "variation_ratio_6": {
+      "auroc": 0.7531999999999999,
+      "auprc": 0.694335491691321
+    },
+    "greedy_answer_disagreement_6": {
+      "auroc": 0.8208444444444443,
+      "auprc": 0.7463382908683165
+    },
+    "existing_oof_detector": {
+      "auroc": 0.7712444444444444,
+      "auprc": 0.7880559231235713
+    },
+    "rank_fusion_greedy6_existing": {
+      "auroc": 0.8601555555555555,
+      "auprc": 0.8594247846892353
+    }
+  },
+  "bootstrap_95": {
+    "greedy_answer_disagreement_6_auroc": [
+      0.7729948564167314,
+      0.864412479200987
+    ],
+    "greedy6_minus_existing": [
+      -0.014572589974158322,
+      0.112549695935727
+    ],
+    "rank_fusion_gain_over_best": [
+      0.006661521134633495,
+      0.067008316406313
+    ]
+  }
+}
