@@ -1,0 +1,290 @@
+{
+  "key": "question_1872",
+  "group": "Q47285",
+  "generation_correct": true,
+  "right": "J. J. Thomson",
+  "wrong": "Ernest Rutherford",
+  "base_margin_wrong_minus_right": 0.2209285944700241,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 125,
+      "char_end": 152,
+      "text": "Educated at Trinity College",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Trinity College",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 62
+    },
+    {
+      "char_start": 157,
+      "char_end": 184,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 63,
+      "token_end": 68
+    },
+    {
+      "char_start": 380,
+      "char_end": 402,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 103,
+      "token_end": 108
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.2209285944700241,
+      "wrong_score": -0.06660966575145721,
+      "right_score": -0.2875382602214813
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Educated at Trinity College"
+      ],
+      "u": -0.010222896933555603,
+      "margin": 0.2311514914035797,
+      "wrong_score": -0.07711619883775711,
+      "right_score": -0.3082676827907562
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": -0.16977925598621368,
+      "margin": 0.3907078504562378,
+      "wrong_score": -0.04354536533355713,
+      "right_score": -0.4342532157897949
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "the University of Cambridge"
+      ],
+      "u": -0.1017635315656662,
+      "margin": 0.3226921260356903,
+      "wrong_score": -0.05136251822113991,
+      "right_score": -0.3740546405315399
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": 0.04371747374534607,
+      "margin": 0.17721112072467804,
+      "wrong_score": -0.09445299208164215,
+      "right_score": -0.2716641128063202
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "President of the Royal"
+      ],
+      "u": -0.22402460873126984,
+      "margin": 0.44495320320129395,
+      "wrong_score": -0.03656680881977081,
+      "right_score": -0.48152002692222595
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "u": -0.1286541074514389,
+      "margin": 0.349582701921463,
+      "wrong_score": -0.05901341512799263,
+      "right_score": -0.40859612822532654
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "u": -0.2189205437898636,
+      "margin": 0.4398491382598877,
+      "wrong_score": -0.061420146375894547,
+      "right_score": -0.5012692809104919
+    }
+  ],
+  "single_u": [
+    -0.010222896933555603,
+    -0.16977925598621368,
+    0.04371747374534607
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Educated at Trinity College",
+        "the University of Cambridge"
+      ],
+      "u_i": -0.010222896933555603,
+      "u_j": -0.16977925598621368,
+      "local_fd": 0.07823862135410309,
+      "banzhaf": 0.12785713374614716,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Educated at Trinity College",
+        "President of the Royal"
+      ],
+      "u_i": -0.010222896933555603,
+      "u_j": 0.04371747374534607,
+      "local_fd": -0.2575191855430603,
+      "banzhaf": -0.20790067315101624,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "u_i": -0.16977925598621368,
+      "u_j": 0.04371747374534607,
+      "local_fd": -0.002592325210571289,
+      "banzhaf": 0.04702618718147278,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "President of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.2575191855430603
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": 0.09923702478408813
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "the University of Cambridge"
+      ],
+      "order": 2,
+      "harsanyi": 0.07823862135410309
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.002592325210571289
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.4398491382598877,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

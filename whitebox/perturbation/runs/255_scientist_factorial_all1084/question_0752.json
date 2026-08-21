@@ -1,0 +1,146 @@
+{
+  "key": "question_0752",
+  "group": "Q190697",
+  "generation_correct": true,
+  "right": "Claude Cohen-Tannoudji",
+  "wrong": "Ahmed H. Zewail",
+  "base_margin_wrong_minus_right": -0.3578777313232422,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 314,
+      "char_end": 336,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 92,
+      "token_end": 97
+    },
+    {
+      "char_start": 371,
+      "char_end": 391,
+      "text": "Knight of the Legion",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight of the Legion of Honour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 106
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3578777313232422,
+      "wrong_score": -0.37089625000953674,
+      "right_score": -0.013018527068197727
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.3571123480796814,
+      "margin": -0.7149900794029236,
+      "wrong_score": -0.728641927242279,
+      "right_score": -0.013651820831000805
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Knight of the Legion"
+      ],
+      "u": 0.0714171826839447,
+      "margin": -0.4292949140071869,
+      "wrong_score": -0.4572323262691498,
+      "right_score": -0.027937406674027443
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Knight of the Legion"
+      ],
+      "u": 0.1964324712753296,
+      "margin": -0.5543102025985718,
+      "wrong_score": -0.5748303532600403,
+      "right_score": -0.020520173013210297
+    }
+  ],
+  "single_u": [
+    0.3571123480796814,
+    0.0714171826839447
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the American",
+        "Knight of the Legion"
+      ],
+      "u_i": 0.3571123480796814,
+      "u_j": 0.0714171826839447,
+      "local_fd": -0.2320970594882965,
+      "banzhaf": -0.2320970594882965,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Knight of the Legion"
+      ],
+      "order": 2,
+      "harsanyi": -0.2320970594882965
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.5543102025985718,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "key": "question_0770",
+  "group": "Q132537",
+  "generation_correct": false,
+  "right": "Robert Oppenheimer",
+  "wrong": "Victor Frederick Weisskopf",
+  "base_margin_wrong_minus_right": 0.5072990655899048,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 211,
+      "char_end": 238,
+      "text": "the University of Göttingen",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Göttingen",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 77,
+      "token_end": 82
+    },
+    {
+      "char_start": 326,
+      "char_end": 348,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 98,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.5072990655899048,
+      "wrong_score": -0.02843218296766281,
+      "right_score": -0.5357312560081482
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Göttingen"
+      ],
+      "u": 0.10600593686103821,
+      "margin": 0.4012931287288666,
+      "wrong_score": -0.0376347117125988,
+      "right_score": -0.4389278292655945
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.28571730852127075,
+      "margin": 0.22158177196979523,
+      "wrong_score": -0.06937621533870697,
+      "right_score": -0.2909579873085022
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "Fellow of the American"
+      ],
+      "u": 0.2625361382961273,
+      "margin": 0.24476292729377747,
+      "wrong_score": -0.07493749260902405,
+      "right_score": -0.3197004199028015
+    }
+  ],
+  "single_u": [
+    0.10600593686103821,
+    0.28571730852127075
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Göttingen",
+        "Fellow of the American"
+      ],
+      "u_i": 0.10600593686103821,
+      "u_j": 0.28571730852127075,
+      "local_fd": -0.12918710708618164,
+      "banzhaf": -0.12918710708618164,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.12918710708618164
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.24476292729377747,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

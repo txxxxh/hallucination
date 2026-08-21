@@ -1,0 +1,300 @@
+{
+  "key": "question_2040",
+  "group": "Q512627",
+  "generation_correct": false,
+  "right": "Michael Sela",
+  "wrong": "Luc Montagnier",
+  "base_margin_wrong_minus_right": 0.6415503621101379,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 121,
+      "char_end": 153,
+      "text": "This distinguished biologist has",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biologist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 55,
+      "token_end": 63
+    },
+    {
+      "char_start": 237,
+      "char_end": 259,
+      "text": "as the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 78,
+      "token_end": 82
+    },
+    {
+      "char_start": 296,
+      "char_end": 317,
+      "text": "Officer of the Legion",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Officer of the Legion of Honour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 87,
+      "token_end": 91
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.6415503621101379,
+      "wrong_score": -0.0338984876871109,
+      "right_score": -0.6754488348960876
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished biologist has"
+      ],
+      "u": 1.8814506530761719,
+      "margin": -1.2399003505706787,
+      "wrong_score": -1.273381233215332,
+      "right_score": -0.03348082676529884
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as the Canada Gairdner"
+      ],
+      "u": -0.3228878974914551,
+      "margin": 0.964438259601593,
+      "wrong_score": -0.025369511917233467,
+      "right_score": -0.9898077845573425
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished biologist has",
+        "as the Canada Gairdner"
+      ],
+      "u": 0.827086329460144,
+      "margin": -0.18553593754768372,
+      "wrong_score": -0.3188078999519348,
+      "right_score": -0.1332719624042511
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Officer of the Legion"
+      ],
+      "u": -0.1606397032737732,
+      "margin": 0.8021900653839111,
+      "wrong_score": -0.04728025943040848,
+      "right_score": -0.849470317363739
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished biologist has",
+        "Officer of the Legion"
+      ],
+      "u": 0.6345514059066772,
+      "margin": 0.0069989413022994995,
+      "wrong_score": -0.20854516327381134,
+      "right_score": -0.21554410457611084
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as the Canada Gairdner",
+        "Officer of the Legion"
+      ],
+      "u": -0.2025202512741089,
+      "margin": 0.8440706133842468,
+      "wrong_score": -0.022784531116485596,
+      "right_score": -0.8668551445007324
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished biologist has",
+        "as the Canada Gairdner",
+        "Officer of the Legion"
+      ],
+      "u": 0.6234258413314819,
+      "margin": 0.018124490976333618,
+      "wrong_score": -0.25728073716163635,
+      "right_score": -0.27540522813796997
+    }
+  ],
+  "single_u": [
+    1.8814506530761719,
+    -0.3228878974914551,
+    -0.1606397032737732
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished biologist has",
+        "as the Canada Gairdner"
+      ],
+      "u_i": 1.8814506530761719,
+      "u_j": -0.3228878974914551,
+      "local_fd": -0.7314764261245728,
+      "banzhaf": -0.3503607213497162,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished biologist has",
+        "Officer of the Legion"
+      ],
+      "u_i": 1.8814506530761719,
+      "u_j": -0.1606397032737732,
+      "local_fd": -1.0862596035003662,
+      "banzhaf": -0.7051438689231873,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as the Canada Gairdner",
+        "Officer of the Legion"
+      ],
+      "u_i": -0.3228878974914551,
+      "u_j": -0.1606397032737732,
+      "local_fd": 0.2810073494911194,
+      "banzhaf": 0.6621230840682983,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished biologist has",
+        "Officer of the Legion"
+      ],
+      "order": 2,
+      "harsanyi": -1.0862595438957214
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished biologist has",
+        "as the Canada Gairdner",
+        "Officer of the Legion"
+      ],
+      "order": 3,
+      "harsanyi": 0.7622314095497131
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished biologist has",
+        "as the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": -0.7314764261245728
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as the Canada Gairdner",
+        "Officer of the Legion"
+      ],
+      "order": 2,
+      "harsanyi": 0.2810073494911194
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished biologist has"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.018124490976333618,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

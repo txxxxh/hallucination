@@ -1,0 +1,290 @@
+{
+  "key": "question_2405",
+  "group": "Q7442",
+  "generation_correct": true,
+  "right": "Carolyn R. Bertozzi",
+  "wrong": "George Porter",
+  "base_margin_wrong_minus_right": -4.633814334869385,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 153,
+      "char_end": 183,
+      "text": "university teacher has enjoyed",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 63,
+      "token_end": 68
+    },
+    {
+      "char_start": 253,
+      "char_end": 275,
+      "text": "the field of chemistry",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 79,
+      "token_end": 83
+    },
+    {
+      "char_start": 357,
+      "char_end": 380,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 93,
+      "token_end": 98
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -4.633814334869385,
+      "wrong_score": -4.637785911560059,
+      "right_score": -0.003971811383962631
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher has enjoyed"
+      ],
+      "u": -3.721586227416992,
+      "margin": -0.912227988243103,
+      "wrong_score": -0.9599560499191284,
+      "right_score": -0.04772806540131569
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the field of chemistry"
+      ],
+      "u": -2.8317513465881348,
+      "margin": -1.80206298828125,
+      "wrong_score": -1.8262314796447754,
+      "right_score": -0.024168437346816063
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has enjoyed",
+        "the field of chemistry"
+      ],
+      "u": -4.0319414138793945,
+      "margin": -0.6018729209899902,
+      "wrong_score": -0.6974555253982544,
+      "right_score": -0.09558261930942535
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": -2.7582712173461914,
+      "margin": -1.8755429983139038,
+      "wrong_score": -1.8989206552505493,
+      "right_score": -0.02337767370045185
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has enjoyed",
+        "awarded the Nobel Prize"
+      ],
+      "u": -3.403853416442871,
+      "margin": -1.2299607992172241,
+      "wrong_score": -1.2787694931030273,
+      "right_score": -0.048808641731739044
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "awarded the Nobel Prize"
+      ],
+      "u": -3.0677807331085205,
+      "margin": -1.5660336017608643,
+      "wrong_score": -1.5922167301177979,
+      "right_score": -0.02618316560983658
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has enjoyed",
+        "the field of chemistry",
+        "awarded the Nobel Prize"
+      ],
+      "u": -3.508141040802002,
+      "margin": -1.1256734132766724,
+      "wrong_score": -1.1816935539245605,
+      "right_score": -0.05602019280195236
+    }
+  ],
+  "single_u": [
+    -3.721586227416992,
+    -2.8317513465881348,
+    -2.7582712173461914
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher has enjoyed",
+        "the field of chemistry"
+      ],
+      "u_i": -3.721586227416992,
+      "u_j": -2.8317513465881348,
+      "local_fd": 2.5213961601257324,
+      "banzhaf": 1.3633090257644653,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher has enjoyed",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": -3.721586227416992,
+      "u_j": -2.7582712173461914,
+      "local_fd": 3.0760040283203125,
+      "banzhaf": 1.9179168939590454,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the field of chemistry",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": -2.8317513465881348,
+      "u_j": -2.7582712173461914,
+      "local_fd": 2.5222418308258057,
+      "banzhaf": 1.3641546964645386,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has enjoyed",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 3.0760040283203125
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 2.5222418308258057
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has enjoyed",
+        "the field of chemistry"
+      ],
+      "order": 2,
+      "harsanyi": 2.5213961601257324
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has enjoyed",
+        "the field of chemistry",
+        "awarded the Nobel Prize"
+      ],
+      "order": 3,
+      "harsanyi": -2.316174268722534
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.1256734132766724,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

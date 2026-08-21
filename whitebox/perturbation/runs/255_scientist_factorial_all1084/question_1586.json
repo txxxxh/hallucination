@@ -1,0 +1,289 @@
+{
+  "key": "question_1586",
+  "group": "Q335213",
+  "generation_correct": true,
+  "right": "Martin Rees, Baron Rees of Ludlow",
+  "wrong": "Joseph Hooton Taylor, Jr.",
+  "base_margin_wrong_minus_right": -0.25813621282577515,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 255,
+      "char_end": 280,
+      "text": "the field of astrophysics",
+      "kind": "attribute",
+      "field": "field",
+      "value": "astrophysics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 89,
+      "token_end": 95
+    },
+    {
+      "char_start": 412,
+      "char_end": 436,
+      "text": "including the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 127,
+      "token_end": 131
+    },
+    {
+      "char_start": 460,
+      "char_end": 491,
+      "text": "Heineman Prize for Astrophysics",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Dannie Heineman Prize for Astrophysics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 133,
+      "token_end": 140
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.25813621282577515,
+      "wrong_score": -0.2910623848438263,
+      "right_score": -0.032926179468631744
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of astrophysics"
+      ],
+      "u": 0.053435951471328735,
+      "margin": -0.3115721642971039,
+      "wrong_score": -0.33717796206474304,
+      "right_score": -0.02560579776763916
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Wolf Prize"
+      ],
+      "u": -0.1395193338394165,
+      "margin": -0.11861687898635864,
+      "wrong_score": -0.16575726866722107,
+      "right_score": -0.047140393406152725
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of astrophysics",
+        "including the Wolf Prize"
+      ],
+      "u": -0.24216821789741516,
+      "margin": -0.01596798747777939,
+      "wrong_score": -0.12143486738204956,
+      "right_score": -0.10546687990427017
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Heineman Prize for Astrophysics"
+      ],
+      "u": 0.11447679996490479,
+      "margin": -0.37261301279067993,
+      "wrong_score": -0.3888424336910248,
+      "right_score": -0.016229426488280296
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of astrophysics",
+        "Heineman Prize for Astrophysics"
+      ],
+      "u": 0.10116183757781982,
+      "margin": -0.35929805040359497,
+      "wrong_score": -0.3770545423030853,
+      "right_score": -0.01775648258626461
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Heineman Prize for Astrophysics"
+      ],
+      "u": 0.21519827842712402,
+      "margin": -0.47333449125289917,
+      "wrong_score": -0.48538100719451904,
+      "right_score": -0.012046528048813343
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of astrophysics",
+        "including the Wolf Prize",
+        "Heineman Prize for Astrophysics"
+      ],
+      "u": 0.06187713146209717,
+      "margin": -0.3200133442878723,
+      "wrong_score": -0.36564022302627563,
+      "right_score": -0.04562688246369362
+    }
+  ],
+  "single_u": [
+    0.053435951471328735,
+    -0.1395193338394165,
+    0.11447679996490479
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of astrophysics",
+        "including the Wolf Prize"
+      ],
+      "u_i": 0.053435951471328735,
+      "u_j": -0.1395193338394165,
+      "local_fd": -0.1560848355293274,
+      "banzhaf": -0.14804551005363464,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the field of astrophysics",
+        "Heineman Prize for Astrophysics"
+      ],
+      "u_i": 0.053435951471328735,
+      "u_j": 0.11447679996490479,
+      "local_fd": -0.0667509138584137,
+      "banzhaf": -0.05871158838272095,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Wolf Prize",
+        "Heineman Prize for Astrophysics"
+      ],
+      "u_i": -0.1395193338394165,
+      "u_j": 0.11447679996490479,
+      "local_fd": 0.24024081230163574,
+      "banzhaf": 0.2482801377773285,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Heineman Prize for Astrophysics"
+      ],
+      "order": 2,
+      "harsanyi": 0.24024081230163574
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of astrophysics",
+        "including the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.1560848355293274
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of astrophysics",
+        "Heineman Prize for Astrophysics"
+      ],
+      "order": 2,
+      "harsanyi": -0.0667509138584137
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of astrophysics",
+        "including the Wolf Prize",
+        "Heineman Prize for Astrophysics"
+      ],
+      "order": 3,
+      "harsanyi": 0.016078650951385498
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.3200133442878723,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

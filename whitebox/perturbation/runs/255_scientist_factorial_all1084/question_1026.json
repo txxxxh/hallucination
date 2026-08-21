@@ -1,0 +1,146 @@
+{
+  "key": "question_1026",
+  "group": "Q6694",
+  "generation_correct": true,
+  "right": "Alexander von Humboldt",
+  "wrong": "Helmut Schmidt",
+  "base_margin_wrong_minus_right": 0.3583166301250458,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 177,
+      "char_end": 197,
+      "text": "work as an economist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "economist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 66,
+      "token_end": 70
+    },
+    {
+      "char_start": 304,
+      "char_end": 329,
+      "text": "named an honorary citizen",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary citizen of Berlin",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 87,
+      "token_end": 94
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.3583166301250458,
+      "wrong_score": -0.0679941177368164,
+      "right_score": -0.4263107478618622
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "work as an economist"
+      ],
+      "u": -0.2312546670436859,
+      "margin": 0.5895712971687317,
+      "wrong_score": -0.032147862017154694,
+      "right_score": -0.6217191815376282
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "named an honorary citizen"
+      ],
+      "u": -0.16416707634925842,
+      "margin": 0.5224837064743042,
+      "wrong_score": -0.05439804494380951,
+      "right_score": -0.5768817663192749
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "work as an economist",
+        "named an honorary citizen"
+      ],
+      "u": -0.7864586114883423,
+      "margin": 1.1447752714157104,
+      "wrong_score": -0.059031933546066284,
+      "right_score": -1.2038072347640991
+    }
+  ],
+  "single_u": [
+    -0.2312546670436859,
+    -0.16416707634925842
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "work as an economist",
+        "named an honorary citizen"
+      ],
+      "u_i": -0.2312546670436859,
+      "u_j": -0.16416707634925842,
+      "local_fd": -0.39103683829307556,
+      "banzhaf": -0.39103683829307556,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "work as an economist",
+        "named an honorary citizen"
+      ],
+      "order": 2,
+      "harsanyi": -0.39103686809539795
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.1447752714157104,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 4,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

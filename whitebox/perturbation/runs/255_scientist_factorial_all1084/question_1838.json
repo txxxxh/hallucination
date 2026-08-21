@@ -1,0 +1,145 @@
+{
+  "key": "question_1838",
+  "group": "Q233974",
+  "generation_correct": false,
+  "right": "Jocelyn Bell Burnell",
+  "wrong": "Ahmed H. Zewail",
+  "base_margin_wrong_minus_right": -0.7498783469200134,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 130,
+      "char_end": 162,
+      "text": "This distinguished physicist has",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 59,
+      "token_end": 65
+    },
+    {
+      "char_start": 238,
+      "char_end": 271,
+      "text": "multiple honorary doctorates from",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate from ENS",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 77,
+      "token_end": 84
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7498783469200134,
+      "wrong_score": -0.7524822354316711,
+      "right_score": -0.0026038975920528173
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist has"
+      ],
+      "u": -0.2874191403388977,
+      "margin": -0.4624592065811157,
+      "wrong_score": -0.4734634757041931,
+      "right_score": -0.011004260741174221
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "multiple honorary doctorates from"
+      ],
+      "u": -0.18637412786483765,
+      "margin": -0.5635042190551758,
+      "wrong_score": -0.6146854162216187,
+      "right_score": -0.05118122696876526
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist has",
+        "multiple honorary doctorates from"
+      ],
+      "u": -0.5777785778045654,
+      "margin": -0.172099769115448,
+      "wrong_score": -0.447243332862854,
+      "right_score": -0.275143563747406
+    }
+  ],
+  "single_u": [
+    -0.2874191403388977,
+    -0.18637412786483765
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished physicist has",
+        "multiple honorary doctorates from"
+      ],
+      "u_i": -0.2874191403388977,
+      "u_j": -0.18637412786483765,
+      "local_fd": -0.10398530960083008,
+      "banzhaf": -0.10398530960083008,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist has",
+        "multiple honorary doctorates from"
+      ],
+      "order": 2,
+      "harsanyi": -0.10398530960083008
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.172099769115448,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

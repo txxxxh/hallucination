@@ -1,0 +1,145 @@
+{
+  "key": "question_0601",
+  "group": "Q1254",
+  "generation_correct": true,
+  "right": "Kofi Annan",
+  "wrong": "Jean-Marie Lehn",
+  "base_margin_wrong_minus_right": -1.0739868879318237,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 205,
+      "char_end": 227,
+      "text": "title of Grand Officer",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Grand Officer of the Legion of Honour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 73,
+      "token_end": 79
+    },
+    {
+      "char_start": 231,
+      "char_end": 251,
+      "text": "the Legion of Honour",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Commander of the Legion of Honour",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 78,
+      "token_end": 83
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.0739868879318237,
+      "wrong_score": -1.078490972518921,
+      "right_score": -0.004504087846726179
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "title of Grand Officer"
+      ],
+      "u": -0.5788817405700684,
+      "margin": -0.495105117559433,
+      "wrong_score": -0.5254420638084412,
+      "right_score": -0.030336936935782433
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Legion of Honour"
+      ],
+      "u": -0.48402833938598633,
+      "margin": -0.5899585485458374,
+      "wrong_score": -0.6213061809539795,
+      "right_score": -0.03134763985872269
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "title of Grand Officer",
+        "the Legion of Honour"
+      ],
+      "u": -0.9033390283584595,
+      "margin": -0.17064782977104187,
+      "wrong_score": -0.28609219193458557,
+      "right_score": -0.1154443621635437
+    }
+  ],
+  "single_u": [
+    -0.5788817405700684,
+    -0.48402833938598633
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "title of Grand Officer",
+        "the Legion of Honour"
+      ],
+      "u_i": -0.5788817405700684,
+      "u_j": -0.48402833938598633,
+      "local_fd": 0.15957105159759521,
+      "banzhaf": 0.15957105159759521,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "title of Grand Officer",
+        "the Legion of Honour"
+      ],
+      "order": 2,
+      "harsanyi": 0.15957105159759521
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.17064782977104187,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 4,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

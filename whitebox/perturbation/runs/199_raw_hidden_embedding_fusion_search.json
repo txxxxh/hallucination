@@ -1,0 +1,52 @@
+{
+  "n": 2894,
+  "split": "discovery=1000 / confirmation=1894",
+  "baseline": "cached raw 4096-d per-layer LR, 5-seed OOF mean",
+  "search": {
+    "k": [
+      1,
+      2,
+      4,
+      8,
+      12,
+      16
+    ],
+    "scalar_C": [
+      0.001,
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.3
+    ],
+    "schemes": [
+      "logit",
+      "probability",
+      "4d stack"
+    ]
+  },
+  "selected": {
+    "scheme": "prob",
+    "k": 8,
+    "indices": [
+      29,
+      42,
+      41,
+      28,
+      14,
+      30,
+      11,
+      39
+    ],
+    "scalar_C": 0.003,
+    "weight": 0.42500000000000004,
+    "meta_C": null,
+    "discovery_auroc": 0.7286958085062667
+  },
+  "confirmation": {
+    "raw_hidden_auroc": 0.762998949579832,
+    "embedding_holdout_auroc": 0.6175527597402598,
+    "fused_auroc": 0.7670144194041253,
+    "delta_auroc": 0.0040154698242932385
+  }
+}

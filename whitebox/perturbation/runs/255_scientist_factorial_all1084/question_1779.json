@@ -1,0 +1,290 @@
+{
+  "key": "question_1779",
+  "group": "Q28189",
+  "generation_correct": false,
+  "right": "Abdus Salam",
+  "wrong": "Chen Ning Yang",
+  "base_margin_wrong_minus_right": -1.1572999954223633,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 254,
+      "char_end": 276,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 77,
+      "token_end": 81
+    },
+    {
+      "char_start": 328,
+      "char_end": 348,
+      "text": "them the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 89,
+      "token_end": 93
+    },
+    {
+      "char_start": 443,
+      "char_end": 468,
+      "text": "with the Marcel Grossmann",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Marcel Grossmann Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 108,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.1572999954223633,
+      "wrong_score": -1.1607979536056519,
+      "right_score": -0.00349798914976418
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.028305649757385254,
+      "margin": -1.128994345664978,
+      "wrong_score": -1.1443995237350464,
+      "right_score": -0.015405143611133099
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "them the Nobel Prize"
+      ],
+      "u": -0.3644426465034485,
+      "margin": -0.7928573489189148,
+      "wrong_score": -0.8343666791915894,
+      "right_score": -0.04150935634970665
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "them the Nobel Prize"
+      ],
+      "u": -0.4008328914642334,
+      "margin": -0.7564671039581299,
+      "wrong_score": -0.8296093344688416,
+      "right_score": -0.07314222306013107
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "with the Marcel Grossmann"
+      ],
+      "u": -1.1161285638809204,
+      "margin": -0.04117141664028168,
+      "wrong_score": -0.22287264466285706,
+      "right_score": -0.18170122802257538
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "with the Marcel Grossmann"
+      ],
+      "u": -0.740146815776825,
+      "margin": -0.41715317964553833,
+      "wrong_score": -0.5037689208984375,
+      "right_score": -0.08661574870347977
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "with the Marcel Grossmann"
+      ],
+      "u": -1.0568472146987915,
+      "margin": -0.10045281052589417,
+      "wrong_score": -0.25756555795669556,
+      "right_score": -0.1571127474308014
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "them the Nobel Prize",
+        "with the Marcel Grossmann"
+      ],
+      "u": -1.070870041847229,
+      "margin": -0.08642992377281189,
+      "wrong_score": -0.24797369539737701,
+      "right_score": -0.16154377162456512
+    }
+  ],
+  "single_u": [
+    -0.028305649757385254,
+    -0.3644426465034485,
+    -1.1161285638809204
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the American",
+        "them the Nobel Prize"
+      ],
+      "u_i": -0.028305649757385254,
+      "u_j": -0.3644426465034485,
+      "local_fd": -0.008084595203399658,
+      "banzhaf": -0.1990445852279663,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the American",
+        "with the Marcel Grossmann"
+      ],
+      "u_i": -0.028305649757385254,
+      "u_j": -1.1161285638809204,
+      "local_fd": 0.4042873978614807,
+      "banzhaf": 0.21332740783691406,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "them the Nobel Prize",
+        "with the Marcel Grossmann"
+      ],
+      "u_i": -0.3644426465034485,
+      "u_j": -1.1161285638809204,
+      "local_fd": 0.4237239956855774,
+      "banzhaf": 0.23276400566101074,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "with the Marcel Grossmann"
+      ],
+      "order": 2,
+      "harsanyi": 0.4237239956855774
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "with the Marcel Grossmann"
+      ],
+      "order": 2,
+      "harsanyi": 0.4042873978614807
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "them the Nobel Prize",
+        "with the Marcel Grossmann"
+      ],
+      "order": 3,
+      "harsanyi": -0.3819199800491333
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "them the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.008084595203399658
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.08642992377281189,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

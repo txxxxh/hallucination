@@ -1,0 +1,290 @@
+{
+  "key": "question_2899",
+  "group": "Q61735",
+  "generation_correct": true,
+  "right": "Rudolf Peierls",
+  "wrong": "Arthur Compton",
+  "base_margin_wrong_minus_right": -1.5854295492172241,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 142,
+      "char_end": 175,
+      "text": "theoretical and nuclear physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "theoretical physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 57,
+      "token_end": 64
+    },
+    {
+      "char_start": 183,
+      "char_end": 206,
+      "text": "as a university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 64,
+      "token_end": 68
+    },
+    {
+      "char_start": 373,
+      "char_end": 397,
+      "text": "with the Matteucci Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Matteucci Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 96,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.5854295492172241,
+      "wrong_score": -1.5873416662216187,
+      "right_score": -0.0019120725337415934
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "theoretical and nuclear physicist"
+      ],
+      "u": 1.0833684206008911,
+      "margin": -2.6687979698181152,
+      "wrong_score": -2.6702356338500977,
+      "right_score": -0.0014376624021679163
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a university teacher"
+      ],
+      "u": 0.7501612901687622,
+      "margin": -2.3355908393859863,
+      "wrong_score": -2.3372201919555664,
+      "right_score": -0.0016293022781610489
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "theoretical and nuclear physicist",
+        "as a university teacher"
+      ],
+      "u": 1.167214274406433,
+      "margin": -2.7526438236236572,
+      "wrong_score": -2.7550621032714844,
+      "right_score": -0.002418212126940489
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "with the Matteucci Medal"
+      ],
+      "u": -0.7435523271560669,
+      "margin": -0.8418772220611572,
+      "wrong_score": -0.893434464931488,
+      "right_score": -0.0515572726726532
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "theoretical and nuclear physicist",
+        "with the Matteucci Medal"
+      ],
+      "u": -0.5848857164382935,
+      "margin": -1.0005438327789307,
+      "wrong_score": -1.050159215927124,
+      "right_score": -0.04961533099412918
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "with the Matteucci Medal"
+      ],
+      "u": -0.8567790985107422,
+      "margin": -0.7286504507064819,
+      "wrong_score": -0.7953586578369141,
+      "right_score": -0.06670819222927094
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "theoretical and nuclear physicist",
+        "as a university teacher",
+        "with the Matteucci Medal"
+      ],
+      "u": -0.5855523943901062,
+      "margin": -0.9998771548271179,
+      "wrong_score": -1.0795097351074219,
+      "right_score": -0.07963255792856216
+    }
+  ],
+  "single_u": [
+    1.0833684206008911,
+    0.7501612901687622,
+    -0.7435523271560669
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "theoretical and nuclear physicist",
+        "as a university teacher"
+      ],
+      "u_i": 1.0833684206008911,
+      "u_j": 0.7501612901687622,
+      "local_fd": -0.6663154363632202,
+      "banzhaf": -0.27687767148017883,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "theoretical and nuclear physicist",
+        "with the Matteucci Medal"
+      ],
+      "u_i": 1.0833684206008911,
+      "u_j": -0.7435523271560669,
+      "local_fd": -0.9247018098831177,
+      "banzhaf": -0.5352640151977539,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as a university teacher",
+        "with the Matteucci Medal"
+      ],
+      "u_i": 0.7501612901687622,
+      "u_j": -0.7435523271560669,
+      "local_fd": -0.8633880615234375,
+      "banzhaf": -0.47395026683807373,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "theoretical and nuclear physicist",
+        "with the Matteucci Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.9247018098831177
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "with the Matteucci Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.8633880615234375
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "theoretical and nuclear physicist",
+        "as a university teacher",
+        "with the Matteucci Medal"
+      ],
+      "order": 3,
+      "harsanyi": 0.7788755297660828
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "theoretical and nuclear physicist",
+        "as a university teacher"
+      ],
+      "order": 2,
+      "harsanyi": -0.6663154363632202
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.9998771548271179,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

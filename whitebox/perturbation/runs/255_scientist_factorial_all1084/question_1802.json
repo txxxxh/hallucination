@@ -1,0 +1,290 @@
+{
+  "key": "question_1802",
+  "group": "Q715584",
+  "generation_correct": true,
+  "right": "Stuart A. Rice",
+  "wrong": "Roald Hoffmann",
+  "base_margin_wrong_minus_right": -0.9382287263870239,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 163,
+      "char_end": 193,
+      "text": "educated at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 63,
+      "token_end": 68
+    },
+    {
+      "char_start": 374,
+      "char_end": 399,
+      "text": "Medal, the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 104,
+      "token_end": 110
+    },
+    {
+      "char_start": 433,
+      "char_end": 449,
+      "text": "the ACS Award in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "ACS Award in Pure Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 115,
+      "token_end": 120
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9382287263870239,
+      "wrong_score": -0.9455201029777527,
+      "right_score": -0.007291384041309357
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Harvard University"
+      ],
+      "u": 0.21992170810699463,
+      "margin": -1.1581504344940186,
+      "wrong_score": -1.165598750114441,
+      "right_score": -0.007448327727615833
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Medal, the National Medal"
+      ],
+      "u": -0.5574598908424377,
+      "margin": -0.3807688355445862,
+      "wrong_score": -0.42929214239120483,
+      "right_score": -0.04852329194545746
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "Medal, the National Medal"
+      ],
+      "u": -0.457241952419281,
+      "margin": -0.4809867739677429,
+      "wrong_score": -0.5134639143943787,
+      "right_score": -0.03247715160250664
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the ACS Award in"
+      ],
+      "u": -0.027671396732330322,
+      "margin": -0.9105573296546936,
+      "wrong_score": -0.9221242070198059,
+      "right_score": -0.011566869914531708
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "the ACS Award in"
+      ],
+      "u": 0.007863402366638184,
+      "margin": -0.9460921287536621,
+      "wrong_score": -1.004820704460144,
+      "right_score": -0.05872858688235283
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Medal, the National Medal",
+        "the ACS Award in"
+      ],
+      "u": -0.8526552319526672,
+      "margin": -0.08557349443435669,
+      "wrong_score": -0.3098142743110657,
+      "right_score": -0.22424077987670898
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "Medal, the National Medal",
+        "the ACS Award in"
+      ],
+      "u": -0.6825124621391296,
+      "margin": -0.2557162642478943,
+      "wrong_score": -0.42116400599479675,
+      "right_score": -0.16544775664806366
+    }
+  ],
+  "single_u": [
+    0.21992170810699463,
+    -0.5574598908424377,
+    -0.027671396732330322
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Harvard University",
+        "Medal, the National Medal"
+      ],
+      "u_i": 0.21992170810699463,
+      "u_j": -0.5574598908424377,
+      "local_fd": -0.11970376968383789,
+      "banzhaf": 0.007452100515365601,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "educated at Harvard University",
+        "the ACS Award in"
+      ],
+      "u_i": 0.21992170810699463,
+      "u_j": -0.027671396732330322,
+      "local_fd": -0.18438690900802612,
+      "banzhaf": -0.05723103880882263,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Medal, the National Medal",
+        "the ACS Award in"
+      ],
+      "u_i": -0.5574598908424377,
+      "u_j": -0.027671396732330322,
+      "local_fd": -0.26752394437789917,
+      "banzhaf": -0.14036807417869568,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Medal, the National Medal",
+        "the ACS Award in"
+      ],
+      "order": 2,
+      "harsanyi": -0.26752394437789917
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "Medal, the National Medal",
+        "the ACS Award in"
+      ],
+      "order": 3,
+      "harsanyi": 0.254311740398407
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "the ACS Award in"
+      ],
+      "order": 2,
+      "harsanyi": -0.18438690900802612
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "Medal, the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.11970376968383789
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2557162642478943,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

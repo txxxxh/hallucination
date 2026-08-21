@@ -1,0 +1,171 @@
+{
+  "key": "question_1231",
+  "group": "Q410",
+  "generation_correct": true,
+  "right": "Carl Sagan",
+  "wrong": "Kip Stephen Thorne",
+  "base_margin_wrong_minus_right": 0.012402668595314026,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 139,
+      "char_end": 160,
+      "text": "worked as a physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 68,
+      "token_end": 72
+    },
+    {
+      "char_start": 218,
+      "char_end": 241,
+      "text": "as a university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 83,
+      "token_end": 88
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.012402668595314026,
+      "wrong_score": -0.18351535499095917,
+      "right_score": -0.1959180235862732
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "worked as a physicist"
+      ],
+      "u": 0.34063291549682617,
+      "margin": -0.32823026180267334,
+      "wrong_score": -0.43479689955711365,
+      "right_score": -0.10656663775444031
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a university teacher"
+      ],
+      "u": 0.028539016842842102,
+      "margin": -0.016136348247528076,
+      "wrong_score": -0.18851467967033386,
+      "right_score": -0.1723783314228058
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "worked as a physicist",
+        "as a university teacher"
+      ],
+      "u": 0.06010331213474274,
+      "margin": -0.04770064353942871,
+      "wrong_score": -0.22155308723449707,
+      "right_score": -0.17385244369506836
+    }
+  ],
+  "single_u": [
+    0.34063291549682617,
+    0.028539016842842102
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "worked as a physicist",
+        "as a university teacher"
+      ],
+      "u_i": 0.34063291549682617,
+      "u_j": 0.028539016842842102,
+      "local_fd": -0.30906862020492554,
+      "banzhaf": -0.30906862020492554,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "worked as a physicist",
+        "as a university teacher"
+      ],
+      "order": 2,
+      "harsanyi": -0.30906862020492554
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "worked as a physicist"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a university teacher"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "worked as a physicist",
+        "as a university teacher"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.04770064353942871,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "key": "question_2918",
+  "group": "Q371441",
+  "generation_correct": true,
+  "right": "Elliott H. Lieb",
+  "wrong": "Manfred Eigen",
+  "base_margin_wrong_minus_right": 0.2921574115753174,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 123,
+      "char_end": 152,
+      "text": "This physicist and university",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 56,
+      "token_end": 61
+    },
+    {
+      "char_start": 260,
+      "char_end": 288,
+      "text": "with the Austrian Decoration",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Austrian Decoration for Science and Art",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 81,
+      "token_end": 86
+    },
+    {
+      "char_start": 332,
+      "char_end": 351,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 92,
+      "token_end": 96
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.2921574115753174,
+      "wrong_score": -0.05045022815465927,
+      "right_score": -0.34260764718055725
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This physicist and university"
+      ],
+      "u": -0.02702850103378296,
+      "margin": 0.31918591260910034,
+      "wrong_score": -0.0725121945142746,
+      "right_score": -0.39169809222221375
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Austrian Decoration"
+      ],
+      "u": 0.10087621212005615,
+      "margin": 0.19128119945526123,
+      "wrong_score": -0.07910526543855667,
+      "right_score": -0.2703864574432373
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This physicist and university",
+        "with the Austrian Decoration"
+      ],
+      "u": 0.24987798929214478,
+      "margin": 0.04227942228317261,
+      "wrong_score": -0.14928582310676575,
+      "right_score": -0.19156524538993835
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.6302711367607117,
+      "margin": -0.3381137251853943,
+      "wrong_score": -0.4033977687358856,
+      "right_score": -0.06528403609991074
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This physicist and university",
+        "as a Foreign Member"
+      ],
+      "u": -0.0827297568321228,
+      "margin": 0.3748871684074402,
+      "wrong_score": -0.030140502378344536,
+      "right_score": -0.4050276577472687
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Austrian Decoration",
+        "as a Foreign Member"
+      ],
+      "u": 0.12729859352111816,
+      "margin": 0.16485881805419922,
+      "wrong_score": -0.08114966005086899,
+      "right_score": -0.2460084706544876
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This physicist and university",
+        "with the Austrian Decoration",
+        "as a Foreign Member"
+      ],
+      "u": -0.010386914014816284,
+      "margin": 0.30254432559013367,
+      "wrong_score": -0.03882918879389763,
+      "right_score": -0.3413735032081604
+    }
+  ],
+  "single_u": [
+    -0.02702850103378296,
+    0.10087621212005615,
+    0.6302711367607117
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This physicist and university",
+        "with the Austrian Decoration"
+      ],
+      "u_i": -0.02702850103378296,
+      "u_j": 0.10087621212005615,
+      "local_fd": 0.17603027820587158,
+      "banzhaf": 0.3756728172302246,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This physicist and university",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.02702850103378296,
+      "u_j": 0.6302711367607117,
+      "local_fd": -0.6859723925590515,
+      "banzhaf": -0.4863298535346985,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "with the Austrian Decoration",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.10087621212005615,
+      "u_j": 0.6302711367607117,
+      "local_fd": -0.6038487553596497,
+      "banzhaf": -0.40420621633529663,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This physicist and university",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.6859723925590515
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Austrian Decoration",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.6038487553596497
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This physicist and university",
+        "with the Austrian Decoration",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": 0.39928510785102844
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This physicist and university",
+        "with the Austrian Decoration"
+      ],
+      "order": 2,
+      "harsanyi": 0.17603027820587158
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.30254432559013367,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

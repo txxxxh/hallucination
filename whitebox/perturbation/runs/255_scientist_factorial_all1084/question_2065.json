@@ -1,0 +1,289 @@
+{
+  "key": "question_2065",
+  "group": "Q233974",
+  "generation_correct": true,
+  "right": "Jocelyn Bell Burnell",
+  "wrong": "Niels Bohr",
+  "base_margin_wrong_minus_right": -1.4693148136138916,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 125,
+      "char_end": 160,
+      "text": "This highly distinguished physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 67
+    },
+    {
+      "char_start": 237,
+      "char_end": 265,
+      "text": "the prestigious Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 79,
+      "token_end": 84
+    },
+    {
+      "char_start": 359,
+      "char_end": 387,
+      "text": "and honorary doctorates from",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate from the McGill University",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 98,
+      "token_end": 104
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.4693148136138916,
+      "wrong_score": -1.47001314163208,
+      "right_score": -0.0006983656203374267
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This highly distinguished physicist"
+      ],
+      "u": -0.7443812489509583,
+      "margin": -0.7249335646629333,
+      "wrong_score": -0.7362851500511169,
+      "right_score": -0.011351562105119228
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the prestigious Copley Medal"
+      ],
+      "u": -0.8359782695770264,
+      "margin": -0.6333365440368652,
+      "wrong_score": -0.6496632099151611,
+      "right_score": -0.016326675191521645
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This highly distinguished physicist",
+        "the prestigious Copley Medal"
+      ],
+      "u": 0.0024352073669433594,
+      "margin": -1.471750020980835,
+      "wrong_score": -1.4756160974502563,
+      "right_score": -0.0038661155849695206
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and honorary doctorates from"
+      ],
+      "u": -1.1069414615631104,
+      "margin": -0.36237335205078125,
+      "wrong_score": -0.41130325198173523,
+      "right_score": -0.048929885029792786
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This highly distinguished physicist",
+        "and honorary doctorates from"
+      ],
+      "u": -1.2915104627609253,
+      "margin": -0.1778043657541275,
+      "wrong_score": -0.2840912640094757,
+      "right_score": -0.1062868982553482
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the prestigious Copley Medal",
+        "and honorary doctorates from"
+      ],
+      "u": -1.1346428394317627,
+      "margin": -0.33467191457748413,
+      "wrong_score": -0.3790338635444641,
+      "right_score": -0.04436193406581879
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This highly distinguished physicist",
+        "the prestigious Copley Medal",
+        "and honorary doctorates from"
+      ],
+      "u": -1.125950574874878,
+      "margin": -0.34336426854133606,
+      "wrong_score": -0.4150819182395935,
+      "right_score": -0.07171764969825745
+    }
+  ],
+  "single_u": [
+    -0.7443812489509583,
+    -0.8359782695770264,
+    -1.1069414615631104
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This highly distinguished physicist",
+        "the prestigious Copley Medal"
+      ],
+      "u_i": -0.7443812489509583,
+      "u_j": -0.8359782695770264,
+      "local_fd": 1.5827946662902832,
+      "banzhaf": 0.8880279660224915,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This highly distinguished physicist",
+        "and honorary doctorates from"
+      ],
+      "u_i": -0.7443812489509583,
+      "u_j": -1.1069414615631104,
+      "local_fd": 0.5598122477531433,
+      "banzhaf": -0.13495448231697083,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the prestigious Copley Medal",
+        "and honorary doctorates from"
+      ],
+      "u_i": -0.8359782695770264,
+      "u_j": -1.1069414615631104,
+      "local_fd": 0.808276891708374,
+      "banzhaf": 0.11351016163825989,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This highly distinguished physicist",
+        "the prestigious Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": 1.582794725894928
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This highly distinguished physicist",
+        "the prestigious Copley Medal",
+        "and honorary doctorates from"
+      ],
+      "order": 3,
+      "harsanyi": -1.3895334601402283
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the prestigious Copley Medal",
+        "and honorary doctorates from"
+      ],
+      "order": 2,
+      "harsanyi": 0.808276891708374
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This highly distinguished physicist",
+        "and honorary doctorates from"
+      ],
+      "order": 2,
+      "harsanyi": 0.5598122477531433
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.34336426854133606,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 6,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

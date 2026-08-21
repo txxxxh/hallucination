@@ -1,0 +1,152 @@
+{
+  "key": "question_1750",
+  "group": "Q103598",
+  "generation_correct": true,
+  "right": "Luc Montagnier",
+  "wrong": "James D. Watson",
+  "base_margin_wrong_minus_right": -2.064640522003174,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 347,
+      "char_end": 376,
+      "text": "including the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 94,
+      "token_end": 101
+    },
+    {
+      "char_start": 439,
+      "char_end": 457,
+      "text": "the Nobel Prize in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 113,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.064640522003174,
+      "wrong_score": -2.0656330585479736,
+      "right_score": -0.0009924256009981036
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Canada Gairdner"
+      ],
+      "u": -1.9393022060394287,
+      "margin": -0.12533828616142273,
+      "wrong_score": -0.25974106788635254,
+      "right_score": -0.1344027817249298
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Nobel Prize in"
+      ],
+      "u": -2.0952234268188477,
+      "margin": 0.030582964420318604,
+      "wrong_score": -0.16926728188991547,
+      "right_score": -0.19985024631023407
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Canada Gairdner",
+        "the Nobel Prize in"
+      ],
+      "u": -2.3768575191497803,
+      "margin": 0.3122170865535736,
+      "wrong_score": -0.07338277250528336,
+      "right_score": -0.38559985160827637
+    }
+  ],
+  "single_u": [
+    -1.9393022060394287,
+    -2.0952234268188477
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Canada Gairdner",
+        "the Nobel Prize in"
+      ],
+      "u_i": -1.9393022060394287,
+      "u_j": -2.0952234268188477,
+      "local_fd": 1.657668113708496,
+      "banzhaf": 1.657668113708496,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Canada Gairdner",
+        "the Nobel Prize in"
+      ],
+      "order": 2,
+      "harsanyi": 1.657668113708496
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3122170865535736,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

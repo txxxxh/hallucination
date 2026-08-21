@@ -1,0 +1,152 @@
+{
+  "protocol": "Llama; exact/attention mean of seeds 42/43/44 grouped 5-fold OOF; item-ID join to independently produced U/R confirmation artifacts; within-benchmark percentile axes; E/P excluded because coverage is selected",
+  "benchmarks": {
+    "scientist": {
+      "n": 1056,
+      "errors": 441,
+      "coverage_vs_detector": 0.9805013927576601,
+      "axis_error_auroc": {
+        "U": 0.6085854395958925,
+        "R": 0.8159615065538409
+      },
+      "detector_auroc": {
+        "exact": 0.8982394041627492,
+        "attention": 0.8939549803661302
+      },
+      "high_axis_error_concentration": {
+        "U": {
+          "high_n": 319,
+          "high_error_rate": 0.48589341692789967,
+          "share_of_errors_high": 0.35147392290249435
+        },
+        "R": {
+          "high_n": 317,
+          "high_error_rate": 0.7981072555205048,
+          "share_of_errors_high": 0.5736961451247166
+        }
+      },
+      "dominant_axis_counts_among_errors": {
+        "U": 163,
+        "R": 278
+      },
+      "conditional_detector_auroc": {
+        "exact": {
+          "U": 0.8482548265224776,
+          "R": 0.9238953664654482
+        },
+        "attention": {
+          "U": 0.8385497903018959,
+          "R": 0.9230133134871413
+        }
+      },
+      "axis_detector_loss_spearman": {
+        "exact": {
+          "U": 0.15202116384830916,
+          "R": -0.06785655181578096
+        },
+        "attention": {
+          "U": 0.15804114960163393,
+          "R": -0.05818749217889232
+        }
+      }
+    },
+    "trivia": {
+      "n": 888,
+      "errors": 435,
+      "coverage_vs_detector": 0.888,
+      "axis_error_auroc": {
+        "U": 0.78590495039456,
+        "R": 0.8238968815812844
+      },
+      "detector_auroc": {
+        "exact": 0.9653396259927431,
+        "attention": 0.965730379843191
+      },
+      "high_axis_error_concentration": {
+        "U": {
+          "high_n": 233,
+          "high_error_rate": 0.9098712446351931,
+          "share_of_errors_high": 0.48735632183908045
+        },
+        "R": {
+          "high_n": 266,
+          "high_error_rate": 0.8571428571428571,
+          "share_of_errors_high": 0.5241379310344828
+        }
+      },
+      "dominant_axis_counts_among_errors": {
+        "U": 210,
+        "R": 225
+      },
+      "conditional_detector_auroc": {
+        "exact": {
+          "U": 0.9854664542396885,
+          "R": 0.9321739130434783
+        },
+        "attention": {
+          "U": 0.984528235085856,
+          "R": 0.9358454106280193
+        }
+      },
+      "axis_detector_loss_spearman": {
+        "exact": {
+          "U": -0.013550892866288959,
+          "R": 0.1963577128958091
+        },
+        "attention": {
+          "U": -0.023427607584961097,
+          "R": 0.18684401553312951
+        }
+      }
+    },
+    "gsm8k": {
+      "n": 673,
+      "errors": 635,
+      "coverage_vs_detector": 0.7144373673036093,
+      "axis_error_auroc": {
+        "U": 0.6662660588479072,
+        "R": 0.6481143804392873
+      },
+      "detector_auroc": {
+        "exact": 0.9550352258599254,
+        "attention": 0.9580190634065476
+      },
+      "high_axis_error_concentration": {
+        "U": {
+          "high_n": 270,
+          "high_error_rate": 0.9740740740740741,
+          "share_of_errors_high": 0.4141732283464567
+        },
+        "R": {
+          "high_n": 202,
+          "high_error_rate": 0.9752475247524752,
+          "share_of_errors_high": 0.3102362204724409
+        }
+      },
+      "dominant_axis_counts_among_errors": {
+        "U": 321,
+        "R": 314
+      },
+      "conditional_detector_auroc": {
+        "exact": {
+          "U": 0.9692367601246106,
+          "R": 0.940069484655472
+        },
+        "attention": {
+          "U": 0.9667056074766356,
+          "R": 0.9483207874927619
+        }
+      },
+      "axis_detector_loss_spearman": {
+        "exact": {
+          "U": -0.009518271451671358,
+          "R": 0.0689747998087688
+        },
+        "attention": {
+          "U": -0.020880752782786706,
+          "R": 0.09207969919507789
+        }
+      }
+    }
+  }
+}

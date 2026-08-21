@@ -1,0 +1,287 @@
+{
+  "key": "question_0372",
+  "group": "Q107690",
+  "generation_correct": false,
+  "right": "Jean-Marie Lehn",
+  "wrong": "Alexander R. Todd, Baron Todd",
+  "base_margin_wrong_minus_right": 0.5456307530403137,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 444,
+      "char_end": 462,
+      "text": "Award, the Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite for Sciences and Arts order",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 121,
+      "token_end": 125
+    },
+    {
+      "char_start": 506,
+      "char_end": 533,
+      "text": "honorary doctorate from the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate from the University of Strasbourg",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 132,
+      "token_end": 137
+    },
+    {
+      "char_start": 622,
+      "char_end": 627,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 158,
+      "token_end": 159
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.5456307530403137,
+      "wrong_score": -0.020553147420287132,
+      "right_score": -0.5661839246749878
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Award, the Pour le"
+      ],
+      "u": -0.9268479943275452,
+      "margin": 1.4724787473678589,
+      "wrong_score": -0.009542427957057953,
+      "right_score": -1.4820212125778198
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "honorary doctorate from the"
+      ],
+      "u": -0.4096341133117676,
+      "margin": 0.9552648663520813,
+      "wrong_score": -0.028772857040166855,
+      "right_score": -0.9840376973152161
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, the Pour le",
+        "honorary doctorate from the"
+      ],
+      "u": -0.804995596408844,
+      "margin": 1.3506263494491577,
+      "wrong_score": -0.008093399927020073,
+      "right_score": -1.3587197065353394
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.015009522438049316,
+      "margin": 0.560640275478363,
+      "wrong_score": -0.054386842995882034,
+      "right_score": -0.615027129650116
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Award, the Pour le",
+        "never"
+      ],
+      "u": -0.4215976595878601,
+      "margin": 0.9672284126281738,
+      "wrong_score": -0.03931352496147156,
+      "right_score": -1.0065419673919678
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "honorary doctorate from the",
+        "never"
+      ],
+      "u": 0.16954278945922852,
+      "margin": 0.3760879635810852,
+      "wrong_score": -0.060963790863752365,
+      "right_score": -0.4370517432689667
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the Pour le",
+        "honorary doctorate from the",
+        "never"
+      ],
+      "u": -0.1818733811378479,
+      "margin": 0.7275041341781616,
+      "wrong_score": -0.036975227296352386,
+      "right_score": -0.7644793391227722
+    }
+  ],
+  "single_u": [
+    -0.9268479943275452,
+    -0.4096341133117676,
+    -0.015009522438049316
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Award, the Pour le",
+        "honorary doctorate from the"
+      ],
+      "u_i": -0.9268479943275452,
+      "u_j": -0.4096341133117676,
+      "local_fd": 0.5314865112304688,
+      "banzhaf": 0.29332923889160156,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Award, the Pour le",
+        "never"
+      ],
+      "u_i": -0.9268479943275452,
+      "u_j": -0.015009522438049316,
+      "local_fd": 0.5202598571777344,
+      "banzhaf": 0.2821025848388672,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "honorary doctorate from the",
+        "never"
+      ],
+      "u_i": -0.4096341133117676,
+      "u_j": -0.015009522438049316,
+      "local_fd": 0.5941864252090454,
+      "banzhaf": 0.3560291826725006,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "honorary doctorate from the",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.5941864252090454
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, the Pour le",
+        "honorary doctorate from the"
+      ],
+      "order": 2,
+      "harsanyi": 0.5314865112304688
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Award, the Pour le",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.5202598571777344
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the Pour le",
+        "honorary doctorate from the",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.4763145446777344
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7275041341781616,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

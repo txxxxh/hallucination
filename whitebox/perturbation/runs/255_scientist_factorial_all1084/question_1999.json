@@ -1,0 +1,290 @@
+{
+  "key": "question_1999",
+  "group": "Q901783",
+  "generation_correct": false,
+  "right": "Gilbert Stork",
+  "wrong": "Rudolph A. Marcus",
+  "base_margin_wrong_minus_right": 1.2186839580535889,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 241,
+      "char_end": 258,
+      "text": "as the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 84,
+      "token_end": 88
+    },
+    {
+      "char_start": 286,
+      "char_end": 307,
+      "text": "Medal of Science, the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 93,
+      "token_end": 98
+    },
+    {
+      "char_start": 381,
+      "char_end": 400,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 109,
+      "token_end": 114
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.2186839580535889,
+      "wrong_score": -0.0032833856530487537,
+      "right_score": -1.221967339515686
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as the Wolf Prize"
+      ],
+      "u": -0.43912768363952637,
+      "margin": 1.6578116416931152,
+      "wrong_score": -0.0026365979574620724,
+      "right_score": -1.6604481935501099
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Medal of Science, the"
+      ],
+      "u": 0.12310779094696045,
+      "margin": 1.0955761671066284,
+      "wrong_score": -0.004344898741692305,
+      "right_score": -1.0999211072921753
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the Wolf Prize",
+        "Medal of Science, the"
+      ],
+      "u": 0.40010958909988403,
+      "margin": 0.8185743689537048,
+      "wrong_score": -0.007637252565473318,
+      "right_score": -0.8262116312980652
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -0.16189253330230713,
+      "margin": 1.380576491355896,
+      "wrong_score": -0.00936286523938179,
+      "right_score": -1.389939308166504
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as the Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "u": 0.30439871549606323,
+      "margin": 0.9142852425575256,
+      "wrong_score": -0.01375322975218296,
+      "right_score": -0.928038477897644
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "u": 0.2714296579360962,
+      "margin": 0.9472543001174927,
+      "wrong_score": -0.01243035402148962,
+      "right_score": -0.9596846699714661
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as the Wolf Prize",
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "u": 0.3936028480529785,
+      "margin": 0.8250811100006104,
+      "wrong_score": -0.026344751939177513,
+      "right_score": -0.8514258861541748
+    }
+  ],
+  "single_u": [
+    -0.43912768363952637,
+    0.12310779094696045,
+    -0.16189253330230713
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as the Wolf Prize",
+        "Medal of Science, the"
+      ],
+      "u_i": -0.43912768363952637,
+      "u_j": 0.12310779094696045,
+      "local_fd": 0.71612948179245,
+      "banzhaf": 0.18600571155548096,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "as the Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.43912768363952637,
+      "u_j": -0.16189253330230713,
+      "local_fd": 0.9054189324378967,
+      "banzhaf": 0.37529516220092773,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.12310779094696045,
+      "u_j": -0.16189253330230713,
+      "local_fd": 0.31021440029144287,
+      "banzhaf": -0.21990936994552612,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as the Wolf Prize",
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": -1.060247540473938
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as the Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.9054189324378967
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the Wolf Prize",
+        "Medal of Science, the"
+      ],
+      "order": 2,
+      "harsanyi": 0.71612948179245
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.31021440029144287
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8250811100006104,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

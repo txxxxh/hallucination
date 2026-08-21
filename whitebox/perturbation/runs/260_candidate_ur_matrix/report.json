@@ -1,0 +1,138 @@
+{
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "protocol": "same frozen candidate pairs as perturbation; grouped 3x5 OOF for representation; no perturbation delta features",
+  "datasets": {
+    "scientist": {
+      "n": 1084,
+      "errors": 461,
+      "groups": 337,
+      "candidate_likelihood_gap": {
+        "auroc": 0.6663962423790837,
+        "auprc": 0.6058761436703546
+      },
+      "paired_hidden_state_probe": {
+        "mean": {
+          "auroc": 0.881904669055221,
+          "auprc": 0.8526899206215925
+        },
+        "ensemble": {
+          "auroc": 0.8909725873336979,
+          "auprc": 0.8638975256020107
+        },
+        "per_seed": [
+          {
+            "auroc": 0.8983680532584966,
+            "auprc": 0.8746535219266911
+          },
+          {
+            "auroc": 0.8834935568221781,
+            "auprc": 0.8553331542294224
+          },
+          {
+            "auroc": 0.8638523970849885,
+            "auprc": 0.8280830857086641
+          }
+        ]
+      }
+    },
+    "trivia": {
+      "n": 1000,
+      "errors": 500,
+      "groups": 1000,
+      "candidate_likelihood_gap": {
+        "auroc": 0.784716,
+        "auprc": 0.8022592934120455
+      },
+      "paired_hidden_state_probe": {
+        "mean": {
+          "auroc": 0.9732786666666667,
+          "auprc": 0.9718583293446402
+        },
+        "ensemble": {
+          "auroc": 0.97418,
+          "auprc": 0.9728271007971245
+        },
+        "per_seed": [
+          {
+            "auroc": 0.9717480000000001,
+            "auprc": 0.9703702933746096
+          },
+          {
+            "auroc": 0.9736840000000002,
+            "auprc": 0.9723795088192206
+          },
+          {
+            "auroc": 0.9744039999999999,
+            "auprc": 0.9728251858400905
+          }
+        ]
+      }
+    },
+    "gsm8k": {
+      "n": 942,
+      "errors": 471,
+      "groups": 942,
+      "candidate_likelihood_gap": {
+        "auroc": 0.5238391460550574,
+        "auprc": 0.5267552658585265
+      },
+      "paired_hidden_state_probe": {
+        "mean": {
+          "auroc": 0.7385124180531702,
+          "auprc": 0.7617310977757864
+        },
+        "ensemble": {
+          "auroc": 0.744321383333108,
+          "auprc": 0.7673782293033191
+        },
+        "per_seed": [
+          {
+            "auroc": 0.7391014285005928,
+            "auprc": 0.7564239609634608
+          },
+          {
+            "auroc": 0.7358107833989209,
+            "auprc": 0.7639966171100123
+          },
+          {
+            "auroc": 0.7406250422599969,
+            "auprc": 0.7647727152538863
+          }
+        ]
+      }
+    },
+    "drop": {
+      "n": 1000,
+      "errors": 500,
+      "groups": 416,
+      "candidate_likelihood_gap": {
+        "auroc": 0.228998,
+        "auprc": 0.4369539007014326
+      },
+      "paired_hidden_state_probe": {
+        "mean": {
+          "auroc": 0.8648626666666667,
+          "auprc": 0.8985066992045206
+        },
+        "ensemble": {
+          "auroc": 0.8685280000000001,
+          "auprc": 0.9014779167020714
+        },
+        "per_seed": [
+          {
+            "auroc": 0.861512,
+            "auprc": 0.8978490505927763
+          },
+          {
+            "auroc": 0.8712000000000001,
+            "auprc": 0.9044450501281225
+          },
+          {
+            "auroc": 0.861876,
+            "auprc": 0.8932259968926632
+          }
+        ]
+      }
+    }
+  }
+}

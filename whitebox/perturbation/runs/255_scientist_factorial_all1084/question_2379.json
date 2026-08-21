@@ -1,0 +1,146 @@
+{
+  "key": "question_2379",
+  "group": "Q28542",
+  "generation_correct": true,
+  "right": "Alvin E. Roth",
+  "wrong": "Gérard Debreu",
+  "base_margin_wrong_minus_right": -1.4582324028015137,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 178,
+      "char_end": 205,
+      "text": "Stanford University and has",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Stanford University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 69,
+      "token_end": 75
+    },
+    {
+      "char_start": 206,
+      "char_end": 227,
+      "text": "served as a president",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "president",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 74,
+      "token_end": 79
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.4582324028015137,
+      "wrong_score": -1.4593123197555542,
+      "right_score": -0.0010799368610605597
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Stanford University and has"
+      ],
+      "u": -0.16673874855041504,
+      "margin": -1.2914936542510986,
+      "wrong_score": -1.2943274974822998,
+      "right_score": -0.00283389282412827
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "served as a president"
+      ],
+      "u": -0.06376111507415771,
+      "margin": -1.394471287727356,
+      "wrong_score": -1.4019426107406616,
+      "right_score": -0.0074712978675961494
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Stanford University and has",
+        "served as a president"
+      ],
+      "u": -0.10380351543426514,
+      "margin": -1.3544288873672485,
+      "wrong_score": -1.3591479063034058,
+      "right_score": -0.004718990530818701
+    }
+  ],
+  "single_u": [
+    -0.16673874855041504,
+    -0.06376111507415771
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Stanford University and has",
+        "served as a president"
+      ],
+      "u_i": -0.16673874855041504,
+      "u_j": -0.06376111507415771,
+      "local_fd": 0.12669634819030762,
+      "banzhaf": 0.12669634819030762,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Stanford University and has",
+        "served as a president"
+      ],
+      "order": 2,
+      "harsanyi": 0.12669634819030762
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.3544288873672485,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

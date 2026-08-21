@@ -1,0 +1,296 @@
+{
+  "key": "question_0712",
+  "group": "Q445519",
+  "generation_correct": true,
+  "right": "Susan Solomon",
+  "wrong": "Harold Clayton Urey",
+  "base_margin_wrong_minus_right": -0.053853124380111694,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 167,
+      "char_end": 195,
+      "text": "the University of California",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of California, Berkeley",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 63,
+      "token_end": 68
+    },
+    {
+      "char_start": 323,
+      "char_end": 347,
+      "text": "elected a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 92,
+      "token_end": 97
+    },
+    {
+      "char_start": 375,
+      "char_end": 397,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Geophysical Union",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 105,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.053853124380111694,
+      "wrong_score": -0.23995061218738556,
+      "right_score": -0.18609748780727386
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of California"
+      ],
+      "u": -1.3336735963821411,
+      "margin": 1.279820442199707,
+      "wrong_score": -0.030075957998633385,
+      "right_score": -1.3098963499069214
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "elected a Foreign Member"
+      ],
+      "u": -0.3351660370826721,
+      "margin": 0.2813129127025604,
+      "wrong_score": -0.14773550629615784,
+      "right_score": -0.42904841899871826
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of California",
+        "elected a Foreign Member"
+      ],
+      "u": -2.690897226333618,
+      "margin": 2.6370441913604736,
+      "wrong_score": -0.013595730066299438,
+      "right_score": -2.6506400108337402
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.12444199621677399,
+      "margin": 0.07058887183666229,
+      "wrong_score": -0.18917827308177948,
+      "right_score": -0.2597671449184418
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of California",
+        "Fellow of the American"
+      ],
+      "u": -2.640127420425415,
+      "margin": 2.5862743854522705,
+      "wrong_score": -0.01670621894299984,
+      "right_score": -2.602980613708496
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member",
+        "Fellow of the American"
+      ],
+      "u": -0.949251651763916,
+      "margin": 0.8953984975814819,
+      "wrong_score": -0.05771947652101517,
+      "right_score": -0.9531179666519165
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of California",
+        "elected a Foreign Member",
+        "Fellow of the American"
+      ],
+      "u": -2.704070806503296,
+      "margin": 2.6502177715301514,
+      "wrong_score": -0.019765688106417656,
+      "right_score": -2.669983386993408
+    }
+  ],
+  "single_u": [
+    -1.3336735963821411,
+    -0.3351660370826721,
+    -0.12444199621677399
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of California",
+        "elected a Foreign Member"
+      ],
+      "u_i": -1.3336735963821411,
+      "u_j": -0.3351660370826721,
+      "local_fd": -1.0220575332641602,
+      "banzhaf": -0.1305956244468689,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the University of California",
+        "Fellow of the American"
+      ],
+      "u_i": -1.3336735963821411,
+      "u_j": -0.12444199621677399,
+      "local_fd": -1.1820118427276611,
+      "banzhaf": -0.2905499041080475,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "elected a Foreign Member",
+        "Fellow of the American"
+      ],
+      "u_i": -0.3351660370826721,
+      "u_j": -0.12444199621677399,
+      "local_fd": -0.4896436333656311,
+      "banzhaf": 0.40181830525398254,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of California",
+        "elected a Foreign Member",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 1.782923862338066
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of California",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -1.1820118278265
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of California",
+        "elected a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -1.022057592868805
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.4896436184644699
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 2.6502177715301514,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

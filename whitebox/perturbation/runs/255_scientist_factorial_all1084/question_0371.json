@@ -1,0 +1,143 @@
+{
+  "key": "question_0371",
+  "group": "Q160627",
+  "generation_correct": true,
+  "right": "Alfred Russel Wallace",
+  "wrong": "Louis Agassiz",
+  "base_margin_wrong_minus_right": -1.8129491806030273,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 408,
+      "char_end": 429,
+      "text": "as an Honorary Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Royal Society Te Apārangi",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 119,
+      "token_end": 123
+    },
+    {
+      "char_start": 502,
+      "char_end": 505,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 139,
+      "token_end": 141
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.8129491806030273,
+      "wrong_score": -1.8135173320770264,
+      "right_score": -0.0005681785987690091
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as an Honorary Fellow"
+      ],
+      "u": -0.3750426769256592,
+      "margin": -1.4379065036773682,
+      "wrong_score": -1.4408012628555298,
+      "right_score": -0.002894720761105418
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": 0.06240260601043701,
+      "margin": -1.8753517866134644,
+      "wrong_score": -1.8788089752197266,
+      "right_score": -0.003457131562754512
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "not"
+      ],
+      "u": -0.40683257579803467,
+      "margin": -1.4061166048049927,
+      "wrong_score": -1.4114564657211304,
+      "right_score": -0.005339875351637602
+    }
+  ],
+  "single_u": [
+    -0.3750426769256592,
+    0.06240260601043701
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as an Honorary Fellow",
+        "not"
+      ],
+      "u_i": -0.3750426769256592,
+      "u_j": 0.06240260601043701,
+      "local_fd": -0.0941925048828125,
+      "banzhaf": -0.0941925048828125,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": -0.0941925048828125
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.4061166048049927,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

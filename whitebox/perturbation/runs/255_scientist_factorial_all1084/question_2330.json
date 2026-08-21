@@ -1,0 +1,294 @@
+{
+  "key": "question_2330",
+  "group": "Q49347",
+  "generation_correct": false,
+  "right": "Melvin Calvin",
+  "wrong": "Dorothy Hodgkin",
+  "base_margin_wrong_minus_right": -1.1493730545043945,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 224,
+      "char_end": 249,
+      "text": "receiving the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 71,
+      "token_end": 76
+    },
+    {
+      "char_start": 250,
+      "char_end": 281,
+      "text": "in Chemistry. Recognized widely",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 77,
+      "token_end": 82
+    },
+    {
+      "char_start": 332,
+      "char_end": 357,
+      "text": "awarded the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 89,
+      "token_end": 93
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.1493730545043945,
+      "wrong_score": -1.1517105102539062,
+      "right_score": -0.002337514190003276
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "receiving the Nobel Prize"
+      ],
+      "u": 0.19507145881652832,
+      "margin": -1.3444445133209229,
+      "wrong_score": -1.3636642694473267,
+      "right_score": -0.01921970024704933
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Chemistry. Recognized widely"
+      ],
+      "u": -0.18791413307189941,
+      "margin": -0.9614589214324951,
+      "wrong_score": -0.9937042593955994,
+      "right_score": -0.032245341688394547
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "in Chemistry. Recognized widely"
+      ],
+      "u": -0.5197312235832214,
+      "margin": -0.6296418309211731,
+      "wrong_score": -0.6853607892990112,
+      "right_score": -0.05571896955370903
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded the Royal Society"
+      ],
+      "u": -1.6803154945373535,
+      "margin": 0.530942440032959,
+      "wrong_score": -0.04711996763944626,
+      "right_score": -0.5780624151229858
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "awarded the Royal Society"
+      ],
+      "u": -1.5963536500930786,
+      "margin": 0.44698062539100647,
+      "wrong_score": -0.07977136224508286,
+      "right_score": -0.5267519950866699
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Chemistry. Recognized widely",
+        "awarded the Royal Society"
+      ],
+      "u": -2.448164224624634,
+      "margin": 1.2987911701202393,
+      "wrong_score": -0.009874883107841015,
+      "right_score": -1.3086661100387573
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "in Chemistry. Recognized widely",
+        "awarded the Royal Society"
+      ],
+      "u": -2.8599720001220703,
+      "margin": 1.7105988264083862,
+      "wrong_score": -0.00512025086209178,
+      "right_score": -1.7157191038131714
+    }
+  ],
+  "single_u": [
+    0.19507145881652832,
+    -0.18791413307189941,
+    -1.6803154945373535
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "receiving the Nobel Prize",
+        "in Chemistry. Recognized widely"
+      ],
+      "u_i": 0.19507145881652832,
+      "u_j": -0.18791413307189941,
+      "local_fd": -0.5268885493278503,
+      "banzhaf": -0.5113290548324585,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "receiving the Nobel Prize",
+        "awarded the Royal Society"
+      ],
+      "u_i": 0.19507145881652832,
+      "u_j": -1.6803154945373535,
+      "local_fd": -0.11110961437225342,
+      "banzhaf": -0.09555011987686157,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "in Chemistry. Recognized widely",
+        "awarded the Royal Society"
+      ],
+      "u_i": -0.18791413307189941,
+      "u_j": -1.6803154945373535,
+      "local_fd": -0.5799345970153809,
+      "banzhaf": -0.564375102519989,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Chemistry. Recognized widely",
+        "awarded the Royal Society"
+      ],
+      "order": 2,
+      "harsanyi": -0.5799345970153809
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "in Chemistry. Recognized widely"
+      ],
+      "order": 2,
+      "harsanyi": -0.5268885493278503
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "awarded the Royal Society"
+      ],
+      "order": 2,
+      "harsanyi": -0.11110961437225342
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "in Chemistry. Recognized widely",
+        "awarded the Royal Society"
+      ],
+      "order": 3,
+      "harsanyi": 0.031118929386138916
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.7105988264083862,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

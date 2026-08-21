@@ -1,0 +1,152 @@
+{
+  "key": "question_1687",
+  "group": "Q184366",
+  "generation_correct": false,
+  "right": "Thomas Henry Huxley",
+  "wrong": "Robert May, Baron May of Oxford",
+  "base_margin_wrong_minus_right": -0.08395645767450333,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 267,
+      "char_end": 289,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 94,
+      "token_end": 98
+    },
+    {
+      "char_start": 374,
+      "char_end": 395,
+      "text": "of the Croonian Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Croonian Medal and Lecture",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 115,
+      "token_end": 121
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.08395645767450333,
+      "wrong_score": -0.17302711308002472,
+      "right_score": -0.08907065540552139
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": -0.5699090957641602,
+      "margin": 0.4859526455402374,
+      "wrong_score": -0.026230497285723686,
+      "right_score": -0.5121831297874451
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Croonian Medal"
+      ],
+      "u": -0.5198532938957214,
+      "margin": 0.4358968138694763,
+      "wrong_score": -0.044645942747592926,
+      "right_score": -0.48054274916648865
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "President of the Royal",
+        "of the Croonian Medal"
+      ],
+      "u": -0.6625403165817261,
+      "margin": 0.578583836555481,
+      "wrong_score": -0.0904582291841507,
+      "right_score": -0.6690420508384705
+    }
+  ],
+  "single_u": [
+    -0.5699090957641602,
+    -0.5198532938957214
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "President of the Royal",
+        "of the Croonian Medal"
+      ],
+      "u_i": -0.5699090957641602,
+      "u_j": -0.5198532938957214,
+      "local_fd": 0.4272220730781555,
+      "banzhaf": 0.4272220730781555,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "President of the Royal",
+        "of the Croonian Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.4272220730781555
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.578583836555481,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

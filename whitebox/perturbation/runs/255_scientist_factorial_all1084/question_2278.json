@@ -1,0 +1,289 @@
+{
+  "key": "question_2278",
+  "group": "Q445519",
+  "generation_correct": true,
+  "right": "Susan Solomon",
+  "wrong": "Gabor A. Somorjai",
+  "base_margin_wrong_minus_right": 0.2629915475845337,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 125,
+      "char_end": 150,
+      "text": "This chemist was educated",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "chemist",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 67
+    },
+    {
+      "char_start": 154,
+      "char_end": 182,
+      "text": "the University of California",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of California, Berkeley",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 67,
+      "token_end": 72
+    },
+    {
+      "char_start": 370,
+      "char_end": 390,
+      "text": "and a doctor honoris",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "doctor honoris causa from the Pierre and Marie Curie University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 107,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.2629915475845337,
+      "wrong_score": -0.09194011986255646,
+      "right_score": -0.35493168234825134
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This chemist was educated"
+      ],
+      "u": 0.03913456201553345,
+      "margin": 0.22385698556900024,
+      "wrong_score": -0.11582914739847183,
+      "right_score": -0.3396861255168915
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the University of California"
+      ],
+      "u": -0.07576364278793335,
+      "margin": 0.33875519037246704,
+      "wrong_score": -0.13088461756706238,
+      "right_score": -0.4696398079395294
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This chemist was educated",
+        "the University of California"
+      ],
+      "u": -0.1744517982006073,
+      "margin": 0.437443345785141,
+      "wrong_score": -0.09168694168329239,
+      "right_score": -0.5291302800178528
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and a doctor honoris"
+      ],
+      "u": -0.570247232913971,
+      "margin": 0.8332387804985046,
+      "wrong_score": -0.037464190274477005,
+      "right_score": -0.8707029819488525
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This chemist was educated",
+        "and a doctor honoris"
+      ],
+      "u": -0.265954852104187,
+      "margin": 0.5289463996887207,
+      "wrong_score": -0.05254616588354111,
+      "right_score": -0.58149254322052
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of California",
+        "and a doctor honoris"
+      ],
+      "u": -0.33996015787124634,
+      "margin": 0.60295170545578,
+      "wrong_score": -0.056845445185899734,
+      "right_score": -0.6597971320152283
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This chemist was educated",
+        "the University of California",
+        "and a doctor honoris"
+      ],
+      "u": -0.39449262619018555,
+      "margin": 0.6574841737747192,
+      "wrong_score": -0.06544193625450134,
+      "right_score": -0.7229260802268982
+    }
+  ],
+  "single_u": [
+    0.03913456201553345,
+    -0.07576364278793335,
+    -0.570247232913971
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This chemist was educated",
+        "the University of California"
+      ],
+      "u_i": 0.03913456201553345,
+      "u_j": -0.07576364278793335,
+      "local_fd": -0.1378227174282074,
+      "banzhaf": -0.24832378327846527,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This chemist was educated",
+        "and a doctor honoris"
+      ],
+      "u_i": 0.03913456201553345,
+      "u_j": -0.570247232913971,
+      "local_fd": 0.2651578187942505,
+      "banzhaf": 0.15465675294399261,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the University of California",
+        "and a doctor honoris"
+      ],
+      "u_i": -0.07576364278793335,
+      "u_j": -0.570247232913971,
+      "local_fd": 0.30605071783065796,
+      "banzhaf": 0.19554965198040009,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of California",
+        "and a doctor honoris"
+      ],
+      "order": 2,
+      "harsanyi": 0.30605071783065796
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This chemist was educated",
+        "and a doctor honoris"
+      ],
+      "order": 2,
+      "harsanyi": 0.2651578187942505
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This chemist was educated",
+        "the University of California",
+        "and a doctor honoris"
+      ],
+      "order": 3,
+      "harsanyi": -0.22100213170051575
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This chemist was educated",
+        "the University of California"
+      ],
+      "order": 2,
+      "harsanyi": -0.1378227174282074
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6574841737747192,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "key": "question_0181",
+  "group": "Q901783",
+  "generation_correct": false,
+  "right": "Gilbert Stork",
+  "wrong": "Robert H. Grubbs",
+  "base_margin_wrong_minus_right": 0.4809962213039398,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 186,
+      "char_end": 211,
+      "text": "the University of Florida",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Florida",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 76,
+      "token_end": 83
+    },
+    {
+      "char_start": 366,
+      "char_end": 385,
+      "text": "and the Roger Adams",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Roger Adams Award in Organic Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 117,
+      "token_end": 121
+    },
+    {
+      "char_start": 386,
+      "char_end": 412,
+      "text": "Award in Organic Chemistry",
+      "kind": "attribute",
+      "field": "field",
+      "value": "organic chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 127
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.4809962213039398,
+      "wrong_score": -0.025734154507517815,
+      "right_score": -0.5067303776741028
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Florida"
+      ],
+      "u": -0.3055153787136078,
+      "margin": 0.7865116000175476,
+      "wrong_score": -0.011935664340853691,
+      "right_score": -0.7984472513198853
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Roger Adams"
+      ],
+      "u": -0.031043976545333862,
+      "margin": 0.5120401978492737,
+      "wrong_score": -0.02404913119971752,
+      "right_score": -0.536089301109314
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Florida",
+        "and the Roger Adams"
+      ],
+      "u": -1.2118943929672241,
+      "margin": 1.6928906440734863,
+      "wrong_score": -0.011731534264981747,
+      "right_score": -1.7046221494674683
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Award in Organic Chemistry"
+      ],
+      "u": -0.1816045343875885,
+      "margin": 0.6626007556915283,
+      "wrong_score": -0.013399895280599594,
+      "right_score": -0.6760006546974182
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Florida",
+        "Award in Organic Chemistry"
+      ],
+      "u": -0.7105817794799805,
+      "margin": 1.1915780305862427,
+      "wrong_score": -0.007703489623963833,
+      "right_score": -1.1992815732955933
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Roger Adams",
+        "Award in Organic Chemistry"
+      ],
+      "u": 0.23137298226356506,
+      "margin": 0.24962323904037476,
+      "wrong_score": -0.0621781125664711,
+      "right_score": -0.31180134415626526
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Florida",
+        "and the Roger Adams",
+        "Award in Organic Chemistry"
+      ],
+      "u": -0.5920209884643555,
+      "margin": 1.0730172395706177,
+      "wrong_score": -0.016224931925535202,
+      "right_score": -1.0892422199249268
+    }
+  ],
+  "single_u": [
+    -0.3055153787136078,
+    -0.031043976545333862,
+    -0.1816045343875885
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Florida",
+        "and the Roger Adams"
+      ],
+      "u_i": -0.3055153787136078,
+      "u_j": -0.031043976545333862,
+      "local_fd": -0.8753349781036377,
+      "banzhaf": -0.5848758220672607,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the University of Florida",
+        "Award in Organic Chemistry"
+      ],
+      "u_i": -0.3055153787136078,
+      "u_j": -0.1816045343875885,
+      "local_fd": -0.22346186637878418,
+      "banzhaf": 0.06699728965759277,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and the Roger Adams",
+        "Award in Organic Chemistry"
+      ],
+      "u_i": -0.031043976545333862,
+      "u_j": -0.1816045343875885,
+      "local_fd": 0.4440214931964874,
+      "banzhaf": 0.734480619430542,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Florida",
+        "and the Roger Adams"
+      ],
+      "order": 2,
+      "harsanyi": -0.8753350377082825
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Florida",
+        "and the Roger Adams",
+        "Award in Organic Chemistry"
+      ],
+      "order": 3,
+      "harsanyi": 0.5809183120727539
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Roger Adams",
+        "Award in Organic Chemistry"
+      ],
+      "order": 2,
+      "harsanyi": 0.4440214931964874
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Florida",
+        "Award in Organic Chemistry"
+      ],
+      "order": 2,
+      "harsanyi": -0.22346186637878418
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.0730172395706177,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "key": "question_1596",
+  "group": "Q192112",
+  "generation_correct": false,
+  "right": "Peter Higgs",
+  "wrong": "Nevill Mott",
+  "base_margin_wrong_minus_right": -1.8508459329605103,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 285,
+      "char_end": 304,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 86,
+      "token_end": 92
+    },
+    {
+      "char_start": 358,
+      "char_end": 383,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 103,
+      "token_end": 109
+    },
+    {
+      "char_start": 488,
+      "char_end": 491,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 130,
+      "token_end": 131
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.8508459329605103,
+      "wrong_score": -1.8519302606582642,
+      "right_score": -0.0010843150084838271
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.8890026807785034,
+      "margin": -0.9618432521820068,
+      "wrong_score": -1.002341628074646,
+      "right_score": -0.04049836844205856
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": -2.530190944671631,
+      "margin": 0.6793451309204102,
+      "wrong_score": -0.03953245282173157,
+      "right_score": -0.7188775539398193
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "including the Nobel Prize"
+      ],
+      "u": -2.388477325439453,
+      "margin": 0.5376313924789429,
+      "wrong_score": -0.04680873081088066,
+      "right_score": -0.5844401121139526
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": -1.0025999546051025,
+      "margin": -0.8482459187507629,
+      "wrong_score": -0.8555159568786621,
+      "right_score": -0.007270065136253834
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "not"
+      ],
+      "u": -1.5551846027374268,
+      "margin": -0.2956612706184387,
+      "wrong_score": -0.3748036324977875,
+      "right_score": -0.07914235442876816
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "not"
+      ],
+      "u": -2.8149936199188232,
+      "margin": 0.964147686958313,
+      "wrong_score": -0.015187754295766354,
+      "right_score": -0.9793354272842407
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "including the Nobel Prize",
+        "not"
+      ],
+      "u": -2.3769211769104004,
+      "margin": 0.5260751247406006,
+      "wrong_score": -0.04448604956269264,
+      "right_score": -0.5705611705780029
+    }
+  ],
+  "single_u": [
+    -0.8890026807785034,
+    -2.530190944671631,
+    -1.0025999546051025
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "including the Nobel Prize"
+      ],
+      "u_i": -0.8890026807785034,
+      "u_j": -2.530190944671631,
+      "local_fd": 1.0307163000106812,
+      "banzhaf": 1.0106866359710693,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "not"
+      ],
+      "u_i": -0.8890026807785034,
+      "u_j": -1.0025999546051025,
+      "local_fd": 0.3364180326461792,
+      "banzhaf": 0.31638842821121216,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Nobel Prize",
+        "not"
+      ],
+      "u_i": -2.530190944671631,
+      "u_j": -1.0025999546051025,
+      "local_fd": 0.7177972793579102,
+      "banzhaf": 0.6977676749229431,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "including the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 1.0307163000106812
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.7177972793579102
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.3364180326461792
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "including the Nobel Prize",
+        "not"
+      ],
+      "order": 3,
+      "harsanyi": -0.04005920886993408
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5260751247406006,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

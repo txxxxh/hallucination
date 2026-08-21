@@ -1,0 +1,300 @@
+{
+  "key": "question_0440",
+  "group": "Q425980",
+  "generation_correct": true,
+  "right": "Frank Albert Cotton",
+  "wrong": "Henry Taube",
+  "base_margin_wrong_minus_right": 0.20955204963684082,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 341,
+      "char_end": 369,
+      "text": "Award, the American Chemical",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "American Chemical Society Award in Inorganic Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 94,
+      "token_end": 101
+    },
+    {
+      "char_start": 430,
+      "char_end": 452,
+      "text": "Science, the NAS Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 117
+    },
+    {
+      "char_start": 552,
+      "char_end": 576,
+      "text": "elected a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 133,
+      "token_end": 137
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.20955204963684082,
+      "wrong_score": -0.14574962854385376,
+      "right_score": -0.3553016781806946
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Award, the American Chemical"
+      ],
+      "u": 0.16761237382888794,
+      "margin": 0.04193967580795288,
+      "wrong_score": -0.21417421102523804,
+      "right_score": -0.2561138868331909
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Science, the NAS Award"
+      ],
+      "u": 0.2922220826148987,
+      "margin": -0.08267003297805786,
+      "wrong_score": -0.27919405698776245,
+      "right_score": -0.1965240240097046
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, the American Chemical",
+        "Science, the NAS Award"
+      ],
+      "u": 0.3757748007774353,
+      "margin": -0.16622275114059448,
+      "wrong_score": -0.3297837972640991,
+      "right_score": -0.16356104612350464
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member"
+      ],
+      "u": -0.2490384876728058,
+      "margin": 0.4585905373096466,
+      "wrong_score": -0.0907563790678978,
+      "right_score": -0.549346923828125
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Award, the American Chemical",
+        "elected a Foreign Member"
+      ],
+      "u": -0.2909355163574219,
+      "margin": 0.5004875659942627,
+      "wrong_score": -0.07023704051971436,
+      "right_score": -0.570724606513977
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the NAS Award",
+        "elected a Foreign Member"
+      ],
+      "u": -0.20782727003097534,
+      "margin": 0.41737931966781616,
+      "wrong_score": -0.08651691675186157,
+      "right_score": -0.5038962364196777
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the American Chemical",
+        "Science, the NAS Award",
+        "elected a Foreign Member"
+      ],
+      "u": -0.20763137936592102,
+      "margin": 0.41718342900276184,
+      "wrong_score": -0.08707597106695175,
+      "right_score": -0.5042594075202942
+    }
+  ],
+  "single_u": [
+    0.16761237382888794,
+    0.2922220826148987,
+    -0.2490384876728058
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Award, the American Chemical",
+        "Science, the NAS Award"
+      ],
+      "u_i": 0.16761237382888794,
+      "u_j": 0.2922220826148987,
+      "local_fd": -0.08405965566635132,
+      "banzhaf": -0.020983368158340454,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Award, the American Chemical",
+        "elected a Foreign Member"
+      ],
+      "u_i": 0.16761237382888794,
+      "u_j": -0.2490384876728058,
+      "local_fd": -0.20950940251350403,
+      "banzhaf": -0.14643312990665436,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Science, the NAS Award",
+        "elected a Foreign Member"
+      ],
+      "u_i": 0.2922220826148987,
+      "u_j": -0.2490384876728058,
+      "local_fd": -0.25101086497306824,
+      "banzhaf": -0.18793459236621857,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the NAS Award",
+        "elected a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.25101086497306824
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Award, the American Chemical",
+        "elected a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.20950940251350403
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the American Chemical",
+        "Science, the NAS Award",
+        "elected a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": 0.12615257501602173
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, the American Chemical",
+        "Science, the NAS Award"
+      ],
+      "order": 2,
+      "harsanyi": -0.08405965566635132
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Science, the NAS Award"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.41718342900276184,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

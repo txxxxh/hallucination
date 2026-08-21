@@ -1,0 +1,290 @@
+{
+  "key": "question_0484",
+  "group": "Q899517",
+  "generation_correct": true,
+  "right": "Allen J. Bard",
+  "wrong": "Harold Clayton Urey",
+  "base_margin_wrong_minus_right": -0.4160021245479584,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 318,
+      "char_end": 345,
+      "text": "including the Willard Gibbs",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Willard Gibbs Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 102
+    },
+    {
+      "char_start": 374,
+      "char_end": 397,
+      "text": "the Linus Pauling Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Linus Pauling Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 107,
+      "token_end": 112
+    },
+    {
+      "char_start": 399,
+      "char_end": 421,
+      "text": "and the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 112,
+      "token_end": 117
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.4160021245479584,
+      "wrong_score": -0.4523191452026367,
+      "right_score": -0.036317020654678345
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Willard Gibbs"
+      ],
+      "u": 0.26438143849372864,
+      "margin": -0.680383563041687,
+      "wrong_score": -0.6953800916671753,
+      "right_score": -0.014996529556810856
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Linus Pauling Award"
+      ],
+      "u": 0.0835096538066864,
+      "margin": -0.4995117783546448,
+      "wrong_score": -0.5309646725654602,
+      "right_score": -0.031452879309654236
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Willard Gibbs",
+        "the Linus Pauling Award"
+      ],
+      "u": 0.12679150700569153,
+      "margin": -0.5427936315536499,
+      "wrong_score": -0.5821549296379089,
+      "right_score": -0.03936130180954933
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the National Medal"
+      ],
+      "u": -0.23348240554332733,
+      "margin": -0.18251971900463104,
+      "wrong_score": -0.29445624351501465,
+      "right_score": -0.1119365245103836
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Willard Gibbs",
+        "and the National Medal"
+      ],
+      "u": 0.20576801896095276,
+      "margin": -0.6217701435089111,
+      "wrong_score": -0.7114337086677551,
+      "right_score": -0.08966358006000519
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Linus Pauling Award",
+        "and the National Medal"
+      ],
+      "u": -0.006517738103866577,
+      "margin": -0.4094843864440918,
+      "wrong_score": -0.627367377281189,
+      "right_score": -0.21788300573825836
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Willard Gibbs",
+        "the Linus Pauling Award",
+        "and the National Medal"
+      ],
+      "u": 0.16183045506477356,
+      "margin": -0.5778325796127319,
+      "wrong_score": -0.8338155150413513,
+      "right_score": -0.255982905626297
+    }
+  ],
+  "single_u": [
+    0.26438143849372864,
+    0.0835096538066864,
+    -0.23348240554332733
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Willard Gibbs",
+        "the Linus Pauling Award"
+      ],
+      "u_i": 0.26438143849372864,
+      "u_j": 0.0835096538066864,
+      "local_fd": -0.2210995852947235,
+      "banzhaf": -0.24600090086460114,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Willard Gibbs",
+        "and the National Medal"
+      ],
+      "u_i": 0.26438143849372864,
+      "u_j": -0.23348240554332733,
+      "local_fd": 0.17486898601055145,
+      "banzhaf": 0.14996767044067383,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Linus Pauling Award",
+        "and the National Medal"
+      ],
+      "u_i": 0.0835096538066864,
+      "u_j": -0.23348240554332733,
+      "local_fd": 0.14345501363277435,
+      "banzhaf": 0.11855369061231613,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Willard Gibbs",
+        "the Linus Pauling Award"
+      ],
+      "order": 2,
+      "harsanyi": -0.2210995852947235
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Willard Gibbs",
+        "and the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.17486898601055145
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Linus Pauling Award",
+        "and the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.14345501363277435
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Willard Gibbs",
+        "the Linus Pauling Award",
+        "and the National Medal"
+      ],
+      "order": 3,
+      "harsanyi": -0.04980264604091644
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.5778325796127319,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

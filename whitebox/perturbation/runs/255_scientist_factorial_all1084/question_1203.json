@@ -1,0 +1,146 @@
+{
+  "key": "question_1203",
+  "group": "Q1690702",
+  "generation_correct": true,
+  "right": "Joan Steitz",
+  "wrong": "Frederick Sanger",
+  "base_margin_wrong_minus_right": -0.8981508016586304,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 192,
+      "char_end": 217,
+      "text": "the field of biochemistry",
+      "kind": "attribute",
+      "field": "field",
+      "value": "biochemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 70,
+      "token_end": 74
+    },
+    {
+      "char_start": 247,
+      "char_end": 271,
+      "text": "them the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 79,
+      "token_end": 83
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.8981508016586304,
+      "wrong_score": -0.9062268137931824,
+      "right_score": -0.008076007477939129
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of biochemistry"
+      ],
+      "u": -0.21690410375595093,
+      "margin": -0.6812466979026794,
+      "wrong_score": -0.7443886995315552,
+      "right_score": -0.06314202398061752
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "them the Canada Gairdner"
+      ],
+      "u": -0.6413618326187134,
+      "margin": -0.256788969039917,
+      "wrong_score": -0.3387671411037445,
+      "right_score": -0.08197817951440811
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of biochemistry",
+        "them the Canada Gairdner"
+      ],
+      "u": -0.6582942605018616,
+      "margin": -0.2398565411567688,
+      "wrong_score": -0.32508590817451477,
+      "right_score": -0.08522936701774597
+    }
+  ],
+  "single_u": [
+    -0.21690410375595093,
+    -0.6413618326187134
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of biochemistry",
+        "them the Canada Gairdner"
+      ],
+      "u_i": -0.21690410375595093,
+      "u_j": -0.6413618326187134,
+      "local_fd": 0.19997167587280273,
+      "banzhaf": 0.19997167587280273,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of biochemistry",
+        "them the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": 0.19997167587280273
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2398565411567688,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

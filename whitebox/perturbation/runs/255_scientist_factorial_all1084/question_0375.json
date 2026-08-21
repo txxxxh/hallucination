@@ -1,0 +1,146 @@
+{
+  "key": "question_0375",
+  "group": "Q311003",
+  "generation_correct": false,
+  "right": "Craig Venter",
+  "wrong": "Roger Y. Tsien",
+  "base_margin_wrong_minus_right": 1.0947333574295044,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 220,
+      "char_end": 252,
+      "text": "Allyn Taylor International Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "J. Allyn Taylor International Prize in Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 83,
+      "token_end": 89
+    },
+    {
+      "char_start": 297,
+      "char_end": 319,
+      "text": "the University of Hong",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctor of the University of Hong Kong",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 96,
+      "token_end": 100
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.0947333574295044,
+      "wrong_score": -0.026451488956809044,
+      "right_score": -1.1211848258972168
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Allyn Taylor International Prize"
+      ],
+      "u": 0.48510581254959106,
+      "margin": 0.6096275448799133,
+      "wrong_score": -0.11167736351490021,
+      "right_score": -0.7213048934936523
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the University of Hong"
+      ],
+      "u": 0.2657551169395447,
+      "margin": 0.8289782404899597,
+      "wrong_score": -0.2383134812116623,
+      "right_score": -1.0672917366027832
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Allyn Taylor International Prize",
+        "the University of Hong"
+      ],
+      "u": 0.2651100158691406,
+      "margin": 0.8296233415603638,
+      "wrong_score": -0.16834475100040436,
+      "right_score": -0.9979680776596069
+    }
+  ],
+  "single_u": [
+    0.48510581254959106,
+    0.2657551169395447
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Allyn Taylor International Prize",
+        "the University of Hong"
+      ],
+      "u_i": 0.48510581254959106,
+      "u_j": 0.2657551169395447,
+      "local_fd": -0.4857509136199951,
+      "banzhaf": -0.4857509136199951,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Allyn Taylor International Prize",
+        "the University of Hong"
+      ],
+      "order": 2,
+      "harsanyi": -0.4857509136199951
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8296233415603638,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

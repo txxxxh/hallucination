@@ -1,0 +1,144 @@
+{
+  "key": "question_2203",
+  "group": "Q44412",
+  "generation_correct": false,
+  "right": "Hans Christian Ørsted",
+  "wrong": "Niels Bohr",
+  "base_margin_wrong_minus_right": 0.6003140211105347,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 366,
+      "char_end": 387,
+      "text": "for Sciences and Arts",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 106,
+      "token_end": 110
+    },
+    {
+      "char_start": 544,
+      "char_end": 566,
+      "text": "Order of the Dannebrog",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Dannebrog",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 139,
+      "token_end": 145
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.6003140211105347,
+      "wrong_score": -0.010480223223567009,
+      "right_score": -0.6107942461967468
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "for Sciences and Arts"
+      ],
+      "u": 0.12543407082557678,
+      "margin": 0.4748799502849579,
+      "wrong_score": -0.01768203265964985,
+      "right_score": -0.4925619959831238
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Order of the Dannebrog"
+      ],
+      "u": -0.25060105323791504,
+      "margin": 0.8509150743484497,
+      "wrong_score": -0.011540994048118591,
+      "right_score": -0.8624560832977295
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "for Sciences and Arts",
+        "Order of the Dannebrog"
+      ],
+      "u": -0.24919551610946655,
+      "margin": 0.8495095372200012,
+      "wrong_score": -0.011675413697957993,
+      "right_score": -0.8611849546432495
+    }
+  ],
+  "single_u": [
+    0.12543407082557678,
+    -0.25060105323791504
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "for Sciences and Arts",
+        "Order of the Dannebrog"
+      ],
+      "u_i": 0.12543407082557678,
+      "u_j": -0.25060105323791504,
+      "local_fd": -0.1240285336971283,
+      "banzhaf": -0.1240285336971283,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "for Sciences and Arts",
+        "Order of the Dannebrog"
+      ],
+      "order": 2,
+      "harsanyi": -0.1240285336971283
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8495095372200012,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

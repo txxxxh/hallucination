@@ -1,0 +1,145 @@
+{
+  "key": "question_0883",
+  "group": "Q131112",
+  "generation_correct": true,
+  "right": "Paul Krugman",
+  "wrong": "Daniel Kahneman",
+  "base_margin_wrong_minus_right": -2.4171204566955566,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 344,
+      "char_end": 366,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 97,
+      "token_end": 101
+    },
+    {
+      "char_start": 633,
+      "char_end": 655,
+      "text": "on the social sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Princess of Asturias Award for Social Sciences",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 149,
+      "token_end": 153
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.4171204566955566,
+      "wrong_score": -2.4177346229553223,
+      "right_score": -0.0006140989135019481
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -1.6900830268859863,
+      "margin": -0.7270374298095703,
+      "wrong_score": -0.7739962339401245,
+      "right_score": -0.046958815306425095
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "on the social sciences"
+      ],
+      "u": -1.3673638105392456,
+      "margin": -1.049756646156311,
+      "wrong_score": -1.0599136352539062,
+      "right_score": -0.010156937874853611
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "on the social sciences"
+      ],
+      "u": -1.6583850383758545,
+      "margin": -0.7587354779243469,
+      "wrong_score": -0.7975296974182129,
+      "right_score": -0.03879423812031746
+    }
+  ],
+  "single_u": [
+    -1.6900830268859863,
+    -1.3673638105392456
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the American",
+        "on the social sciences"
+      ],
+      "u_i": -1.6900830268859863,
+      "u_j": -1.3673638105392456,
+      "local_fd": 1.3990617990493774,
+      "banzhaf": 1.3990617990493774,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "on the social sciences"
+      ],
+      "order": 2,
+      "harsanyi": 1.3990617990493774
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.7587354779243469,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

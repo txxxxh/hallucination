@@ -1,0 +1,290 @@
+{
+  "key": "question_1195",
+  "group": "Q512459",
+  "generation_correct": false,
+  "right": "Isabella Karle",
+  "wrong": "Dorothy Hodgkin",
+  "base_margin_wrong_minus_right": -0.5470448136329651,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 169,
+      "char_end": 186,
+      "text": "work as a chemist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 73,
+      "token_end": 79
+    },
+    {
+      "char_start": 269,
+      "char_end": 297,
+      "text": "the field of crystallography",
+      "kind": "attribute",
+      "field": "field",
+      "value": "crystallography",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 94,
+      "token_end": 98
+    },
+    {
+      "char_start": 328,
+      "char_end": 350,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 105,
+      "token_end": 109
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5470448136329651,
+      "wrong_score": -0.5641211271286011,
+      "right_score": -0.01707633212208748
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "work as a chemist"
+      ],
+      "u": 0.8366755843162537,
+      "margin": -1.3837203979492188,
+      "wrong_score": -1.3855031728744507,
+      "right_score": -0.0017828169511631131
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the field of crystallography"
+      ],
+      "u": 0.021904349327087402,
+      "margin": -0.5689491629600525,
+      "wrong_score": -0.5919041037559509,
+      "right_score": -0.02295495755970478
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "work as a chemist",
+        "the field of crystallography"
+      ],
+      "u": 0.1753828525543213,
+      "margin": -0.7224276661872864,
+      "wrong_score": -0.7355991005897522,
+      "right_score": -0.013171423226594925
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.41823887825012207,
+      "margin": -0.12880593538284302,
+      "wrong_score": -0.236061692237854,
+      "right_score": -0.10725575685501099
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "work as a chemist",
+        "Fellow of the American"
+      ],
+      "u": -0.35566580295562744,
+      "margin": -0.19137899577617645,
+      "wrong_score": -0.2698638141155243,
+      "right_score": -0.07848481833934784
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of crystallography",
+        "Fellow of the American"
+      ],
+      "u": -0.29220250248908997,
+      "margin": -0.2548423111438751,
+      "wrong_score": -0.32829704880714417,
+      "right_score": -0.07345473021268845
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "work as a chemist",
+        "the field of crystallography",
+        "Fellow of the American"
+      ],
+      "u": -0.3747946321964264,
+      "margin": -0.1722501814365387,
+      "wrong_score": -0.2734045386314392,
+      "right_score": -0.10115434974431992
+    }
+  ],
+  "single_u": [
+    0.8366755843162537,
+    0.021904349327087402,
+    -0.41823887825012207
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "work as a chemist",
+        "the field of crystallography"
+      ],
+      "u_i": 0.8366755843162537,
+      "u_j": 0.021904349327087402,
+      "local_fd": -0.6831970810890198,
+      "banzhaf": -0.4141811430454254,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "work as a chemist",
+        "Fellow of the American"
+      ],
+      "u_i": 0.8366755843162537,
+      "u_j": -0.41823887825012207,
+      "local_fd": -0.7741024494171143,
+      "banzhaf": -0.5050865411758423,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the field of crystallography",
+        "Fellow of the American"
+      ],
+      "u_i": 0.021904349327087402,
+      "u_j": -0.41823887825012207,
+      "local_fd": 0.1041320264339447,
+      "banzhaf": 0.37314796447753906,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "work as a chemist",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.774102509021759
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "work as a chemist",
+        "the field of crystallography"
+      ],
+      "order": 2,
+      "harsanyi": -0.6831970810890198
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "work as a chemist",
+        "the field of crystallography",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.5380318760871887
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of crystallography",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.1041320264339447
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.1722501814365387,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

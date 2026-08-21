@@ -1,0 +1,151 @@
+{
+  "key": "question_1313",
+  "group": "Q48973",
+  "generation_correct": true,
+  "right": "Glenn T. Seaborg",
+  "wrong": "John A. Pople",
+  "base_margin_wrong_minus_right": -0.10456067323684692,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 220,
+      "char_end": 242,
+      "text": "the field of chemistry",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 78,
+      "token_end": 82
+    },
+    {
+      "char_start": 357,
+      "char_end": 382,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 101,
+      "token_end": 105
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.10456067323684692,
+      "wrong_score": -0.1692226231098175,
+      "right_score": -0.06466194987297058
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of chemistry"
+      ],
+      "u": -0.08804646134376526,
+      "margin": -0.016514211893081665,
+      "wrong_score": -0.1447804868221283,
+      "right_score": -0.12826627492904663
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": 0.12764319777488708,
+      "margin": -0.232203871011734,
+      "wrong_score": -0.29199811816215515,
+      "right_score": -0.05979425460100174
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize"
+      ],
+      "u": -0.2361898124217987,
+      "margin": 0.13162913918495178,
+      "wrong_score": -0.08698288351297379,
+      "right_score": -0.21861203014850616
+    }
+  ],
+  "single_u": [
+    -0.08804646134376526,
+    0.12764319777488708
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize"
+      ],
+      "u_i": -0.08804646134376526,
+      "u_j": 0.12764319777488708,
+      "local_fd": -0.27578654885292053,
+      "banzhaf": -0.27578654885292053,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.27578654885292053
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.13162913918495178,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

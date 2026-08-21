@@ -37,7 +37,7 @@ def scan(att,prep,ss):
  import torch
  z=torch.zeros(prep.prompt_ids.shape[0],device=att.device); A=torch.stack([z,*[att.alpha_from_spans(prep,[i]) for i in range(len(ss))]]);p,o=att.class_scores_batched(prep,A);return p.numpy(),o.numpy()
 
-def selected_hidden(att,prep,ids):
+def selected_hidden(att,prep,ids,layer14_pooling="last"):
  import torch
  z=torch.zeros(prep.prompt_ids.shape[0],device=att.device);A=torch.stack([z,*[att.alpha_from_spans(prep,[int(i)]) for i in ids]]); outs=[[],[]]
  for start in range(0,len(A),att.max_rows):
@@ -46,7 +46,11 @@ def selected_hidden(att,prep,ids):
    ae=att.emb_layer(ans).detach().unsqueeze(0).expand(len(a),-1,-1);seq=torch.cat([pe,ae.to(pe.dtype)],1);mask=torch.ones(seq.shape[:2],dtype=torch.long,device=att.device)
    with torch.inference_mode():out=att.model(inputs_embeds=seq,attention_mask=mask,output_hidden_states=True,use_cache=False)
    h16=out.hidden_states[16][:,pe.shape[1]+len(ans)-1].float().cpu();outs[ci].append(h16)
-   if ci==0 and start==0: layer14=out.hidden_states[14][0,pe.shape[1]+len(ans)-1].float().cpu().numpy()
+   if ci==0 and start==0:
+    answer_hidden=out.hidden_states[14][0,pe.shape[1]:pe.shape[1]+len(ans)].float()
+    if layer14_pooling=="mean": layer14=answer_hidden.mean(0).cpu().numpy()
+    elif layer14_pooling=="last": layer14=answer_hidden[-1].cpu().numpy()
+    else: raise ValueError(f"unknown layer14 pooling: {layer14_pooling}")
    del out,seq
   del pe
  return torch.cat(outs[0]).numpy(),torch.cat(outs[1]).numpy(),layer14

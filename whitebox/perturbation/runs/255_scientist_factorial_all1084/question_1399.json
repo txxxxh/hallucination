@@ -1,0 +1,295 @@
+{
+  "key": "question_1399",
+  "group": "Q192592",
+  "generation_correct": false,
+  "right": "Kenneth Arrow",
+  "wrong": "Daniel Kahneman",
+  "base_margin_wrong_minus_right": -1.4583954811096191,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 369,
+      "char_end": 394,
+      "text": "both the American Academy",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 95,
+      "token_end": 100
+    },
+    {
+      "char_start": 498,
+      "char_end": 519,
+      "text": "the Prize in Economic",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Prize in Economic Sciences in Memory of Alfred Nobel",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 116,
+      "token_end": 123
+    },
+    {
+      "char_start": 644,
+      "char_end": 673,
+      "text": "honorary doctorate from Paris",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary doctorate from the Julius Maximilians University of Würzburg",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 145,
+      "token_end": 149
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.4583954811096191,
+      "wrong_score": -1.464342474937439,
+      "right_score": -0.005947023630142212
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "both the American Academy"
+      ],
+      "u": -0.3750039339065552,
+      "margin": -1.083391547203064,
+      "wrong_score": -1.1026396751403809,
+      "right_score": -0.019248127937316895
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Prize in Economic"
+      ],
+      "u": -0.5000370144844055,
+      "margin": -0.9583584666252136,
+      "wrong_score": -0.9840671420097351,
+      "right_score": -0.025708649307489395
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "both the American Academy",
+        "the Prize in Economic"
+      ],
+      "u": -1.125038504600525,
+      "margin": -0.33335694670677185,
+      "wrong_score": -0.4614054560661316,
+      "right_score": -0.12804850935935974
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "honorary doctorate from Paris"
+      ],
+      "u": -2.000070810317993,
+      "margin": 0.5416752696037292,
+      "wrong_score": -0.06330464780330658,
+      "right_score": -0.604979932308197
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "both the American Academy",
+        "honorary doctorate from Paris"
+      ],
+      "u": -2.6250805854797363,
+      "margin": 1.1666852235794067,
+      "wrong_score": -0.01444490160793066,
+      "right_score": -1.1811301708221436
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "honorary doctorate from Paris"
+      ],
+      "u": -2.750075340270996,
+      "margin": 1.291679859161377,
+      "wrong_score": -0.00924934446811676,
+      "right_score": -1.3009291887283325
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "both the American Academy",
+        "the Prize in Economic",
+        "honorary doctorate from Paris"
+      ],
+      "u": -3.000082492828369,
+      "margin": 1.54168701171875,
+      "wrong_score": -0.007495425175875425,
+      "right_score": -1.549182415008545
+    }
+  ],
+  "single_u": [
+    -0.3750039339065552,
+    -0.5000370144844055,
+    -2.000070810317993
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "both the American Academy",
+        "the Prize in Economic"
+      ],
+      "u_i": -0.3750039339065552,
+      "u_j": -0.5000370144844055,
+      "local_fd": -0.2499975562095642,
+      "banzhaf": 0.06250253319740295,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "both the American Academy",
+        "honorary doctorate from Paris"
+      ],
+      "u_i": -0.3750039339065552,
+      "u_j": -2.000070810317993,
+      "local_fd": -0.25000596046447754,
+      "banzhaf": 0.0624941885471344,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Prize in Economic",
+        "honorary doctorate from Paris"
+      ],
+      "u_i": -0.5000370144844055,
+      "u_j": -2.000070810317993,
+      "local_fd": -0.2499675750732422,
+      "banzhaf": 0.06253254413604736,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "both the American Academy",
+        "the Prize in Economic",
+        "honorary doctorate from Paris"
+      ],
+      "order": 3,
+      "harsanyi": 0.6250001788139343
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "both the American Academy",
+        "honorary doctorate from Paris"
+      ],
+      "order": 2,
+      "harsanyi": -0.250005841255188
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "both the American Academy",
+        "the Prize in Economic"
+      ],
+      "order": 2,
+      "harsanyi": -0.2499975562095642
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "honorary doctorate from Paris"
+      ],
+      "order": 2,
+      "harsanyi": -0.2499675154685974
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.54168701171875,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 18,
+    "n_excluded": 12,
+    "max_candidates": 6
+  }
+}

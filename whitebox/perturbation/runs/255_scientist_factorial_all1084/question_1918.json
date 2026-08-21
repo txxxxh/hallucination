@@ -1,0 +1,145 @@
+{
+  "key": "question_1918",
+  "group": "Q26321",
+  "generation_correct": true,
+  "right": "Elizabeth Blackburn",
+  "wrong": "Frank Macfarlane Burnet",
+  "base_margin_wrong_minus_right": 1.2167028188705444,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 149,
+      "char_end": 187,
+      "text": "distinguished scientist and researcher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "researcher",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 73
+    },
+    {
+      "char_start": 205,
+      "char_end": 232,
+      "text": "the University of Melbourne",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Melbourne",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 76,
+      "token_end": 81
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.2167028188705444,
+      "wrong_score": -0.021386591717600822,
+      "right_score": -1.2380894422531128
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "distinguished scientist and researcher"
+      ],
+      "u": -1.252710223197937,
+      "margin": 2.4694130420684814,
+      "wrong_score": -0.01506928913295269,
+      "right_score": -2.4844822883605957
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the University of Melbourne"
+      ],
+      "u": -1.7365411520004272,
+      "margin": 2.9532439708709717,
+      "wrong_score": -0.008846601471304893,
+      "right_score": -2.962090492248535
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "distinguished scientist and researcher",
+        "the University of Melbourne"
+      ],
+      "u": -1.4904099702835083,
+      "margin": 2.7071127891540527,
+      "wrong_score": -0.013425244949758053,
+      "right_score": -2.7205381393432617
+    }
+  ],
+  "single_u": [
+    -1.252710223197937,
+    -1.7365411520004272
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "distinguished scientist and researcher",
+        "the University of Melbourne"
+      ],
+      "u_i": -1.252710223197937,
+      "u_j": -1.7365411520004272,
+      "local_fd": 1.498841404914856,
+      "banzhaf": 1.498841404914856,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "distinguished scientist and researcher",
+        "the University of Melbourne"
+      ],
+      "order": 2,
+      "harsanyi": 1.498841404914856
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 2.7071127891540527,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

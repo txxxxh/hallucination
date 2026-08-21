@@ -1,0 +1,314 @@
+{
+  "key": "question_1925",
+  "group": "Q107420",
+  "generation_correct": false,
+  "right": "Sheldon Glashow",
+  "wrong": "David Gross",
+  "base_margin_wrong_minus_right": 0.3313159942626953,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 211,
+      "char_end": 241,
+      "text": "educated at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 71,
+      "token_end": 77
+    },
+    {
+      "char_start": 326,
+      "char_end": 351,
+      "text": "including the High Energy",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "High Energy and Particle Physics Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 92,
+      "token_end": 97
+    },
+    {
+      "char_start": 352,
+      "char_end": 378,
+      "text": "and Particle Physics Prize",
+      "kind": "attribute",
+      "field": "field",
+      "value": "particle physics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 96,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.3313159942626953,
+      "wrong_score": -0.07299017161130905,
+      "right_score": -0.40430617332458496
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Harvard University"
+      ],
+      "u": 0.2685222923755646,
+      "margin": 0.06279370188713074,
+      "wrong_score": -0.18681353330612183,
+      "right_score": -0.24960723519325256
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the High Energy"
+      ],
+      "u": -0.15734419226646423,
+      "margin": 0.48866018652915955,
+      "wrong_score": -0.05353697016835213,
+      "right_score": -0.5421971678733826
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "including the High Energy"
+      ],
+      "u": 0.26395201683044434,
+      "margin": 0.06736397743225098,
+      "wrong_score": -0.18977102637290955,
+      "right_score": -0.2571350038051605
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and Particle Physics Prize"
+      ],
+      "u": -0.04376411437988281,
+      "margin": 0.3750801086425781,
+      "wrong_score": -0.12788324058055878,
+      "right_score": -0.5029633641242981
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "and Particle Physics Prize"
+      ],
+      "u": 0.5870648622512817,
+      "margin": -0.25574883818626404,
+      "wrong_score": -0.5488911867141724,
+      "right_score": -0.2931423485279083
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the High Energy",
+        "and Particle Physics Prize"
+      ],
+      "u": 0.28222522139549255,
+      "margin": 0.04909077286720276,
+      "wrong_score": -0.4394438862800598,
+      "right_score": -0.4885346591472626
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "including the High Energy",
+        "and Particle Physics Prize"
+      ],
+      "u": 1.1919002532958984,
+      "margin": -0.8605842590332031,
+      "wrong_score": -1.3459136486053467,
+      "right_score": -0.48532938957214355
+    }
+  ],
+  "single_u": [
+    0.2685222923755646,
+    -0.15734419226646423,
+    -0.04376411437988281
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Harvard University",
+        "including the High Energy"
+      ],
+      "u_i": 0.2685222923755646,
+      "u_j": -0.15734419226646423,
+      "local_fd": 0.152773916721344,
+      "banzhaf": 0.21580998599529266,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "educated at Harvard University",
+        "and Particle Physics Prize"
+      ],
+      "u_i": 0.2685222923755646,
+      "u_j": -0.04376411437988281,
+      "local_fd": 0.3623066842556,
+      "banzhaf": 0.42534273862838745,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the High Energy",
+        "and Particle Physics Prize"
+      ],
+      "u_i": -0.15734419226646423,
+      "u_j": -0.04376411437988281,
+      "local_fd": 0.4833335280418396,
+      "banzhaf": 0.5463695526123047,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the High Energy",
+        "and Particle Physics Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.4833335280418396
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "and Particle Physics Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.3623066842556
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "including the High Energy"
+      ],
+      "order": 2,
+      "harsanyi": 0.152773916721344
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "including the High Energy",
+        "and Particle Physics Prize"
+      ],
+      "order": 3,
+      "harsanyi": 0.12607213854789734
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "and Particle Physics Prize"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Harvard University"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and Particle Physics Prize"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.8605842590332031,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

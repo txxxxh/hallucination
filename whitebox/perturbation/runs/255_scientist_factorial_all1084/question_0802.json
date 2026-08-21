@@ -1,0 +1,287 @@
+{
+  "key": "question_0802",
+  "group": "Q92743",
+  "generation_correct": true,
+  "right": "Vint Cerf",
+  "wrong": "Douglas Engelbart",
+  "base_margin_wrong_minus_right": -1.1250134706497192,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 348,
+      "char_end": 369,
+      "text": "the National Medal of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Technology and Innovation",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 91,
+      "token_end": 96
+    },
+    {
+      "char_start": 472,
+      "char_end": 499,
+      "text": "both the National Inventors",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Inventors Hall of Fame",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 116,
+      "token_end": 121
+    },
+    {
+      "char_start": 679,
+      "char_end": 682,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 154,
+      "token_end": 156
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.1250134706497192,
+      "wrong_score": -1.1279330253601074,
+      "right_score": -0.00291954493150115
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the National Medal of"
+      ],
+      "u": 0.3125065565109253,
+      "margin": -1.4375200271606445,
+      "wrong_score": -1.4385813474655151,
+      "right_score": -0.001061366987414658
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "both the National Inventors"
+      ],
+      "u": 0.1875518560409546,
+      "margin": -1.3125653266906738,
+      "wrong_score": -1.3143559694290161,
+      "right_score": -0.0017906063003465533
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the National Medal of",
+        "both the National Inventors"
+      ],
+      "u": -0.6562530398368835,
+      "margin": -0.4687604308128357,
+      "wrong_score": -0.5060538649559021,
+      "right_score": -0.03729342669248581
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": 0.3750506639480591,
+      "margin": -1.5000641345977783,
+      "wrong_score": -1.5011720657348633,
+      "right_score": -0.0011079024989157915
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the National Medal of",
+        "not"
+      ],
+      "u": 0.21877682209014893,
+      "margin": -1.3437902927398682,
+      "wrong_score": -1.3453139066696167,
+      "right_score": -0.001523600541986525
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "both the National Inventors",
+        "not"
+      ],
+      "u": 1.0628598928451538,
+      "margin": -2.187873363494873,
+      "wrong_score": -2.188152551651001,
+      "right_score": -0.0002792741288430989
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the National Medal of",
+        "both the National Inventors",
+        "not"
+      ],
+      "u": 1.156394600868225,
+      "margin": -2.2814080715179443,
+      "wrong_score": -2.282015085220337,
+      "right_score": -0.0006070600356906652
+    }
+  ],
+  "single_u": [
+    0.3125065565109253,
+    0.1875518560409546,
+    0.3750506639480591
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the National Medal of",
+        "both the National Inventors"
+      ],
+      "u_i": 0.3125065565109253,
+      "u_j": 0.1875518560409546,
+      "local_fd": -1.1563115119934082,
+      "banzhaf": -0.4532514810562134,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the National Medal of",
+        "not"
+      ],
+      "u_i": 0.3125065565109253,
+      "u_j": 0.3750506639480591,
+      "local_fd": -0.46878039836883545,
+      "banzhaf": 0.2342795729637146,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "both the National Inventors",
+        "not"
+      ],
+      "u_i": 0.1875518560409546,
+      "u_j": 0.3750506639480591,
+      "local_fd": 0.5002573728561401,
+      "banzhaf": 1.203317403793335,
+      "relation_raw": "synergy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the National Medal of",
+        "both the National Inventors",
+        "not"
+      ],
+      "order": 3,
+      "harsanyi": 1.4061200022697449
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the National Medal of",
+        "both the National Inventors"
+      ],
+      "order": 2,
+      "harsanyi": -1.1563114523887634
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "both the National Inventors",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.5002573728561401
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the National Medal of",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": -0.46878039836883545
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -2.2814080715179443,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

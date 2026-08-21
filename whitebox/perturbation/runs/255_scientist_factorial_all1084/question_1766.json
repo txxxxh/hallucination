@@ -1,0 +1,145 @@
+{
+  "key": "question_1766",
+  "group": "Q131729",
+  "generation_correct": true,
+  "right": "William Lawrence Bragg",
+  "wrong": "Dorothy Hodgkin",
+  "base_margin_wrong_minus_right": 0.19435995817184448,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 257,
+      "char_end": 298,
+      "text": "crystallography. Recognized with numerous",
+      "kind": "attribute",
+      "field": "field",
+      "value": "crystallography",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 91,
+      "token_end": 100
+    },
+    {
+      "char_start": 390,
+      "char_end": 418,
+      "text": "Royal Society Bakerian Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Society Bakerian Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 117,
+      "token_end": 123
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.19435995817184448,
+      "wrong_score": -0.07217609137296677,
+      "right_score": -0.26653605699539185
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "crystallography. Recognized with numerous"
+      ],
+      "u": -0.40829741954803467,
+      "margin": 0.6026573777198792,
+      "wrong_score": -0.01671881228685379,
+      "right_score": -0.6193761825561523
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Royal Society Bakerian Medal"
+      ],
+      "u": -0.14260277152061462,
+      "margin": 0.3369627296924591,
+      "wrong_score": -0.046522971242666245,
+      "right_score": -0.38348570466041565
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "crystallography. Recognized with numerous",
+        "Royal Society Bakerian Medal"
+      ],
+      "u": -0.13967305421829224,
+      "margin": 0.3340330123901367,
+      "wrong_score": -0.0565015971660614,
+      "right_score": -0.3905346095561981
+    }
+  ],
+  "single_u": [
+    -0.40829741954803467,
+    -0.14260277152061462
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "crystallography. Recognized with numerous",
+        "Royal Society Bakerian Medal"
+      ],
+      "u_i": -0.40829741954803467,
+      "u_j": -0.14260277152061462,
+      "local_fd": 0.41122713685035706,
+      "banzhaf": 0.41122713685035706,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "crystallography. Recognized with numerous",
+        "Royal Society Bakerian Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.41122713685035706
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3340330123901367,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

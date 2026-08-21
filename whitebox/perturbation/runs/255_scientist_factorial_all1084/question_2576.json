@@ -1,0 +1,290 @@
+{
+  "key": "question_2576",
+  "group": "Q62857",
+  "generation_correct": false,
+  "right": "Maurice Vincent Wilkes",
+  "wrong": "William Thomson, 1st Baron Kelvin",
+  "base_margin_wrong_minus_right": 1.3488173484802246,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 166,
+      "char_end": 187,
+      "text": "was a noted physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 70,
+      "token_end": 75
+    },
+    {
+      "char_start": 257,
+      "char_end": 284,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 87,
+      "token_end": 94
+    },
+    {
+      "char_start": 340,
+      "char_end": 359,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 102,
+      "token_end": 109
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.3488173484802246,
+      "wrong_score": -0.018421102315187454,
+      "right_score": -1.3672384023666382
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "was a noted physicist"
+      ],
+      "u": 0.15627336502075195,
+      "margin": 1.1925439834594727,
+      "wrong_score": -0.029220063239336014,
+      "right_score": -1.221764087677002
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": 0.18052685260772705,
+      "margin": 1.1682904958724976,
+      "wrong_score": -0.011078034527599812,
+      "right_score": -1.179368495941162
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "was a noted physicist",
+        "the University of Cambridge"
+      ],
+      "u": 0.7015987634658813,
+      "margin": 0.6472185850143433,
+      "wrong_score": -0.022471314296126366,
+      "right_score": -0.6696898937225342
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.479084312915802,
+      "margin": 0.8697330355644226,
+      "wrong_score": -0.08143209666013718,
+      "right_score": -0.9511651396751404
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "was a noted physicist",
+        "Fellow of the Royal"
+      ],
+      "u": 0.24050986766815186,
+      "margin": 1.1083074808120728,
+      "wrong_score": -0.056734152138233185,
+      "right_score": -1.1650416851043701
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u": 0.1788496971130371,
+      "margin": 1.1699676513671875,
+      "wrong_score": -0.059317294508218765,
+      "right_score": -1.2292850017547607
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "was a noted physicist",
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u": 0.20922672748565674,
+      "margin": 1.1395906209945679,
+      "wrong_score": -0.08127198368310928,
+      "right_score": -1.220862627029419
+    }
+  ],
+  "single_u": [
+    0.15627336502075195,
+    0.18052685260772705,
+    0.479084312915802
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "was a noted physicist",
+        "the University of Cambridge"
+      ],
+      "u_i": 0.15627336502075195,
+      "u_j": 0.18052685260772705,
+      "local_fd": 0.36479854583740234,
+      "banzhaf": 0.31687501072883606,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "was a noted physicist",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.15627336502075195,
+      "u_j": 0.479084312915802,
+      "local_fd": -0.3948478102684021,
+      "banzhaf": -0.4427713453769684,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.18052685260772705,
+      "u_j": 0.479084312915802,
+      "local_fd": -0.48076146841049194,
+      "banzhaf": -0.5286849737167358,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.48076146841049194
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "was a noted physicist",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.3948478102684021
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "was a noted physicist",
+        "the University of Cambridge"
+      ],
+      "order": 2,
+      "harsanyi": 0.36479854583740234
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "was a noted physicist",
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": -0.09584707021713257
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.1395906209945679,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "key": "question_1760",
+  "group": "Q17714",
+  "generation_correct": false,
+  "right": "Stephen Hawking",
+  "wrong": "Subrahmanyan Chandrasekhar",
+  "base_margin_wrong_minus_right": 0.2743397355079651,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 148,
+      "char_end": 175,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 68,
+      "token_end": 75
+    },
+    {
+      "char_start": 272,
+      "char_end": 301,
+      "text": "understanding of the universe",
+      "kind": "attribute",
+      "field": "field",
+      "value": "universe",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 90,
+      "token_end": 96
+    },
+    {
+      "char_start": 628,
+      "char_end": 658,
+      "text": "received an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate from Princeton University",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 160,
+      "token_end": 166
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.2743397355079651,
+      "wrong_score": -0.055217400193214417,
+      "right_score": -0.3295571208000183
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": -0.0963117778301239,
+      "margin": 0.370651513338089,
+      "wrong_score": -0.046920280903577805,
+      "right_score": -0.4175717830657959
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "understanding of the universe"
+      ],
+      "u": 0.08838742971420288,
+      "margin": 0.1859523057937622,
+      "wrong_score": -0.0754392072558403,
+      "right_score": -0.2613915205001831
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "understanding of the universe"
+      ],
+      "u": 0.03382429480552673,
+      "margin": 0.24051544070243835,
+      "wrong_score": -0.06872519850730896,
+      "right_score": -0.3092406392097473
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "received an honorary doctorate"
+      ],
+      "u": 0.03590831160545349,
+      "margin": 0.2384314239025116,
+      "wrong_score": -0.09136402606964111,
+      "right_score": -0.3297954499721527
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "received an honorary doctorate"
+      ],
+      "u": 0.06753849983215332,
+      "margin": 0.20680123567581177,
+      "wrong_score": -0.09698718041181564,
+      "right_score": -0.303788423538208
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "understanding of the universe",
+        "received an honorary doctorate"
+      ],
+      "u": 0.2478099912405014,
+      "margin": 0.026529744267463684,
+      "wrong_score": -0.1487458497285843,
+      "right_score": -0.17527559399604797
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "understanding of the universe",
+        "received an honorary doctorate"
+      ],
+      "u": 0.05497795343399048,
+      "margin": 0.2193617820739746,
+      "wrong_score": -0.10534534603357315,
+      "right_score": -0.32470712065696716
+    }
+  ],
+  "single_u": [
+    -0.0963117778301239,
+    0.08838742971420288,
+    0.03590831160545349
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "understanding of the universe"
+      ],
+      "u_i": -0.0963117778301239,
+      "u_j": 0.08838742971420288,
+      "local_fd": 0.041748642921447754,
+      "banzhaf": -0.0913567990064621,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "received an honorary doctorate"
+      ],
+      "u_i": -0.0963117778301239,
+      "u_j": 0.03590831160545349,
+      "local_fd": 0.12794196605682373,
+      "banzhaf": -0.005163468420505524,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "understanding of the universe",
+        "received an honorary doctorate"
+      ],
+      "u_i": 0.08838742971420288,
+      "u_j": 0.03590831160545349,
+      "local_fd": 0.12351424992084503,
+      "banzhaf": -0.009591184556484222,
+      "relation_raw": "synergy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "understanding of the universe",
+        "received an honorary doctorate"
+      ],
+      "order": 3,
+      "harsanyi": -0.2662108689546585
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "received an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": 0.12794196605682373
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "understanding of the universe",
+        "received an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": 0.12351424992084503
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "understanding of the universe"
+      ],
+      "order": 2,
+      "harsanyi": 0.041748642921447754
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.2193617820739746,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 18,
+    "n_excluded": 12,
+    "max_candidates": 6
+  }
+}

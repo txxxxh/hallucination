@@ -1,0 +1,312 @@
+{
+  "key": "question_1904",
+  "group": "Q185110",
+  "generation_correct": true,
+  "right": "Igor Vasilyevich Kurchatov",
+  "wrong": "Ilya Frank",
+  "base_margin_wrong_minus_right": 0.4055503010749817,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 411,
+      "char_end": 427,
+      "text": "Order of the Red",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 111,
+      "token_end": 116
+    },
+    {
+      "char_start": 450,
+      "char_end": 472,
+      "text": "the State Stalin Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Stalin Prize",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 119,
+      "token_end": 125
+    },
+    {
+      "char_start": 474,
+      "char_end": 502,
+      "text": "1st degree. However, despite",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "State Stalin Prize, 1st degree",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 125,
+      "token_end": 128
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.4055503010749817,
+      "wrong_score": -0.013958698138594627,
+      "right_score": -0.41950899362564087
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Order of the Red"
+      ],
+      "u": 0.026848912239074707,
+      "margin": 0.378701388835907,
+      "wrong_score": -0.013391247019171715,
+      "right_score": -0.39209264516830444
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the State Stalin Prize"
+      ],
+      "u": 0.8182370662689209,
+      "margin": -0.4126867651939392,
+      "wrong_score": -0.4692597985267639,
+      "right_score": -0.05657303333282471
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the Red",
+        "the State Stalin Prize"
+      ],
+      "u": 0.6647852063179016,
+      "margin": -0.2592349052429199,
+      "wrong_score": -0.3452109694480896,
+      "right_score": -0.08597604930400848
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "1st degree. However, despite"
+      ],
+      "u": 0.8469357490539551,
+      "margin": -0.4413854479789734,
+      "wrong_score": -0.47962963581085205,
+      "right_score": -0.03824419900774956
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "1st degree. However, despite"
+      ],
+      "u": 0.1897079199552536,
+      "margin": 0.2158423811197281,
+      "wrong_score": -0.036151424050331116,
+      "right_score": -0.2519938051700592
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the State Stalin Prize",
+        "1st degree. However, despite"
+      ],
+      "u": 0.8082184791564941,
+      "margin": -0.40266817808151245,
+      "wrong_score": -0.4839439392089844,
+      "right_score": -0.08127575367689133
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "the State Stalin Prize",
+        "1st degree. However, despite"
+      ],
+      "u": 0.7326446771621704,
+      "margin": -0.3270943760871887,
+      "wrong_score": -0.4664105772972107,
+      "right_score": -0.13931620121002197
+    }
+  ],
+  "single_u": [
+    0.026848912239074707,
+    0.8182370662689209,
+    0.8469357490539551
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Order of the Red",
+        "the State Stalin Prize"
+      ],
+      "u_i": 0.026848912239074707,
+      "u_j": 0.8182370662689209,
+      "local_fd": -0.180300772190094,
+      "banzhaf": 0.20067662000656128,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Order of the Red",
+        "1st degree. However, despite"
+      ],
+      "u_i": 0.026848912239074707,
+      "u_j": 0.8469357490539551,
+      "local_fd": -0.684076726436615,
+      "banzhaf": -0.3030993342399597,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the State Stalin Prize",
+        "1st degree. However, despite"
+      ],
+      "u_i": 0.8182370662689209,
+      "u_j": 0.8469357490539551,
+      "local_fd": -0.8569543361663818,
+      "banzhaf": -0.47597694396972656,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the State Stalin Prize",
+        "1st degree. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": -0.8569543361663818
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "the State Stalin Prize",
+        "1st degree. However, despite"
+      ],
+      "order": 3,
+      "harsanyi": 0.7619547992944717
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "1st degree. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": -0.6840767413377762
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the Red",
+        "the State Stalin Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.180300772190094
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the State Stalin Prize"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "1st degree. However, despite"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the State Stalin Prize"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.3270943760871887,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

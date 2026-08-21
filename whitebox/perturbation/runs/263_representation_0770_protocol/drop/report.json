@@ -1,0 +1,29 @@
+{
+  "dataset": "drop",
+  "protocol": "fixed layer14 last+mean; fold-local scaler and PCA8 per block; LR C=.03; grouped 3x5 OOF",
+  "n": 1000,
+  "errors": 500,
+  "groups": 416,
+  "per_seed": [
+    {
+      "auroc": 0.826424,
+      "auprc": 0.8619894432230639
+    },
+    {
+      "auroc": 0.828396,
+      "auprc": 0.8632805415442282
+    },
+    {
+      "auroc": 0.8245239999999999,
+      "auprc": 0.8591794120369094
+    }
+  ],
+  "mean": {
+    "auroc": 0.826448,
+    "auprc": 0.861483132268067
+  },
+  "ensemble": {
+    "auroc": 0.827384,
+    "auprc": 0.8626647969084755
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "key": "question_1081",
+  "group": "Q110942",
+  "generation_correct": true,
+  "right": "Alan MacDiarmid",
+  "wrong": "Ernest Rutherford",
+  "base_margin_wrong_minus_right": -1.6569401025772095,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 243,
+      "char_end": 270,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 75,
+      "token_end": 81
+    },
+    {
+      "char_start": 427,
+      "char_end": 450,
+      "text": "Society and an Honorary",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Royal Society of Edinburgh",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 113,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.6569401025772095,
+      "wrong_score": -1.6580735445022583,
+      "right_score": -0.0011334586888551712
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": -0.2472158670425415,
+      "margin": -1.409724235534668,
+      "wrong_score": -1.4178919792175293,
+      "right_score": -0.008167685940861702
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Society and an Honorary"
+      ],
+      "u": -1.3657727241516113,
+      "margin": -0.2911674380302429,
+      "wrong_score": -0.3620276153087616,
+      "right_score": -0.07086016982793808
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Society and an Honorary"
+      ],
+      "u": -1.4749115705490112,
+      "margin": -0.18202848732471466,
+      "wrong_score": -0.2864113748073578,
+      "right_score": -0.10438288748264313
+    }
+  ],
+  "single_u": [
+    -0.2472158670425415,
+    -1.3657727241516113
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "Society and an Honorary"
+      ],
+      "u_i": -0.2472158670425415,
+      "u_j": -1.3657727241516113,
+      "local_fd": 0.1380770206451416,
+      "banzhaf": 0.1380770206451416,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Society and an Honorary"
+      ],
+      "order": 2,
+      "harsanyi": 0.1380770206451416
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.18202848732471466,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

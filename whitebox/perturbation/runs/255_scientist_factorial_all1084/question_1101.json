@@ -1,0 +1,287 @@
+{
+  "key": "question_1101",
+  "group": "Q675726",
+  "generation_correct": true,
+  "right": "James Hector",
+  "wrong": "Louis Agassiz",
+  "base_margin_wrong_minus_right": -1.1222834587097168,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 286,
+      "char_end": 309,
+      "text": "as a university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 87,
+      "token_end": 92
+    },
+    {
+      "char_start": 406,
+      "char_end": 428,
+      "text": "both the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 107,
+      "token_end": 112
+    },
+    {
+      "char_start": 541,
+      "char_end": 546,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 134,
+      "token_end": 136
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.1222834587097168,
+      "wrong_score": -1.1284971237182617,
+      "right_score": -0.0062136463820934296
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as a university teacher"
+      ],
+      "u": 0.3058621883392334,
+      "margin": -1.4281456470489502,
+      "wrong_score": -1.4458492994308472,
+      "right_score": -0.017703695222735405
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "both the Royal Society"
+      ],
+      "u": -0.4367792010307312,
+      "margin": -0.6855042576789856,
+      "wrong_score": -0.7374420166015625,
+      "right_score": -0.0519377775490284
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a university teacher",
+        "both the Royal Society"
+      ],
+      "u": 0.2757134437561035,
+      "margin": -1.3979969024658203,
+      "wrong_score": -1.4146109819412231,
+      "right_score": -0.016614092513918877
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.6262284517288208,
+      "margin": -1.7485119104385376,
+      "wrong_score": -1.7516093254089355,
+      "right_score": -0.0030974652618169785
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "never"
+      ],
+      "u": 0.8133417367935181,
+      "margin": -1.9356251955032349,
+      "wrong_score": -1.9394420385360718,
+      "right_score": -0.0038167929742485285
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "both the Royal Society",
+        "never"
+      ],
+      "u": -0.6293732523918152,
+      "margin": -0.4929102063179016,
+      "wrong_score": -0.6185668706893921,
+      "right_score": -0.12565664947032928
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "both the Royal Society",
+        "never"
+      ],
+      "u": 0.5585105419158936,
+      "margin": -1.6807940006256104,
+      "wrong_score": -1.6920424699783325,
+      "right_score": -0.011248519644141197
+    }
+  ],
+  "single_u": [
+    0.3058621883392334,
+    -0.4367792010307312,
+    0.6262284517288208
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as a university teacher",
+        "both the Royal Society"
+      ],
+      "u_i": 0.3058621883392334,
+      "u_j": -0.4367792010307312,
+      "local_fd": 0.4066304564476013,
+      "banzhaf": 0.7037005424499512,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "as a university teacher",
+        "never"
+      ],
+      "u_i": 0.3058621883392334,
+      "u_j": 0.6262284517288208,
+      "local_fd": -0.11874890327453613,
+      "banzhaf": 0.17832112312316895,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "both the Royal Society",
+        "never"
+      ],
+      "u_i": -0.4367792010307312,
+      "u_j": 0.6262284517288208,
+      "local_fd": -0.8188225030899048,
+      "banzhaf": -0.5217524766921997,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "both the Royal Society",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.8188225030899048
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "both the Royal Society",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": 0.5941400527954102
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a university teacher",
+        "both the Royal Society"
+      ],
+      "order": 2,
+      "harsanyi": 0.4066304564476013
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.11874890327453613
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.6807940006256104,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

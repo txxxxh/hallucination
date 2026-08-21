@@ -1,0 +1,290 @@
+{
+  "key": "question_2051",
+  "group": "Q311003",
+  "generation_correct": true,
+  "right": "Craig Venter",
+  "wrong": "Leland H. Hartwell",
+  "base_margin_wrong_minus_right": 0.573498010635376,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 125,
+      "char_end": 154,
+      "text": "This prominent geneticist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "geneticist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 60,
+      "token_end": 66
+    },
+    {
+      "char_start": 155,
+      "char_end": 185,
+      "text": "biochemist has been recognized",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biochemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 66,
+      "token_end": 72
+    },
+    {
+      "char_start": 242,
+      "char_end": 266,
+      "text": "them the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 80,
+      "token_end": 85
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.573498010635376,
+      "wrong_score": -0.035585273057222366,
+      "right_score": -0.6090832948684692
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent geneticist and"
+      ],
+      "u": 0.022568345069885254,
+      "margin": 0.5509296655654907,
+      "wrong_score": -0.05346914380788803,
+      "right_score": -0.604398787021637
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "biochemist has been recognized"
+      ],
+      "u": -0.11693501472473145,
+      "margin": 0.6904330253601074,
+      "wrong_score": -0.023737093433737755,
+      "right_score": -0.7141700983047485
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent geneticist and",
+        "biochemist has been recognized"
+      ],
+      "u": 0.1858874261379242,
+      "margin": 0.3876105844974518,
+      "wrong_score": -0.05487951263785362,
+      "right_score": -0.4424901008605957
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "them the Canada Gairdner"
+      ],
+      "u": -0.4389462471008301,
+      "margin": 1.012444257736206,
+      "wrong_score": -0.015093805268406868,
+      "right_score": -1.0275380611419678
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent geneticist and",
+        "them the Canada Gairdner"
+      ],
+      "u": -0.4333459138870239,
+      "margin": 1.0068439245224,
+      "wrong_score": -0.041353531181812286,
+      "right_score": -1.0481975078582764
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "biochemist has been recognized",
+        "them the Canada Gairdner"
+      ],
+      "u": -0.11431831121444702,
+      "margin": 0.687816321849823,
+      "wrong_score": -0.0321517251431942,
+      "right_score": -0.7199680209159851
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent geneticist and",
+        "biochemist has been recognized",
+        "them the Canada Gairdner"
+      ],
+      "u": -0.13494926691055298,
+      "margin": 0.708447277545929,
+      "wrong_score": -0.039203450083732605,
+      "right_score": -0.7476507425308228
+    }
+  ],
+  "single_u": [
+    0.022568345069885254,
+    -0.11693501472473145,
+    -0.4389462471008301
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This prominent geneticist and",
+        "biochemist has been recognized"
+      ],
+      "u_i": 0.022568345069885254,
+      "u_j": -0.11693501472473145,
+      "local_fd": 0.2802540957927704,
+      "banzhaf": 0.12701140344142914,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This prominent geneticist and",
+        "them the Canada Gairdner"
+      ],
+      "u_i": 0.022568345069885254,
+      "u_j": -0.4389462471008301,
+      "local_fd": -0.0169680118560791,
+      "banzhaf": -0.17021070420742035,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "biochemist has been recognized",
+        "them the Canada Gairdner"
+      ],
+      "u_i": -0.11693501472473145,
+      "u_j": -0.4389462471008301,
+      "local_fd": 0.4415629506111145,
+      "banzhaf": 0.28832024335861206,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "biochemist has been recognized",
+        "them the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": 0.4415629506111145
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent geneticist and",
+        "biochemist has been recognized",
+        "them the Canada Gairdner"
+      ],
+      "order": 3,
+      "harsanyi": -0.3064853847026825
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent geneticist and",
+        "biochemist has been recognized"
+      ],
+      "order": 2,
+      "harsanyi": 0.2802540957927704
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent geneticist and",
+        "them the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": -0.0169680118560791
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.708447277545929,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "key": "question_1008",
+  "group": "Q5354",
+  "generation_correct": false,
+  "right": "Ernst Mayr",
+  "wrong": "Richard Owen",
+  "base_margin_wrong_minus_right": 0.19867897033691406,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 417,
+      "char_end": 440,
+      "text": "made an Honorary Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Zoological Society of London",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 108,
+      "token_end": 114
+    },
+    {
+      "char_start": 441,
+      "char_end": 461,
+      "text": "of the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 113,
+      "token_end": 116
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.19867897033691406,
+      "wrong_score": -0.13372310996055603,
+      "right_score": -0.3324020802974701
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "made an Honorary Fellow"
+      ],
+      "u": -0.22647500038146973,
+      "margin": 0.4251539707183838,
+      "wrong_score": -0.09469477832317352,
+      "right_score": -0.5198487639427185
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Royal Society"
+      ],
+      "u": -0.4061373472213745,
+      "margin": 0.6048163175582886,
+      "wrong_score": -0.10564089566469193,
+      "right_score": -0.7104572057723999
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "made an Honorary Fellow",
+        "of the Royal Society"
+      ],
+      "u": -0.14806580543518066,
+      "margin": 0.3467447757720947,
+      "wrong_score": -0.11924844980239868,
+      "right_score": -0.4659932255744934
+    }
+  ],
+  "single_u": [
+    -0.22647500038146973,
+    -0.4061373472213745
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "made an Honorary Fellow",
+        "of the Royal Society"
+      ],
+      "u_i": -0.22647500038146973,
+      "u_j": -0.4061373472213745,
+      "local_fd": 0.4845465421676636,
+      "banzhaf": 0.4845465421676636,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "made an Honorary Fellow",
+        "of the Royal Society"
+      ],
+      "order": 2,
+      "harsanyi": 0.4845465421676636
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3467447757720947,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

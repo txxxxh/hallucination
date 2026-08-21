@@ -1,0 +1,309 @@
+{
+  "key": "question_2579",
+  "group": "Q473790",
+  "generation_correct": true,
+  "right": "Joel Lebowitz",
+  "wrong": "Eugene Wigner",
+  "base_margin_wrong_minus_right": 0.14992280304431915,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 197,
+      "char_end": 234,
+      "text": "mathematician, and university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 70,
+      "token_end": 79
+    },
+    {
+      "char_start": 296,
+      "char_end": 315,
+      "text": "with the Max Planck",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Max Planck Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 89,
+      "token_end": 92
+    },
+    {
+      "char_start": 339,
+      "char_end": 361,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 96,
+      "token_end": 102
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.14992280304431915,
+      "wrong_score": -0.07878288626670837,
+      "right_score": -0.22870568931102753
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "mathematician, and university teacher"
+      ],
+      "u": 0.2749989628791809,
+      "margin": -0.12507617473602295,
+      "wrong_score": -0.2147296965122223,
+      "right_score": -0.08965351432561874
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Max Planck"
+      ],
+      "u": 0.12498936057090759,
+      "margin": 0.02493344247341156,
+      "wrong_score": -0.1368735283613205,
+      "right_score": -0.16180697083473206
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "mathematician, and university teacher",
+        "with the Max Planck"
+      ],
+      "u": -6.13778829574585e-05,
+      "margin": 0.1499841809272766,
+      "wrong_score": -0.081195168197155,
+      "right_score": -0.2311793565750122
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.1751118004322052,
+      "margin": -0.025188997387886047,
+      "wrong_score": -0.1969069093465805,
+      "right_score": -0.17171791195869446
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "mathematician, and university teacher",
+        "Fellow of the American"
+      ],
+      "u": 0.3001493811607361,
+      "margin": -0.15022657811641693,
+      "wrong_score": -0.3922893702983856,
+      "right_score": -0.2420627921819687
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Max Planck",
+        "Fellow of the American"
+      ],
+      "u": 0.025814279913902283,
+      "margin": 0.12410852313041687,
+      "wrong_score": -0.24379217624664307,
+      "right_score": -0.36790069937705994
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "mathematician, and university teacher",
+        "with the Max Planck",
+        "Fellow of the American"
+      ],
+      "u": 0.12521593272686005,
+      "margin": 0.024706870317459106,
+      "wrong_score": -0.40419313311576843,
+      "right_score": -0.42890000343322754
+    }
+  ],
+  "single_u": [
+    0.2749989628791809,
+    0.12498936057090759,
+    0.1751118004322052
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "mathematician, and university teacher",
+        "with the Max Planck"
+      ],
+      "u_i": 0.2749989628791809,
+      "u_j": 0.12498936057090759,
+      "local_fd": -0.40004971623420715,
+      "banzhaf": -0.21284282207489014,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "mathematician, and university teacher",
+        "Fellow of the American"
+      ],
+      "u_i": 0.2749989628791809,
+      "u_j": 0.1751118004322052,
+      "local_fd": -0.14996138215065002,
+      "banzhaf": 0.037245504558086395,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "with the Max Planck",
+        "Fellow of the American"
+      ],
+      "u_i": 0.12498936057090759,
+      "u_j": 0.1751118004322052,
+      "local_fd": -0.2742868661880493,
+      "banzhaf": -0.0870799869298935,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "mathematician, and university teacher",
+        "with the Max Planck"
+      ],
+      "order": 2,
+      "harsanyi": -0.40004970133304596
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "mathematician, and university teacher",
+        "with the Max Planck",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.37441377341747284
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Max Planck",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.2742868810892105
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "mathematician, and university teacher",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.14996138215065002
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "mathematician, and university teacher"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.024706870317459106,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

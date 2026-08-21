@@ -1,0 +1,290 @@
+{
+  "key": "question_2302",
+  "group": "Q215022",
+  "generation_correct": true,
+  "right": "Arthur Stanley Eddington",
+  "wrong": "Roger Penrose",
+  "base_margin_wrong_minus_right": -0.7251402139663696,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 279,
+      "char_end": 308,
+      "text": "University of Cambridge, they",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 92,
+      "token_end": 98
+    },
+    {
+      "char_start": 380,
+      "char_end": 399,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 114,
+      "token_end": 118
+    },
+    {
+      "char_start": 482,
+      "char_end": 500,
+      "text": "the Order of Merit",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of Merit",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 131,
+      "token_end": 135
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7251402139663696,
+      "wrong_score": -0.7500874996185303,
+      "right_score": -0.024947302415966988
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "University of Cambridge, they"
+      ],
+      "u": 0.04558652639389038,
+      "margin": -0.77072674036026,
+      "wrong_score": -0.7993559837341309,
+      "right_score": -0.02862926386296749
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.28334498405456543,
+      "margin": -1.008485198020935,
+      "wrong_score": -1.0213091373443604,
+      "right_score": -0.012823914177715778
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "University of Cambridge, they",
+        "Fellow of the Royal"
+      ],
+      "u": 0.07991951704025269,
+      "margin": -0.8050597310066223,
+      "wrong_score": -0.829913854598999,
+      "right_score": -0.02485414408147335
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Order of Merit"
+      ],
+      "u": -0.4174896478652954,
+      "margin": -0.3076505661010742,
+      "wrong_score": -0.395585834980011,
+      "right_score": -0.08793526142835617
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "University of Cambridge, they",
+        "the Order of Merit"
+      ],
+      "u": -0.3700738251209259,
+      "margin": -0.3550663888454437,
+      "wrong_score": -0.41525062918663025,
+      "right_score": -0.06018422916531563
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the Order of Merit"
+      ],
+      "u": -0.19008946418762207,
+      "margin": -0.5350507497787476,
+      "wrong_score": -0.5850096940994263,
+      "right_score": -0.04995895177125931
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "University of Cambridge, they",
+        "Fellow of the Royal",
+        "the Order of Merit"
+      ],
+      "u": -0.3857443630695343,
+      "margin": -0.3393958508968353,
+      "wrong_score": -0.42956849932670593,
+      "right_score": -0.09017264097929001
+    }
+  ],
+  "single_u": [
+    0.04558652639389038,
+    0.28334498405456543,
+    -0.4174896478652954
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "University of Cambridge, they",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.04558652639389038,
+      "u_j": 0.28334498405456543,
+      "local_fd": -0.24901199340820312,
+      "banzhaf": -0.24604135751724243,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "University of Cambridge, they",
+        "the Order of Merit"
+      ],
+      "u_i": 0.04558652639389038,
+      "u_j": -0.4174896478652954,
+      "local_fd": 0.001829296350479126,
+      "banzhaf": 0.004799932241439819,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "the Order of Merit"
+      ],
+      "u_i": 0.28334498405456543,
+      "u_j": -0.4174896478652954,
+      "local_fd": -0.05594480037689209,
+      "banzhaf": -0.052974164485931396,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "University of Cambridge, they",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.24901199340820312
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the Order of Merit"
+      ],
+      "order": 2,
+      "harsanyi": -0.05594480037689209
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "University of Cambridge, they",
+        "Fellow of the Royal",
+        "the Order of Merit"
+      ],
+      "order": 3,
+      "harsanyi": 0.005941271781921387
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "University of Cambridge, they",
+        "the Order of Merit"
+      ],
+      "order": 2,
+      "harsanyi": 0.001829296350479126
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.3393958508968353,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

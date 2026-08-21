@@ -1,0 +1,289 @@
+{
+  "key": "question_0428",
+  "group": "Q17455",
+  "generation_correct": false,
+  "right": "John von Neumann",
+  "wrong": "Donald Knuth",
+  "base_margin_wrong_minus_right": 0.4831976592540741,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 159,
+      "char_end": 193,
+      "text": "computer scientist, and university",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "computer scientist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 67,
+      "token_end": 71
+    },
+    {
+      "char_start": 231,
+      "char_end": 254,
+      "text": "with the Josiah Willard",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Josiah Willard Gibbs Lectureship",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 76,
+      "token_end": 81
+    },
+    {
+      "char_start": 327,
+      "char_end": 358,
+      "text": "landscape of modern mathematics",
+      "kind": "attribute",
+      "field": "field",
+      "value": "mathematics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 93,
+      "token_end": 100
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.4831976592540741,
+      "wrong_score": -0.05539020895957947,
+      "right_score": -0.5385878682136536
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "computer scientist, and university"
+      ],
+      "u": -0.009767860174179077,
+      "margin": 0.4929655194282532,
+      "wrong_score": -0.04699994623661041,
+      "right_score": -0.5399654507637024
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Josiah Willard"
+      ],
+      "u": 0.20473331212997437,
+      "margin": 0.27846434712409973,
+      "wrong_score": -0.11100741475820541,
+      "right_score": -0.38947176933288574
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "computer scientist, and university",
+        "with the Josiah Willard"
+      ],
+      "u": -0.1916579306125641,
+      "margin": 0.6748555898666382,
+      "wrong_score": -0.0380125567317009,
+      "right_score": -0.7128681540489197
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "landscape of modern mathematics"
+      ],
+      "u": -0.1842188537120819,
+      "margin": 0.667416512966156,
+      "wrong_score": -0.08901866525411606,
+      "right_score": -0.7564351558685303
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "computer scientist, and university",
+        "landscape of modern mathematics"
+      ],
+      "u": -0.1931915581226349,
+      "margin": 0.676389217376709,
+      "wrong_score": -0.04515676945447922,
+      "right_score": -0.7215459942817688
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Josiah Willard",
+        "landscape of modern mathematics"
+      ],
+      "u": -0.12371328473091125,
+      "margin": 0.6069109439849854,
+      "wrong_score": -0.06843432784080505,
+      "right_score": -0.675345242023468
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "computer scientist, and university",
+        "with the Josiah Willard",
+        "landscape of modern mathematics"
+      ],
+      "u": -0.24501392245292664,
+      "margin": 0.7282115817070007,
+      "wrong_score": -0.071892149746418,
+      "right_score": -0.8001037240028381
+    }
+  ],
+  "single_u": [
+    -0.009767860174179077,
+    0.20473331212997437,
+    -0.1842188537120819
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "computer scientist, and university",
+        "with the Josiah Willard"
+      ],
+      "u_i": -0.009767860174179077,
+      "u_j": 0.20473331212997437,
+      "local_fd": -0.3866233825683594,
+      "banzhaf": -0.2494756579399109,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "computer scientist, and university",
+        "landscape of modern mathematics"
+      ],
+      "u_i": -0.009767860174179077,
+      "u_j": -0.1842188537120819,
+      "local_fd": 0.0007951557636260986,
+      "banzhaf": 0.13794288039207458,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "with the Josiah Willard",
+        "landscape of modern mathematics"
+      ],
+      "u_i": 0.20473331212997437,
+      "u_j": -0.1842188537120819,
+      "local_fd": -0.1442277431488037,
+      "banzhaf": -0.007080018520355225,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "computer scientist, and university",
+        "with the Josiah Willard"
+      ],
+      "order": 2,
+      "harsanyi": -0.3866233825683594
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "computer scientist, and university",
+        "with the Josiah Willard",
+        "landscape of modern mathematics"
+      ],
+      "order": 3,
+      "harsanyi": 0.274295449256897
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Josiah Willard",
+        "landscape of modern mathematics"
+      ],
+      "order": 2,
+      "harsanyi": -0.1442277431488037
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "computer scientist, and university",
+        "landscape of modern mathematics"
+      ],
+      "order": 2,
+      "harsanyi": 0.0007951557636260986
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7282115817070007,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

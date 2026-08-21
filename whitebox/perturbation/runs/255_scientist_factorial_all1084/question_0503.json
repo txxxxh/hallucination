@@ -1,0 +1,302 @@
+{
+  "key": "question_0503",
+  "group": "Q899517",
+  "generation_correct": false,
+  "right": "Allen J. Bard",
+  "wrong": "Robert H. Grubbs",
+  "base_margin_wrong_minus_right": 0.06232934445142746,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 298,
+      "char_end": 326,
+      "text": "received the Centenary Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Centenary Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 95,
+      "token_end": 100
+    },
+    {
+      "char_start": 328,
+      "char_end": 351,
+      "text": "the Linus Pauling Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Linus Pauling Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 104
+    },
+    {
+      "char_start": 362,
+      "char_end": 388,
+      "text": "named a Clarivate Citation",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Clarivate Citation Laureates",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 105,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.06232934445142746,
+      "wrong_score": -0.11924149841070175,
+      "right_score": -0.1815708428621292
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "received the Centenary Prize"
+      ],
+      "u": -0.2850145995616913,
+      "margin": 0.34734395146369934,
+      "wrong_score": -0.05113193392753601,
+      "right_score": -0.39847588539123535
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Linus Pauling Award"
+      ],
+      "u": 0.040820442140102386,
+      "margin": 0.021508902311325073,
+      "wrong_score": -0.12992724776268005,
+      "right_score": -0.15143615007400513
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the Centenary Prize",
+        "the Linus Pauling Award"
+      ],
+      "u": 0.08813942223787308,
+      "margin": -0.025810077786445618,
+      "wrong_score": -0.15344563126564026,
+      "right_score": -0.12763555347919464
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "named a Clarivate Citation"
+      ],
+      "u": -0.31314775347709656,
+      "margin": 0.3754771053791046,
+      "wrong_score": -0.04639909416437149,
+      "right_score": -0.4218761920928955
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the Centenary Prize",
+        "named a Clarivate Citation"
+      ],
+      "u": -0.612360954284668,
+      "margin": 0.674690306186676,
+      "wrong_score": -0.02400299161672592,
+      "right_score": -0.6986932754516602
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Linus Pauling Award",
+        "named a Clarivate Citation"
+      ],
+      "u": -0.7256607413291931,
+      "margin": 0.7879900932312012,
+      "wrong_score": -0.02413863316178322,
+      "right_score": -0.8121287226676941
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the Centenary Prize",
+        "the Linus Pauling Award",
+        "named a Clarivate Citation"
+      ],
+      "u": -0.6992413401603699,
+      "margin": 0.7615706920623779,
+      "wrong_score": -0.02495616301894188,
+      "right_score": -0.7865268588066101
+    }
+  ],
+  "single_u": [
+    -0.2850145995616913,
+    0.040820442140102386,
+    -0.31314775347709656
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "received the Centenary Prize",
+        "the Linus Pauling Award"
+      ],
+      "u_i": -0.2850145995616913,
+      "u_j": 0.040820442140102386,
+      "local_fd": 0.3323335647583008,
+      "banzhaf": 0.3289830684661865,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "received the Centenary Prize",
+        "named a Clarivate Citation"
+      ],
+      "u_i": -0.2850145995616913,
+      "u_j": -0.31314775347709656,
+      "local_fd": -0.014198601245880127,
+      "banzhaf": -0.01754908636212349,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Linus Pauling Award",
+        "named a Clarivate Citation"
+      ],
+      "u_i": 0.040820442140102386,
+      "u_j": -0.31314775347709656,
+      "local_fd": -0.45333340764045715,
+      "banzhaf": -0.4566839039325714,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Linus Pauling Award",
+        "named a Clarivate Citation"
+      ],
+      "order": 2,
+      "harsanyi": -0.45333342999219894
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the Centenary Prize",
+        "the Linus Pauling Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.332333579659462
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the Centenary Prize",
+        "named a Clarivate Citation"
+      ],
+      "order": 2,
+      "harsanyi": -0.014198601245880127
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the Centenary Prize",
+        "the Linus Pauling Award",
+        "named a Clarivate Citation"
+      ],
+      "order": 3,
+      "harsanyi": -0.006700977683067322
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the Centenary Prize",
+        "the Linus Pauling Award"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7615706920623779,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

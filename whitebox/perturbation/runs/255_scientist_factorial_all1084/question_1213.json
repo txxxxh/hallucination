@@ -1,0 +1,290 @@
+{
+  "key": "question_1213",
+  "group": "Q3308285",
+  "generation_correct": false,
+  "right": "Michael I. Jordan",
+  "wrong": "John McCarthy",
+  "base_margin_wrong_minus_right": -2.937673807144165,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 319,
+      "char_end": 343,
+      "text": "received the IJCAI Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "IJCAI Award for Research Excellence",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 99,
+      "token_end": 102
+    },
+    {
+      "char_start": 390,
+      "char_end": 406,
+      "text": "as an ACM Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "ACM Fellow",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 110,
+      "token_end": 115
+    },
+    {
+      "char_start": 408,
+      "char_end": 426,
+      "text": "a AAAI Fellow, and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "AAAI Fellow",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 114,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.937673807144165,
+      "wrong_score": -2.942176580429077,
+      "right_score": -0.004502674099057913
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "received the IJCAI Award"
+      ],
+      "u": -0.8638005256652832,
+      "margin": -2.073873281478882,
+      "wrong_score": -2.0859885215759277,
+      "right_score": -0.01211521402001381
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as an ACM Fellow"
+      ],
+      "u": -2.3698043823242188,
+      "margin": -0.5678693652153015,
+      "wrong_score": -0.6674163341522217,
+      "right_score": -0.09954694658517838
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the IJCAI Award",
+        "as an ACM Fellow"
+      ],
+      "u": -2.3772969245910645,
+      "margin": -0.5603768229484558,
+      "wrong_score": -0.682768702507019,
+      "right_score": -0.12239185720682144
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "a AAAI Fellow, and"
+      ],
+      "u": -1.109427809715271,
+      "margin": -1.828245997428894,
+      "wrong_score": -1.84142005443573,
+      "right_score": -0.013174086809158325
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the IJCAI Award",
+        "a AAAI Fellow, and"
+      ],
+      "u": -2.010568141937256,
+      "margin": -0.9271056652069092,
+      "wrong_score": -0.9807072877883911,
+      "right_score": -0.05360160768032074
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as an ACM Fellow",
+        "a AAAI Fellow, and"
+      ],
+      "u": -2.3144664764404297,
+      "margin": -0.6232073307037354,
+      "wrong_score": -0.7988569736480713,
+      "right_score": -0.17564967274665833
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the IJCAI Award",
+        "as an ACM Fellow",
+        "a AAAI Fellow, and"
+      ],
+      "u": -2.6861209869384766,
+      "margin": -0.2515527009963989,
+      "wrong_score": -0.5607888102531433,
+      "right_score": -0.3092361092567444
+    }
+  ],
+  "single_u": [
+    -0.8638005256652832,
+    -2.3698043823242188,
+    -1.109427809715271
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "received the IJCAI Award",
+        "as an ACM Fellow"
+      ],
+      "u_i": -0.8638005256652832,
+      "u_j": -2.3698043823242188,
+      "local_fd": 0.8563079833984375,
+      "banzhaf": 0.6928969025611877,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "received the IJCAI Award",
+        "a AAAI Fellow, and"
+      ],
+      "u_i": -0.8638005256652832,
+      "u_j": -1.109427809715271,
+      "local_fd": -0.03733980655670166,
+      "banzhaf": -0.20075088739395142,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as an ACM Fellow",
+        "a AAAI Fellow, and"
+      ],
+      "u_i": -2.3698043823242188,
+      "u_j": -1.109427809715271,
+      "local_fd": 1.16476571559906,
+      "banzhaf": 1.001354694366455,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as an ACM Fellow",
+        "a AAAI Fellow, and"
+      ],
+      "order": 2,
+      "harsanyi": 1.16476571559906
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the IJCAI Award",
+        "as an ACM Fellow"
+      ],
+      "order": 2,
+      "harsanyi": 0.8563079833984375
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the IJCAI Award",
+        "as an ACM Fellow",
+        "a AAAI Fellow, and"
+      ],
+      "order": 3,
+      "harsanyi": -0.3268221616744995
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the IJCAI Award",
+        "a AAAI Fellow, and"
+      ],
+      "order": 2,
+      "harsanyi": -0.03733980655670166
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2515527009963989,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

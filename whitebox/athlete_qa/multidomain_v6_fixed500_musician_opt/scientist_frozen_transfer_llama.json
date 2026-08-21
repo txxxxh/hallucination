@@ -1,0 +1,394 @@
+{
+  "protocol": "zero-shot frozen transfer; all scaler/PCA/LR fitting uses only 1084 Scientist-known rows; target restricted by independent probes to knows_both; no target labels used for fitting/tuning",
+  "source_detector": "current127 scalar47 + four candidate-hidden PCA8 + layer14 PCA48; LR C=.03",
+  "source_n": 1084,
+  "target_n": 849,
+  "excluded_unmatched_known_both": 14,
+  "ensemble_seeds": [
+    42,
+    43,
+    44
+  ],
+  "subsets": {
+    "all_probe_known_both": {
+      "n": 849,
+      "correct": 686,
+      "incorrect": 163,
+      "accuracy_at_0.5": 0.9034157832744405,
+      "balanced_accuracy_at_0.5": 0.8630587204206837,
+      "confusion_tn_fp_fn_tp": [
+        130,
+        33,
+        49,
+        637
+      ],
+      "auroc": 0.9528430127528662,
+      "auprc": 0.9881726407976325,
+      "per_seed_auroc": [
+        0.953433257615053,
+        0.952753581713141,
+        0.9519576454595862
+      ]
+    },
+    "athlete": {
+      "n": 316,
+      "correct": 275,
+      "incorrect": 41,
+      "accuracy_at_0.5": 0.9208860759493671,
+      "balanced_accuracy_at_0.5": 0.871529933481153,
+      "confusion_tn_fp_fn_tp": [
+        33,
+        8,
+        17,
+        258
+      ],
+      "auroc": 0.9658536585365854,
+      "auprc": 0.994882458424857,
+      "per_seed_auroc": [
+        0.9669179600886918,
+        0.9661197339246119,
+        0.9658536585365853
+      ]
+    },
+    "musician": {
+      "n": 264,
+      "correct": 206,
+      "incorrect": 58,
+      "accuracy_at_0.5": 0.8598484848484849,
+      "balanced_accuracy_at_0.5": 0.7987110813525277,
+      "confusion_tn_fp_fn_tp": [
+        40,
+        18,
+        19,
+        187
+      ],
+      "auroc": 0.9154670237696686,
+      "auprc": 0.9738613250305325,
+      "per_seed_auroc": [
+        0.9163876799464346,
+        0.9164713759625042,
+        0.9140441914964847
+      ]
+    },
+    "building": {
+      "n": 269,
+      "correct": 205,
+      "incorrect": 64,
+      "accuracy_at_0.5": 0.9256505576208178,
+      "balanced_accuracy_at_0.5": 0.9136051829268292,
+      "confusion_tn_fp_fn_tp": [
+        57,
+        7,
+        13,
+        192
+      ],
+      "auroc": 0.9698932926829268,
+      "auprc": 0.9899740892064932,
+      "per_seed_auroc": [
+        0.9701219512195122,
+        0.9695121951219512,
+        0.9697408536585366
+      ]
+    },
+    "field:architect": {
+      "n": 30,
+      "correct": 18,
+      "incorrect": 12,
+      "accuracy_at_0.5": 0.7666666666666667,
+      "balanced_accuracy_at_0.5": 0.7638888888888888,
+      "confusion_tn_fp_fn_tp": [
+        9,
+        3,
+        4,
+        14
+      ],
+      "auroc": 0.8240740740740742,
+      "auprc": 0.8598013959533567,
+      "per_seed_auroc": [
+        0.8287037037037037,
+        0.8287037037037037,
+        0.8287037037037037
+      ]
+    },
+    "field:architectural_style": {
+      "n": 26,
+      "correct": 16,
+      "incorrect": 10,
+      "accuracy_at_0.5": 0.9615384615384616,
+      "balanced_accuracy_at_0.5": 0.96875,
+      "confusion_tn_fp_fn_tp": [
+        10,
+        0,
+        1,
+        15
+      ],
+      "auroc": 1.0,
+      "auprc": 1.0,
+      "per_seed_auroc": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "field:birth_place": {
+      "n": 156,
+      "correct": 133,
+      "incorrect": 23,
+      "accuracy_at_0.5": 0.8525641025641025,
+      "balanced_accuracy_at_0.5": 0.8416149068322981,
+      "confusion_tn_fp_fn_tp": [
+        19,
+        4,
+        19,
+        114
+      ],
+      "auroc": 0.9267734553775744,
+      "auprc": 0.9869924862419408,
+      "per_seed_auroc": [
+        0.9277541680287675,
+        0.9277541680287675,
+        0.9241582216410591
+      ]
+    },
+    "field:college": {
+      "n": 5,
+      "correct": 4,
+      "incorrect": 1,
+      "accuracy_at_0.5": 1.0,
+      "balanced_accuracy_at_0.5": 1.0,
+      "confusion_tn_fp_fn_tp": [
+        1,
+        0,
+        0,
+        4
+      ],
+      "auroc": 1.0,
+      "auprc": 1.0,
+      "per_seed_auroc": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "field:instrument": {
+      "n": 41,
+      "correct": 36,
+      "incorrect": 5,
+      "accuracy_at_0.5": 0.9512195121951219,
+      "balanced_accuracy_at_0.5": 0.8861111111111111,
+      "confusion_tn_fp_fn_tp": [
+        4,
+        1,
+        1,
+        35
+      ],
+      "auroc": 0.9944444444444445,
+      "auprc": 0.9992492492492493,
+      "per_seed_auroc": [
+        0.9944444444444445,
+        0.9944444444444445,
+        0.9888888888888889
+      ]
+    },
+    "field:location": {
+      "n": 74,
+      "correct": 66,
+      "incorrect": 8,
+      "accuracy_at_0.5": 1.0,
+      "balanced_accuracy_at_0.5": 1.0,
+      "confusion_tn_fp_fn_tp": [
+        8,
+        0,
+        0,
+        66
+      ],
+      "auroc": 1.0,
+      "auprc": 1.0,
+      "per_seed_auroc": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "field:material": {
+      "n": 15,
+      "correct": 11,
+      "incorrect": 4,
+      "accuracy_at_0.5": 0.8666666666666667,
+      "balanced_accuracy_at_0.5": 0.8295454545454546,
+      "confusion_tn_fp_fn_tp": [
+        3,
+        1,
+        1,
+        10
+      ],
+      "auroc": 0.9318181818181819,
+      "auprc": 0.9750688705234161,
+      "per_seed_auroc": [
+        0.9318181818181819,
+        0.9318181818181819,
+        0.9318181818181819
+      ]
+    },
+    "field:nationality": {
+      "n": 118,
+      "correct": 112,
+      "incorrect": 6,
+      "accuracy_at_0.5": 0.9915254237288136,
+      "balanced_accuracy_at_0.5": 0.9955357142857143,
+      "confusion_tn_fp_fn_tp": [
+        6,
+        0,
+        1,
+        111
+      ],
+      "auroc": 0.9985119047619048,
+      "auprc": 0.9999209860935523,
+      "per_seed_auroc": [
+        0.9985119047619048,
+        0.9985119047619048,
+        0.9985119047619048
+      ]
+    },
+    "field:occupation": {
+      "n": 73,
+      "correct": 48,
+      "incorrect": 25,
+      "accuracy_at_0.5": 0.7534246575342466,
+      "balanced_accuracy_at_0.5": 0.7070833333333333,
+      "confusion_tn_fp_fn_tp": [
+        14,
+        11,
+        7,
+        41
+      ],
+      "auroc": 0.8625,
+      "auprc": 0.9316780389357101,
+      "per_seed_auroc": [
+        0.8625,
+        0.8625,
+        0.8591666666666666
+      ]
+    },
+    "field:owner": {
+      "n": 66,
+      "correct": 53,
+      "incorrect": 13,
+      "accuracy_at_0.5": 0.9242424242424242,
+      "balanced_accuracy_at_0.5": 0.9238026124818578,
+      "confusion_tn_fp_fn_tp": [
+        12,
+        1,
+        4,
+        49
+      ],
+      "auroc": 0.988388969521045,
+      "auprc": 0.9971557666868955,
+      "per_seed_auroc": [
+        0.988388969521045,
+        0.988388969521045,
+        0.988388969521045
+      ]
+    },
+    "field:position": {
+      "n": 33,
+      "correct": 29,
+      "incorrect": 4,
+      "accuracy_at_0.5": 0.8787878787878788,
+      "balanced_accuracy_at_0.5": 0.7155172413793103,
+      "confusion_tn_fp_fn_tp": [
+        2,
+        2,
+        2,
+        27
+      ],
+      "auroc": 0.9396551724137931,
+      "auprc": 0.9918211948283675,
+      "per_seed_auroc": [
+        0.9396551724137931,
+        0.9396551724137931,
+        0.9396551724137931
+      ]
+    },
+    "field:record_label": {
+      "n": 48,
+      "correct": 32,
+      "incorrect": 16,
+      "accuracy_at_0.5": 0.875,
+      "balanced_accuracy_at_0.5": 0.84375,
+      "confusion_tn_fp_fn_tp": [
+        12,
+        4,
+        2,
+        30
+      ],
+      "auroc": 0.9375,
+      "auprc": 0.9672616824168208,
+      "per_seed_auroc": [
+        0.9375,
+        0.9375,
+        0.939453125
+      ]
+    },
+    "field:sport": {
+      "n": 52,
+      "correct": 47,
+      "incorrect": 5,
+      "accuracy_at_0.5": 0.9615384615384616,
+      "balanced_accuracy_at_0.5": 0.8893617021276596,
+      "confusion_tn_fp_fn_tp": [
+        4,
+        1,
+        1,
+        46
+      ],
+      "auroc": 0.9872340425531915,
+      "auprc": 0.9987234042553192,
+      "per_seed_auroc": [
+        0.9872340425531915,
+        0.9872340425531915,
+        0.9872340425531915
+      ]
+    },
+    "field:team": {
+      "n": 54,
+      "correct": 40,
+      "incorrect": 14,
+      "accuracy_at_0.5": 0.8888888888888888,
+      "balanced_accuracy_at_0.5": 0.8553571428571429,
+      "confusion_tn_fp_fn_tp": [
+        11,
+        3,
+        3,
+        37
+      ],
+      "auroc": 0.9553571428571428,
+      "auprc": 0.985043884272365,
+      "per_seed_auroc": [
+        0.9571428571428571,
+        0.9571428571428571,
+        0.9589285714285714
+      ]
+    },
+    "field:tenant": {
+      "n": 58,
+      "correct": 41,
+      "incorrect": 17,
+      "accuracy_at_0.5": 0.9137931034482759,
+      "balanced_accuracy_at_0.5": 0.9045911047345767,
+      "confusion_tn_fp_fn_tp": [
+        15,
+        2,
+        3,
+        38
+      ],
+      "auroc": 0.9641319942611191,
+      "auprc": 0.9847702631370905,
+      "per_seed_auroc": [
+        0.9641319942611191,
+        0.9626972740315638,
+        0.9641319942611191
+      ]
+    }
+  }
+}

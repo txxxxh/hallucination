@@ -1,0 +1,145 @@
+{
+  "key": "question_0062",
+  "group": "Q44481",
+  "generation_correct": false,
+  "right": "Pierre-Simon Laplace",
+  "wrong": "François Arago",
+  "base_margin_wrong_minus_right": -0.13871808350086212,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 208,
+      "char_end": 227,
+      "text": "as the president of",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "president",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 78,
+      "token_end": 82
+    },
+    {
+      "char_start": 228,
+      "char_end": 249,
+      "text": "the French Academy of",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "president of the French Academy of Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 81,
+      "token_end": 87
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.13871808350086212,
+      "wrong_score": -0.22815194725990295,
+      "right_score": -0.08943386375904083
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as the president of"
+      ],
+      "u": 0.19750891625881195,
+      "margin": -0.3362269997596741,
+      "wrong_score": -0.3851233720779419,
+      "right_score": -0.04889635741710663
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the French Academy of"
+      ],
+      "u": 0.029015183448791504,
+      "margin": -0.16773326694965363,
+      "wrong_score": -0.25317272543907166,
+      "right_score": -0.08543945848941803
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the president of",
+        "the French Academy of"
+      ],
+      "u": 0.1694306582212448,
+      "margin": -0.30814874172210693,
+      "wrong_score": -0.3619783818721771,
+      "right_score": -0.05382963642477989
+    }
+  ],
+  "single_u": [
+    0.19750891625881195,
+    0.029015183448791504
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as the president of",
+        "the French Academy of"
+      ],
+      "u_i": 0.19750891625881195,
+      "u_j": 0.029015183448791504,
+      "local_fd": -0.05709344148635864,
+      "banzhaf": -0.05709344148635864,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the president of",
+        "the French Academy of"
+      ],
+      "order": 2,
+      "harsanyi": -0.05709344148635864
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.30814874172210693,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

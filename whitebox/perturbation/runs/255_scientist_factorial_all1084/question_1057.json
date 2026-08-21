@@ -1,0 +1,171 @@
+{
+  "key": "question_1057",
+  "group": "Q335213",
+  "generation_correct": false,
+  "right": "Martin Rees, Baron Rees of Ludlow",
+  "wrong": "Theodor Wolfgang Hänsch",
+  "base_margin_wrong_minus_right": 0.12318229675292969,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 151,
+      "char_end": 183,
+      "text": "This distinguished physicist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 67,
+      "token_end": 75
+    },
+    {
+      "char_start": 184,
+      "char_end": 210,
+      "text": "university teacher has had",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 74,
+      "token_end": 80
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.12318229675292969,
+      "wrong_score": -0.0732128769159317,
+      "right_score": -0.1963951736688614
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist and"
+      ],
+      "u": 0.7748651504516602,
+      "margin": -0.6516828536987305,
+      "wrong_score": -0.7010624408721924,
+      "right_score": -0.04937957227230072
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher has had"
+      ],
+      "u": 0.22665289044380188,
+      "margin": -0.10347060114145279,
+      "wrong_score": -0.19761329889297485,
+      "right_score": -0.09414269775152206
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher has had"
+      ],
+      "u": 0.1534576565027237,
+      "margin": -0.030275359749794006,
+      "wrong_score": -0.13747550547122955,
+      "right_score": -0.10720014572143555
+    }
+  ],
+  "single_u": [
+    0.7748651504516602,
+    0.22665289044380188
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher has had"
+      ],
+      "u_i": 0.7748651504516602,
+      "u_j": 0.22665289044380188,
+      "local_fd": -0.8480603694915771,
+      "banzhaf": -0.8480603694915771,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher has had"
+      ],
+      "order": 2,
+      "harsanyi": -0.8480603843927383
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist and"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher has had"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher has had"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.030275359749794006,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

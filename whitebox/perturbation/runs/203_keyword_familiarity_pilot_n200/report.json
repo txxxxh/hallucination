@@ -1,0 +1,84 @@
+{
+  "experiment": "Scientist paired keyword-familiarity mediation pilot",
+  "claim_boundary": "Closed-book factual confidence is a behavioural proxy for model familiarity, not a direct measurement of proprietary pretraining counts.",
+  "n": 197,
+  "n_correct": 121,
+  "n_wrong": 76,
+  "exclusions": {
+    "missing_probe": 0,
+    "missing_answer": 0,
+    "missing_cache": 3,
+    "unmatched_answer": 0,
+    "nonfinite_familiarity": 0
+  },
+  "candidate_selection": {
+    "estimand": "familiarity(selected candidate) - familiarity(other candidate)",
+    "bootstrap": {
+      "mean": 0.17187062678515577,
+      "ci95": [
+        -0.6870586862620223,
+        0.9953167277801271
+      ]
+    },
+    "fraction_selected_more_familiar": 0.49238578680203043,
+    "paired_wilcoxon_greater": {
+      "statistic": 9954.0,
+      "p_one_sided": 0.40023627425097397
+    }
+  },
+  "error_prediction": {
+    "estimand": "familiarity(wrong candidate) - familiarity(right candidate)",
+    "mean_gap_correct_items": 2.3240115246935265,
+    "mean_gap_wrong_items": 4.1455777363762145,
+    "grouped_5fold_oof_auroc_per_seed": [
+      0.5912353197042192,
+      0.5863418877772946,
+      0.5819921705089169
+    ],
+    "grouped_5fold_oof_auroc_mean": 0.5865231259968101,
+    "point_biserial_spearman": {
+      "n": 197,
+      "rho": 0.1571488954478064,
+      "p": 0.02742783166344827
+    }
+  },
+  "targeted_perturbation_rescue": {
+    "estimand": "selected-vs-other margin before minus after exact top-span neutralization",
+    "all_items_margin_drop": {
+      "mean": 0.30176691270771977,
+      "ci95": [
+        0.11544826447855758,
+        0.4755775305326946
+      ]
+    },
+    "wrong_items_margin_drop": {
+      "mean": -0.39495584960585756,
+      "ci95": [
+        -0.6284148475393043,
+        -0.12755538177600675
+      ]
+    },
+    "wrong_items_relative_margin_drop": {
+      "mean": -4.331998779322213,
+      "ci95": [
+        -7.9624074755712115,
+        -1.2338843355666589
+      ]
+    },
+    "wrong_items_candidate_flip_rate": 0.09210526315789473,
+    "familiarity_gap_vs_margin_drop_wrong": {
+      "n": 76,
+      "rho": 0.025919343814080658,
+      "p": 0.8241176911858185
+    },
+    "familiarity_gap_vs_relative_drop_wrong": {
+      "n": 76,
+      "rho": -0.14466165413533832,
+      "p": 0.21247072094428793
+    }
+  },
+  "interpretation_rule": {
+    "supports_selection_bias": "selected familiarity gap > 0 and error AUROC > .5",
+    "supports_mediation": "among wrong items, familiarity gap positively tracks top-span rescue; a matched-span randomized intervention is required for a confirmatory causal claim"
+  }
+}

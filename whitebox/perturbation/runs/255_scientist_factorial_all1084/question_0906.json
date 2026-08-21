@@ -1,0 +1,299 @@
+{
+  "key": "question_0906",
+  "group": "Q335213",
+  "generation_correct": true,
+  "right": "Martin Rees, Baron Rees of Ludlow",
+  "wrong": "Subrahmanyan Chandrasekhar",
+  "base_margin_wrong_minus_right": -0.05518804490566254,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 276,
+      "char_end": 303,
+      "text": "Educated at Trinity College",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Trinity College",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 98,
+      "token_end": 106
+    },
+    {
+      "char_start": 454,
+      "char_end": 471,
+      "text": "Gold Medal of the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Gold Medal of the Royal Astronomical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 140,
+      "token_end": 144
+    },
+    {
+      "char_start": 593,
+      "char_end": 623,
+      "text": "received an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate of the Open University",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 162,
+      "token_end": 170
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.05518804490566254,
+      "wrong_score": -0.12818543612957,
+      "right_score": -0.07299739122390747
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Educated at Trinity College"
+      ],
+      "u": 0.004989452660083771,
+      "margin": -0.06017749756574631,
+      "wrong_score": -0.13462160527706146,
+      "right_score": -0.07444410771131516
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Gold Medal of the"
+      ],
+      "u": -0.04970589280128479,
+      "margin": -0.005482152104377747,
+      "wrong_score": -0.09902720153331757,
+      "right_score": -0.09354504942893982
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "Gold Medal of the"
+      ],
+      "u": -0.0918041244149208,
+      "margin": 0.03661607950925827,
+      "wrong_score": -0.08893924206495285,
+      "right_score": -0.12555532157421112
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "received an honorary doctorate"
+      ],
+      "u": 0.09259672462940216,
+      "margin": -0.1477847695350647,
+      "wrong_score": -0.21057619154453278,
+      "right_score": -0.06279142946004868
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "received an honorary doctorate"
+      ],
+      "u": 0.33502399921417236,
+      "margin": -0.3902120590209961,
+      "wrong_score": -0.4354439675807953,
+      "right_score": -0.04523192346096039
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Gold Medal of the",
+        "received an honorary doctorate"
+      ],
+      "u": 0.252483069896698,
+      "margin": -0.30767112970352173,
+      "wrong_score": -0.3466099798679352,
+      "right_score": -0.03893883898854256
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "Gold Medal of the",
+        "received an honorary doctorate"
+      ],
+      "u": 0.2964552640914917,
+      "margin": -0.35164332389831543,
+      "wrong_score": -0.44068044424057007,
+      "right_score": -0.08903713524341583
+    }
+  ],
+  "single_u": [
+    0.004989452660083771,
+    -0.04970589280128479,
+    0.09259672462940216
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Educated at Trinity College",
+        "Gold Medal of the"
+      ],
+      "u_i": 0.004989452660083771,
+      "u_j": -0.04970589280128479,
+      "local_fd": -0.04708768427371979,
+      "banzhaf": -0.12277138233184814,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Educated at Trinity College",
+        "received an honorary doctorate"
+      ],
+      "u_i": 0.004989452660083771,
+      "u_j": 0.09259672462940216,
+      "local_fd": 0.23743782937526703,
+      "banzhaf": 0.16175413131713867,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Gold Medal of the",
+        "received an honorary doctorate"
+      ],
+      "u_i": -0.04970589280128479,
+      "u_j": 0.09259672462940216,
+      "local_fd": 0.20959223806858063,
+      "banzhaf": 0.13390854001045227,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "received an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": 0.23743782192468643
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Gold Medal of the",
+        "received an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": 0.20959223806858063
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "Gold Medal of the",
+        "received an honorary doctorate"
+      ],
+      "order": 3,
+      "harsanyi": -0.1513673961162567
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "Gold Medal of the"
+      ],
+      "order": 2,
+      "harsanyi": -0.04708768427371979
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "received an honorary doctorate"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.35164332389831543,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

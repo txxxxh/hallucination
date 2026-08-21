@@ -1,0 +1,146 @@
+{
+  "key": "question_2103",
+  "group": "Q315545",
+  "generation_correct": false,
+  "right": "James Hopwood Jeans",
+  "wrong": "William Thomson, 1st Baron Kelvin",
+  "base_margin_wrong_minus_right": -0.3436887264251709,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 271,
+      "char_end": 298,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 91,
+      "token_end": 96
+    },
+    {
+      "char_start": 519,
+      "char_end": 538,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 143,
+      "token_end": 148
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3436887264251709,
+      "wrong_score": -0.3689185082912445,
+      "right_score": -0.02522978186607361
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": 0.004694491624832153,
+      "margin": -0.34838321805000305,
+      "wrong_score": -0.38337215781211853,
+      "right_score": -0.03498892858624458
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.07894870638847351,
+      "margin": -0.2647400200366974,
+      "wrong_score": -0.3063407838344574,
+      "right_score": -0.04160077124834061
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u": -0.13467034697532654,
+      "margin": -0.20901837944984436,
+      "wrong_score": -0.2672240734100342,
+      "right_score": -0.05820569768548012
+    }
+  ],
+  "single_u": [
+    0.004694491624832153,
+    -0.07894870638847351
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.004694491624832153,
+      "u_j": -0.07894870638847351,
+      "local_fd": -0.06041613221168518,
+      "banzhaf": -0.06041613221168518,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.06041613221168518
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.20901837944984436,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

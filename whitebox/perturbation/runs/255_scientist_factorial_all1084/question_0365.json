@@ -1,0 +1,292 @@
+{
+  "key": "question_0365",
+  "group": "Q1681665",
+  "generation_correct": false,
+  "right": "Solomon H. Snyder",
+  "wrong": "Karl Deisseroth",
+  "base_margin_wrong_minus_right": -1.0734632015228271,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 514,
+      "char_end": 534,
+      "text": "Robert J. and Claire",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Robert J. and Claire Pasarow Foundation Award for Distinguished Contributions to Neuropsychiatric Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 134,
+      "token_end": 138
+    },
+    {
+      "char_start": 535,
+      "char_end": 563,
+      "text": "Pasarow Foundation Award for",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "BBVA Foundation Frontiers of Knowledge Award",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 138,
+      "token_end": 143
+    },
+    {
+      "char_start": 651,
+      "char_end": 654,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 158,
+      "token_end": 160
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.0734632015228271,
+      "wrong_score": -1.0768362283706665,
+      "right_score": -0.003373079001903534
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Robert J. and Claire"
+      ],
+      "u": -2.800457715988159,
+      "margin": 1.726994514465332,
+      "wrong_score": -0.0013402980985119939,
+      "right_score": -1.7283347845077515
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Pasarow Foundation Award for"
+      ],
+      "u": -2.349902629852295,
+      "margin": 1.2764394283294678,
+      "wrong_score": -0.00399165041744709,
+      "right_score": -1.2804310321807861
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Robert J. and Claire",
+        "Pasarow Foundation Award for"
+      ],
+      "u": -2.12447452545166,
+      "margin": 1.0510114431381226,
+      "wrong_score": -0.003514931071549654,
+      "right_score": -1.0545263290405273
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": -0.5739647746086121,
+      "margin": -0.4994984269142151,
+      "wrong_score": -0.5171944499015808,
+      "right_score": -0.01769602671265602
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Robert J. and Claire",
+        "not"
+      ],
+      "u": -2.8248438835144043,
+      "margin": 1.7513806819915771,
+      "wrong_score": -0.0009119898895733058,
+      "right_score": -1.7522926330566406
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Pasarow Foundation Award for",
+        "not"
+      ],
+      "u": -2.2003564834594727,
+      "margin": 1.126893401145935,
+      "wrong_score": -0.0023284859489649534,
+      "right_score": -1.1292219161987305
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Robert J. and Claire",
+        "Pasarow Foundation Award for",
+        "not"
+      ],
+      "u": -2.0499415397644043,
+      "margin": 0.9764782190322876,
+      "wrong_score": -0.004239356145262718,
+      "right_score": -0.9807175993919373
+    }
+  ],
+  "single_u": [
+    -2.800457715988159,
+    -2.349902629852295,
+    -0.5739647746086121
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Robert J. and Claire",
+        "Pasarow Foundation Award for"
+      ],
+      "u_i": -2.800457715988159,
+      "u_j": -2.349902629852295,
+      "local_fd": 3.025885820388794,
+      "banzhaf": 2.713589906692505,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Robert J. and Claire",
+        "not"
+      ],
+      "u_i": -2.800457715988159,
+      "u_j": -0.5739647746086121,
+      "local_fd": 0.5495786070823669,
+      "banzhaf": 0.23728272318840027,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Pasarow Foundation Award for",
+        "not"
+      ],
+      "u_i": -2.349902629852295,
+      "u_j": -0.5739647746086121,
+      "local_fd": 0.7235109210014343,
+      "banzhaf": 0.41121503710746765,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Robert J. and Claire",
+        "Pasarow Foundation Award for"
+      ],
+      "order": 2,
+      "harsanyi": 3.025885820388794
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Pasarow Foundation Award for",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.7235109210014343
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Robert J. and Claire",
+        "Pasarow Foundation Award for",
+        "not"
+      ],
+      "order": 3,
+      "harsanyi": -0.6245917677879333
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Robert J. and Claire",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.5495786070823669
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.9764782190322876,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 18,
+    "n_excluded": 12,
+    "max_candidates": 6
+  }
+}

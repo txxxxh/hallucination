@@ -1,0 +1,290 @@
+{
+  "key": "question_2852",
+  "group": "Q945539",
+  "generation_correct": true,
+  "right": "Charles Wyville Thomson",
+  "wrong": "Ferdinand von Mueller",
+  "base_margin_wrong_minus_right": 1.0004128217697144,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 321,
+      "char_end": 340,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 98,
+      "token_end": 101
+    },
+    {
+      "char_start": 358,
+      "char_end": 385,
+      "text": "the prestigious Royal Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 108
+    },
+    {
+      "char_start": 391,
+      "char_end": 415,
+      "text": "named an Honorary Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Royal Society Te Apārangi",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 108,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.0004128217697144,
+      "wrong_score": -0.004988100379705429,
+      "right_score": -1.0054008960723877
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.12451565265655518,
+      "margin": 0.8758971691131592,
+      "wrong_score": -0.009333749301731586,
+      "right_score": -0.8852308988571167
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the prestigious Royal Medal"
+      ],
+      "u": -0.00031316280364990234,
+      "margin": 1.0007259845733643,
+      "wrong_score": -0.005734135862439871,
+      "right_score": -1.0064600706100464
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the prestigious Royal Medal"
+      ],
+      "u": 0.21943336725234985,
+      "margin": 0.7809794545173645,
+      "wrong_score": -0.012452719733119011,
+      "right_score": -0.7934321761131287
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "named an Honorary Fellow"
+      ],
+      "u": 0.46926915645599365,
+      "margin": 0.5311436653137207,
+      "wrong_score": -0.030151590704917908,
+      "right_score": -0.5612952709197998
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "named an Honorary Fellow"
+      ],
+      "u": 0.21915650367736816,
+      "margin": 0.7812563180923462,
+      "wrong_score": -0.012918859720230103,
+      "right_score": -0.7941752076148987
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the prestigious Royal Medal",
+        "named an Honorary Fellow"
+      ],
+      "u": 0.7489011287689209,
+      "margin": 0.25151172280311584,
+      "wrong_score": -0.0810740664601326,
+      "right_score": -0.33258578181266785
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the prestigious Royal Medal",
+        "named an Honorary Fellow"
+      ],
+      "u": 0.7998656034469604,
+      "margin": 0.20054718852043152,
+      "wrong_score": -0.09706442803144455,
+      "right_score": -0.29761162400245667
+    }
+  ],
+  "single_u": [
+    0.12451565265655518,
+    -0.00031316280364990234,
+    0.46926915645599365
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "the prestigious Royal Medal"
+      ],
+      "u_i": 0.12451565265655518,
+      "u_j": -0.00031316280364990234,
+      "local_fd": 0.09523087739944458,
+      "banzhaf": 0.1981540024280548,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "named an Honorary Fellow"
+      ],
+      "u_i": 0.12451565265655518,
+      "u_j": 0.46926915645599365,
+      "local_fd": -0.37462830543518066,
+      "banzhaf": -0.27170518040657043,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the prestigious Royal Medal",
+        "named an Honorary Fellow"
+      ],
+      "u_i": -0.00031316280364990234,
+      "u_j": 0.46926915645599365,
+      "local_fd": 0.27994513511657715,
+      "banzhaf": 0.3828682601451874,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "named an Honorary Fellow"
+      ],
+      "order": 2,
+      "harsanyi": -0.37462830543518066
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the prestigious Royal Medal",
+        "named an Honorary Fellow"
+      ],
+      "order": 2,
+      "harsanyi": 0.27994513511657715
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the prestigious Royal Medal",
+        "named an Honorary Fellow"
+      ],
+      "order": 3,
+      "harsanyi": 0.20584625005722046
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the prestigious Royal Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.09523087739944458
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.20054718852043152,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

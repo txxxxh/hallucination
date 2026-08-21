@@ -1,0 +1,49 @@
+{
+  "n": 2894,
+  "split": "discovery=1000 / confirmation=1894",
+  "protocol": "5-fold OOF; coordinate ranking/scaler/LR training-fold only",
+  "candidate_hidden_coordinates": 32768,
+  "budgets": [
+    64,
+    96,
+    128,
+    144,
+    192
+  ],
+  "discovery_baseline_auroc": {
+    "64": 0.682521745085953,
+    "96": 0.6799063420313677,
+    "128": 0.6766360180809533,
+    "144": 0.6751335524964044,
+    "192": 0.656928463803849
+  },
+  "selected_hidden_dimensions": 64,
+  "selected_scalars": [
+    {
+      "name": "tail_11",
+      "rho_residual": 0.07457788469495104
+    },
+    {
+      "name": "even_absmean_eps1",
+      "rho_residual": 0.06496578680513068
+    },
+    {
+      "name": "tail_10",
+      "rho_residual": 0.05720770042136069
+    },
+    {
+      "name": "even_absmean_eps2",
+      "rho_residual": 0.056426412371363865
+    }
+  ],
+  "total_dimensions_augmented": 68,
+  "discovery": {
+    "baseline_auroc": 0.682521745085953,
+    "augmented_auroc": 0.6793498732963495
+  },
+  "confirmation": {
+    "baseline_auroc": 0.6992790297937357,
+    "augmented_auroc": 0.6995273109243697,
+    "delta_auroc": 0.00024828113063402046
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "key": "question_0534",
+  "group": "Q155794",
+  "generation_correct": true,
+  "right": "Hans Bethe",
+  "wrong": "Albert Einstein",
+  "base_margin_wrong_minus_right": -6.187887191772461,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 398,
+      "char_end": 413,
+      "text": "and the Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 108,
+      "token_end": 113
+    },
+    {
+      "char_start": 570,
+      "char_end": 592,
+      "text": "Academy of Sciences of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 141,
+      "token_end": 146
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -6.187887191772461,
+      "wrong_score": -6.188177585601807,
+      "right_score": -0.00029031996382400393
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and the Pour le"
+      ],
+      "u": -3.0611324310302734,
+      "margin": -3.1267547607421875,
+      "wrong_score": -3.128981351852417,
+      "right_score": -0.0022266206797212362
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Academy of Sciences of"
+      ],
+      "u": -5.385345458984375,
+      "margin": -0.8025416731834412,
+      "wrong_score": -0.8550752997398376,
+      "right_score": -0.052533652633428574
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and the Pour le",
+        "Academy of Sciences of"
+      ],
+      "u": -6.254342079162598,
+      "margin": 0.0664549171924591,
+      "wrong_score": -0.22080540657043457,
+      "right_score": -0.2872603237628937
+    }
+  ],
+  "single_u": [
+    -3.0611324310302734,
+    -5.385345458984375
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "and the Pour le",
+        "Academy of Sciences of"
+      ],
+      "u_i": -3.0611324310302734,
+      "u_j": -5.385345458984375,
+      "local_fd": 2.192135810852051,
+      "banzhaf": 2.192135810852051,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and the Pour le",
+        "Academy of Sciences of"
+      ],
+      "order": 2,
+      "harsanyi": 2.192135810852051
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.0664549171924591,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 17,
+    "n_excluded": 11,
+    "max_candidates": 6
+  }
+}

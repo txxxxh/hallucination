@@ -1,0 +1,300 @@
+{
+  "key": "question_1032",
+  "group": "Q60066",
+  "generation_correct": true,
+  "right": "Gerhard Ertl",
+  "wrong": "Rudolf Mössbauer",
+  "base_margin_wrong_minus_right": 0.03810202330350876,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 151,
+      "char_end": 180,
+      "text": "university teacher studied at",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 71
+    },
+    {
+      "char_start": 181,
+      "char_end": 208,
+      "text": "the Technical University of",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Technical University of Munich",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 70,
+      "token_end": 74
+    },
+    {
+      "char_start": 326,
+      "char_end": 357,
+      "text": "science, including the Bavarian",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Bavarian Maximilian Order for Science and Art",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 95,
+      "token_end": 101
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.03810202330350876,
+      "wrong_score": -0.11313147097826004,
+      "right_score": -0.1512334942817688
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher studied at"
+      ],
+      "u": -0.16298845410346985,
+      "margin": 0.201090469956398,
+      "wrong_score": -0.07815979421138763,
+      "right_score": -0.27925026416778564
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Technical University of"
+      ],
+      "u": 0.02291654795408249,
+      "margin": 0.01518547534942627,
+      "wrong_score": -0.15593384206295013,
+      "right_score": -0.1711193174123764
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher studied at",
+        "the Technical University of"
+      ],
+      "u": -0.03590930998325348,
+      "margin": 0.07401133328676224,
+      "wrong_score": -0.12002093344926834,
+      "right_score": -0.19403226673603058
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "science, including the Bavarian"
+      ],
+      "u": 0.1396460235118866,
+      "margin": -0.10154400020837784,
+      "wrong_score": -0.19730672240257263,
+      "right_score": -0.0957627221941948
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher studied at",
+        "science, including the Bavarian"
+      ],
+      "u": -0.19482117891311646,
+      "margin": 0.2329232096672058,
+      "wrong_score": -0.0639309212565422,
+      "right_score": -0.2968541383743286
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Technical University of",
+        "science, including the Bavarian"
+      ],
+      "u": 0.04408056288957596,
+      "margin": -0.0059785395860672,
+      "wrong_score": -0.13482601940631866,
+      "right_score": -0.12884747982025146
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher studied at",
+        "the Technical University of",
+        "science, including the Bavarian"
+      ],
+      "u": 0.030503548681735992,
+      "margin": 0.007598474621772766,
+      "wrong_score": -0.13542860746383667,
+      "right_score": -0.14302708208560944
+    }
+  ],
+  "single_u": [
+    -0.16298845410346985,
+    0.02291654795408249,
+    0.1396460235118866
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher studied at",
+        "the Technical University of"
+      ],
+      "u_i": -0.16298845410346985,
+      "u_j": 0.02291654795408249,
+      "local_fd": 0.10416259616613388,
+      "banzhaf": 0.21252639591693878,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher studied at",
+        "science, including the Bavarian"
+      ],
+      "u_i": -0.16298845410346985,
+      "u_j": 0.1396460235118866,
+      "local_fd": -0.1714787483215332,
+      "banzhaf": -0.0631149560213089,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Technical University of",
+        "science, including the Bavarian"
+      ],
+      "u_i": 0.02291654795408249,
+      "u_j": 0.1396460235118866,
+      "local_fd": -0.11848200857639313,
+      "banzhaf": -0.010118208825588226,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher studied at",
+        "the Technical University of",
+        "science, including the Bavarian"
+      ],
+      "order": 3,
+      "harsanyi": 0.2167275920510292
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher studied at",
+        "science, including the Bavarian"
+      ],
+      "order": 2,
+      "harsanyi": -0.1714787483215332
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Technical University of",
+        "science, including the Bavarian"
+      ],
+      "order": 2,
+      "harsanyi": -0.11848200857639313
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher studied at",
+        "the Technical University of"
+      ],
+      "order": 2,
+      "harsanyi": 0.10416259616613388
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "science, including the Bavarian"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.007598474621772766,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "dataset": "drop",
+  "model_under_test": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "checker": "MiniCheck-Flan-T5-Large",
+  "n": 1000,
+  "errors": 500,
+  "protocol": "same frozen candidate-conditioned manifest; sentence-level MiniCheck; response support=min sentence support",
+  "alternative_warning": "second candidate is manifest-supplied and may be gold/reference-derived; contrastive result is oracle candidate-conditioned",
+  "metrics": {
+    "minicheck_evidence": {
+      "auroc": 0.604484,
+      "auprc": 0.5617896205898658
+    },
+    "minicheck_contrastive": {
+      "auroc": 0.526116,
+      "auprc": 0.6883025819509915
+    }
+  }
+}

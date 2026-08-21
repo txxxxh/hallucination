@@ -1,0 +1,146 @@
+{
+  "key": "question_0032",
+  "group": "Q17714",
+  "generation_correct": false,
+  "right": "Stephen Hawking",
+  "wrong": "Martin Rees, Baron Rees of Ludlow",
+  "base_margin_wrong_minus_right": 2.1053311824798584,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 206,
+      "char_end": 233,
+      "text": "University of Cambridge and",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 83,
+      "token_end": 87
+    },
+    {
+      "char_start": 450,
+      "char_end": 467,
+      "text": "the Gold Medal of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Gold Medal of the Royal Astronomical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 134,
+      "token_end": 138
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 2.1053311824798584,
+      "wrong_score": -0.023203235119581223,
+      "right_score": -2.1285343170166016
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "University of Cambridge and"
+      ],
+      "u": -0.2920713424682617,
+      "margin": 2.39740252494812,
+      "wrong_score": -0.025950251147150993,
+      "right_score": -2.4233527183532715
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Gold Medal of"
+      ],
+      "u": -0.14474868774414062,
+      "margin": 2.250079870223999,
+      "wrong_score": -0.007505398243665695,
+      "right_score": -2.257585287094116
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "University of Cambridge and",
+        "the Gold Medal of"
+      ],
+      "u": 0.10614466667175293,
+      "margin": 1.9991865158081055,
+      "wrong_score": -0.011246648617088795,
+      "right_score": -2.0104331970214844
+    }
+  ],
+  "single_u": [
+    -0.2920713424682617,
+    -0.14474868774414062
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "University of Cambridge and",
+        "the Gold Medal of"
+      ],
+      "u_i": -0.2920713424682617,
+      "u_j": -0.14474868774414062,
+      "local_fd": 0.5429646968841553,
+      "banzhaf": 0.5429646968841553,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "University of Cambridge and",
+        "the Gold Medal of"
+      ],
+      "order": 2,
+      "harsanyi": 0.5429646968841553
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.9991865158081055,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

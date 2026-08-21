@@ -1,0 +1,321 @@
+{
+  "key": "question_1915",
+  "group": "Q170676",
+  "generation_correct": true,
+  "right": "Roger D. Kornberg",
+  "wrong": "Britton Chance",
+  "base_margin_wrong_minus_right": 0.028674542903900146,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 193,
+      "char_end": 229,
+      "text": "contributions to scientific research",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Robert J. and Claire Pasarow Foundation Award for Distinguished Contributions to Cancer Research",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 72,
+      "token_end": 80
+    },
+    {
+      "char_start": 348,
+      "char_end": 351,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 100
+    },
+    {
+      "char_start": 365,
+      "char_end": 392,
+      "text": "education at the University",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate at the University of Rome Tor Vergata",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 102,
+      "token_end": 109
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.028674542903900146,
+      "wrong_score": -0.1572483777999878,
+      "right_score": -0.18592292070388794
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "contributions to scientific research"
+      ],
+      "u": 2.279909610748291,
+      "margin": -2.251235008239746,
+      "wrong_score": -2.2905356884002686,
+      "right_score": -0.03930063918232918
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": 0.463442862033844,
+      "margin": -0.43476831912994385,
+      "wrong_score": -0.49882835149765015,
+      "right_score": -0.0640600249171257
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "contributions to scientific research",
+        "not"
+      ],
+      "u": 1.2491955757141113,
+      "margin": -1.220521092414856,
+      "wrong_score": -1.2319163084030151,
+      "right_score": -0.011395185254514217
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "education at the University"
+      ],
+      "u": 1.8283591270446777,
+      "margin": -1.7996846437454224,
+      "wrong_score": -1.8906898498535156,
+      "right_score": -0.09100516885519028
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "contributions to scientific research",
+        "education at the University"
+      ],
+      "u": 0.25813668966293335,
+      "margin": -0.2294621467590332,
+      "wrong_score": -0.5040732622146606,
+      "right_score": -0.27461111545562744
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "not",
+        "education at the University"
+      ],
+      "u": 2.0803635120391846,
+      "margin": -2.0516889095306396,
+      "wrong_score": -2.170208692550659,
+      "right_score": -0.11851968616247177
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "contributions to scientific research",
+        "not",
+        "education at the University"
+      ],
+      "u": 0.29360532760620117,
+      "margin": -0.264930784702301,
+      "wrong_score": -0.5663238763809204,
+      "right_score": -0.3013930916786194
+    }
+  ],
+  "single_u": [
+    2.279909610748291,
+    0.463442862033844,
+    1.8283591270446777
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "contributions to scientific research",
+        "not"
+      ],
+      "u_i": 2.279909610748291,
+      "u_j": 0.463442862033844,
+      "local_fd": -1.494156837463379,
+      "banzhaf": -0.8553463220596313,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "contributions to scientific research",
+        "education at the University"
+      ],
+      "u_i": 2.279909610748291,
+      "u_j": 1.8283591270446777,
+      "local_fd": -3.8501319885253906,
+      "banzhaf": -3.2113213539123535,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "not",
+        "education at the University"
+      ],
+      "u_i": 0.463442862033844,
+      "u_j": 1.8283591270446777,
+      "local_fd": -0.21143841743469238,
+      "banzhaf": 0.4273720979690552,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "contributions to scientific research",
+        "education at the University"
+      ],
+      "order": 2,
+      "harsanyi": -3.8501320481300354
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "contributions to scientific research",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": -1.4941568970680237
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "contributions to scientific research",
+        "not",
+        "education at the University"
+      ],
+      "order": 3,
+      "harsanyi": 1.2776211500167847
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "not",
+        "education at the University"
+      ],
+      "order": 2,
+      "harsanyi": -0.21143847703933716
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "contributions to scientific research"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "education at the University"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "contributions to scientific research",
+        "not",
+        "education at the University"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.264930784702301,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

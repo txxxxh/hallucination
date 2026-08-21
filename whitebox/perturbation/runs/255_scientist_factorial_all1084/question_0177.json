@@ -1,0 +1,156 @@
+{
+  "key": "question_0177",
+  "group": "Q192703",
+  "generation_correct": true,
+  "right": "Ilya Frank",
+  "wrong": "Vitaly Lazarevich Ginzburg",
+  "base_margin_wrong_minus_right": 0.04574326425790787,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 173,
+      "char_end": 201,
+      "text": "educated at Lomonosov Moscow",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Lomonosov Moscow State University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 69,
+      "token_end": 76
+    },
+    {
+      "char_start": 497,
+      "char_end": 519,
+      "text": "the Medal 'For Valiant",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal \"For Valiant Labour in the Great Patriotic War 1941–1945\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 143,
+      "token_end": 147
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.04574326425790787,
+      "wrong_score": -0.11688023060560226,
+      "right_score": -0.16262349486351013
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Lomonosov Moscow"
+      ],
+      "u": -0.6900402307510376,
+      "margin": 0.7357835173606873,
+      "wrong_score": -0.02212901972234249,
+      "right_score": -0.7579125165939331
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Medal 'For Valiant"
+      ],
+      "u": 0.14502975344657898,
+      "margin": -0.09928649663925171,
+      "wrong_score": -0.1798059195280075,
+      "right_score": -0.0805194228887558
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Lomonosov Moscow",
+        "the Medal 'For Valiant"
+      ],
+      "u": -0.4402197003364563,
+      "margin": 0.48596295714378357,
+      "wrong_score": -0.03264941647648811,
+      "right_score": -0.5186123847961426
+    }
+  ],
+  "single_u": [
+    -0.6900402307510376,
+    0.14502975344657898
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Lomonosov Moscow",
+        "the Medal 'For Valiant"
+      ],
+      "u_i": -0.6900402307510376,
+      "u_j": 0.14502975344657898,
+      "local_fd": 0.10479077696800232,
+      "banzhaf": 0.10479077696800232,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Lomonosov Moscow",
+        "the Medal 'For Valiant"
+      ],
+      "order": 2,
+      "harsanyi": 0.10479077696800232
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Medal 'For Valiant"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.48596295714378357,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 18,
+    "n_excluded": 12,
+    "max_candidates": 6
+  }
+}

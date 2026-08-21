@@ -1,0 +1,289 @@
+{
+  "key": "question_0298",
+  "group": "Q17280087",
+  "generation_correct": true,
+  "right": "Emmanuelle Charpentier",
+  "wrong": "Paul Nurse",
+  "base_margin_wrong_minus_right": -1.6999871730804443,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 306,
+      "char_end": 333,
+      "text": "awarded the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 97,
+      "token_end": 102
+    },
+    {
+      "char_start": 334,
+      "char_end": 372,
+      "text": "International Award, the Louis-Jeantet",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Louis-Jeantet Prize for Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 110
+    },
+    {
+      "char_start": 373,
+      "char_end": 396,
+      "text": "Prize for Medicine, and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Medicine",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 110,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.6999871730804443,
+      "wrong_score": -1.706135630607605,
+      "right_score": -0.006148466374725103
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Canada Gairdner"
+      ],
+      "u": -0.36015403270721436,
+      "margin": -1.33983314037323,
+      "wrong_score": -1.353241205215454,
+      "right_score": -0.013408053666353226
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "International Award, the Louis-Jeantet"
+      ],
+      "u": -0.3128699064254761,
+      "margin": -1.3871172666549683,
+      "wrong_score": -1.4691925048828125,
+      "right_score": -0.08207523822784424
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Canada Gairdner",
+        "International Award, the Louis-Jeantet"
+      ],
+      "u": -0.3621809482574463,
+      "margin": -1.337806224822998,
+      "wrong_score": -1.4386094808578491,
+      "right_score": -0.10080325603485107
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Prize for Medicine, and"
+      ],
+      "u": 1.4897184371948242,
+      "margin": -3.1897056102752686,
+      "wrong_score": -3.19085693359375,
+      "right_score": -0.0011512679047882557
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Canada Gairdner",
+        "Prize for Medicine, and"
+      ],
+      "u": -0.5245778560638428,
+      "margin": -1.1754093170166016,
+      "wrong_score": -1.2055494785308838,
+      "right_score": -0.0301401074975729
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "International Award, the Louis-Jeantet",
+        "Prize for Medicine, and"
+      ],
+      "u": -0.6044368743896484,
+      "margin": -1.095550298690796,
+      "wrong_score": -1.2976614236831665,
+      "right_score": -0.202111154794693
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Canada Gairdner",
+        "International Award, the Louis-Jeantet",
+        "Prize for Medicine, and"
+      ],
+      "u": -0.3621683120727539,
+      "margin": -1.3378188610076904,
+      "wrong_score": -1.6733673810958862,
+      "right_score": -0.335548460483551
+    }
+  ],
+  "single_u": [
+    -0.36015403270721436,
+    -0.3128699064254761,
+    1.4897184371948242
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Canada Gairdner",
+        "International Award, the Louis-Jeantet"
+      ],
+      "u_i": -0.36015403270721436,
+      "u_j": -0.3128699064254761,
+      "local_fd": 0.31084299087524414,
+      "banzhaf": 1.2837039232254028,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "awarded the Canada Gairdner",
+        "Prize for Medicine, and"
+      ],
+      "u_i": -0.36015403270721436,
+      "u_j": 1.4897184371948242,
+      "local_fd": -1.6541422605514526,
+      "banzhaf": -0.681281328201294,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "International Award, the Louis-Jeantet",
+        "Prize for Medicine, and"
+      ],
+      "u_i": -0.3128699064254761,
+      "u_j": 1.4897184371948242,
+      "local_fd": -1.7812854051589966,
+      "banzhaf": -0.8084244728088379,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Canada Gairdner",
+        "International Award, the Louis-Jeantet",
+        "Prize for Medicine, and"
+      ],
+      "order": 3,
+      "harsanyi": 1.9457218647003174
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "International Award, the Louis-Jeantet",
+        "Prize for Medicine, and"
+      ],
+      "order": 2,
+      "harsanyi": -1.7812854051589966
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Canada Gairdner",
+        "Prize for Medicine, and"
+      ],
+      "order": 2,
+      "harsanyi": -1.6541422605514526
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Canada Gairdner",
+        "International Award, the Louis-Jeantet"
+      ],
+      "order": 2,
+      "harsanyi": 0.31084299087524414
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.3378188610076904,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

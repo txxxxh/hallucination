@@ -1,0 +1,146 @@
+{
+  "key": "question_0387",
+  "group": "Q1144326",
+  "generation_correct": true,
+  "right": "Yuri Oganessian",
+  "wrong": "Yakov Borisovich Zel'dovich",
+  "base_margin_wrong_minus_right": -0.024998269975185394,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 349,
+      "char_end": 365,
+      "text": "Order of the Red",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 110,
+      "token_end": 114
+    },
+    {
+      "char_start": 418,
+      "char_end": 439,
+      "text": "and the Jubilee Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Jubilee Medal \"In Commemoration of the 100th Anniversary of the Birth of Vladimir Ilyich Lenin\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 123,
+      "token_end": 128
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.024998269975185394,
+      "wrong_score": -0.12722764909267426,
+      "right_score": -0.10222937911748886
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Order of the Red"
+      ],
+      "u": 0.23649215698242188,
+      "margin": -0.26149043440818787,
+      "wrong_score": -0.30993571877479553,
+      "right_score": -0.04844528064131737
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Jubilee Medal"
+      ],
+      "u": 0.16140729188919067,
+      "margin": -0.18640556931495667,
+      "wrong_score": -0.2610115110874176,
+      "right_score": -0.07460593432188034
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the Red",
+        "and the Jubilee Medal"
+      ],
+      "u": 0.27872467041015625,
+      "margin": -0.30372294783592224,
+      "wrong_score": -0.3593791425228119,
+      "right_score": -0.055656202137470245
+    }
+  ],
+  "single_u": [
+    0.23649215698242188,
+    0.16140729188919067
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Order of the Red",
+        "and the Jubilee Medal"
+      ],
+      "u_i": 0.23649215698242188,
+      "u_j": 0.16140729188919067,
+      "local_fd": -0.1191747784614563,
+      "banzhaf": -0.1191747784614563,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the Red",
+        "and the Jubilee Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.1191747784614563
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.30372294783592224,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

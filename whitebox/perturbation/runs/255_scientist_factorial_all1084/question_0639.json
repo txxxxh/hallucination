@@ -1,0 +1,296 @@
+{
+  "key": "question_0639",
+  "group": "Q7487",
+  "generation_correct": true,
+  "right": "Dorothy Hodgkin",
+  "wrong": "Alexander R. Todd, Baron Todd",
+  "base_margin_wrong_minus_right": 0.09619888663291931,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 262,
+      "char_end": 285,
+      "text": "in Chemistry. They were",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 90
+    },
+    {
+      "char_start": 299,
+      "char_end": 318,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 93,
+      "token_end": 100
+    },
+    {
+      "char_start": 549,
+      "char_end": 554,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 147,
+      "token_end": 148
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.09619888663291931,
+      "wrong_score": -0.0850808322429657,
+      "right_score": -0.181279718875885
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in Chemistry. They were"
+      ],
+      "u": -0.021122567355632782,
+      "margin": 0.1173214539885521,
+      "wrong_score": -0.06678228825330734,
+      "right_score": -0.18410374224185944
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.43304821848869324,
+      "margin": 0.5292471051216125,
+      "wrong_score": -0.014547684229910374,
+      "right_score": -0.5437948107719421
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Chemistry. They were",
+        "Fellow of the Royal"
+      ],
+      "u": -0.6782999038696289,
+      "margin": 0.7744987607002258,
+      "wrong_score": -0.014943503774702549,
+      "right_score": -0.789442241191864
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.13687282800674438,
+      "margin": -0.04067394137382507,
+      "wrong_score": -0.19514398276805878,
+      "right_score": -0.1544700413942337
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in Chemistry. They were",
+        "never"
+      ],
+      "u": 0.22035306692123413,
+      "margin": -0.12415417283773422,
+      "wrong_score": -0.24263691902160645,
+      "right_score": -0.11848274618387222
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "never"
+      ],
+      "u": -0.1203862726688385,
+      "margin": 0.2165851593017578,
+      "wrong_score": -0.10643520951271057,
+      "right_score": -0.3230203688144684
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in Chemistry. They were",
+        "Fellow of the Royal",
+        "never"
+      ],
+      "u": -0.503494143486023,
+      "margin": 0.5996930003166199,
+      "wrong_score": -0.02358662150800228,
+      "right_score": -0.6232796311378479
+    }
+  ],
+  "single_u": [
+    -0.021122567355632782,
+    -0.43304821848869324,
+    0.13687282800674438
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "in Chemistry. They were",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.021122567355632782,
+      "u_j": -0.43304821848869324,
+      "local_fd": -0.2241291105747223,
+      "banzhaf": -0.34535861015319824,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "in Chemistry. They were",
+        "never"
+      ],
+      "u_i": -0.021122567355632782,
+      "u_j": 0.13687282800674438,
+      "local_fd": 0.10460281372070312,
+      "banzhaf": -0.016626685857772827,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "never"
+      ],
+      "u_i": -0.43304821848869324,
+      "u_j": 0.13687282800674438,
+      "local_fd": 0.17578911781311035,
+      "banzhaf": 0.0545596219599247,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in Chemistry. They were",
+        "Fellow of the Royal",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.2424589917063713
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Chemistry. They were",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.2241291180253029
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.17578911781311035
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in Chemistry. They were",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.10460280627012253
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5996930003166199,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

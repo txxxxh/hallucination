@@ -1,0 +1,146 @@
+{
+  "key": "question_2737",
+  "group": "Q906616",
+  "generation_correct": false,
+  "right": "Xiaoliang Sunney Xie",
+  "wrong": "Carolyn R. Bertozzi",
+  "base_margin_wrong_minus_right": 0.5148631930351257,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 381,
+      "char_end": 403,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Association for the Advancement of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 110,
+      "token_end": 115
+    },
+    {
+      "char_start": 404,
+      "char_end": 423,
+      "text": "Academy of Arts and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 115,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.5148631930351257,
+      "wrong_score": -0.009786355309188366,
+      "right_score": -0.5246495604515076
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.03240799903869629,
+      "margin": 0.48245519399642944,
+      "wrong_score": -0.009856182150542736,
+      "right_score": -0.49231138825416565
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Academy of Arts and"
+      ],
+      "u": 0.01765426993370056,
+      "margin": 0.49720892310142517,
+      "wrong_score": -0.01459537260234356,
+      "right_score": -0.5118042826652527
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Academy of Arts and"
+      ],
+      "u": 0.06177714467048645,
+      "margin": 0.4530860483646393,
+      "wrong_score": -0.021547673270106316,
+      "right_score": -0.47463372349739075
+    }
+  ],
+  "single_u": [
+    0.03240799903869629,
+    0.01765426993370056
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the American",
+        "Academy of Arts and"
+      ],
+      "u_i": 0.03240799903869629,
+      "u_j": 0.01765426993370056,
+      "local_fd": 0.0117148756980896,
+      "banzhaf": 0.0117148756980896,
+      "relation_raw": "synergy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Academy of Arts and"
+      ],
+      "order": 2,
+      "harsanyi": 0.0117148756980896
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.4530860483646393,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "key": "question_0719",
+  "group": "Q57120",
+  "generation_correct": true,
+  "right": "Peter Grünberg",
+  "wrong": "Manfred Eigen",
+  "base_margin_wrong_minus_right": -2.417112112045288,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 155,
+      "char_end": 183,
+      "text": "university teacher is highly",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 60,
+      "token_end": 66
+    },
+    {
+      "char_start": 263,
+      "char_end": 279,
+      "text": "the Hall of Fame",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Hall of Fame of German Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 78,
+      "token_end": 82
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.417112112045288,
+      "wrong_score": -2.4184823036193848,
+      "right_score": -0.0013701787684112787
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher is highly"
+      ],
+      "u": -2.1188888549804688,
+      "margin": -0.29822325706481934,
+      "wrong_score": -0.40764790773391724,
+      "right_score": -0.1094246357679367
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Hall of Fame"
+      ],
+      "u": -0.2894313335418701,
+      "margin": -2.127680778503418,
+      "wrong_score": -2.1358330249786377,
+      "right_score": -0.008152182213962078
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher is highly",
+        "the Hall of Fame"
+      ],
+      "u": -1.4045319557189941,
+      "margin": -1.012580156326294,
+      "wrong_score": -1.0456652641296387,
+      "right_score": -0.03308510035276413
+    }
+  ],
+  "single_u": [
+    -2.1188888549804688,
+    -0.2894313335418701
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher is highly",
+        "the Hall of Fame"
+      ],
+      "u_i": -2.1188888549804688,
+      "u_j": -0.2894313335418701,
+      "local_fd": 1.0037882328033447,
+      "banzhaf": 1.0037882328033447,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher is highly",
+        "the Hall of Fame"
+      ],
+      "order": 2,
+      "harsanyi": 1.0037882328033447
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.012580156326294,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

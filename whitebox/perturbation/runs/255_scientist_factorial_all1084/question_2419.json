@@ -1,0 +1,323 @@
+{
+  "key": "question_2419",
+  "group": "Q56068",
+  "generation_correct": true,
+  "right": "Jennifer Doudna",
+  "wrong": "Sydney Brenner",
+  "base_margin_wrong_minus_right": 0.9999933838844299,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 488,
+      "char_end": 508,
+      "text": "on the life sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Breakthrough Prize in Life Sciences",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 121,
+      "token_end": 125
+    },
+    {
+      "char_start": 520,
+      "char_end": 525,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 126,
+      "token_end": 127
+    },
+    {
+      "char_start": 531,
+      "char_end": 554,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 129,
+      "token_end": 133
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.9999933838844299,
+      "wrong_score": -0.007161919958889484,
+      "right_score": -1.0071552991867065
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "on the life sciences"
+      ],
+      "u": 0.4687541127204895,
+      "margin": 0.5312392711639404,
+      "wrong_score": -0.04760317504405975,
+      "right_score": -0.5788424611091614
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.1562458872795105,
+      "margin": 0.8437474966049194,
+      "wrong_score": -0.04601030424237251,
+      "right_score": -0.8897578120231628
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "on the life sciences",
+        "never"
+      ],
+      "u": 0.40625470876693726,
+      "margin": 0.5937386751174927,
+      "wrong_score": -0.06528949737548828,
+      "right_score": -0.659028172492981
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": 0.9687594175338745,
+      "margin": 0.03123396635055542,
+      "wrong_score": -0.18697002530097961,
+      "right_score": -0.21820399165153503
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "on the life sciences",
+        "awarded the Nobel Prize"
+      ],
+      "u": 1.000024437904358,
+      "margin": -3.1054019927978516e-05,
+      "wrong_score": -0.2883099913597107,
+      "right_score": -0.2882789373397827
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "u": 1.093774437904358,
+      "margin": -0.0937810093164444,
+      "wrong_score": -0.29570475220680237,
+      "right_score": -0.20192374289035797
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "on the life sciences",
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "u": 1.0625649690628052,
+      "margin": -0.06257155537605286,
+      "wrong_score": -0.4110787808895111,
+      "right_score": -0.34850722551345825
+    }
+  ],
+  "single_u": [
+    0.4687541127204895,
+    0.1562458872795105,
+    0.9687594175338745
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "on the life sciences",
+        "never"
+      ],
+      "u_i": 0.4687541127204895,
+      "u_j": 0.1562458872795105,
+      "local_fd": -0.21874529123306274,
+      "banzhaf": -0.14060989022254944,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "on the life sciences",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": 0.4687541127204895,
+      "u_j": 0.9687594175338745,
+      "local_fd": -0.4374890923500061,
+      "banzhaf": -0.3593536913394928,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": 0.1562458872795105,
+      "u_j": 0.9687594175338745,
+      "local_fd": -0.0312308669090271,
+      "banzhaf": 0.046904534101486206,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "on the life sciences",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.4374890923500061
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "on the life sciences",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.21874529123306274
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "on the life sciences",
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "order": 3,
+      "harsanyi": 0.1562708020210266
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.0312308669090271
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "on the life sciences",
+        "awarded the Nobel Prize"
+      ]
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ]
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "on the life sciences",
+        "never"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.06257155537605286,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

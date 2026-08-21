@@ -1,0 +1,299 @@
+{
+  "model": "mistral",
+  "protocol": "frozen same-model transfer; scalar47 + four hidden PCA8 + layer14 PCA48; scaler/PCA/LR fitted only on Scientist; LR C=.03 class_weight=balanced; seeds 42/43/44 averaged; no target fitting",
+  "source_n": 621,
+  "target_n": 800,
+  "subsets": {
+    "all": {
+      "n": 800,
+      "positive": 573,
+      "auroc": 0.8788123409522491,
+      "auprc": 0.9539507167214394,
+      "accuracy": 0.8025,
+      "balanced_accuracy": 0.7730162757263341,
+      "macro_f1": 0.7643180512981153,
+      "confusion_tn_fp_fn_tp": [
+        160,
+        67,
+        91,
+        482
+      ]
+    },
+    "athlete": {
+      "n": 310,
+      "positive": 245,
+      "auroc": 0.9154788069073784,
+      "auprc": 0.9783721534569354,
+      "accuracy": 0.832258064516129,
+      "balanced_accuracy": 0.7808477237048665,
+      "macro_f1": 0.7625081030113737,
+      "confusion_tn_fp_fn_tp": [
+        45,
+        20,
+        32,
+        213
+      ],
+      "per_seed_auroc": [
+        0.9149764521193093,
+        0.9162323390894819,
+        0.9144740973312401
+      ]
+    },
+    "building": {
+      "n": 245,
+      "positive": 165,
+      "auroc": 0.8518939393939393,
+      "auprc": 0.9337505372812416,
+      "accuracy": 0.7877551020408163,
+      "balanced_accuracy": 0.7748106060606061,
+      "macro_f1": 0.7658088235294118,
+      "confusion_tn_fp_fn_tp": [
+        59,
+        21,
+        31,
+        134
+      ],
+      "per_seed_auroc": [
+        0.853409090909091,
+        0.8497727272727273,
+        0.8527272727272728
+      ]
+    },
+    "musician": {
+      "n": 245,
+      "positive": 163,
+      "auroc": 0.8592697890169086,
+      "auprc": 0.9317953771672852,
+      "accuracy": 0.7795918367346939,
+      "balanced_accuracy": 0.7555738440819991,
+      "macro_f1": 0.7540160642570282,
+      "confusion_tn_fp_fn_tp": [
+        56,
+        26,
+        28,
+        135
+      ],
+      "per_seed_auroc": [
+        0.860691306299566,
+        0.8576238216369894,
+        0.8598683226096064
+      ]
+    },
+    "field:architect": {
+      "n": 20,
+      "positive": 8,
+      "auroc": 0.5625,
+      "auprc": 0.6037119453044375,
+      "accuracy": 0.65,
+      "balanced_accuracy": 0.625,
+      "macro_f1": 0.6266666666666667,
+      "confusion_tn_fp_fn_tp": [
+        9,
+        3,
+        4,
+        4
+      ]
+    },
+    "field:architectural_style": {
+      "n": 22,
+      "positive": 15,
+      "auroc": 0.8761904761904762,
+      "auprc": 0.9545196324143692,
+      "accuracy": 0.8181818181818182,
+      "balanced_accuracy": 0.7904761904761906,
+      "macro_f1": 0.7904761904761906,
+      "confusion_tn_fp_fn_tp": [
+        5,
+        2,
+        2,
+        13
+      ]
+    },
+    "field:birth_place": {
+      "n": 136,
+      "positive": 107,
+      "auroc": 0.9500483403158234,
+      "auprc": 0.9859295507257039,
+      "accuracy": 0.8970588235294118,
+      "balanced_accuracy": 0.8968739929100871,
+      "macro_f1": 0.8599588114151221,
+      "confusion_tn_fp_fn_tp": [
+        26,
+        3,
+        11,
+        96
+      ]
+    },
+    "field:instrument": {
+      "n": 53,
+      "positive": 32,
+      "auroc": 0.8720238095238095,
+      "auprc": 0.9175965514968493,
+      "accuracy": 0.7547169811320755,
+      "balanced_accuracy": 0.7068452380952381,
+      "macro_f1": 0.7139892071398921,
+      "confusion_tn_fp_fn_tp": [
+        10,
+        11,
+        2,
+        30
+      ]
+    },
+    "field:location": {
+      "n": 74,
+      "positive": 59,
+      "auroc": 0.847457627118644,
+      "auprc": 0.9606079054058043,
+      "accuracy": 0.7972972972972973,
+      "balanced_accuracy": 0.6740112994350282,
+      "macro_f1": 0.678354100260794,
+      "confusion_tn_fp_fn_tp": [
+        7,
+        8,
+        7,
+        52
+      ]
+    },
+    "field:material": {
+      "n": 8,
+      "positive": 6,
+      "auroc": 0.6666666666666667,
+      "auprc": 0.8972222222222223,
+      "accuracy": 0.625,
+      "balanced_accuracy": 0.75,
+      "macro_f1": 0.6190476190476191,
+      "confusion_tn_fp_fn_tp": [
+        2,
+        0,
+        3,
+        3
+      ]
+    },
+    "field:nationality": {
+      "n": 113,
+      "positive": 99,
+      "auroc": 0.9783549783549784,
+      "auprc": 0.9971315711096304,
+      "accuracy": 0.9292035398230089,
+      "balanced_accuracy": 0.7756132756132756,
+      "macro_f1": 0.8135313531353134,
+      "confusion_tn_fp_fn_tp": [
+        8,
+        6,
+        2,
+        97
+      ]
+    },
+    "field:occupation": {
+      "n": 49,
+      "positive": 28,
+      "auroc": 0.7142857142857143,
+      "auprc": 0.8187088405140497,
+      "accuracy": 0.673469387755102,
+      "balanced_accuracy": 0.6785714285714286,
+      "macro_f1": 0.6722408026755853,
+      "confusion_tn_fp_fn_tp": [
+        15,
+        6,
+        10,
+        18
+      ]
+    },
+    "field:owner": {
+      "n": 64,
+      "positive": 39,
+      "auroc": 0.884102564102564,
+      "auprc": 0.940382345508881,
+      "accuracy": 0.828125,
+      "balanced_accuracy": 0.8374358974358974,
+      "macro_f1": 0.8246575342465754,
+      "confusion_tn_fp_fn_tp": [
+        22,
+        3,
+        8,
+        31
+      ]
+    },
+    "field:position": {
+      "n": 40,
+      "positive": 32,
+      "auroc": 0.875,
+      "auprc": 0.969375081238692,
+      "accuracy": 0.75,
+      "balanced_accuracy": 0.703125,
+      "macro_f1": 0.6666666666666667,
+      "confusion_tn_fp_fn_tp": [
+        5,
+        3,
+        7,
+        25
+      ]
+    },
+    "field:record_label": {
+      "n": 57,
+      "positive": 30,
+      "auroc": 0.8098765432098765,
+      "auprc": 0.8428484399217737,
+      "accuracy": 0.6491228070175439,
+      "balanced_accuracy": 0.6518518518518519,
+      "macro_f1": 0.6490147783251232,
+      "confusion_tn_fp_fn_tp": [
+        19,
+        8,
+        12,
+        18
+      ]
+    },
+    "field:sport": {
+      "n": 50,
+      "positive": 43,
+      "auroc": 0.7840531561461794,
+      "auprc": 0.9638703074623858,
+      "accuracy": 0.78,
+      "balanced_accuracy": 0.6926910299003322,
+      "macro_f1": 0.6426250812215724,
+      "confusion_tn_fp_fn_tp": [
+        4,
+        3,
+        8,
+        35
+      ]
+    },
+    "field:team": {
+      "n": 56,
+      "positive": 37,
+      "auroc": 0.8890469416785206,
+      "auprc": 0.9452224815681884,
+      "accuracy": 0.7678571428571429,
+      "balanced_accuracy": 0.7603129445234709,
+      "macro_f1": 0.7499141188594984,
+      "confusion_tn_fp_fn_tp": [
+        14,
+        5,
+        8,
+        29
+      ]
+    },
+    "field:tenant": {
+      "n": 57,
+      "positive": 38,
+      "auroc": 0.8559556786703602,
+      "auprc": 0.9328305061584026,
+      "accuracy": 0.7894736842105263,
+      "balanced_accuracy": 0.7763157894736842,
+      "macro_f1": 0.768918918918919,
+      "confusion_tn_fp_fn_tp": [
+        14,
+        5,
+        7,
+        31
+      ]
+    }
+  },
+  "queries": {
+    "selected_span_queries_mean": 44.9475,
+    "full_enumeration_span_queries_mean": 44.9475,
+    "charged_queries_mean": 44.9475,
+    "reduction_vs_full": 0.0
+  }
+}

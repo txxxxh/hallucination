@@ -1,0 +1,151 @@
+{
+  "key": "question_1323",
+  "group": "Q155794",
+  "generation_correct": true,
+  "right": "Hans Bethe",
+  "wrong": "Martin Rees, Baron Rees of Ludlow",
+  "base_margin_wrong_minus_right": -0.13936525583267212,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 316,
+      "char_end": 343,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 99,
+      "token_end": 105
+    },
+    {
+      "char_start": 460,
+      "char_end": 481,
+      "text": "and the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 128,
+      "token_end": 133
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.13936525583267212,
+      "wrong_score": -0.19780659675598145,
+      "right_score": -0.05844133347272873
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": -0.8309010863304138,
+      "margin": 0.6915358304977417,
+      "wrong_score": -0.05253436788916588,
+      "right_score": -0.7440701723098755
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Royal Society"
+      ],
+      "u": -0.1676807403564453,
+      "margin": 0.028315477073192596,
+      "wrong_score": -0.11469510942697525,
+      "right_score": -0.14301058650016785
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "and the Royal Society"
+      ],
+      "u": -0.8916524648666382,
+      "margin": 0.7522872090339661,
+      "wrong_score": -0.026931101456284523,
+      "right_score": -0.779218316078186
+    }
+  ],
+  "single_u": [
+    -0.8309010863304138,
+    -0.1676807403564453
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "and the Royal Society"
+      ],
+      "u_i": -0.8309010863304138,
+      "u_j": -0.1676807403564453,
+      "local_fd": 0.10692936182022095,
+      "banzhaf": 0.10692936182022095,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "and the Royal Society"
+      ],
+      "order": 2,
+      "harsanyi": 0.10692936182022095
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7522872090339661,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,299 @@
+{
+  "key": "question_2633",
+  "group": "Q153194",
+  "generation_correct": true,
+  "right": "Edward Victor Appleton",
+  "wrong": "Ernest Rutherford",
+  "base_margin_wrong_minus_right": -0.5929986834526062,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 194,
+      "char_end": 221,
+      "text": "education at the University",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate at the Laval University",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 68,
+      "token_end": 72
+    },
+    {
+      "char_start": 377,
+      "char_end": 396,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 104,
+      "token_end": 109
+    },
+    {
+      "char_start": 397,
+      "char_end": 423,
+      "text": "Society, named an Honorary",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Royal Society of Edinburgh",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 108,
+      "token_end": 114
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5929986834526062,
+      "wrong_score": -0.6208455562591553,
+      "right_score": -0.027846891433000565
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "education at the University"
+      ],
+      "u": 0.25043487548828125,
+      "margin": -0.8434335589408875,
+      "wrong_score": -0.860730767250061,
+      "right_score": -0.017297206446528435
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.5931441783905029,
+      "margin": 0.00014550983905792236,
+      "wrong_score": -0.19500687718391418,
+      "right_score": -0.1951523870229721
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal"
+      ],
+      "u": -0.7180484533309937,
+      "margin": 0.12504976987838745,
+      "wrong_score": -0.16236254572868347,
+      "right_score": -0.2874123156070709
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Society, named an Honorary"
+      ],
+      "u": -0.21825027465820312,
+      "margin": -0.3747484087944031,
+      "wrong_score": -0.45161986351013184,
+      "right_score": -0.07687144726514816
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at the University",
+        "Society, named an Honorary"
+      ],
+      "u": 0.46936172246932983,
+      "margin": -1.062360405921936,
+      "wrong_score": -1.0899056196212769,
+      "right_score": -0.027545230463147163
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Society, named an Honorary"
+      ],
+      "u": -0.12440714240074158,
+      "margin": -0.4685915410518646,
+      "wrong_score": -0.5388270616531372,
+      "right_score": -0.07023551315069199
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal",
+        "Society, named an Honorary"
+      ],
+      "u": 0.06298166513442993,
+      "margin": -0.6559803485870361,
+      "wrong_score": -0.7125585079193115,
+      "right_score": -0.056578151881694794
+    }
+  ],
+  "single_u": [
+    0.25043487548828125,
+    -0.5931441783905029,
+    -0.21825027465820312
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.25043487548828125,
+      "u_j": -0.5931441783905029,
+      "local_fd": -0.375339150428772,
+      "banzhaf": -0.4377811551094055,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "education at the University",
+        "Society, named an Honorary"
+      ],
+      "u_i": 0.25043487548828125,
+      "u_j": -0.21825027465820312,
+      "local_fd": 0.4371771216392517,
+      "banzhaf": 0.3747350871562958,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "Society, named an Honorary"
+      ],
+      "u_i": -0.5931441783905029,
+      "u_j": -0.21825027465820312,
+      "local_fd": 0.6869872808456421,
+      "banzhaf": 0.6245452761650085,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Society, named an Honorary"
+      ],
+      "order": 2,
+      "harsanyi": 0.6869873106479645
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at the University",
+        "Society, named an Honorary"
+      ],
+      "order": 2,
+      "harsanyi": 0.4371771216392517
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.375339150428772
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal",
+        "Society, named an Honorary"
+      ],
+      "order": 3,
+      "harsanyi": -0.12488403916358948
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Society, named an Honorary"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.6559803485870361,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

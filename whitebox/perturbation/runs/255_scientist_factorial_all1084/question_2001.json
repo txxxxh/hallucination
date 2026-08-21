@@ -1,0 +1,160 @@
+{
+  "key": "question_2001",
+  "group": "Q1043",
+  "generation_correct": false,
+  "right": "Carl Linnaeus",
+  "wrong": "Louis Agassiz",
+  "base_margin_wrong_minus_right": 0.12500812113285065,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 207,
+      "char_end": 234,
+      "text": "university teacher who made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 75,
+      "token_end": 80
+    },
+    {
+      "char_start": 284,
+      "char_end": 316,
+      "text": "a dedicated scientific collector",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientific collector",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 88,
+      "token_end": 97
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.12500812113285065,
+      "wrong_score": -0.12519468367099762,
+      "right_score": -0.25020280480384827
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher who made"
+      ],
+      "u": -5.111098289489746e-06,
+      "margin": 0.12501323223114014,
+      "wrong_score": -0.14087241888046265,
+      "right_score": -0.2658856511116028
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "a dedicated scientific collector"
+      ],
+      "u": 0.34370967745780945,
+      "margin": -0.2187015563249588,
+      "wrong_score": -0.3597524166107178,
+      "right_score": -0.14105086028575897
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher who made",
+        "a dedicated scientific collector"
+      ],
+      "u": 0.49996888637542725,
+      "margin": -0.3749607801437378,
+      "wrong_score": -0.4703611135482788,
+      "right_score": -0.09540031850337982
+    }
+  ],
+  "single_u": [
+    -5.111098289489746e-06,
+    0.34370967745780945
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher who made",
+        "a dedicated scientific collector"
+      ],
+      "u_i": -5.111098289489746e-06,
+      "u_j": 0.34370967745780945,
+      "local_fd": 0.15626433491706848,
+      "banzhaf": 0.15626433491706848,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher who made",
+        "a dedicated scientific collector"
+      ],
+      "order": 2,
+      "harsanyi": 0.1562643200159073
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "a dedicated scientific collector"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "a dedicated scientific collector"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.3749607801437378,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

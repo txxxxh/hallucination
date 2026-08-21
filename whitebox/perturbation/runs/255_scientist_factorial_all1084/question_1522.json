@@ -1,0 +1,144 @@
+{
+  "key": "question_1522",
+  "group": "Q7442",
+  "generation_correct": true,
+  "right": "Carolyn R. Bertozzi",
+  "wrong": "Robert Robinson",
+  "base_margin_wrong_minus_right": -2.3234126567840576,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 235,
+      "char_end": 259,
+      "text": "on the chemical sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 74,
+      "token_end": 80
+    },
+    {
+      "char_start": 359,
+      "char_end": 384,
+      "text": "in Chemistry. In addition",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 98,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.3234126567840576,
+      "wrong_score": -2.328362464904785,
+      "right_score": -0.004949882160872221
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "on the chemical sciences"
+      ],
+      "u": -2.30853271484375,
+      "margin": -0.014880046248435974,
+      "wrong_score": -0.18862347304821014,
+      "right_score": -0.17374342679977417
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Chemistry. In addition"
+      ],
+      "u": -1.7878624200820923,
+      "margin": -0.5355502367019653,
+      "wrong_score": -0.5933126211166382,
+      "right_score": -0.05776239186525345
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "on the chemical sciences",
+        "in Chemistry. In addition"
+      ],
+      "u": -1.7169451713562012,
+      "margin": -0.6064674258232117,
+      "wrong_score": -0.6720402240753174,
+      "right_score": -0.06557280570268631
+    }
+  ],
+  "single_u": [
+    -2.30853271484375,
+    -1.7878624200820923
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "on the chemical sciences",
+        "in Chemistry. In addition"
+      ],
+      "u_i": -2.30853271484375,
+      "u_j": -1.7878624200820923,
+      "local_fd": 2.3794498443603516,
+      "banzhaf": 2.3794498443603516,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "on the chemical sciences",
+        "in Chemistry. In addition"
+      ],
+      "order": 2,
+      "harsanyi": 2.379449963569641
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6064674258232117,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

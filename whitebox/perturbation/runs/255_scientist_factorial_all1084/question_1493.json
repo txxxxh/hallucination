@@ -1,0 +1,289 @@
+{
+  "key": "question_1493",
+  "group": "Q219716",
+  "generation_correct": true,
+  "right": "Paul Nurse",
+  "wrong": "Aaron Klug",
+  "base_margin_wrong_minus_right": 0.7263755798339844,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 177,
+      "char_end": 197,
+      "text": "of the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 63,
+      "token_end": 71
+    },
+    {
+      "char_start": 285,
+      "char_end": 303,
+      "text": "including the Dr H",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Dr H.P. Heineken Prize for Biochemistry and Biophysics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 94,
+      "token_end": 96
+    },
+    {
+      "char_start": 326,
+      "char_end": 358,
+      "text": "Biochemistry and Biophysics, the",
+      "kind": "attribute",
+      "field": "field",
+      "value": "biochemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 98,
+      "token_end": 105
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.7263755798339844,
+      "wrong_score": -0.07919608801603317,
+      "right_score": -0.8055716753005981
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "of the Royal Society"
+      ],
+      "u": -0.04332709312438965,
+      "margin": 0.769702672958374,
+      "wrong_score": -0.09164880216121674,
+      "right_score": -0.861351490020752
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Dr H"
+      ],
+      "u": -0.24292171001434326,
+      "margin": 0.9692972898483276,
+      "wrong_score": -0.0483698695898056,
+      "right_score": -1.0176671743392944
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the Royal Society",
+        "including the Dr H"
+      ],
+      "u": -0.11934459209442139,
+      "margin": 0.8457201719284058,
+      "wrong_score": -0.06747040152549744,
+      "right_score": -0.9131905436515808
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Biochemistry and Biophysics, the"
+      ],
+      "u": 0.06584316492080688,
+      "margin": 0.6605324149131775,
+      "wrong_score": -0.1000075489282608,
+      "right_score": -0.7605399489402771
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "of the Royal Society",
+        "Biochemistry and Biophysics, the"
+      ],
+      "u": 0.005418181419372559,
+      "margin": 0.7209573984146118,
+      "wrong_score": -0.09411623328924179,
+      "right_score": -0.8150736093521118
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Dr H",
+        "Biochemistry and Biophysics, the"
+      ],
+      "u": 0.21665996313095093,
+      "margin": 0.5097156167030334,
+      "wrong_score": -0.11072997748851776,
+      "right_score": -0.6204456090927124
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "of the Royal Society",
+        "including the Dr H",
+        "Biochemistry and Biophysics, the"
+      ],
+      "u": 0.05359947681427002,
+      "margin": 0.6727761030197144,
+      "wrong_score": -0.09253714978694916,
+      "right_score": -0.7653132677078247
+    }
+  ],
+  "single_u": [
+    -0.04332709312438965,
+    -0.24292171001434326,
+    0.06584316492080688
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "of the Royal Society",
+        "including the Dr H"
+      ],
+      "u_i": -0.04332709312438965,
+      "u_j": -0.24292171001434326,
+      "local_fd": 0.16690421104431152,
+      "banzhaf": 0.03213435411453247,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "of the Royal Society",
+        "Biochemistry and Biophysics, the"
+      ],
+      "u_i": -0.04332709312438965,
+      "u_j": 0.06584316492080688,
+      "local_fd": -0.017097890377044678,
+      "banzhaf": -0.15186774730682373,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Dr H",
+        "Biochemistry and Biophysics, the"
+      ],
+      "u_i": -0.24292171001434326,
+      "u_j": 0.06584316492080688,
+      "local_fd": 0.3937385082244873,
+      "banzhaf": 0.25896865129470825,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Dr H",
+        "Biochemistry and Biophysics, the"
+      ],
+      "order": 2,
+      "harsanyi": 0.3937385082244873
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "of the Royal Society",
+        "including the Dr H",
+        "Biochemistry and Biophysics, the"
+      ],
+      "order": 3,
+      "harsanyi": -0.2695397138595581
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the Royal Society",
+        "including the Dr H"
+      ],
+      "order": 2,
+      "harsanyi": 0.16690421104431152
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "of the Royal Society",
+        "Biochemistry and Biophysics, the"
+      ],
+      "order": 2,
+      "harsanyi": -0.017097890377044678
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6727761030197144,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

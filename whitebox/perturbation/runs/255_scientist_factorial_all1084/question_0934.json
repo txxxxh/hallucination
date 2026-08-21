@@ -1,0 +1,145 @@
+{
+  "key": "question_0934",
+  "group": "Q701506",
+  "generation_correct": true,
+  "right": "Robert Weinberg",
+  "wrong": "Craig Venter",
+  "base_margin_wrong_minus_right": -0.04163910448551178,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 223,
+      "char_end": 244,
+      "text": "of Asturias Award for",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Princess of Asturias Award for Technical and Scientific Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 81,
+      "token_end": 85
+    },
+    {
+      "char_start": 428,
+      "char_end": 448,
+      "text": "in the life sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Breakthrough Prize in Life Sciences",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 120,
+      "token_end": 126
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.04163910448551178,
+      "wrong_score": -0.2573704123497009,
+      "right_score": -0.21573130786418915
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "of Asturias Award for"
+      ],
+      "u": 0.08333693444728851,
+      "margin": -0.12497603893280029,
+      "wrong_score": -0.31356164813041687,
+      "right_score": -0.18858560919761658
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in the life sciences"
+      ],
+      "u": 0.04164360463619232,
+      "margin": -0.0832827091217041,
+      "wrong_score": -0.32159900665283203,
+      "right_score": -0.23831629753112793
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of Asturias Award for",
+        "in the life sciences"
+      ],
+      "u": 0.2083268016576767,
+      "margin": -0.24996590614318848,
+      "wrong_score": -0.3997989594936371,
+      "right_score": -0.1498330533504486
+    }
+  ],
+  "single_u": [
+    0.08333693444728851,
+    0.04164360463619232
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "of Asturias Award for",
+        "in the life sciences"
+      ],
+      "u_i": 0.08333693444728851,
+      "u_j": 0.04164360463619232,
+      "local_fd": 0.08334626257419586,
+      "banzhaf": 0.08334626257419586,
+      "relation_raw": "synergy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of Asturias Award for",
+        "in the life sciences"
+      ],
+      "order": 2,
+      "harsanyi": 0.08334626257419586
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.24996590614318848,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

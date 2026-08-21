@@ -1,0 +1,296 @@
+{
+  "key": "question_2371",
+  "group": "Q336397",
+  "generation_correct": true,
+  "right": "Robert May, Baron May of Oxford",
+  "wrong": "Alexander R. Todd, Baron Todd",
+  "base_margin_wrong_minus_right": -0.6566630005836487,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 225,
+      "char_end": 244,
+      "text": "member of the House",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "member of the House of Lords",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 86,
+      "token_end": 93
+    },
+    {
+      "char_start": 272,
+      "char_end": 294,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 97,
+      "token_end": 102
+    },
+    {
+      "char_start": 330,
+      "char_end": 349,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 108,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.6566630005836487,
+      "wrong_score": -0.6790398955345154,
+      "right_score": -0.02237688936293125
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "member of the House"
+      ],
+      "u": -0.3071911931037903,
+      "margin": -0.3494718074798584,
+      "wrong_score": -0.38475051522254944,
+      "right_score": -0.03527870774269104
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": -1.6109530925750732,
+      "margin": 0.9542901515960693,
+      "wrong_score": -0.02440168336033821,
+      "right_score": -0.978691816329956
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "member of the House",
+        "President of the Royal"
+      ],
+      "u": -1.2091479301452637,
+      "margin": 0.552484929561615,
+      "wrong_score": -0.049055878072977066,
+      "right_score": -0.6015408039093018
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.1108853816986084,
+      "margin": -0.5457776188850403,
+      "wrong_score": -0.5614500641822815,
+      "right_score": -0.01567244902253151
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "member of the House",
+        "Fellow of the Royal"
+      ],
+      "u": -0.11281752586364746,
+      "margin": -0.5438454747200012,
+      "wrong_score": -0.5597822070121765,
+      "right_score": -0.01593673974275589
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "u": -1.3838703632354736,
+      "margin": 0.7272074222564697,
+      "wrong_score": -0.03029775619506836,
+      "right_score": -0.7575051784515381
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "member of the House",
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "u": -1.1995973587036133,
+      "margin": 0.5429343581199646,
+      "wrong_score": -0.052994612604379654,
+      "right_score": -0.595928966999054
+    }
+  ],
+  "single_u": [
+    -0.3071911931037903,
+    -1.6109530925750732,
+    -0.1108853816986084
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "member of the House",
+        "President of the Royal"
+      ],
+      "u_i": -0.3071911931037903,
+      "u_j": -1.6109530925750732,
+      "local_fd": 0.7089963555335999,
+      "banzhaf": 0.44760075211524963,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "member of the House",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.3071911931037903,
+      "u_j": -0.1108853816986084,
+      "local_fd": 0.3052590489387512,
+      "banzhaf": 0.043863445520401,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "u_i": -1.6109530925750732,
+      "u_j": -0.1108853816986084,
+      "local_fd": 0.337968111038208,
+      "banzhaf": 0.07657250761985779,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "member of the House",
+        "President of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.7089963555335999
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "member of the House",
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": -0.5227912068367004
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.337968111038208
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "member of the House",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.3052590489387512
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5429343581199646,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

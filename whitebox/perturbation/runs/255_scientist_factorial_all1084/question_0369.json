@@ -1,0 +1,149 @@
+{
+  "key": "question_0369",
+  "group": "Q900837",
+  "generation_correct": false,
+  "right": "Richard Zare",
+  "wrong": "Robert H. Grubbs",
+  "base_margin_wrong_minus_right": -0.6340460181236267,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 360,
+      "char_end": 379,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 105,
+      "token_end": 110
+    },
+    {
+      "char_start": 418,
+      "char_end": 423,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 117,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.6340460181236267,
+      "wrong_score": -0.6572600603103638,
+      "right_score": -0.0232140701264143
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -1.2517826557159424,
+      "margin": 0.6177366375923157,
+      "wrong_score": -0.036658696830272675,
+      "right_score": -0.654395341873169
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.6041563749313354,
+      "margin": -0.02988964319229126,
+      "wrong_score": -0.17891225218772888,
+      "right_score": -0.14902260899543762
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "never"
+      ],
+      "u": -1.135382890701294,
+      "margin": 0.5013368725776672,
+      "wrong_score": -0.04370204731822014,
+      "right_score": -0.5450389385223389
+    }
+  ],
+  "single_u": [
+    -1.2517826557159424,
+    -0.6041563749313354
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as a Foreign Member",
+        "never"
+      ],
+      "u_i": -1.2517826557159424,
+      "u_j": -0.6041563749313354,
+      "local_fd": 0.7205561399459839,
+      "banzhaf": 0.7205561399459839,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.7205561399459839
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5013368725776672,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

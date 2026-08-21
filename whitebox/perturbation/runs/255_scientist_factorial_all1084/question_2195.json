@@ -1,0 +1,145 @@
+{
+  "key": "question_2195",
+  "group": "Q441154",
+  "generation_correct": true,
+  "right": "Victor Frederick Weisskopf",
+  "wrong": "Otto Hahn",
+  "base_margin_wrong_minus_right": -0.8469572067260742,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 448,
+      "char_end": 469,
+      "text": "for Sciences and Arts",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 118,
+      "token_end": 123
+    },
+    {
+      "char_start": 505,
+      "char_end": 527,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 128,
+      "token_end": 133
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.8469572067260742,
+      "wrong_score": -0.8548409938812256,
+      "right_score": -0.007883802056312561
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "for Sciences and Arts"
+      ],
+      "u": -0.3006588816642761,
+      "margin": -0.5462983250617981,
+      "wrong_score": -0.5847755074501038,
+      "right_score": -0.038477201014757156
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.18408095836639404,
+      "margin": -0.6628762483596802,
+      "wrong_score": -0.6840834021568298,
+      "right_score": -0.021207129582762718
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "for Sciences and Arts",
+        "Fellow of the American"
+      ],
+      "u": -0.15392011404037476,
+      "margin": -0.6930370926856995,
+      "wrong_score": -0.711137056350708,
+      "right_score": -0.018099937587976456
+    }
+  ],
+  "single_u": [
+    -0.3006588816642761,
+    -0.18408095836639404
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "for Sciences and Arts",
+        "Fellow of the American"
+      ],
+      "u_i": -0.3006588816642761,
+      "u_j": -0.18408095836639404,
+      "local_fd": 0.3308197259902954,
+      "banzhaf": 0.3308197259902954,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "for Sciences and Arts",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.3308197259902954
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6930370926856995,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "key": "question_0437",
+  "group": "Q57120",
+  "generation_correct": false,
+  "right": "Peter Grünberg",
+  "wrong": "Gerhard Ertl",
+  "base_margin_wrong_minus_right": 1.7190335988998413,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 291,
+      "char_end": 307,
+      "text": "the Hall of Fame",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Hall of Fame of German Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 87,
+      "token_end": 92
+    },
+    {
+      "char_start": 415,
+      "char_end": 441,
+      "text": "and the Knight Commander's",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight Commander's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 113,
+      "token_end": 117
+    },
+    {
+      "char_start": 442,
+      "char_end": 460,
+      "text": "Cross of the Order",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Commander's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 116,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.7190335988998413,
+      "wrong_score": -0.0008948853937909007,
+      "right_score": -1.719928503036499
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Hall of Fame"
+      ],
+      "u": 0.031415581703186035,
+      "margin": 1.6876180171966553,
+      "wrong_score": -0.0018985935021191835,
+      "right_score": -1.6895166635513306
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Knight Commander's"
+      ],
+      "u": -0.12485790252685547,
+      "margin": 1.8438915014266968,
+      "wrong_score": -0.002620118670165539,
+      "right_score": -1.8465116024017334
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Hall of Fame",
+        "and the Knight Commander's"
+      ],
+      "u": 0.12517988681793213,
+      "margin": 1.5938537120819092,
+      "wrong_score": -0.0020421091467142105,
+      "right_score": -1.595895767211914
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Cross of the Order"
+      ],
+      "u": -0.2498112916946411,
+      "margin": 1.9688448905944824,
+      "wrong_score": -0.0016276800306513906,
+      "right_score": -1.9704725742340088
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Hall of Fame",
+        "Cross of the Order"
+      ],
+      "u": 0.09394717216491699,
+      "margin": 1.6250864267349243,
+      "wrong_score": -0.0017090055625885725,
+      "right_score": -1.6267954111099243
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "u": -0.3436204195022583,
+      "margin": 2.0626540184020996,
+      "wrong_score": -0.0015396940289065242,
+      "right_score": -2.0641937255859375
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Hall of Fame",
+        "and the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "u": 0.2189326286315918,
+      "margin": 1.5001009702682495,
+      "wrong_score": -0.001774484757333994,
+      "right_score": -1.501875400543213
+    }
+  ],
+  "single_u": [
+    0.031415581703186035,
+    -0.12485790252685547,
+    -0.2498112916946411
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Hall of Fame",
+        "and the Knight Commander's"
+      ],
+      "u_i": 0.031415581703186035,
+      "u_j": -0.12485790252685547,
+      "local_fd": 0.21862220764160156,
+      "banzhaf": 0.21870839595794678,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Hall of Fame",
+        "Cross of the Order"
+      ],
+      "u_i": 0.031415581703186035,
+      "u_j": -0.2498112916946411,
+      "local_fd": 0.31234288215637207,
+      "banzhaf": 0.3124290704727173,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "u_i": -0.12485790252685547,
+      "u_j": -0.2498112916946411,
+      "local_fd": 0.03104877471923828,
+      "banzhaf": 0.031134963035583496,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Hall of Fame",
+        "Cross of the Order"
+      ],
+      "order": 2,
+      "harsanyi": 0.31234288215637207
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Hall of Fame",
+        "and the Knight Commander's"
+      ],
+      "order": 2,
+      "harsanyi": 0.21862220764160156
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "order": 2,
+      "harsanyi": 0.03104877471923828
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Hall of Fame",
+        "and the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "order": 3,
+      "harsanyi": 0.0001723766326904297
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.5001009702682495,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

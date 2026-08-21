@@ -1,0 +1,296 @@
+{
+  "key": "question_2287",
+  "group": "Q335213",
+  "generation_correct": false,
+  "right": "Martin Rees, Baron Rees of Ludlow",
+  "wrong": "Anton Zeilinger",
+  "base_margin_wrong_minus_right": -0.11063159257173538,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 172,
+      "char_end": 199,
+      "text": "university teacher has made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 68,
+      "token_end": 73
+    },
+    {
+      "char_start": 344,
+      "char_end": 370,
+      "text": "including the Isaac Newton",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Isaac Newton Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 103,
+      "token_end": 108
+    },
+    {
+      "char_start": 371,
+      "char_end": 392,
+      "text": "Medal, the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 107,
+      "token_end": 112
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.11063159257173538,
+      "wrong_score": -0.19725148379802704,
+      "right_score": -0.08661989122629166
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher has made"
+      ],
+      "u": 0.1358637809753418,
+      "margin": -0.24649538099765778,
+      "wrong_score": -0.30704259872436523,
+      "right_score": -0.06054722145199776
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Isaac Newton"
+      ],
+      "u": -0.4261786639690399,
+      "margin": 0.31554707884788513,
+      "wrong_score": -0.017798645421862602,
+      "right_score": -0.3333457112312317
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has made",
+        "including the Isaac Newton"
+      ],
+      "u": -0.22550025582313538,
+      "margin": 0.1148686558008194,
+      "wrong_score": -0.05847113952040672,
+      "right_score": -0.17333979904651642
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Medal, the Wolf Prize"
+      ],
+      "u": -0.2097943127155304,
+      "margin": 0.09916272759437561,
+      "wrong_score": -0.06170327588915825,
+      "right_score": -0.16086600720882416
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "Medal, the Wolf Prize"
+      ],
+      "u": -0.179661363363266,
+      "margin": 0.06902976334095001,
+      "wrong_score": -0.08394762873649597,
+      "right_score": -0.15297739207744598
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Isaac Newton",
+        "Medal, the Wolf Prize"
+      ],
+      "u": -0.205247700214386,
+      "margin": 0.0946161076426506,
+      "wrong_score": -0.08269002288579941,
+      "right_score": -0.17730613052845
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "including the Isaac Newton",
+        "Medal, the Wolf Prize"
+      ],
+      "u": -0.11962582916021347,
+      "margin": 0.008994236588478088,
+      "wrong_score": -0.13154004514217377,
+      "right_score": -0.14053428173065186
+    }
+  ],
+  "single_u": [
+    0.1358637809753418,
+    -0.4261786639690399,
+    -0.2097943127155304
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher has made",
+        "including the Isaac Newton"
+      ],
+      "u_i": 0.1358637809753418,
+      "u_j": -0.4261786639690399,
+      "local_fd": 0.06481462717056274,
+      "banzhaf": 0.06015177071094513,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher has made",
+        "Medal, the Wolf Prize"
+      ],
+      "u_i": 0.1358637809753418,
+      "u_j": -0.2097943127155304,
+      "local_fd": -0.10573083162307739,
+      "banzhaf": -0.11039368808269501,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Isaac Newton",
+        "Medal, the Wolf Prize"
+      ],
+      "u_i": -0.4261786639690399,
+      "u_j": -0.2097943127155304,
+      "local_fd": 0.4307252764701843,
+      "banzhaf": 0.4260624051094055,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Isaac Newton",
+        "Medal, the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.4307252764701843
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "Medal, the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.10573083162307739
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has made",
+        "including the Isaac Newton"
+      ],
+      "order": 2,
+      "harsanyi": 0.06481462717056274
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "including the Isaac Newton",
+        "Medal, the Wolf Prize"
+      ],
+      "order": 3,
+      "harsanyi": -0.009325705468654633
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.008994236588478088,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

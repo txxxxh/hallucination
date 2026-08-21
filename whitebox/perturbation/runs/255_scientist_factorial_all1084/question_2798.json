@@ -1,0 +1,146 @@
+{
+  "key": "question_2798",
+  "group": "Q62857",
+  "generation_correct": false,
+  "right": "Maurice Vincent Wilkes",
+  "wrong": "Douglas Engelbart",
+  "base_margin_wrong_minus_right": 0.43125489354133606,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 355,
+      "char_end": 372,
+      "text": "the IEEE John von",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "IEEE John von Neumann Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 97,
+      "token_end": 100
+    },
+    {
+      "char_start": 396,
+      "char_end": 421,
+      "text": "title of Computer History",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Computer History Museum Fellow",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 107
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.43125489354133606,
+      "wrong_score": -0.019259627908468246,
+      "right_score": -0.4505145251750946
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the IEEE John von"
+      ],
+      "u": -0.4993925392627716,
+      "margin": 0.9306474328041077,
+      "wrong_score": -0.018049895763397217,
+      "right_score": -0.9486973285675049
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "title of Computer History"
+      ],
+      "u": -0.6287297010421753,
+      "margin": 1.059984564781189,
+      "wrong_score": -0.0074415430426597595,
+      "right_score": -1.067426085472107
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the IEEE John von",
+        "title of Computer History"
+      ],
+      "u": -0.5440598726272583,
+      "margin": 0.975314736366272,
+      "wrong_score": -0.011703798547387123,
+      "right_score": -0.9870185256004333
+    }
+  ],
+  "single_u": [
+    -0.4993925392627716,
+    -0.6287297010421753
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the IEEE John von",
+        "title of Computer History"
+      ],
+      "u_i": -0.4993925392627716,
+      "u_j": -0.6287297010421753,
+      "local_fd": 0.5840623378753662,
+      "banzhaf": 0.5840623378753662,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the IEEE John von",
+        "title of Computer History"
+      ],
+      "order": 2,
+      "harsanyi": 0.5840623676776886
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.975314736366272,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

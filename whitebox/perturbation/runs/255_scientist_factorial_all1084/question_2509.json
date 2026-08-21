@@ -1,0 +1,293 @@
+{
+  "key": "question_2509",
+  "group": "Q1356355",
+  "generation_correct": false,
+  "right": "Hubert Reeves",
+  "wrong": "Serge Haroche",
+  "base_margin_wrong_minus_right": -0.32701191306114197,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 121,
+      "char_end": 148,
+      "text": "This renowned physicist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 55,
+      "token_end": 62
+    },
+    {
+      "char_start": 187,
+      "char_end": 214,
+      "text": "life to scientific research",
+      "kind": "attribute",
+      "field": "field",
+      "value": "research",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 67,
+      "token_end": 73
+    },
+    {
+      "char_start": 349,
+      "char_end": 377,
+      "text": "prestigious Legion of Honour",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Officer of the Legion of Honour",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 94,
+      "token_end": 101
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.32701191306114197,
+      "wrong_score": -0.38461047410964966,
+      "right_score": -0.05759856104850769
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This renowned physicist and"
+      ],
+      "u": -0.6059764623641968,
+      "margin": 0.2789645493030548,
+      "wrong_score": -0.08609550446271896,
+      "right_score": -0.36506006121635437
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "life to scientific research"
+      ],
+      "u": 0.6684417724609375,
+      "margin": -0.9954536557197571,
+      "wrong_score": -1.0068539381027222,
+      "right_score": -0.011400284245610237
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This renowned physicist and",
+        "life to scientific research"
+      ],
+      "u": -0.4505733847618103,
+      "margin": 0.12356147170066833,
+      "wrong_score": -0.1250959187746048,
+      "right_score": -0.24865739047527313
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "prestigious Legion of Honour"
+      ],
+      "u": -3.120114803314209,
+      "margin": 2.793102979660034,
+      "wrong_score": -0.0020144477020949125,
+      "right_score": -2.7951173782348633
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This renowned physicist and",
+        "prestigious Legion of Honour"
+      ],
+      "u": -3.3702385425567627,
+      "margin": 3.043226718902588,
+      "wrong_score": -0.00249186041764915,
+      "right_score": -3.0457186698913574
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "life to scientific research",
+        "prestigious Legion of Honour"
+      ],
+      "u": -2.620938539505005,
+      "margin": 2.29392671585083,
+      "wrong_score": -0.0023280370514839888,
+      "right_score": -2.2962546348571777
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This renowned physicist and",
+        "life to scientific research",
+        "prestigious Legion of Honour"
+      ],
+      "u": -2.0815038681030273,
+      "margin": 1.754491925239563,
+      "wrong_score": -0.004709415137767792,
+      "right_score": -1.7592012882232666
+    }
+  ],
+  "single_u": [
+    -0.6059764623641968,
+    0.6684417724609375,
+    -3.120114803314209
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This renowned physicist and",
+        "life to scientific research"
+      ],
+      "u_i": -0.6059764623641968,
+      "u_j": 0.6684417724609375,
+      "local_fd": -0.513038694858551,
+      "banzhaf": 0.1382598578929901,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This renowned physicist and",
+        "prestigious Legion of Honour"
+      ],
+      "u_i": -0.6059764623641968,
+      "u_j": -3.120114803314209,
+      "local_fd": 0.3558526039123535,
+      "banzhaf": 1.0071512460708618,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "life to scientific research",
+        "prestigious Legion of Honour"
+      ],
+      "u_i": 0.6684417724609375,
+      "u_j": -3.120114803314209,
+      "local_fd": -0.1692655086517334,
+      "banzhaf": 0.4820330739021301,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This renowned physicist and",
+        "life to scientific research",
+        "prestigious Legion of Honour"
+      ],
+      "order": 3,
+      "harsanyi": 1.3025971055030823
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This renowned physicist and",
+        "life to scientific research"
+      ],
+      "order": 2,
+      "harsanyi": -0.513038694858551
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This renowned physicist and",
+        "prestigious Legion of Honour"
+      ],
+      "order": 2,
+      "harsanyi": 0.35585272312164307
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "life to scientific research",
+        "prestigious Legion of Honour"
+      ],
+      "order": 2,
+      "harsanyi": -0.1692655086517334
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.754491925239563,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

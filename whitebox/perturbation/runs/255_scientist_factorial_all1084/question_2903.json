@@ -1,0 +1,145 @@
+{
+  "key": "question_2903",
+  "group": "Q154353",
+  "generation_correct": true,
+  "right": "François Arago",
+  "wrong": "Paul Langevin",
+  "base_margin_wrong_minus_right": 0.06547324359416962,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 398,
+      "char_end": 418,
+      "text": "the Legion of Honour",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight of the Legion of Honour",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 105,
+      "token_end": 110
+    },
+    {
+      "char_start": 438,
+      "char_end": 457,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 114,
+      "token_end": 120
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.06547324359416962,
+      "wrong_score": -0.16266553103923798,
+      "right_score": -0.2281387746334076
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Legion of Honour"
+      ],
+      "u": -0.0744025856256485,
+      "margin": 0.13987582921981812,
+      "wrong_score": -0.1500549018383026,
+      "right_score": -0.2899307310581207
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -0.31734347343444824,
+      "margin": 0.38281673192977905,
+      "wrong_score": -0.07346071302890778,
+      "right_score": -0.456277459859848
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Legion of Honour",
+        "as a Foreign Member"
+      ],
+      "u": -0.08689825236797333,
+      "margin": 0.15237149596214294,
+      "wrong_score": -0.13847649097442627,
+      "right_score": -0.2908479869365692
+    }
+  ],
+  "single_u": [
+    -0.0744025856256485,
+    -0.31734347343444824
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Legion of Honour",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.0744025856256485,
+      "u_j": -0.31734347343444824,
+      "local_fd": 0.3048478066921234,
+      "banzhaf": 0.3048478066921234,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Legion of Honour",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.3048478066921234
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.15237149596214294,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

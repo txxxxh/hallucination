@@ -1,0 +1,146 @@
+{
+  "key": "question_0219",
+  "group": "Q233974",
+  "generation_correct": false,
+  "right": "Jocelyn Bell Burnell",
+  "wrong": "Edward Victor Appleton",
+  "base_margin_wrong_minus_right": 0.15415304899215698,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 303,
+      "char_end": 322,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 89,
+      "token_end": 93
+    },
+    {
+      "char_start": 335,
+      "char_end": 360,
+      "text": "receiving the Royal Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 94,
+      "token_end": 100
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.15415304899215698,
+      "wrong_score": -0.0819261446595192,
+      "right_score": -0.23607918620109558
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.33858442306518555,
+      "margin": 0.49273747205734253,
+      "wrong_score": -0.017477942630648613,
+      "right_score": -0.5102154016494751
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "receiving the Royal Medal"
+      ],
+      "u": -0.30892184376716614,
+      "margin": 0.4630748927593231,
+      "wrong_score": -0.047647152096033096,
+      "right_score": -0.5107220411300659
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "receiving the Royal Medal"
+      ],
+      "u": -0.354705810546875,
+      "margin": 0.508858859539032,
+      "wrong_score": -0.03662129491567612,
+      "right_score": -0.5454801321029663
+    }
+  ],
+  "single_u": [
+    -0.33858442306518555,
+    -0.30892184376716614
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "receiving the Royal Medal"
+      ],
+      "u_i": -0.33858442306518555,
+      "u_j": -0.30892184376716614,
+      "local_fd": 0.2928004562854767,
+      "banzhaf": 0.2928004562854767,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "receiving the Royal Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.2928004562854767
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.508858859539032,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

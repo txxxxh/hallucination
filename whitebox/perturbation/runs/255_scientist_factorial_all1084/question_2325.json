@@ -1,0 +1,302 @@
+{
+  "key": "question_2325",
+  "group": "Q153219",
+  "generation_correct": true,
+  "right": "Albert Fert",
+  "wrong": "Nevill Mott",
+  "base_margin_wrong_minus_right": -0.16744709014892578,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 146,
+      "char_end": 180,
+      "text": "university teacher made monumental",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 66
+    },
+    {
+      "char_start": 198,
+      "char_end": 218,
+      "text": "the field of physics",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 68,
+      "token_end": 71
+    },
+    {
+      "char_start": 220,
+      "char_end": 243,
+      "text": "earning the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 70,
+      "token_end": 75
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.16744709014892578,
+      "wrong_score": -0.26650387048721313,
+      "right_score": -0.09905677288770676
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher made monumental"
+      ],
+      "u": -0.4043191075325012,
+      "margin": 0.23687201738357544,
+      "wrong_score": -0.13967373967170715,
+      "right_score": -0.3765457570552826
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the field of physics"
+      ],
+      "u": 0.11509853601455688,
+      "margin": -0.28254562616348267,
+      "wrong_score": -0.38579192757606506,
+      "right_score": -0.1032462939620018
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher made monumental",
+        "the field of physics"
+      ],
+      "u": 0.022544771432876587,
+      "margin": -0.18999186158180237,
+      "wrong_score": -0.34288209676742554,
+      "right_score": -0.15289023518562317
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "earning the Nobel Prize"
+      ],
+      "u": -0.08625805377960205,
+      "margin": -0.08118903636932373,
+      "wrong_score": -0.2520909011363983,
+      "right_score": -0.17090186476707458
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher made monumental",
+        "earning the Nobel Prize"
+      ],
+      "u": -0.13296523690223694,
+      "margin": -0.03448185324668884,
+      "wrong_score": -0.2519061863422394,
+      "right_score": -0.21742433309555054
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of physics",
+        "earning the Nobel Prize"
+      ],
+      "u": -0.0428704172372818,
+      "margin": -0.12457667291164398,
+      "wrong_score": -0.26374346017837524,
+      "right_score": -0.13916678726673126
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher made monumental",
+        "the field of physics",
+        "earning the Nobel Prize"
+      ],
+      "u": 0.0012113451957702637,
+      "margin": -0.16865843534469604,
+      "wrong_score": -0.35831519961357117,
+      "right_score": -0.18965676426887512
+    }
+  ],
+  "single_u": [
+    -0.4043191075325012,
+    0.11509853601455688,
+    -0.08625805377960205
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher made monumental",
+        "the field of physics"
+      ],
+      "u_i": -0.4043191075325012,
+      "u_j": 0.11509853601455688,
+      "local_fd": 0.3117653429508209,
+      "banzhaf": 0.20127713680267334,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher made monumental",
+        "earning the Nobel Prize"
+      ],
+      "u_i": -0.4043191075325012,
+      "u_j": -0.08625805377960205,
+      "local_fd": 0.35761192440986633,
+      "banzhaf": 0.24712371826171875,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the field of physics",
+        "earning the Nobel Prize"
+      ],
+      "u_i": 0.11509853601455688,
+      "u_j": -0.08625805377960205,
+      "local_fd": -0.07171089947223663,
+      "banzhaf": -0.18219909071922302,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher made monumental",
+        "earning the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.35761192440986633
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher made monumental",
+        "the field of physics"
+      ],
+      "order": 2,
+      "harsanyi": 0.3117653429508209
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher made monumental",
+        "the field of physics",
+        "earning the Nobel Prize"
+      ],
+      "order": 3,
+      "harsanyi": -0.22097639739513397
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of physics",
+        "earning the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.07171089947223663
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of physics",
+        "earning the Nobel Prize"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.16865843534469604,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

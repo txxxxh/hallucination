@@ -1,0 +1,146 @@
+{
+  "key": "question_1983",
+  "group": "Q204078",
+  "generation_correct": true,
+  "right": "Angus Deaton",
+  "wrong": "Kenneth Arrow",
+  "base_margin_wrong_minus_right": -1.5843309164047241,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 295,
+      "char_end": 316,
+      "text": "the Prize in Economic",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Prize in Economic Sciences in Memory of Alfred Nobel",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 84,
+      "token_end": 90
+    },
+    {
+      "char_start": 454,
+      "char_end": 480,
+      "text": "and a Distinguished Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Distinguished Fellow of the American Economic Association",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.5843309164047241,
+      "wrong_score": -1.5870517492294312,
+      "right_score": -0.00272082700394094
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Prize in Economic"
+      ],
+      "u": -0.2068805694580078,
+      "margin": -1.3774503469467163,
+      "wrong_score": -1.3870868682861328,
+      "right_score": -0.009636511094868183
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and a Distinguished Fellow"
+      ],
+      "u": -0.4958913326263428,
+      "margin": -1.0884395837783813,
+      "wrong_score": -1.0984776020050049,
+      "right_score": -0.010037984699010849
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "and a Distinguished Fellow"
+      ],
+      "u": -0.538025975227356,
+      "margin": -1.0463049411773682,
+      "wrong_score": -1.0602052211761475,
+      "right_score": -0.013900325633585453
+    }
+  ],
+  "single_u": [
+    -0.2068805694580078,
+    -0.4958913326263428
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Prize in Economic",
+        "and a Distinguished Fellow"
+      ],
+      "u_i": -0.2068805694580078,
+      "u_j": -0.4958913326263428,
+      "local_fd": 0.16474592685699463,
+      "banzhaf": 0.16474592685699463,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "and a Distinguished Fellow"
+      ],
+      "order": 2,
+      "harsanyi": 0.16474592685699463
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.0463049411773682,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

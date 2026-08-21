@@ -1,0 +1,287 @@
+{
+  "key": "question_1727",
+  "group": "Q135171",
+  "generation_correct": true,
+  "right": "Elias James Corey",
+  "wrong": "George Porter",
+  "base_margin_wrong_minus_right": -1.5146682262420654,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 381,
+      "char_end": 400,
+      "text": "as the Remsen Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Remsen Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 99,
+      "token_end": 103
+    },
+    {
+      "char_start": 401,
+      "char_end": 420,
+      "text": "and the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 106
+    },
+    {
+      "char_start": 504,
+      "char_end": 509,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 125,
+      "token_end": 127
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.5146682262420654,
+      "wrong_score": -1.5268070697784424,
+      "right_score": -0.012138902209699154
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as the Remsen Award"
+      ],
+      "u": -1.1249668598175049,
+      "margin": -0.38970136642456055,
+      "wrong_score": -0.5054033398628235,
+      "right_score": -0.11570196598768234
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Nobel Prize"
+      ],
+      "u": -0.052236080169677734,
+      "margin": -1.4624321460723877,
+      "wrong_score": -1.4814531803131104,
+      "right_score": -0.01902098022401333
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the Remsen Award",
+        "and the Nobel Prize"
+      ],
+      "u": -0.812023401260376,
+      "margin": -0.7026448249816895,
+      "wrong_score": -0.7674543857574463,
+      "right_score": -0.06480957567691803
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.17839038372039795,
+      "margin": -1.3362778425216675,
+      "wrong_score": -1.3525863885879517,
+      "right_score": -0.016308549791574478
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as the Remsen Award",
+        "never"
+      ],
+      "u": -1.240903377532959,
+      "margin": -0.2737649083137512,
+      "wrong_score": -0.42332327365875244,
+      "right_score": -0.14955836534500122
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Nobel Prize",
+        "never"
+      ],
+      "u": -0.3573499917984009,
+      "margin": -1.1573182344436646,
+      "wrong_score": -1.1837795972824097,
+      "right_score": -0.02646138332784176
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as the Remsen Award",
+        "and the Nobel Prize",
+        "never"
+      ],
+      "u": -0.8151403665542603,
+      "margin": -0.6995278596878052,
+      "wrong_score": -0.7621210217475891,
+      "right_score": -0.06259316951036453
+    }
+  ],
+  "single_u": [
+    -1.1249668598175049,
+    -0.052236080169677734,
+    -0.17839038372039795
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as the Remsen Award",
+        "and the Nobel Prize"
+      ],
+      "u_i": -1.1249668598175049,
+      "u_j": -0.052236080169677734,
+      "local_fd": 0.36517953872680664,
+      "banzhaf": 0.48495107889175415,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "as the Remsen Award",
+        "never"
+      ],
+      "u_i": -1.1249668598175049,
+      "u_j": -0.17839038372039795,
+      "local_fd": 0.06245386600494385,
+      "banzhaf": 0.18222540616989136,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and the Nobel Prize",
+        "never"
+      ],
+      "u_i": -0.052236080169677734,
+      "u_j": -0.17839038372039795,
+      "local_fd": -0.1267235279083252,
+      "banzhaf": -0.0069519877433776855,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the Remsen Award",
+        "and the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.36517953872680664
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as the Remsen Award",
+        "and the Nobel Prize",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": 0.23954308032989502
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Nobel Prize",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.1267235279083252
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as the Remsen Award",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.06245386600494385
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6995278596878052,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "key": "question_2813",
+  "group": "Q5354",
+  "generation_correct": true,
+  "right": "Ernst Mayr",
+  "wrong": "James Hector",
+  "base_margin_wrong_minus_right": -1.6969736814498901,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 117,
+      "char_end": 154,
+      "text": "This distinguished university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 53,
+      "token_end": 60
+    },
+    {
+      "char_start": 382,
+      "char_end": 402,
+      "text": "by the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 100
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.6969736814498901,
+      "wrong_score": -1.706398606300354,
+      "right_score": -0.009424930438399315
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished university teacher"
+      ],
+      "u": -1.5484232902526855,
+      "margin": -0.14855033159255981,
+      "wrong_score": -0.32829582691192627,
+      "right_score": -0.17974549531936646
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "by the Royal Society"
+      ],
+      "u": -1.1065202951431274,
+      "margin": -0.5904533863067627,
+      "wrong_score": -0.6832917928695679,
+      "right_score": -0.09283842146396637
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "by the Royal Society"
+      ],
+      "u": -1.4362568855285645,
+      "margin": -0.2607167363166809,
+      "wrong_score": -0.42459672689437866,
+      "right_score": -0.16387999057769775
+    }
+  ],
+  "single_u": [
+    -1.5484232902526855,
+    -1.1065202951431274
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished university teacher",
+        "by the Royal Society"
+      ],
+      "u_i": -1.5484232902526855,
+      "u_j": -1.1065202951431274,
+      "local_fd": 1.2186866998672485,
+      "banzhaf": 1.2186866998672485,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "by the Royal Society"
+      ],
+      "order": 2,
+      "harsanyi": 1.2186866998672485
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2607167363166809,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 6,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

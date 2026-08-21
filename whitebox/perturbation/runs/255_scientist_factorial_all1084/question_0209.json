@@ -1,0 +1,290 @@
+{
+  "key": "question_0209",
+  "group": "Q425980",
+  "generation_correct": true,
+  "right": "Frank Albert Cotton",
+  "wrong": "Robert H. Grubbs",
+  "base_margin_wrong_minus_right": 0.08667126297950745,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 378,
+      "char_end": 403,
+      "text": "the American Institute of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "American Institute of Chemists Gold Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 106,
+      "token_end": 111
+    },
+    {
+      "char_start": 429,
+      "char_end": 458,
+      "text": "the American Chemical Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "American Chemical Society Award in Inorganic Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 116,
+      "token_end": 123
+    },
+    {
+      "char_start": 459,
+      "char_end": 492,
+      "text": "Award in Organometallic Chemistry",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "American Chemical Society Award in Organometallic Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 123,
+      "token_end": 130
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.08667126297950745,
+      "wrong_score": -0.1318623572587967,
+      "right_score": -0.21853362023830414
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the American Institute of"
+      ],
+      "u": 0.003914341330528259,
+      "margin": 0.08275692164897919,
+      "wrong_score": -0.1239471435546875,
+      "right_score": -0.2067040652036667
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the American Chemical Society"
+      ],
+      "u": 0.07440094649791718,
+      "margin": 0.012270316481590271,
+      "wrong_score": -0.1542450338602066,
+      "right_score": -0.16651535034179688
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the American Institute of",
+        "the American Chemical Society"
+      ],
+      "u": -0.2476521134376526,
+      "margin": 0.33432337641716003,
+      "wrong_score": -0.08189252018928528,
+      "right_score": -0.4162158966064453
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Award in Organometallic Chemistry"
+      ],
+      "u": -0.17746931314468384,
+      "margin": 0.2641405761241913,
+      "wrong_score": -0.13893422484397888,
+      "right_score": -0.40307480096817017
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the American Institute of",
+        "Award in Organometallic Chemistry"
+      ],
+      "u": -0.07518449425697327,
+      "margin": 0.1618557572364807,
+      "wrong_score": -0.31592273712158203,
+      "right_score": -0.47777849435806274
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the American Chemical Society",
+        "Award in Organometallic Chemistry"
+      ],
+      "u": -0.05208563804626465,
+      "margin": 0.1387569010257721,
+      "wrong_score": -0.28550127148628235,
+      "right_score": -0.42425817251205444
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the American Institute of",
+        "the American Chemical Society",
+        "Award in Organometallic Chemistry"
+      ],
+      "u": 0.051497846841812134,
+      "margin": 0.03517341613769531,
+      "wrong_score": -0.3511437773704529,
+      "right_score": -0.3863171935081482
+    }
+  ],
+  "single_u": [
+    0.003914341330528259,
+    0.07440094649791718,
+    -0.17746931314468384
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the American Institute of",
+        "the American Chemical Society"
+      ],
+      "u_i": 0.003914341330528259,
+      "u_j": 0.07440094649791718,
+      "local_fd": -0.3259674310684204,
+      "banzhaf": -0.1623343825340271,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the American Institute of",
+        "Award in Organometallic Chemistry"
+      ],
+      "u_i": 0.003914341330528259,
+      "u_j": -0.17746931314468384,
+      "local_fd": 0.09837047755718231,
+      "banzhaf": 0.26200351119041443,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the American Chemical Society",
+        "Award in Organometallic Chemistry"
+      ],
+      "u_i": 0.07440094649791718,
+      "u_j": -0.17746931314468384,
+      "local_fd": 0.050982728600502014,
+      "banzhaf": 0.21461576223373413,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the American Institute of",
+        "the American Chemical Society",
+        "Award in Organometallic Chemistry"
+      ],
+      "order": 3,
+      "harsanyi": 0.32726606726646423
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the American Institute of",
+        "the American Chemical Society"
+      ],
+      "order": 2,
+      "harsanyi": -0.325967401266098
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the American Institute of",
+        "Award in Organometallic Chemistry"
+      ],
+      "order": 2,
+      "harsanyi": 0.09837047755718231
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the American Chemical Society",
+        "Award in Organometallic Chemistry"
+      ],
+      "order": 2,
+      "harsanyi": 0.050982728600502014
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.03517341613769531,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

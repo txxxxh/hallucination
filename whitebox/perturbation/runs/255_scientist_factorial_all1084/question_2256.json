@@ -1,0 +1,146 @@
+{
+  "key": "question_2256",
+  "group": "Q899214",
+  "generation_correct": true,
+  "right": "Tobin J. Marks",
+  "wrong": "Herbert C. Brown",
+  "base_margin_wrong_minus_right": 0.11200801283121109,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 362,
+      "char_end": 378,
+      "text": "the NAS Award in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 109,
+      "token_end": 114
+    },
+    {
+      "char_start": 437,
+      "char_end": 466,
+      "text": "Award, the American Institute",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "American Institute of Chemists Gold Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 123,
+      "token_end": 129
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.11200801283121109,
+      "wrong_score": -0.07864636927843094,
+      "right_score": -0.19065438210964203
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the NAS Award in"
+      ],
+      "u": -0.1435706913471222,
+      "margin": 0.2555786967277527,
+      "wrong_score": -0.03943278267979622,
+      "right_score": -0.2950114905834198
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Award, the American Institute"
+      ],
+      "u": 0.06797254830598831,
+      "margin": 0.04403546452522278,
+      "wrong_score": -0.11059409379959106,
+      "right_score": -0.15462955832481384
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the NAS Award in",
+        "Award, the American Institute"
+      ],
+      "u": 0.060812562704086304,
+      "margin": 0.051195450127124786,
+      "wrong_score": -0.11657034605741501,
+      "right_score": -0.1677657961845398
+    }
+  ],
+  "single_u": [
+    -0.1435706913471222,
+    0.06797254830598831
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the NAS Award in",
+        "Award, the American Institute"
+      ],
+      "u_i": -0.1435706913471222,
+      "u_j": 0.06797254830598831,
+      "local_fd": 0.13641071319580078,
+      "banzhaf": 0.13641071319580078,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the NAS Award in",
+        "Award, the American Institute"
+      ],
+      "order": 2,
+      "harsanyi": 0.13641070574522018
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.051195450127124786,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

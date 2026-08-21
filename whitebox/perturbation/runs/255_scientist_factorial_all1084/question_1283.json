@@ -1,0 +1,146 @@
+{
+  "key": "question_1283",
+  "group": "Q233973",
+  "generation_correct": true,
+  "right": "John A. Pople",
+  "wrong": "George Porter",
+  "base_margin_wrong_minus_right": 0.45673471689224243,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 268,
+      "char_end": 295,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 81,
+      "token_end": 89
+    },
+    {
+      "char_start": 468,
+      "char_end": 487,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 123,
+      "token_end": 127
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.45673471689224243,
+      "wrong_score": -0.038856975734233856,
+      "right_score": -0.4955917000770569
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": -0.6563116908073425,
+      "margin": 1.113046407699585,
+      "wrong_score": -0.020857172086834908,
+      "right_score": -1.1339036226272583
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.014430761337280273,
+      "margin": 0.4711654782295227,
+      "wrong_score": -0.15786631405353546,
+      "right_score": -0.629031777381897
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u": -0.16566413640975952,
+      "margin": 0.622398853302002,
+      "wrong_score": -0.08920640498399734,
+      "right_score": -0.7116052508354187
+    }
+  ],
+  "single_u": [
+    -0.6563116908073425,
+    -0.014430761337280273
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.6563116908073425,
+      "u_j": -0.014430761337280273,
+      "local_fd": 0.5050783157348633,
+      "banzhaf": 0.5050783157348633,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.5050783157348633
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.622398853302002,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

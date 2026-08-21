@@ -1,0 +1,146 @@
+{
+  "key": "question_0721",
+  "group": "Q157501",
+  "generation_correct": true,
+  "right": "Joseph Dalton Hooker",
+  "wrong": "Charles Wyville Thomson",
+  "base_margin_wrong_minus_right": -1.7189044952392578,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 361,
+      "char_end": 380,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 106,
+      "token_end": 109
+    },
+    {
+      "char_start": 398,
+      "char_end": 419,
+      "text": "as an Honorary Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Royal Society Te Apārangi",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 113,
+      "token_end": 118
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.7189044952392578,
+      "wrong_score": -1.7210416793823242,
+      "right_score": -0.002137182280421257
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.6563442945480347,
+      "margin": -1.0625602006912231,
+      "wrong_score": -1.1040230989456177,
+      "right_score": -0.04146287962794304
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as an Honorary Fellow"
+      ],
+      "u": -0.4687001705169678,
+      "margin": -1.25020432472229,
+      "wrong_score": -1.256657361984253,
+      "right_score": -0.006453076843172312
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "as an Honorary Fellow"
+      ],
+      "u": -0.906314492225647,
+      "margin": -0.8125900030136108,
+      "wrong_score": -0.8262739181518555,
+      "right_score": -0.013683918863534927
+    }
+  ],
+  "single_u": [
+    -0.6563442945480347,
+    -0.4687001705169678
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "as an Honorary Fellow"
+      ],
+      "u_i": -0.6563442945480347,
+      "u_j": -0.4687001705169678,
+      "local_fd": 0.21872997283935547,
+      "banzhaf": 0.21872997283935547,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "as an Honorary Fellow"
+      ],
+      "order": 2,
+      "harsanyi": 0.21872997283935547
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.8125900030136108,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

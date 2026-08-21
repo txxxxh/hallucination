@@ -1,0 +1,290 @@
+{
+  "key": "question_2266",
+  "group": "Q122701",
+  "generation_correct": true,
+  "right": "William Thomson, 1st Baron Kelvin",
+  "wrong": "Robert May, Baron May of Oxford",
+  "base_margin_wrong_minus_right": -0.46968021988868713,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 239,
+      "char_end": 258,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 87,
+      "token_end": 92
+    },
+    {
+      "char_start": 372,
+      "char_end": 396,
+      "text": "awarded the Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 115,
+      "token_end": 120
+    },
+    {
+      "char_start": 401,
+      "char_end": 423,
+      "text": "made a Knight Bachelor",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight Bachelor",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 124
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.46968021988868713,
+      "wrong_score": -0.4971502423286438,
+      "right_score": -0.02747001126408577
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.001720815896987915,
+      "margin": -0.47140103578567505,
+      "wrong_score": -0.5254818201065063,
+      "right_score": -0.05408079922199249
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "awarded the Copley Medal"
+      ],
+      "u": -0.37521612644195557,
+      "margin": -0.09446409344673157,
+      "wrong_score": -0.18420539796352386,
+      "right_score": -0.0897413045167923
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "awarded the Copley Medal"
+      ],
+      "u": 0.5794590711593628,
+      "margin": -1.0491392612457275,
+      "wrong_score": -1.1711552143096924,
+      "right_score": -0.12201590836048126
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "made a Knight Bachelor"
+      ],
+      "u": -0.3858039975166321,
+      "margin": -0.08387623727321625,
+      "wrong_score": -0.16612504422664642,
+      "right_score": -0.08224880695343018
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "made a Knight Bachelor"
+      ],
+      "u": 0.19529929757118225,
+      "margin": -0.6649795174598694,
+      "wrong_score": -0.6997630596160889,
+      "right_score": -0.03478351607918739
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Copley Medal",
+        "made a Knight Bachelor"
+      ],
+      "u": 0.1177191436290741,
+      "margin": -0.5873993635177612,
+      "wrong_score": -0.6641996502876282,
+      "right_score": -0.07680031657218933
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "awarded the Copley Medal",
+        "made a Knight Bachelor"
+      ],
+      "u": 0.2034529149532318,
+      "margin": -0.673133134841919,
+      "wrong_score": -0.7984663248062134,
+      "right_score": -0.12533317506313324
+    }
+  ],
+  "single_u": [
+    0.001720815896987915,
+    -0.37521612644195557,
+    -0.3858039975166321
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "awarded the Copley Medal"
+      ],
+      "u_i": 0.001720815896987915,
+      "u_j": -0.37521612644195557,
+      "local_fd": 0.9529544115066528,
+      "banzhaf": 0.2287924438714981,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "made a Knight Bachelor"
+      ],
+      "u_i": 0.001720815896987915,
+      "u_j": -0.3858039975166321,
+      "local_fd": 0.5793824791908264,
+      "banzhaf": -0.14477947354316711,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "awarded the Copley Medal",
+        "made a Knight Bachelor"
+      ],
+      "u_i": -0.37521612644195557,
+      "u_j": -0.3858039975166321,
+      "local_fd": 0.8787392377853394,
+      "banzhaf": 0.1545773148536682,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "awarded the Copley Medal",
+        "made a Knight Bachelor"
+      ],
+      "order": 3,
+      "harsanyi": -1.448323905467987
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "awarded the Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.9529543817043304
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Copley Medal",
+        "made a Knight Bachelor"
+      ],
+      "order": 2,
+      "harsanyi": 0.8787392675876617
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "made a Knight Bachelor"
+      ],
+      "order": 2,
+      "harsanyi": 0.5793824791908264
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.673133134841919,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

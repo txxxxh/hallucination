@@ -1,0 +1,289 @@
+{
+  "key": "question_2445",
+  "group": "Q106624",
+  "generation_correct": true,
+  "right": "Ahmed H. Zewail",
+  "wrong": "Murray Gell-Mann",
+  "base_margin_wrong_minus_right": 0.7859043478965759,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 271,
+      "char_end": 290,
+      "text": "a Foreign Member of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 93,
+      "token_end": 97
+    },
+    {
+      "char_start": 315,
+      "char_end": 337,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 104
+    },
+    {
+      "char_start": 393,
+      "char_end": 422,
+      "text": "from Yale University. Despite",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Yale University",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 115,
+      "token_end": 122
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.7859043478965759,
+      "wrong_score": -0.0026879021897912025,
+      "right_score": -0.7885922789573669
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "a Foreign Member of"
+      ],
+      "u": 0.2152835726737976,
+      "margin": 0.5706207752227783,
+      "wrong_score": -0.008612782694399357,
+      "right_score": -0.5792335867881775
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.17920881509780884,
+      "margin": 0.6066955327987671,
+      "wrong_score": -0.0059170848689973354,
+      "right_score": -0.6126126050949097
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "a Foreign Member of",
+        "Fellow of the American"
+      ],
+      "u": 0.233040452003479,
+      "margin": 0.5528638958930969,
+      "wrong_score": -0.005922929383814335,
+      "right_score": -0.5587868094444275
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "from Yale University. Despite"
+      ],
+      "u": 0.19920796155929565,
+      "margin": 0.5866963863372803,
+      "wrong_score": -0.02012847550213337,
+      "right_score": -0.6068248748779297
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "a Foreign Member of",
+        "from Yale University. Despite"
+      ],
+      "u": 0.05542397499084473,
+      "margin": 0.7304803729057312,
+      "wrong_score": -0.017489133402705193,
+      "right_score": -0.7479695081710815
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "from Yale University. Despite"
+      ],
+      "u": 0.11285185813903809,
+      "margin": 0.6730524897575378,
+      "wrong_score": -0.03930293023586273,
+      "right_score": -0.7123554348945618
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "a Foreign Member of",
+        "Fellow of the American",
+        "from Yale University. Despite"
+      ],
+      "u": 0.2701035141944885,
+      "margin": 0.5158008337020874,
+      "wrong_score": -0.035275790840387344,
+      "right_score": -0.5510766506195068
+    }
+  ],
+  "single_u": [
+    0.2152835726737976,
+    0.17920881509780884,
+    0.19920796155929565
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "a Foreign Member of",
+        "Fellow of the American"
+      ],
+      "u_i": 0.2152835726737976,
+      "u_j": 0.17920881509780884,
+      "local_fd": -0.16145193576812744,
+      "banzhaf": 0.06979185342788696,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "a Foreign Member of",
+        "from Yale University. Despite"
+      ],
+      "u_i": 0.2152835726737976,
+      "u_j": 0.19920796155929565,
+      "local_fd": -0.35906755924224854,
+      "banzhaf": -0.12782377004623413,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the American",
+        "from Yale University. Despite"
+      ],
+      "u_i": 0.17920881509780884,
+      "u_j": 0.19920796155929565,
+      "local_fd": -0.2655649185180664,
+      "banzhaf": -0.034321129322052,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "a Foreign Member of",
+        "Fellow of the American",
+        "from Yale University. Despite"
+      ],
+      "order": 3,
+      "harsanyi": 0.4624875783920288
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "a Foreign Member of",
+        "from Yale University. Despite"
+      ],
+      "order": 2,
+      "harsanyi": -0.35906755924224854
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "from Yale University. Despite"
+      ],
+      "order": 2,
+      "harsanyi": -0.2655649185180664
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "a Foreign Member of",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.16145193576812744
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5158008337020874,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

@@ -127,14 +127,15 @@ def make_item(row):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", required=True,
-                        choices=("scientist", "trivia", "gsm8k", "multidomain"))
-    parser.add_argument("--method", required=True, choices=("exact", "attention"))
+                        choices=("scientist", "trivia", "gsm8k", "multidomain", "drop"))
+    parser.add_argument("--method", required=True, choices=("exact", "attention", "gradient"))
     parser.add_argument("--model", required=True)
     parser.add_argument("--out-dir", required=True, type=Path)
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--batch", type=int, default=24)
     parser.add_argument("--blocks", type=int, default=12)
     parser.add_argument("--keep", type=int, default=6)
+    parser.add_argument("--layer14-pooling", choices=("last", "mean"), default="mean")
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
@@ -151,7 +152,8 @@ def main():
                          length_norm=True, max_rows=args.batch)
 
     config = dict(dataset=args.dataset, method=args.method, model=args.model,
-                  expected=len(rows), blocks=args.blocks, keep=args.keep)
+                  expected=len(rows), blocks=args.blocks, keep=args.keep,
+                  layer14_pooling=args.layer14_pooling)
     (args.out_dir / "config.json").write_text(json.dumps(config, indent=2) + "\n")
     for number, row in enumerate(rows, 1):
         path = args.out_dir / f"{row['key']}.npz"
@@ -160,20 +162,30 @@ def main():
         item = make_item(row)
         prep = att.prepare(item)
         spans, chars = collector.spans(att, prep)
-        pool = list(range(len(spans))) if args.method == "exact" else attention_shortlist(
-            att, prep, spans, args.blocks, args.keep)
+        if args.method == "exact":
+            pool = list(range(len(spans)))
+        elif args.method == "attention":
+            pool = attention_shortlist(att, prep, spans, args.blocks, args.keep)
+        else:
+            gradient = importlib.import_module("159_scientist_classgrad_sentence_current127")
+            pool = gradient.sentence_shortlist(att, prep, spans)
         pred1, other1 = scan_subset(att, prep, pool)
         effect1 = (pred1[0] - pred1[1:]) - (other1[0] - other1[1:])
         local = np.argsort(-np.abs(effect1))[:min(5, len(effect1))]
         selected = np.asarray([pool[i] for i in local], dtype=int)
-        pred_hidden, other_hidden, layer14 = collector.selected_hidden(att, prep, selected)
+        pred_hidden, other_hidden, layer14 = collector.selected_hidden(
+            att, prep, selected, layer14_pooling=args.layer14_pooling)
         deleted = delete_span(row, item, chars, int(selected[0]))
         second = att.prepare(Item(row["key"] + "_d", deleted, item.question,
                                   row["other"], row["pred"],
                                   context_prefix=item.context_prefix))
         spans2, _ = collector.spans(att, second)
-        pool2 = list(range(len(spans2))) if args.method == "exact" else attention_shortlist(
-            att, second, spans2, args.blocks, args.keep)
+        if args.method == "exact":
+            pool2 = list(range(len(spans2)))
+        elif args.method == "attention":
+            pool2 = attention_shortlist(att, second, spans2, args.blocks, args.keep)
+        else:
+            pool2 = gradient.sentence_shortlist(att, second, spans2)
         pred2, other2 = scan_subset(att, second, pool2)
         effect2 = (pred2[0] - pred2[1:]) - (other2[0] - other2[1:])
         local2 = np.argsort(-np.abs(effect2))[:min(5, len(effect2))]

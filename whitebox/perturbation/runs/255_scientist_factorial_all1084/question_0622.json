@@ -1,0 +1,290 @@
+{
+  "key": "question_0622",
+  "group": "Q899517",
+  "generation_correct": true,
+  "right": "Allen J. Bard",
+  "wrong": "Rudolph A. Marcus",
+  "base_margin_wrong_minus_right": 0.4819735288619995,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 334,
+      "char_end": 354,
+      "text": "as the Willard Gibbs",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Willard Gibbs Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 102,
+      "token_end": 109
+    },
+    {
+      "char_start": 355,
+      "char_end": 380,
+      "text": "Award, the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 108,
+      "token_end": 114
+    },
+    {
+      "char_start": 384,
+      "char_end": 407,
+      "text": "Science, the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 113,
+      "token_end": 118
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.4819735288619995,
+      "wrong_score": -0.025073101744055748,
+      "right_score": -0.507046639919281
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as the Willard Gibbs"
+      ],
+      "u": 0.20401999354362488,
+      "margin": 0.27795353531837463,
+      "wrong_score": -0.053920991718769073,
+      "right_score": -0.3318745195865631
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Award, the National Medal"
+      ],
+      "u": -0.00017559528350830078,
+      "margin": 0.4821491241455078,
+      "wrong_score": -0.025310803204774857,
+      "right_score": -0.5074599385261536
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the Willard Gibbs",
+        "Award, the National Medal"
+      ],
+      "u": 0.4224380552768707,
+      "margin": 0.059535473585128784,
+      "wrong_score": -0.11812746524810791,
+      "right_score": -0.1776629388332367
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Science, the Wolf Prize"
+      ],
+      "u": 0.1468057632446289,
+      "margin": 0.3351677656173706,
+      "wrong_score": -0.04399725794792175,
+      "right_score": -0.37916502356529236
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as the Willard Gibbs",
+        "Science, the Wolf Prize"
+      ],
+      "u": 0.11716440320014954,
+      "margin": 0.36480912566185,
+      "wrong_score": -0.03990665450692177,
+      "right_score": -0.40471577644348145
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "Science, the Wolf Prize"
+      ],
+      "u": 0.21005165576934814,
+      "margin": 0.27192187309265137,
+      "wrong_score": -0.05935234948992729,
+      "right_score": -0.33127421140670776
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as the Willard Gibbs",
+        "Award, the National Medal",
+        "Science, the Wolf Prize"
+      ],
+      "u": 0.17547768354415894,
+      "margin": 0.3064958453178406,
+      "wrong_score": -0.04858732223510742,
+      "right_score": -0.355083167552948
+    }
+  ],
+  "single_u": [
+    0.20401999354362488,
+    -0.00017559528350830078,
+    0.1468057632446289
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as the Willard Gibbs",
+        "Award, the National Medal"
+      ],
+      "u_i": 0.20401999354362488,
+      "u_j": -0.00017559528350830078,
+      "local_fd": 0.21859365701675415,
+      "banzhaf": 0.10683052241802216,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "as the Willard Gibbs",
+        "Science, the Wolf Prize"
+      ],
+      "u_i": 0.20401999354362488,
+      "u_j": 0.1468057632446289,
+      "local_fd": -0.23366135358810425,
+      "banzhaf": -0.34542447328567505,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Award, the National Medal",
+        "Science, the Wolf Prize"
+      ],
+      "u_i": -0.00017559528350830078,
+      "u_j": 0.1468057632446289,
+      "local_fd": 0.06342148780822754,
+      "banzhaf": -0.048341646790504456,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as the Willard Gibbs",
+        "Science, the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.23366135358810425
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as the Willard Gibbs",
+        "Award, the National Medal",
+        "Science, the Wolf Prize"
+      ],
+      "order": 3,
+      "harsanyi": -0.223526269197464
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the Willard Gibbs",
+        "Award, the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.21859365701675415
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "Science, the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.06342148780822754
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3064958453178406,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

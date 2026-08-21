@@ -1,0 +1,142 @@
+{
+  "key": "question_1007",
+  "group": "Q17457",
+  "generation_correct": true,
+  "right": "Donald Knuth",
+  "wrong": "Fred Brooks",
+  "base_margin_wrong_minus_right": -4.250480651855469,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 636,
+      "char_end": 667,
+      "text": "receiving an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate of the University of Glasgow",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 152,
+      "token_end": 158
+    },
+    {
+      "char_start": 710,
+      "char_end": 715,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 167,
+      "token_end": 169
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -4.250480651855469,
+      "wrong_score": -4.2512664794921875,
+      "right_score": -0.0007860279874876142
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "receiving an honorary doctorate"
+      ],
+      "u": -1.624114751815796,
+      "margin": -2.626365900039673,
+      "wrong_score": -2.6301825046539307,
+      "right_score": -0.0038165550213307142
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.06343364715576172,
+      "margin": -4.3139142990112305,
+      "wrong_score": -4.315738677978516,
+      "right_score": -0.0018243755912408233
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "receiving an honorary doctorate",
+        "never"
+      ],
+      "u": -2.2361063957214355,
+      "margin": -2.014374256134033,
+      "wrong_score": -2.030478000640869,
+      "right_score": -0.01610385999083519
+    }
+  ],
+  "single_u": [
+    -1.624114751815796,
+    0.06343364715576172
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "receiving an honorary doctorate",
+        "never"
+      ],
+      "u_i": -1.624114751815796,
+      "u_j": 0.06343364715576172,
+      "local_fd": -0.6754252910614014,
+      "banzhaf": -0.6754252910614014,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "receiving an honorary doctorate",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.6754252910614014
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -2.014374256134033,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 21,
+    "n_excluded": 15,
+    "max_candidates": 6
+  }
+}

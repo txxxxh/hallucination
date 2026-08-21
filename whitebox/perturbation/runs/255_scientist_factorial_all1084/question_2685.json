@@ -1,0 +1,285 @@
+{
+  "key": "question_2685",
+  "group": "Q103835",
+  "generation_correct": true,
+  "right": "Peter Debije",
+  "wrong": "Mario J. Molina",
+  "base_margin_wrong_minus_right": -0.5777661800384521,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 122,
+      "char_end": 157,
+      "text": "This distinguished scientist worked",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 59,
+      "token_end": 65
+    },
+    {
+      "char_start": 347,
+      "char_end": 367,
+      "text": "in Chemistry and the",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 100,
+      "token_end": 103
+    },
+    {
+      "char_start": 469,
+      "char_end": 474,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 123
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5777661800384521,
+      "wrong_score": -0.6182534098625183,
+      "right_score": -0.04048720747232437
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished scientist worked"
+      ],
+      "u": -0.23767051100730896,
+      "margin": -0.3400956690311432,
+      "wrong_score": -0.533778190612793,
+      "right_score": -0.19368252158164978
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Chemistry and the"
+      ],
+      "u": -0.24773496389389038,
+      "margin": -0.33003121614456177,
+      "wrong_score": -0.5031325221061707,
+      "right_score": -0.1731012910604477
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished scientist worked",
+        "in Chemistry and the"
+      ],
+      "u": -0.5356241464614868,
+      "margin": -0.04214203357696533,
+      "wrong_score": -0.33889827132225037,
+      "right_score": -0.29675623774528503
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.054357171058654785,
+      "margin": -0.6321233510971069,
+      "wrong_score": -0.6851058602333069,
+      "right_score": -0.05298253148794174
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist worked",
+        "never"
+      ],
+      "u": -0.15234002470970154,
+      "margin": -0.4254261553287506,
+      "wrong_score": -0.5457813143730164,
+      "right_score": -0.12035515159368515
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Chemistry and the",
+        "never"
+      ],
+      "u": -0.20369258522987366,
+      "margin": -0.3740735948085785,
+      "wrong_score": -0.5493100881576538,
+      "right_score": -0.17523649334907532
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist worked",
+        "in Chemistry and the",
+        "never"
+      ],
+      "u": -0.005147576332092285,
+      "margin": -0.5726186037063599,
+      "wrong_score": -0.6949892640113831,
+      "right_score": -0.12237067520618439
+    }
+  ],
+  "single_u": [
+    -0.23767051100730896,
+    -0.24773496389389038,
+    0.054357171058654785
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished scientist worked",
+        "in Chemistry and the"
+      ],
+      "u_i": -0.23767051100730896,
+      "u_j": -0.24773496389389038,
+      "local_fd": -0.050218671560287476,
+      "banzhaf": 0.1775117665529251,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished scientist worked",
+        "never"
+      ],
+      "u_i": -0.23767051100730896,
+      "u_j": 0.054357171058654785,
+      "local_fd": 0.030973315238952637,
+      "banzhaf": 0.25870373845100403,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "in Chemistry and the",
+        "never"
+      ],
+      "u_i": -0.24773496389389038,
+      "u_j": 0.054357171058654785,
+      "local_fd": -0.010314792394638062,
+      "banzhaf": 0.21741566061973572,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist worked",
+        "in Chemistry and the",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": 0.45546087622642517
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished scientist worked",
+        "in Chemistry and the"
+      ],
+      "order": 2,
+      "harsanyi": -0.050218671560287476
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist worked",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.030973315238952637
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Chemistry and the",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.010314792394638062
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.5726186037063599,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

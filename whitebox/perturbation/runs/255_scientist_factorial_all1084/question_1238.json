@@ -1,0 +1,287 @@
+{
+  "key": "question_1238",
+  "group": "Q37064",
+  "generation_correct": false,
+  "right": "Alexander Fleming",
+  "wrong": "Frank Macfarlane Burnet",
+  "base_margin_wrong_minus_right": 2.0105674266815186,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 196,
+      "char_end": 219,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 73,
+      "token_end": 78
+    },
+    {
+      "char_start": 381,
+      "char_end": 400,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 106,
+      "token_end": 112
+    },
+    {
+      "char_start": 443,
+      "char_end": 448,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 121
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 2.0105674266815186,
+      "wrong_score": -0.005429716780781746,
+      "right_score": -2.0159971714019775
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": -1.33146333694458,
+      "margin": 3.3420307636260986,
+      "wrong_score": -0.018344227224588394,
+      "right_score": -3.360374927520752
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -1.3792088031768799,
+      "margin": 3.3897762298583984,
+      "wrong_score": -0.007361069321632385,
+      "right_score": -3.397137403488159
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "Fellow of the Royal"
+      ],
+      "u": -1.5762324333190918,
+      "margin": 3.5867998600006104,
+      "wrong_score": -0.01698097214102745,
+      "right_score": -3.603780746459961
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.06800365447998047,
+      "margin": 2.078571081161499,
+      "wrong_score": -0.010131306946277618,
+      "right_score": -2.088702440261841
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "never"
+      ],
+      "u": -0.45189905166625977,
+      "margin": 2.4624664783477783,
+      "wrong_score": -0.013835420832037926,
+      "right_score": -2.476301908493042
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "never"
+      ],
+      "u": -0.3981306552886963,
+      "margin": 2.408698081970215,
+      "wrong_score": -0.01932465471327305,
+      "right_score": -2.428022623062134
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "Fellow of the Royal",
+        "never"
+      ],
+      "u": -0.179002046585083,
+      "margin": 2.1895694732666016,
+      "wrong_score": -0.027214620262384415,
+      "right_score": -2.2167840003967285
+    }
+  ],
+  "single_u": [
+    -1.33146333694458,
+    -1.3792088031768799,
+    -0.06800365447998047
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Nobel Prize",
+        "Fellow of the Royal"
+      ],
+      "u_i": -1.33146333694458,
+      "u_j": -1.3792088031768799,
+      "local_fd": 1.1344397068023682,
+      "banzhaf": 0.8687318563461304,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "awarded the Nobel Prize",
+        "never"
+      ],
+      "u_i": -1.33146333694458,
+      "u_j": -0.06800365447998047,
+      "local_fd": 0.9475679397583008,
+      "banzhaf": 0.681860089302063,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "never"
+      ],
+      "u_i": -1.3792088031768799,
+      "u_j": -0.06800365447998047,
+      "local_fd": 1.049081802368164,
+      "banzhaf": 0.7833739519119263,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 1.1344397068023682
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 1.049081802368164
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.9475679397583008
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "Fellow of the Royal",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.5314157009124756
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 2.1895694732666016,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

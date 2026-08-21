@@ -1,0 +1,313 @@
+{
+  "key": "question_2394",
+  "group": "Q183509",
+  "generation_correct": true,
+  "right": "Ilya Prigogine",
+  "wrong": "Claude Cohen-Tannoudji",
+  "base_margin_wrong_minus_right": 0.17085565626621246,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 131,
+      "char_end": 163,
+      "text": "This distinguished physicist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 60,
+      "token_end": 66
+    },
+    {
+      "char_start": 164,
+      "char_end": 199,
+      "text": "university teacher made significant",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 65,
+      "token_end": 72
+    },
+    {
+      "char_start": 340,
+      "char_end": 363,
+      "text": "Commander of the Legion",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Commander of the Legion of Honour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 97,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.17085565626621246,
+      "wrong_score": -0.052497413009405136,
+      "right_score": -0.2233530730009079
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist and"
+      ],
+      "u": 0.3217567205429077,
+      "margin": -0.15090107917785645,
+      "wrong_score": -0.2151503562927246,
+      "right_score": -0.06424926966428757
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher made significant"
+      ],
+      "u": 0.08315300941467285,
+      "margin": 0.08770264685153961,
+      "wrong_score": -0.0817350298166275,
+      "right_score": -0.16943767666816711
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher made significant"
+      ],
+      "u": 0.10886942595243454,
+      "margin": 0.061986230313777924,
+      "wrong_score": -0.09598573297262192,
+      "right_score": -0.15797196328639984
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Commander of the Legion"
+      ],
+      "u": 0.1764153242111206,
+      "margin": -0.005559660494327545,
+      "wrong_score": -0.12842658162117004,
+      "right_score": -0.1228669211268425
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "Commander of the Legion"
+      ],
+      "u": 0.48968470096588135,
+      "margin": -0.3188290297985077,
+      "wrong_score": -0.4309210181236267,
+      "right_score": -0.11209198087453842
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher made significant",
+        "Commander of the Legion"
+      ],
+      "u": 0.4399995803833008,
+      "margin": -0.2691439390182495,
+      "wrong_score": -0.39384645223617554,
+      "right_score": -0.12470249831676483
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher made significant",
+        "Commander of the Legion"
+      ],
+      "u": 0.43924564123153687,
+      "margin": -0.2683899998664856,
+      "wrong_score": -0.4258369505405426,
+      "right_score": -0.157446950674057
+    }
+  ],
+  "single_u": [
+    0.3217567205429077,
+    0.08315300941467285,
+    0.1764153242111206
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher made significant"
+      ],
+      "u_i": 0.3217567205429077,
+      "u_j": 0.08315300941467285,
+      "local_fd": -0.29604029655456543,
+      "banzhaf": -0.30503180623054504,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished physicist and",
+        "Commander of the Legion"
+      ],
+      "u_i": 0.3217567205429077,
+      "u_j": 0.1764153242111206,
+      "local_fd": -0.008487343788146973,
+      "banzhaf": -0.017478853464126587,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "university teacher made significant",
+        "Commander of the Legion"
+      ],
+      "u_i": 0.08315300941467285,
+      "u_j": 0.1764153242111206,
+      "local_fd": 0.18043124675750732,
+      "banzhaf": 0.1714397370815277,
+      "relation_raw": "synergy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher made significant"
+      ],
+      "order": 2,
+      "harsanyi": -0.296040304005146
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher made significant",
+        "Commander of the Legion"
+      ],
+      "order": 2,
+      "harsanyi": 0.18043124675750732
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher made significant",
+        "Commander of the Legion"
+      ],
+      "order": 3,
+      "harsanyi": -0.01798301190137863
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "Commander of the Legion"
+      ],
+      "order": 2,
+      "harsanyi": -0.008487343788146973
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist and"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Commander of the Legion"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Commander of the Legion"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.2683899998664856,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}
