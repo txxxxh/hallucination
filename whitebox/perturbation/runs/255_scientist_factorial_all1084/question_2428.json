@@ -1,0 +1,290 @@
+{
+  "key": "question_2428",
+  "group": "Q106624",
+  "generation_correct": false,
+  "right": "Ahmed H. Zewail",
+  "wrong": "Pierre-Gilles de Gennes",
+  "base_margin_wrong_minus_right": 0.7326198816299438,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 133,
+      "char_end": 170,
+      "text": "This distinguished university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 67
+    },
+    {
+      "char_start": 171,
+      "char_end": 194,
+      "text": "and physicist is widely",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 67,
+      "token_end": 71
+    },
+    {
+      "char_start": 376,
+      "char_end": 395,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 97,
+      "token_end": 101
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.7326198816299438,
+      "wrong_score": -0.004666578955948353,
+      "right_score": -0.7372864484786987
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished university teacher"
+      ],
+      "u": -0.05329155921936035,
+      "margin": 0.7859114408493042,
+      "wrong_score": -0.010228407569229603,
+      "right_score": -0.7961398363113403
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and physicist is widely"
+      ],
+      "u": -0.16041171550750732,
+      "margin": 0.8930315971374512,
+      "wrong_score": -0.020868930965662003,
+      "right_score": -0.9139005541801453
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "and physicist is widely"
+      ],
+      "u": 0.0896196961402893,
+      "margin": 0.6430001854896545,
+      "wrong_score": -0.014060291461646557,
+      "right_score": -0.6570605039596558
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.21459686756134033,
+      "margin": 0.5180230140686035,
+      "wrong_score": -0.012497917748987675,
+      "right_score": -0.5305209159851074
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "as a Foreign Member"
+      ],
+      "u": 0.05391967296600342,
+      "margin": 0.6787002086639404,
+      "wrong_score": -0.020983021706342697,
+      "right_score": -0.6996832489967346
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and physicist is widely",
+        "as a Foreign Member"
+      ],
+      "u": 0.08965343236923218,
+      "margin": 0.6429664492607117,
+      "wrong_score": -0.025123661383986473,
+      "right_score": -0.6680901050567627
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "and physicist is widely",
+        "as a Foreign Member"
+      ],
+      "u": 0.14323687553405762,
+      "margin": 0.5893830060958862,
+      "wrong_score": -0.017859231680631638,
+      "right_score": -0.607242226600647
+    }
+  ],
+  "single_u": [
+    -0.05329155921936035,
+    -0.16041171550750732,
+    0.21459686756134033
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished university teacher",
+        "and physicist is widely"
+      ],
+      "u_i": -0.05329155921936035,
+      "u_j": -0.16041171550750732,
+      "local_fd": 0.303322970867157,
+      "banzhaf": 0.25879180431365967,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished university teacher",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.05329155921936035,
+      "u_j": 0.21459686756134033,
+      "local_fd": -0.10738563537597656,
+      "banzhaf": -0.15191680192947388,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and physicist is widely",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.16041171550750732,
+      "u_j": 0.21459686756134033,
+      "local_fd": 0.03546828031539917,
+      "banzhaf": -0.009062886238098145,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "and physicist is widely"
+      ],
+      "order": 2,
+      "harsanyi": 0.303322970867157
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.10738563537597656
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "and physicist is widely",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": -0.08906233310699463
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and physicist is widely",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.03546828031539917
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5893830060958862,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

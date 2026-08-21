@@ -1,0 +1,146 @@
+{
+  "key": "question_0279",
+  "group": "Q110925",
+  "generation_correct": true,
+  "right": "K. Barry Sharpless",
+  "wrong": "Samuel J. Danishefsky",
+  "base_margin_wrong_minus_right": -0.34060153365135193,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 224,
+      "char_end": 255,
+      "text": "education at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 77,
+      "token_end": 85
+    },
+    {
+      "char_start": 361,
+      "char_end": 385,
+      "text": "including the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 110,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.34060153365135193,
+      "wrong_score": -0.3544324040412903,
+      "right_score": -0.013830860145390034
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "education at Harvard University"
+      ],
+      "u": 0.09987246990203857,
+      "margin": -0.4404740035533905,
+      "wrong_score": -0.44951683282852173,
+      "right_score": -0.009042816236615181
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Wolf Prize"
+      ],
+      "u": -0.002831757068634033,
+      "margin": -0.3377697765827179,
+      "wrong_score": -0.3581814169883728,
+      "right_score": -0.020411653444170952
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the Wolf Prize"
+      ],
+      "u": 0.011432886123657227,
+      "margin": -0.35203441977500916,
+      "wrong_score": -0.3714064061641693,
+      "right_score": -0.01937197893857956
+    }
+  ],
+  "single_u": [
+    0.09987246990203857,
+    -0.002831757068634033
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "education at Harvard University",
+        "including the Wolf Prize"
+      ],
+      "u_i": 0.09987246990203857,
+      "u_j": -0.002831757068634033,
+      "local_fd": -0.08560782670974731,
+      "banzhaf": -0.08560782670974731,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.08560782670974731
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.35203441977500916,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

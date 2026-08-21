@@ -1,0 +1,146 @@
+{
+  "key": "question_1593",
+  "group": "Q153194",
+  "generation_correct": true,
+  "right": "Edward Victor Appleton",
+  "wrong": "Svante Arrhenius",
+  "base_margin_wrong_minus_right": -0.7475816011428833,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 175,
+      "char_end": 202,
+      "text": "and university teacher made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 67,
+      "token_end": 74
+    },
+    {
+      "char_start": 318,
+      "char_end": 340,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 94,
+      "token_end": 99
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7475816011428833,
+      "wrong_score": -0.7530094981193542,
+      "right_score": -0.005427893251180649
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and university teacher made"
+      ],
+      "u": 0.18679791688919067,
+      "margin": -0.934379518032074,
+      "wrong_score": -0.9430630207061768,
+      "right_score": -0.008683482185006142
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.23247718811035156,
+      "margin": -0.5151044130325317,
+      "wrong_score": -0.5312108397483826,
+      "right_score": -0.01610645093023777
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and university teacher made",
+        "Fellow of the American"
+      ],
+      "u": -0.42671290040016174,
+      "margin": -0.32086870074272156,
+      "wrong_score": -0.3578459620475769,
+      "right_score": -0.03697727248072624
+    }
+  ],
+  "single_u": [
+    0.18679791688919067,
+    -0.23247718811035156
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "and university teacher made",
+        "Fellow of the American"
+      ],
+      "u_i": 0.18679791688919067,
+      "u_j": -0.23247718811035156,
+      "local_fd": -0.38103365898132324,
+      "banzhaf": -0.38103365898132324,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and university teacher made",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.38103362917900085
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.32086870074272156,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

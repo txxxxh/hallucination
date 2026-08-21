@@ -1,0 +1,151 @@
+{
+  "key": "question_0398",
+  "group": "Q310903",
+  "generation_correct": true,
+  "right": "Neil deGrasse Tyson",
+  "wrong": "Carl Sagan",
+  "base_margin_wrong_minus_right": -0.3823283612728119,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 228,
+      "char_end": 255,
+      "text": "to the public understanding",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Carl Sagan Award for Public Understanding of Science",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 79,
+      "token_end": 83
+    },
+    {
+      "char_start": 436,
+      "char_end": 459,
+      "text": "Fellow of the Committee",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Committee for Skeptical Inquiry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 118,
+      "token_end": 123
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3823283612728119,
+      "wrong_score": -0.4396319091320038,
+      "right_score": -0.057303536683321
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "to the public understanding"
+      ],
+      "u": -0.20989978313446045,
+      "margin": -0.17242857813835144,
+      "wrong_score": -0.27932608127593994,
+      "right_score": -0.1068975105881691
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Committee"
+      ],
+      "u": -0.5977067947387695,
+      "margin": 0.21537840366363525,
+      "wrong_score": -0.08740916103124619,
+      "right_score": -0.30278757214546204
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the public understanding",
+        "Fellow of the Committee"
+      ],
+      "u": -0.7900476455688477,
+      "margin": 0.4077192544937134,
+      "wrong_score": -0.04324255511164665,
+      "right_score": -0.45096179842948914
+    }
+  ],
+  "single_u": [
+    -0.20989978313446045,
+    -0.5977067947387695
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "to the public understanding",
+        "Fellow of the Committee"
+      ],
+      "u_i": -0.20989978313446045,
+      "u_j": -0.5977067947387695,
+      "local_fd": 0.017558932304382324,
+      "banzhaf": 0.017558932304382324,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the public understanding",
+        "Fellow of the Committee"
+      ],
+      "order": 2,
+      "harsanyi": 0.017558932304382324
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.4077192544937134,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

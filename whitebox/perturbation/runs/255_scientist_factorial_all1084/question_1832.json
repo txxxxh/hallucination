@@ -1,0 +1,302 @@
+{
+  "key": "question_1832",
+  "group": "Q528631",
+  "generation_correct": true,
+  "right": "Frederick Abel",
+  "wrong": "Cyril Norman Hinshelwood",
+  "base_margin_wrong_minus_right": 0.2423560619354248,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 133,
+      "char_end": 167,
+      "text": "This distinguished British chemist",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 59,
+      "token_end": 67
+    },
+    {
+      "char_start": 422,
+      "char_end": 441,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 111,
+      "token_end": 117
+    },
+    {
+      "char_start": 587,
+      "char_end": 619,
+      "text": "Bakerian Medal. However, despite",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Society Bakerian Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 143,
+      "token_end": 145
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.2423560619354248,
+      "wrong_score": -0.04573335498571396,
+      "right_score": -0.28808942437171936
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished British chemist"
+      ],
+      "u": -0.08124023675918579,
+      "margin": 0.3235962986946106,
+      "wrong_score": -0.03546659275889397,
+      "right_score": -0.35906288027763367
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.16204968094825745,
+      "margin": 0.40440574288368225,
+      "wrong_score": -0.02436872385442257,
+      "right_score": -0.42877447605133057
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished British chemist",
+        "Fellow of the Royal"
+      ],
+      "u": -0.05545759201049805,
+      "margin": 0.29781365394592285,
+      "wrong_score": -0.03927931189537048,
+      "right_score": -0.33709296584129333
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Bakerian Medal. However, despite"
+      ],
+      "u": 0.20451244711875916,
+      "margin": 0.03784360736608505,
+      "wrong_score": -0.09680638462305069,
+      "right_score": -0.13464999198913574
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished British chemist",
+        "Bakerian Medal. However, despite"
+      ],
+      "u": 0.03593513369560242,
+      "margin": 0.2064209282398224,
+      "wrong_score": -0.06168738380074501,
+      "right_score": -0.2681083083152771
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "u": 0.2543414831161499,
+      "margin": -0.0119854137301445,
+      "wrong_score": -0.12407983094453812,
+      "right_score": -0.11209441721439362
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished British chemist",
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "u": 0.05542922019958496,
+      "margin": 0.18692684173583984,
+      "wrong_score": -0.06185513362288475,
+      "right_score": -0.2487819790840149
+    }
+  ],
+  "single_u": [
+    -0.08124023675918579,
+    -0.16204968094825745,
+    0.20451244711875916
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished British chemist",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.08124023675918579,
+      "u_j": -0.16204968094825745,
+      "local_fd": 0.1878323256969452,
+      "banzhaf": 0.0787486881017685,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished British chemist",
+        "Bakerian Medal. However, despite"
+      ],
+      "u_i": -0.08124023675918579,
+      "u_j": 0.20451244711875916,
+      "local_fd": -0.08733707666397095,
+      "banzhaf": -0.19642071425914764,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "u_i": -0.16204968094825745,
+      "u_j": 0.20451244711875916,
+      "local_fd": 0.2118787169456482,
+      "banzhaf": 0.1027950793504715,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished British chemist",
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "order": 3,
+      "harsanyi": -0.2181672751903534
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": 0.2118787169456482
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished British chemist",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.1878323256969452
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished British chemist",
+        "Bakerian Medal. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": -0.08733707666397095
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.18692684173583984,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

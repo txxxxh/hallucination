@@ -1,0 +1,145 @@
+{
+  "key": "question_1778",
+  "group": "Q233974",
+  "generation_correct": true,
+  "right": "Jocelyn Bell Burnell",
+  "wrong": "Mildred Dresselhaus",
+  "base_margin_wrong_minus_right": 0.33335089683532715,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 134,
+      "char_end": 162,
+      "text": "This prominent physicist has",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 63
+    },
+    {
+      "char_start": 284,
+      "char_end": 317,
+      "text": "multiple honorary doctorates from",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate from the McGill University",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 79,
+      "token_end": 86
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.33335089683532715,
+      "wrong_score": -0.021904118359088898,
+      "right_score": -0.35525500774383545
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent physicist has"
+      ],
+      "u": 3.725290298461914e-06,
+      "margin": 0.3333471715450287,
+      "wrong_score": -0.023658908903598785,
+      "right_score": -0.3570060729980469
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "multiple honorary doctorates from"
+      ],
+      "u": -1.4007091522216797e-06,
+      "margin": 0.33335229754447937,
+      "wrong_score": -0.022656459361314774,
+      "right_score": -0.35600876808166504
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent physicist has",
+        "multiple honorary doctorates from"
+      ],
+      "u": -1.004338264465332e-05,
+      "margin": 0.3333609402179718,
+      "wrong_score": -0.02475711517035961,
+      "right_score": -0.35811805725097656
+    }
+  ],
+  "single_u": [
+    3.725290298461914e-06,
+    -1.4007091522216797e-06
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This prominent physicist has",
+        "multiple honorary doctorates from"
+      ],
+      "u_i": 3.725290298461914e-06,
+      "u_j": -1.4007091522216797e-06,
+      "local_fd": -1.2367963790893555e-05,
+      "banzhaf": -1.2367963790893555e-05,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent physicist has",
+        "multiple honorary doctorates from"
+      ],
+      "order": 2,
+      "harsanyi": -1.2367963790893555e-05
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3333609402179718,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 4,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "key": "question_1619",
+  "group": "Q200101",
+  "generation_correct": false,
+  "right": "Jonas Salk",
+  "wrong": "Anthony Fauci",
+  "base_margin_wrong_minus_right": 1.7494639158248901,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 118,
+      "char_end": 149,
+      "text": "This physician and immunologist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physician",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 56,
+      "token_end": 61
+    },
+    {
+      "char_start": 323,
+      "char_end": 355,
+      "text": "including the Presidential Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Presidential Medal of Freedom",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 94,
+      "token_end": 101
+    },
+    {
+      "char_start": 367,
+      "char_end": 388,
+      "text": "and the Howard Taylor",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Howard Taylor Ricketts Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 102,
+      "token_end": 107
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.7494639158248901,
+      "wrong_score": -0.0028438891749829054,
+      "right_score": -1.7523077726364136
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This physician and immunologist"
+      ],
+      "u": 0.34678375720977783,
+      "margin": 1.4026801586151123,
+      "wrong_score": -0.01791524887084961,
+      "right_score": -1.420595407485962
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Presidential Medal"
+      ],
+      "u": 0.5975486040115356,
+      "margin": 1.1519153118133545,
+      "wrong_score": -0.023450057953596115,
+      "right_score": -1.1753653287887573
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This physician and immunologist",
+        "including the Presidential Medal"
+      ],
+      "u": 0.25258541107177734,
+      "margin": 1.4968785047531128,
+      "wrong_score": -0.012132193893194199,
+      "right_score": -1.509010672569275
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Howard Taylor"
+      ],
+      "u": 0.3755795955657959,
+      "margin": 1.3738843202590942,
+      "wrong_score": -0.006566969212144613,
+      "right_score": -1.3804513216018677
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This physician and immunologist",
+        "and the Howard Taylor"
+      ],
+      "u": 0.41016197204589844,
+      "margin": 1.3393019437789917,
+      "wrong_score": -0.0151375038549304,
+      "right_score": -1.3544394969940186
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Presidential Medal",
+        "and the Howard Taylor"
+      ],
+      "u": 1.2088794708251953,
+      "margin": 0.5405844449996948,
+      "wrong_score": -0.3955339789390564,
+      "right_score": -0.9361184239387512
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This physician and immunologist",
+        "including the Presidential Medal",
+        "and the Howard Taylor"
+      ],
+      "u": 0.8285824060440063,
+      "margin": 0.9208815097808838,
+      "wrong_score": -0.10915675759315491,
+      "right_score": -1.0300382375717163
+    }
+  ],
+  "single_u": [
+    0.34678375720977783,
+    0.5975486040115356,
+    0.3755795955657959
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This physician and immunologist",
+        "including the Presidential Medal"
+      ],
+      "u_i": 0.34678375720977783,
+      "u_j": 0.5975486040115356,
+      "local_fd": -0.6917469501495361,
+      "banzhaf": -0.5533131957054138,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This physician and immunologist",
+        "and the Howard Taylor"
+      ],
+      "u_i": 0.34678375720977783,
+      "u_j": 0.3755795955657959,
+      "local_fd": -0.3122013807296753,
+      "banzhaf": -0.17376762628555298,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Presidential Medal",
+        "and the Howard Taylor"
+      ],
+      "u_i": 0.5975486040115356,
+      "u_j": 0.3755795955657959,
+      "local_fd": 0.23575127124786377,
+      "banzhaf": 0.3741850256919861,
+      "relation_raw": "synergy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This physician and immunologist",
+        "including the Presidential Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.6917469501495361
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This physician and immunologist",
+        "and the Howard Taylor"
+      ],
+      "order": 2,
+      "harsanyi": -0.3122013807296753
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This physician and immunologist",
+        "including the Presidential Medal",
+        "and the Howard Taylor"
+      ],
+      "order": 3,
+      "harsanyi": 0.27686750888824463
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Presidential Medal",
+        "and the Howard Taylor"
+      ],
+      "order": 2,
+      "harsanyi": 0.23575127124786377
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.9208815097808838,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 6,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

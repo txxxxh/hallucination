@@ -1,0 +1,146 @@
+{
+  "key": "question_2700",
+  "group": "Q185110",
+  "generation_correct": false,
+  "right": "Igor Vasilyevich Kurchatov",
+  "wrong": "Zhores Ivanovich Alferov",
+  "base_margin_wrong_minus_right": 0.32261866331100464,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 337,
+      "char_end": 355,
+      "text": "the Order of Lenin",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of Lenin",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 107,
+      "token_end": 112
+    },
+    {
+      "char_start": 361,
+      "char_end": 377,
+      "text": "Order of the Red",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 113,
+      "token_end": 115
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.32261866331100464,
+      "wrong_score": -0.06401964277029037,
+      "right_score": -0.3866383135318756
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Order of Lenin"
+      ],
+      "u": -0.2074769139289856,
+      "margin": 0.5300955772399902,
+      "wrong_score": -0.07452823966741562,
+      "right_score": -0.6046237945556641
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Order of the Red"
+      ],
+      "u": -0.27438050508499146,
+      "margin": 0.5969991683959961,
+      "wrong_score": -0.032598428428173065,
+      "right_score": -0.6295976042747498
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Order of Lenin",
+        "Order of the Red"
+      ],
+      "u": -0.12186038494110107,
+      "margin": 0.4444790482521057,
+      "wrong_score": -0.10625780373811722,
+      "right_score": -0.5507368445396423
+    }
+  ],
+  "single_u": [
+    -0.2074769139289856,
+    -0.27438050508499146
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Order of Lenin",
+        "Order of the Red"
+      ],
+      "u_i": -0.2074769139289856,
+      "u_j": -0.27438050508499146,
+      "local_fd": 0.359997034072876,
+      "banzhaf": 0.359997034072876,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Order of Lenin",
+        "Order of the Red"
+      ],
+      "order": 2,
+      "harsanyi": 0.359997034072876
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.4444790482521057,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

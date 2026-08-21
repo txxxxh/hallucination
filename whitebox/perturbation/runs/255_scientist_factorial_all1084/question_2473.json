@@ -1,0 +1,146 @@
+{
+  "key": "question_2473",
+  "group": "Q366471",
+  "generation_correct": false,
+  "right": "Yakov Borisovich Zel'dovich",
+  "wrong": "Nikolai Baibakov",
+  "base_margin_wrong_minus_right": 0.029389508068561554,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 414,
+      "char_end": 436,
+      "text": "the Medal \"For Valiant",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal \"For Valiant Labour in the Great Patriotic War 1941–1945\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 128,
+      "token_end": 131
+    },
+    {
+      "char_start": 486,
+      "char_end": 513,
+      "text": "the Medal \"In Commemoration",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal \"In Commemoration of the 800th Anniversary of Moscow\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 140,
+      "token_end": 146
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.029389508068561554,
+      "wrong_score": -0.08482619374990463,
+      "right_score": -0.11421570181846619
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Medal \"For Valiant"
+      ],
+      "u": -0.03969445824623108,
+      "margin": 0.06908396631479263,
+      "wrong_score": -0.06605302542448044,
+      "right_score": -0.13513699173927307
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Medal \"In Commemoration"
+      ],
+      "u": -0.1002231165766716,
+      "margin": 0.12961262464523315,
+      "wrong_score": -0.07223092019557953,
+      "right_score": -0.20184354484081268
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Medal \"For Valiant",
+        "the Medal \"In Commemoration"
+      ],
+      "u": -0.16266363859176636,
+      "margin": 0.19205313920974731,
+      "wrong_score": -0.04558611661195755,
+      "right_score": -0.23763924837112427
+    }
+  ],
+  "single_u": [
+    -0.03969445824623108,
+    -0.1002231165766716
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Medal \"For Valiant",
+        "the Medal \"In Commemoration"
+      ],
+      "u_i": -0.03969445824623108,
+      "u_j": -0.1002231165766716,
+      "local_fd": -0.022746063768863678,
+      "banzhaf": -0.022746063768863678,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Medal \"For Valiant",
+        "the Medal \"In Commemoration"
+      ],
+      "order": 2,
+      "harsanyi": -0.022746063768863678
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.19205313920974731,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

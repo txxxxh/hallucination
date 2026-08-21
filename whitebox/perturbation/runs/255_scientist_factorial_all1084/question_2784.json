@@ -1,0 +1,289 @@
+{
+  "key": "question_2784",
+  "group": "Q5354",
+  "generation_correct": true,
+  "right": "Ernst Mayr",
+  "wrong": "Robert May, Baron May of Oxford",
+  "base_margin_wrong_minus_right": -0.5491234660148621,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 282,
+      "char_end": 309,
+      "text": "received the Crafoord Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Crafoord Prize in Biosciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 97,
+      "token_end": 102
+    },
+    {
+      "char_start": 376,
+      "char_end": 400,
+      "text": "named an Honorary Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Institute of Physics",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 118
+    },
+    {
+      "char_start": 401,
+      "char_end": 426,
+      "text": "of the Zoological Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Zoological Society of London",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 117,
+      "token_end": 122
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5491234660148621,
+      "wrong_score": -0.5575887560844421,
+      "right_score": -0.00846531055867672
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "received the Crafoord Prize"
+      ],
+      "u": -0.06951847672462463,
+      "margin": -0.4796049892902374,
+      "wrong_score": -0.5039653778076172,
+      "right_score": -0.02436039038002491
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "named an Honorary Fellow"
+      ],
+      "u": 0.09936940670013428,
+      "margin": -0.6484928727149963,
+      "wrong_score": -0.6557120084762573,
+      "right_score": -0.007219129707664251
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the Crafoord Prize",
+        "named an Honorary Fellow"
+      ],
+      "u": -0.20239174365997314,
+      "margin": -0.3467317223548889,
+      "wrong_score": -0.3793543577194214,
+      "right_score": -0.032622627913951874
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "of the Zoological Society"
+      ],
+      "u": -0.1589127779006958,
+      "margin": -0.39021068811416626,
+      "wrong_score": -0.4139460027217865,
+      "right_score": -0.02373531274497509
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the Crafoord Prize",
+        "of the Zoological Society"
+      ],
+      "u": -0.3047647476196289,
+      "margin": -0.24435870349407196,
+      "wrong_score": -0.2984168231487274,
+      "right_score": -0.05405811965465546
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "named an Honorary Fellow",
+        "of the Zoological Society"
+      ],
+      "u": -0.22503364086151123,
+      "margin": -0.32408982515335083,
+      "wrong_score": -0.37460362911224365,
+      "right_score": -0.050513818860054016
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the Crafoord Prize",
+        "named an Honorary Fellow",
+        "of the Zoological Society"
+      ],
+      "u": -0.27130019664764404,
+      "margin": -0.277823269367218,
+      "wrong_score": -0.34512728452682495,
+      "right_score": -0.06730400770902634
+    }
+  ],
+  "single_u": [
+    -0.06951847672462463,
+    0.09936940670013428,
+    -0.1589127779006958
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "received the Crafoord Prize",
+        "named an Honorary Fellow"
+      ],
+      "u_i": -0.06951847672462463,
+      "u_j": 0.09936940670013428,
+      "local_fd": -0.2322426736354828,
+      "banzhaf": -0.06632862985134125,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "received the Crafoord Prize",
+        "of the Zoological Society"
+      ],
+      "u_i": -0.06951847672462463,
+      "u_j": -0.1589127779006958,
+      "local_fd": -0.07633349299430847,
+      "banzhaf": 0.08958055078983307,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "named an Honorary Fellow",
+        "of the Zoological Society"
+      ],
+      "u_i": 0.09936940670013428,
+      "u_j": -0.1589127779006958,
+      "local_fd": -0.1654902696609497,
+      "banzhaf": 0.0004237741231918335,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the Crafoord Prize",
+        "named an Honorary Fellow",
+        "of the Zoological Society"
+      ],
+      "order": 3,
+      "harsanyi": 0.3318280875682831
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the Crafoord Prize",
+        "named an Honorary Fellow"
+      ],
+      "order": 2,
+      "harsanyi": -0.2322426736354828
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "named an Honorary Fellow",
+        "of the Zoological Society"
+      ],
+      "order": 2,
+      "harsanyi": -0.1654902696609497
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the Crafoord Prize",
+        "of the Zoological Society"
+      ],
+      "order": 2,
+      "harsanyi": -0.07633349299430847
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.277823269367218,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

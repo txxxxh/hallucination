@@ -1,0 +1,309 @@
+{
+  "key": "question_0301",
+  "group": "Q201513",
+  "generation_correct": true,
+  "right": "Edward Witten",
+  "wrong": "Albert Einstein",
+  "base_margin_wrong_minus_right": -0.2763301134109497,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 123,
+      "char_end": 159,
+      "text": "This prominent theoretical physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "theoretical physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 54,
+      "token_end": 60
+    },
+    {
+      "char_start": 291,
+      "char_end": 319,
+      "text": "delivered the Josiah Willard",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Josiah Willard Gibbs Lectureship",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 86,
+      "token_end": 91
+    },
+    {
+      "char_start": 347,
+      "char_end": 371,
+      "text": "elected a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 97,
+      "token_end": 100
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.2763301134109497,
+      "wrong_score": -0.4541248083114624,
+      "right_score": -0.1777946799993515
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent theoretical physicist"
+      ],
+      "u": -0.985247790813446,
+      "margin": 0.7089176774024963,
+      "wrong_score": -0.16245990991592407,
+      "right_score": -0.8713775873184204
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "delivered the Josiah Willard"
+      ],
+      "u": 0.003552377223968506,
+      "margin": -0.2798824906349182,
+      "wrong_score": -0.4645194411277771,
+      "right_score": -0.1846369355916977
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent theoretical physicist",
+        "delivered the Josiah Willard"
+      ],
+      "u": -0.6830581426620483,
+      "margin": 0.406728059053421,
+      "wrong_score": -0.15930107235908508,
+      "right_score": -0.5660291314125061
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member"
+      ],
+      "u": -0.05286911129951477,
+      "margin": -0.22346100211143494,
+      "wrong_score": -0.41896259784698486,
+      "right_score": -0.19550159573554993
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent theoretical physicist",
+        "elected a Foreign Member"
+      ],
+      "u": -0.7731126546859741,
+      "margin": 0.496782511472702,
+      "wrong_score": -0.11452969908714294,
+      "right_score": -0.611312210559845
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "delivered the Josiah Willard",
+        "elected a Foreign Member"
+      ],
+      "u": 0.40768927335739136,
+      "margin": -0.6840193867683411,
+      "wrong_score": -0.7717154622077942,
+      "right_score": -0.08769609779119492
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent theoretical physicist",
+        "delivered the Josiah Willard",
+        "elected a Foreign Member"
+      ],
+      "u": -0.21817708015441895,
+      "margin": -0.05815303325653076,
+      "wrong_score": -0.3716433048248291,
+      "right_score": -0.31349027156829834
+    }
+  ],
+  "single_u": [
+    -0.985247790813446,
+    0.003552377223968506,
+    -0.05286911129951477
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This prominent theoretical physicist",
+        "delivered the Josiah Willard"
+      ],
+      "u_i": -0.985247790813446,
+      "u_j": 0.003552377223968506,
+      "local_fd": 0.2986372709274292,
+      "banzhaf": 0.19650723040103912,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This prominent theoretical physicist",
+        "elected a Foreign Member"
+      ],
+      "u_i": -0.985247790813446,
+      "u_j": -0.05286911129951477,
+      "local_fd": 0.2650042474269867,
+      "banzhaf": 0.16287420690059662,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "delivered the Josiah Willard",
+        "elected a Foreign Member"
+      ],
+      "u_i": 0.003552377223968506,
+      "u_j": -0.05286911129951477,
+      "local_fd": 0.4570060074329376,
+      "banzhaf": 0.35487598180770874,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "delivered the Josiah Willard",
+        "elected a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.4570060074329376
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent theoretical physicist",
+        "delivered the Josiah Willard"
+      ],
+      "order": 2,
+      "harsanyi": 0.2986372709274292
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent theoretical physicist",
+        "elected a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.2650042474269867
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent theoretical physicist",
+        "delivered the Josiah Willard",
+        "elected a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": -0.20426008105278015
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "delivered the Josiah Willard"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.05815303325653076,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

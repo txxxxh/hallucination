@@ -1,0 +1,290 @@
+{
+  "key": "question_0875",
+  "group": "Q178577",
+  "generation_correct": true,
+  "right": "Norbert Wiener",
+  "wrong": "Donald Knuth",
+  "base_margin_wrong_minus_right": -0.31442365050315857,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 160,
+      "char_end": 193,
+      "text": "scientist, and university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 62,
+      "token_end": 68
+    },
+    {
+      "char_start": 329,
+      "char_end": 357,
+      "text": "including the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 98,
+      "token_end": 103
+    },
+    {
+      "char_start": 361,
+      "char_end": 393,
+      "text": "Science, a Guggenheim Fellowship",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Guggenheim Fellowship",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 103,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.31442365050315857,
+      "wrong_score": -0.4201467037200928,
+      "right_score": -0.1057230532169342
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "scientist, and university teacher"
+      ],
+      "u": 0.09136831760406494,
+      "margin": -0.4057919681072235,
+      "wrong_score": -0.49688100814819336,
+      "right_score": -0.09108904749155045
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the National Medal"
+      ],
+      "u": -0.02800711989402771,
+      "margin": -0.28641653060913086,
+      "wrong_score": -0.3957318961620331,
+      "right_score": -0.10931535810232162
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "scientist, and university teacher",
+        "including the National Medal"
+      ],
+      "u": 0.15819230675697327,
+      "margin": -0.47261595726013184,
+      "wrong_score": -0.5539640188217163,
+      "right_score": -0.08134804666042328
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Science, a Guggenheim Fellowship"
+      ],
+      "u": 0.3396240174770355,
+      "margin": -0.6540476679801941,
+      "wrong_score": -0.8625646829605103,
+      "right_score": -0.20851700007915497
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "scientist, and university teacher",
+        "Science, a Guggenheim Fellowship"
+      ],
+      "u": 0.16402623057365417,
+      "margin": -0.47844988107681274,
+      "wrong_score": -0.8344568014144897,
+      "right_score": -0.356006920337677
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, a Guggenheim Fellowship"
+      ],
+      "u": 0.15852895379066467,
+      "margin": -0.47295260429382324,
+      "wrong_score": -0.8077772855758667,
+      "right_score": -0.33482468128204346
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "scientist, and university teacher",
+        "including the National Medal",
+        "Science, a Guggenheim Fellowship"
+      ],
+      "u": 0.41458889842033386,
+      "margin": -0.7290125489234924,
+      "wrong_score": -1.481909155845642,
+      "right_score": -0.7528966069221497
+    }
+  ],
+  "single_u": [
+    0.09136831760406494,
+    -0.02800711989402771,
+    0.3396240174770355
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "scientist, and university teacher",
+        "including the National Medal"
+      ],
+      "u_i": 0.09136831760406494,
+      "u_j": -0.02800711989402771,
+      "local_fd": 0.09483110904693604,
+      "banzhaf": 0.2632444202899933,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "scientist, and university teacher",
+        "Science, a Guggenheim Fellowship"
+      ],
+      "u_i": 0.09136831760406494,
+      "u_j": 0.3396240174770355,
+      "local_fd": -0.2669661045074463,
+      "banzhaf": -0.09855279326438904,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the National Medal",
+        "Science, a Guggenheim Fellowship"
+      ],
+      "u_i": -0.02800711989402771,
+      "u_j": 0.3396240174770355,
+      "local_fd": -0.15308794379234314,
+      "banzhaf": 0.015325367450714111,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "scientist, and university teacher",
+        "including the National Medal",
+        "Science, a Guggenheim Fellowship"
+      ],
+      "order": 3,
+      "harsanyi": 0.3368266224861145
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "scientist, and university teacher",
+        "Science, a Guggenheim Fellowship"
+      ],
+      "order": 2,
+      "harsanyi": -0.2669661045074463
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Science, a Guggenheim Fellowship"
+      ],
+      "order": 2,
+      "harsanyi": -0.15308794379234314
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "scientist, and university teacher",
+        "including the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.09483110904693604
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.7290125489234924,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

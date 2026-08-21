@@ -1,0 +1,328 @@
+{
+  "key": "question_1785",
+  "group": "Q132537",
+  "generation_correct": true,
+  "right": "Robert Oppenheimer",
+  "wrong": "Luis Walter Alvarez",
+  "base_margin_wrong_minus_right": 0.12480664998292923,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 310,
+      "char_end": 332,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 91,
+      "token_end": 95
+    },
+    {
+      "char_start": 372,
+      "char_end": 391,
+      "text": "the Medal for Merit",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal for Merit",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 101,
+      "token_end": 105
+    },
+    {
+      "char_start": 392,
+      "char_end": 412,
+      "text": "and the Enrico Fermi",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Enrico Fermi Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 105,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.12480664998292923,
+      "wrong_score": -0.12225564569234848,
+      "right_score": -0.2470622956752777
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.21880346536636353,
+      "margin": 0.34361010789871216,
+      "wrong_score": -0.0653366819024086,
+      "right_score": -0.40894678235054016
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Medal for Merit"
+      ],
+      "u": 0.09393423050642014,
+      "margin": 0.030872419476509094,
+      "wrong_score": -0.16716335713863373,
+      "right_score": -0.19803577661514282
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Medal for Merit"
+      ],
+      "u": 0.12497404962778091,
+      "margin": -0.00016739964485168457,
+      "wrong_score": -0.18237638473510742,
+      "right_score": -0.18220898509025574
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Enrico Fermi"
+      ],
+      "u": 0.21872925758361816,
+      "margin": -0.09392260015010834,
+      "wrong_score": -0.2423570156097412,
+      "right_score": -0.14843441545963287
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "and the Enrico Fermi"
+      ],
+      "u": 0.1874038279056549,
+      "margin": -0.06259717047214508,
+      "wrong_score": -0.2410247027873993,
+      "right_score": -0.1784275323152542
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Medal for Merit",
+        "and the Enrico Fermi"
+      ],
+      "u": 0.15621307492256165,
+      "margin": -0.03140641748905182,
+      "wrong_score": -0.2649395763874054,
+      "right_score": -0.23353315889835358
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Medal for Merit",
+        "and the Enrico Fermi"
+      ],
+      "u": 0.1561816930770874,
+      "margin": -0.03137505054473877,
+      "wrong_score": -0.25915148854255676,
+      "right_score": -0.227776437997818
+    }
+  ],
+  "single_u": [
+    -0.21880346536636353,
+    0.09393423050642014,
+    0.21872925758361816
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the American",
+        "the Medal for Merit"
+      ],
+      "u_i": -0.21880346536636353,
+      "u_j": 0.09393423050642014,
+      "local_fd": 0.2498432695865631,
+      "banzhaf": 0.14056865870952606,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the American",
+        "and the Enrico Fermi"
+      ],
+      "u_i": -0.21880346536636353,
+      "u_j": 0.21872925758361816,
+      "local_fd": 0.18747803568840027,
+      "banzhaf": 0.07820342481136322,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Medal for Merit",
+        "and the Enrico Fermi"
+      ],
+      "u_i": 0.09393423050642014,
+      "u_j": 0.21872925758361816,
+      "local_fd": -0.15645042061805725,
+      "banzhaf": -0.2657250165939331,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Medal for Merit"
+      ],
+      "order": 2,
+      "harsanyi": 0.2498432844877243
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Medal for Merit",
+        "and the Enrico Fermi"
+      ],
+      "order": 3,
+      "harsanyi": -0.2185492366552353
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "and the Enrico Fermi"
+      ],
+      "order": 2,
+      "harsanyi": 0.18747803568840027
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Medal for Merit",
+        "and the Enrico Fermi"
+      ],
+      "order": 2,
+      "harsanyi": -0.15645041316747665
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Enrico Fermi"
+      ]
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Medal for Merit"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "and the Enrico Fermi"
+      ]
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Medal for Merit",
+        "and the Enrico Fermi"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.03137505054473877,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

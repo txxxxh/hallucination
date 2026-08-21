@@ -1,0 +1,290 @@
+{
+  "key": "question_2285",
+  "group": "Q711452",
+  "generation_correct": true,
+  "right": "Arthur Schuster",
+  "wrong": "Patrick Blackett",
+  "base_margin_wrong_minus_right": 0.7916728258132935,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 199,
+      "char_end": 228,
+      "text": "title of Langworthy Professor",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "Langworthy Professor",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 71
+    },
+    {
+      "char_start": 341,
+      "char_end": 360,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 93,
+      "token_end": 98
+    },
+    {
+      "char_start": 494,
+      "char_end": 520,
+      "text": "the Royal Society Bakerian",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Society Bakerian Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 122,
+      "token_end": 128
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.7916728258132935,
+      "wrong_score": -0.0307094044983387,
+      "right_score": -0.8223822116851807
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "title of Langworthy Professor"
+      ],
+      "u": -3.0159950256347656e-05,
+      "margin": 0.7917029857635498,
+      "wrong_score": -0.03175801783800125,
+      "right_score": -0.8234609961509705
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.45834338665008545,
+      "margin": 0.333329439163208,
+      "wrong_score": -0.10599680989980698,
+      "right_score": -0.4393262565135956
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "title of Langworthy Professor",
+        "Fellow of the Royal"
+      ],
+      "u": 0.12499403953552246,
+      "margin": 0.666678786277771,
+      "wrong_score": -0.0452142059803009,
+      "right_score": -0.7118930220603943
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Royal Society Bakerian"
+      ],
+      "u": 0.3333148658275604,
+      "margin": 0.45835795998573303,
+      "wrong_score": -0.11659344285726547,
+      "right_score": -0.5749514102935791
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "title of Langworthy Professor",
+        "the Royal Society Bakerian"
+      ],
+      "u": 0.4583357870578766,
+      "margin": 0.33333703875541687,
+      "wrong_score": -0.12389349192380905,
+      "right_score": -0.4572305381298065
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the Royal Society Bakerian"
+      ],
+      "u": 0.29175591468811035,
+      "margin": 0.4999169111251831,
+      "wrong_score": -0.08128738403320312,
+      "right_score": -0.5812042951583862
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "title of Langworthy Professor",
+        "Fellow of the Royal",
+        "the Royal Society Bakerian"
+      ],
+      "u": 0.2500345706939697,
+      "margin": 0.5416382551193237,
+      "wrong_score": -0.13451793789863586,
+      "right_score": -0.676156222820282
+    }
+  ],
+  "single_u": [
+    -3.0159950256347656e-05,
+    0.45834338665008545,
+    0.3333148658275604
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "title of Langworthy Professor",
+        "Fellow of the Royal"
+      ],
+      "u_i": -3.0159950256347656e-05,
+      "u_j": 0.45834338665008545,
+      "local_fd": -0.33331918716430664,
+      "banzhaf": -0.2500306963920593,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "title of Langworthy Professor",
+        "the Royal Society Bakerian"
+      ],
+      "u_i": -3.0159950256347656e-05,
+      "u_j": 0.3333148658275604,
+      "local_fd": 0.1250510811805725,
+      "banzhaf": 0.20833954215049744,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "the Royal Society Bakerian"
+      ],
+      "u_i": 0.45834338665008545,
+      "u_j": 0.3333148658275604,
+      "local_fd": -0.4999023377895355,
+      "banzhaf": -0.4166138768196106,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the Royal Society Bakerian"
+      ],
+      "order": 2,
+      "harsanyi": -0.4999023377895355
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "title of Langworthy Professor",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.33331918716430664
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "title of Langworthy Professor",
+        "Fellow of the Royal",
+        "the Royal Society Bakerian"
+      ],
+      "order": 3,
+      "harsanyi": 0.16657692193984985
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "title of Langworthy Professor",
+        "the Royal Society Bakerian"
+      ],
+      "order": 2,
+      "harsanyi": 0.1250510811805725
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5416382551193237,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

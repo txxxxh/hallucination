@@ -1,0 +1,320 @@
+{
+  "key": "question_0890",
+  "group": "Q173994",
+  "generation_correct": true,
+  "right": "Jean Tirole",
+  "wrong": "Kenneth Arrow",
+  "base_margin_wrong_minus_right": 0.2916361689567566,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 315,
+      "char_end": 337,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Statistical Association",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 89,
+      "token_end": 93
+    },
+    {
+      "char_start": 338,
+      "char_end": 357,
+      "text": "Academy of Arts and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 92,
+      "token_end": 96
+    },
+    {
+      "char_start": 665,
+      "char_end": 670,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 153,
+      "token_end": 155
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.2916361689567566,
+      "wrong_score": -0.12267627567052841,
+      "right_score": -0.4143124520778656
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.2083088755607605,
+      "margin": 0.0833272933959961,
+      "wrong_score": -0.20371025800704956,
+      "right_score": -0.28703755140304565
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Academy of Arts and"
+      ],
+      "u": 0.24997806549072266,
+      "margin": 0.041658103466033936,
+      "wrong_score": -0.21918463706970215,
+      "right_score": -0.2608427405357361
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Academy of Arts and"
+      ],
+      "u": 0.2916489243507385,
+      "margin": -1.2755393981933594e-05,
+      "wrong_score": -0.24184702336788177,
+      "right_score": -0.24183426797389984
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.2083122432231903,
+      "margin": 0.08332392573356628,
+      "wrong_score": -0.197485089302063,
+      "right_score": -0.2808090150356293
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "never"
+      ],
+      "u": 0.33330702781677246,
+      "margin": -0.04167085886001587,
+      "wrong_score": -0.25810688734054565,
+      "right_score": -0.21643602848052979
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Academy of Arts and",
+        "never"
+      ],
+      "u": 0.4999769330024719,
+      "margin": -0.20834074914455414,
+      "wrong_score": -0.3570626676082611,
+      "right_score": -0.14872191846370697
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Academy of Arts and",
+        "never"
+      ],
+      "u": 0.1666458547115326,
+      "margin": 0.124990314245224,
+      "wrong_score": -0.18139433860778809,
+      "right_score": -0.3063846528530121
+    }
+  ],
+  "single_u": [
+    0.2083088755607605,
+    0.24997806549072266,
+    0.2083122432231903
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the American",
+        "Academy of Arts and"
+      ],
+      "u_i": 0.2083088755607605,
+      "u_j": 0.24997806549072266,
+      "local_fd": -0.16663801670074463,
+      "banzhaf": -0.31248193979263306,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the American",
+        "never"
+      ],
+      "u_i": 0.2083088755607605,
+      "u_j": 0.2083122432231903,
+      "local_fd": -0.08331409096717834,
+      "banzhaf": -0.22915799915790558,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Academy of Arts and",
+        "never"
+      ],
+      "u_i": 0.24997806549072266,
+      "u_j": 0.2083122432231903,
+      "local_fd": 0.04168662428855896,
+      "banzhaf": -0.10415729880332947,
+      "relation_raw": "synergy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Academy of Arts and",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.29168784618377686
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Academy of Arts and"
+      ],
+      "order": 2,
+      "harsanyi": -0.16663801670074463
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.08331409096717834
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Academy of Arts and",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.04168662428855896
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Academy of Arts and"
+      ]
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "never"
+      ]
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Academy of Arts and",
+        "never"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.124990314245224,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

@@ -16,10 +16,10 @@ from sklearn.metrics import (accuracy_score, average_precision_score,
 from sklearn.model_selection import StratifiedGroupKFold, StratifiedKFold
 from sklearn.preprocessing import StandardScaler
 
-MODELS = ("llama", "mistral", "qwen", "falcon3")
-METHODS = ("exact", "attention")
-IN_DOMAIN = ("scientist", "trivia", "gsm8k")
-EXPECTED = {"scientist": 1084, "multidomain": 477, "trivia": 1000, "gsm8k": 942}
+MODELS = ("llama", "mistral", "qwen")
+METHODS = ("exact", "attention", "gradient")
+IN_DOMAIN = ("scientist", "trivia", "gsm8k", "drop")
+EXPECTED = {"scientist": 1084, "multidomain": 477, "trivia": 1000, "gsm8k": 942, "drop": 1000}
 SEEDS = (42, 43, 44)
 
 
@@ -49,7 +49,7 @@ def weighted_delta(hidden, effects):
     return (delta * effects[:, None]).sum(0) / (np.abs(effects).sum() + 1e-9)
 
 
-def load_directory(path: Path, expected: int):
+def load_directory(path: Path, expected: int | None = None):
     rows = []
     query_rows = []
     for file in sorted(path.glob("*.npz")):
@@ -70,7 +70,7 @@ def load_directory(path: Path, expected: int):
                          z["layer14"].astype(np.float32)))
             query_rows.append((int(z["stage1_candidates"]), int(z["stage1_full"]),
                                int(z["stage2_candidates"]), int(z["stage2_full"])))
-    if len(rows) != expected:
+    if expected is not None and len(rows) != expected:
         raise RuntimeError(f"{path}: expected {expected} npz files, found {len(rows)}")
     keys = np.array([x[0] for x in rows])
     groups = np.array([x[1] for x in rows])
@@ -239,8 +239,7 @@ def main():
         report["models"][model] = {}
         for method in METHODS:
             print(f"[{model}/{method}] loading", flush=True)
-            loaded = {dataset: load_directory(args.feature_root / model / dataset / method,
-                                               EXPECTED[dataset])
+            loaded = {dataset: load_directory(args.feature_root / model / dataset / method)
                       for dataset in (*IN_DOMAIN, "multidomain")}
             in_domain = {}
             for dataset in IN_DOMAIN:

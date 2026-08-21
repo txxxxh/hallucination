@@ -1,0 +1,290 @@
+{
+  "key": "question_0198",
+  "group": "Q110925",
+  "generation_correct": false,
+  "right": "K. Barry Sharpless",
+  "wrong": "Roald Hoffmann",
+  "base_margin_wrong_minus_right": -0.7850782871246338,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 255,
+      "char_end": 286,
+      "text": "education at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 80,
+      "token_end": 91
+    },
+    {
+      "char_start": 330,
+      "char_end": 350,
+      "text": "with the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 100,
+      "token_end": 104
+    },
+    {
+      "char_start": 456,
+      "char_end": 478,
+      "text": "received the NAS Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 121,
+      "token_end": 123
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7850782871246338,
+      "wrong_score": -0.7956112623214722,
+      "right_score": -0.010532965883612633
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "education at Harvard University"
+      ],
+      "u": -0.18534088134765625,
+      "margin": -0.5997374057769775,
+      "wrong_score": -0.6271594762802124,
+      "right_score": -0.027422085404396057
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Nobel Prize"
+      ],
+      "u": 0.12483680248260498,
+      "margin": -0.9099150896072388,
+      "wrong_score": -0.9244444966316223,
+      "right_score": -0.014529392123222351
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Harvard University",
+        "with the Nobel Prize"
+      ],
+      "u": -0.18740028142929077,
+      "margin": -0.597678005695343,
+      "wrong_score": -0.6254894137382507,
+      "right_score": -0.02781139686703682
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "received the NAS Award"
+      ],
+      "u": 0.24775052070617676,
+      "margin": -1.0328288078308105,
+      "wrong_score": -1.0386055707931519,
+      "right_score": -0.00577674712985754
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "received the NAS Award"
+      ],
+      "u": 0.12449198961257935,
+      "margin": -0.9095702767372131,
+      "wrong_score": -0.92179274559021,
+      "right_score": -0.012222476303577423
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Nobel Prize",
+        "received the NAS Award"
+      ],
+      "u": 0.12342637777328491,
+      "margin": -0.9085046648979187,
+      "wrong_score": -0.9186081886291504,
+      "right_score": -0.010103515349328518
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "with the Nobel Prize",
+        "received the NAS Award"
+      ],
+      "u": 0.09310507774353027,
+      "margin": -0.8781833648681641,
+      "wrong_score": -0.8900079727172852,
+      "right_score": -0.01182458084076643
+    }
+  ],
+  "single_u": [
+    -0.18534088134765625,
+    0.12483680248260498,
+    0.24775052070617676
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "education at Harvard University",
+        "with the Nobel Prize"
+      ],
+      "u_i": -0.18534088134765625,
+      "u_j": 0.12483680248260498,
+      "local_fd": -0.1268962025642395,
+      "banzhaf": -0.016979485750198364,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "education at Harvard University",
+        "received the NAS Award"
+      ],
+      "u_i": -0.18534088134765625,
+      "u_j": 0.24775052070617676,
+      "local_fd": 0.06208235025405884,
+      "banzhaf": 0.17199906706809998,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "with the Nobel Prize",
+        "received the NAS Award"
+      ],
+      "u_i": 0.12483680248260498,
+      "u_j": 0.24775052070617676,
+      "local_fd": -0.24916094541549683,
+      "banzhaf": -0.1392442286014557,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Nobel Prize",
+        "received the NAS Award"
+      ],
+      "order": 2,
+      "harsanyi": -0.24916094541549683
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "with the Nobel Prize",
+        "received the NAS Award"
+      ],
+      "order": 3,
+      "harsanyi": 0.21983343362808228
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Harvard University",
+        "with the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.1268962025642395
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "received the NAS Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.06208235025405884
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.8781833648681641,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

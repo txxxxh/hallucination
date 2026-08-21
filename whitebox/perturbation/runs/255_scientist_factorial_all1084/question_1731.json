@@ -1,0 +1,286 @@
+{
+  "key": "question_1731",
+  "group": "Q7487",
+  "generation_correct": true,
+  "right": "Dorothy Hodgkin",
+  "wrong": "Paul Nurse",
+  "base_margin_wrong_minus_right": -3.314727783203125,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 341,
+      "char_end": 367,
+      "text": "prestigious Order of Merit",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of Merit",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 98,
+      "token_end": 103
+    },
+    {
+      "char_start": 459,
+      "char_end": 464,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 121,
+      "token_end": 123
+    },
+    {
+      "char_start": 465,
+      "char_end": 488,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 123,
+      "token_end": 126
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -3.314727783203125,
+      "wrong_score": -3.3165719509124756,
+      "right_score": -0.0018442579312250018
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "prestigious Order of Merit"
+      ],
+      "u": -2.2515041828155518,
+      "margin": -1.0632236003875732,
+      "wrong_score": -1.1109504699707031,
+      "right_score": -0.04772685095667839
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.9961919784545898,
+      "margin": -2.318535804748535,
+      "wrong_score": -2.322659969329834,
+      "right_score": -0.004124244209378958
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "prestigious Order of Merit",
+        "never"
+      ],
+      "u": -2.6034398078918457,
+      "margin": -0.7112880349159241,
+      "wrong_score": -0.7597220540046692,
+      "right_score": -0.04843404144048691
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.49837684631347656,
+      "margin": -2.8163509368896484,
+      "wrong_score": -2.8198957443237305,
+      "right_score": -0.003544796723872423
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "prestigious Order of Merit",
+        "awarded the Nobel Prize"
+      ],
+      "u": -3.1871490478515625,
+      "margin": -0.1275787502527237,
+      "wrong_score": -0.29773736000061035,
+      "right_score": -0.17015860974788666
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "u": -1.3608803749084473,
+      "margin": -1.9538474082946777,
+      "wrong_score": -1.963652491569519,
+      "right_score": -0.00980506744235754
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "prestigious Order of Merit",
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "u": -3.2174901962280273,
+      "margin": -0.09723766148090363,
+      "wrong_score": -0.32285457849502563,
+      "right_score": -0.225616917014122
+    }
+  ],
+  "single_u": [
+    -2.2515041828155518,
+    -0.9961919784545898,
+    -0.49837684631347656
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "prestigious Order of Merit",
+        "never"
+      ],
+      "u_i": -2.2515041828155518,
+      "u_j": -0.9961919784545898,
+      "local_fd": 0.6442563533782959,
+      "banzhaf": 0.7382093667984009,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "prestigious Order of Merit",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": -2.2515041828155518,
+      "u_j": -0.49837684631347656,
+      "local_fd": -0.4372680187225342,
+      "banzhaf": -0.3433150053024292,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": -0.9961919784545898,
+      "u_j": -0.49837684631347656,
+      "local_fd": 0.13368844985961914,
+      "banzhaf": 0.22764146327972412,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "prestigious Order of Merit",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.6442563533782959
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "prestigious Order of Merit",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.4372680187225342
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "prestigious Order of Merit",
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "order": 3,
+      "harsanyi": 0.18790602684020996
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.13368844985961914
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.09723766148090363,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

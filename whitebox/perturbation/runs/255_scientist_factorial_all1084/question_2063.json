@@ -1,0 +1,296 @@
+{
+  "key": "question_2063",
+  "group": "Q47480",
+  "generation_correct": true,
+  "right": "Paul Dirac",
+  "wrong": "Albert Einstein",
+  "base_margin_wrong_minus_right": -5.125341892242432,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 340,
+      "char_end": 365,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 94,
+      "token_end": 101
+    },
+    {
+      "char_start": 396,
+      "char_end": 416,
+      "text": "the Max Planck Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Max Planck Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 105,
+      "token_end": 111
+    },
+    {
+      "char_start": 418,
+      "char_end": 438,
+      "text": "and a doctor honoris",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "doctor honoris causa from the University of Paris",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 110,
+      "token_end": 115
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -5.125341892242432,
+      "wrong_score": -5.126152038574219,
+      "right_score": -0.0008100013947114348
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": -3.787659168243408,
+      "margin": -1.337682843208313,
+      "wrong_score": -1.3794974088668823,
+      "right_score": -0.04181460663676262
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Max Planck Medal"
+      ],
+      "u": -4.696674346923828,
+      "margin": -0.4286675453186035,
+      "wrong_score": -0.5771063566207886,
+      "right_score": -0.14843881130218506
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Max Planck Medal"
+      ],
+      "u": -5.8026533126831055,
+      "margin": 0.6773113012313843,
+      "wrong_score": -0.08056097477674484,
+      "right_score": -0.7578722834587097
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and a doctor honoris"
+      ],
+      "u": -2.747481107711792,
+      "margin": -2.3778607845306396,
+      "wrong_score": -2.383840322494507,
+      "right_score": -0.005979544948786497
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "and a doctor honoris"
+      ],
+      "u": -5.781249523162842,
+      "margin": 0.6559078097343445,
+      "wrong_score": -0.16527147591114044,
+      "right_score": -0.8211792707443237
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Max Planck Medal",
+        "and a doctor honoris"
+      ],
+      "u": -4.983866214752197,
+      "margin": -0.1414758563041687,
+      "wrong_score": -0.3634476065635681,
+      "right_score": -0.22197175025939941
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Max Planck Medal",
+        "and a doctor honoris"
+      ],
+      "u": -5.939826965332031,
+      "margin": 0.8144853115081787,
+      "wrong_score": -0.1463840901851654,
+      "right_score": -0.9608694314956665
+    }
+  ],
+  "single_u": [
+    -3.787659168243408,
+    -4.696674346923828,
+    -2.747481107711792
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Nobel Prize",
+        "the Max Planck Medal"
+      ],
+      "u_i": -3.787659168243408,
+      "u_j": -4.696674346923828,
+      "local_fd": 2.681680202484131,
+      "banzhaf": 2.379744052886963,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Nobel Prize",
+        "and a doctor honoris"
+      ],
+      "u_i": -3.787659168243408,
+      "u_j": -2.747481107711792,
+      "local_fd": 0.7538907527923584,
+      "banzhaf": 0.4519544839859009,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Max Planck Medal",
+        "and a doctor honoris"
+      ],
+      "u_i": -4.696674346923828,
+      "u_j": -2.747481107711792,
+      "local_fd": 2.460289239883423,
+      "banzhaf": 2.158352851867676,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Max Planck Medal"
+      ],
+      "order": 2,
+      "harsanyi": 2.681680202484131
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Max Planck Medal",
+        "and a doctor honoris"
+      ],
+      "order": 2,
+      "harsanyi": 2.460289239883423
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "and a doctor honoris"
+      ],
+      "order": 2,
+      "harsanyi": 0.7538907527923584
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Max Planck Medal",
+        "and a doctor honoris"
+      ],
+      "order": 3,
+      "harsanyi": -0.603872537612915
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8144853115081787,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

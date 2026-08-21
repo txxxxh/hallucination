@@ -1,0 +1,49 @@
+{
+  "n": 2894,
+  "split": "discovery=1000 / confirmation=1894",
+  "protocol": "5-fold OOF; every PCA/scaler/LR fit training-fold only",
+  "budgets": {
+    "128": 1024
+  },
+  "discovery_baseline_auroc": {
+    "128": 0.681866824190124
+  },
+  "selected_per_layer_pc": 128,
+  "selected_hidden_dimensions": 1024,
+  "selected_scalars": [
+    {
+      "name": "tail_10",
+      "rho_residual": 0.05392208289098429
+    },
+    {
+      "name": "even_absmean_eps1",
+      "rho_residual": 0.05307748145257146
+    },
+    {
+      "name": "base_mean_0",
+      "rho_residual": -0.05257930119514129
+    },
+    {
+      "name": "tail_11",
+      "rho_residual": 0.05060977159415017
+    }
+  ],
+  "total_dimensions_augmented": 1028,
+  "discovery": {
+    "baseline": {
+      "auroc": 0.681866824190124
+    },
+    "augmented": {
+      "auroc": 0.6850515375659202
+    }
+  },
+  "confirmation": {
+    "baseline": {
+      "auroc": 0.7013046695951107
+    },
+    "augmented": {
+      "auroc": 0.6998173701298701
+    },
+    "delta_auroc": -0.0014872994652406213
+  }
+}

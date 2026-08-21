@@ -1,0 +1,146 @@
+{
+  "key": "question_0085",
+  "group": "Q899517",
+  "generation_correct": true,
+  "right": "Allen J. Bard",
+  "wrong": "Glenn T. Seaborg",
+  "base_margin_wrong_minus_right": -0.6773738861083984,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 310,
+      "char_end": 332,
+      "text": "the Enrico Fermi Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Enrico Fermi Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 101
+    },
+    {
+      "char_start": 334,
+      "char_end": 355,
+      "text": "the National Medal of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 101,
+      "token_end": 106
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.6773738861083984,
+      "wrong_score": -0.6811718344688416,
+      "right_score": -0.0037979402113705873
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Enrico Fermi Award"
+      ],
+      "u": -0.3196243643760681,
+      "margin": -0.3577495217323303,
+      "wrong_score": -0.4033433198928833,
+      "right_score": -0.04559378698468208
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the National Medal of"
+      ],
+      "u": 0.05316692590713501,
+      "margin": -0.7305408120155334,
+      "wrong_score": -0.7357903718948364,
+      "right_score": -0.0052495780400931835
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Enrico Fermi Award",
+        "the National Medal of"
+      ],
+      "u": -0.2498646080493927,
+      "margin": -0.42750927805900574,
+      "wrong_score": -0.6112411618232727,
+      "right_score": -0.18373188376426697
+    }
+  ],
+  "single_u": [
+    -0.3196243643760681,
+    0.05316692590713501
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Enrico Fermi Award",
+        "the National Medal of"
+      ],
+      "u_i": -0.3196243643760681,
+      "u_j": 0.05316692590713501,
+      "local_fd": 0.016592830419540405,
+      "banzhaf": 0.016592830419540405,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Enrico Fermi Award",
+        "the National Medal of"
+      ],
+      "order": 2,
+      "harsanyi": 0.016592830419540405
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.42750927805900574,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

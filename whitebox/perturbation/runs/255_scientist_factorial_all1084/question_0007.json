@@ -1,0 +1,300 @@
+{
+  "key": "question_0007",
+  "group": "Q901783",
+  "generation_correct": false,
+  "right": "Gilbert Stork",
+  "wrong": "Elias James Corey",
+  "base_margin_wrong_minus_right": 0.24977055191993713,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 334,
+      "char_end": 358,
+      "text": "including the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 98,
+      "token_end": 103
+    },
+    {
+      "char_start": 386,
+      "char_end": 407,
+      "text": "Medal of Science, the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 108,
+      "token_end": 113
+    },
+    {
+      "char_start": 482,
+      "char_end": 501,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 124,
+      "token_end": 130
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.24977055191993713,
+      "wrong_score": -0.07912463694810867,
+      "right_score": -0.3288951814174652
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Wolf Prize"
+      ],
+      "u": 0.34363919496536255,
+      "margin": -0.09386865794658661,
+      "wrong_score": -0.2262263000011444,
+      "right_score": -0.1323576420545578
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Medal of Science, the"
+      ],
+      "u": 0.03126448392868042,
+      "margin": 0.2185060679912567,
+      "wrong_score": -0.09139308333396912,
+      "right_score": -0.30989915132522583
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Medal of Science, the"
+      ],
+      "u": 0.3124336302280426,
+      "margin": -0.06266307830810547,
+      "wrong_score": -0.2115391194820404,
+      "right_score": -0.14887604117393494
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.15608441829681396,
+      "margin": 0.09368613362312317,
+      "wrong_score": -0.13162492215633392,
+      "right_score": -0.2253110557794571
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "u": -0.00011453032493591309,
+      "margin": 0.24988508224487305,
+      "wrong_score": -0.07940176874399185,
+      "right_score": -0.3292868435382843
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "u": -0.031364262104034424,
+      "margin": 0.28113481402397156,
+      "wrong_score": -0.07160770148038864,
+      "right_score": -0.3527425229549408
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "u": -0.0001239180564880371,
+      "margin": 0.24989446997642517,
+      "wrong_score": -0.07926764339208603,
+      "right_score": -0.3291621208190918
+    }
+  ],
+  "single_u": [
+    0.34363919496536255,
+    0.03126448392868042,
+    0.15608441829681396
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Wolf Prize",
+        "Medal of Science, the"
+      ],
+      "u_i": 0.34363919496536255,
+      "u_j": 0.03126448392868042,
+      "local_fd": -0.062470048666000366,
+      "banzhaf": 0.06248462200164795,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.34363919496536255,
+      "u_j": 0.15608441829681396,
+      "local_fd": -0.4998381435871124,
+      "banzhaf": -0.3748834729194641,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.03126448392868042,
+      "u_j": 0.15608441829681396,
+      "local_fd": -0.2187131643295288,
+      "banzhaf": -0.0937584936618805,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.4998381435871124
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": 0.24990934133529663
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Medal of Science, the",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.2187131643295288
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Medal of Science, the"
+      ],
+      "order": 2,
+      "harsanyi": -0.062470048666000366
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Wolf Prize"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.24989446997642517,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

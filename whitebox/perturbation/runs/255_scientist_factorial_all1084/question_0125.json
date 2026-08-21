@@ -1,0 +1,289 @@
+{
+  "key": "question_0125",
+  "group": "Q185110",
+  "generation_correct": true,
+  "right": "Igor Vasilyevich Kurchatov",
+  "wrong": "Yulii Borisovich Khariton",
+  "base_margin_wrong_minus_right": -0.4067656993865967,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 202,
+      "char_end": 223,
+      "text": "Peter the Great Saint",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Peter the Great Saint Petersburg State Polytechnical University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 81,
+      "token_end": 84
+    },
+    {
+      "char_start": 282,
+      "char_end": 303,
+      "text": "deputy of the Supreme",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "deputy of the Supreme Soviet of the Soviet Union",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 92,
+      "token_end": 98
+    },
+    {
+      "char_start": 443,
+      "char_end": 465,
+      "text": "the State Stalin Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Stalin Prize",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 130,
+      "token_end": 133
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.4067656993865967,
+      "wrong_score": -0.41502031683921814,
+      "right_score": -0.00825462769716978
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Peter the Great Saint"
+      ],
+      "u": -0.029507935047149658,
+      "margin": -0.377257764339447,
+      "wrong_score": -0.3899140954017639,
+      "right_score": -0.012656345963478088
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "deputy of the Supreme"
+      ],
+      "u": 0.19592946767807007,
+      "margin": -0.6026951670646667,
+      "wrong_score": -0.6242846250534058,
+      "right_score": -0.021589431911706924
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Peter the Great Saint",
+        "deputy of the Supreme"
+      ],
+      "u": 0.24144881963729858,
+      "margin": -0.6482145190238953,
+      "wrong_score": -0.6759219169616699,
+      "right_score": -0.027707381173968315
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the State Stalin Prize"
+      ],
+      "u": 0.11075669527053833,
+      "margin": -0.517522394657135,
+      "wrong_score": -0.5217785835266113,
+      "right_score": -0.004256180953234434
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Peter the Great Saint",
+        "the State Stalin Prize"
+      ],
+      "u": 0.14223390817642212,
+      "margin": -0.5489996075630188,
+      "wrong_score": -0.5566494464874268,
+      "right_score": -0.007649844978004694
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "deputy of the Supreme",
+        "the State Stalin Prize"
+      ],
+      "u": 0.18973857164382935,
+      "margin": -0.596504271030426,
+      "wrong_score": -0.6061064600944519,
+      "right_score": -0.009602171368896961
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Peter the Great Saint",
+        "deputy of the Supreme",
+        "the State Stalin Prize"
+      ],
+      "u": 0.1902368664741516,
+      "margin": -0.5970025658607483,
+      "wrong_score": -0.6108090877532959,
+      "right_score": -0.01380651630461216
+    }
+  ],
+  "single_u": [
+    -0.029507935047149658,
+    0.19592946767807007,
+    0.11075669527053833
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Peter the Great Saint",
+        "deputy of the Supreme"
+      ],
+      "u_i": -0.029507935047149658,
+      "u_j": 0.19592946767807007,
+      "local_fd": 0.07502728700637817,
+      "banzhaf": 0.022024184465408325,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Peter the Great Saint",
+        "the State Stalin Prize"
+      ],
+      "u_i": -0.029507935047149658,
+      "u_j": 0.11075669527053833,
+      "local_fd": 0.06098514795303345,
+      "banzhaf": 0.007982045412063599,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "deputy of the Supreme",
+        "the State Stalin Prize"
+      ],
+      "u_i": 0.19592946767807007,
+      "u_j": 0.11075669527053833,
+      "local_fd": -0.11694759130477905,
+      "banzhaf": -0.1699506938457489,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "deputy of the Supreme",
+        "the State Stalin Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.11694759130477905
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Peter the Great Saint",
+        "deputy of the Supreme",
+        "the State Stalin Prize"
+      ],
+      "order": 3,
+      "harsanyi": -0.1060062050819397
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Peter the Great Saint",
+        "deputy of the Supreme"
+      ],
+      "order": 2,
+      "harsanyi": 0.07502728700637817
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Peter the Great Saint",
+        "the State Stalin Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.06098514795303345
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.5970025658607483,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

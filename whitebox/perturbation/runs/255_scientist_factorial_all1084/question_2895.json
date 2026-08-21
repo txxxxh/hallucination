@@ -1,0 +1,145 @@
+{
+  "key": "question_2895",
+  "group": "Q323316",
+  "generation_correct": true,
+  "right": "Alan Guth",
+  "wrong": "Stephen Hawking",
+  "base_margin_wrong_minus_right": -3.093383312225342,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 201,
+      "char_end": 230,
+      "text": "understanding of the universe",
+      "kind": "attribute",
+      "field": "field",
+      "value": "universe",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 69,
+      "token_end": 76
+    },
+    {
+      "char_start": 400,
+      "char_end": 425,
+      "text": "the Breakthrough Prize in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Breakthrough Prize in Fundamental Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 117
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -3.093383312225342,
+      "wrong_score": -3.1286749839782715,
+      "right_score": -0.0352916456758976
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "understanding of the universe"
+      ],
+      "u": -0.6404056549072266,
+      "margin": -2.4529776573181152,
+      "wrong_score": -2.5774288177490234,
+      "right_score": -0.12445109337568283
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Breakthrough Prize in"
+      ],
+      "u": -1.8061753511428833,
+      "margin": -1.2872079610824585,
+      "wrong_score": -1.3024580478668213,
+      "right_score": -0.015250043012201786
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "understanding of the universe",
+        "the Breakthrough Prize in"
+      ],
+      "u": -2.3698575496673584,
+      "margin": -0.7235257029533386,
+      "wrong_score": -0.7883132696151733,
+      "right_score": -0.06478756666183472
+    }
+  ],
+  "single_u": [
+    -0.6404056549072266,
+    -1.8061753511428833
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "understanding of the universe",
+        "the Breakthrough Prize in"
+      ],
+      "u_i": -0.6404056549072266,
+      "u_j": -1.8061753511428833,
+      "local_fd": 0.07672345638275146,
+      "banzhaf": 0.07672345638275146,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "understanding of the universe",
+        "the Breakthrough Prize in"
+      ],
+      "order": 2,
+      "harsanyi": 0.07672345638275146
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.7235257029533386,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

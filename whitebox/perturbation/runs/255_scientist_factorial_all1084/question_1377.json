@@ -1,0 +1,328 @@
+{
+  "key": "question_1377",
+  "group": "Q2505089",
+  "generation_correct": false,
+  "right": "Uğur Şahin",
+  "wrong": "Günter Blobel",
+  "base_margin_wrong_minus_right": 0.013404175639152527,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 118,
+      "char_end": 150,
+      "text": "This distinguished physician and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physician",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 55,
+      "token_end": 61
+    },
+    {
+      "char_start": 151,
+      "char_end": 178,
+      "text": "university teacher has made",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 60,
+      "token_end": 66
+    },
+    {
+      "char_start": 326,
+      "char_end": 356,
+      "text": "awarded the Knight Commander's",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight Commander's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 94,
+      "token_end": 101
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.013404175639152527,
+      "wrong_score": -0.13251715898513794,
+      "right_score": -0.14592133462429047
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physician and"
+      ],
+      "u": 0.0672992691397667,
+      "margin": -0.053895093500614166,
+      "wrong_score": -0.156312495470047,
+      "right_score": -0.10241740196943283
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher has made"
+      ],
+      "u": 0.0062583088874816895,
+      "margin": 0.007145866751670837,
+      "wrong_score": -0.1587597131729126,
+      "right_score": -0.16590557992458344
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physician and",
+        "university teacher has made"
+      ],
+      "u": 0.12452846765518188,
+      "margin": -0.11112429201602936,
+      "wrong_score": -0.20180770754814148,
+      "right_score": -0.09068341553211212
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded the Knight Commander's"
+      ],
+      "u": -0.1057007685303688,
+      "margin": 0.11910494416952133,
+      "wrong_score": -0.08857940882444382,
+      "right_score": -0.20768435299396515
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physician and",
+        "awarded the Knight Commander's"
+      ],
+      "u": 0.16668803989887238,
+      "margin": -0.15328386425971985,
+      "wrong_score": -0.23226408660411835,
+      "right_score": -0.0789802223443985
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "awarded the Knight Commander's"
+      ],
+      "u": 0.11172321438789368,
+      "margin": -0.09831903874874115,
+      "wrong_score": -0.20516465604305267,
+      "right_score": -0.10684561729431152
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physician and",
+        "university teacher has made",
+        "awarded the Knight Commander's"
+      ],
+      "u": 0.15957166254520416,
+      "margin": -0.14616748690605164,
+      "wrong_score": -0.24112246930599213,
+      "right_score": -0.0949549749493599
+    }
+  ],
+  "single_u": [
+    0.0672992691397667,
+    0.0062583088874816895,
+    -0.1057007685303688
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished physician and",
+        "university teacher has made"
+      ],
+      "u_i": 0.0672992691397667,
+      "u_j": 0.0062583088874816895,
+      "local_fd": 0.0509708896279335,
+      "banzhaf": -0.0867847353219986,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished physician and",
+        "awarded the Knight Commander's"
+      ],
+      "u_i": 0.0672992691397667,
+      "u_j": -0.1057007685303688,
+      "local_fd": 0.2050895392894745,
+      "banzhaf": 0.06733391433954239,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "university teacher has made",
+        "awarded the Knight Commander's"
+      ],
+      "u_i": 0.0062583088874816895,
+      "u_j": -0.1057007685303688,
+      "local_fd": 0.2111656665802002,
+      "banzhaf": 0.0734100490808487,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physician and",
+        "university teacher has made",
+        "awarded the Knight Commander's"
+      ],
+      "order": 3,
+      "harsanyi": -0.2755112498998642
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "awarded the Knight Commander's"
+      ],
+      "order": 2,
+      "harsanyi": 0.2111656740307808
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physician and",
+        "awarded the Knight Commander's"
+      ],
+      "order": 2,
+      "harsanyi": 0.2050895392894745
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physician and",
+        "university teacher has made"
+      ],
+      "order": 2,
+      "harsanyi": 0.0509708896279335
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physician and"
+      ]
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "awarded the Knight Commander's"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physician and",
+        "university teacher has made"
+      ]
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physician and",
+        "awarded the Knight Commander's"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.14616748690605164,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

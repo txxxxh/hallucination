@@ -1,0 +1,283 @@
+{
+  "key": "question_1337",
+  "group": "Q151556",
+  "generation_correct": false,
+  "right": "Richard Owen",
+  "wrong": "Joseph Dalton Hooker",
+  "base_margin_wrong_minus_right": 0.7068095803260803,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 572,
+      "char_end": 577,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 0,
+      "token_start": 153,
+      "token_end": 154
+    },
+    {
+      "char_start": 588,
+      "char_end": 610,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 1,
+      "token_start": 156,
+      "token_end": 161
+    },
+    {
+      "char_start": 620,
+      "char_end": 623,
+      "text": "nor",
+      "kind": "logic",
+      "field": "logic",
+      "value": "nor",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 162,
+      "token_end": 164
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.7068095803260803,
+      "wrong_score": -0.08503042161464691,
+      "right_score": -0.7918400168418884
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.14415675401687622,
+      "margin": 0.5626528263092041,
+      "wrong_score": -0.1252911388874054,
+      "right_score": -0.6879439353942871
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": -0.4238588213920593,
+      "margin": 1.1306684017181396,
+      "wrong_score": -0.0706639289855957,
+      "right_score": -1.2013323307037354
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "never",
+        "President of the Royal"
+      ],
+      "u": -0.4833679795265198,
+      "margin": 1.1901775598526,
+      "wrong_score": -0.05662590637803078,
+      "right_score": -1.2468035221099854
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "nor"
+      ],
+      "u": -0.2792445421218872,
+      "margin": 0.9860541224479675,
+      "wrong_score": -0.03841274231672287,
+      "right_score": -1.024466872215271
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "never",
+        "nor"
+      ],
+      "u": -0.627880871295929,
+      "margin": 1.3346904516220093,
+      "wrong_score": -0.023169681429862976,
+      "right_score": -1.3578600883483887
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "nor"
+      ],
+      "u": -0.2519141435623169,
+      "margin": 0.9587237238883972,
+      "wrong_score": -0.13004201650619507,
+      "right_score": -1.0887657403945923
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "President of the Royal",
+        "nor"
+      ],
+      "u": -0.42208772897720337,
+      "margin": 1.1288973093032837,
+      "wrong_score": -0.12294015288352966,
+      "right_score": -1.2518374919891357
+    }
+  ],
+  "single_u": [
+    0.14415675401687622,
+    -0.4238588213920593,
+    -0.2792445421218872
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "never",
+        "President of the Royal"
+      ],
+      "u_i": 0.14415675401687622,
+      "u_j": -0.4238588213920593,
+      "local_fd": -0.20366591215133667,
+      "banzhaf": -0.012601584196090698,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "never",
+        "nor"
+      ],
+      "u_i": 0.14415675401687622,
+      "u_j": -0.2792445421218872,
+      "local_fd": -0.49279308319091797,
+      "banzhaf": -0.301728755235672,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "President of the Royal",
+        "nor"
+      ],
+      "u_i": -0.4238588213920593,
+      "u_j": -0.2792445421218872,
+      "local_fd": 0.45118921995162964,
+      "banzhaf": 0.6422535181045532,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "never",
+        "nor"
+      ],
+      "order": 2,
+      "harsanyi": -0.49279308319091797
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "nor"
+      ],
+      "order": 2,
+      "harsanyi": 0.45118921995162964
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "President of the Royal",
+        "nor"
+      ],
+      "order": 3,
+      "harsanyi": 0.38212865591049194
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "never",
+        "President of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.20366591215133667
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.1288973093032837,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 18,
+    "n_excluded": 12,
+    "max_candidates": 6
+  }
+}

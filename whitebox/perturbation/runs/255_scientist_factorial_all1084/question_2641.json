@@ -1,0 +1,290 @@
+{
+  "key": "question_2641",
+  "group": "Q103598",
+  "generation_correct": true,
+  "right": "Luc Montagnier",
+  "wrong": "Günter Blobel",
+  "base_margin_wrong_minus_right": 0.4181172847747803,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 122,
+      "char_end": 153,
+      "text": "This notable biologist received",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biologist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 65
+    },
+    {
+      "char_start": 154,
+      "char_end": 178,
+      "text": "both the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 64,
+      "token_end": 68
+    },
+    {
+      "char_start": 207,
+      "char_end": 232,
+      "text": "Nobel Prize in Physiology",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 71,
+      "token_end": 77
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.4181172847747803,
+      "wrong_score": -0.036715034395456314,
+      "right_score": -0.4548323154449463
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This notable biologist received"
+      ],
+      "u": 0.1368306577205658,
+      "margin": 0.2812866270542145,
+      "wrong_score": -0.06671345978975296,
+      "right_score": -0.34800007939338684
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "both the Canada Gairdner"
+      ],
+      "u": -0.004610240459442139,
+      "margin": 0.4227275252342224,
+      "wrong_score": -0.044403325766325,
+      "right_score": -0.4671308398246765
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable biologist received",
+        "both the Canada Gairdner"
+      ],
+      "u": 0.04641246795654297,
+      "margin": 0.3717048168182373,
+      "wrong_score": -0.11149580776691437,
+      "right_score": -0.4832006096839905
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Nobel Prize in Physiology"
+      ],
+      "u": -0.06367325782775879,
+      "margin": 0.48179054260253906,
+      "wrong_score": -0.028990743681788445,
+      "right_score": -0.5107812881469727
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This notable biologist received",
+        "Nobel Prize in Physiology"
+      ],
+      "u": -0.004352182149887085,
+      "margin": 0.42246946692466736,
+      "wrong_score": -0.033049892634153366,
+      "right_score": -0.45551934838294983
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "both the Canada Gairdner",
+        "Nobel Prize in Physiology"
+      ],
+      "u": -0.00464978814125061,
+      "margin": 0.4227670729160309,
+      "wrong_score": -0.03357870504260063,
+      "right_score": -0.4563457667827606
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This notable biologist received",
+        "both the Canada Gairdner",
+        "Nobel Prize in Physiology"
+      ],
+      "u": -0.09150880575180054,
+      "margin": 0.5096260905265808,
+      "wrong_score": -0.02836569771170616,
+      "right_score": -0.5379917621612549
+    }
+  ],
+  "single_u": [
+    0.1368306577205658,
+    -0.004610240459442139,
+    -0.06367325782775879
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This notable biologist received",
+        "both the Canada Gairdner"
+      ],
+      "u_i": 0.1368306577205658,
+      "u_j": -0.004610240459442139,
+      "local_fd": -0.08580794930458069,
+      "banzhaf": -0.11599402129650116,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This notable biologist received",
+        "Nobel Prize in Physiology"
+      ],
+      "u_i": 0.1368306577205658,
+      "u_j": -0.06367325782775879,
+      "local_fd": -0.07750958204269409,
+      "banzhaf": -0.10769565403461456,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "both the Canada Gairdner",
+        "Nobel Prize in Physiology"
+      ],
+      "u_i": -0.004610240459442139,
+      "u_j": -0.06367325782775879,
+      "local_fd": 0.06363371014595032,
+      "banzhaf": 0.033447638154029846,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable biologist received",
+        "both the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": -0.08580794930458069
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This notable biologist received",
+        "Nobel Prize in Physiology"
+      ],
+      "order": 2,
+      "harsanyi": -0.07750958204269409
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "both the Canada Gairdner",
+        "Nobel Prize in Physiology"
+      ],
+      "order": 2,
+      "harsanyi": 0.06363371014595032
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This notable biologist received",
+        "both the Canada Gairdner",
+        "Nobel Prize in Physiology"
+      ],
+      "order": 3,
+      "harsanyi": -0.06037214398384094
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5096260905265808,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

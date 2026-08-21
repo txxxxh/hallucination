@@ -1,0 +1,290 @@
+{
+  "key": "question_0096",
+  "group": "Q899517",
+  "generation_correct": false,
+  "right": "Allen J. Bard",
+  "wrong": "Elias James Corey",
+  "base_margin_wrong_minus_right": 1.197522521018982,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 355,
+      "char_end": 379,
+      "text": "including the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 101,
+      "token_end": 107
+    },
+    {
+      "char_start": 408,
+      "char_end": 433,
+      "text": "Medal, the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 111,
+      "token_end": 115
+    },
+    {
+      "char_start": 437,
+      "char_end": 463,
+      "text": "Science, the Linus Pauling",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Linus Pauling Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 115,
+      "token_end": 121
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.197522521018982,
+      "wrong_score": -0.0035025838296860456,
+      "right_score": -1.201025128364563
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Wolf Prize"
+      ],
+      "u": 0.5335491895675659,
+      "margin": 0.663973331451416,
+      "wrong_score": -0.02192540094256401,
+      "right_score": -0.6858987212181091
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Medal, the National Medal"
+      ],
+      "u": 0.1921178102493286,
+      "margin": 1.0054047107696533,
+      "wrong_score": -0.008339778520166874,
+      "right_score": -1.0137444734573364
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Medal, the National Medal"
+      ],
+      "u": 0.6625437140464783,
+      "margin": 0.5349788069725037,
+      "wrong_score": -0.030875055119395256,
+      "right_score": -0.5658538341522217
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Science, the Linus Pauling"
+      ],
+      "u": -1.5263572931289673,
+      "margin": 2.723879814147949,
+      "wrong_score": -0.0021612728014588356,
+      "right_score": -2.726041078567505
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Science, the Linus Pauling"
+      ],
+      "u": -1.1501370668411255,
+      "margin": 2.3476595878601074,
+      "wrong_score": -0.01051885262131691,
+      "right_score": -2.3581783771514893
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Medal, the National Medal",
+        "Science, the Linus Pauling"
+      ],
+      "u": -1.4952090978622437,
+      "margin": 2.6927316188812256,
+      "wrong_score": -0.007544636260718107,
+      "right_score": -2.7002761363983154
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Medal, the National Medal",
+        "Science, the Linus Pauling"
+      ],
+      "u": -0.9298919439315796,
+      "margin": 2.1274144649505615,
+      "wrong_score": -0.04576881602406502,
+      "right_score": -2.1731832027435303
+    }
+  ],
+  "single_u": [
+    0.5335491895675659,
+    0.1921178102493286,
+    -1.5263572931289673
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Wolf Prize",
+        "Medal, the National Medal"
+      ],
+      "u_i": 0.5335491895675659,
+      "u_j": 0.1921178102493286,
+      "local_fd": -0.06312328577041626,
+      "banzhaf": 0.062986820936203,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Wolf Prize",
+        "Science, the Linus Pauling"
+      ],
+      "u_i": 0.5335491895675659,
+      "u_j": -1.5263572931289673,
+      "local_fd": -0.15732896327972412,
+      "banzhaf": -0.03121882677078247,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Medal, the National Medal",
+        "Science, the Linus Pauling"
+      ],
+      "u_i": 0.1921178102493286,
+      "u_j": -1.5263572931289673,
+      "local_fd": -0.16096961498260498,
+      "banzhaf": -0.03485947847366333,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Medal, the National Medal",
+        "Science, the Linus Pauling"
+      ],
+      "order": 3,
+      "harsanyi": 0.2522202134132385
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Medal, the National Medal",
+        "Science, the Linus Pauling"
+      ],
+      "order": 2,
+      "harsanyi": -0.16096961498260498
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Science, the Linus Pauling"
+      ],
+      "order": 2,
+      "harsanyi": -0.15732896327972412
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "Medal, the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.06312328577041626
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 2.1274144649505615,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

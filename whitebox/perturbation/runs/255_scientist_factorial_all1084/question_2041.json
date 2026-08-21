@@ -1,0 +1,146 @@
+{
+  "key": "question_2041",
+  "group": "Q232316",
+  "generation_correct": false,
+  "right": "Robert Burns Woodward",
+  "wrong": "James Fraser Stoddart",
+  "base_margin_wrong_minus_right": -0.7220314741134644,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 313,
+      "char_end": 338,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 102
+    },
+    {
+      "char_start": 394,
+      "char_end": 412,
+      "text": "the Arthur C. Cope",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Arthur C. Cope Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 114,
+      "token_end": 118
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7220314741134644,
+      "wrong_score": -0.7320383787155151,
+      "right_score": -0.010006921365857124
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": -0.4239369034767151,
+      "margin": -0.29809457063674927,
+      "wrong_score": -0.36544880270957947,
+      "right_score": -0.0673542320728302
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Arthur C. Cope"
+      ],
+      "u": -0.24248889088630676,
+      "margin": -0.4795425832271576,
+      "wrong_score": -0.5342549681663513,
+      "right_score": -0.05471238121390343
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Arthur C. Cope"
+      ],
+      "u": -0.5179557800292969,
+      "margin": -0.20407572388648987,
+      "wrong_score": -0.3638996183872223,
+      "right_score": -0.15982389450073242
+    }
+  ],
+  "single_u": [
+    -0.4239369034767151,
+    -0.24248889088630676
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Nobel Prize",
+        "the Arthur C. Cope"
+      ],
+      "u_i": -0.4239369034767151,
+      "u_j": -0.24248889088630676,
+      "local_fd": 0.14847001433372498,
+      "banzhaf": 0.14847001433372498,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Arthur C. Cope"
+      ],
+      "order": 2,
+      "harsanyi": 0.14847001433372498
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.20407572388648987,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

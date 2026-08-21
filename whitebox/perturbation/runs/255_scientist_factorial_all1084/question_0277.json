@@ -1,0 +1,296 @@
+{
+  "key": "question_0277",
+  "group": "Q901783",
+  "generation_correct": true,
+  "right": "Gilbert Stork",
+  "wrong": "Carolyn R. Bertozzi",
+  "base_margin_wrong_minus_right": -0.45831888914108276,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 276,
+      "char_end": 299,
+      "text": "includes the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 93,
+      "token_end": 98
+    },
+    {
+      "char_start": 395,
+      "char_end": 412,
+      "text": "and the NAS Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 115,
+      "token_end": 120
+    },
+    {
+      "char_start": 466,
+      "char_end": 485,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 129,
+      "token_end": 134
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.45831888914108276,
+      "wrong_score": -0.4731891453266144,
+      "right_score": -0.014870244078338146
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "includes the Wolf Prize"
+      ],
+      "u": 0.25384825468063354,
+      "margin": -0.7121671438217163,
+      "wrong_score": -0.7191559672355652,
+      "right_score": -0.0069888378493487835
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the NAS Award"
+      ],
+      "u": -0.2966994047164917,
+      "margin": -0.16161948442459106,
+      "wrong_score": -0.23500196635723114,
+      "right_score": -0.07338248938322067
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "includes the Wolf Prize",
+        "and the NAS Award"
+      ],
+      "u": -0.3828502893447876,
+      "margin": -0.07546861469745636,
+      "wrong_score": -0.1948830783367157,
+      "right_score": -0.11941446363925934
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -0.33648601174354553,
+      "margin": -0.12183287739753723,
+      "wrong_score": -0.2222384512424469,
+      "right_score": -0.10040557384490967
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "includes the Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "u": -0.3714101016521454,
+      "margin": -0.08690878748893738,
+      "wrong_score": -0.1930454820394516,
+      "right_score": -0.10613669455051422
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the NAS Award",
+        "as a Foreign Member"
+      ],
+      "u": -0.3127235770225525,
+      "margin": -0.14559532701969147,
+      "wrong_score": -0.2916576564311981,
+      "right_score": -0.14606232941150665
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "includes the Wolf Prize",
+        "and the NAS Award",
+        "as a Foreign Member"
+      ],
+      "u": -0.4792890250682831,
+      "margin": 0.020970135927200317,
+      "wrong_score": -0.15731965005397797,
+      "right_score": -0.17828978598117828
+    }
+  ],
+  "single_u": [
+    0.25384825468063354,
+    -0.2966994047164917,
+    -0.33648601174354553
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "includes the Wolf Prize",
+        "and the NAS Award"
+      ],
+      "u_i": 0.25384825468063354,
+      "u_j": -0.2966994047164917,
+      "local_fd": -0.33999913930892944,
+      "banzhaf": -0.2358202487230301,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "includes the Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.25384825468063354,
+      "u_j": -0.33648601174354553,
+      "local_fd": -0.288772314786911,
+      "banzhaf": -0.18459343910217285,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and the NAS Award",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.2966994047164917,
+      "u_j": -0.33648601174354553,
+      "local_fd": 0.32046183943748474,
+      "banzhaf": 0.4246407151222229,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "includes the Wolf Prize",
+        "and the NAS Award"
+      ],
+      "order": 2,
+      "harsanyi": -0.33999913930892944
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the NAS Award",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.32046183943748474
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "includes the Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.2887723445892334
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "includes the Wolf Prize",
+        "and the NAS Award",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": 0.2083577811717987
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.020970135927200317,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

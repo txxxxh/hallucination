@@ -1,0 +1,289 @@
+{
+  "key": "question_1612",
+  "group": "Q17457",
+  "generation_correct": true,
+  "right": "Donald Knuth",
+  "wrong": "Adi Shamir",
+  "base_margin_wrong_minus_right": -0.4226367771625519,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 232,
+      "char_end": 267,
+      "text": "Throughout a distinguished academic",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "academic",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 71,
+      "token_end": 79
+    },
+    {
+      "char_start": 365,
+      "char_end": 394,
+      "text": "the BBVA Foundation Frontiers",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "BBVA Foundation Frontiers of Knowledge Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 98,
+      "token_end": 104
+    },
+    {
+      "char_start": 428,
+      "char_end": 447,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 109,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.4226367771625519,
+      "wrong_score": -0.4817615747451782,
+      "right_score": -0.05912480875849724
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Throughout a distinguished academic"
+      ],
+      "u": -0.2172468602657318,
+      "margin": -0.20538991689682007,
+      "wrong_score": -0.3509286940097809,
+      "right_score": -0.14553877711296082
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the BBVA Foundation Frontiers"
+      ],
+      "u": 0.2836047112941742,
+      "margin": -0.7062414884567261,
+      "wrong_score": -0.7484675645828247,
+      "right_score": -0.042226072400808334
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Throughout a distinguished academic",
+        "the BBVA Foundation Frontiers"
+      ],
+      "u": 0.7929409742355347,
+      "margin": -1.2155777215957642,
+      "wrong_score": -1.2267701625823975,
+      "right_score": -0.011192436330020428
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -0.06365662813186646,
+      "margin": -0.3589801490306854,
+      "wrong_score": -0.4427737593650818,
+      "right_score": -0.08379361033439636
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Throughout a distinguished academic",
+        "as a Foreign Member"
+      ],
+      "u": 0.3847377598285675,
+      "margin": -0.8073745369911194,
+      "wrong_score": -0.8273063898086548,
+      "right_score": -0.0199318565428257
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the BBVA Foundation Frontiers",
+        "as a Foreign Member"
+      ],
+      "u": 0.573639988899231,
+      "margin": -0.9962767958641052,
+      "wrong_score": -1.0104786157608032,
+      "right_score": -0.014201845973730087
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Throughout a distinguished academic",
+        "the BBVA Foundation Frontiers",
+        "as a Foreign Member"
+      ],
+      "u": 0.947266697883606,
+      "margin": -1.3699034452438354,
+      "wrong_score": -1.3906335830688477,
+      "right_score": -0.0207301527261734
+    }
+  ],
+  "single_u": [
+    -0.2172468602657318,
+    0.2836047112941742,
+    -0.06365662813186646
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Throughout a distinguished academic",
+        "the BBVA Foundation Frontiers"
+      ],
+      "u_i": -0.2172468602657318,
+      "u_j": 0.2836047112941742,
+      "local_fd": 0.7265831232070923,
+      "banzhaf": 0.32590773701667786,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Throughout a distinguished academic",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.2172468602657318,
+      "u_j": -0.06365662813186646,
+      "local_fd": 0.6656412482261658,
+      "banzhaf": 0.26496583223342896,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the BBVA Foundation Frontiers",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.2836047112941742,
+      "u_j": -0.06365662813186646,
+      "local_fd": 0.3536919057369232,
+      "banzhaf": -0.046983495354652405,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Throughout a distinguished academic",
+        "the BBVA Foundation Frontiers",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": -0.8013508021831512
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Throughout a distinguished academic",
+        "the BBVA Foundation Frontiers"
+      ],
+      "order": 2,
+      "harsanyi": 0.7265831232070923
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Throughout a distinguished academic",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.6656412482261658
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the BBVA Foundation Frontiers",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.3536919057369232
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.3699034452438354,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

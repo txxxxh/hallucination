@@ -1,0 +1,144 @@
+{
+  "key": "question_2181",
+  "group": "Q16389",
+  "generation_correct": true,
+  "right": "Charles K. Kao",
+  "wrong": "Vint Cerf",
+  "base_margin_wrong_minus_right": -0.875558614730835,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 199,
+      "char_end": 239,
+      "text": "development of modern telecommunications",
+      "kind": "attribute",
+      "field": "field",
+      "value": "telecommunications",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 66,
+      "token_end": 71
+    },
+    {
+      "char_start": 240,
+      "char_end": 276,
+      "text": "and data transmission infrastructure",
+      "kind": "attribute",
+      "field": "field",
+      "value": "data transmission",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 71,
+      "token_end": 78
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.875558614730835,
+      "wrong_score": -0.8836523294448853,
+      "right_score": -0.008093741722404957
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "development of modern telecommunications"
+      ],
+      "u": 0.9993380308151245,
+      "margin": -1.8748966455459595,
+      "wrong_score": -1.8761107921600342,
+      "right_score": -0.0012142052873969078
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and data transmission infrastructure"
+      ],
+      "u": 0.9055423736572266,
+      "margin": -1.7811009883880615,
+      "wrong_score": -1.7830407619476318,
+      "right_score": -0.0019397365394979715
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "development of modern telecommunications",
+        "and data transmission infrastructure"
+      ],
+      "u": 0.7183469533920288,
+      "margin": -1.5939055681228638,
+      "wrong_score": -1.5964164733886719,
+      "right_score": -0.002510856604203582
+    }
+  ],
+  "single_u": [
+    0.9993380308151245,
+    0.9055423736572266
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "development of modern telecommunications",
+        "and data transmission infrastructure"
+      ],
+      "u_i": 0.9993380308151245,
+      "u_j": 0.9055423736572266,
+      "local_fd": -1.1865334510803223,
+      "banzhaf": -1.1865334510803223,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "development of modern telecommunications",
+        "and data transmission infrastructure"
+      ],
+      "order": 2,
+      "harsanyi": -1.1865334510803223
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.5939055681228638,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

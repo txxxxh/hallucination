@@ -1,0 +1,290 @@
+{
+  "key": "question_2042",
+  "group": "Q1534144",
+  "generation_correct": true,
+  "right": "Roger Adams",
+  "wrong": "Carolyn R. Bertozzi",
+  "base_margin_wrong_minus_right": -0.6304718255996704,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 182,
+      "char_end": 210,
+      "text": "Harvard University and built",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 66,
+      "token_end": 70
+    },
+    {
+      "char_start": 395,
+      "char_end": 415,
+      "text": "Award, the William H",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "William H. Nichols Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 104,
+      "token_end": 109
+    },
+    {
+      "char_start": 450,
+      "char_end": 472,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 114,
+      "token_end": 118
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.6304718255996704,
+      "wrong_score": -0.6492063999176025,
+      "right_score": -0.018734565004706383
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Harvard University and built"
+      ],
+      "u": 0.17600053548812866,
+      "margin": -0.8064723610877991,
+      "wrong_score": -0.8296188116073608,
+      "right_score": -0.023146456107497215
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Award, the William H"
+      ],
+      "u": 0.07639557123184204,
+      "margin": -0.7068673968315125,
+      "wrong_score": -0.794875979423523,
+      "right_score": -0.08800859749317169
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Harvard University and built",
+        "Award, the William H"
+      ],
+      "u": -0.2997259199619293,
+      "margin": -0.3307459056377411,
+      "wrong_score": -0.4434385895729065,
+      "right_score": -0.112692691385746
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.1801537573337555,
+      "margin": -0.4503180682659149,
+      "wrong_score": -0.5522386431694031,
+      "right_score": -0.10192057490348816
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Harvard University and built",
+        "Fellow of the American"
+      ],
+      "u": -0.3161657750606537,
+      "margin": -0.3143060505390167,
+      "wrong_score": -0.400516152381897,
+      "right_score": -0.08621009439229965
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the William H",
+        "Fellow of the American"
+      ],
+      "u": -0.306160032749176,
+      "margin": -0.3243117928504944,
+      "wrong_score": -0.3995590806007385,
+      "right_score": -0.07524727284908295
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Harvard University and built",
+        "Award, the William H",
+        "Fellow of the American"
+      ],
+      "u": -0.3005251884460449,
+      "margin": -0.3299466371536255,
+      "wrong_score": -0.3947390615940094,
+      "right_score": -0.06479243189096451
+    }
+  ],
+  "single_u": [
+    0.17600053548812866,
+    0.07639557123184204,
+    -0.1801537573337555
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Harvard University and built",
+        "Award, the William H"
+      ],
+      "u_i": 0.17600053548812866,
+      "u_j": 0.07639557123184204,
+      "local_fd": -0.5521219968795776,
+      "banzhaf": -0.20523756742477417,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Harvard University and built",
+        "Fellow of the American"
+      ],
+      "u_i": 0.17600053548812866,
+      "u_j": -0.1801537573337555,
+      "local_fd": -0.31201255321502686,
+      "banzhaf": 0.034871891140937805,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Award, the William H",
+        "Fellow of the American"
+      ],
+      "u_i": 0.07639557123184204,
+      "u_j": -0.1801537573337555,
+      "local_fd": -0.20240184664726257,
+      "banzhaf": 0.1444825977087021,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Harvard University and built",
+        "Award, the William H",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.6937688887119293
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Harvard University and built",
+        "Award, the William H"
+      ],
+      "order": 2,
+      "harsanyi": -0.5521220266819
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Harvard University and built",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.31201255321502686
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the William H",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.20240184664726257
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.3299466371536255,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

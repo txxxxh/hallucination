@@ -1,0 +1,146 @@
+{
+  "key": "question_2250",
+  "group": "Q434509",
+  "generation_correct": true,
+  "right": "Esther Duflo",
+  "wrong": "Raymond Barre",
+  "base_margin_wrong_minus_right": -2.7190186977386475,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 120,
+      "char_end": 147,
+      "text": "This renowned economist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "economist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 56,
+      "token_end": 63
+    },
+    {
+      "char_start": 270,
+      "char_end": 293,
+      "text": "served as a chairperson",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "chairperson",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 82,
+      "token_end": 88
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.7190186977386475,
+      "wrong_score": -2.7197232246398926,
+      "right_score": -0.0007045980892144144
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This renowned economist and"
+      ],
+      "u": -0.6244137287139893,
+      "margin": -2.094604969024658,
+      "wrong_score": -2.1011433601379395,
+      "right_score": -0.00653849309310317
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "served as a chairperson"
+      ],
+      "u": -0.7811994552612305,
+      "margin": -1.937819242477417,
+      "wrong_score": -1.9390778541564941,
+      "right_score": -0.00125860923435539
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This renowned economist and",
+        "served as a chairperson"
+      ],
+      "u": -1.622958779335022,
+      "margin": -1.0960599184036255,
+      "wrong_score": -1.1061067581176758,
+      "right_score": -0.01004683319479227
+    }
+  ],
+  "single_u": [
+    -0.6244137287139893,
+    -0.7811994552612305
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This renowned economist and",
+        "served as a chairperson"
+      ],
+      "u_i": -0.6244137287139893,
+      "u_j": -0.7811994552612305,
+      "local_fd": -0.21734559535980225,
+      "banzhaf": -0.21734559535980225,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This renowned economist and",
+        "served as a chairperson"
+      ],
+      "order": 2,
+      "harsanyi": -0.21734559535980225
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.0960599184036255,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

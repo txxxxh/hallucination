@@ -1,0 +1,155 @@
+{
+  "key": "question_1780",
+  "group": "Q48973",
+  "generation_correct": true,
+  "right": "Glenn T. Seaborg",
+  "wrong": "Robert Robinson",
+  "base_margin_wrong_minus_right": -0.8222818970680237,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 332,
+      "char_end": 357,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 93,
+      "token_end": 98
+    },
+    {
+      "char_start": 417,
+      "char_end": 437,
+      "text": "the Legion of Honour",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Legion of Honour",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 106,
+      "token_end": 112
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.8222818970680237,
+      "wrong_score": -0.8575268983840942,
+      "right_score": -0.03524500131607056
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": -0.9699264764785767,
+      "margin": 0.14764457941055298,
+      "wrong_score": -0.11898180097341537,
+      "right_score": -0.26662638783454895
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Legion of Honour"
+      ],
+      "u": -0.44077053666114807,
+      "margin": -0.3815113604068756,
+      "wrong_score": -0.4691494107246399,
+      "right_score": -0.08763804286718369
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Legion of Honour"
+      ],
+      "u": 0.18810218572616577,
+      "margin": -1.0103840827941895,
+      "wrong_score": -1.0431455373764038,
+      "right_score": -0.03276145085692406
+    }
+  ],
+  "single_u": [
+    -0.9699264764785767,
+    -0.44077053666114807
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Nobel Prize",
+        "the Legion of Honour"
+      ],
+      "u_i": -0.9699264764785767,
+      "u_j": -0.44077053666114807,
+      "local_fd": 1.5987991094589233,
+      "banzhaf": 1.5987991094589233,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "the Legion of Honour"
+      ],
+      "order": 2,
+      "harsanyi": 1.5987991988658905
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Legion of Honour"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -1.0103840827941895,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "key": "question_2028",
+  "group": "Q164396",
+  "generation_correct": true,
+  "right": "Viktor Ambartsumian",
+  "wrong": "Alexander Prokhorov",
+  "base_margin_wrong_minus_right": -0.14318335056304932,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 133,
+      "char_end": 169,
+      "text": "This distinguished scientist studied",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 66
+    },
+    {
+      "char_start": 170,
+      "char_end": 200,
+      "text": "at Saint Petersburg University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Saint Petersburg State University",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 65,
+      "token_end": 69
+    },
+    {
+      "char_start": 477,
+      "char_end": 502,
+      "text": "of the Russian Federation",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "State Prize of the Russian Federation",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 132,
+      "token_end": 137
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.14318335056304932,
+      "wrong_score": -0.21192137897014618,
+      "right_score": -0.06873802840709686
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished scientist studied"
+      ],
+      "u": -0.06784078478813171,
+      "margin": -0.0753425657749176,
+      "wrong_score": -0.16700105369091034,
+      "right_score": -0.09165848791599274
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "at Saint Petersburg University"
+      ],
+      "u": -0.0677201971411705,
+      "margin": -0.07546315342187881,
+      "wrong_score": -0.1673169732093811,
+      "right_score": -0.09185381978750229
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished scientist studied",
+        "at Saint Petersburg University"
+      ],
+      "u": -0.037685513496398926,
+      "margin": -0.10549783706665039,
+      "wrong_score": -0.1818934977054596,
+      "right_score": -0.0763956606388092
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "of the Russian Federation"
+      ],
+      "u": 0.0698874443769455,
+      "margin": -0.2130707949399948,
+      "wrong_score": -0.2637905478477478,
+      "right_score": -0.05071975663304329
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist studied",
+        "of the Russian Federation"
+      ],
+      "u": 0.21629631519317627,
+      "margin": -0.3594796657562256,
+      "wrong_score": -0.3830314576625824,
+      "right_score": -0.023551786318421364
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "at Saint Petersburg University",
+        "of the Russian Federation"
+      ],
+      "u": 0.14117494225502014,
+      "margin": -0.28435829281806946,
+      "wrong_score": -0.3212503492832184,
+      "right_score": -0.036892056465148926
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist studied",
+        "at Saint Petersburg University",
+        "of the Russian Federation"
+      ],
+      "u": 0.26230287551879883,
+      "margin": -0.40548622608184814,
+      "wrong_score": -0.4270055294036865,
+      "right_score": -0.02151929773390293
+    }
+  ],
+  "single_u": [
+    -0.06784078478813171,
+    -0.0677201971411705,
+    0.0698874443769455
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished scientist studied",
+        "at Saint Petersburg University"
+      ],
+      "u_i": -0.06784078478813171,
+      "u_j": -0.0677201971411705,
+      "local_fd": 0.09787546843290329,
+      "banzhaf": 0.0362972654402256,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished scientist studied",
+        "of the Russian Federation"
+      ],
+      "u_i": -0.06784078478813171,
+      "u_j": 0.0698874443769455,
+      "local_fd": 0.2142496556043625,
+      "banzhaf": 0.1526714563369751,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "at Saint Petersburg University",
+        "of the Russian Federation"
+      ],
+      "u_i": -0.0677201971411705,
+      "u_j": 0.0698874443769455,
+      "local_fd": 0.13900770246982574,
+      "banzhaf": 0.07742949575185776,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist studied",
+        "of the Russian Federation"
+      ],
+      "order": 2,
+      "harsanyi": 0.2142496556043625
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "at Saint Petersburg University",
+        "of the Russian Federation"
+      ],
+      "order": 2,
+      "harsanyi": 0.13900769501924515
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished scientist studied",
+        "at Saint Petersburg University",
+        "of the Russian Federation"
+      ],
+      "order": 3,
+      "harsanyi": -0.12315640598535538
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished scientist studied",
+        "at Saint Petersburg University"
+      ],
+      "order": 2,
+      "harsanyi": 0.09787546843290329
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.40548622608184814,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

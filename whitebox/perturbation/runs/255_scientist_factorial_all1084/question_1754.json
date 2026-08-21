@@ -1,0 +1,289 @@
+{
+  "key": "question_1754",
+  "group": "Q78610",
+  "generation_correct": true,
+  "right": "Anton Zeilinger",
+  "wrong": "Gerhard Ertl",
+  "base_margin_wrong_minus_right": 0.598869264125824,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 295,
+      "char_end": 322,
+      "text": "with the Knight Commander's",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight Commander's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 87,
+      "token_end": 93
+    },
+    {
+      "char_start": 323,
+      "char_end": 341,
+      "text": "Cross of the Order",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Commander's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 92,
+      "token_end": 97
+    },
+    {
+      "char_start": 421,
+      "char_end": 449,
+      "text": "from the Humboldt University",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary doctor of the Humboldt University of Berlin",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 112,
+      "token_end": 115
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.598869264125824,
+      "wrong_score": -0.013164990581572056,
+      "right_score": -0.612034261226654
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "with the Knight Commander's"
+      ],
+      "u": 0.2862357497215271,
+      "margin": 0.3126335144042969,
+      "wrong_score": -0.08005070686340332,
+      "right_score": -0.3926842212677002
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Cross of the Order"
+      ],
+      "u": -0.5000962615013123,
+      "margin": 1.0989655256271362,
+      "wrong_score": -0.005625294055789709,
+      "right_score": -1.1045907735824585
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "u": -0.45059603452682495,
+      "margin": 1.049465298652649,
+      "wrong_score": -0.0026246546767652035,
+      "right_score": -1.0520899295806885
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "from the Humboldt University"
+      ],
+      "u": 0.05263829231262207,
+      "margin": 0.5462309718132019,
+      "wrong_score": -0.018866775557398796,
+      "right_score": -0.5650977492332458
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Knight Commander's",
+        "from the Humboldt University"
+      ],
+      "u": -0.1996433138847351,
+      "margin": 0.7985125780105591,
+      "wrong_score": -0.008235489949584007,
+      "right_score": -0.80674809217453
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Cross of the Order",
+        "from the Humboldt University"
+      ],
+      "u": -0.14890050888061523,
+      "margin": 0.7477697730064392,
+      "wrong_score": -0.012751094065606594,
+      "right_score": -0.760520875453949
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Knight Commander's",
+        "Cross of the Order",
+        "from the Humboldt University"
+      ],
+      "u": -0.2482835054397583,
+      "margin": 0.8471527695655823,
+      "wrong_score": -0.01551114208996296,
+      "right_score": -0.8626639246940613
+    }
+  ],
+  "single_u": [
+    0.2862357497215271,
+    -0.5000962615013123,
+    0.05263829231262207
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "with the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "u_i": 0.2862357497215271,
+      "u_j": -0.5000962615013123,
+      "local_fd": -0.2367355227470398,
+      "banzhaf": -0.04191845655441284,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "with the Knight Commander's",
+        "from the Humboldt University"
+      ],
+      "u_i": 0.2862357497215271,
+      "u_j": 0.05263829231262207,
+      "local_fd": -0.5385173559188843,
+      "banzhaf": -0.3437002897262573,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Cross of the Order",
+        "from the Humboldt University"
+      ],
+      "u_i": -0.5000962615013123,
+      "u_j": 0.05263829231262207,
+      "local_fd": 0.29855746030807495,
+      "banzhaf": 0.4933745265007019,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Knight Commander's",
+        "from the Humboldt University"
+      ],
+      "order": 2,
+      "harsanyi": -0.5385173559188843
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Knight Commander's",
+        "Cross of the Order",
+        "from the Humboldt University"
+      ],
+      "order": 3,
+      "harsanyi": 0.3896341323852539
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Cross of the Order",
+        "from the Humboldt University"
+      ],
+      "order": 2,
+      "harsanyi": 0.29855746030807495
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Knight Commander's",
+        "Cross of the Order"
+      ],
+      "order": 2,
+      "harsanyi": -0.2367355227470398
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8471527695655823,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

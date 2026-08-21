@@ -1,0 +1,144 @@
+{
+  "key": "question_1363",
+  "group": "Q190697",
+  "generation_correct": true,
+  "right": "Claude Cohen-Tannoudji",
+  "wrong": "Abdus Salam",
+  "base_margin_wrong_minus_right": -0.43205180764198303,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 200,
+      "char_end": 220,
+      "text": "the field of quantum",
+      "kind": "attribute",
+      "field": "field",
+      "value": "quantum field theory",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 71,
+      "token_end": 76
+    },
+    {
+      "char_start": 377,
+      "char_end": 398,
+      "text": "of the National Order",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Order of Scientific Merit",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 106,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.43205180764198303,
+      "wrong_score": -0.4500591456890106,
+      "right_score": -0.018007349222898483
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of quantum"
+      ],
+      "u": -0.06403711438179016,
+      "margin": -0.36801469326019287,
+      "wrong_score": -0.3933153748512268,
+      "right_score": -0.02530069090425968
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the National Order"
+      ],
+      "u": -0.25723931193351746,
+      "margin": -0.17481249570846558,
+      "wrong_score": -0.23755614459514618,
+      "right_score": -0.0627436563372612
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of quantum",
+        "of the National Order"
+      ],
+      "u": -0.24837668240070343,
+      "margin": -0.1836751252412796,
+      "wrong_score": -0.27997270226478577,
+      "right_score": -0.09629757702350616
+    }
+  ],
+  "single_u": [
+    -0.06403711438179016,
+    -0.25723931193351746
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of quantum",
+        "of the National Order"
+      ],
+      "u_i": -0.06403711438179016,
+      "u_j": -0.25723931193351746,
+      "local_fd": 0.07289974391460419,
+      "banzhaf": 0.07289974391460419,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of quantum",
+        "of the National Order"
+      ],
+      "order": 2,
+      "harsanyi": 0.07289974391460419
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.1836751252412796,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

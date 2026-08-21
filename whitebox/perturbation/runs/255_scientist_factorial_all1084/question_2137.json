@@ -1,0 +1,290 @@
+{
+  "key": "question_2137",
+  "group": "Q131761",
+  "generation_correct": true,
+  "right": "Humphry Davy",
+  "wrong": "William Crookes",
+  "base_margin_wrong_minus_right": -0.24896691739559174,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 308,
+      "char_end": 330,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 87,
+      "token_end": 91
+    },
+    {
+      "char_start": 421,
+      "char_end": 440,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 108,
+      "token_end": 112
+    },
+    {
+      "char_start": 466,
+      "char_end": 487,
+      "text": "both the Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 115,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.24896691739559174,
+      "wrong_score": -0.32822924852371216,
+      "right_score": -0.07926233112812042
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": 0.21539439260959625,
+      "margin": -0.464361310005188,
+      "wrong_score": -0.5092111825942993,
+      "right_score": -0.044849883764982224
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.10541591048240662,
+      "margin": -0.14355100691318512,
+      "wrong_score": -0.26471641659736633,
+      "right_score": -0.12116540968418121
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "u": 0.04663993418216705,
+      "margin": -0.2956068515777588,
+      "wrong_score": -0.3847973346710205,
+      "right_score": -0.08919046819210052
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "both the Copley Medal"
+      ],
+      "u": 0.2178983837366104,
+      "margin": -0.46686530113220215,
+      "wrong_score": -0.5160869359970093,
+      "right_score": -0.04922164976596832
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "both the Copley Medal"
+      ],
+      "u": 0.12978051602840424,
+      "margin": -0.37874743342399597,
+      "wrong_score": -0.44629842042922974,
+      "right_score": -0.06755097955465317
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "both the Copley Medal"
+      ],
+      "u": -0.03277449309825897,
+      "margin": -0.21619242429733276,
+      "wrong_score": -0.30489856004714966,
+      "right_score": -0.08870614320039749
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal",
+        "both the Copley Medal"
+      ],
+      "u": -0.06187160313129425,
+      "margin": -0.18709531426429749,
+      "wrong_score": -0.30622464418411255,
+      "right_score": -0.11912932246923447
+    }
+  ],
+  "single_u": [
+    0.21539439260959625,
+    -0.10541591048240662,
+    0.2178983837366104
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.21539439260959625,
+      "u_j": -0.10541591048240662,
+      "local_fd": -0.06333854794502258,
+      "banzhaf": -0.0021588951349258423,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "President of the Royal",
+        "both the Copley Medal"
+      ],
+      "u_i": 0.21539439260959625,
+      "u_j": 0.2178983837366104,
+      "local_fd": -0.3035122752189636,
+      "banzhaf": -0.2423326075077057,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "both the Copley Medal"
+      ],
+      "u_i": -0.10541591048240662,
+      "u_j": 0.2178983837366104,
+      "local_fd": -0.14525696635246277,
+      "banzhaf": -0.08407731354236603,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "both the Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.30351226031780243
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "both the Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.14525696635246277
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal",
+        "both the Copley Medal"
+      ],
+      "order": 3,
+      "harsanyi": 0.12235930562019348
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.06333854794502258
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.18709531426429749,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

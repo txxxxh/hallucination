@@ -1,0 +1,296 @@
+{
+  "key": "question_0321",
+  "group": "Q107690",
+  "generation_correct": true,
+  "right": "Jean-Marie Lehn",
+  "wrong": "Sir Derek Barton",
+  "base_margin_wrong_minus_right": -0.22149083018302917,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 226,
+      "char_end": 249,
+      "text": "earning the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 87
+    },
+    {
+      "char_start": 253,
+      "char_end": 278,
+      "text": "Chemistry, the Davy Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Davy Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 88,
+      "token_end": 94
+    },
+    {
+      "char_start": 280,
+      "char_end": 303,
+      "text": "and the Lavoisier Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Lavoisier Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 93,
+      "token_end": 100
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.22149083018302917,
+      "wrong_score": -0.3292771577835083,
+      "right_score": -0.10778632014989853
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "earning the Nobel Prize"
+      ],
+      "u": -0.4838581681251526,
+      "margin": 0.2623673379421234,
+      "wrong_score": -0.09626259654760361,
+      "right_score": -0.3586299419403076
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Chemistry, the Davy Medal"
+      ],
+      "u": 0.028828024864196777,
+      "margin": -0.25031885504722595,
+      "wrong_score": -0.3641631603240967,
+      "right_score": -0.11384431272745132
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "earning the Nobel Prize",
+        "Chemistry, the Davy Medal"
+      ],
+      "u": 0.002365678548812866,
+      "margin": -0.22385650873184204,
+      "wrong_score": -0.3362772464752197,
+      "right_score": -0.11242073029279709
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Lavoisier Medal"
+      ],
+      "u": -0.7344182729721069,
+      "margin": 0.5129274725914001,
+      "wrong_score": -0.030683618038892746,
+      "right_score": -0.5436111092567444
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "earning the Nobel Prize",
+        "and the Lavoisier Medal"
+      ],
+      "u": -1.039849877357483,
+      "margin": 0.8183590173721313,
+      "wrong_score": -0.015693359076976776,
+      "right_score": -0.8340523838996887
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Chemistry, the Davy Medal",
+        "and the Lavoisier Medal"
+      ],
+      "u": -0.6167380809783936,
+      "margin": 0.39524728059768677,
+      "wrong_score": -0.058675240725278854,
+      "right_score": -0.4539225101470947
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "earning the Nobel Prize",
+        "Chemistry, the Davy Medal",
+        "and the Lavoisier Medal"
+      ],
+      "u": -0.6412867307662964,
+      "margin": 0.4197959303855896,
+      "wrong_score": -0.06010657548904419,
+      "right_score": -0.4799025058746338
+    }
+  ],
+  "single_u": [
+    -0.4838581681251526,
+    0.028828024864196777,
+    -0.7344182729721069
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "earning the Nobel Prize",
+        "Chemistry, the Davy Medal"
+      ],
+      "u_i": -0.4838581681251526,
+      "u_j": 0.028828024864196777,
+      "local_fd": 0.4573958218097687,
+      "banzhaf": 0.3691393733024597,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "earning the Nobel Prize",
+        "and the Lavoisier Medal"
+      ],
+      "u_i": -0.4838581681251526,
+      "u_j": -0.7344182729721069,
+      "local_fd": 0.1784265637397766,
+      "banzhaf": 0.09017011523246765,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Chemistry, the Davy Medal",
+        "and the Lavoisier Medal"
+      ],
+      "u_i": 0.028828024864196777,
+      "u_j": -0.7344182729721069,
+      "local_fd": 0.0888521671295166,
+      "banzhaf": 0.0005957186222076416,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "earning the Nobel Prize",
+        "Chemistry, the Davy Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.4573958218097687
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "earning the Nobel Prize",
+        "and the Lavoisier Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.1784265637397766
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "earning the Nobel Prize",
+        "Chemistry, the Davy Medal",
+        "and the Lavoisier Medal"
+      ],
+      "order": 3,
+      "harsanyi": -0.17651286721229553
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Chemistry, the Davy Medal",
+        "and the Lavoisier Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.0888521671295166
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.4197959303855896,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

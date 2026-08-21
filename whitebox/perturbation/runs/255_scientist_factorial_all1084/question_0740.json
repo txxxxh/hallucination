@@ -1,0 +1,287 @@
+{
+  "key": "question_0740",
+  "group": "Q6694",
+  "generation_correct": true,
+  "right": "Alexander von Humboldt",
+  "wrong": "Angela Merkel",
+  "base_margin_wrong_minus_right": -4.416599273681641,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 207,
+      "char_end": 227,
+      "text": "the field of physics",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 68,
+      "token_end": 73
+    },
+    {
+      "char_start": 321,
+      "char_end": 344,
+      "text": "awarded the Grand Cross",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Grand Cross of the Legion of Honour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 90,
+      "token_end": 97
+    },
+    {
+      "char_start": 395,
+      "char_end": 400,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 105,
+      "token_end": 106
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -4.416599273681641,
+      "wrong_score": -4.417529582977295,
+      "right_score": -0.0009304721606895328
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of physics"
+      ],
+      "u": -0.2489466667175293,
+      "margin": -4.167652606964111,
+      "wrong_score": -4.173484802246094,
+      "right_score": -0.005832056049257517
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "awarded the Grand Cross"
+      ],
+      "u": -2.6238036155700684,
+      "margin": -1.7927955389022827,
+      "wrong_score": -1.7985146045684814,
+      "right_score": -0.005719122942537069
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of physics",
+        "awarded the Grand Cross"
+      ],
+      "u": -3.2378406524658203,
+      "margin": -1.1787587404251099,
+      "wrong_score": -1.233554482460022,
+      "right_score": -0.054795727133750916
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.24912214279174805,
+      "margin": -4.167477130889893,
+      "wrong_score": -4.170371055603027,
+      "right_score": -0.0028941354248672724
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of physics",
+        "never"
+      ],
+      "u": -1.2071311473846436,
+      "margin": -3.209468126296997,
+      "wrong_score": -3.214906692504883,
+      "right_score": -0.005438662599772215
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Grand Cross",
+        "never"
+      ],
+      "u": -1.999817132949829,
+      "margin": -2.4167821407318115,
+      "wrong_score": -2.4189188480377197,
+      "right_score": -0.0021366728469729424
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of physics",
+        "awarded the Grand Cross",
+        "never"
+      ],
+      "u": -3.250500440597534,
+      "margin": -1.1660988330841064,
+      "wrong_score": -1.1976510286331177,
+      "right_score": -0.03155214712023735
+    }
+  ],
+  "single_u": [
+    -0.2489466667175293,
+    -2.6238036155700684,
+    -0.24912214279174805
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of physics",
+        "awarded the Grand Cross"
+      ],
+      "u_i": -0.2489466667175293,
+      "u_j": -2.6238036155700684,
+      "local_fd": -0.36509037017822266,
+      "banzhaf": -0.3288823366165161,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the field of physics",
+        "never"
+      ],
+      "u_i": -0.2489466667175293,
+      "u_j": -0.24912214279174805,
+      "local_fd": -0.7090623378753662,
+      "banzhaf": -0.6728543043136597,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "awarded the Grand Cross",
+        "never"
+      ],
+      "u_i": -2.6238036155700684,
+      "u_j": -0.24912214279174805,
+      "local_fd": 0.8731086254119873,
+      "banzhaf": 0.9093166589736938,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Grand Cross",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.8731086254119873
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of physics",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.7090623378753662
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of physics",
+        "awarded the Grand Cross"
+      ],
+      "order": 2,
+      "harsanyi": -0.36509037017822266
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of physics",
+        "awarded the Grand Cross",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": 0.07241606712341309
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.1660988330841064,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

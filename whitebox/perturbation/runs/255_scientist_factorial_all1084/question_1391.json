@@ -1,0 +1,286 @@
+{
+  "key": "question_1391",
+  "group": "Q186042",
+  "generation_correct": true,
+  "right": "John Kenneth Galbraith",
+  "wrong": "Joseph E. Stiglitz",
+  "base_margin_wrong_minus_right": 0.40859919786453247,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 344,
+      "char_end": 377,
+      "text": "including a Guggenheim Fellowship",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Guggenheim Fellowship",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 101,
+      "token_end": 108
+    },
+    {
+      "char_start": 462,
+      "char_end": 467,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 123,
+      "token_end": 125
+    },
+    {
+      "char_start": 477,
+      "char_end": 504,
+      "text": "position of Chief Economist",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "Chief Economist of the World Bank",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 127,
+      "token_end": 131
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.40859919786453247,
+      "wrong_score": -0.02132345922291279,
+      "right_score": -0.4299226701259613
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including a Guggenheim Fellowship"
+      ],
+      "u": 0.30569395422935486,
+      "margin": 0.10290525108575821,
+      "wrong_score": -0.08506787568330765,
+      "right_score": -0.18797312676906586
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.12737888097763062,
+      "margin": 0.5359780788421631,
+      "wrong_score": -0.022945599630475044,
+      "right_score": -0.5589236617088318
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including a Guggenheim Fellowship",
+        "never"
+      ],
+      "u": 0.11562749743461609,
+      "margin": 0.2929717004299164,
+      "wrong_score": -0.047406189143657684,
+      "right_score": -0.34037789702415466
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "position of Chief Economist"
+      ],
+      "u": 0.18206803500652313,
+      "margin": 0.22653116285800934,
+      "wrong_score": -0.049331437796354294,
+      "right_score": -0.27586260437965393
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including a Guggenheim Fellowship",
+        "position of Chief Economist"
+      ],
+      "u": 0.1338457465171814,
+      "margin": 0.2747534513473511,
+      "wrong_score": -0.051974840462207794,
+      "right_score": -0.32672828435897827
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "position of Chief Economist"
+      ],
+      "u": 0.000244826078414917,
+      "margin": 0.40835437178611755,
+      "wrong_score": -0.04731699451804161,
+      "right_score": -0.45567137002944946
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including a Guggenheim Fellowship",
+        "never",
+        "position of Chief Economist"
+      ],
+      "u": 0.22414566576480865,
+      "margin": 0.18445353209972382,
+      "wrong_score": -0.0911327451467514,
+      "right_score": -0.2755862772464752
+    }
+  ],
+  "single_u": [
+    0.30569395422935486,
+    -0.12737888097763062,
+    0.18206803500652313
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including a Guggenheim Fellowship",
+        "never"
+      ],
+      "u_i": 0.30569395422935486,
+      "u_j": -0.12737888097763062,
+      "local_fd": -0.06268757581710815,
+      "banzhaf": 0.10471777617931366,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including a Guggenheim Fellowship",
+        "position of Chief Economist"
+      ],
+      "u_i": 0.30569395422935486,
+      "u_j": 0.18206803500652313,
+      "local_fd": -0.3539162278175354,
+      "banzhaf": -0.18651089072227478,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "never",
+        "position of Chief Economist"
+      ],
+      "u_i": -0.12737888097763062,
+      "u_j": 0.18206803500652313,
+      "local_fd": -0.0544443279504776,
+      "banzhaf": 0.11296101659536362,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including a Guggenheim Fellowship",
+        "position of Chief Economist"
+      ],
+      "order": 2,
+      "harsanyi": -0.3539162427186966
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including a Guggenheim Fellowship",
+        "never",
+        "position of Chief Economist"
+      ],
+      "order": 3,
+      "harsanyi": 0.33481070399284363
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including a Guggenheim Fellowship",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.06268757581710815
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "position of Chief Economist"
+      ],
+      "order": 2,
+      "harsanyi": -0.0544443279504776
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.18445353209972382,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

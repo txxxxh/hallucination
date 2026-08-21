@@ -1,0 +1,290 @@
+{
+  "key": "question_2080",
+  "group": "Q8753",
+  "generation_correct": true,
+  "right": "Enrico Fermi",
+  "wrong": "Murray Gell-Mann",
+  "base_margin_wrong_minus_right": 0.06731770187616348,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 309,
+      "char_end": 334,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 90,
+      "token_end": 95
+    },
+    {
+      "char_start": 449,
+      "char_end": 471,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 113,
+      "token_end": 118
+    },
+    {
+      "char_start": 495,
+      "char_end": 516,
+      "text": "Foreign Member of the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 124
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.06731770187616348,
+      "wrong_score": -0.10703762620687485,
+      "right_score": -0.17435532808303833
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": -0.5036864876747131,
+      "margin": 0.5710042119026184,
+      "wrong_score": -0.02733473852276802,
+      "right_score": -0.5983389616012573
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.1249830350279808,
+      "margin": 0.1923007369041443,
+      "wrong_score": -0.07351366430521011,
+      "right_score": -0.2658143937587738
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the American"
+      ],
+      "u": -0.3251151144504547,
+      "margin": 0.3924328088760376,
+      "wrong_score": -0.035177554935216904,
+      "right_score": -0.4276103675365448
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Foreign Member of the"
+      ],
+      "u": -0.20951291918754578,
+      "margin": 0.27683061361312866,
+      "wrong_score": -0.05491519719362259,
+      "right_score": -0.33174580335617065
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Foreign Member of the"
+      ],
+      "u": -0.18760383129119873,
+      "margin": 0.2549215257167816,
+      "wrong_score": -0.0550859272480011,
+      "right_score": -0.3100074529647827
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "u": 0.024477578699588776,
+      "margin": 0.04284012317657471,
+      "wrong_score": -0.11760279536247253,
+      "right_score": -0.16044291853904724
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "u": -0.026830628514289856,
+      "margin": 0.09414833039045334,
+      "wrong_score": -0.09837242215871811,
+      "right_score": -0.19252075254917145
+    }
+  ],
+  "single_u": [
+    -0.5036864876747131,
+    -0.1249830350279808,
+    -0.20951291918754578
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the American"
+      ],
+      "u_i": -0.5036864876747131,
+      "u_j": -0.1249830350279808,
+      "local_fd": 0.3035544157028198,
+      "banzhaf": 0.11516855657100677,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Nobel Prize",
+        "Foreign Member of the"
+      ],
+      "u_i": -0.5036864876747131,
+      "u_j": -0.20951291918754578,
+      "local_fd": 0.5255955457687378,
+      "banzhaf": 0.33720970153808594,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "u_i": -0.1249830350279808,
+      "u_j": -0.20951291918754578,
+      "local_fd": 0.35897353291511536,
+      "banzhaf": 0.1705876737833023,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Foreign Member of the"
+      ],
+      "order": 2,
+      "harsanyi": 0.5255955755710602
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "order": 3,
+      "harsanyi": -0.3767717033624649
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "order": 2,
+      "harsanyi": 0.35897353291511536
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.3035544082522392
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.09414833039045334,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

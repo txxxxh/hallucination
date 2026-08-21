@@ -1,0 +1,142 @@
+{
+  "key": "question_1588",
+  "group": "Q57065",
+  "generation_correct": true,
+  "right": "Otto Hahn",
+  "wrong": "Günter Blobel",
+  "base_margin_wrong_minus_right": -0.5583685636520386,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 298,
+      "char_end": 321,
+      "text": "the prestigious Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 91,
+      "token_end": 94
+    },
+    {
+      "char_start": 445,
+      "char_end": 450,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 119,
+      "token_end": 121
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5583685636520386,
+      "wrong_score": -0.5730898380279541,
+      "right_score": -0.0147212790325284
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the prestigious Pour le"
+      ],
+      "u": -0.30475205183029175,
+      "margin": -0.2536165118217468,
+      "wrong_score": -0.3133425712585449,
+      "right_score": -0.05972606688737869
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.06224459409713745,
+      "margin": -0.620613157749176,
+      "wrong_score": -0.6390716433525085,
+      "right_score": -0.018458502367138863
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the prestigious Pour le",
+        "never"
+      ],
+      "u": -0.1520048975944519,
+      "margin": -0.40636366605758667,
+      "wrong_score": -0.43612074851989746,
+      "right_score": -0.029757075011730194
+    }
+  ],
+  "single_u": [
+    -0.30475205183029175,
+    0.06224459409713745
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the prestigious Pour le",
+        "never"
+      ],
+      "u_i": -0.30475205183029175,
+      "u_j": 0.06224459409713745,
+      "local_fd": 0.09050256013870239,
+      "banzhaf": 0.09050256013870239,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the prestigious Pour le",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.09050256013870239
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.40636366605758667,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

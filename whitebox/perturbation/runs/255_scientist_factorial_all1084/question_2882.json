@@ -1,0 +1,152 @@
+{
+  "key": "question_2882",
+  "group": "Q1690702",
+  "generation_correct": true,
+  "right": "Joan Steitz",
+  "wrong": "Alexander R. Todd, Baron Todd",
+  "base_margin_wrong_minus_right": -0.5306330323219299,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 135,
+      "char_end": 168,
+      "text": "This distinguished biochemist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biochemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 60,
+      "token_end": 68
+    },
+    {
+      "char_start": 169,
+      "char_end": 196,
+      "text": "university teacher has made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 67,
+      "token_end": 72
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5306330323219299,
+      "wrong_score": -0.5414931774139404,
+      "right_score": -0.01086013950407505
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished biochemist and"
+      ],
+      "u": -0.6753655672073364,
+      "margin": 0.1447325348854065,
+      "wrong_score": -0.09135457128286362,
+      "right_score": -0.23608709871768951
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher has made"
+      ],
+      "u": -0.477713406085968,
+      "margin": -0.05291961133480072,
+      "wrong_score": -0.18744343519210815,
+      "right_score": -0.13452382385730743
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished biochemist and",
+        "university teacher has made"
+      ],
+      "u": -0.8896165490150452,
+      "margin": 0.35898351669311523,
+      "wrong_score": -0.07740448415279388,
+      "right_score": -0.4363880157470703
+    }
+  ],
+  "single_u": [
+    -0.6753655672073364,
+    -0.477713406085968
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished biochemist and",
+        "university teacher has made"
+      ],
+      "u_i": -0.6753655672073364,
+      "u_j": -0.477713406085968,
+      "local_fd": 0.2634624242782593,
+      "banzhaf": 0.2634624242782593,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished biochemist and",
+        "university teacher has made"
+      ],
+      "order": 2,
+      "harsanyi": 0.2634624242782593
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.35898351669311523,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 4,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

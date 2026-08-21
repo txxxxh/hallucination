@@ -1,0 +1,293 @@
+{
+  "key": "question_2385",
+  "group": "Q47480",
+  "generation_correct": false,
+  "right": "Paul Dirac",
+  "wrong": "Enrico Fermi",
+  "base_margin_wrong_minus_right": -0.36460983753204346,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 152,
+      "char_end": 180,
+      "text": "and university educator made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "educator",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 63
+    },
+    {
+      "char_start": 352,
+      "char_end": 370,
+      "text": "in Physics and the",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 97,
+      "token_end": 99
+    },
+    {
+      "char_start": 528,
+      "char_end": 566,
+      "text": "widespread recognition, this scientist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 125,
+      "token_end": 132
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.36460983753204346,
+      "wrong_score": -0.4275747835636139,
+      "right_score": -0.06296496093273163
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and university educator made"
+      ],
+      "u": 0.8527460098266602,
+      "margin": -1.2173558473587036,
+      "wrong_score": -1.2280393838882446,
+      "right_score": -0.010683557949960232
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Physics and the"
+      ],
+      "u": -0.18409216403961182,
+      "margin": -0.18051767349243164,
+      "wrong_score": -0.33566784858703613,
+      "right_score": -0.1551501750946045
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and university educator made",
+        "in Physics and the"
+      ],
+      "u": 0.6650437116622925,
+      "margin": -1.029653549194336,
+      "wrong_score": -1.0420911312103271,
+      "right_score": -0.012437614612281322
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "widespread recognition, this scientist"
+      ],
+      "u": -1.0476247072219849,
+      "margin": 0.6830148696899414,
+      "wrong_score": -0.12626948952674866,
+      "right_score": -0.8092843294143677
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "and university educator made",
+        "widespread recognition, this scientist"
+      ],
+      "u": -0.7479807734489441,
+      "margin": 0.38337093591690063,
+      "wrong_score": -0.13355261087417603,
+      "right_score": -0.5169235467910767
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Physics and the",
+        "widespread recognition, this scientist"
+      ],
+      "u": -1.6214406490325928,
+      "margin": 1.2568308115005493,
+      "wrong_score": -0.046617258340120316,
+      "right_score": -1.3034480810165405
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "and university educator made",
+        "in Physics and the",
+        "widespread recognition, this scientist"
+      ],
+      "u": -0.6986477375030518,
+      "margin": 0.3340378999710083,
+      "wrong_score": -0.10165209323167801,
+      "right_score": -0.4356899857521057
+    }
+  ],
+  "single_u": [
+    0.8527460098266602,
+    -0.18409216403961182,
+    -1.0476247072219849
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "and university educator made",
+        "in Physics and the"
+      ],
+      "u_i": 0.8527460098266602,
+      "u_j": -0.18409216403961182,
+      "local_fd": -0.0036101341247558594,
+      "banzhaf": 0.3097694516181946,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "and university educator made",
+        "widespread recognition, this scientist"
+      ],
+      "u_i": 0.8527460098266602,
+      "u_j": -1.0476247072219849,
+      "local_fd": -0.5531021356582642,
+      "banzhaf": -0.23972254991531372,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "in Physics and the",
+        "widespread recognition, this scientist"
+      ],
+      "u_i": -0.18409216403961182,
+      "u_j": -1.0476247072219849,
+      "local_fd": -0.3897237777709961,
+      "banzhaf": -0.07634422183036804,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "and university educator made",
+        "in Physics and the",
+        "widespread recognition, this scientist"
+      ],
+      "order": 3,
+      "harsanyi": 0.6267591118812561
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "and university educator made",
+        "widespread recognition, this scientist"
+      ],
+      "order": 2,
+      "harsanyi": -0.5531020760536194
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Physics and the",
+        "widespread recognition, this scientist"
+      ],
+      "order": 2,
+      "harsanyi": -0.3897237777709961
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and university educator made",
+        "in Physics and the"
+      ],
+      "order": 2,
+      "harsanyi": -0.0036101341247558594
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3340378999710083,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

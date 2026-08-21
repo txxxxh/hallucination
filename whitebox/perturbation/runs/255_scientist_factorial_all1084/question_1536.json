@@ -1,0 +1,148 @@
+{
+  "key": "question_1536",
+  "group": "Q701506",
+  "generation_correct": false,
+  "right": "Robert Weinberg",
+  "wrong": "Karl Deisseroth",
+  "base_margin_wrong_minus_right": -0.6115576028823853,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 584,
+      "char_end": 616,
+      "text": "Despite their extensive academic",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "academic",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 139,
+      "token_end": 145
+    },
+    {
+      "char_start": 631,
+      "char_end": 636,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 148,
+      "token_end": 150
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.6115576028823853,
+      "wrong_score": -0.6354926824569702,
+      "right_score": -0.023935087025165558
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Despite their extensive academic"
+      ],
+      "u": -1.5385541915893555,
+      "margin": 0.9269965887069702,
+      "wrong_score": -0.019474076107144356,
+      "right_score": -0.9464706778526306
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.6610418558120728,
+      "margin": 0.04948422312736511,
+      "wrong_score": -0.17063739895820618,
+      "right_score": -0.2201216220855713
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Despite their extensive academic",
+        "never"
+      ],
+      "u": -1.1485474109649658,
+      "margin": 0.5369898676872253,
+      "wrong_score": -0.06801728904247284,
+      "right_score": -0.6050071716308594
+    }
+  ],
+  "single_u": [
+    -1.5385541915893555,
+    -0.6610418558120728
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Despite their extensive academic",
+        "never"
+      ],
+      "u_i": -1.5385541915893555,
+      "u_j": -0.6610418558120728,
+      "local_fd": 1.0510486364364624,
+      "banzhaf": 1.0510486364364624,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Despite their extensive academic",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 1.0510486364364624
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5369898676872253,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

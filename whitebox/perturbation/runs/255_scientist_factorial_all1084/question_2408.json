@@ -1,0 +1,290 @@
+{
+  "key": "question_2408",
+  "group": "Q234949",
+  "generation_correct": true,
+  "right": "David Baltimore",
+  "wrong": "Frances Arnold",
+  "base_margin_wrong_minus_right": 1.0222336053848267,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 124,
+      "char_end": 154,
+      "text": "This biochemist and university",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biochemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 54,
+      "token_end": 61
+    },
+    {
+      "char_start": 270,
+      "char_end": 292,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 82,
+      "token_end": 88
+    },
+    {
+      "char_start": 335,
+      "char_end": 363,
+      "text": "the American Association for",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Association for the Advancement of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 97,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.0222336053848267,
+      "wrong_score": -0.04461076483130455,
+      "right_score": -1.0668443441390991
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This biochemist and university"
+      ],
+      "u": -0.303464412689209,
+      "margin": 1.3256980180740356,
+      "wrong_score": -0.02784089744091034,
+      "right_score": -1.3535388708114624
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.3752964735031128,
+      "margin": 1.3975300788879395,
+      "wrong_score": -0.04197949171066284,
+      "right_score": -1.439509630203247
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This biochemist and university",
+        "Fellow of the American"
+      ],
+      "u": -0.3657369613647461,
+      "margin": 1.3879705667495728,
+      "wrong_score": -0.027262207120656967,
+      "right_score": -1.41523277759552
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the American Association for"
+      ],
+      "u": -0.30311453342437744,
+      "margin": 1.325348138809204,
+      "wrong_score": -0.03487329185009003,
+      "right_score": -1.3602213859558105
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This biochemist and university",
+        "the American Association for"
+      ],
+      "u": -0.00643610954284668,
+      "margin": 1.0286697149276733,
+      "wrong_score": -0.04466060921549797,
+      "right_score": -1.073330283164978
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the American Association for"
+      ],
+      "u": 0.11318683624267578,
+      "margin": 0.9090467691421509,
+      "wrong_score": -0.06737425923347473,
+      "right_score": -0.976421058177948
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This biochemist and university",
+        "Fellow of the American",
+        "the American Association for"
+      ],
+      "u": 0.28531408309936523,
+      "margin": 0.7369195222854614,
+      "wrong_score": -0.11230435967445374,
+      "right_score": -0.8492238521575928
+    }
+  ],
+  "single_u": [
+    -0.303464412689209,
+    -0.3752964735031128,
+    -0.30311453342437744
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This biochemist and university",
+        "Fellow of the American"
+      ],
+      "u_i": -0.303464412689209,
+      "u_j": -0.3752964735031128,
+      "local_fd": 0.3130239248275757,
+      "banzhaf": 0.09423637390136719,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This biochemist and university",
+        "the American Association for"
+      ],
+      "u_i": -0.303464412689209,
+      "u_j": -0.30311453342437744,
+      "local_fd": 0.6001428365707397,
+      "banzhaf": 0.38135528564453125,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the American",
+        "the American Association for"
+      ],
+      "u_i": -0.3752964735031128,
+      "u_j": -0.30311453342437744,
+      "local_fd": 0.791597843170166,
+      "banzhaf": 0.5728102922439575,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the American Association for"
+      ],
+      "order": 2,
+      "harsanyi": 0.791597843170166
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This biochemist and university",
+        "the American Association for"
+      ],
+      "order": 2,
+      "harsanyi": 0.6001428365707397
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This biochemist and university",
+        "Fellow of the American",
+        "the American Association for"
+      ],
+      "order": 3,
+      "harsanyi": -0.437575101852417
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This biochemist and university",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.3130239248275757
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7369195222854614,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

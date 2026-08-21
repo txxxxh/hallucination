@@ -1,0 +1,144 @@
+{
+  "key": "question_2761",
+  "group": "Q44481",
+  "generation_correct": false,
+  "right": "Pierre-Simon Laplace",
+  "wrong": "Joseph Louis Gay-Lussac",
+  "base_margin_wrong_minus_right": -0.541707456111908,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 210,
+      "char_end": 229,
+      "text": "as the president of",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "president",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 78,
+      "token_end": 82
+    },
+    {
+      "char_start": 331,
+      "char_end": 351,
+      "text": "the Legion of Honour",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight of the Legion of Honour",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 105
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.541707456111908,
+      "wrong_score": -0.5520355701446533,
+      "right_score": -0.01032811775803566
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as the president of"
+      ],
+      "u": -0.06256487965583801,
+      "margin": -0.47914257645606995,
+      "wrong_score": -0.5061010718345642,
+      "right_score": -0.026958486065268517
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Legion of Honour"
+      ],
+      "u": -0.10423696041107178,
+      "margin": -0.4374704957008362,
+      "wrong_score": -0.4671478271484375,
+      "right_score": -0.029677346348762512
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the president of",
+        "the Legion of Honour"
+      ],
+      "u": -0.22925788164138794,
+      "margin": -0.31244957447052,
+      "wrong_score": -0.3736482262611389,
+      "right_score": -0.0611986368894577
+    }
+  ],
+  "single_u": [
+    -0.06256487965583801,
+    -0.10423696041107178
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as the president of",
+        "the Legion of Honour"
+      ],
+      "u_i": -0.06256487965583801,
+      "u_j": -0.10423696041107178,
+      "local_fd": -0.06245604157447815,
+      "banzhaf": -0.06245604157447815,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the president of",
+        "the Legion of Honour"
+      ],
+      "order": 2,
+      "harsanyi": -0.06245604157447815
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.31244957447052,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

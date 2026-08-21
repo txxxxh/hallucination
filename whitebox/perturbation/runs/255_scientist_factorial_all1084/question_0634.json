@@ -1,0 +1,298 @@
+{
+  "key": "question_0634",
+  "group": "Q9021",
+  "generation_correct": false,
+  "right": "Max Planck",
+  "wrong": "Albert Einstein",
+  "base_margin_wrong_minus_right": -4.500353813171387,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 158,
+      "char_end": 195,
+      "text": "philosopher, and university professor",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "professor",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 57,
+      "token_end": 65
+    },
+    {
+      "char_start": 413,
+      "char_end": 435,
+      "text": "in Physics, the Copley",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 107,
+      "token_end": 112
+    },
+    {
+      "char_start": 463,
+      "char_end": 478,
+      "text": "and the Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 118,
+      "token_end": 123
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -4.500353813171387,
+      "wrong_score": -4.501093864440918,
+      "right_score": -0.0007401234470307827
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "philosopher, and university professor"
+      ],
+      "u": 0.12527990341186523,
+      "margin": -4.625633716583252,
+      "wrong_score": -4.627527713775635,
+      "right_score": -0.0018941331654787064
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Physics, the Copley"
+      ],
+      "u": -2.8680245876312256,
+      "margin": -1.6323292255401611,
+      "wrong_score": -1.65675687789917,
+      "right_score": -0.024427693337202072
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "philosopher, and university professor",
+        "in Physics, the Copley"
+      ],
+      "u": -2.120450019836426,
+      "margin": -2.379903793334961,
+      "wrong_score": -2.387625217437744,
+      "right_score": -0.007721439935266972
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Pour le"
+      ],
+      "u": -4.379363536834717,
+      "margin": -0.12099036574363708,
+      "wrong_score": -0.36271926760673523,
+      "right_score": -0.24172890186309814
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "philosopher, and university professor",
+        "and the Pour le"
+      ],
+      "u": -3.4786078929901123,
+      "margin": -1.0217459201812744,
+      "wrong_score": -1.0862672328948975,
+      "right_score": -0.06452129036188126
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Physics, the Copley",
+        "and the Pour le"
+      ],
+      "u": -4.521123886108398,
+      "margin": 0.02076992392539978,
+      "wrong_score": -0.31105974316596985,
+      "right_score": -0.33182966709136963
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "philosopher, and university professor",
+        "in Physics, the Copley",
+        "and the Pour le"
+      ],
+      "u": -3.942951202392578,
+      "margin": -0.5574027299880981,
+      "wrong_score": -0.6725335121154785,
+      "right_score": -0.11513081192970276
+    }
+  ],
+  "single_u": [
+    0.12527990341186523,
+    -2.8680245876312256,
+    -4.379363536834717
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "philosopher, and university professor",
+        "in Physics, the Copley"
+      ],
+      "u_i": 0.12527990341186523,
+      "u_j": -2.8680245876312256,
+      "local_fd": 0.6222946643829346,
+      "banzhaf": 0.14985597133636475,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "philosopher, and university professor",
+        "and the Pour le"
+      ],
+      "u_i": 0.12527990341186523,
+      "u_j": -4.379363536834717,
+      "local_fd": 0.7754757404327393,
+      "banzhaf": 0.3030369281768799,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "in Physics, the Copley",
+        "and the Pour le"
+      ],
+      "u_i": -2.8680245876312256,
+      "u_j": -4.379363536834717,
+      "local_fd": 2.726264238357544,
+      "banzhaf": 2.2538254261016846,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Physics, the Copley",
+        "and the Pour le"
+      ],
+      "order": 2,
+      "harsanyi": 2.726264238357544
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "philosopher, and university professor",
+        "in Physics, the Copley",
+        "and the Pour le"
+      ],
+      "order": 3,
+      "harsanyi": -0.9448776245117188
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "philosopher, and university professor",
+        "and the Pour le"
+      ],
+      "order": 2,
+      "harsanyi": 0.7754757404327393
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "philosopher, and university professor",
+        "in Physics, the Copley"
+      ],
+      "order": 2,
+      "harsanyi": 0.6222946643829346
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "philosopher, and university professor"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.5574027299880981,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

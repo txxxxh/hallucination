@@ -1,0 +1,144 @@
+{
+  "key": "question_2697",
+  "group": "Q900837",
+  "generation_correct": true,
+  "right": "Richard Zare",
+  "wrong": "Dorothy Hodgkin",
+  "base_margin_wrong_minus_right": -0.06808154284954071,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 180,
+      "char_end": 204,
+      "text": "to the chemical sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 66
+    },
+    {
+      "char_start": 347,
+      "char_end": 367,
+      "text": "by the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 89,
+      "token_end": 93
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.06808154284954071,
+      "wrong_score": -0.23027220368385315,
+      "right_score": -0.16219066083431244
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "to the chemical sciences"
+      ],
+      "u": 0.48798519372940063,
+      "margin": -0.5560667514801025,
+      "wrong_score": -0.6078162789344788,
+      "right_score": -0.05174953490495682
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "by the Royal Society"
+      ],
+      "u": 0.5709946155548096,
+      "margin": -0.6390761733055115,
+      "wrong_score": -0.6692333817481995,
+      "right_score": -0.030157214030623436
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the chemical sciences",
+        "by the Royal Society"
+      ],
+      "u": 0.5448837876319885,
+      "margin": -0.6129653453826904,
+      "wrong_score": -0.7022449374198914,
+      "right_score": -0.08927962183952332
+    }
+  ],
+  "single_u": [
+    0.48798519372940063,
+    0.5709946155548096
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "to the chemical sciences",
+        "by the Royal Society"
+      ],
+      "u_i": 0.48798519372940063,
+      "u_j": 0.5709946155548096,
+      "local_fd": -0.5140960216522217,
+      "banzhaf": -0.5140960216522217,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the chemical sciences",
+        "by the Royal Society"
+      ],
+      "order": 2,
+      "harsanyi": -0.5140960216522217
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6129653453826904,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

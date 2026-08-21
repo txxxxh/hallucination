@@ -1,0 +1,312 @@
+{
+  "key": "question_0524",
+  "group": "Q60066",
+  "generation_correct": true,
+  "right": "Gerhard Ertl",
+  "wrong": "Klaus von Klitzing",
+  "base_margin_wrong_minus_right": 0.1548430323600769,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 188,
+      "char_end": 215,
+      "text": "the Technical University of",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Technical University of Munich",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 67,
+      "token_end": 75
+    },
+    {
+      "char_start": 403,
+      "char_end": 432,
+      "text": "Bavarian Maximilian Order for",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Bavarian Maximilian Order for Science and Art",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 121
+    },
+    {
+      "char_start": 433,
+      "char_end": 454,
+      "text": "Science and Art. They",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Austrian Decoration for Science and Art",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 122,
+      "token_end": 129
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.1548430323600769,
+      "wrong_score": -0.07559449970722198,
+      "right_score": -0.2304375320672989
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Technical University of"
+      ],
+      "u": 0.11887829005718231,
+      "margin": 0.03596474230289459,
+      "wrong_score": -0.13544854521751404,
+      "right_score": -0.17141328752040863
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Bavarian Maximilian Order for"
+      ],
+      "u": 0.07794351875782013,
+      "margin": 0.07689951360225677,
+      "wrong_score": -0.12175273895263672,
+      "right_score": -0.1986522525548935
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Technical University of",
+        "Bavarian Maximilian Order for"
+      ],
+      "u": 0.3582451045513153,
+      "margin": -0.2034020721912384,
+      "wrong_score": -0.28047165274620056,
+      "right_score": -0.07706958055496216
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Science and Art. They"
+      ],
+      "u": -0.294975221157074,
+      "margin": 0.4498182535171509,
+      "wrong_score": -0.03503081202507019,
+      "right_score": -0.48484906554222107
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Technical University of",
+        "Science and Art. They"
+      ],
+      "u": 0.1651444286108017,
+      "margin": -0.010301396250724792,
+      "wrong_score": -0.16229087114334106,
+      "right_score": -0.15198947489261627
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Bavarian Maximilian Order for",
+        "Science and Art. They"
+      ],
+      "u": -0.273648202419281,
+      "margin": 0.4284912347793579,
+      "wrong_score": -0.03622137010097504,
+      "right_score": -0.46471258997917175
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Technical University of",
+        "Bavarian Maximilian Order for",
+        "Science and Art. They"
+      ],
+      "u": -0.011824458837509155,
+      "margin": 0.16666749119758606,
+      "wrong_score": -0.14449471235275269,
+      "right_score": -0.31116220355033875
+    }
+  ],
+  "single_u": [
+    0.11887829005718231,
+    0.07794351875782013,
+    -0.294975221157074
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Technical University of",
+        "Bavarian Maximilian Order for"
+      ],
+      "u_i": 0.11887829005718231,
+      "u_j": 0.07794351875782013,
+      "local_fd": 0.16142329573631287,
+      "banzhaf": -0.018436305224895477,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Technical University of",
+        "Science and Art. They"
+      ],
+      "u_i": 0.11887829005718231,
+      "u_j": -0.294975221157074,
+      "local_fd": 0.34124135971069336,
+      "banzhaf": 0.16138175129890442,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Bavarian Maximilian Order for",
+        "Science and Art. They"
+      ],
+      "u_i": 0.07794351875782013,
+      "u_j": -0.294975221157074,
+      "local_fd": -0.05661648511886597,
+      "banzhaf": -0.2364760935306549,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Technical University of",
+        "Bavarian Maximilian Order for",
+        "Science and Art. They"
+      ],
+      "order": 3,
+      "harsanyi": -0.3597192019224167
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Technical University of",
+        "Science and Art. They"
+      ],
+      "order": 2,
+      "harsanyi": 0.34124135971069336
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Technical University of",
+        "Bavarian Maximilian Order for"
+      ],
+      "order": 2,
+      "harsanyi": 0.16142329573631287
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Bavarian Maximilian Order for",
+        "Science and Art. They"
+      ],
+      "order": 2,
+      "harsanyi": -0.05661650002002716
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Technical University of",
+        "Bavarian Maximilian Order for"
+      ]
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Technical University of",
+        "Science and Art. They"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.16666749119758606,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

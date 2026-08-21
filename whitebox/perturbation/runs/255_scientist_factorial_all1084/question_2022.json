@@ -1,0 +1,146 @@
+{
+  "key": "question_2022",
+  "group": "Q899517",
+  "generation_correct": false,
+  "right": "Allen J. Bard",
+  "wrong": "Dudley R. Herschbach",
+  "base_margin_wrong_minus_right": 0.26610851287841797,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 155,
+      "char_end": 185,
+      "text": "educated at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 70
+    },
+    {
+      "char_start": 349,
+      "char_end": 377,
+      "text": "including the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 100,
+      "token_end": 106
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.26610851287841797,
+      "wrong_score": -0.04526200145483017,
+      "right_score": -0.31137052178382874
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Harvard University"
+      ],
+      "u": 0.03935059905052185,
+      "margin": 0.22675791382789612,
+      "wrong_score": -0.07417204231023788,
+      "right_score": -0.3009299635887146
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the National Medal"
+      ],
+      "u": -0.49364733695983887,
+      "margin": 0.7597558498382568,
+      "wrong_score": -0.018261700868606567,
+      "right_score": -0.7780175805091858
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "including the National Medal"
+      ],
+      "u": -0.13181737065315247,
+      "margin": 0.39792588353157043,
+      "wrong_score": -0.05389276519417763,
+      "right_score": -0.45181864500045776
+    }
+  ],
+  "single_u": [
+    0.03935059905052185,
+    -0.49364733695983887
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Harvard University",
+        "including the National Medal"
+      ],
+      "u_i": 0.03935059905052185,
+      "u_j": -0.49364733695983887,
+      "local_fd": 0.32247936725616455,
+      "banzhaf": 0.32247936725616455,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Harvard University",
+        "including the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.32247936725616455
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.39792588353157043,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

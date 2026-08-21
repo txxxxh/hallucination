@@ -1,0 +1,302 @@
+{
+  "key": "question_0147",
+  "group": "Q132537",
+  "generation_correct": true,
+  "right": "Robert Oppenheimer",
+  "wrong": "Enrico Fermi",
+  "base_margin_wrong_minus_right": -0.15626007318496704,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 333,
+      "char_end": 360,
+      "text": "the University of Göttingen",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Göttingen",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 95,
+      "token_end": 100
+    },
+    {
+      "char_start": 441,
+      "char_end": 463,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 115,
+      "token_end": 120
+    },
+    {
+      "char_start": 487,
+      "char_end": 508,
+      "text": "Foreign Member of the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 123,
+      "token_end": 130
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.15626007318496704,
+      "wrong_score": -0.2685123383998871,
+      "right_score": -0.11225227266550064
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Göttingen"
+      ],
+      "u": 5.8710575103759766e-06,
+      "margin": -0.15626594424247742,
+      "wrong_score": -0.2921753227710724,
+      "right_score": -0.13590937852859497
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.1562526822090149,
+      "margin": -0.31251275539398193,
+      "wrong_score": -0.3826240301132202,
+      "right_score": -0.07011128216981888
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "Fellow of the American"
+      ],
+      "u": 0.06250815093517303,
+      "margin": -0.21876822412014008,
+      "wrong_score": -0.32238316535949707,
+      "right_score": -0.103614941239357
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Foreign Member of the"
+      ],
+      "u": -0.3124959468841553,
+      "margin": 0.15623588860034943,
+      "wrong_score": -0.13416148722171783,
+      "right_score": -0.29039737582206726
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "Foreign Member of the"
+      ],
+      "u": -0.09373661875724792,
+      "margin": -0.06252345442771912,
+      "wrong_score": -0.21546824276447296,
+      "right_score": -0.15294478833675385
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "u": -0.062495410442352295,
+      "margin": -0.09376466274261475,
+      "wrong_score": -0.23018385469913483,
+      "right_score": -0.13641919195652008
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "u": -0.03122982382774353,
+      "margin": -0.1250302493572235,
+      "wrong_score": -0.25167346000671387,
+      "right_score": -0.12664321064949036
+    }
+  ],
+  "single_u": [
+    5.8710575103759766e-06,
+    0.1562526822090149,
+    -0.3124959468841553
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Göttingen",
+        "Fellow of the American"
+      ],
+      "u_i": 5.8710575103759766e-06,
+      "u_j": 0.1562526822090149,
+      "local_fd": -0.09375040233135223,
+      "banzhaf": -0.140622079372406,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the University of Göttingen",
+        "Foreign Member of the"
+      ],
+      "u_i": 5.8710575103759766e-06,
+      "u_j": -0.3124959468841553,
+      "local_fd": 0.21875345706939697,
+      "banzhaf": 0.1718817949295044,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "u_i": 0.1562526822090149,
+      "u_j": -0.3124959468841553,
+      "local_fd": 0.09374785423278809,
+      "banzhaf": 0.04687618464231491,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "Foreign Member of the"
+      ],
+      "order": 2,
+      "harsanyi": 0.21875345706939697
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.09375040233135223
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "order": 2,
+      "harsanyi": 0.09374785423278809
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "order": 3,
+      "harsanyi": -0.09374333918094635
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "Fellow of the American"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.1250302493572235,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

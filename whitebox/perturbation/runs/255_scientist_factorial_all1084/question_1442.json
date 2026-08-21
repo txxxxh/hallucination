@@ -1,0 +1,289 @@
+{
+  "key": "question_1442",
+  "group": "Q779433",
+  "generation_correct": true,
+  "right": "Sidney Drell",
+  "wrong": "Ernest Lawrence",
+  "base_margin_wrong_minus_right": -3.0427184104919434,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 155,
+      "char_end": 185,
+      "text": "university teacher, whose life",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 66
+    },
+    {
+      "char_start": 186,
+      "char_end": 208,
+      "text": "concluded in Palo Alto",
+      "kind": "attribute",
+      "field": "place_of_death",
+      "value": "Palo Alto",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 65,
+      "token_end": 69
+    },
+    {
+      "char_start": 413,
+      "char_end": 432,
+      "text": "Academy of Arts and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 106,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -3.0427184104919434,
+      "wrong_score": -3.043713331222534,
+      "right_score": -0.0009949445957317948
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher, whose life"
+      ],
+      "u": 0.1692667007446289,
+      "margin": -3.2119851112365723,
+      "wrong_score": -3.2145471572875977,
+      "right_score": -0.002562097739428282
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "concluded in Palo Alto"
+      ],
+      "u": -0.12277483940124512,
+      "margin": -2.9199435710906982,
+      "wrong_score": -2.921933174133301,
+      "right_score": -0.001989549258723855
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher, whose life",
+        "concluded in Palo Alto"
+      ],
+      "u": -0.2054743766784668,
+      "margin": -2.8372440338134766,
+      "wrong_score": -2.8419127464294434,
+      "right_score": -0.004668795503675938
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Academy of Arts and"
+      ],
+      "u": -0.6656081676483154,
+      "margin": -2.377110242843628,
+      "wrong_score": -2.380309581756592,
+      "right_score": -0.003199234837666154
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher, whose life",
+        "Academy of Arts and"
+      ],
+      "u": 0.376708984375,
+      "margin": -3.4194273948669434,
+      "wrong_score": -3.4208927154541016,
+      "right_score": -0.001465206267312169
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "concluded in Palo Alto",
+        "Academy of Arts and"
+      ],
+      "u": -0.33283019065856934,
+      "margin": -2.709888219833374,
+      "wrong_score": -2.7114830017089844,
+      "right_score": -0.0015948887448757887
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher, whose life",
+        "concluded in Palo Alto",
+        "Academy of Arts and"
+      ],
+      "u": -0.08205509185791016,
+      "margin": -2.960663318634033,
+      "wrong_score": -2.962131977081299,
+      "right_score": -0.001468674628995359
+    }
+  ],
+  "single_u": [
+    0.1692667007446289,
+    -0.12277483940124512,
+    -0.6656081676483154
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher, whose life",
+        "concluded in Palo Alto"
+      ],
+      "u_i": 0.1692667007446289,
+      "u_j": -0.12277483940124512,
+      "local_fd": -0.2519662380218506,
+      "banzhaf": -0.5217541456222534,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher, whose life",
+        "Academy of Arts and"
+      ],
+      "u_i": 0.1692667007446289,
+      "u_j": -0.6656081676483154,
+      "local_fd": 0.8730504512786865,
+      "banzhaf": 0.6032625436782837,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "concluded in Palo Alto",
+        "Academy of Arts and"
+      ],
+      "u_i": -0.12277483940124512,
+      "u_j": -0.6656081676483154,
+      "local_fd": 0.4555528163909912,
+      "banzhaf": 0.18576490879058838,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher, whose life",
+        "Academy of Arts and"
+      ],
+      "order": 2,
+      "harsanyi": 0.8730504512786865
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher, whose life",
+        "concluded in Palo Alto",
+        "Academy of Arts and"
+      ],
+      "order": 3,
+      "harsanyi": -0.5395758152008057
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "concluded in Palo Alto",
+        "Academy of Arts and"
+      ],
+      "order": 2,
+      "harsanyi": 0.4555528163909912
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher, whose life",
+        "concluded in Palo Alto"
+      ],
+      "order": 2,
+      "harsanyi": -0.2519662380218506
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -2.960663318634033,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

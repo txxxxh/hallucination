@@ -1,0 +1,311 @@
+{
+  "key": "question_1625",
+  "group": "Q201513",
+  "generation_correct": true,
+  "right": "Edward Witten",
+  "wrong": "David Gross",
+  "base_margin_wrong_minus_right": 0.32632341980934143,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 228,
+      "char_end": 264,
+      "text": "understanding of fundamental physics",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Breakthrough Prize in Fundamental Physics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 70,
+      "token_end": 79
+    },
+    {
+      "char_start": 479,
+      "char_end": 502,
+      "text": "made an honorary doctor",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctor of Harvard University",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 121,
+      "token_end": 125
+    },
+    {
+      "char_start": 503,
+      "char_end": 525,
+      "text": "of the Chinese Academy",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctor of the Chinese Academy of Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 125,
+      "token_end": 129
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.32632341980934143,
+      "wrong_score": -0.1455916464328766,
+      "right_score": -0.471915066242218
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "understanding of fundamental physics"
+      ],
+      "u": 1.1902952194213867,
+      "margin": -0.8639718294143677,
+      "wrong_score": -0.9630229473114014,
+      "right_score": -0.09905114024877548
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "made an honorary doctor"
+      ],
+      "u": -0.030169695615768433,
+      "margin": 0.35649311542510986,
+      "wrong_score": -0.1530456691980362,
+      "right_score": -0.5095387697219849
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "understanding of fundamental physics",
+        "made an honorary doctor"
+      ],
+      "u": 1.0508884191513062,
+      "margin": -0.7245650291442871,
+      "wrong_score": -0.824855387210846,
+      "right_score": -0.10029035806655884
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "of the Chinese Academy"
+      ],
+      "u": -0.2619227468967438,
+      "margin": 0.5882461667060852,
+      "wrong_score": -0.11117087304592133,
+      "right_score": -0.6994170546531677
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "understanding of fundamental physics",
+        "of the Chinese Academy"
+      ],
+      "u": 0.25086161494255066,
+      "margin": 0.07546180486679077,
+      "wrong_score": -0.35927528142929077,
+      "right_score": -0.43473708629608154
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "made an honorary doctor",
+        "of the Chinese Academy"
+      ],
+      "u": 0.09813456237316132,
+      "margin": 0.22818885743618011,
+      "wrong_score": -0.2136537879705429,
+      "right_score": -0.441842645406723
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "understanding of fundamental physics",
+        "made an honorary doctor",
+        "of the Chinese Academy"
+      ],
+      "u": 1.2052546739578247,
+      "margin": -0.8789312243461609,
+      "wrong_score": -0.9977036118507385,
+      "right_score": -0.11877237260341644
+    }
+  ],
+  "single_u": [
+    1.1902952194213867,
+    -0.030169695615768433,
+    -0.2619227468967438
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "understanding of fundamental physics",
+        "made an honorary doctor"
+      ],
+      "u_i": 1.1902952194213867,
+      "u_j": -0.030169695615768433,
+      "local_fd": -0.10923710465431213,
+      "banzhaf": 0.24254928529262543,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "understanding of fundamental physics",
+        "of the Chinese Academy"
+      ],
+      "u_i": 1.1902952194213867,
+      "u_j": -0.2619227468967438,
+      "local_fd": -0.6775108575820923,
+      "banzhaf": -0.32572442293167114,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "made an honorary doctor",
+        "of the Chinese Academy"
+      ],
+      "u_i": -0.030169695615768433,
+      "u_j": -0.2619227468967438,
+      "local_fd": 0.3902270197868347,
+      "banzhaf": 0.7420134544372559,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "understanding of fundamental physics",
+        "made an honorary doctor",
+        "of the Chinese Academy"
+      ],
+      "order": 3,
+      "harsanyi": 0.7035728543996811
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "understanding of fundamental physics",
+        "of the Chinese Academy"
+      ],
+      "order": 2,
+      "harsanyi": -0.6775108575820923
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "made an honorary doctor",
+        "of the Chinese Academy"
+      ],
+      "order": 2,
+      "harsanyi": 0.3902270048856735
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "understanding of fundamental physics",
+        "made an honorary doctor"
+      ],
+      "order": 2,
+      "harsanyi": -0.10923710465431213
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "understanding of fundamental physics"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "understanding of fundamental physics"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "made an honorary doctor"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.8789312243461609,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

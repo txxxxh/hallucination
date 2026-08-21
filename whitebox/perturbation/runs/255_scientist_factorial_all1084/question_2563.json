@@ -1,0 +1,145 @@
+{
+  "key": "question_2563",
+  "group": "Q183337",
+  "generation_correct": true,
+  "right": "David Attenborough",
+  "wrong": "Louis Agassiz",
+  "base_margin_wrong_minus_right": -2.0625321865081787,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 219,
+      "char_end": 239,
+      "text": "of the natural world",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Natural World Book Prize",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 77,
+      "token_end": 82
+    },
+    {
+      "char_start": 254,
+      "char_end": 276,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 83,
+      "token_end": 87
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.0625321865081787,
+      "wrong_score": -2.064199686050415,
+      "right_score": -0.0016674961661919951
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "of the natural world"
+      ],
+      "u": -0.4687223434448242,
+      "margin": -1.5938098430633545,
+      "wrong_score": -1.617487907409668,
+      "right_score": -0.023678114637732506
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.7187408208847046,
+      "margin": -1.3437913656234741,
+      "wrong_score": -1.367637038230896,
+      "right_score": -0.023845696821808815
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the natural world",
+        "Fellow of the American"
+      ],
+      "u": -1.2812755107879639,
+      "margin": -0.7812566757202148,
+      "wrong_score": -0.8533484935760498,
+      "right_score": -0.07209178805351257
+    }
+  ],
+  "single_u": [
+    -0.4687223434448242,
+    -0.7187408208847046
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "of the natural world",
+        "Fellow of the American"
+      ],
+      "u_i": -0.4687223434448242,
+      "u_j": -0.7187408208847046,
+      "local_fd": -0.09381234645843506,
+      "banzhaf": -0.09381234645843506,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the natural world",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.09381234645843506
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.7812566757202148,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

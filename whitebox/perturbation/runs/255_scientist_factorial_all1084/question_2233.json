@@ -1,0 +1,309 @@
+{
+  "key": "question_2233",
+  "group": "Q201513",
+  "generation_correct": true,
+  "right": "Edward Witten",
+  "wrong": "Theodor Wolfgang Hänsch",
+  "base_margin_wrong_minus_right": 0.08142010867595673,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 131,
+      "char_end": 163,
+      "text": "This distinguished physicist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 59,
+      "token_end": 66
+    },
+    {
+      "char_start": 164,
+      "char_end": 191,
+      "text": "university teacher has made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 65,
+      "token_end": 72
+    },
+    {
+      "char_start": 315,
+      "char_end": 337,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 94,
+      "token_end": 99
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.08142010867595673,
+      "wrong_score": -0.14815764129161835,
+      "right_score": -0.22957774996757507
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist and"
+      ],
+      "u": 0.4741453528404236,
+      "margin": -0.39272525906562805,
+      "wrong_score": -0.4902566373348236,
+      "right_score": -0.09753137081861496
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher has made"
+      ],
+      "u": 0.09607002139091492,
+      "margin": -0.014649912714958191,
+      "wrong_score": -0.22424176335334778,
+      "right_score": -0.2095918506383896
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher has made"
+      ],
+      "u": -0.47853899002075195,
+      "margin": 0.5599591135978699,
+      "wrong_score": -0.05396144837141037,
+      "right_score": -0.6139205694198608
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.1629779189825058,
+      "margin": 0.24439802765846252,
+      "wrong_score": -0.13244780898094177,
+      "right_score": -0.3768458366394043
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "Fellow of the American"
+      ],
+      "u": 0.0038690567016601562,
+      "margin": 0.07755105197429657,
+      "wrong_score": -0.22201143205165863,
+      "right_score": -0.2995624840259552
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "Fellow of the American"
+      ],
+      "u": 0.10397469997406006,
+      "margin": -0.022554591298103333,
+      "wrong_score": -0.20582978427410126,
+      "right_score": -0.18327519297599792
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher has made",
+        "Fellow of the American"
+      ],
+      "u": 0.009608730673789978,
+      "margin": 0.07181137800216675,
+      "wrong_score": -0.15763309597969055,
+      "right_score": -0.2294444739818573
+    }
+  ],
+  "single_u": [
+    0.4741453528404236,
+    0.09607002139091492,
+    -0.1629779189825058
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher has made"
+      ],
+      "u_i": 0.4741453528404236,
+      "u_j": 0.09607002139091492,
+      "local_fd": -1.048754334449768,
+      "banzhaf": -0.654983639717102,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished physicist and",
+        "Fellow of the American"
+      ],
+      "u_i": 0.4741453528404236,
+      "u_j": -0.1629779189825058,
+      "local_fd": -0.30729836225509644,
+      "banzhaf": 0.08647234737873077,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "university teacher has made",
+        "Fellow of the American"
+      ],
+      "u_i": 0.09607002139091492,
+      "u_j": -0.1629779189825058,
+      "local_fd": 0.17088259756565094,
+      "banzhaf": 0.5646533370018005,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher has made"
+      ],
+      "order": 2,
+      "harsanyi": -1.0487543642520905
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "university teacher has made",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.7875414192676544
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist and",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.30729837715625763
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.17088259756565094
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist and"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher has made"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.07181137800216675,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

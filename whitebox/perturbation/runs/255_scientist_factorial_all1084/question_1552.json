@@ -1,0 +1,152 @@
+{
+  "key": "question_1552",
+  "group": "Q103598",
+  "generation_correct": true,
+  "right": "Luc Montagnier",
+  "wrong": "Christiane Nüsslein-Volhard",
+  "base_margin_wrong_minus_right": -0.8112008571624756,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 176,
+      "char_end": 194,
+      "text": "of the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 79,
+      "token_end": 81
+    },
+    {
+      "char_start": 222,
+      "char_end": 249,
+      "text": "the Louis-Jeantet Prize for",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Louis-Jeantet Prize for Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 86,
+      "token_end": 93
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.8112008571624756,
+      "wrong_score": -0.8137751817703247,
+      "right_score": -0.002574329962953925
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "of the Nobel Prize"
+      ],
+      "u": -0.4555080831050873,
+      "margin": -0.3556927740573883,
+      "wrong_score": -0.400084525346756,
+      "right_score": -0.04439176246523857
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Louis-Jeantet Prize for"
+      ],
+      "u": -3.1451406478881836,
+      "margin": 2.333939790725708,
+      "wrong_score": -0.006009929813444614,
+      "right_score": -2.339949607849121
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the Nobel Prize",
+        "the Louis-Jeantet Prize for"
+      ],
+      "u": -2.9271492958068848,
+      "margin": 2.115948438644409,
+      "wrong_score": -0.005250468384474516,
+      "right_score": -2.121198892593384
+    }
+  ],
+  "single_u": [
+    -0.4555080831050873,
+    -3.1451406478881836
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "of the Nobel Prize",
+        "the Louis-Jeantet Prize for"
+      ],
+      "u_i": -0.4555080831050873,
+      "u_j": -3.1451406478881836,
+      "local_fd": 0.673499345779419,
+      "banzhaf": 0.673499345779419,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the Nobel Prize",
+        "the Louis-Jeantet Prize for"
+      ],
+      "order": 2,
+      "harsanyi": 0.6734994351863861
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 2.115948438644409,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

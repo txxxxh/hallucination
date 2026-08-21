@@ -1,0 +1,307 @@
+{
+  "key": "question_1846",
+  "group": "Q910163",
+  "generation_correct": true,
+  "right": "Jean-Pierre Changeux",
+  "wrong": "Shinya Yamanaka",
+  "base_margin_wrong_minus_right": 0.025017857551574707,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 207,
+      "char_end": 247,
+      "text": "their significant research contributions",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Robert J. and Claire Pasarow Foundation Award for Distinguished Contributions to Neuropsychiatric Research",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 73,
+      "token_end": 83
+    },
+    {
+      "char_start": 335,
+      "char_end": 352,
+      "text": "as the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 101,
+      "token_end": 104
+    },
+    {
+      "char_start": 353,
+      "char_end": 376,
+      "text": "in Medicine, the Balzan",
+      "kind": "attribute",
+      "field": "field",
+      "value": "medicine",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 104,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.025017857551574707,
+      "wrong_score": -0.1338433027267456,
+      "right_score": -0.1588611602783203
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "their significant research contributions"
+      ],
+      "u": 0.5249939560890198,
+      "margin": -0.49997609853744507,
+      "wrong_score": -0.5321788787841797,
+      "right_score": -0.032202769070863724
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as the Wolf Prize"
+      ],
+      "u": 0.17496803402900696,
+      "margin": -0.14995017647743225,
+      "wrong_score": -0.2483067512512207,
+      "right_score": -0.09835657477378845
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "their significant research contributions",
+        "as the Wolf Prize"
+      ],
+      "u": 0.24999284744262695,
+      "margin": -0.22497498989105225,
+      "wrong_score": -0.3199179768562317,
+      "right_score": -0.09494298696517944
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "in Medicine, the Balzan"
+      ],
+      "u": -0.22501403093338013,
+      "margin": 0.25003188848495483,
+      "wrong_score": -0.08905692398548126,
+      "right_score": -0.3390887975692749
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "their significant research contributions",
+        "in Medicine, the Balzan"
+      ],
+      "u": -0.4250495433807373,
+      "margin": 0.450067400932312,
+      "wrong_score": -0.09002459049224854,
+      "right_score": -0.5400919914245605
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as the Wolf Prize",
+        "in Medicine, the Balzan"
+      ],
+      "u": -0.10003544390201569,
+      "margin": 0.1250533014535904,
+      "wrong_score": -0.1522643119096756,
+      "right_score": -0.277317613363266
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "their significant research contributions",
+        "as the Wolf Prize",
+        "in Medicine, the Balzan"
+      ],
+      "u": -0.3750437796115875,
+      "margin": 0.40006163716316223,
+      "wrong_score": -0.09078022092580795,
+      "right_score": -0.4908418655395508
+    }
+  ],
+  "single_u": [
+    0.5249939560890198,
+    0.17496803402900696,
+    -0.22501403093338013
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "their significant research contributions",
+        "as the Wolf Prize"
+      ],
+      "u_i": 0.5249939560890198,
+      "u_j": 0.17496803402900696,
+      "local_fd": -0.4499691426753998,
+      "banzhaf": -0.2624709904193878,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "their significant research contributions",
+        "in Medicine, the Balzan"
+      ],
+      "u_i": 0.5249939560890198,
+      "u_j": -0.22501403093338013,
+      "local_fd": -0.725029468536377,
+      "banzhaf": -0.537531316280365,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as the Wolf Prize",
+        "in Medicine, the Balzan"
+      ],
+      "u_i": 0.17496803402900696,
+      "u_j": -0.22501403093338013,
+      "local_fd": -0.04998946189880371,
+      "banzhaf": 0.13750872015953064,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "their significant research contributions",
+        "in Medicine, the Balzan"
+      ],
+      "order": 2,
+      "harsanyi": -0.725029468536377
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "their significant research contributions",
+        "as the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.4499691426753998
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "their significant research contributions",
+        "as the Wolf Prize",
+        "in Medicine, the Balzan"
+      ],
+      "order": 3,
+      "harsanyi": 0.3749963194131851
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as the Wolf Prize",
+        "in Medicine, the Balzan"
+      ],
+      "order": 2,
+      "harsanyi": -0.04998944699764252
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "their significant research contributions"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as the Wolf Prize"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.40006163716316223,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

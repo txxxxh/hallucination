@@ -1,0 +1,326 @@
+{
+  "key": "question_0154",
+  "group": "Q899517",
+  "generation_correct": false,
+  "right": "Allen J. Bard",
+  "wrong": "Roald Hoffmann",
+  "base_margin_wrong_minus_right": 0.005671009421348572,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 183,
+      "char_end": 214,
+      "text": "education at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 73
+    },
+    {
+      "char_start": 392,
+      "char_end": 420,
+      "text": "including the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 107,
+      "token_end": 113
+    },
+    {
+      "char_start": 454,
+      "char_end": 470,
+      "text": "the NAS Award in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 117,
+      "token_end": 120
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.005671009421348572,
+      "wrong_score": -0.17860981822013855,
+      "right_score": -0.18428082764148712
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "education at Harvard University"
+      ],
+      "u": 0.002173095941543579,
+      "margin": 0.0034979134798049927,
+      "wrong_score": -0.18329916894435883,
+      "right_score": -0.18679708242416382
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the National Medal"
+      ],
+      "u": -0.12113521993160248,
+      "margin": 0.12680622935295105,
+      "wrong_score": -0.12985238432884216,
+      "right_score": -0.2566586136817932
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the National Medal"
+      ],
+      "u": 0.15744923055171967,
+      "margin": -0.1517782211303711,
+      "wrong_score": -0.2940640449523926,
+      "right_score": -0.14228582382202148
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the NAS Award in"
+      ],
+      "u": 0.12931038439273834,
+      "margin": -0.12363937497138977,
+      "wrong_score": -0.2548760771751404,
+      "right_score": -0.1312367022037506
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "the NAS Award in"
+      ],
+      "u": -0.08972898125648499,
+      "margin": 0.09539999067783356,
+      "wrong_score": -0.1485818475484848,
+      "right_score": -0.24398183822631836
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "the NAS Award in"
+      ],
+      "u": 0.09799978137016296,
+      "margin": -0.09232877194881439,
+      "wrong_score": -0.22805927693843842,
+      "right_score": -0.13573050498962402
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the National Medal",
+        "the NAS Award in"
+      ],
+      "u": 0.09706445038318634,
+      "margin": -0.09139344096183777,
+      "wrong_score": -0.2330784946680069,
+      "right_score": -0.14168505370616913
+    }
+  ],
+  "single_u": [
+    0.002173095941543579,
+    -0.12113521993160248,
+    0.12931038439273834
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "education at Harvard University",
+        "including the National Medal"
+      ],
+      "u_i": 0.002173095941543579,
+      "u_j": -0.12113521993160248,
+      "local_fd": 0.27641135454177856,
+      "banzhaf": 0.24725769460201263,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "education at Harvard University",
+        "the NAS Award in"
+      ],
+      "u_i": 0.002173095941543579,
+      "u_j": 0.12931038439273834,
+      "local_fd": -0.2212124615907669,
+      "banzhaf": -0.25036612153053284,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the National Medal",
+        "the NAS Award in"
+      ],
+      "u_i": -0.12113521993160248,
+      "u_j": 0.12931038439273834,
+      "local_fd": 0.0898246169090271,
+      "banzhaf": 0.06067095696926117,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.27641135454177856
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "the NAS Award in"
+      ],
+      "order": 2,
+      "harsanyi": -0.2212124615907669
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "the NAS Award in"
+      ],
+      "order": 2,
+      "harsanyi": 0.0898246169090271
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the National Medal",
+        "the NAS Award in"
+      ],
+      "order": 3,
+      "harsanyi": -0.05830731987953186
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the NAS Award in"
+      ]
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the National Medal"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the National Medal"
+      ]
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "the NAS Award in"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.09139344096183777,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

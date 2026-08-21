@@ -1,0 +1,295 @@
+{
+  "key": "question_1633",
+  "group": "Q190697",
+  "generation_correct": false,
+  "right": "Claude Cohen-Tannoudji",
+  "wrong": "Karl Alexander Müller",
+  "base_margin_wrong_minus_right": -0.12618806958198547,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 358,
+      "char_end": 380,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 102
+    },
+    {
+      "char_start": 411,
+      "char_end": 428,
+      "text": "the Gold medal of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "CNRS Gold medal",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 107,
+      "token_end": 112
+    },
+    {
+      "char_start": 429,
+      "char_end": 458,
+      "text": "the Spanish National Research",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Gold medal of the Spanish National Research Council",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 111,
+      "token_end": 118
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.12618806958198547,
+      "wrong_score": -0.21503059566020966,
+      "right_score": -0.08884252607822418
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.43840980529785156,
+      "margin": 0.3122217357158661,
+      "wrong_score": -0.06405836343765259,
+      "right_score": -0.3762800991535187
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Gold medal of"
+      ],
+      "u": -0.5333293676376343,
+      "margin": 0.4071412682533264,
+      "wrong_score": -0.0500171072781086,
+      "right_score": -0.4571583867073059
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Gold medal of"
+      ],
+      "u": -0.787911057472229,
+      "margin": 0.6617229580879211,
+      "wrong_score": -0.038123514503240585,
+      "right_score": -0.6998464465141296
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Spanish National Research"
+      ],
+      "u": -0.44503483176231384,
+      "margin": 0.31884676218032837,
+      "wrong_score": -0.2169107347726822,
+      "right_score": -0.5357574820518494
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Spanish National Research"
+      ],
+      "u": -0.7296582460403442,
+      "margin": 0.6034702062606812,
+      "wrong_score": -0.23684698343276978,
+      "right_score": -0.8403171896934509
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Gold medal of",
+        "the Spanish National Research"
+      ],
+      "u": -0.4171978235244751,
+      "margin": 0.2910097539424896,
+      "wrong_score": -0.24912258982658386,
+      "right_score": -0.5401323437690735
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Gold medal of",
+        "the Spanish National Research"
+      ],
+      "u": -0.3568679988384247,
+      "margin": 0.2306799292564392,
+      "wrong_score": -0.4056813716888428,
+      "right_score": -0.636361300945282
+    }
+  ],
+  "single_u": [
+    -0.43840980529785156,
+    -0.5333293676376343,
+    -0.44503483176231384
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the American",
+        "the Gold medal of"
+      ],
+      "u_i": -0.43840980529785156,
+      "u_j": -0.5333293676376343,
+      "local_fd": 0.18382811546325684,
+      "banzhaf": 0.26439064741134644,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the American",
+        "the Spanish National Research"
+      ],
+      "u_i": -0.43840980529785156,
+      "u_j": -0.44503483176231384,
+      "local_fd": 0.15378639101982117,
+      "banzhaf": 0.23434893786907196,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Gold medal of",
+        "the Spanish National Research"
+      ],
+      "u_i": -0.5333293676376343,
+      "u_j": -0.44503483176231384,
+      "local_fd": 0.5611664056777954,
+      "banzhaf": 0.641728937625885,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Gold medal of",
+        "the Spanish National Research"
+      ],
+      "order": 2,
+      "harsanyi": 0.561166375875473
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Gold medal of"
+      ],
+      "order": 2,
+      "harsanyi": 0.18382811546325684
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Gold medal of",
+        "the Spanish National Research"
+      ],
+      "order": 3,
+      "harsanyi": 0.16112512350082397
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "the Spanish National Research"
+      ],
+      "order": 2,
+      "harsanyi": 0.15378639101982117
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.2306799292564392,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

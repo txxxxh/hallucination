@@ -1,0 +1,328 @@
+{
+  "key": "question_2756",
+  "group": "Q454925",
+  "generation_correct": true,
+  "right": "Nikolay Bogolyubov",
+  "wrong": "Zhores Ivanovich Alferov",
+  "base_margin_wrong_minus_right": 0.08393263816833496,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 393,
+      "char_end": 413,
+      "text": "Order of the October",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the October Revolution",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 116,
+      "token_end": 120
+    },
+    {
+      "char_start": 439,
+      "char_end": 458,
+      "text": "the Badge of Honour",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Badge of Honour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 124,
+      "token_end": 128
+    },
+    {
+      "char_start": 464,
+      "char_end": 480,
+      "text": "Order of the Red",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 128,
+      "token_end": 133
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.08393263816833496,
+      "wrong_score": -0.0765305608510971,
+      "right_score": -0.16046319901943207
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Order of the October"
+      ],
+      "u": -0.12562204897403717,
+      "margin": 0.20955468714237213,
+      "wrong_score": -0.06962321698665619,
+      "right_score": -0.2791779041290283
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Badge of Honour"
+      ],
+      "u": 0.07285855710506439,
+      "margin": 0.011074081063270569,
+      "wrong_score": -0.10772238671779633,
+      "right_score": -0.1187964677810669
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the October",
+        "the Badge of Honour"
+      ],
+      "u": 0.1533997356891632,
+      "margin": -0.06946710497140884,
+      "wrong_score": -0.1390204131603241,
+      "right_score": -0.06955330818891525
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Order of the Red"
+      ],
+      "u": 0.28680795431137085,
+      "margin": -0.2028753161430359,
+      "wrong_score": -0.24882258474826813,
+      "right_score": -0.04594726860523224
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of the October",
+        "Order of the Red"
+      ],
+      "u": 0.1528492271900177,
+      "margin": -0.06891658902168274,
+      "wrong_score": -0.1662793755531311,
+      "right_score": -0.09736278653144836
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Badge of Honour",
+        "Order of the Red"
+      ],
+      "u": 0.16445352137088776,
+      "margin": -0.0805208832025528,
+      "wrong_score": -0.18815885484218597,
+      "right_score": -0.10763797163963318
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the October",
+        "the Badge of Honour",
+        "Order of the Red"
+      ],
+      "u": 0.0951131284236908,
+      "margin": -0.011180490255355835,
+      "wrong_score": -0.15001845359802246,
+      "right_score": -0.13883796334266663
+    }
+  ],
+  "single_u": [
+    -0.12562204897403717,
+    0.07285855710506439,
+    0.28680795431137085
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Order of the October",
+        "the Badge of Honour"
+      ],
+      "u_i": -0.12562204897403717,
+      "u_j": 0.07285855710506439,
+      "local_fd": 0.20616324245929718,
+      "banzhaf": 0.13539078831672668,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Order of the October",
+        "Order of the Red"
+      ],
+      "u_i": -0.12562204897403717,
+      "u_j": 0.28680795431137085,
+      "local_fd": -0.008336663246154785,
+      "banzhaf": -0.07910911738872528,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Badge of Honour",
+        "Order of the Red"
+      ],
+      "u_i": 0.07285855710506439,
+      "u_j": 0.28680795431137085,
+      "local_fd": -0.19521299004554749,
+      "banzhaf": -0.2659854292869568,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the October",
+        "the Badge of Honour"
+      ],
+      "order": 2,
+      "harsanyi": 0.206163227558136
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Badge of Honour",
+        "Order of the Red"
+      ],
+      "order": 2,
+      "harsanyi": -0.19521299004554749
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the October",
+        "the Badge of Honour",
+        "Order of the Red"
+      ],
+      "order": 3,
+      "harsanyi": -0.1415448933839798
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of the October",
+        "Order of the Red"
+      ],
+      "order": 2,
+      "harsanyi": -0.008336678147315979
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Order of the Red"
+      ]
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the October",
+        "the Badge of Honour"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of the October",
+        "Order of the Red"
+      ]
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Badge of Honour",
+        "Order of the Red"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.011180490255355835,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

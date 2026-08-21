@@ -1,0 +1,154 @@
+{
+  "key": "question_1174",
+  "group": "Q153194",
+  "generation_correct": true,
+  "right": "Edward Victor Appleton",
+  "wrong": "Saul Perlmutter",
+  "base_margin_wrong_minus_right": -0.4637313485145569,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 345,
+      "char_end": 367,
+      "text": "in Physics and elected",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 100
+    },
+    {
+      "char_start": 370,
+      "char_end": 392,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 100,
+      "token_end": 104
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.4637313485145569,
+      "wrong_score": -0.5183861255645752,
+      "right_score": -0.05465477705001831
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in Physics and elected"
+      ],
+      "u": -0.40832552313804626,
+      "margin": -0.05540582537651062,
+      "wrong_score": -0.43349534273147583,
+      "right_score": -0.3780895173549652
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.5702632665634155,
+      "margin": 0.10653191804885864,
+      "wrong_score": -0.16083747148513794,
+      "right_score": -0.2673693895339966
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Physics and elected",
+        "Fellow of the American"
+      ],
+      "u": -0.2837458848953247,
+      "margin": -0.17998546361923218,
+      "wrong_score": -0.27306386828422546,
+      "right_score": -0.09307840466499329
+    }
+  ],
+  "single_u": [
+    -0.40832552313804626,
+    -0.5702632665634155
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "in Physics and elected",
+        "Fellow of the American"
+      ],
+      "u_i": -0.40832552313804626,
+      "u_j": -0.5702632665634155,
+      "local_fd": 0.6948429346084595,
+      "banzhaf": 0.6948429346084595,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Physics and elected",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.6948429048061371
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in Physics and elected"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.17998546361923218,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

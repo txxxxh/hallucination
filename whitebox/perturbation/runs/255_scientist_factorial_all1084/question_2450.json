@@ -1,0 +1,290 @@
+{
+  "key": "question_2450",
+  "group": "Q110709",
+  "generation_correct": false,
+  "right": "Annibale De Gasparis",
+  "wrong": "Riccardo Giacconi",
+  "base_margin_wrong_minus_right": 1.107324481010437,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 162,
+      "char_end": 195,
+      "text": "university teacher dedicated much",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 68,
+      "token_end": 72
+    },
+    {
+      "char_start": 224,
+      "char_end": 246,
+      "text": "the field of astronomy",
+      "kind": "attribute",
+      "field": "field",
+      "value": "astronomy",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 77,
+      "token_end": 81
+    },
+    {
+      "char_start": 357,
+      "char_end": 383,
+      "text": "the prestigious Gold Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Gold Medal of the Royal Astronomical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 100,
+      "token_end": 105
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.107324481010437,
+      "wrong_score": -0.000637162709608674,
+      "right_score": -1.107961654663086
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher dedicated much"
+      ],
+      "u": -0.03564333915710449,
+      "margin": 1.1429678201675415,
+      "wrong_score": -0.005357991438359022,
+      "right_score": -1.148325800895691
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the field of astronomy"
+      ],
+      "u": 0.4285714626312256,
+      "margin": 0.6787530183792114,
+      "wrong_score": -0.0065790582448244095,
+      "right_score": -0.6853320598602295
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher dedicated much",
+        "the field of astronomy"
+      ],
+      "u": 0.9110044240951538,
+      "margin": 0.19632002711296082,
+      "wrong_score": -0.03993379324674606,
+      "right_score": -0.23625382781028748
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the prestigious Gold Medal"
+      ],
+      "u": 0.3392760753631592,
+      "margin": 0.7680484056472778,
+      "wrong_score": -0.00442990567535162,
+      "right_score": -0.7724782824516296
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher dedicated much",
+        "the prestigious Gold Medal"
+      ],
+      "u": 0.42948490381240845,
+      "margin": 0.6778395771980286,
+      "wrong_score": -0.007674726657569408,
+      "right_score": -0.6855143308639526
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of astronomy",
+        "the prestigious Gold Medal"
+      ],
+      "u": 0.6618529558181763,
+      "margin": 0.44547149538993835,
+      "wrong_score": -0.020584190264344215,
+      "right_score": -0.466055691242218
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher dedicated much",
+        "the field of astronomy",
+        "the prestigious Gold Medal"
+      ],
+      "u": 0.7871929407119751,
+      "margin": 0.3201315402984619,
+      "wrong_score": -0.031234368681907654,
+      "right_score": -0.35136592388153076
+    }
+  ],
+  "single_u": [
+    -0.03564333915710449,
+    0.4285714626312256,
+    0.3392760753631592
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher dedicated much",
+        "the field of astronomy"
+      ],
+      "u_i": -0.03564333915710449,
+      "u_j": 0.4285714626312256,
+      "local_fd": 0.5180763006210327,
+      "banzhaf": 0.27660372853279114,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher dedicated much",
+        "the prestigious Gold Medal"
+      ],
+      "u_i": -0.03564333915710449,
+      "u_j": 0.3392760753631592,
+      "local_fd": 0.12585216760635376,
+      "banzhaf": -0.11562040448188782,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the field of astronomy",
+        "the prestigious Gold Medal"
+      ],
+      "u_i": 0.4285714626312256,
+      "u_j": 0.3392760753631592,
+      "local_fd": -0.1059945821762085,
+      "banzhaf": -0.3474671542644501,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher dedicated much",
+        "the field of astronomy"
+      ],
+      "order": 2,
+      "harsanyi": 0.5180763006210327
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher dedicated much",
+        "the field of astronomy",
+        "the prestigious Gold Medal"
+      ],
+      "order": 3,
+      "harsanyi": -0.48294514417648315
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher dedicated much",
+        "the prestigious Gold Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.12585216760635376
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the field of astronomy",
+        "the prestigious Gold Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.1059945821762085
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3201315402984619,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

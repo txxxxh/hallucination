@@ -1,0 +1,289 @@
+{
+  "key": "question_2774",
+  "group": "Q155790",
+  "generation_correct": false,
+  "right": "Eugene Wigner",
+  "wrong": "Erwin Schrödinger",
+  "base_margin_wrong_minus_right": -0.7845829129219055,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 290,
+      "char_end": 320,
+      "text": "groundbreaking work in physics",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 92,
+      "token_end": 99
+    },
+    {
+      "char_start": 399,
+      "char_end": 420,
+      "text": "made a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 116
+    },
+    {
+      "char_start": 456,
+      "char_end": 478,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 123
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7845829129219055,
+      "wrong_score": -0.7869523763656616,
+      "right_score": -0.0023694559931755066
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "groundbreaking work in physics"
+      ],
+      "u": -0.23725217580795288,
+      "margin": -0.5473307371139526,
+      "wrong_score": -0.5621611475944519,
+      "right_score": -0.014830383472144604
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "made a Foreign Member"
+      ],
+      "u": -0.08984905481338501,
+      "margin": -0.6947338581085205,
+      "wrong_score": -0.7003241777420044,
+      "right_score": -0.0055902996100485325
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "groundbreaking work in physics",
+        "made a Foreign Member"
+      ],
+      "u": -0.29076087474823,
+      "margin": -0.49382203817367554,
+      "wrong_score": -0.5102634429931641,
+      "right_score": -0.01644139550626278
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.25048476457595825,
+      "margin": -1.0350676774978638,
+      "wrong_score": -1.0386937856674194,
+      "right_score": -0.003626091405749321
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "groundbreaking work in physics",
+        "Fellow of the American"
+      ],
+      "u": -0.34208911657333374,
+      "margin": -0.4424937963485718,
+      "wrong_score": -0.4550493061542511,
+      "right_score": -0.01255550142377615
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "made a Foreign Member",
+        "Fellow of the American"
+      ],
+      "u": 0.5003860592842102,
+      "margin": -1.2849689722061157,
+      "wrong_score": -1.2874231338500977,
+      "right_score": -0.0024541099555790424
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "groundbreaking work in physics",
+        "made a Foreign Member",
+        "Fellow of the American"
+      ],
+      "u": -0.5124244689941406,
+      "margin": -0.2721584737300873,
+      "wrong_score": -0.3080217242240906,
+      "right_score": -0.035863246768713
+    }
+  ],
+  "single_u": [
+    -0.23725217580795288,
+    -0.08984905481338501,
+    0.25048476457595825
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "groundbreaking work in physics",
+        "made a Foreign Member"
+      ],
+      "u_i": -0.23725217580795288,
+      "u_j": -0.08984905481338501,
+      "local_fd": 0.03634035587310791,
+      "banzhaf": -0.19194814562797546,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "groundbreaking work in physics",
+        "Fellow of the American"
+      ],
+      "u_i": -0.23725217580795288,
+      "u_j": 0.25048476457595825,
+      "local_fd": -0.3553217053413391,
+      "banzhaf": -0.5836101770401001,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "made a Foreign Member",
+        "Fellow of the American"
+      ],
+      "u_i": -0.08984905481338501,
+      "u_j": 0.25048476457595825,
+      "local_fd": 0.33975034952163696,
+      "banzhaf": 0.11146184802055359,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "groundbreaking work in physics",
+        "made a Foreign Member",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": -0.45657700300216675
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "groundbreaking work in physics",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.3553217053413391
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "made a Foreign Member",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.33975034952163696
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "groundbreaking work in physics",
+        "made a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.03634035587310791
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2721584737300873,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

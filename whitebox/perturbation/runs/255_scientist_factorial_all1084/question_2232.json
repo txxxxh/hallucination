@@ -1,0 +1,144 @@
+{
+  "key": "question_2232",
+  "group": "Q323207",
+  "generation_correct": true,
+  "right": "John Maynard Smith",
+  "wrong": "Ernst Mayr",
+  "base_margin_wrong_minus_right": 0.34374967217445374,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 157,
+      "char_end": 192,
+      "text": "teacher, and evolutionary biologist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "evolutionary biologist",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 67
+    },
+    {
+      "char_start": 545,
+      "char_end": 569,
+      "text": "study of natural history",
+      "kind": "attribute",
+      "field": "field",
+      "value": "natural history collection",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 141,
+      "token_end": 150
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.34374967217445374,
+      "wrong_score": -0.058135900646448135,
+      "right_score": -0.4018855690956116
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "teacher, and evolutionary biologist"
+      ],
+      "u": -0.49997857213020325,
+      "margin": 0.843728244304657,
+      "wrong_score": -0.011770607903599739,
+      "right_score": -0.8554988503456116
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "study of natural history"
+      ],
+      "u": -0.06249871850013733,
+      "margin": 0.40624839067459106,
+      "wrong_score": -0.12832440435886383,
+      "right_score": -0.5345727801322937
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "teacher, and evolutionary biologist",
+        "study of natural history"
+      ],
+      "u": 0.031255751848220825,
+      "margin": 0.3124939203262329,
+      "wrong_score": -0.1174342930316925,
+      "right_score": -0.4299282133579254
+    }
+  ],
+  "single_u": [
+    -0.49997857213020325,
+    -0.06249871850013733
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "teacher, and evolutionary biologist",
+        "study of natural history"
+      ],
+      "u_i": -0.49997857213020325,
+      "u_j": -0.06249871850013733,
+      "local_fd": 0.5937330722808838,
+      "banzhaf": 0.5937330722808838,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "teacher, and evolutionary biologist",
+        "study of natural history"
+      ],
+      "order": 2,
+      "harsanyi": 0.5937330424785614
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3124939203262329,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "key": "question_1528",
+  "group": "Q153717",
+  "generation_correct": true,
+  "right": "Freeman Dyson",
+  "wrong": "Richard Feynman",
+  "base_margin_wrong_minus_right": -0.9058797955513,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 123,
+      "char_end": 156,
+      "text": "A prominent theoretical physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "theoretical physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 55,
+      "token_end": 63
+    },
+    {
+      "char_start": 157,
+      "char_end": 185,
+      "text": "and university teacher, this",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 62,
+      "token_end": 69
+    },
+    {
+      "char_start": 296,
+      "char_end": 318,
+      "text": "with the Oersted Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Oersted Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 87,
+      "token_end": 91
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9058797955513,
+      "wrong_score": -0.9140865802764893,
+      "right_score": -0.008206804282963276
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "A prominent theoretical physicist"
+      ],
+      "u": 0.562777578830719,
+      "margin": -1.468657374382019,
+      "wrong_score": -1.4733631610870361,
+      "right_score": -0.004705755040049553
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and university teacher, this"
+      ],
+      "u": 0.37518054246902466,
+      "margin": -1.2810603380203247,
+      "wrong_score": -1.287762999534607,
+      "right_score": -0.006702640559524298
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "A prominent theoretical physicist",
+        "and university teacher, this"
+      ],
+      "u": 0.5315489172935486,
+      "margin": -1.4374287128448486,
+      "wrong_score": -1.4451346397399902,
+      "right_score": -0.007705941330641508
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "with the Oersted Medal"
+      ],
+      "u": -0.5624099969863892,
+      "margin": -0.3434697985649109,
+      "wrong_score": -0.4116503596305847,
+      "right_score": -0.06818055361509323
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "A prominent theoretical physicist",
+        "with the Oersted Medal"
+      ],
+      "u": 0.908719003200531,
+      "margin": -1.814598798751831,
+      "wrong_score": -1.8159728050231934,
+      "right_score": -0.0013739598216488957
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher, this",
+        "with the Oersted Medal"
+      ],
+      "u": 0.3219909071922302,
+      "margin": -1.2278707027435303,
+      "wrong_score": -1.2329187393188477,
+      "right_score": -0.005047983024269342
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "A prominent theoretical physicist",
+        "and university teacher, this",
+        "with the Oersted Medal"
+      ],
+      "u": 0.5474258065223694,
+      "margin": -1.4533056020736694,
+      "wrong_score": -1.4572317600250244,
+      "right_score": -0.003926188684999943
+    }
+  ],
+  "single_u": [
+    0.562777578830719,
+    0.37518054246902466,
+    -0.5624099969863892
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "A prominent theoretical physicist",
+        "and university teacher, this"
+      ],
+      "u_i": 0.562777578830719,
+      "u_j": 0.37518054246902466,
+      "local_fd": -0.40640920400619507,
+      "banzhaf": -0.8260517120361328,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "A prominent theoretical physicist",
+        "with the Oersted Medal"
+      ],
+      "u_i": 0.562777578830719,
+      "u_j": -0.5624099969863892,
+      "local_fd": 0.9083514213562012,
+      "banzhaf": 0.4887089729309082,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and university teacher, this",
+        "with the Oersted Medal"
+      ],
+      "u_i": 0.37518054246902466,
+      "u_j": -0.5624099969863892,
+      "local_fd": 0.5092203617095947,
+      "banzhaf": 0.08957791328430176,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "A prominent theoretical physicist",
+        "with the Oersted Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.9083514213562012
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "A prominent theoretical physicist",
+        "and university teacher, this",
+        "with the Oersted Medal"
+      ],
+      "order": 3,
+      "harsanyi": -0.8392848968505859
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher, this",
+        "with the Oersted Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.5092203617095947
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "A prominent theoretical physicist",
+        "and university teacher, this"
+      ],
+      "order": 2,
+      "harsanyi": -0.40640920400619507
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.4533056020736694,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

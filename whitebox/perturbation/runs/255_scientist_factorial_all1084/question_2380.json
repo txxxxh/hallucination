@@ -1,0 +1,286 @@
+{
+  "key": "question_2380",
+  "group": "Q110925",
+  "generation_correct": true,
+  "right": "K. Barry Sharpless",
+  "wrong": "Harold Kroto",
+  "base_margin_wrong_minus_right": -0.5962627530097961,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 373,
+      "char_end": 393,
+      "text": "them the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 99,
+      "token_end": 105
+    },
+    {
+      "char_start": 422,
+      "char_end": 427,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 111,
+      "token_end": 112
+    },
+    {
+      "char_start": 442,
+      "char_end": 464,
+      "text": "president of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "president of the Royal Society of Chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 116,
+      "token_end": 118
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5962627530097961,
+      "wrong_score": -0.6234188079833984,
+      "right_score": -0.027156030759215355
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "them the Nobel Prize"
+      ],
+      "u": 0.09782379865646362,
+      "margin": -0.6940865516662598,
+      "wrong_score": -0.714655876159668,
+      "right_score": -0.02056935243308544
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.247727632522583,
+      "margin": -0.34853512048721313,
+      "wrong_score": -0.42606911063194275,
+      "right_score": -0.07753399014472961
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "never"
+      ],
+      "u": 0.3415708541870117,
+      "margin": -0.9378336071968079,
+      "wrong_score": -0.9523972272872925,
+      "right_score": -0.014563645236194134
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "president of the Royal"
+      ],
+      "u": 0.0962483286857605,
+      "margin": -0.6925110816955566,
+      "wrong_score": -0.7130804657936096,
+      "right_score": -0.020569391548633575
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "president of the Royal"
+      ],
+      "u": 0.4362204670906067,
+      "margin": -1.0324832201004028,
+      "wrong_score": -1.0441265106201172,
+      "right_score": -0.01164324302226305
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "president of the Royal"
+      ],
+      "u": 0.37316352128982544,
+      "margin": -0.9694262742996216,
+      "wrong_score": -0.9832849502563477,
+      "right_score": -0.013858665712177753
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "never",
+        "president of the Royal"
+      ],
+      "u": 0.46700674295425415,
+      "margin": -1.0632694959640503,
+      "wrong_score": -1.0755361318588257,
+      "right_score": -0.01226664986461401
+    }
+  ],
+  "single_u": [
+    0.09782379865646362,
+    -0.247727632522583,
+    0.0962483286857605
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "them the Nobel Prize",
+        "never"
+      ],
+      "u_i": 0.09782379865646362,
+      "u_j": -0.247727632522583,
+      "local_fd": 0.4914746880531311,
+      "banzhaf": 0.12267288565635681,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "them the Nobel Prize",
+        "president of the Royal"
+      ],
+      "u_i": 0.09782379865646362,
+      "u_j": 0.0962483286857605,
+      "local_fd": 0.24214833974838257,
+      "banzhaf": -0.12665346264839172,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "never",
+        "president of the Royal"
+      ],
+      "u_i": -0.247727632522583,
+      "u_j": 0.0962483286857605,
+      "local_fd": 0.524642825126648,
+      "banzhaf": 0.15584102272987366,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "never",
+        "president of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": -0.7376036047935486
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "president of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.524642825126648
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.4914746880531311
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "president of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.24214833974838257
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.0632694959640503,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

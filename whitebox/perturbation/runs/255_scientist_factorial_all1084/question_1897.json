@@ -1,0 +1,287 @@
+{
+  "key": "question_1897",
+  "group": "Q202140",
+  "generation_correct": true,
+  "right": "Robert H. Grubbs",
+  "wrong": "John A. Pople",
+  "base_margin_wrong_minus_right": -1.0757695436477661,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 229,
+      "char_end": 254,
+      "text": "receiving the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 75,
+      "token_end": 79
+    },
+    {
+      "char_start": 443,
+      "char_end": 466,
+      "text": "the Linus Pauling Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Linus Pauling Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 116,
+      "token_end": 121
+    },
+    {
+      "char_start": 497,
+      "char_end": 500,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 130,
+      "token_end": 131
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.0757695436477661,
+      "wrong_score": -1.0774091482162476,
+      "right_score": -0.0016395689453929663
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "receiving the Nobel Prize"
+      ],
+      "u": -0.2238650918006897,
+      "margin": -0.8519044518470764,
+      "wrong_score": -0.8610206842422485,
+      "right_score": -0.009116215631365776
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Linus Pauling Award"
+      ],
+      "u": -0.6986930966377258,
+      "margin": -0.3770764470100403,
+      "wrong_score": -0.40517106652259827,
+      "right_score": -0.02809460461139679
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "the Linus Pauling Award"
+      ],
+      "u": -0.6238999962806702,
+      "margin": -0.45186954736709595,
+      "wrong_score": -0.4732191264629364,
+      "right_score": -0.021349582821130753
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": -0.09961551427841187,
+      "margin": -0.9761540293693542,
+      "wrong_score": -0.9786033034324646,
+      "right_score": -0.0024492607917636633
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "not"
+      ],
+      "u": -0.34932076930999756,
+      "margin": -0.7264487743377686,
+      "wrong_score": -0.7349483966827393,
+      "right_score": -0.008499650284647942
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Linus Pauling Award",
+        "not"
+      ],
+      "u": -0.5748273730278015,
+      "margin": -0.5009421706199646,
+      "wrong_score": -0.5177708864212036,
+      "right_score": -0.01682872325181961
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "the Linus Pauling Award",
+        "not"
+      ],
+      "u": -0.6488533616065979,
+      "margin": -0.4269161820411682,
+      "wrong_score": -0.45451608300209045,
+      "right_score": -0.027599889785051346
+    }
+  ],
+  "single_u": [
+    -0.2238650918006897,
+    -0.6986930966377258,
+    -0.09961551427841187
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "receiving the Nobel Prize",
+        "the Linus Pauling Award"
+      ],
+      "u_i": -0.2238650918006897,
+      "u_j": -0.6986930966377258,
+      "local_fd": 0.29865819215774536,
+      "banzhaf": 0.23716872930526733,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "receiving the Nobel Prize",
+        "not"
+      ],
+      "u_i": -0.2238650918006897,
+      "u_j": -0.09961551427841187,
+      "local_fd": -0.025840163230895996,
+      "banzhaf": -0.08732962608337402,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Linus Pauling Award",
+        "not"
+      ],
+      "u_i": -0.6986930966377258,
+      "u_j": -0.09961551427841187,
+      "local_fd": 0.22348123788833618,
+      "banzhaf": 0.16199177503585815,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "the Linus Pauling Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.29865819215774536
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Linus Pauling Award",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.22348123788833618
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "the Linus Pauling Award",
+        "not"
+      ],
+      "order": 3,
+      "harsanyi": -0.12297892570495605
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "receiving the Nobel Prize",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": -0.025840163230895996
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.4269161820411682,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

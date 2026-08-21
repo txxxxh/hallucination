@@ -1,0 +1,295 @@
+{
+  "key": "question_0664",
+  "group": "Q92379963",
+  "generation_correct": true,
+  "right": "Özlem Türeci",
+  "wrong": "Harald zur Hausen",
+  "base_margin_wrong_minus_right": -0.057431213557720184,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 246,
+      "char_end": 275,
+      "text": "of their outstanding academic",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "academic",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 81,
+      "token_end": 88
+    },
+    {
+      "char_start": 318,
+      "char_end": 345,
+      "text": "with the Knight Commander's",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight Commander's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 104
+    },
+    {
+      "char_start": 467,
+      "char_end": 486,
+      "text": "Prize, and the Paul",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Paul Ehrlich and Ludwig Darmstaedter Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 131,
+      "token_end": 135
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.057431213557720184,
+      "wrong_score": -0.1720266044139862,
+      "right_score": -0.11459539085626602
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "of their outstanding academic"
+      ],
+      "u": -0.1501295268535614,
+      "margin": 0.09269830584526062,
+      "wrong_score": -0.12923119962215424,
+      "right_score": -0.22192950546741486
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Knight Commander's"
+      ],
+      "u": 0.16991177201271057,
+      "margin": -0.22734297811985016,
+      "wrong_score": -0.30941107869148254,
+      "right_score": -0.08206810057163239
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of their outstanding academic",
+        "with the Knight Commander's"
+      ],
+      "u": 0.036890484392642975,
+      "margin": -0.09432169795036316,
+      "wrong_score": -0.22367040812969208,
+      "right_score": -0.12934871017932892
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Prize, and the Paul"
+      ],
+      "u": 0.13641783595085144,
+      "margin": -0.19384905695915222,
+      "wrong_score": -0.25905290246009827,
+      "right_score": -0.06520385295152664
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "of their outstanding academic",
+        "Prize, and the Paul"
+      ],
+      "u": -0.12680679559707642,
+      "margin": 0.06937558948993683,
+      "wrong_score": -0.09372463822364807,
+      "right_score": -0.1631002277135849
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Knight Commander's",
+        "Prize, and the Paul"
+      ],
+      "u": -0.19210338592529297,
+      "margin": 0.1346721649169922,
+      "wrong_score": -0.07507922500371933,
+      "right_score": -0.20975138247013092
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "of their outstanding academic",
+        "with the Knight Commander's",
+        "Prize, and the Paul"
+      ],
+      "u": -0.3693140745162964,
+      "margin": 0.3118828535079956,
+      "wrong_score": -0.033179622143507004,
+      "right_score": -0.3450624644756317
+    }
+  ],
+  "single_u": [
+    -0.1501295268535614,
+    0.16991177201271057,
+    0.13641783595085144
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "of their outstanding academic",
+        "with the Knight Commander's"
+      ],
+      "u_i": -0.1501295268535614,
+      "u_j": 0.16991177201271057,
+      "local_fd": 0.017108231782913208,
+      "banzhaf": 0.05156108736991882,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "of their outstanding academic",
+        "Prize, and the Paul"
+      ],
+      "u_i": -0.1501295268535614,
+      "u_j": 0.13641783595085144,
+      "local_fd": -0.11309510469436646,
+      "banzhaf": -0.07864224910736084,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "with the Knight Commander's",
+        "Prize, and the Paul"
+      ],
+      "u_i": 0.16991177201271057,
+      "u_j": 0.13641783595085144,
+      "local_fd": -0.498432993888855,
+      "banzhaf": -0.46398013830184937,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Knight Commander's",
+        "Prize, and the Paul"
+      ],
+      "order": 2,
+      "harsanyi": -0.498432993888855
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "of their outstanding academic",
+        "Prize, and the Paul"
+      ],
+      "order": 2,
+      "harsanyi": -0.11309510469436646
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "of their outstanding academic",
+        "with the Knight Commander's",
+        "Prize, and the Paul"
+      ],
+      "order": 3,
+      "harsanyi": 0.06890570372343063
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of their outstanding academic",
+        "with the Knight Commander's"
+      ],
+      "order": 2,
+      "harsanyi": 0.017108239233493805
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3118828535079956,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

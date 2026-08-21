@@ -1,0 +1,146 @@
+{
+  "key": "question_2117",
+  "group": "Q48973",
+  "generation_correct": false,
+  "right": "Glenn T. Seaborg",
+  "wrong": "Peter Debije",
+  "base_margin_wrong_minus_right": -1.3734148740768433,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 435,
+      "char_end": 457,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 117,
+      "token_end": 122
+    },
+    {
+      "char_start": 481,
+      "char_end": 502,
+      "text": "Foreign Member of the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 128,
+      "token_end": 132
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.3734148740768433,
+      "wrong_score": -1.376760482788086,
+      "right_score": -0.0033456673845648766
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.7577228546142578,
+      "margin": -0.6156920194625854,
+      "wrong_score": -0.6477150321006775,
+      "right_score": -0.03202304244041443
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Foreign Member of the"
+      ],
+      "u": -0.5202863216400146,
+      "margin": -0.8531285524368286,
+      "wrong_score": -0.8730242252349854,
+      "right_score": -0.019895683974027634
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "u": -0.8984525203704834,
+      "margin": -0.47496235370635986,
+      "wrong_score": -0.5249850749969482,
+      "right_score": -0.05002271384000778
+    }
+  ],
+  "single_u": [
+    -0.7577228546142578,
+    -0.5202863216400146
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "u_i": -0.7577228546142578,
+      "u_j": -0.5202863216400146,
+      "local_fd": 0.37955665588378906,
+      "banzhaf": 0.37955665588378906,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "Foreign Member of the"
+      ],
+      "order": 2,
+      "harsanyi": 0.37955665588378906
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.47496235370635986,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

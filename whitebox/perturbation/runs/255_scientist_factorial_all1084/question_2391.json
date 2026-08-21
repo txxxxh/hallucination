@@ -1,0 +1,144 @@
+{
+  "key": "question_2391",
+  "group": "Q183337",
+  "generation_correct": true,
+  "right": "David Attenborough",
+  "wrong": "Jacques-Yves Cousteau",
+  "base_margin_wrong_minus_right": -1.4656717777252197,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 301,
+      "char_end": 331,
+      "text": "storytelling as a photographer",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "photographer",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 90,
+      "token_end": 95
+    },
+    {
+      "char_start": 472,
+      "char_end": 501,
+      "text": "documenting the natural world",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Natural World Book Prize",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 120,
+      "token_end": 129
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.4656717777252197,
+      "wrong_score": -1.4666658639907837,
+      "right_score": -0.0009940892923623323
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "storytelling as a photographer"
+      ],
+      "u": -0.6318583488464355,
+      "margin": -0.8338134288787842,
+      "wrong_score": -0.8444643616676331,
+      "right_score": -0.010650909505784512
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "documenting the natural world"
+      ],
+      "u": -0.8693757653236389,
+      "margin": -0.5962960124015808,
+      "wrong_score": -0.8344418406486511,
+      "right_score": -0.2381458431482315
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "storytelling as a photographer",
+        "documenting the natural world"
+      ],
+      "u": -0.8929257392883301,
+      "margin": -0.5727460384368896,
+      "wrong_score": -0.7492720484733582,
+      "right_score": -0.1765259951353073
+    }
+  ],
+  "single_u": [
+    -0.6318583488464355,
+    -0.8693757653236389
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "storytelling as a photographer",
+        "documenting the natural world"
+      ],
+      "u_i": -0.6318583488464355,
+      "u_j": -0.8693757653236389,
+      "local_fd": 0.6083083748817444,
+      "banzhaf": 0.6083083748817444,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "storytelling as a photographer",
+        "documenting the natural world"
+      ],
+      "order": 2,
+      "harsanyi": 0.6083083748817444
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.5727460384368896,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

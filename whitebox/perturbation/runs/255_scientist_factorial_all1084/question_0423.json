@@ -1,0 +1,171 @@
+{
+  "key": "question_0423",
+  "group": "Q102419",
+  "generation_correct": true,
+  "right": "Sir Derek Barton",
+  "wrong": "Linus Pauling",
+  "base_margin_wrong_minus_right": 0.13309110701084137,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 413,
+      "char_end": 443,
+      "text": "received an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate of the University of Montpellier",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 117,
+      "token_end": 125
+    },
+    {
+      "char_start": 444,
+      "char_end": 466,
+      "text": "from the University of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "doctor honoris causa from the University of Paris",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 124,
+      "token_end": 129
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.13309110701084137,
+      "wrong_score": -0.14865057170391083,
+      "right_score": -0.2817416787147522
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "received an honorary doctorate"
+      ],
+      "u": 0.4460437297821045,
+      "margin": -0.3129526376724243,
+      "wrong_score": -0.40627753734588623,
+      "right_score": -0.09332489967346191
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "from the University of"
+      ],
+      "u": 0.38877034187316895,
+      "margin": -0.25567924976348877,
+      "wrong_score": -0.35778868198394775,
+      "right_score": -0.10210941731929779
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received an honorary doctorate",
+        "from the University of"
+      ],
+      "u": 0.45407992601394653,
+      "margin": -0.32098883390426636,
+      "wrong_score": -0.41195759177207947,
+      "right_score": -0.09096875786781311
+    }
+  ],
+  "single_u": [
+    0.4460437297821045,
+    0.38877034187316895
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "received an honorary doctorate",
+        "from the University of"
+      ],
+      "u_i": 0.4460437297821045,
+      "u_j": 0.38877034187316895,
+      "local_fd": -0.3807341456413269,
+      "banzhaf": -0.3807341456413269,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received an honorary doctorate",
+        "from the University of"
+      ],
+      "order": 2,
+      "harsanyi": -0.3807341456413269
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "received an honorary doctorate"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "from the University of"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received an honorary doctorate",
+        "from the University of"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.32098883390426636,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

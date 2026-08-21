@@ -1,0 +1,146 @@
+{
+  "key": "question_0144",
+  "group": "Q62857",
+  "generation_correct": false,
+  "right": "Maurice Vincent Wilkes",
+  "wrong": "Tim Berners-Lee",
+  "base_margin_wrong_minus_right": -1.625123143196106,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 376,
+      "char_end": 395,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 103,
+      "token_end": 107
+    },
+    {
+      "char_start": 426,
+      "char_end": 447,
+      "text": "Fellow of the British",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the British Computer Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 114,
+      "token_end": 121
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.625123143196106,
+      "wrong_score": -1.625688910484314,
+      "right_score": -0.0005658140289597213
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.5741008520126343,
+      "margin": -1.0510222911834717,
+      "wrong_score": -1.0544393062591553,
+      "right_score": -0.003417044412344694
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the British"
+      ],
+      "u": -1.3897383213043213,
+      "margin": -0.23538488149642944,
+      "wrong_score": -0.28537970781326294,
+      "right_score": -0.0499948225915432
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Fellow of the British"
+      ],
+      "u": -0.947907030582428,
+      "margin": -0.677216112613678,
+      "wrong_score": -0.6895309090614319,
+      "right_score": -0.012314820662140846
+    }
+  ],
+  "single_u": [
+    -0.5741008520126343,
+    -1.3897383213043213
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "Fellow of the British"
+      ],
+      "u_i": -0.5741008520126343,
+      "u_j": -1.3897383213043213,
+      "local_fd": 1.0159320831298828,
+      "banzhaf": 1.0159320831298828,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Fellow of the British"
+      ],
+      "order": 2,
+      "harsanyi": 1.0159321427345276
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.677216112613678,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 17,
+    "n_excluded": 11,
+    "max_candidates": 6
+  }
+}

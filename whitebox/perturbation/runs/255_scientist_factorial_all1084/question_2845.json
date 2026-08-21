@@ -1,0 +1,290 @@
+{
+  "key": "question_2845",
+  "group": "Q371441",
+  "generation_correct": true,
+  "right": "Elliott H. Lieb",
+  "wrong": "Victor Frederick Weisskopf",
+  "base_margin_wrong_minus_right": -0.1424875110387802,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 169,
+      "char_end": 196,
+      "text": "university teacher has been",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 68,
+      "token_end": 74
+    },
+    {
+      "char_start": 265,
+      "char_end": 289,
+      "text": "including the Max Planck",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Max Planck Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 87,
+      "token_end": 91
+    },
+    {
+      "char_start": 290,
+      "char_end": 320,
+      "text": "Medal, a Guggenheim Fellowship",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Guggenheim Fellowship",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 90,
+      "token_end": 99
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.1424875110387802,
+      "wrong_score": -0.19493655860424042,
+      "right_score": -0.05244904384016991
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher has been"
+      ],
+      "u": 0.27906525135040283,
+      "margin": -0.42155274748802185,
+      "wrong_score": -0.43852803111076355,
+      "right_score": -0.016975272446870804
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Max Planck"
+      ],
+      "u": 0.11724753677845001,
+      "margin": -0.2597350478172302,
+      "wrong_score": -0.2927403748035431,
+      "right_score": -0.03300531581044197
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has been",
+        "including the Max Planck"
+      ],
+      "u": 0.17180319130420685,
+      "margin": -0.31429070234298706,
+      "wrong_score": -0.34275150299072266,
+      "right_score": -0.028460795059800148
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Medal, a Guggenheim Fellowship"
+      ],
+      "u": 0.07714198529720306,
+      "margin": -0.21962949633598328,
+      "wrong_score": -0.29395586252212524,
+      "right_score": -0.07432635873556137
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has been",
+        "Medal, a Guggenheim Fellowship"
+      ],
+      "u": 0.16744671761989594,
+      "margin": -0.30993422865867615,
+      "wrong_score": -0.689393937587738,
+      "right_score": -0.3794597089290619
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Max Planck",
+        "Medal, a Guggenheim Fellowship"
+      ],
+      "u": -0.013826742768287659,
+      "margin": -0.12866076827049255,
+      "wrong_score": -0.2838277220726013,
+      "right_score": -0.15516695380210876
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has been",
+        "including the Max Planck",
+        "Medal, a Guggenheim Fellowship"
+      ],
+      "u": 0.27258235216140747,
+      "margin": -0.4150698781013489,
+      "wrong_score": -1.0439765453338623,
+      "right_score": -0.6289066672325134
+    }
+  ],
+  "single_u": [
+    0.27906525135040283,
+    0.11724753677845001,
+    0.07714198529720306
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher has been",
+        "including the Max Planck"
+      ],
+      "u_i": 0.27906525135040283,
+      "u_j": 0.11724753677845001,
+      "local_fd": -0.224509596824646,
+      "banzhaf": -0.014202617108821869,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher has been",
+        "Medal, a Guggenheim Fellowship"
+      ],
+      "u_i": 0.27906525135040283,
+      "u_j": 0.07714198529720306,
+      "local_fd": -0.18876051902770996,
+      "banzhaf": 0.021546460688114166,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Max Planck",
+        "Medal, a Guggenheim Fellowship"
+      ],
+      "u_i": 0.11724753677845001,
+      "u_j": 0.07714198529720306,
+      "local_fd": -0.20821626484394073,
+      "banzhaf": 0.0020907148718833923,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has been",
+        "including the Max Planck",
+        "Medal, a Guggenheim Fellowship"
+      ],
+      "order": 3,
+      "harsanyi": 0.42061395943164825
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has been",
+        "including the Max Planck"
+      ],
+      "order": 2,
+      "harsanyi": -0.224509596824646
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Max Planck",
+        "Medal, a Guggenheim Fellowship"
+      ],
+      "order": 2,
+      "harsanyi": -0.20821626484394073
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has been",
+        "Medal, a Guggenheim Fellowship"
+      ],
+      "order": 2,
+      "harsanyi": -0.18876051902770996
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.4150698781013489,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

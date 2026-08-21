@@ -1,0 +1,309 @@
+{
+  "key": "question_2637",
+  "group": "Q311003",
+  "generation_correct": true,
+  "right": "Craig Venter",
+  "wrong": "Francis Collins",
+  "base_margin_wrong_minus_right": 0.37500035762786865,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 296,
+      "char_end": 324,
+      "text": "including the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 88,
+      "token_end": 95
+    },
+    {
+      "char_start": 337,
+      "char_end": 361,
+      "text": "the Princess of Asturias",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Princess of Asturias Award for Technical and Scientific Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 98,
+      "token_end": 103
+    },
+    {
+      "char_start": 419,
+      "char_end": 441,
+      "text": "Prize in Medicine, and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Dickson Prize in Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 113,
+      "token_end": 117
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.37500035762786865,
+      "wrong_score": -0.09549432247877121,
+      "right_score": -0.47049468755722046
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the National Medal"
+      ],
+      "u": 0.4166661500930786,
+      "margin": -0.04166579246520996,
+      "wrong_score": -0.25634750723838806,
+      "right_score": -0.2146817147731781
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Princess of Asturias"
+      ],
+      "u": 0.3750004172325134,
+      "margin": -7.450580596923828e-08,
+      "wrong_score": -0.23464088141918182,
+      "right_score": -0.23464080691337585
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the National Medal",
+        "the Princess of Asturias"
+      ],
+      "u": 0.12499886751174927,
+      "margin": 0.2500014901161194,
+      "wrong_score": -0.13436760008335114,
+      "right_score": -0.3843691051006317
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Prize in Medicine, and"
+      ],
+      "u": 0.16666731238365173,
+      "margin": 0.20833304524421692,
+      "wrong_score": -0.1454123854637146,
+      "right_score": -0.3537454307079315
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Prize in Medicine, and"
+      ],
+      "u": 0.5416673421859741,
+      "margin": -0.16666695475578308,
+      "wrong_score": -0.32866472005844116,
+      "right_score": -0.16199776530265808
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Princess of Asturias",
+        "Prize in Medicine, and"
+      ],
+      "u": 0.3750004470348358,
+      "margin": -8.940696716308594e-08,
+      "wrong_score": -0.2353515326976776,
+      "right_score": -0.23535144329071045
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "the Princess of Asturias",
+        "Prize in Medicine, and"
+      ],
+      "u": 0.29166632890701294,
+      "margin": 0.0833340436220169,
+      "wrong_score": -0.1983649581670761,
+      "right_score": -0.281699001789093
+    }
+  ],
+  "single_u": [
+    0.4166661500930786,
+    0.3750004172325134,
+    0.16666731238365173
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the National Medal",
+        "the Princess of Asturias"
+      ],
+      "u_i": 0.4166661500930786,
+      "u_j": 0.3750004172325134,
+      "local_fd": -0.6666676998138428,
+      "banzhaf": -0.5625008940696716,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the National Medal",
+        "Prize in Medicine, and"
+      ],
+      "u_i": 0.4166661500930786,
+      "u_j": 0.16666731238365173,
+      "local_fd": -0.041666120290756226,
+      "banzhaf": 0.06250065565109253,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Princess of Asturias",
+        "Prize in Medicine, and"
+      ],
+      "u_i": 0.3750004172325134,
+      "u_j": 0.16666731238365173,
+      "local_fd": -0.16666728258132935,
+      "banzhaf": -0.06250050663948059,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the National Medal",
+        "the Princess of Asturias"
+      ],
+      "order": 2,
+      "harsanyi": -0.6666676998138428
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "the Princess of Asturias",
+        "Prize in Medicine, and"
+      ],
+      "order": 3,
+      "harsanyi": 0.2083335518836975
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Princess of Asturias",
+        "Prize in Medicine, and"
+      ],
+      "order": 2,
+      "harsanyi": -0.16666728258132935
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the National Medal",
+        "Prize in Medicine, and"
+      ],
+      "order": 2,
+      "harsanyi": -0.041666120290756226
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the National Medal"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Princess of Asturias"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.0833340436220169,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

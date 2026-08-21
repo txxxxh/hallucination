@@ -1,0 +1,287 @@
+{
+  "key": "question_2706",
+  "group": "Q410",
+  "generation_correct": true,
+  "right": "Carl Sagan",
+  "wrong": "Steven Weinberg",
+  "base_margin_wrong_minus_right": -1.5833425521850586,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 302,
+      "char_end": 322,
+      "text": "Humanist of the Year",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Humanist of the Year",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 91,
+      "token_end": 96
+    },
+    {
+      "char_start": 344,
+      "char_end": 367,
+      "text": "Fellow of the Committee",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Committee for Skeptical Inquiry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 105
+    },
+    {
+      "char_start": 451,
+      "char_end": 456,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 122
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.5833425521850586,
+      "wrong_score": -1.5878472328186035,
+      "right_score": -0.004504706244915724
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Humanist of the Year"
+      ],
+      "u": 0.3333415985107422,
+      "margin": -1.9166841506958008,
+      "wrong_score": -1.924440622329712,
+      "right_score": -0.0077564409002661705
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Committee"
+      ],
+      "u": -0.6666703224182129,
+      "margin": -0.9166722297668457,
+      "wrong_score": -0.9433287978172302,
+      "right_score": -0.026656541973352432
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Humanist of the Year",
+        "Fellow of the Committee"
+      ],
+      "u": -0.7916683554649353,
+      "margin": -0.7916741967201233,
+      "wrong_score": -0.8254477381706238,
+      "right_score": -0.03377355635166168
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -1.041658639907837,
+      "margin": -0.5416838526725769,
+      "wrong_score": -0.6065300107002258,
+      "right_score": -0.06484613567590714
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Humanist of the Year",
+        "never"
+      ],
+      "u": -0.5416579246520996,
+      "margin": -1.041684627532959,
+      "wrong_score": -1.059600830078125,
+      "right_score": -0.01791614666581154
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Committee",
+        "never"
+      ],
+      "u": -0.8749909400939941,
+      "margin": -0.7083516120910645,
+      "wrong_score": -0.7548298835754395,
+      "right_score": -0.04647829756140709
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Humanist of the Year",
+        "Fellow of the Committee",
+        "never"
+      ],
+      "u": -0.9999933242797852,
+      "margin": -0.5833492279052734,
+      "wrong_score": -0.6447994112968445,
+      "right_score": -0.06145021319389343
+    }
+  ],
+  "single_u": [
+    0.3333415985107422,
+    -0.6666703224182129,
+    -1.041658639907837
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Humanist of the Year",
+        "Fellow of the Committee"
+      ],
+      "u_i": 0.3333415985107422,
+      "u_j": -0.6666703224182129,
+      "local_fd": -0.4583396911621094,
+      "banzhaf": -0.5416713953018188,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Humanist of the Year",
+        "never"
+      ],
+      "u_i": 0.3333415985107422,
+      "u_j": -1.041658639907837,
+      "local_fd": 0.16665911674499512,
+      "banzhaf": 0.08332738280296326,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Committee",
+        "never"
+      ],
+      "u_i": -0.6666703224182129,
+      "u_j": -1.041658639907837,
+      "local_fd": 0.8333380222320557,
+      "banzhaf": 0.7500063180923462,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Committee",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.8333380222320557
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Humanist of the Year",
+        "Fellow of the Committee"
+      ],
+      "order": 2,
+      "harsanyi": -0.4583396315574646
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Humanist of the Year",
+        "Fellow of the Committee",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.16666346788406372
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Humanist of the Year",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.16665911674499512
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.5833492279052734,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "key": "question_0976",
+  "group": "Q183397",
+  "generation_correct": true,
+  "right": "Fred Hoyle",
+  "wrong": "Kip Stephen Thorne",
+  "base_margin_wrong_minus_right": 0.04266975820064545,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 244,
+      "char_end": 266,
+      "text": "the field of astronomy",
+      "kind": "attribute",
+      "field": "field",
+      "value": "astronomy",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 84,
+      "token_end": 89
+    },
+    {
+      "char_start": 346,
+      "char_end": 371,
+      "text": "as the Karl Schwarzschild",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Karl Schwarzschild Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 104,
+      "token_end": 109
+    },
+    {
+      "char_start": 378,
+      "char_end": 404,
+      "text": "and the Richtmyer Memorial",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Richtmyer Memorial Lecture Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 109,
+      "token_end": 115
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.04266975820064545,
+      "wrong_score": -0.15559826791286469,
+      "right_score": -0.19826802611351013
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of astronomy"
+      ],
+      "u": 0.7151716351509094,
+      "margin": -0.6725018620491028,
+      "wrong_score": -0.6924403309822083,
+      "right_score": -0.019938472658395767
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as the Karl Schwarzschild"
+      ],
+      "u": -0.5145636200904846,
+      "margin": 0.5572333931922913,
+      "wrong_score": -0.06453246623277664,
+      "right_score": -0.6217658519744873
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of astronomy",
+        "as the Karl Schwarzschild"
+      ],
+      "u": -0.6026548743247986,
+      "margin": 0.6453246474266052,
+      "wrong_score": -0.0446317121386528,
+      "right_score": -0.6899563670158386
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Richtmyer Memorial"
+      ],
+      "u": -0.260931134223938,
+      "margin": 0.30360087752342224,
+      "wrong_score": -0.12243274599313736,
+      "right_score": -0.426033616065979
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of astronomy",
+        "and the Richtmyer Memorial"
+      ],
+      "u": -0.2809911370277405,
+      "margin": 0.3236609101295471,
+      "wrong_score": -0.13169793784618378,
+      "right_score": -0.4553588628768921
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as the Karl Schwarzschild",
+        "and the Richtmyer Memorial"
+      ],
+      "u": -0.3633991479873657,
+      "margin": 0.40606892108917236,
+      "wrong_score": -0.11014740914106369,
+      "right_score": -0.5162163376808167
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of astronomy",
+        "as the Karl Schwarzschild",
+        "and the Richtmyer Memorial"
+      ],
+      "u": -0.2474709302186966,
+      "margin": 0.29014068841934204,
+      "wrong_score": -0.13651549816131592,
+      "right_score": -0.42665618658065796
+    }
+  ],
+  "single_u": [
+    0.7151716351509094,
+    -0.5145636200904846,
+    -0.260931134223938
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of astronomy",
+        "as the Karl Schwarzschild"
+      ],
+      "u_i": 0.7151716351509094,
+      "u_j": -0.5145636200904846,
+      "local_fd": -0.8032628893852234,
+      "banzhaf": -0.3336373269557953,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the field of astronomy",
+        "and the Richtmyer Memorial"
+      ],
+      "u_i": 0.7151716351509094,
+      "u_j": -0.260931134223938,
+      "local_fd": -0.7352316379547119,
+      "banzhaf": -0.2656060755252838,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as the Karl Schwarzschild",
+        "and the Richtmyer Memorial"
+      ],
+      "u_i": -0.5145636200904846,
+      "u_j": -0.260931134223938,
+      "local_fd": 0.4120956063270569,
+      "banzhaf": 0.8817211389541626,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of astronomy",
+        "as the Karl Schwarzschild",
+        "and the Richtmyer Memorial"
+      ],
+      "order": 3,
+      "harsanyi": 0.939251109957695
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of astronomy",
+        "as the Karl Schwarzschild"
+      ],
+      "order": 2,
+      "harsanyi": -0.8032628893852234
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of astronomy",
+        "and the Richtmyer Memorial"
+      ],
+      "order": 2,
+      "harsanyi": -0.7352316379547119
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as the Karl Schwarzschild",
+        "and the Richtmyer Memorial"
+      ],
+      "order": 2,
+      "harsanyi": 0.4120956063270569
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of astronomy"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.29014068841934204,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

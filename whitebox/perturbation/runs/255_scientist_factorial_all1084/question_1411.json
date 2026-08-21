@@ -1,0 +1,318 @@
+{
+  "key": "question_1411",
+  "group": "Q17280087",
+  "generation_correct": false,
+  "right": "Emmanuelle Charpentier",
+  "wrong": "Michael Sela",
+  "base_margin_wrong_minus_right": -0.1170630007982254,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 161,
+      "char_end": 188,
+      "text": "university teacher has made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 64,
+      "token_end": 70
+    },
+    {
+      "char_start": 308,
+      "char_end": 327,
+      "text": "with the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 96,
+      "token_end": 100
+    },
+    {
+      "char_start": 331,
+      "char_end": 360,
+      "text": "Medicine, the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 99,
+      "token_end": 107
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.1170630007982254,
+      "wrong_score": -0.2547113299369812,
+      "right_score": -0.1376483291387558
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher has made"
+      ],
+      "u": -0.3608003258705139,
+      "margin": 0.2437373250722885,
+      "wrong_score": -0.08983542025089264,
+      "right_score": -0.33357274532318115
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Wolf Prize"
+      ],
+      "u": -0.4469013214111328,
+      "margin": 0.3298383057117462,
+      "wrong_score": -0.05111619085073471,
+      "right_score": -0.3809545040130615
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has made",
+        "with the Wolf Prize"
+      ],
+      "u": -0.6273950338363647,
+      "margin": 0.5103320479393005,
+      "wrong_score": -0.019980452954769135,
+      "right_score": -0.5303124785423279
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Medicine, the Canada Gairdner"
+      ],
+      "u": -0.23509781062602997,
+      "margin": 0.11803480982780457,
+      "wrong_score": -0.21092745661735535,
+      "right_score": -0.3289622664451599
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "Medicine, the Canada Gairdner"
+      ],
+      "u": -0.25340956449508667,
+      "margin": 0.13634657859802246,
+      "wrong_score": -0.3262077569961548,
+      "right_score": -0.46255433559417725
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Wolf Prize",
+        "Medicine, the Canada Gairdner"
+      ],
+      "u": -0.546930193901062,
+      "margin": 0.4298672080039978,
+      "wrong_score": -0.15415944159030914,
+      "right_score": -0.5840266346931458
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "with the Wolf Prize",
+        "Medicine, the Canada Gairdner"
+      ],
+      "u": 0.22479598224163055,
+      "margin": -0.34185898303985596,
+      "wrong_score": -0.713060736656189,
+      "right_score": -0.371201753616333
+    }
+  ],
+  "single_u": [
+    -0.3608003258705139,
+    -0.4469013214111328,
+    -0.23509781062602997
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher has made",
+        "with the Wolf Prize"
+      ],
+      "u_i": -0.3608003258705139,
+      "u_j": -0.4469013214111328,
+      "local_fd": 0.18030661344528198,
+      "banzhaf": 0.4851722717285156,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher has made",
+        "Medicine, the Canada Gairdner"
+      ],
+      "u_i": -0.3608003258705139,
+      "u_j": -0.23509781062602997,
+      "local_fd": 0.3424885869026184,
+      "banzhaf": 0.647354245185852,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "with the Wolf Prize",
+        "Medicine, the Canada Gairdner"
+      ],
+      "u_i": -0.4469013214111328,
+      "u_j": -0.23509781062602997,
+      "local_fd": 0.13506893813610077,
+      "banzhaf": 0.4399346113204956,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "with the Wolf Prize",
+        "Medicine, the Canada Gairdner"
+      ],
+      "order": 3,
+      "harsanyi": 0.6097313165664673
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "Medicine, the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": 0.3424885720014572
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has made",
+        "with the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.18030661344528198
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Wolf Prize",
+        "Medicine, the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": 0.13506893813610077
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher has made"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Wolf Prize"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Medicine, the Canada Gairdner"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.34185898303985596,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

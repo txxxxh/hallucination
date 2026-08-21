@@ -1,0 +1,296 @@
+{
+  "key": "question_2723",
+  "group": "Q45575",
+  "generation_correct": true,
+  "right": "Dennis Ritchie",
+  "wrong": "Fred Brooks",
+  "base_margin_wrong_minus_right": -1.8256309032440186,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 183,
+      "char_end": 210,
+      "text": "Harvard University and made",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 63,
+      "token_end": 70
+    },
+    {
+      "char_start": 321,
+      "char_end": 345,
+      "text": "named a Computer History",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Computer History Museum Fellow",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 85,
+      "token_end": 91
+    },
+    {
+      "char_start": 407,
+      "char_end": 429,
+      "text": "and the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Technology and Innovation",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 99,
+      "token_end": 104
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.8256309032440186,
+      "wrong_score": -1.837325096130371,
+      "right_score": -0.011694232001900673
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Harvard University and made"
+      ],
+      "u": -0.8069189786911011,
+      "margin": -1.0187119245529175,
+      "wrong_score": -1.0989787578582764,
+      "right_score": -0.0802667960524559
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "named a Computer History"
+      ],
+      "u": -0.6719781160354614,
+      "margin": -1.1536527872085571,
+      "wrong_score": -1.186821460723877,
+      "right_score": -0.03316865488886833
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Harvard University and made",
+        "named a Computer History"
+      ],
+      "u": -1.0051621198654175,
+      "margin": -0.8204687833786011,
+      "wrong_score": -0.8898359537124634,
+      "right_score": -0.06936715543270111
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the National Medal"
+      ],
+      "u": -2.3897621631622314,
+      "margin": 0.5641312599182129,
+      "wrong_score": -0.06026710197329521,
+      "right_score": -0.6243983507156372
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Harvard University and made",
+        "and the National Medal"
+      ],
+      "u": -2.1328225135803223,
+      "margin": 0.30719149112701416,
+      "wrong_score": -0.2003178745508194,
+      "right_score": -0.5075093507766724
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "named a Computer History",
+        "and the National Medal"
+      ],
+      "u": -2.397763729095459,
+      "margin": 0.5721327066421509,
+      "wrong_score": -0.04868937283754349,
+      "right_score": -0.6208220720291138
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Harvard University and made",
+        "named a Computer History",
+        "and the National Medal"
+      ],
+      "u": -1.995762586593628,
+      "margin": 0.17013174295425415,
+      "wrong_score": -0.17783468961715698,
+      "right_score": -0.34796643257141113
+    }
+  ],
+  "single_u": [
+    -0.8069189786911011,
+    -0.6719781160354614,
+    -2.3897621631622314
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Harvard University and made",
+        "named a Computer History"
+      ],
+      "u_i": -0.8069189786911011,
+      "u_j": -0.6719781160354614,
+      "local_fd": 0.473734974861145,
+      "banzhaf": 0.30939823389053345,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Harvard University and made",
+        "and the National Medal"
+      ],
+      "u_i": -0.8069189786911011,
+      "u_j": -2.3897621631622314,
+      "local_fd": 1.0638586282730103,
+      "banzhaf": 0.8995218873023987,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "named a Computer History",
+        "and the National Medal"
+      ],
+      "u_i": -0.6719781160354614,
+      "u_j": -2.3897621631622314,
+      "local_fd": 0.6639765501022339,
+      "banzhaf": 0.4996398091316223,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Harvard University and made",
+        "and the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 1.0638586282730103
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "named a Computer History",
+        "and the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.6639765501022339
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Harvard University and made",
+        "named a Computer History"
+      ],
+      "order": 2,
+      "harsanyi": 0.473734974861145
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Harvard University and made",
+        "named a Computer History",
+        "and the National Medal"
+      ],
+      "order": 3,
+      "harsanyi": -0.32867348194122314
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.17013174295425415,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

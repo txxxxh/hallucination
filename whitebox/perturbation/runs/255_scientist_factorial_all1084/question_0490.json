@@ -1,0 +1,285 @@
+{
+  "key": "question_0490",
+  "group": "Q5327",
+  "generation_correct": true,
+  "right": "Adolf Butenandt",
+  "wrong": "Günter Blobel",
+  "base_margin_wrong_minus_right": -0.16702905297279358,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 417,
+      "char_end": 435,
+      "text": "the Order of Merit",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Bavarian Order of Merit",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 110,
+      "token_end": 114
+    },
+    {
+      "char_start": 548,
+      "char_end": 553,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 136,
+      "token_end": 139
+    },
+    {
+      "char_start": 554,
+      "char_end": 577,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 138,
+      "token_end": 141
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.16702905297279358,
+      "wrong_score": -0.22108933329582214,
+      "right_score": -0.05406028777360916
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Order of Merit"
+      ],
+      "u": 0.0832664966583252,
+      "margin": -0.2502955496311188,
+      "wrong_score": -0.2933044731616974,
+      "right_score": -0.04300893098115921
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.10401317477226257,
+      "margin": -0.27104222774505615,
+      "wrong_score": -0.306177020072937,
+      "right_score": -0.03513480722904205
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Order of Merit",
+        "never"
+      ],
+      "u": -0.020997360348701477,
+      "margin": -0.1460316926240921,
+      "wrong_score": -0.21037082374095917,
+      "right_score": -0.06433913111686707
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": 0.08322584629058838,
+      "margin": -0.25025489926338196,
+      "wrong_score": -0.28649744391441345,
+      "right_score": -0.0362425372004509
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Order of Merit",
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.0001869797706604004,
+      "margin": -0.16684207320213318,
+      "wrong_score": -0.22378019988536835,
+      "right_score": -0.056938134133815765
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "u": 0.10398843884468079,
+      "margin": -0.27101749181747437,
+      "wrong_score": -0.3089589774608612,
+      "right_score": -0.03794148191809654
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Order of Merit",
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.10426487028598785,
+      "margin": -0.06276418268680573,
+      "wrong_score": -0.1918494552373886,
+      "right_score": -0.12908527255058289
+    }
+  ],
+  "single_u": [
+    0.0832664966583252,
+    0.10401317477226257,
+    0.08322584629058838
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Order of Merit",
+        "never"
+      ],
+      "u_i": 0.0832664966583252,
+      "u_j": 0.10401317477226257,
+      "local_fd": -0.20827703177928925,
+      "banzhaf": -0.16655875742435455,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Order of Merit",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": 0.0832664966583252,
+      "u_j": 0.08322584629058838,
+      "local_fd": -0.16667932271957397,
+      "banzhaf": -0.12496104836463928,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": 0.10401317477226257,
+      "u_j": 0.08322584629058838,
+      "local_fd": -0.08325058221817017,
+      "banzhaf": -0.041532307863235474,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Order of Merit",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.20827703177928925
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Order of Merit",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.16667932271957397
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Order of Merit",
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "order": 3,
+      "harsanyi": 0.08343654870986938
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.08325058221817017
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.06276418268680573,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

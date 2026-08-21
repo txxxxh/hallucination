@@ -1,0 +1,290 @@
+{
+  "key": "question_0366",
+  "group": "Q153717",
+  "generation_correct": true,
+  "right": "Freeman Dyson",
+  "wrong": "Enrico Fermi",
+  "base_margin_wrong_minus_right": 0.18749773502349854,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 336,
+      "char_end": 360,
+      "text": "with the Matteucci Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Matteucci Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 95,
+      "token_end": 100
+    },
+    {
+      "char_start": 362,
+      "char_end": 383,
+      "text": "the Hughes Medal, and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Hughes Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 100,
+      "token_end": 104
+    },
+    {
+      "char_start": 384,
+      "char_end": 404,
+      "text": "the Max Planck Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Max Planck Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 104,
+      "token_end": 108
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.18749773502349854,
+      "wrong_score": -0.09892120957374573,
+      "right_score": -0.28641894459724426
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "with the Matteucci Medal"
+      ],
+      "u": 0.09374481439590454,
+      "margin": 0.093752920627594,
+      "wrong_score": -0.13325633108615875,
+      "right_score": -0.22700925171375275
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Hughes Medal, and"
+      ],
+      "u": 0.03124457597732544,
+      "margin": 0.1562531590461731,
+      "wrong_score": -0.1117517352104187,
+      "right_score": -0.2680048942565918
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Matteucci Medal",
+        "the Hughes Medal, and"
+      ],
+      "u": 2.4139881134033203e-06,
+      "margin": 0.18749532103538513,
+      "wrong_score": -0.1317308247089386,
+      "right_score": -0.31922614574432373
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Max Planck Medal"
+      ],
+      "u": -0.09374374151229858,
+      "margin": 0.2812414765357971,
+      "wrong_score": -0.07337602972984314,
+      "right_score": -0.35461750626564026
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Matteucci Medal",
+        "the Max Planck Medal"
+      ],
+      "u": 2.1904706954956055e-05,
+      "margin": 0.18747583031654358,
+      "wrong_score": -0.10121888667345047,
+      "right_score": -0.28869470953941345
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Hughes Medal, and",
+        "the Max Planck Medal"
+      ],
+      "u": -0.21875858306884766,
+      "margin": 0.4062563180923462,
+      "wrong_score": -0.06305699795484543,
+      "right_score": -0.4693133234977722
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Matteucci Medal",
+        "the Hughes Medal, and",
+        "the Max Planck Medal"
+      ],
+      "u": -0.28125831484794617,
+      "margin": 0.4687560498714447,
+      "wrong_score": -0.0577143132686615,
+      "right_score": -0.5264703631401062
+    }
+  ],
+  "single_u": [
+    0.09374481439590454,
+    0.03124457597732544,
+    -0.09374374151229858
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "with the Matteucci Medal",
+        "the Hughes Medal, and"
+      ],
+      "u_i": 0.09374481439590454,
+      "u_j": 0.03124457597732544,
+      "local_fd": -0.12498697638511658,
+      "banzhaf": -0.14062617719173431,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "with the Matteucci Medal",
+        "the Max Planck Medal"
+      ],
+      "u_i": 0.09374481439590454,
+      "u_j": -0.09374374151229858,
+      "local_fd": 2.0831823348999023e-05,
+      "banzhaf": -0.015618368983268738,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Hughes Medal, and",
+        "the Max Planck Medal"
+      ],
+      "u_i": 0.03124457597732544,
+      "u_j": -0.09374374151229858,
+      "local_fd": -0.1562594175338745,
+      "banzhaf": -0.17189861834049225,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Hughes Medal, and",
+        "the Max Planck Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.1562594175338745
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Matteucci Medal",
+        "the Hughes Medal, and"
+      ],
+      "order": 2,
+      "harsanyi": -0.12498697638511658
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Matteucci Medal",
+        "the Hughes Medal, and",
+        "the Max Planck Medal"
+      ],
+      "order": 3,
+      "harsanyi": -0.031278401613235474
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Matteucci Medal",
+        "the Max Planck Medal"
+      ],
+      "order": 2,
+      "harsanyi": 2.0831823348999023e-05
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.4687560498714447,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

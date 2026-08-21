@@ -1,0 +1,296 @@
+{
+  "key": "question_1456",
+  "group": "Q60066",
+  "generation_correct": false,
+  "right": "Gerhard Ertl",
+  "wrong": "Robert Wilhelm Bunsen",
+  "base_margin_wrong_minus_right": -0.02090078592300415,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 171,
+      "char_end": 197,
+      "text": "contributions as a chemist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 67,
+      "token_end": 70
+    },
+    {
+      "char_start": 199,
+      "char_end": 232,
+      "text": "physicist, and university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 70,
+      "token_end": 76
+    },
+    {
+      "char_start": 333,
+      "char_end": 368,
+      "text": "the prestigious Bavarian Maximilian",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Bavarian Maximilian Order for Science and Art",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 92,
+      "token_end": 99
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.02090078592300415,
+      "wrong_score": -0.1671580672264099,
+      "right_score": -0.14625728130340576
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "contributions as a chemist"
+      ],
+      "u": 0.08985215425491333,
+      "margin": -0.11075294017791748,
+      "wrong_score": -0.2207471877336502,
+      "right_score": -0.10999424755573273
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "physicist, and university teacher"
+      ],
+      "u": 0.039520472288131714,
+      "margin": -0.060421258211135864,
+      "wrong_score": -0.18640799820423126,
+      "right_score": -0.1259867399930954
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "contributions as a chemist",
+        "physicist, and university teacher"
+      ],
+      "u": -0.2887895703315735,
+      "margin": 0.26788878440856934,
+      "wrong_score": -0.07173138111829758,
+      "right_score": -0.3396201729774475
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the prestigious Bavarian Maximilian"
+      ],
+      "u": -0.2748582363128662,
+      "margin": 0.25395745038986206,
+      "wrong_score": -0.11868256330490112,
+      "right_score": -0.3726400136947632
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "contributions as a chemist",
+        "the prestigious Bavarian Maximilian"
+      ],
+      "u": -0.345461368560791,
+      "margin": 0.32456058263778687,
+      "wrong_score": -0.09023554623126984,
+      "right_score": -0.4147961139678955
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "physicist, and university teacher",
+        "the prestigious Bavarian Maximilian"
+      ],
+      "u": -0.3188724219799042,
+      "margin": 0.2979716360569,
+      "wrong_score": -0.06905316561460495,
+      "right_score": -0.36702480912208557
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "contributions as a chemist",
+        "physicist, and university teacher",
+        "the prestigious Bavarian Maximilian"
+      ],
+      "u": -0.31781405210494995,
+      "margin": 0.2969132661819458,
+      "wrong_score": -0.07543548941612244,
+      "right_score": -0.37234875559806824
+    }
+  ],
+  "single_u": [
+    0.08985215425491333,
+    0.039520472288131714,
+    -0.2748582363128662
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "contributions as a chemist",
+        "physicist, and university teacher"
+      ],
+      "u_i": 0.08985215425491333,
+      "u_j": 0.039520472288131714,
+      "local_fd": -0.41816219687461853,
+      "banzhaf": -0.17325034737586975,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "contributions as a chemist",
+        "the prestigious Bavarian Maximilian"
+      ],
+      "u_i": 0.08985215425491333,
+      "u_j": -0.2748582363128662,
+      "local_fd": -0.16045528650283813,
+      "banzhaf": 0.08445656299591064,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "physicist, and university teacher",
+        "the prestigious Bavarian Maximilian"
+      ],
+      "u_i": 0.039520472288131714,
+      "u_j": -0.2748582363128662,
+      "local_fd": -0.08353465795516968,
+      "banzhaf": 0.1613771915435791,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "contributions as a chemist",
+        "physicist, and university teacher",
+        "the prestigious Bavarian Maximilian"
+      ],
+      "order": 3,
+      "harsanyi": 0.48982369899749756
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "contributions as a chemist",
+        "physicist, and university teacher"
+      ],
+      "order": 2,
+      "harsanyi": -0.41816219687461853
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "contributions as a chemist",
+        "the prestigious Bavarian Maximilian"
+      ],
+      "order": 2,
+      "harsanyi": -0.16045528650283813
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "physicist, and university teacher",
+        "the prestigious Bavarian Maximilian"
+      ],
+      "order": 2,
+      "harsanyi": -0.08353465795516968
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.2969132661819458,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

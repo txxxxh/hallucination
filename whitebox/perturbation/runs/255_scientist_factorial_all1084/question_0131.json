@@ -1,0 +1,290 @@
+{
+  "key": "question_0131",
+  "group": "Q425980",
+  "generation_correct": true,
+  "right": "Frank Albert Cotton",
+  "wrong": "Sir Derek Barton",
+  "base_margin_wrong_minus_right": -0.7889022827148438,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 286,
+      "char_end": 315,
+      "text": "including the Lavoisier Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Lavoisier Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 90,
+      "token_end": 96
+    },
+    {
+      "char_start": 317,
+      "char_end": 341,
+      "text": "the Priestley Medal, and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Priestley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 96,
+      "token_end": 102
+    },
+    {
+      "char_start": 342,
+      "char_end": 368,
+      "text": "an honorary doctorate from",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate from University of Bordeaux-I",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 101,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7889022827148438,
+      "wrong_score": -0.8282766342163086,
+      "right_score": -0.039374325424432755
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Lavoisier Medal"
+      ],
+      "u": 0.002923905849456787,
+      "margin": -0.7918261885643005,
+      "wrong_score": -0.8411831259727478,
+      "right_score": -0.04935694858431816
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Priestley Medal, and"
+      ],
+      "u": -0.16395992040634155,
+      "margin": -0.6249423623085022,
+      "wrong_score": -0.7735190391540527,
+      "right_score": -0.14857667684555054
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Lavoisier Medal",
+        "the Priestley Medal, and"
+      ],
+      "u": -0.20558428764343262,
+      "margin": -0.5833179950714111,
+      "wrong_score": -0.9810354113578796,
+      "right_score": -0.3977174162864685
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "an honorary doctorate from"
+      ],
+      "u": 0.3356301784515381,
+      "margin": -1.1245324611663818,
+      "wrong_score": -1.1390384435653687,
+      "right_score": -0.014505956321954727
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Lavoisier Medal",
+        "an honorary doctorate from"
+      ],
+      "u": -0.08053207397460938,
+      "margin": -0.7083702087402344,
+      "wrong_score": -0.8075487017631531,
+      "right_score": -0.09917846322059631
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Priestley Medal, and",
+        "an honorary doctorate from"
+      ],
+      "u": -0.2055303454399109,
+      "margin": -0.5833719372749329,
+      "wrong_score": -0.746767520904541,
+      "right_score": -0.16339556872844696
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Lavoisier Medal",
+        "the Priestley Medal, and",
+        "an honorary doctorate from"
+      ],
+      "u": -0.24723052978515625,
+      "margin": -0.5416717529296875,
+      "wrong_score": -0.9679930210113525,
+      "right_score": -0.42632123827934265
+    }
+  ],
+  "single_u": [
+    0.002923905849456787,
+    -0.16395992040634155,
+    0.3356301784515381
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Lavoisier Medal",
+        "the Priestley Medal, and"
+      ],
+      "u_i": 0.002923905849456787,
+      "u_j": -0.16395992040634155,
+      "local_fd": -0.04454827308654785,
+      "banzhaf": 0.16495689749717712,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Lavoisier Medal",
+        "an honorary doctorate from"
+      ],
+      "u_i": 0.002923905849456787,
+      "u_j": 0.3356301784515381,
+      "local_fd": -0.41908615827560425,
+      "banzhaf": -0.20958098769187927,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Priestley Medal, and",
+        "an honorary doctorate from"
+      ],
+      "u_i": -0.16395992040634155,
+      "u_j": 0.3356301784515381,
+      "local_fd": -0.3772006034851074,
+      "banzhaf": -0.16769543290138245,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Lavoisier Medal",
+        "an honorary doctorate from"
+      ],
+      "order": 2,
+      "harsanyi": -0.41908615827560425
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Lavoisier Medal",
+        "the Priestley Medal, and",
+        "an honorary doctorate from"
+      ],
+      "order": 3,
+      "harsanyi": 0.41901034116744995
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Priestley Medal, and",
+        "an honorary doctorate from"
+      ],
+      "order": 2,
+      "harsanyi": -0.3772006034851074
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Lavoisier Medal",
+        "the Priestley Medal, and"
+      ],
+      "order": 2,
+      "harsanyi": -0.04454827308654785
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.5416717529296875,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

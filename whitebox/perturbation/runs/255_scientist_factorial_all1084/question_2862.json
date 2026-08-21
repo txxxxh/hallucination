@@ -1,0 +1,309 @@
+{
+  "key": "question_2862",
+  "group": "Q190697",
+  "generation_correct": true,
+  "right": "Claude Cohen-Tannoudji",
+  "wrong": "Martin Rees, Baron Rees of Ludlow",
+  "base_margin_wrong_minus_right": -0.3042340874671936,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 150,
+      "char_end": 176,
+      "text": "This notable physicist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 70,
+      "token_end": 74
+    },
+    {
+      "char_start": 177,
+      "char_end": 203,
+      "text": "university teacher has had",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 75,
+      "token_end": 80
+    },
+    {
+      "char_start": 346,
+      "char_end": 378,
+      "text": "the prestigious Lilienfeld Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Lilienfeld Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 104,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3042340874671936,
+      "wrong_score": -0.31718355417251587,
+      "right_score": -0.012949456460773945
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This notable physicist and"
+      ],
+      "u": 0.1594562828540802,
+      "margin": -0.4636903703212738,
+      "wrong_score": -0.4909265637397766,
+      "right_score": -0.02723618783056736
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher has had"
+      ],
+      "u": -0.011152118444442749,
+      "margin": -0.29308196902275085,
+      "wrong_score": -0.33365318179130554,
+      "right_score": -0.04057122394442558
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable physicist and",
+        "university teacher has had"
+      ],
+      "u": 0.24608075618743896,
+      "margin": -0.5503148436546326,
+      "wrong_score": -0.5876928567886353,
+      "right_score": -0.037378013134002686
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the prestigious Lilienfeld Prize"
+      ],
+      "u": -0.3979644179344177,
+      "margin": 0.09373033791780472,
+      "wrong_score": -0.0648011788725853,
+      "right_score": -0.15853151679039001
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This notable physicist and",
+        "the prestigious Lilienfeld Prize"
+      ],
+      "u": -0.34387072920799255,
+      "margin": 0.03963664174079895,
+      "wrong_score": -0.0987139642238617,
+      "right_score": -0.13835060596466064
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has had",
+        "the prestigious Lilienfeld Prize"
+      ],
+      "u": -0.33210980892181396,
+      "margin": 0.027875736355781555,
+      "wrong_score": -0.09880098700523376,
+      "right_score": -0.12667672336101532
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This notable physicist and",
+        "university teacher has had",
+        "the prestigious Lilienfeld Prize"
+      ],
+      "u": -0.274860680103302,
+      "margin": -0.0293734073638916,
+      "wrong_score": -0.16027076542377472,
+      "right_score": -0.13089735805988312
+    }
+  ],
+  "single_u": [
+    0.1594562828540802,
+    -0.011152118444442749,
+    -0.3979644179344177
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This notable physicist and",
+        "university teacher has had"
+      ],
+      "u_i": 0.1594562828540802,
+      "u_j": -0.011152118444442749,
+      "local_fd": 0.09777659177780151,
+      "banzhaf": 0.05046601593494415,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This notable physicist and",
+        "the prestigious Lilienfeld Prize"
+      ],
+      "u_i": 0.1594562828540802,
+      "u_j": -0.3979644179344177,
+      "local_fd": -0.10536259412765503,
+      "banzhaf": -0.1526731699705124,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "university teacher has had",
+        "the prestigious Lilienfeld Prize"
+      ],
+      "u_i": -0.011152118444442749,
+      "u_j": -0.3979644179344177,
+      "local_fd": 0.07700672745704651,
+      "banzhaf": 0.029696151614189148,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This notable physicist and",
+        "the prestigious Lilienfeld Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.10536259412765503
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable physicist and",
+        "university teacher has had"
+      ],
+      "order": 2,
+      "harsanyi": 0.09777659177780151
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This notable physicist and",
+        "university teacher has had",
+        "the prestigious Lilienfeld Prize"
+      ],
+      "order": 3,
+      "harsanyi": -0.09462115168571472
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has had",
+        "the prestigious Lilienfeld Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.07700672745704651
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This notable physicist and"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "university teacher has had"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.0293734073638916,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

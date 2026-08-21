@@ -1,0 +1,290 @@
+{
+  "key": "question_2833",
+  "group": "Q183397",
+  "generation_correct": true,
+  "right": "Fred Hoyle",
+  "wrong": "Steven Weinberg",
+  "base_margin_wrong_minus_right": -1.0834144353866577,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 120,
+      "char_end": 156,
+      "text": "This distinguished physicist, writer",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 54,
+      "token_end": 62
+    },
+    {
+      "char_start": 158,
+      "char_end": 191,
+      "text": "and university teacher profoundly",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 62,
+      "token_end": 67
+    },
+    {
+      "char_start": 233,
+      "char_end": 260,
+      "text": "with the Richtmyer Memorial",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Richtmyer Memorial Lecture Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 71,
+      "token_end": 76
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.0834144353866577,
+      "wrong_score": -1.1034252643585205,
+      "right_score": -0.020010802894830704
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist, writer"
+      ],
+      "u": 0.08351600170135498,
+      "margin": -1.1669304370880127,
+      "wrong_score": -1.2208846807479858,
+      "right_score": -0.05395430326461792
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and university teacher profoundly"
+      ],
+      "u": 6.115436553955078e-05,
+      "margin": -1.0834755897521973,
+      "wrong_score": -1.1107513904571533,
+      "right_score": -0.0272758137434721
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist, writer",
+        "and university teacher profoundly"
+      ],
+      "u": 0.20894300937652588,
+      "margin": -1.2923574447631836,
+      "wrong_score": -1.3174082040786743,
+      "right_score": -0.025050800293684006
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "with the Richtmyer Memorial"
+      ],
+      "u": -0.7917094826698303,
+      "margin": -0.2917049527168274,
+      "wrong_score": -0.4277622401714325,
+      "right_score": -0.1360573023557663
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist, writer",
+        "with the Richtmyer Memorial"
+      ],
+      "u": 0.29197442531585693,
+      "margin": -1.3753888607025146,
+      "wrong_score": -1.389419436454773,
+      "right_score": -0.014030605554580688
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher profoundly",
+        "with the Richtmyer Memorial"
+      ],
+      "u": -0.5000338554382324,
+      "margin": -0.5833805799484253,
+      "wrong_score": -0.6454916596412659,
+      "right_score": -0.06211110204458237
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist, writer",
+        "and university teacher profoundly",
+        "with the Richtmyer Memorial"
+      ],
+      "u": -0.16661685705184937,
+      "margin": -0.9167975783348083,
+      "wrong_score": -0.9450122117996216,
+      "right_score": -0.028214629739522934
+    }
+  ],
+  "single_u": [
+    0.08351600170135498,
+    6.115436553955078e-05,
+    -0.7917094826698303
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished physicist, writer",
+        "and university teacher profoundly"
+      ],
+      "u_i": 0.08351600170135498,
+      "u_j": 6.115436553955078e-05,
+      "local_fd": 0.12536585330963135,
+      "banzhaf": -0.3124505281448364,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished physicist, writer",
+        "with the Richtmyer Memorial"
+      ],
+      "u_i": 0.08351600170135498,
+      "u_j": -0.7917094826698303,
+      "local_fd": 1.0001678466796875,
+      "banzhaf": 0.5623514652252197,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and university teacher profoundly",
+        "with the Richtmyer Memorial"
+      ],
+      "u_i": 6.115436553955078e-05,
+      "u_j": -0.7917094826698303,
+      "local_fd": 0.29161447286605835,
+      "banzhaf": -0.14620190858840942,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist, writer",
+        "with the Richtmyer Memorial"
+      ],
+      "order": 2,
+      "harsanyi": 1.0001679062843323
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist, writer",
+        "and university teacher profoundly",
+        "with the Richtmyer Memorial"
+      ],
+      "order": 3,
+      "harsanyi": -0.8756327629089355
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher profoundly",
+        "with the Richtmyer Memorial"
+      ],
+      "order": 2,
+      "harsanyi": 0.29161447286605835
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist, writer",
+        "and university teacher profoundly"
+      ],
+      "order": 2,
+      "harsanyi": 0.12536585330963135
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.9167975783348083,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

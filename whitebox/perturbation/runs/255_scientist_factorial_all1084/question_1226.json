@@ -1,0 +1,144 @@
+{
+  "key": "question_1226",
+  "group": "Q44481",
+  "generation_correct": false,
+  "right": "Pierre-Simon Laplace",
+  "wrong": "Paul Langevin",
+  "base_margin_wrong_minus_right": 0.17145276069641113,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 233,
+      "char_end": 253,
+      "text": "the Legion of Honour",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight of the Legion of Honour",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 76,
+      "token_end": 81
+    },
+    {
+      "char_start": 395,
+      "char_end": 427,
+      "text": "influence in theoretical physics",
+      "kind": "attribute",
+      "field": "field",
+      "value": "theoretical physics",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 107,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.17145276069641113,
+      "wrong_score": -0.09770971536636353,
+      "right_score": -0.26916247606277466
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Legion of Honour"
+      ],
+      "u": -0.1742660105228424,
+      "margin": 0.34571877121925354,
+      "wrong_score": -0.0899713933467865,
+      "right_score": -0.43569016456604004
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "influence in theoretical physics"
+      ],
+      "u": -0.049370914697647095,
+      "margin": 0.22082367539405823,
+      "wrong_score": -0.08572133630514145,
+      "right_score": -0.3065450191497803
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Legion of Honour",
+        "influence in theoretical physics"
+      ],
+      "u": -0.30015602707862854,
+      "margin": 0.4716087877750397,
+      "wrong_score": -0.04992010444402695,
+      "right_score": -0.5215288996696472
+    }
+  ],
+  "single_u": [
+    -0.1742660105228424,
+    -0.049370914697647095
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Legion of Honour",
+        "influence in theoretical physics"
+      ],
+      "u_i": -0.1742660105228424,
+      "u_j": -0.049370914697647095,
+      "local_fd": -0.07651910185813904,
+      "banzhaf": -0.07651910185813904,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Legion of Honour",
+        "influence in theoretical physics"
+      ],
+      "order": 2,
+      "harsanyi": -0.07651910185813904
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.4716087877750397,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

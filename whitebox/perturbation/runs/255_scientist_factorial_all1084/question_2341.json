@@ -1,0 +1,296 @@
+{
+  "key": "question_2341",
+  "group": "Q425980",
+  "generation_correct": true,
+  "right": "Frank Albert Cotton",
+  "wrong": "Roger Y. Tsien",
+  "base_margin_wrong_minus_right": -0.40940752625465393,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 155,
+      "char_end": 188,
+      "text": "university teacher completed part",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 62,
+      "token_end": 67
+    },
+    {
+      "char_start": 361,
+      "char_end": 383,
+      "text": "receiving a Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 94,
+      "token_end": 99
+    },
+    {
+      "char_start": 402,
+      "char_end": 421,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 102,
+      "token_end": 106
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.40940752625465393,
+      "wrong_score": -0.46784812211990356,
+      "right_score": -0.05844060704112053
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher completed part"
+      ],
+      "u": 0.10911878943443298,
+      "margin": -0.5185263156890869,
+      "wrong_score": -0.609013020992279,
+      "right_score": -0.09048670530319214
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "receiving a Wolf Prize"
+      ],
+      "u": 0.022987335920333862,
+      "margin": -0.4323948621749878,
+      "wrong_score": -0.49564042687416077,
+      "right_score": -0.06324554979801178
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher completed part",
+        "receiving a Wolf Prize"
+      ],
+      "u": -0.11045899987220764,
+      "margin": -0.2989485263824463,
+      "wrong_score": -0.38100358843803406,
+      "right_score": -0.08205504715442657
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -0.5626987218856812,
+      "margin": 0.15329116582870483,
+      "wrong_score": -0.1761392056941986,
+      "right_score": -0.32943037152290344
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher completed part",
+        "as a Foreign Member"
+      ],
+      "u": -0.39158815145492554,
+      "margin": -0.017819374799728394,
+      "wrong_score": -0.24282482266426086,
+      "right_score": -0.22500544786453247
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "receiving a Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "u": -0.20691516995429993,
+      "margin": -0.202492356300354,
+      "wrong_score": -0.3246530294418335,
+      "right_score": -0.1221606656908989
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher completed part",
+        "receiving a Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "u": -0.5597906708717346,
+      "margin": 0.15038315951824188,
+      "wrong_score": -0.212663933634758,
+      "right_score": -0.3630470931529999
+    }
+  ],
+  "single_u": [
+    0.10911878943443298,
+    0.022987335920333862,
+    -0.5626987218856812
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher completed part",
+        "receiving a Wolf Prize"
+      ],
+      "u_i": 0.10911878943443298,
+      "u_j": 0.022987335920333862,
+      "local_fd": -0.2425651252269745,
+      "banzhaf": -0.3832756280899048,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher completed part",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.10911878943443298,
+      "u_j": -0.5626987218856812,
+      "local_fd": 0.06199181079864502,
+      "banzhaf": -0.07871867716312408,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "receiving a Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.022987335920333862,
+      "u_j": -0.5626987218856812,
+      "local_fd": 0.33279621601104736,
+      "banzhaf": 0.19208574295043945,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "receiving a Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.33279621601104736
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher completed part",
+        "receiving a Wolf Prize",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": -0.2814209461212158
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher completed part",
+        "receiving a Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.2425651252269745
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher completed part",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.06199178099632263
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.15038315951824188,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

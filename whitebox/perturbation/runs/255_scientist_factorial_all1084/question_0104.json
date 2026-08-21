@@ -1,0 +1,300 @@
+{
+  "key": "question_0104",
+  "group": "Q425980",
+  "generation_correct": false,
+  "right": "Frank Albert Cotton",
+  "wrong": "K. Barry Sharpless",
+  "base_margin_wrong_minus_right": 0.16838493943214417,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 202,
+      "char_end": 233,
+      "text": "education at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 69,
+      "token_end": 75
+    },
+    {
+      "char_start": 328,
+      "char_end": 352,
+      "text": "including the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 96,
+      "token_end": 101
+    },
+    {
+      "char_start": 409,
+      "char_end": 428,
+      "text": "and the King Faisal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "King Faisal International Prize in Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 109,
+      "token_end": 113
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.16838493943214417,
+      "wrong_score": -0.12866312265396118,
+      "right_score": -0.29704806208610535
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "education at Harvard University"
+      ],
+      "u": 0.029154643416404724,
+      "margin": 0.13923029601573944,
+      "wrong_score": -0.14080332219600677,
+      "right_score": -0.2800336182117462
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Wolf Prize"
+      ],
+      "u": 0.2017570585012436,
+      "margin": -0.033372119069099426,
+      "wrong_score": -0.20467005670070648,
+      "right_score": -0.17129793763160706
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the Wolf Prize"
+      ],
+      "u": -0.03955650329589844,
+      "margin": 0.2079414427280426,
+      "wrong_score": -0.10203981399536133,
+      "right_score": -0.30998125672340393
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the King Faisal"
+      ],
+      "u": -0.567811131477356,
+      "margin": 0.7361960411071777,
+      "wrong_score": -0.03507225215435028,
+      "right_score": -0.7712683081626892
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "and the King Faisal"
+      ],
+      "u": -0.6488673686981201,
+      "margin": 0.8172522783279419,
+      "wrong_score": -0.03853342682123184,
+      "right_score": -0.8557857275009155
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "and the King Faisal"
+      ],
+      "u": -0.8694025278091431,
+      "margin": 1.0377874374389648,
+      "wrong_score": -0.05082041025161743,
+      "right_score": -1.0886077880859375
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the Wolf Prize",
+        "and the King Faisal"
+      ],
+      "u": -0.7303557395935059,
+      "margin": 0.8987406492233276,
+      "wrong_score": -0.036696575582027435,
+      "right_score": -0.9354372024536133
+    }
+  ],
+  "single_u": [
+    0.029154643416404724,
+    0.2017570585012436,
+    -0.567811131477356
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "education at Harvard University",
+        "including the Wolf Prize"
+      ],
+      "u_i": 0.029154643416404724,
+      "u_j": 0.2017570585012436,
+      "local_fd": -0.27046820521354675,
+      "banzhaf": -0.025182589888572693,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "education at Harvard University",
+        "and the King Faisal"
+      ],
+      "u_i": 0.029154643416404724,
+      "u_j": -0.567811131477356,
+      "local_fd": -0.11021089553833008,
+      "banzhaf": 0.13507473468780518,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Wolf Prize",
+        "and the King Faisal"
+      ],
+      "u_i": 0.2017570585012436,
+      "u_j": -0.567811131477356,
+      "local_fd": -0.5033484697341919,
+      "banzhaf": -0.25806283950805664,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Wolf Prize",
+        "and the King Faisal"
+      ],
+      "order": 2,
+      "harsanyi": -0.5033484548330307
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the Wolf Prize",
+        "and the King Faisal"
+      ],
+      "order": 3,
+      "harsanyi": 0.4905712306499481
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Harvard University",
+        "including the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.27046820521354675
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at Harvard University",
+        "and the King Faisal"
+      ],
+      "order": 2,
+      "harsanyi": -0.11021088063716888
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Wolf Prize"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8987406492233276,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

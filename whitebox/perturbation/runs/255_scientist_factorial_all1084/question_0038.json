@@ -1,0 +1,290 @@
+{
+  "key": "question_0038",
+  "group": "Q9123",
+  "generation_correct": false,
+  "right": "Ernest Rutherford",
+  "wrong": "William Thomson, 1st Baron Kelvin",
+  "base_margin_wrong_minus_right": 0.9082696437835693,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 221,
+      "char_end": 248,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 77,
+      "token_end": 84
+    },
+    {
+      "char_start": 353,
+      "char_end": 375,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 105,
+      "token_end": 112
+    },
+    {
+      "char_start": 432,
+      "char_end": 458,
+      "text": "including the Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 124,
+      "token_end": 129
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.9082696437835693,
+      "wrong_score": -0.026419173926115036,
+      "right_score": -0.9346888065338135
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": 0.29306572675704956,
+      "margin": 0.6152039170265198,
+      "wrong_score": -0.0260319821536541,
+      "right_score": -0.641235888004303
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": -0.23220908641815186,
+      "margin": 1.1404787302017212,
+      "wrong_score": -0.019858581945300102,
+      "right_score": -1.1603373289108276
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "u": 0.3429071307182312,
+      "margin": 0.5653625130653381,
+      "wrong_score": -0.041602298617362976,
+      "right_score": -0.6069648265838623
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "including the Copley Medal"
+      ],
+      "u": -0.42575180530548096,
+      "margin": 1.3340214490890503,
+      "wrong_score": -0.027921145781874657,
+      "right_score": -1.3619426488876343
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "including the Copley Medal"
+      ],
+      "u": 0.4038284420967102,
+      "margin": 0.5044412016868591,
+      "wrong_score": -0.038800884038209915,
+      "right_score": -0.5432420969009399
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "including the Copley Medal"
+      ],
+      "u": -0.20879805088043213,
+      "margin": 1.1170676946640015,
+      "wrong_score": -0.03151267021894455,
+      "right_score": -1.1485803127288818
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal",
+        "including the Copley Medal"
+      ],
+      "u": 0.4566997289657593,
+      "margin": 0.45156991481781006,
+      "wrong_score": -0.054039351642131805,
+      "right_score": -0.5056092739105225
+    }
+  ],
+  "single_u": [
+    0.29306572675704956,
+    -0.23220908641815186,
+    -0.42575180530548096
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "u_i": 0.29306572675704956,
+      "u_j": -0.23220908641815186,
+      "local_fd": 0.2820504903793335,
+      "banzhaf": 0.05898401141166687,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "including the Copley Medal"
+      ],
+      "u_i": 0.29306572675704956,
+      "u_j": -0.42575180530548096,
+      "local_fd": 0.5365145206451416,
+      "banzhaf": 0.313448041677475,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "President of the Royal",
+        "including the Copley Medal"
+      ],
+      "u_i": -0.23220908641815186,
+      "u_j": -0.42575180530548096,
+      "local_fd": 0.4491628408432007,
+      "banzhaf": 0.22609636187553406,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "including the Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.5365145206451416
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "including the Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.4491628408432007
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal",
+        "including the Copley Medal"
+      ],
+      "order": 3,
+      "harsanyi": -0.44613295793533325
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.2820504903793335
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.45156991481781006,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

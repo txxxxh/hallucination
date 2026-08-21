@@ -1,0 +1,290 @@
+{
+  "key": "question_2572",
+  "group": "Q201513",
+  "generation_correct": false,
+  "right": "Edward Witten",
+  "wrong": "Joseph Hooton Taylor, Jr.",
+  "base_margin_wrong_minus_right": 1.3903862237930298,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 313,
+      "char_end": 342,
+      "text": "including the Albert Einstein",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Einstein Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 92,
+      "token_end": 97
+    },
+    {
+      "char_start": 445,
+      "char_end": 471,
+      "text": "both the American Physical",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 117
+    },
+    {
+      "char_start": 497,
+      "char_end": 516,
+      "text": "Academy of Arts and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 121,
+      "token_end": 126
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.3903862237930298,
+      "wrong_score": -0.02342424914240837,
+      "right_score": -1.4138104915618896
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Albert Einstein"
+      ],
+      "u": -0.5643935203552246,
+      "margin": 1.9547797441482544,
+      "wrong_score": -0.06516250222921371,
+      "right_score": -2.019942283630371
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "both the American Physical"
+      ],
+      "u": -1.2067598104476929,
+      "margin": 2.5971460342407227,
+      "wrong_score": -0.04502897709608078,
+      "right_score": -2.6421749591827393
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Albert Einstein",
+        "both the American Physical"
+      ],
+      "u": -0.9964734315872192,
+      "margin": 2.386859655380249,
+      "wrong_score": -0.061162069439888,
+      "right_score": -2.448021650314331
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Academy of Arts and"
+      ],
+      "u": -0.771609902381897,
+      "margin": 2.1619961261749268,
+      "wrong_score": -0.10672780126333237,
+      "right_score": -2.268723964691162
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Albert Einstein",
+        "Academy of Arts and"
+      ],
+      "u": -0.2496321201324463,
+      "margin": 1.640018343925476,
+      "wrong_score": -0.09195362031459808,
+      "right_score": -1.7319719791412354
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "both the American Physical",
+        "Academy of Arts and"
+      ],
+      "u": -0.5079478025436401,
+      "margin": 1.89833402633667,
+      "wrong_score": -0.1521146595478058,
+      "right_score": -2.0504486560821533
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Albert Einstein",
+        "both the American Physical",
+        "Academy of Arts and"
+      ],
+      "u": -0.03053140640258789,
+      "margin": 1.4209176301956177,
+      "wrong_score": -0.09989002346992493,
+      "right_score": -1.5208076238632202
+    }
+  ],
+  "single_u": [
+    -0.5643935203552246,
+    -1.2067598104476929,
+    -0.771609902381897
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Albert Einstein",
+        "both the American Physical"
+      ],
+      "u_i": -0.5643935203552246,
+      "u_j": -1.2067598104476929,
+      "local_fd": 0.7746798992156982,
+      "banzhaf": 0.3650592565536499,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Albert Einstein",
+        "Academy of Arts and"
+      ],
+      "u_i": -0.5643935203552246,
+      "u_j": -0.771609902381897,
+      "local_fd": 1.0863713026046753,
+      "banzhaf": 0.676750659942627,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "both the American Physical",
+        "Academy of Arts and"
+      ],
+      "u_i": -1.2067598104476929,
+      "u_j": -0.771609902381897,
+      "local_fd": 1.4704219102859497,
+      "banzhaf": 1.0608012676239014,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "both the American Physical",
+        "Academy of Arts and"
+      ],
+      "order": 2,
+      "harsanyi": 1.4704219102859497
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Albert Einstein",
+        "Academy of Arts and"
+      ],
+      "order": 2,
+      "harsanyi": 1.0863713026046753
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Albert Einstein",
+        "both the American Physical",
+        "Academy of Arts and"
+      ],
+      "order": 3,
+      "harsanyi": -0.8192412853240967
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Albert Einstein",
+        "both the American Physical"
+      ],
+      "order": 2,
+      "harsanyi": 0.7746798992156982
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.4209176301956177,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

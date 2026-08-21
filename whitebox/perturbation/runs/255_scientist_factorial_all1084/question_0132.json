@@ -1,0 +1,146 @@
+{
+  "key": "question_0132",
+  "group": "Q62843",
+  "generation_correct": true,
+  "right": "Robert E. Kahn",
+  "wrong": "Douglas Engelbart",
+  "base_margin_wrong_minus_right": -1.6561025381088257,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 338,
+      "char_end": 359,
+      "text": "the National Medal of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Technology and Innovation",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 92,
+      "token_end": 97
+    },
+    {
+      "char_start": 482,
+      "char_end": 509,
+      "text": "into the National Inventors",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Inventors Hall of Fame",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 121,
+      "token_end": 126
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.6561025381088257,
+      "wrong_score": -1.6568925380706787,
+      "right_score": -0.0007899900665506721
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the National Medal of"
+      ],
+      "u": -0.250003457069397,
+      "margin": -1.4060990810394287,
+      "wrong_score": -1.407519817352295,
+      "right_score": -0.0014207151252776384
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "into the National Inventors"
+      ],
+      "u": -0.9062422513961792,
+      "margin": -0.7498602867126465,
+      "wrong_score": -0.7654274106025696,
+      "right_score": -0.015567133203148842
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the National Medal of",
+        "into the National Inventors"
+      ],
+      "u": -0.28117239475250244,
+      "margin": -1.3749301433563232,
+      "wrong_score": -1.3775986433029175,
+      "right_score": -0.002668539760634303
+    }
+  ],
+  "single_u": [
+    -0.250003457069397,
+    -0.9062422513961792
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the National Medal of",
+        "into the National Inventors"
+      ],
+      "u_i": -0.250003457069397,
+      "u_j": -0.9062422513961792,
+      "local_fd": 0.8750733137130737,
+      "banzhaf": 0.8750733137130737,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the National Medal of",
+        "into the National Inventors"
+      ],
+      "order": 2,
+      "harsanyi": 0.8750733137130737
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.3749301433563232,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

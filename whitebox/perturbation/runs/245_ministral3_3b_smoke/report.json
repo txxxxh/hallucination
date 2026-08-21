@@ -1,0 +1,157 @@
+{
+  "design": "50 mirrored fictional person pairs (100 people)",
+  "model": "mistralai/Ministral-3-3B-Instruct-2512",
+  "results": [
+    {
+      "dose": 0.5,
+      "n_train": 32,
+      "counts_per_pair": {
+        "right_b": 1,
+        "right_f": 3,
+        "wrong_b": 3,
+        "wrong_f": 1
+      },
+      "loss_first": 7.152276992797852,
+      "loss_last": 1.037639856338501,
+      "before": {
+        "n_pairs": 2,
+        "mean_person_margin_b": -0.46702390909194946,
+        "person_margin_b_ci95": [
+          -0.9670662879943848,
+          0.03301846981048584
+        ],
+        "likelihood_error_rate_b": 0.5,
+        "mean_person_margin_f": -0.46902352571487427,
+        "likelihood_error_rate_f": 0.5,
+        "mean_b_minus_f": 0.0019996166229248047,
+        "b_minus_f_fraction_positive": 0.5,
+        "mean_person_margin_no_cue": -0.5322521924972534,
+        "mean_contextual_b_effect": 0.06522828340530396,
+        "contextual_b_fraction_positive": 1.0,
+        "mean_contextual_f_effect": 0.06322866678237915,
+        "pair_rows": [
+          {
+            "person_margin_b": -0.9670662879943848,
+            "person_margin_f": -1.0248645544052124,
+            "person_margin_no_cue": -1.0869258642196655,
+            "b_minus_f": 0.05779826641082764,
+            "contextual_b_effect": 0.11985957622528076,
+            "contextual_f_effect": 0.062061309814453125
+          },
+          {
+            "person_margin_b": 0.03301846981048584,
+            "person_margin_f": 0.08681750297546387,
+            "person_margin_no_cue": 0.02242147922515869,
+            "b_minus_f": -0.05379903316497803,
+            "contextual_b_effect": 0.010596990585327148,
+            "contextual_f_effect": 0.06439602375030518
+          }
+        ]
+      },
+      "after": {
+        "n_pairs": 2,
+        "mean_person_margin_b": -0.3848434090614319,
+        "person_margin_b_ci95": [
+          -1.401434063911438,
+          0.6317472457885742
+        ],
+        "likelihood_error_rate_b": 0.5,
+        "mean_person_margin_f": -0.3735445737838745,
+        "likelihood_error_rate_f": 0.5,
+        "mean_b_minus_f": -0.011298835277557373,
+        "b_minus_f_fraction_positive": 0.5,
+        "mean_person_margin_no_cue": -0.4543439745903015,
+        "mean_contextual_b_effect": 0.06950056552886963,
+        "contextual_b_fraction_positive": 0.5,
+        "mean_contextual_f_effect": 0.080799400806427,
+        "pair_rows": [
+          {
+            "person_margin_b": -1.401434063911438,
+            "person_margin_f": -1.420134425163269,
+            "person_margin_no_cue": -1.5585922002792358,
+            "b_minus_f": 0.018700361251831055,
+            "contextual_b_effect": 0.15715813636779785,
+            "contextual_f_effect": 0.1384577751159668
+          },
+          {
+            "person_margin_b": 0.6317472457885742,
+            "person_margin_f": 0.67304527759552,
+            "person_margin_no_cue": 0.6499042510986328,
+            "b_minus_f": -0.0412980318069458,
+            "contextual_b_effect": -0.018157005310058594,
+            "contextual_f_effect": 0.023141026496887207
+          }
+        ]
+      },
+      "ab_chain": {
+        "means": {
+          "decision_b": -1.0312500204890966,
+          "decision_f": -0.9687499729916453,
+          "decision_no_cue": -1.2968749674037099,
+          "decision_b_minus_f": -0.0625000474974513,
+          "closed_b": 0.1562500218860805,
+          "closed_f": 0.0937499855645001,
+          "closed_b_minus_f": 0.06250003632158041,
+          "contextual_b": 0.26562494691461325,
+          "contextual_f": 0.32812499441206455
+        },
+        "pair_rows": [
+          {
+            "decision_b": -0.8125000079162419,
+            "decision_f": -0.8124999813735485,
+            "decision_no_cue": -1.156249949708581,
+            "closed_b": -0.31249991711229086,
+            "closed_f": -0.24999997206032276,
+            "decision_b_minus_f": -2.6542693376541138e-08,
+            "closed_b_minus_f": -0.0624999450519681,
+            "contextual_b": 0.3437499417923391,
+            "contextual_f": 0.34374996833503246
+          },
+          {
+            "decision_b": -1.2500000330619514,
+            "decision_f": -1.1249999646097422,
+            "decision_no_cue": -1.4374999850988388,
+            "closed_b": 0.6249999608844519,
+            "closed_f": 0.43749994318932295,
+            "decision_b_minus_f": -0.12500006845220923,
+            "closed_b_minus_f": 0.18750001769512892,
+            "contextual_b": 0.1874999520368874,
+            "contextual_f": 0.31250002048909664
+          }
+        ]
+      }
+    }
+  ],
+  "dose_slope": null,
+  "dose_spearman": null,
+  "ab_chain_trends": {
+    "closed_b_minus_f": {
+      "values": [
+        0.06250003632158041
+      ],
+      "slope": null,
+      "spearman": null
+    },
+    "decision_b_minus_f": {
+      "values": [
+        -0.0625000474974513
+      ],
+      "slope": null,
+      "spearman": null
+    },
+    "contextual_b": {
+      "values": [
+        0.26562494691461325
+      ],
+      "slope": null,
+      "spearman": null
+    },
+    "contextual_f": {
+      "values": [
+        0.32812499441206455
+      ],
+      "slope": null,
+      "spearman": null
+    }
+  }
+}

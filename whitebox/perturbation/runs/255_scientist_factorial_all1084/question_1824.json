@@ -1,0 +1,144 @@
+{
+  "key": "question_1824",
+  "group": "Q190697",
+  "generation_correct": true,
+  "right": "Claude Cohen-Tannoudji",
+  "wrong": "Albert Einstein",
+  "base_margin_wrong_minus_right": -4.4407267570495605,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 269,
+      "char_end": 287,
+      "text": "in Physics and the",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 87
+    },
+    {
+      "char_start": 325,
+      "char_end": 354,
+      "text": "awarded an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary doctorate from the University of Geneva",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 102
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -4.4407267570495605,
+      "wrong_score": -4.441827774047852,
+      "right_score": -0.0011008651927113533
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in Physics and the"
+      ],
+      "u": 0.4507789611816406,
+      "margin": -4.891505718231201,
+      "wrong_score": -4.89774227142334,
+      "right_score": -0.006236337590962648
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "awarded an honorary doctorate"
+      ],
+      "u": -2.5678515434265137,
+      "margin": -1.8728752136230469,
+      "wrong_score": -1.9192322492599487,
+      "right_score": -0.04635700210928917
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Physics and the",
+        "awarded an honorary doctorate"
+      ],
+      "u": -2.6591291427612305,
+      "margin": -1.78159761428833,
+      "wrong_score": -1.8190938234329224,
+      "right_score": -0.03749624639749527
+    }
+  ],
+  "single_u": [
+    0.4507789611816406,
+    -2.5678515434265137
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "in Physics and the",
+        "awarded an honorary doctorate"
+      ],
+      "u_i": 0.4507789611816406,
+      "u_j": -2.5678515434265137,
+      "local_fd": -0.5420565605163574,
+      "banzhaf": -0.5420565605163574,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Physics and the",
+        "awarded an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": -0.5420565605163574
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.78159761428833,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

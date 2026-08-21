@@ -1,0 +1,146 @@
+{
+  "key": "question_2596",
+  "group": "Q155380",
+  "generation_correct": true,
+  "right": "Stanley B. Prusiner",
+  "wrong": "Anthony Fauci",
+  "base_margin_wrong_minus_right": -2.459603786468506,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 127,
+      "char_end": 155,
+      "text": "This prominent physician has",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physician",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 64
+    },
+    {
+      "char_start": 340,
+      "char_end": 370,
+      "text": "the prestigious National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 93,
+      "token_end": 99
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.459603786468506,
+      "wrong_score": -2.4608314037323,
+      "right_score": -0.0012275478802621365
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent physician has"
+      ],
+      "u": -1.9936745166778564,
+      "margin": -0.4659293293952942,
+      "wrong_score": -0.5113082528114319,
+      "right_score": -0.0453789085149765
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the prestigious National Medal"
+      ],
+      "u": -1.4936187267303467,
+      "margin": -0.9659850597381592,
+      "wrong_score": -1.0137759447097778,
+      "right_score": -0.047790881246328354
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent physician has",
+        "the prestigious National Medal"
+      ],
+      "u": -2.401448965072632,
+      "margin": -0.0581548810005188,
+      "wrong_score": -0.34361106157302856,
+      "right_score": -0.28545618057250977
+    }
+  ],
+  "single_u": [
+    -1.9936745166778564,
+    -1.4936187267303467
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This prominent physician has",
+        "the prestigious National Medal"
+      ],
+      "u_i": -1.9936745166778564,
+      "u_j": -1.4936187267303467,
+      "local_fd": 1.0858442783355713,
+      "banzhaf": 1.0858442783355713,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent physician has",
+        "the prestigious National Medal"
+      ],
+      "order": 2,
+      "harsanyi": 1.0858442783355713
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.0581548810005188,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

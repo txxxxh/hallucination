@@ -1,0 +1,146 @@
+{
+  "key": "question_1934",
+  "group": "Q71013",
+  "generation_correct": true,
+  "right": "Theodor Wolfgang Hänsch",
+  "wrong": "Ada Yonath",
+  "base_margin_wrong_minus_right": -0.4813501238822937,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 128,
+      "char_end": 165,
+      "text": "This distinguished university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 56,
+      "token_end": 62
+    },
+    {
+      "char_start": 316,
+      "char_end": 338,
+      "text": "with the Wilhelm Exner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wilhelm Exner Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 89,
+      "token_end": 94
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.4813501238822937,
+      "wrong_score": -0.507061779499054,
+      "right_score": -0.0257116686552763
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished university teacher"
+      ],
+      "u": -0.11081111431121826,
+      "margin": -0.37053900957107544,
+      "wrong_score": -0.41027411818504333,
+      "right_score": -0.03973512351512909
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Wilhelm Exner"
+      ],
+      "u": 0.15149158239364624,
+      "margin": -0.6328417062759399,
+      "wrong_score": -0.653761088848114,
+      "right_score": -0.02091940864920616
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "with the Wilhelm Exner"
+      ],
+      "u": -0.4809088706970215,
+      "margin": -0.00044123828411102295,
+      "wrong_score": -0.18485350906848907,
+      "right_score": -0.18441227078437805
+    }
+  ],
+  "single_u": [
+    -0.11081111431121826,
+    0.15149158239364624
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished university teacher",
+        "with the Wilhelm Exner"
+      ],
+      "u_i": -0.11081111431121826,
+      "u_j": 0.15149158239364624,
+      "local_fd": -0.5215893387794495,
+      "banzhaf": -0.5215893387794495,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished university teacher",
+        "with the Wilhelm Exner"
+      ],
+      "order": 2,
+      "harsanyi": -0.5215893387794495
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.00044123828411102295,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

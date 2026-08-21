@@ -1,0 +1,152 @@
+{
+  "key": "question_2624",
+  "group": "Q11609",
+  "generation_correct": false,
+  "right": "Shafi Goldwasser",
+  "wrong": "Ivan Sutherland",
+  "base_margin_wrong_minus_right": -0.7284571528434753,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 230,
+      "char_end": 256,
+      "text": "journey at Carnegie Mellon",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Carnegie Mellon University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 75,
+      "token_end": 80
+    },
+    {
+      "char_start": 393,
+      "char_end": 411,
+      "text": "the IEEE Emanuel R",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "IEEE Emanuel R. Piore Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 106,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7284571528434753,
+      "wrong_score": -0.7390317320823669,
+      "right_score": -0.01057459507137537
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "journey at Carnegie Mellon"
+      ],
+      "u": -0.5590784549713135,
+      "margin": -0.16937872767448425,
+      "wrong_score": -0.2658604681491852,
+      "right_score": -0.09648174792528152
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the IEEE Emanuel R"
+      ],
+      "u": -1.1739639043807983,
+      "margin": 0.4455067813396454,
+      "wrong_score": -0.03134021535515785,
+      "right_score": -0.47684699296951294
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "journey at Carnegie Mellon",
+        "the IEEE Emanuel R"
+      ],
+      "u": -1.218359112739563,
+      "margin": 0.48990195989608765,
+      "wrong_score": -0.02790175750851631,
+      "right_score": -0.5178037285804749
+    }
+  ],
+  "single_u": [
+    -0.5590784549713135,
+    -1.1739639043807983
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "journey at Carnegie Mellon",
+        "the IEEE Emanuel R"
+      ],
+      "u_i": -0.5590784549713135,
+      "u_j": -1.1739639043807983,
+      "local_fd": 0.5146832466125488,
+      "banzhaf": 0.5146832466125488,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "journey at Carnegie Mellon",
+        "the IEEE Emanuel R"
+      ],
+      "order": 2,
+      "harsanyi": 0.5146832466125488
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.48990195989608765,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

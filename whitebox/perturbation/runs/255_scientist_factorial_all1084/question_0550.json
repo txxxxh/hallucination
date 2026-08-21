@@ -1,0 +1,156 @@
+{
+  "key": "question_0550",
+  "group": "Q311003",
+  "generation_correct": true,
+  "right": "Craig Venter",
+  "wrong": "Jennifer Doudna",
+  "base_margin_wrong_minus_right": 0.552832841873169,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 360,
+      "char_end": 381,
+      "text": "of Asturias Award for",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Princess of Asturias Award for Technical and Scientific Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 104,
+      "token_end": 110
+    },
+    {
+      "char_start": 417,
+      "char_end": 437,
+      "text": "and the Paul Ehrlich",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Paul Ehrlich and Ludwig Darmstaedter Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 116,
+      "token_end": 122
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.552832841873169,
+      "wrong_score": -0.05692209303379059,
+      "right_score": -0.6097549200057983
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "of Asturias Award for"
+      ],
+      "u": 0.6630409359931946,
+      "margin": -0.11020809412002563,
+      "wrong_score": -0.294839084148407,
+      "right_score": -0.18463099002838135
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Paul Ehrlich"
+      ],
+      "u": 0.10586988925933838,
+      "margin": 0.44696295261383057,
+      "wrong_score": -0.08056890219449997,
+      "right_score": -0.5275318622589111
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of Asturias Award for",
+        "and the Paul Ehrlich"
+      ],
+      "u": 0.18193179368972778,
+      "margin": 0.37090104818344116,
+      "wrong_score": -0.0908127874135971,
+      "right_score": -0.46171385049819946
+    }
+  ],
+  "single_u": [
+    0.6630409359931946,
+    0.10586988925933838
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "of Asturias Award for",
+        "and the Paul Ehrlich"
+      ],
+      "u_i": 0.6630409359931946,
+      "u_j": 0.10586988925933838,
+      "local_fd": -0.5869790315628052,
+      "banzhaf": -0.5869790315628052,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of Asturias Award for",
+        "and the Paul Ehrlich"
+      ],
+      "order": 2,
+      "harsanyi": -0.5869790315628052
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "of Asturias Award for"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.37090104818344116,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

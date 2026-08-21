@@ -1,0 +1,146 @@
+{
+  "key": "question_0403",
+  "group": "Q907372",
+  "generation_correct": true,
+  "right": "Alexander Vinogradov",
+  "wrong": "Alexander Prokhorov",
+  "base_margin_wrong_minus_right": 0.5067147016525269,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 188,
+      "char_end": 216,
+      "text": "educated at Saint Petersburg",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Saint Petersburg State University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 70,
+      "token_end": 79
+    },
+    {
+      "char_start": 373,
+      "char_end": 393,
+      "text": "of Hero of Socialist",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Hero of Socialist Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 110,
+      "token_end": 114
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.5067147016525269,
+      "wrong_score": -0.026797641068696976,
+      "right_score": -0.5335123538970947
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Saint Petersburg"
+      ],
+      "u": 0.150833398103714,
+      "margin": 0.35588130354881287,
+      "wrong_score": -0.047736700624227524,
+      "right_score": -0.4036180078983307
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of Hero of Socialist"
+      ],
+      "u": -0.46272212266921997,
+      "margin": 0.9694368243217468,
+      "wrong_score": -0.005921640433371067,
+      "right_score": -0.9753584861755371
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Saint Petersburg",
+        "of Hero of Socialist"
+      ],
+      "u": -0.0031347274780273438,
+      "margin": 0.5098494291305542,
+      "wrong_score": -0.024721659719944,
+      "right_score": -0.53457111120224
+    }
+  ],
+  "single_u": [
+    0.150833398103714,
+    -0.46272212266921997
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Saint Petersburg",
+        "of Hero of Socialist"
+      ],
+      "u_i": 0.150833398103714,
+      "u_j": -0.46272212266921997,
+      "local_fd": 0.30875399708747864,
+      "banzhaf": 0.30875399708747864,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Saint Petersburg",
+        "of Hero of Socialist"
+      ],
+      "order": 2,
+      "harsanyi": 0.30875399708747864
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5098494291305542,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

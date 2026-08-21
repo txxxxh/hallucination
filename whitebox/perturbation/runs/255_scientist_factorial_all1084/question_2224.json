@@ -1,0 +1,290 @@
+{
+  "key": "question_2224",
+  "group": "Q201513",
+  "generation_correct": true,
+  "right": "Edward Witten",
+  "wrong": "Claude Cohen-Tannoudji",
+  "base_margin_wrong_minus_right": -0.398337185382843,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 163,
+      "char_end": 190,
+      "text": "university teacher has made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 70
+    },
+    {
+      "char_start": 353,
+      "char_end": 379,
+      "text": "including the Harvey Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Harvey Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 97,
+      "token_end": 102
+    },
+    {
+      "char_start": 398,
+      "char_end": 420,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 104,
+      "token_end": 108
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.398337185382843,
+      "wrong_score": -0.42023009061813354,
+      "right_score": -0.021892910823225975
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher has made"
+      ],
+      "u": -0.11990088224411011,
+      "margin": -0.2784363031387329,
+      "wrong_score": -0.35304519534111023,
+      "right_score": -0.07460889965295792
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Harvey Prize"
+      ],
+      "u": -0.16539350152015686,
+      "margin": -0.23294368386268616,
+      "wrong_score": -0.29734358191490173,
+      "right_score": -0.06439990550279617
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has made",
+        "including the Harvey Prize"
+      ],
+      "u": -0.24122470617294312,
+      "margin": -0.1571124792098999,
+      "wrong_score": -0.27071601152420044,
+      "right_score": -0.11360353231430054
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.4838528037071228,
+      "margin": -0.8821899890899658,
+      "wrong_score": -0.900246262550354,
+      "right_score": -0.01805625855922699
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "Fellow of the American"
+      ],
+      "u": -0.20493870973587036,
+      "margin": -0.19339847564697266,
+      "wrong_score": -0.5439801216125488,
+      "right_score": -0.35058164596557617
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Harvey Prize",
+        "Fellow of the American"
+      ],
+      "u": 0.12558573484420776,
+      "margin": -0.5239229202270508,
+      "wrong_score": -0.5732430219650269,
+      "right_score": -0.04932008311152458
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "including the Harvey Prize",
+        "Fellow of the American"
+      ],
+      "u": -0.3331765830516815,
+      "margin": -0.0651606023311615,
+      "wrong_score": -0.45168337225914,
+      "right_score": -0.3865227699279785
+    }
+  ],
+  "single_u": [
+    -0.11990088224411011,
+    -0.16539350152015686,
+    0.4838528037071228
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher has made",
+        "including the Harvey Prize"
+      ],
+      "u_i": -0.11990088224411011,
+      "u_j": -0.16539350152015686,
+      "local_fd": 0.04406967759132385,
+      "banzhaf": 0.13704943656921387,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university teacher has made",
+        "Fellow of the American"
+      ],
+      "u_i": -0.11990088224411011,
+      "u_j": 0.4838528037071228,
+      "local_fd": -0.5688906311988831,
+      "banzhaf": -0.47591087222099304,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Harvey Prize",
+        "Fellow of the American"
+      ],
+      "u_i": -0.16539350152015686,
+      "u_j": 0.4838528037071228,
+      "local_fd": -0.19287356734275818,
+      "banzhaf": -0.09989380836486816,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.5688906311988831
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Harvey Prize",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.19287356734275818
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university teacher has made",
+        "including the Harvey Prize",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.18595951795578003
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher has made",
+        "including the Harvey Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.04406967759132385
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.0651606023311615,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

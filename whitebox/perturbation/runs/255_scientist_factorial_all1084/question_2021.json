@@ -1,0 +1,307 @@
+{
+  "key": "question_2021",
+  "group": "Q180619",
+  "generation_correct": true,
+  "right": "Stephen Jay Gould",
+  "wrong": "David Attenborough",
+  "base_margin_wrong_minus_right": -1.8433794975280762,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 130,
+      "char_end": 156,
+      "text": "This notable biologist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biologist",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 63
+    },
+    {
+      "char_start": 369,
+      "char_end": 394,
+      "text": "of the Zoological Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Zoological Society of London",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 103,
+      "token_end": 107
+    },
+    {
+      "char_start": 431,
+      "char_end": 453,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Association for the Advancement of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 114,
+      "token_end": 116
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.8433794975280762,
+      "wrong_score": -1.8449848890304565,
+      "right_score": -0.0016053635627031326
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This notable biologist and"
+      ],
+      "u": 0.4371964931488037,
+      "margin": -2.28057599067688,
+      "wrong_score": -2.283155918121338,
+      "right_score": -0.0025798119604587555
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Zoological Society"
+      ],
+      "u": -2.560330867767334,
+      "margin": 0.716951310634613,
+      "wrong_score": -0.041689079254865646,
+      "right_score": -0.7586404085159302
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable biologist and",
+        "of the Zoological Society"
+      ],
+      "u": -1.9397480487823486,
+      "margin": 0.09636859595775604,
+      "wrong_score": -0.16631121933460236,
+      "right_score": -0.2626798152923584
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.6567312479019165,
+      "margin": -1.1866482496261597,
+      "wrong_score": -1.1925132274627686,
+      "right_score": -0.005865019746124744
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This notable biologist and",
+        "Fellow of the American"
+      ],
+      "u": -0.15681040287017822,
+      "margin": -1.686569094657898,
+      "wrong_score": -1.6901267766952515,
+      "right_score": -0.0035576929803937674
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Zoological Society",
+        "Fellow of the American"
+      ],
+      "u": -2.4072556495666504,
+      "margin": 0.5638761520385742,
+      "wrong_score": -0.06260201334953308,
+      "right_score": -0.6264781951904297
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This notable biologist and",
+        "of the Zoological Society",
+        "Fellow of the American"
+      ],
+      "u": -1.6650309562683105,
+      "margin": -0.1783485859632492,
+      "wrong_score": -0.34576311707496643,
+      "right_score": -0.16741453111171722
+    }
+  ],
+  "single_u": [
+    0.4371964931488037,
+    -2.560330867767334,
+    -0.6567312479019165
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This notable biologist and",
+        "of the Zoological Society"
+      ],
+      "u_i": 0.4371964931488037,
+      "u_j": -2.560330867767334,
+      "local_fd": 0.18338632583618164,
+      "banzhaf": 0.2128450870513916,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This notable biologist and",
+        "Fellow of the American"
+      ],
+      "u_i": 0.4371964931488037,
+      "u_j": -0.6567312479019165,
+      "local_fd": 0.06272435188293457,
+      "banzhaf": 0.09218311309814453,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "of the Zoological Society",
+        "Fellow of the American"
+      ],
+      "u_i": -2.560330867767334,
+      "u_j": -0.6567312479019165,
+      "local_fd": 0.8098064661026001,
+      "banzhaf": 0.8392652273178101,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Zoological Society",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.8098064661026001
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable biologist and",
+        "of the Zoological Society"
+      ],
+      "order": 2,
+      "harsanyi": 0.18338632583618164
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This notable biologist and",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.06272435188293457
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This notable biologist and",
+        "of the Zoological Society",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.05891752243041992
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This notable biologist and"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.1783485859632492,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

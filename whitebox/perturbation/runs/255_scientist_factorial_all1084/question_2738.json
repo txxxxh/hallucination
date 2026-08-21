@@ -1,0 +1,155 @@
+{
+  "key": "question_2738",
+  "group": "Q122972",
+  "generation_correct": true,
+  "right": "Louis Agassiz",
+  "wrong": "James Lovelock",
+  "base_margin_wrong_minus_right": -1.1250139474868774,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 122,
+      "char_end": 148,
+      "text": "This notable scientist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 56,
+      "token_end": 59
+    },
+    {
+      "char_start": 355,
+      "char_end": 374,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 96,
+      "token_end": 99
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.1250139474868774,
+      "wrong_score": -1.1311014890670776,
+      "right_score": -0.006087554153054953
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This notable scientist and"
+      ],
+      "u": -1.5937621593475342,
+      "margin": 0.46874821186065674,
+      "wrong_score": -0.03807099163532257,
+      "right_score": -0.5068191885948181
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.25000542402267456,
+      "margin": -0.8750085234642029,
+      "wrong_score": -0.890107274055481,
+      "right_score": -0.015098724514245987
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable scientist and",
+        "Fellow of the Royal"
+      ],
+      "u": -1.0000085830688477,
+      "margin": -0.125005304813385,
+      "wrong_score": -0.2527351677417755,
+      "right_score": -0.1277298629283905
+    }
+  ],
+  "single_u": [
+    -1.5937621593475342,
+    -0.25000542402267456
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This notable scientist and",
+        "Fellow of the Royal"
+      ],
+      "u_i": -1.5937621593475342,
+      "u_j": -0.25000542402267456,
+      "local_fd": 0.8437590003013611,
+      "banzhaf": 0.8437590003013611,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This notable scientist and",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.8437590003013611
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.125005304813385,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "key": "question_2771",
+  "group": "Q122972",
+  "generation_correct": false,
+  "right": "Louis Agassiz",
+  "wrong": "Robert May, Baron May of Oxford",
+  "base_margin_wrong_minus_right": 0.9075358510017395,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 321,
+      "char_end": 340,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 101
+    },
+    {
+      "char_start": 362,
+      "char_end": 390,
+      "text": "the prestigious Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 105,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.9075358510017395,
+      "wrong_score": -0.008959350176155567,
+      "right_score": -0.9164952039718628
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.9176109433174133,
+      "margin": 1.8251467943191528,
+      "wrong_score": -0.020575949922204018,
+      "right_score": -1.8457227945327759
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the prestigious Copley Medal"
+      ],
+      "u": -0.35287147760391235,
+      "margin": 1.2604073286056519,
+      "wrong_score": -0.01828949525952339,
+      "right_score": -1.2786967754364014
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the prestigious Copley Medal"
+      ],
+      "u": -0.601637065410614,
+      "margin": 1.5091729164123535,
+      "wrong_score": -0.015424617566168308,
+      "right_score": -1.5245975255966187
+    }
+  ],
+  "single_u": [
+    -0.9176109433174133,
+    -0.35287147760391235
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "the prestigious Copley Medal"
+      ],
+      "u_i": -0.9176109433174133,
+      "u_j": -0.35287147760391235,
+      "local_fd": 0.6688453555107117,
+      "banzhaf": 0.6688453555107117,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the prestigious Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.6688453555107117
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.5091729164123535,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}
