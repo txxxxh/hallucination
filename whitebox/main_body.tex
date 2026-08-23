@@ -1,0 +1,534 @@
+% !TeX root = iclr2027_conference.tex
+
+% Main-text Introduction. Citation keys are defined in iclr2027/iclr2027_conference.bib.
+
+\section{Introduction}
+\label{sec:introduction}
+Large language models (LLMs) have achieved strong performance across a broad range of tasks \citep{openai2024gpt4,geminiteam2025gemini}, but capability does not guarantee factual reliability.  TruthfulQA shows that models can reproduce common human falsehoods \citep{lin2022truthfulqa}, while HaluEval documents hallucinated content across knowledge-intensive question answering, dialogue, and summarization \citep{li2023halueval}.  This problem becomes more consequential as LLMs are embedded in tool-augmented and agentic workflows, including web search and external-service interaction \citep{nakano2022webgpt,liu2023webglm,steinberger2026openclaw}.  Reliably detecting hallucinations is therefore essential before model outputs trigger real-world actions.
+
+One particularly difficult case is a factually incorrect answer produced with high confidence even though the required knowledge is behaviorally accessible.  Existing detectors provide limited insight into such errors.  Uncertainty-based methods use likelihood, self-evaluation, or disagreement across samples \citep{kadavath2022mostlyknow,manakul2023selfcheckgpt,farquhar2024semanticentropy}, but systematic errors can be confident and repeatable.  Hidden-state and attention-based detectors identify representations correlated with incorrectness \citep{azaria2023internal,chen2024inside,du2024haloscope,chuang2024lookback,binkowski2025spectral}, but such correlations may reflect dataset artifacts \citep{janiak2025illusion}.  Evidence-grounded methods verify generated claims against retrieved sources \citep{min2023factscore}, but depend on external evidence and assess support rather than the cause of the model's decision.  None of these approaches reveals which input evidence drives a confident, repeatable mistake.
+
+Prior work suggests that these errors can arise when statistical associations override prompt-supported reasoning \citet{mckenna2023sources, sun2025subsequence}. Most directly, \citet{hu2026reasoningpriors} formalize this phenomenon as inference misalignment in a latent key--task model and introduce ScientistQA to distinguish missing knowledge from failures to deploy accessible facts.  Their analysis establishes a theoretical account and demonstrates the phenomenon behaviorally, but does not resolve how a model's internal computation selects and routes the competing evidence in a particular prompt.  
+
+In this work, we investigate this gap through targeted keyword perturbations.  We perturb one keyword at a time in the model's input representation and measure how its relative preference between candidate answers changes.  If perturbing a keyword reduces the model's preference for a wrong answer, that keyword likely contributed to the hallucination; if it instead weakens the correct answer, the keyword provides evidence the model was using appropriately.  The resulting pattern offers an interpretable signal for both hallucination detection and attribution of individual errors.  Experiments across three LLMs and multiple benchmarks show that this signal generalizes across tasks and transfers to new domains.
+
+We also examine the operating regimes of four common families of hallucination detectors: uncertainty-based, representation-based, evidence-based, and keyword-perturbation methods.  Our results suggest that their effectiveness depends on the type of error, which may help explain why detectors do not always transfer reliably across benchmarks.  Based on the observed patterns, we organize hallucinations into four broad categories: missing knowledge, context-induced errors, self-consistent false knowledge, and unstable reasoning.  Because the prevalence of these categories varies across benchmarks, no single detection method should be expected to perform uniformly well in every setting.
+
+\paragraph{Contributions.}
+Our main contributions are summarized as follows:
+\begin{enumerate}
+    \item We investigate why models hallucinate even when the relevant knowledge has been acquired.  We show that model predictions can depend on particular keywords that are bound to the question entity, and that these entity--keyword bindings systematically bias answer selection.  Controlled experiments further demonstrate that such bindings are shaped by frequency imbalance during pretraining.  We also characterize the joint effects of multiple keywords, including both synergistic and competitive interactions.
+    \item We propose a keyword-perturbation method for hallucination detection.  By intervening on candidate keywords in embedding space and measuring changes in the likelihood margin between competing answers, the method distinguishes shortcut-supporting cues from constraint-supporting evidence.  It therefore supports both error detection and localization of the evidence driving an error.
+    \item We systematically examine hallucination types across multiple benchmarks and characterize which detection signals are appropriate for different failure modes.  Keyword perturbation is most effective for errors driven by competition among local associations, but is less advantageous for failures dominated by distributed multi-step computation.  Conversely, uncertainty- and representation-based detectors are poorly matched to systematic errors driven by misleading keyword associations.
+\end{enumerate}
+
+\subsection{Common Experimental Setup}
+\label{sec:common-setup}
+Unless stated otherwise, the model under study is
+\texttt{NousResearch/Meta-Llama-3.1-8B-Instruct}, evaluated in bfloat16 with
+its native chat template. We use four frozen candidate-conditioned populations:
+1,084 ScientistQA name questions, 1,000 class-balanced TriviaQA questions, 942
+class-balanced GSM8K questions, and 1,000 class-balanced DROP questions.
+``Correct'' always refers to the original, unperturbed generation. ScientistQA
+contains 337 person groups, and supervised evaluations keep questions about
+the same person in one fold; remaining benchmarks use source-item IDs.
+
+We score candidates by length-normalized conditional log probability. Given
+the original answer $a_w$ and competing answer $a_r$, define
+\begin{equation}
+m(x)=\ell(a_w\mid x)-\ell(a_r\mid x),\qquad
+\ell(a\mid x)=|a|^{-1}\sum_{t=1}^{|a|}\log p(a_t\mid x,a_{<t}).
+\label{eq:wrong-right-margin}
+\end{equation}
+Thus $m(x)>0$ favors the original answer. On errors, $a_w$ is wrong and $a_r$
+is the correct alternative; on correct items we retain the same fixed
+wrong-minus-right orientation.
+
+
+\section{Entity--Keyword Binding Effects}
+\label{sec:binding}
+\subsection{Motivating Example}
+ Consider a prompt asking the model
+to choose between Enrico Fermi and Albert Einstein: “A physicist and university teacher made major contributions to modern physics, but did not formulate the theory of special relativity.” Although
+the explicit constraint “did not formulate special
+relativity” rules out Einstein and supports Fermi,
+the model may still answer “Albert Einstein”.
+
+\subsection{Keywords Dominate Answer Selection}
+We match question phrases to five profile attributes: award received,
+education, field, occupation, and position held. For span $s$, the intervention
+replaces its input embeddings by the model-wide mean embedding, leaving token
+positions and all other tokens unchanged, and measures
+$u_s=m(x)-m(x\setminus s)$. A nearby same-width non-attribute span controls for
+intervention length and position. The analysis contains 1,069 parse-valid
+questions with an eligible attribute (455 erroneous and 614 correct). Effects
+are averaged within question; intervals use 10,000 person-group bootstrap draws.
+
+Owner-aligned frequency is a separate free-generation assay over the same
+frozen attributes. For each keyword, four attribute-specific paraphrases ask
+about its original owner and the other scientist, with five continuations per
+paraphrase (temperature 0.8, maximum 32 new tokens, seed 42). Exact $\Delta f$
+is the exact-mention-frequency difference, averaged over prompts and keywords
+within item and then over items. The assay contains 2,217 item--attribute
+records and uses the same 455/614 split and person bootstrap.
+
+\begin{table*}[t]
+\centering
+\caption{Keyword perturbation effects and owner-aligned frequency differences for erroneous and correct responses.}
+\label{tab:keyword_perturbation_binding}
+\label{tab:free_generation_binding}
+\small
+\setlength{\tabcolsep}{1.5pt}
+\begin{tabular}{lccc|ccc}
+\toprule
+& \multicolumn{3}{c}{\textbf{Erroneous responses}}
+& \multicolumn{3}{c}{\textbf{Correct responses}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Attribute
+& $n$ & Perturbation & Exact $\Delta f$
+& $n$ & Perturbation & Exact $\Delta f$ \\
+\midrule
+\textbf{Overall}
+& \textbf{455}
+& $\mathbf{0.451}$\,{\scriptsize $[0.386,\,0.520]$}
+& $\mathbf{0.335}$\,{\scriptsize $[0.297,\,0.374]$}
+& \textbf{614}
+& $\mathbf{0.499}$\,{\scriptsize $[0.443,\,0.561]$}
+& $\mathbf{0.319}$\,{\scriptsize $[0.288,\,0.352]$} \\
+Award received
+& 327
+& $0.428$\,{\scriptsize $[0.349,\,0.506]$}
+& $0.484$\,{\scriptsize $[0.424,\,0.545]$}
+& 377
+& $0.439$\,{\scriptsize $[0.365,\,0.516]$}
+& $0.445$\,{\scriptsize $[0.390,\,0.501]$} \\
+Education
+& 144
+& $0.648$\,{\scriptsize $[0.542,\,0.758]$}
+& $0.287$\,{\scriptsize $[0.231,\,0.342]$}
+& 222
+& $0.725$\,{\scriptsize $[0.635,\,0.815]$}
+& $0.336$\,{\scriptsize $[0.291,\,0.382]$} \\
+Field
+& 193
+& $0.137$\,{\scriptsize $[0.062,\,0.214]$}
+& $0.192$\,{\scriptsize $[0.139,\,0.246]$}
+& 264
+& $0.230$\,{\scriptsize $[0.146,\,0.323]$}
+& $0.210$\,{\scriptsize $[0.163,\,0.256]$} \\
+Occupation
+& 80
+& $0.101$\,{\scriptsize $[-0.028,\,0.215]$}
+& $0.081$\,{\scriptsize $[0.010,\,0.154]$}
+& 149
+& $0.213$\,{\scriptsize $[0.124,\,0.307]$}
+& $0.146$\,{\scriptsize $[0.087,\,0.208]$} \\
+Position held
+& 64
+& $0.540$\,{\scriptsize $[0.369,\,0.733]$}
+& $0.207$\,{\scriptsize $[0.145,\,0.273]$}
+& 97
+& $0.633$\,{\scriptsize $[0.486,\,0.794]$}
+& $0.211$\,{\scriptsize $[0.153,\,0.276]$} \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.98\linewidth}
+\footnotesize
+\textit{Notes.}
+Perturbation denotes the change in the wrong-versus-right answer margin after neutralizing the attribute phrase.
+Exact $\Delta f$ is
+$P(k\mid\text{original owner})-P(k\mid\text{other person})$
+under exact keyword matching.
+Bracketed values are person-clustered bootstrap 95\% confidence intervals.
+\end{minipage}
+\end{table*}
+
+\subsection{Binding Effects Are Shaped by Pretraining Frequency}
+We use 50 mirrored pairs of fictional people and facts $B$/$F$. For one person,
+$B$ occurs $0.05N$ times and $F$ occurs $(0.05+0.65d)N$ times; assignment is
+reversed for the other, with $N=40$ and $d\in\{0,.25,.5,.75,1\}$. Remaining
+examples contain a neutral fact; forward/reverse templates alternate by fact.
+
+At each dose we reload the checkpoint and fine-tune only its last four blocks
+and final normalization layer for two epochs. We use AdamW (learning rate
+$10^{-4}$, zero weight decay), batch size 12, bfloat16, and gradient clipping
+at 1.0. Checkpoints are Qwen2.5-3B-Instruct, Llama-3.2-3B-Instruct, and
+Ministral-3-3B-Instruct-2512. Evaluation averages both profile orders and
+computes $\Delta_{\mathrm{B-F}}=m(x_B)-m(x_F)$ from full-name likelihoods. The
+slope is OLS over five doses. The table gives means and runs for seeds 42--44.
+
+\begin{table*}[t]
+\centering
+\caption{Frequency--dose response across models.  Values are candidate-preference differences $\Delta_{\mathrm{B-F}}$; larger values indicate stronger transfer of asymmetric exposure frequency into candidate preference.}
+\label{tab:binding-dose-three-models}
+\small
+\setlength{\tabcolsep}{1.5pt}
+\newcommand{\seedcell}[4]{%
+  \begin{tabular}[c]{@{}r@{\hspace{2pt}}r@{}}
+  & {\scriptsize #2} \\
+  \textbf{#1} & {\scriptsize #3} \\
+  & {\scriptsize #4}
+  \end{tabular}}
+\begin{tabular}{lcccccc}
+\toprule
+Model & $d=0$ & $d=.25$ & $d=.5$ & $d=.75$ & $d=1$ & Slope \\
+\midrule
+Qwen2.5-3B
+& \seedcell{.028}{.022}{.024}{.039}
+& \seedcell{.055}{.028}{.050}{.086}
+& \seedcell{.131}{.171}{.073}{.149}
+& \seedcell{.200}{.346}{.096}{.156}
+& \seedcell{.232}{.286}{.199}{.210}
+& \seedcell{.221}{.338}{.159}{.165} \\
+\midrule
+Llama-3.2-3B
+& \seedcell{.002}{-.005}{.000}{.011}
+& \seedcell{.013}{.008}{.029}{.003}
+& \seedcell{.014}{.009}{.016}{.018}
+& \seedcell{.024}{.009}{.029}{.033}
+& \seedcell{.064}{.047}{.124}{.021}
+& \seedcell{.054}{.042}{.099}{.020} \\
+\midrule
+Ministral-3-3B
+& \seedcell{.013}{-.031}{.020}{.050}
+& \seedcell{.059}{.074}{.062}{.042}
+& \seedcell{.095}{.143}{.121}{.021}
+& \seedcell{.285}{.374}{.202}{.279}
+& \seedcell{.564}{.589}{.398}{.704}
+& \seedcell{.531}{.616}{.359}{.618} \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.96\linewidth}
+\footnotesize
+\textit{Notes.}
+Bold values are means across three random seeds.  Smaller values to their right report seeds 42, 43, and 44 from top to bottom.
+\end{minipage}
+\end{table*}
+
+
+
+\section{Hallucination Detection via Keyword Perturbation}
+\label{sec:detection}
+\subsection{Mechanism}
+The detector summarizes likelihood and representation responses to mean-embedding
+neutralization. Exact selection enumerates every span; attention and gradient
+selection use candidate-conditioned attention or input gradients only to screen
+spans. The 127-dimensional vector contains 47 scalar features, four 8-dimensional
+PCA blocks from base and effect-weighted states for both candidates, and a
+48-dimensional PCA projection of the layer-14 mean state. Standardization and
+PCA are fold-local. A balanced logistic regression ($C=0.03$, \texttt{liblinear},
+5,000 iterations) gives the error score.
+\subsection{Empirical Evaluation}
+In-domain AUROCs average seeds 42--44 under five-fold OOF prediction, with
+stratified group folds except for TriviaQA unique keys. No benchmark-specific
+tuning is performed. Transfer fits all preprocessing and the classifier on
+1,084 ScientistQA items, freezes them, and applies them to 477 athlete, building,
+and musician questions.
+% CHECK: paper4_matrix/evaluation.json differs from several displayed entries;
+% retain the table values pending audit.
+
+
+\begin{table*}[t]
+\centering
+\caption{AUROC of keyword-perturbation detection across models and benchmarks.}
+\label{tab:perturbation-detection-summary}
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{llccccc}
+\toprule
+Model & Selection & ScientistQA & TriviaQA & GSM8K & DROP & Transfer \\
+\midrule
+ & Exact     & .910 & .949 & .7473 & .919 & .931 \\
+Llama & Attention & .906 & .946 & .7430 & .915 & .922 \\
+ & Gradient  & .905 & .943 & .7426 & .915 & .928 \\
+\midrule
+ & Exact     & .822 & .964 & .7439 & .968 & .850 \\
+Mistral & Attention & .817 & .964 & .7372 & .969 & .803 \\
+ & Gradient  & .819 & .966 & .7415 & .965 & .809 \\
+\midrule
+ & Exact     & .861 & .909 & .7603 & .907 & .848 \\
+Qwen & Attention & .835 & .902 & .7575 & .902 & .761 \\
+ & Gradient  & .830 & .898 & .7599 & .884 & .811 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.92\linewidth}
+\footnotesize
+\textit{Notes.}
+In-domain results use repeated five-fold out-of-fold evaluation; Multidomain reports aggregate transfer performance from a detector frozen on ScientistQA.  Full results are provided in Appendix~\ref{app:detection}.
+\end{minipage}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\caption{Hallucination-detection AUROC across method families and benchmarks.}
+\label{tab:detection-auroc}
+\small
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{llcccc}
+\toprule
+Family & Method & ScientistQA & TriviaQA & GSM8K & DROP \\
+\midrule
+Perturbation
+& Ours & .910 & \textbf{.949} & .743 & \textbf{.919} \\
+\midrule
+Representation
+& Aiersilan-style & .770 & .873 & .806 & .826 \\
+& SAPLMA & .671 & .840 & .719 & .869 \\
+& ICR Probe & .512 & .798 & .736 & .808 \\
+\midrule
+Uncertainty
+& $K=6$ disagreement & .577 & .786 & \textbf{.821} & .760 \\
+& Semantic Entropy & .518 & .708 & .503 & .752 \\
+& Adaptive Bayesian SE & -- & -- & -- & -- \\
+\midrule
+Evidence
+& MiniCheck (unilateral) & .717$^\dagger$ & .658 & .558 & .604 \\
+& MiniCheck (contrastive) & \textbf{.926}$^\dagger$ & .823 & .506 & .526 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.9\linewidth}
+\footnotesize
+\textit{Notes.}
+Bold values indicate the best result on each benchmark.  Adaptive Bayesian SE results are pending reproduction. $\dagger$: provided with full profiles of the scientists after answer generation.
+\end{minipage}
+\end{table*}
+
+\paragraph{Standard detector baselines.}
+All methods use the same frozen generations and labels. The Aiersilan-style
+probe uses answer-final and answer-mean layer-14 states, separate fold-local
+PCA-8 projections, and balanced logistic regression. SAPLMA uses the layer-28
+final-answer state and the published 4096--256--128--64--1 ReLU MLP (Adam, BCE,
+five epochs, batch 32). ICR uses layerwise Jensen--Shannon divergences from the
+top-20 attention-selected tokens and its published 128/64/32 network (batch
+normalization, Leaky-ReLU 0.01, dropout 0.3, Adam at $5\times10^{-4}$, up to
+50 epochs with fold-internal validation). Supervised probes use three seeds and
+five group-disjoint folds.
+
+The $K=6$ method draws six samples at temperature 0.7 and top-$p=0.95$ and
+scores disagreement with the canonicalized greedy answer. Semantic Entropy
+uses the paper protocol: ten samples at temperature 1.0, top-$p=0.9$, top-$k=50$;
+bidirectional DeBERTa-large-MNLI entailment defines semantic classes, and
+entropy is computed over summed class probability masses. MiniCheck uses
+MiniCheck-Flan-T5-Large. TriviaQA/DROP become declarative claims; GSM8K is
+checked sentence-wise using minimum support. Unilateral is one minus generated
+support; contrastive is alternative minus generated support and can therefore
+use a gold-derived manifest candidate.
+
+\section{No Universe Winner}
+\label{sec:category}
+We use four complementary signals---uncertainty (U), external-evidence support (E), keyword perturbation (P), and internal representations (R)---to define an operational taxonomy of erroneous responses.  These categories describe observable diagnostic patterns rather than uniquely identified causal mechanisms.
+
+All axes are joined by item key to one baseline generation. Within benchmark,
+U-high/U-low and P-high/E-high use inclusive upper/lower 30th-percentile value
+cutoffs over the complete population; R is correct-like when its group-OOF error
+probability is below 0.5. Evidence-completion labels exist for ScientistQA Names
+and TriviaQA; Profiles uses grounded support, while GSM8K and DROP have no E
+label. DROP context dependence lacks an independent matched-placebo confirmation.
+These are multi-label operational signatures, not human causal annotations.
+For GSM8K uncertainty, the later full run uses the original natural chain-of-
+thought prompt on all 942 items, draws six continuations at temperature 0.7 and
+top-$p=0.95$ (maximum 192 new tokens), computes canonical-numeric entropy from
+the first three samples, and reserves the last three for majority-answer
+validation. It reuses the identically configured 300-item pilot and samples the
+remaining 642 items with seed 20260823.
+
+\begin{description}[leftmargin=0pt,labelindent=0pt,itemsep=2pt,topsep=3pt]
+\item[Knowledge deficit.]
+$U$-high $\wedge$ $E$-high $\wedge$ evidence-completion gain $>0$.
+The answer is unstable and poorly supported, while supplying relevant evidence increases preference for the correct answer.
+
+\item[Confident unsupported error.]
+$\neg U$-high $\wedge$ $E$-high $\wedge$ evidence-completion gain $>0$.
+The answer lacks evidential support without showing substantial uncertainty, but improves when relevant evidence is supplied.
+
+\item[Context-induced local dependence.]
+$P$-high $\wedge$ targeted intervention outperforms a matched placebo.
+Perturbing a small set of relevant input phrases weakens the wrong answer more than perturbing matched irrelevant phrases.
+
+\item[Reasoning instability.]
+$U$-high.
+Repeated sampling on the same input produces high answer entropy.  This indicates an unstable decision, but does not by itself localize a faulty reasoning step.
+
+\item[Stable self-consistent error.]
+$U$-low $\wedge$ $R$ correct-like.
+The model repeatedly produces the same wrong answer even though an out-of-fold representation scorer assigns its hidden-state trajectory a correct-like score.
+
+\item[Mixed.]
+The response satisfies at least two of the criteria above.
+
+\item[Unclassified.]
+The response satisfies none of the current criteria.  This indicates a limitation of the present UEPR coverage, not the absence of an underlying mechanism.
+\end{description}
+
+\begin{table*}[t]
+\centering
+\caption{Distribution of operational hallucination types under unified UEPR scoring.}
+\label{tab:unified-hallucination-types}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccc}
+\toprule
+Hallucination type & ScientistQA & ScientistQA$^\dagger$ & TriviaQA & GSM8K & DROP \\
+\midrule
+Knowledge deficit
+& 93 (20.5\%) & -- & 50 (10.0\%) & -- & -- \\
+Confident unsupported error
+& 146 (32.2\%) & 34 (27.9\%) & 25 (5.0\%) & -- & -- \\
+Context-induced dependence
+& 38 (8.4\%) & 7 (5.7\%) & 217 (43.4\%) & 63 (13.4\%) & 275 (55.0\%) \\
+Reasoning instability
+& 159 (35.1\%) & 83 (68.0\%) & 310 (62.0\%) & 248 (52.7\%) & 348 (69.6\%) \\
+Stable self-consistent error
+& 29 (6.4\%) & 16 (13.1\%) & 85 (17.0\%) & 92 (19.5\%) & 51 (10.2\%) \\
+Mixed
+& 121 (26.7\%) & 19 (15.6\%) & 220 (44.0\%) & 47 (10.0\%) & 226 (45.2\%) \\
+Unclassified
+& 122 (26.9\%) & 3 (2.5\%) & 40 (8.0\%) & 115 (24.4\%) & 52 (10.4\%) \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.98\linewidth}
+\footnotesize
+\textit{Notes.}
+$\dagger$: provided with full profiles of the scientists.  The numbers of erroneous responses are 453 for Names, 122 for Profiles, 500 for TriviaQA, 471 for GSM8K, and 500 for DROP.
+Categories are multi-label and therefore do not sum to 100\%.
+\end{minipage}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Type-conditioned sensitivity of four hallucination detectors.}
+\label{tab:type-conditioned-sensitivity}
+\small
+\setlength{\tabcolsep}{5pt}
+\newcommand{\tprcell}[2]{#1\%\,{\scriptsize $(#2)$}}
+\newcommand{\tprbest}[2]{\textbf{#1\%}\,{\scriptsize $\mathbf{(#2)}$}}
+\begin{tabular}{lcccc}
+\toprule
+Hallucination type & Perturbation & Uncertainty & Representation & Evidence \\
+\midrule
+Knowledge deficit
+& \tprcell{15.4}{-18.4}
+& \tprbest{58.9}{+29.4}
+& \tprcell{68.5}{+14.8}
+& \tprcell{71.6}{+9.8} \\
+Confident unsupported error
+& \tprcell{15.6}{-7.0}
+& \tprcell{0.0}{-25.1}
+& \tprcell{40.9}{-4.5}
+& \tprbest{85.5}{+12.9} \\
+Context-induced local dependence
+& \tprbest{61.1}{+27.5}
+& \tprcell{23.3}{-2.7}
+& \tprcell{46.3}{-0.5}
+& \tprcell{70.7}{-1.9} \\
+Reasoning instability
+& \tprcell{33.5}{-0.1}
+& \tprbest{44.0}{+18.0}
+& \tprcell{52.2}{+5.4}
+& \tprcell{73.6}{+1.0} \\
+Stable self-consistent error
+& \tprbest{35.2}{+1.6}
+& \tprcell{0.0}{-26.0}
+& \tprcell{0.0}{-46.8}
+& \tprcell{72.6}{-0.0} \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.98\linewidth}
+\footnotesize
+\textit{Notes.}
+Main values are expected true-positive rates at a benchmark-specific operating point of 10\% false-positive rate.  Smaller values in parentheses are percentage-point differences from the same detector's sensitivity over all hallucinations in the corresponding benchmark.  Hallucination types are multi-label. Thresholds are selected only from correct
+examples; fractional inclusion of boundary ties yields exactly 10\% expected
+FPR. Entries macro-average applicable benchmark-level TPRs rather than pooling
+items. Because types use U/E/P/R, this measures operational alignment rather
+than independently validating the taxonomy.
+\end{minipage}
+\end{table*}
+
+\section{Beyond Individual Keywords}
+\label{sec:multi}
+We enumerate the complete perturbation factorial for all 1,084 ScientistQA name
+questions. Eight invalid-candidate questions and 16 with fewer than two usable
+keywords are excluded, leaving 1,060 questions (611 correct, 449 erroneous) and
+4,128 pairs. The local interaction is the second finite difference of $m$; its
+Banzhaf counterpart averages this difference over all backgrounds. At the
+prespecified $\tau=0.10$, synergy/redundancy require local and Banzhaf effects
+to agree in sign and exceed $\tau$; opposite-sign single effects with minimum
+magnitude above $\tau$ define competition. Higher-order mass is the fraction
+of absolute Harsanyi mass at order three or above. Rates are question-weighted;
+intervals use 10,000 question bootstrap draws.
+% CHECK: the frozen 256 report gives primary question-weighted rates
+% 13.7/9.5/.7 and 19.3/9.2/.6, unlike the displayed older proportions.
+
+\begin{table*}[t]
+\centering
+\caption{Distribution of pairwise keyword interactions in correct and erroneous responses.}
+\label{tab:pairwise-keyword-interactions}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrccccc}
+\toprule
+Subset & $n_q$ & $n_{\mathrm{pair}}$ & Competition & Redundancy & Synergy & Mixed & Higher-order \\
+\midrule
+Correct responses
+& 611 & 2,347 & 31.2\% & 16.2\% & 3.0\% & 49.7\% & 28.5\% \\
+Erroneous responses
+& 449 & 1,781 & 37.3\% & 16.1\% & 2.1\% & 44.5\% & 29.9\% \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.96\linewidth}
+\footnotesize
+\textit{Notes.}
+$n_q$ is the number of questions and $n_{\mathrm{pair}}$ is the number of evaluated keyword pairs.  Interaction percentages are computed over keyword pairs; minor deviations from 100\% are due to rounding.
+\end{minipage}
+\end{table*}
+
+\begin{table}[t]
+\centering
+\caption{Answer probabilities under targeted keyword removal and matched-random controls.}
+\label{tab:joint-keyword-interventions}
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lcc}
+\toprule
+Intervention & $P(\mathrm{right})$ & $P(\mathrm{wrong})$ \\
+\midrule
+None                                  & 37.9\% & 60.9\% \\
+Remove wrong-answer keyword           & 52.4\% & 44.7\% \\
+Remove correct-answer keyword         & 15.4\% & 83.5\% \\
+Remove both keywords                  & 25.9\% & 70.5\% \\
+\midrule
+Matched random (wrong-answer side)    & 38.0\% & 60.1\% \\
+Matched random (correct-answer side)  & 32.5\% & 65.9\% \\
+Matched random (both sides)           & 27.7\% & 70.4\% \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+\begin{minipage}{0.94\linewidth}
+\footnotesize
+\textit{Notes.}
+This frozen confirmation contains 91 baseline errors. Person groups are reserved
+by SHA-256 parity before outcomes are inspected; an opposite-sign pair with
+minimum one-sided effect above 0.10 is selected by strongest minimum effect.
+Probabilities are exact-name frequencies over ten continuations (temperature
+0.8, at most 20 new tokens) under mean-embedding neutralization. All conditions
+share a per-question seed; placebo spans are fixed in advance and matched in
+width and question position.
+\end{minipage}
+\end{table}
+\section{Conclusion}

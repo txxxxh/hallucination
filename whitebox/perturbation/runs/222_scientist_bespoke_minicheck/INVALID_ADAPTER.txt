@@ -1,0 +1,6 @@
+Do not use report.json as Bespoke-MiniCheck-7B performance.
+
+The official implementation requires vLLM generation logprobs. The local
+Transformers fallback used a first-token Yes/No approximation, but this model's
+custom tokenizer splits both labels into multiple tokens. Its ~0.53 AUROC is
+therefore an adapter diagnostic, not a valid evaluation of the published model.
