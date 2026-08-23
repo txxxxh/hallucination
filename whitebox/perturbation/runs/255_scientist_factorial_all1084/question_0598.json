@@ -1,0 +1,289 @@
+{
+  "key": "question_0598",
+  "group": "Q335213",
+  "generation_correct": true,
+  "right": "Martin Rees, Baron Rees of Ludlow",
+  "wrong": "Steven Weinberg",
+  "base_margin_wrong_minus_right": -1.8081742525100708,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 330,
+      "char_end": 349,
+      "text": "him the Oskar Klein",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Oskar Klein Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 107,
+      "token_end": 111
+    },
+    {
+      "char_start": 356,
+      "char_end": 380,
+      "text": "and the Marcel Grossmann",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Marcel Grossmann Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 116
+    },
+    {
+      "char_start": 381,
+      "char_end": 404,
+      "text": "Award. He has dedicated",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Emperor Has No Clothes Award",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 115,
+      "token_end": 120
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.8081742525100708,
+      "wrong_score": -1.8391802310943604,
+      "right_score": -0.031006021425127983
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "him the Oskar Klein"
+      ],
+      "u": -0.34411466121673584,
+      "margin": -1.464059591293335,
+      "wrong_score": -1.495853304862976,
+      "right_score": -0.03179372102022171
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Marcel Grossmann"
+      ],
+      "u": -0.5986032485961914,
+      "margin": -1.2095710039138794,
+      "wrong_score": -1.2335940599441528,
+      "right_score": -0.024023016914725304
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "him the Oskar Klein",
+        "and the Marcel Grossmann"
+      ],
+      "u": -0.14769387245178223,
+      "margin": -1.6604803800582886,
+      "wrong_score": -1.6837785243988037,
+      "right_score": -0.0232981089502573
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Award. He has dedicated"
+      ],
+      "u": 1.23017156124115,
+      "margin": -3.0383458137512207,
+      "wrong_score": -3.0538489818573,
+      "right_score": -0.01550322026014328
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "him the Oskar Klein",
+        "Award. He has dedicated"
+      ],
+      "u": 0.35351264476776123,
+      "margin": -2.161686897277832,
+      "wrong_score": -2.174551248550415,
+      "right_score": -0.01286441832780838
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Marcel Grossmann",
+        "Award. He has dedicated"
+      ],
+      "u": -0.231225848197937,
+      "margin": -1.5769484043121338,
+      "wrong_score": -1.590949296951294,
+      "right_score": -0.014000952243804932
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "him the Oskar Klein",
+        "and the Marcel Grossmann",
+        "Award. He has dedicated"
+      ],
+      "u": 0.10186231136322021,
+      "margin": -1.910036563873291,
+      "wrong_score": -1.9219882488250732,
+      "right_score": -0.011951670981943607
+    }
+  ],
+  "single_u": [
+    -0.34411466121673584,
+    -0.5986032485961914,
+    1.23017156124115
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "him the Oskar Klein",
+        "and the Marcel Grossmann"
+      ],
+      "u_i": -0.34411466121673584,
+      "u_j": -0.5986032485961914,
+      "local_fd": 0.795024037361145,
+      "banzhaf": 1.0023856163024902,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "him the Oskar Klein",
+        "Award. He has dedicated"
+      ],
+      "u_i": -0.34411466121673584,
+      "u_j": 1.23017156124115,
+      "local_fd": -0.5325442552566528,
+      "banzhaf": -0.3251827359199524,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and the Marcel Grossmann",
+        "Award. He has dedicated"
+      ],
+      "u_i": -0.5986032485961914,
+      "u_j": 1.23017156124115,
+      "local_fd": -0.8627941608428955,
+      "banzhaf": -0.6554326415061951,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Marcel Grossmann",
+        "Award. He has dedicated"
+      ],
+      "order": 2,
+      "harsanyi": -0.8627941608428955
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "him the Oskar Klein",
+        "and the Marcel Grossmann"
+      ],
+      "order": 2,
+      "harsanyi": 0.795024037361145
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "him the Oskar Klein",
+        "Award. He has dedicated"
+      ],
+      "order": 2,
+      "harsanyi": -0.5325442552566528
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "him the Oskar Klein",
+        "and the Marcel Grossmann",
+        "Award. He has dedicated"
+      ],
+      "order": 3,
+      "harsanyi": 0.4147230386734009
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.910036563873291,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

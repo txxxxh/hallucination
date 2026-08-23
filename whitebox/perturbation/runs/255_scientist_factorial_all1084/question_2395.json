@@ -1,0 +1,145 @@
+{
+  "key": "question_2395",
+  "group": "Q15405",
+  "generation_correct": true,
+  "right": "Elias Magnus Fries",
+  "wrong": "Robert Brown",
+  "base_margin_wrong_minus_right": -0.9809386730194092,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 355,
+      "char_end": 375,
+      "text": "of the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 105,
+      "token_end": 109
+    },
+    {
+      "char_start": 402,
+      "char_end": 425,
+      "text": "of the American Academy",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 113,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9809386730194092,
+      "wrong_score": -1.015702247619629,
+      "right_score": -0.034763552248477936
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "of the Royal Society"
+      ],
+      "u": 0.6764189004898071,
+      "margin": -1.6573575735092163,
+      "wrong_score": -1.6773086786270142,
+      "right_score": -0.019951121881604195
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the American Academy"
+      ],
+      "u": 0.25337016582489014,
+      "margin": -1.2343088388442993,
+      "wrong_score": -1.2608387470245361,
+      "right_score": -0.026529887691140175
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the Royal Society",
+        "of the American Academy"
+      ],
+      "u": 0.4213254451751709,
+      "margin": -1.40226411819458,
+      "wrong_score": -1.4217815399169922,
+      "right_score": -0.01951741799712181
+    }
+  ],
+  "single_u": [
+    0.6764189004898071,
+    0.25337016582489014
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "of the Royal Society",
+        "of the American Academy"
+      ],
+      "u_i": 0.6764189004898071,
+      "u_j": 0.25337016582489014,
+      "local_fd": -0.5084636211395264,
+      "banzhaf": -0.5084636211395264,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "of the Royal Society",
+        "of the American Academy"
+      ],
+      "order": 2,
+      "harsanyi": -0.5084636211395264
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.40226411819458,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

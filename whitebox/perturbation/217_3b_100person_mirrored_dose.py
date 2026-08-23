@@ -158,24 +158,34 @@ def main():
     p.add_argument("--batch", type=int, default=12); p.add_argument("--epochs", type=int, default=2)
     p.add_argument("--lr", type=float, default=1e-4); p.add_argument("--train-layers", type=int, default=4)
     p.add_argument("--seed", type=int, default=42)
+    p.add_argument("--doses", default="0,.25,.5,.75,1.0",
+                   help="Comma-separated dose levels; the default reproduces the original design.")
     p.add_argument("--out", type=Path, default=HERE/"runs/217_3b_100person_mirrored_dose")
     a = p.parse_args()
     import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer
+    from transformers import AutoConfig, AutoModelForCausalLM, AutoModelForImageTextToText, AutoTokenizer
     try:
         from torch._native.registry import deregister_op_overrides
         deregister_op_overrides(disable_op_symbols="bmm")
     except Exception: pass
     pairs = make_pairs(a.pairs); a.out.mkdir(parents=True, exist_ok=True)
-    tok = AutoTokenizer.from_pretrained(a.model); tok.pad_token=tok.eos_token; tok.padding_side="left"
+    config = AutoConfig.from_pretrained(a.model)
+    tokenizer_kwargs = {"fix_mistral_regex": True} if config.model_type == "mistral3" else {}
+    tok = AutoTokenizer.from_pretrained(a.model, **tokenizer_kwargs)
+    tok.pad_token=tok.eos_token; tok.padding_side="left"
+    doses_requested = [float(x) for x in a.doses.split(",")]
     results=[]
-    for dose in [0,.25,.5,.75,1.0]:
+    for dose in doses_requested:
         torch.manual_seed(a.seed); random.seed(a.seed); np.random.seed(a.seed)
-        model=AutoModelForCausalLM.from_pretrained(a.model,torch_dtype=torch.bfloat16).cuda(); model.config.use_cache=False
+        model_cls = AutoModelForImageTextToText if config.model_type == "mistral3" else AutoModelForCausalLM
+        model=model_cls.from_pretrained(a.model,dtype=torch.bfloat16).cuda(); model.config.use_cache=False
+        if hasattr(model.config, "text_config"):
+            model.config.text_config.use_cache=False
+        text_model = model.model.language_model if hasattr(model.model, "language_model") else model.model
         for q in model.parameters(): q.requires_grad=False
-        for layer in model.model.layers[-a.train_layers:]:
+        for layer in text_model.layers[-a.train_layers:]:
             for q in layer.parameters(): q.requires_grad=True
-        for q in model.model.norm.parameters(): q.requires_grad=True
+        for q in text_model.norm.parameters(): q.requires_grad=True
         before=summarize(eval_suite(model,tok,pairs))
         texts,counts=corpus(pairs,a.n_per_person,dose,a.seed)
         trainable=[q for q in model.parameters() if q.requires_grad]
@@ -190,13 +200,19 @@ def main():
         results.append(rec); print(json.dumps({k:v for k,v in rec.items() if k not in ["before","after"]}|{"summary":{k:v for k,v in after.items() if k!="pair_rows"}}),flush=True)
         del opt,model; gc.collect(); torch.cuda.empty_cache()
     doses=np.array([r["dose"] for r in results]); ys=np.array([r["after"]["mean_person_margin_b"] for r in results])
+    bfs=np.array([r["after"]["mean_b_minus_f"] for r in results])
     chain_trends={}
     for key in ["closed_b_minus_f","decision_b_minus_f","contextual_b","contextual_f"]:
         yy=np.array([r["ab_chain"]["means"][key] for r in results])
-        chain_trends[key]={"values":yy.tolist(),"slope":float(np.polyfit(doses,yy,1)[0]),
-                           "spearman":float(__import__("scipy").stats.spearmanr(doses,yy).statistic)}
+        chain_trends[key]={"values":yy.tolist(),
+                           "slope":float(np.polyfit(doses,yy,1)[0]) if len(doses)>1 else None,
+                           "spearman":float(__import__("scipy").stats.spearmanr(doses,yy).statistic) if len(doses)>1 else None}
     report={"design":"50 mirrored fictional person pairs (100 people)","model":a.model,"results":results,
-            "dose_slope":float(np.polyfit(doses,ys,1)[0]),"dose_spearman":float(__import__("scipy").stats.spearmanr(doses,ys).statistic),"ab_chain_trends":chain_trends}
+            "dose_slope":float(np.polyfit(doses,ys,1)[0]) if len(doses)>1 else None,
+            "dose_spearman":float(__import__("scipy").stats.spearmanr(doses,ys).statistic) if len(doses)>1 else None,
+            "b_minus_f_dose_slope":float(np.polyfit(doses,bfs,1)[0]) if len(doses)>1 else None,
+            "b_minus_f_dose_spearman":float(__import__("scipy").stats.spearmanr(doses,bfs).statistic) if len(doses)>1 else None,
+            "ab_chain_trends":chain_trends}
     (a.out/"report.json").write_text(json.dumps(report,indent=2)+"\n")
     print(json.dumps({"dose_slope":report["dose_slope"],"dose_spearman":report["dose_spearman"]},indent=2))
 

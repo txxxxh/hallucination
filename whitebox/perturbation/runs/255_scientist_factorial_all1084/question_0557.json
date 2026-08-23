@@ -1,0 +1,145 @@
+{
+  "key": "question_0557",
+  "group": "Q157242",
+  "generation_correct": true,
+  "right": "Alexander R. Todd, Baron Todd",
+  "wrong": "Roger Y. Tsien",
+  "base_margin_wrong_minus_right": -0.5443965196609497,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 364,
+      "char_end": 396,
+      "text": "awarded honorary doctorates from",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate from the University of Strasbourg",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 104,
+      "token_end": 111
+    },
+    {
+      "char_start": 425,
+      "char_end": 445,
+      "text": "Kong and the Chinese",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctor of the Chinese University of Hong Kong",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 115,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5443965196609497,
+      "wrong_score": -0.5671449899673462,
+      "right_score": -0.022748490795493126
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded honorary doctorates from"
+      ],
+      "u": -0.3714073598384857,
+      "margin": -0.172989159822464,
+      "wrong_score": -0.2361343652009964,
+      "right_score": -0.06314520537853241
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Kong and the Chinese"
+      ],
+      "u": -0.21469229459762573,
+      "margin": -0.329704225063324,
+      "wrong_score": -0.3930932879447937,
+      "right_score": -0.06338906288146973
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded honorary doctorates from",
+        "Kong and the Chinese"
+      ],
+      "u": -0.5045607089996338,
+      "margin": -0.03983582556247711,
+      "wrong_score": -0.19162847101688385,
+      "right_score": -0.15179264545440674
+    }
+  ],
+  "single_u": [
+    -0.3714073598384857,
+    -0.21469229459762573
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded honorary doctorates from",
+        "Kong and the Chinese"
+      ],
+      "u_i": -0.3714073598384857,
+      "u_j": -0.21469229459762573,
+      "local_fd": 0.08153894543647766,
+      "banzhaf": 0.08153894543647766,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded honorary doctorates from",
+        "Kong and the Chinese"
+      ],
+      "order": 2,
+      "harsanyi": 0.08153894543647766
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.03983582556247711,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

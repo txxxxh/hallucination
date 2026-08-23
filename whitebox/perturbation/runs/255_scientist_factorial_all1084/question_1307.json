@@ -1,0 +1,300 @@
+{
+  "key": "question_1307",
+  "group": "Q122701",
+  "generation_correct": true,
+  "right": "William Thomson, 1st Baron Kelvin",
+  "wrong": "J. J. Thomson",
+  "base_margin_wrong_minus_right": -0.35824334621429443,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 221,
+      "char_end": 248,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 80,
+      "token_end": 84
+    },
+    {
+      "char_start": 273,
+      "char_end": 295,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 88,
+      "token_end": 93
+    },
+    {
+      "char_start": 428,
+      "char_end": 447,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 123
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.35824334621429443,
+      "wrong_score": -0.3942781388759613,
+      "right_score": -0.03603478893637657
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": 0.10465571284294128,
+      "margin": -0.4628990590572357,
+      "wrong_score": -0.48807239532470703,
+      "right_score": -0.02517334558069706
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": 0.011866390705108643,
+      "margin": -0.3701097369194031,
+      "wrong_score": -0.4006592929363251,
+      "right_score": -0.030549565330147743
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "u": 0.18157285451889038,
+      "margin": -0.5398162007331848,
+      "wrong_score": -0.5655375719070435,
+      "right_score": -0.025721382349729538
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.14823202788829803,
+      "margin": -0.2100113183259964,
+      "wrong_score": -0.2674402594566345,
+      "right_score": -0.057428937405347824
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u": -0.38098394870758057,
+      "margin": 0.02274060994386673,
+      "wrong_score": -0.1133720651268959,
+      "right_score": -0.13611267507076263
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "u": -0.17664387822151184,
+      "margin": -0.1815994679927826,
+      "wrong_score": -0.24162064492702484,
+      "right_score": -0.06002117320895195
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "u": -0.2178061604499817,
+      "margin": -0.14043718576431274,
+      "wrong_score": -0.21592481434345245,
+      "right_score": -0.07548762857913971
+    }
+  ],
+  "single_u": [
+    0.10465571284294128,
+    0.011866390705108643,
+    -0.14823202788829803
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "u_i": 0.10465571284294128,
+      "u_j": 0.011866390705108643,
+      "local_fd": 0.06505075097084045,
+      "banzhaf": 0.12832018733024597,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.10465571284294128,
+      "u_j": -0.14823202788829803,
+      "local_fd": -0.337407648563385,
+      "banzhaf": -0.2741382122039795,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.011866390705108643,
+      "u_j": -0.14823202788829803,
+      "local_fd": -0.04027824103832245,
+      "banzhaf": 0.022991202771663666,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.3374076336622238
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": 0.12653888761997223
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "President of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.06505075097084045
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.04027824103832245
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "President of the Royal"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.14043718576431274,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

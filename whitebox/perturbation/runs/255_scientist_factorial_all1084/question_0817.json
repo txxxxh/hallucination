@@ -1,0 +1,145 @@
+{
+  "key": "question_0817",
+  "group": "Q122701",
+  "generation_correct": true,
+  "right": "William Thomson, 1st Baron Kelvin",
+  "wrong": "William Lawrence Bragg",
+  "base_margin_wrong_minus_right": -0.27091115713119507,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 234,
+      "char_end": 261,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 79,
+      "token_end": 83
+    },
+    {
+      "char_start": 488,
+      "char_end": 509,
+      "text": "as an Honorary Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Royal Society of Edinburgh",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 134,
+      "token_end": 138
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.27091115713119507,
+      "wrong_score": -0.3284844756126404,
+      "right_score": -0.05757331848144531
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": 0.03508159518241882,
+      "margin": -0.3059927523136139,
+      "wrong_score": -0.3641608953475952,
+      "right_score": -0.05816813185811043
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as an Honorary Fellow"
+      ],
+      "u": -0.10579276084899902,
+      "margin": -0.16511839628219604,
+      "wrong_score": -0.2541031241416931,
+      "right_score": -0.08898472785949707
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "as an Honorary Fellow"
+      ],
+      "u": -0.1048259288072586,
+      "margin": -0.16608522832393646,
+      "wrong_score": -0.25538912415504456,
+      "right_score": -0.0893038958311081
+    }
+  ],
+  "single_u": [
+    0.03508159518241882,
+    -0.10579276084899902
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "as an Honorary Fellow"
+      ],
+      "u_i": 0.03508159518241882,
+      "u_j": -0.10579276084899902,
+      "local_fd": -0.034114763140678406,
+      "banzhaf": -0.034114763140678406,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "as an Honorary Fellow"
+      ],
+      "order": 2,
+      "harsanyi": -0.034114763140678406
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.16608522832393646,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 18,
+    "n_excluded": 12,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "key": "question_0964",
+  "group": "Q204078",
+  "generation_correct": true,
+  "right": "Angus Deaton",
+  "wrong": "Paul Krugman",
+  "base_margin_wrong_minus_right": -2.000274181365967,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 193,
+      "char_end": 214,
+      "text": "the Prize in Economic",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Prize in Economic Sciences in Memory of Alfred Nobel",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 74,
+      "token_end": 79
+    },
+    {
+      "char_start": 267,
+      "char_end": 292,
+      "text": "Fellow of the Econometric",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Econometric Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 87,
+      "token_end": 91
+    },
+    {
+      "char_start": 449,
+      "char_end": 454,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 122
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.000274181365967,
+      "wrong_score": -2.0007693767547607,
+      "right_score": -0.0004952421295456588
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Prize in Economic"
+      ],
+      "u": -0.31260013580322266,
+      "margin": -1.6876740455627441,
+      "wrong_score": -1.6920889616012573,
+      "right_score": -0.00441485783085227
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Econometric"
+      ],
+      "u": -0.40628719329833984,
+      "margin": -1.593986988067627,
+      "wrong_score": -1.5980123281478882,
+      "right_score": -0.004025372676551342
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "Fellow of the Econometric"
+      ],
+      "u": -0.46884608268737793,
+      "margin": -1.5314280986785889,
+      "wrong_score": -1.5351321697235107,
+      "right_score": -0.003704049391672015
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.15645241737365723,
+      "margin": -2.156726598739624,
+      "wrong_score": -2.157550811767578,
+      "right_score": -0.0008241386385634542
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "never"
+      ],
+      "u": -0.03126561641693115,
+      "margin": -1.9690085649490356,
+      "wrong_score": -1.9704201221466064,
+      "right_score": -0.0014115627855062485
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Econometric",
+        "never"
+      ],
+      "u": -0.18752360343933105,
+      "margin": -1.8127505779266357,
+      "wrong_score": -1.814340591430664,
+      "right_score": -0.001590046682395041
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "Fellow of the Econometric",
+        "never"
+      ],
+      "u": -0.31256353855133057,
+      "margin": -1.6877106428146362,
+      "wrong_score": -1.6895006895065308,
+      "right_score": -0.0017900948878377676
+    }
+  ],
+  "single_u": [
+    -0.31260013580322266,
+    -0.40628719329833984,
+    0.15645241737365723
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Prize in Economic",
+        "Fellow of the Econometric"
+      ],
+      "u_i": -0.31260013580322266,
+      "u_j": -0.40628719329833984,
+      "local_fd": 0.25004124641418457,
+      "banzhaf": 0.15635967254638672,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Prize in Economic",
+        "never"
+      ],
+      "u_i": -0.31260013580322266,
+      "u_j": 0.15645241737365723,
+      "local_fd": 0.12488210201263428,
+      "banzhaf": 0.031200528144836426,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Econometric",
+        "never"
+      ],
+      "u_i": -0.40628719329833984,
+      "u_j": 0.15645241737365723,
+      "local_fd": 0.06231117248535156,
+      "banzhaf": -0.03137040138244629,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "Fellow of the Econometric"
+      ],
+      "order": 2,
+      "harsanyi": 0.25004124641418457
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "Fellow of the Econometric",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.1873631477355957
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.12488210201263428
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Econometric",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.06231117248535156
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.6877106428146362,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "key": "question_0017",
+  "group": "Q60108",
+  "generation_correct": false,
+  "right": "Günter Blobel",
+  "wrong": "Christiane Nüsslein-Volhard",
+  "base_margin_wrong_minus_right": -0.223441481590271,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 208,
+      "char_end": 230,
+      "text": "at both the University",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary doctor of the University of Oxford",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 80,
+      "token_end": 85
+    },
+    {
+      "char_start": 714,
+      "char_end": 734,
+      "text": "to the life sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 185,
+      "token_end": 188
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.223441481590271,
+      "wrong_score": -0.25704583525657654,
+      "right_score": -0.03360435366630554
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "at both the University"
+      ],
+      "u": -0.07511667907238007,
+      "margin": -0.14832480251789093,
+      "wrong_score": -0.1941780298948288,
+      "right_score": -0.04585322365164757
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "to the life sciences"
+      ],
+      "u": -0.10206073522567749,
+      "margin": -0.1213807463645935,
+      "wrong_score": -0.1824432611465454,
+      "right_score": -0.061062514781951904
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at both the University",
+        "to the life sciences"
+      ],
+      "u": -0.36106210947036743,
+      "margin": 0.13762064278125763,
+      "wrong_score": -0.06044726073741913,
+      "right_score": -0.19806790351867676
+    }
+  ],
+  "single_u": [
+    -0.07511667907238007,
+    -0.10206073522567749
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "at both the University",
+        "to the life sciences"
+      ],
+      "u_i": -0.07511667907238007,
+      "u_j": -0.10206073522567749,
+      "local_fd": -0.18388468027114868,
+      "banzhaf": -0.18388468027114868,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at both the University",
+        "to the life sciences"
+      ],
+      "order": 2,
+      "harsanyi": -0.18388469517230988
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.13762064278125763,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 25,
+    "n_excluded": 19,
+    "max_candidates": 6
+  }
+}

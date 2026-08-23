@@ -1,0 +1,286 @@
+{
+  "key": "question_2067",
+  "group": "Q232308",
+  "generation_correct": true,
+  "right": "Selman Waksman",
+  "wrong": "James D. Watson",
+  "base_margin_wrong_minus_right": -1.9696711301803589,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 239,
+      "char_end": 261,
+      "text": "both the Albert Lasker",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Lasker Award for Basic Medical Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 79,
+      "token_end": 84
+    },
+    {
+      "char_start": 509,
+      "char_end": 514,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 126,
+      "token_end": 128
+    },
+    {
+      "char_start": 540,
+      "char_end": 565,
+      "text": "the University of Chicago",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Chicago",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 134,
+      "token_end": 135
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.9696711301803589,
+      "wrong_score": -1.9721461534500122,
+      "right_score": -0.0024750777520239353
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "both the Albert Lasker"
+      ],
+      "u": -1.2702690362930298,
+      "margin": -0.6994020938873291,
+      "wrong_score": -0.7665124535560608,
+      "right_score": -0.06711035966873169
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.37431800365448,
+      "margin": -1.595353126525879,
+      "wrong_score": -1.6000862121582031,
+      "right_score": -0.004733122419565916
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "both the Albert Lasker",
+        "never"
+      ],
+      "u": -1.1529946327209473,
+      "margin": -0.8166765570640564,
+      "wrong_score": -0.8359071016311646,
+      "right_score": -0.019230566918849945
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the University of Chicago"
+      ],
+      "u": 0.2515300512313843,
+      "margin": -2.221201181411743,
+      "wrong_score": -2.2278244495391846,
+      "right_score": -0.006623239256441593
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "both the Albert Lasker",
+        "the University of Chicago"
+      ],
+      "u": -0.9916513562202454,
+      "margin": -0.9780197739601135,
+      "wrong_score": -1.0058494806289673,
+      "right_score": -0.027829701080918312
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "the University of Chicago"
+      ],
+      "u": 0.06368863582611084,
+      "margin": -2.0333597660064697,
+      "wrong_score": -2.039902448654175,
+      "right_score": -0.006542684976011515
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "both the Albert Lasker",
+        "never",
+        "the University of Chicago"
+      ],
+      "u": -0.8725149631500244,
+      "margin": -1.0971561670303345,
+      "wrong_score": -1.1126558780670166,
+      "right_score": -0.01549974549561739
+    }
+  ],
+  "single_u": [
+    -1.2702690362930298,
+    -0.37431800365448,
+    0.2515300512313843
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "both the Albert Lasker",
+        "never"
+      ],
+      "u_i": -1.2702690362930298,
+      "u_j": -0.37431800365448,
+      "local_fd": 0.4915924072265625,
+      "banzhaf": 0.39928510785102844,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "both the Albert Lasker",
+        "the University of Chicago"
+      ],
+      "u_i": -1.2702690362930298,
+      "u_j": 0.2515300512313843,
+      "local_fd": 0.027087628841400146,
+      "banzhaf": -0.06521967053413391,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "never",
+        "the University of Chicago"
+      ],
+      "u_i": -0.37431800365448,
+      "u_j": 0.2515300512313843,
+      "local_fd": 0.18647658824920654,
+      "banzhaf": 0.0941692590713501,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "both the Albert Lasker",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.4915924072265625
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "the University of Chicago"
+      ],
+      "order": 2,
+      "harsanyi": 0.18647658824920654
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "both the Albert Lasker",
+        "never",
+        "the University of Chicago"
+      ],
+      "order": 3,
+      "harsanyi": -0.18461459875106812
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "both the Albert Lasker",
+        "the University of Chicago"
+      ],
+      "order": 2,
+      "harsanyi": 0.027087628841400146
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.0971561670303345,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

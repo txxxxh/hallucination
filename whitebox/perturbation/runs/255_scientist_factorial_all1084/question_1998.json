@@ -1,0 +1,152 @@
+{
+  "key": "question_1998",
+  "group": "Q210960",
+  "generation_correct": true,
+  "right": "Gérard Debreu",
+  "wrong": "Daniel McFadden",
+  "base_margin_wrong_minus_right": -0.12014923989772797,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 232,
+      "char_end": 253,
+      "text": "served as a president",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "president",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 78,
+      "token_end": 82
+    },
+    {
+      "char_start": 404,
+      "char_end": 425,
+      "text": "the Prize in Economic",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Prize in Economic Sciences in Memory of Alfred Nobel",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 111,
+      "token_end": 116
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.12014923989772797,
+      "wrong_score": -0.20936892926692963,
+      "right_score": -0.08921968936920166
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "served as a president"
+      ],
+      "u": -0.2901325225830078,
+      "margin": 0.16998329758644104,
+      "wrong_score": -0.07132720947265625,
+      "right_score": -0.2413105070590973
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Prize in Economic"
+      ],
+      "u": -0.23735031485557556,
+      "margin": 0.11720108240842819,
+      "wrong_score": -0.1038203164935112,
+      "right_score": -0.2210213989019394
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "served as a president",
+        "the Prize in Economic"
+      ],
+      "u": -0.19752633571624756,
+      "margin": 0.07737709581851959,
+      "wrong_score": -0.12244342267513275,
+      "right_score": -0.19982051849365234
+    }
+  ],
+  "single_u": [
+    -0.2901325225830078,
+    -0.23735031485557556
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "served as a president",
+        "the Prize in Economic"
+      ],
+      "u_i": -0.2901325225830078,
+      "u_j": -0.23735031485557556,
+      "local_fd": 0.3299565017223358,
+      "banzhaf": 0.3299565017223358,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "served as a president",
+        "the Prize in Economic"
+      ],
+      "order": 2,
+      "harsanyi": 0.3299565017223358
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.07737709581851959,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

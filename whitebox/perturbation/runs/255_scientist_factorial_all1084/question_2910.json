@@ -1,0 +1,155 @@
+{
+  "key": "question_2910",
+  "group": "Q92620",
+  "generation_correct": false,
+  "right": "Bjarne Stroustrup",
+  "wrong": "Gordon Plotkin",
+  "base_margin_wrong_minus_right": -0.5431544184684753,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 245,
+      "char_end": 278,
+      "text": "and programming languages. Highly",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Programming Languages Achievement Award",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 78,
+      "token_end": 83
+    },
+    {
+      "char_start": 350,
+      "char_end": 366,
+      "text": "as an ACM Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "ACM Fellow",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 98
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.5431544184684753,
+      "wrong_score": -0.560517430305481,
+      "right_score": -0.01736300438642502
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and programming languages. Highly"
+      ],
+      "u": -0.44645556807518005,
+      "margin": -0.09669885039329529,
+      "wrong_score": -0.19871988892555237,
+      "right_score": -0.10202103853225708
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as an ACM Fellow"
+      ],
+      "u": -0.6005032062530518,
+      "margin": 0.05734877288341522,
+      "wrong_score": -0.1498081088066101,
+      "right_score": -0.20715688169002533
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and programming languages. Highly",
+        "as an ACM Fellow"
+      ],
+      "u": -0.4815579652786255,
+      "margin": -0.06159646809101105,
+      "wrong_score": -0.1840454488992691,
+      "right_score": -0.12244898080825806
+    }
+  ],
+  "single_u": [
+    -0.44645556807518005,
+    -0.6005032062530518
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "and programming languages. Highly",
+        "as an ACM Fellow"
+      ],
+      "u_i": -0.44645556807518005,
+      "u_j": -0.6005032062530518,
+      "local_fd": 0.5654008388519287,
+      "banzhaf": 0.5654008388519287,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and programming languages. Highly",
+        "as an ACM Fellow"
+      ],
+      "order": 2,
+      "harsanyi": 0.5654008090496063
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and programming languages. Highly"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.06159646809101105,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

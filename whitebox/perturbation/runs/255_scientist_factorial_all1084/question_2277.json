@@ -1,0 +1,146 @@
+{
+  "key": "question_2277",
+  "group": "Q71013",
+  "generation_correct": true,
+  "right": "Theodor Wolfgang Hänsch",
+  "wrong": "Andrei Dmitrievich Sakharov",
+  "base_margin_wrong_minus_right": -1.1538859605789185,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 175,
+      "char_end": 197,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 73,
+      "token_end": 77
+    },
+    {
+      "char_start": 317,
+      "char_end": 345,
+      "text": "successful career in physics",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 97,
+      "token_end": 104
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.1538859605789185,
+      "wrong_score": -1.1555136442184448,
+      "right_score": -0.0016276862006634474
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.1181720495223999,
+      "margin": -1.0357139110565186,
+      "wrong_score": -1.043516755104065,
+      "right_score": -0.007802852429449558
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "successful career in physics"
+      ],
+      "u": -0.6154313683509827,
+      "margin": -0.5384545922279358,
+      "wrong_score": -0.5595504641532898,
+      "right_score": -0.021095899865031242
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "successful career in physics"
+      ],
+      "u": -0.8890458941459656,
+      "margin": -0.2648400664329529,
+      "wrong_score": -0.31282344460487366,
+      "right_score": -0.047983378171920776
+    }
+  ],
+  "single_u": [
+    -0.1181720495223999,
+    -0.6154313683509827
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the American",
+        "successful career in physics"
+      ],
+      "u_i": -0.1181720495223999,
+      "u_j": -0.6154313683509827,
+      "local_fd": -0.155442476272583,
+      "banzhaf": -0.155442476272583,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the American",
+        "successful career in physics"
+      ],
+      "order": 2,
+      "harsanyi": -0.155442476272583
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2648400664329529,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

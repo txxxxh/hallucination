@@ -1,0 +1,297 @@
+{
+  "key": "question_0532",
+  "group": "Q1035",
+  "generation_correct": true,
+  "right": "Charles Darwin",
+  "wrong": "Louis Agassiz",
+  "base_margin_wrong_minus_right": -0.6330810189247131,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 335,
+      "char_end": 353,
+      "text": "the Pour le Mérite",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 104,
+      "token_end": 108
+    },
+    {
+      "char_start": 379,
+      "char_end": 398,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 110,
+      "token_end": 114
+    },
+    {
+      "char_start": 515,
+      "char_end": 520,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 135,
+      "token_end": 138
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.6330810189247131,
+      "wrong_score": -0.6750136017799377,
+      "right_score": -0.041932567954063416
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Pour le Mérite"
+      ],
+      "u": 0.09457159042358398,
+      "margin": -0.7276526093482971,
+      "wrong_score": -0.7681757807731628,
+      "right_score": -0.04052315279841423
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.5353865027427673,
+      "margin": -0.0976945161819458,
+      "wrong_score": -0.32052090764045715,
+      "right_score": -0.22282639145851135
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Pour le Mérite",
+        "Fellow of the Royal"
+      ],
+      "u": -1.0748279094696045,
+      "margin": 0.44174695014953613,
+      "wrong_score": -0.19588129222393036,
+      "right_score": -0.6376282572746277
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.6127676367759705,
+      "margin": -0.020313382148742676,
+      "wrong_score": -0.2851940393447876,
+      "right_score": -0.2648806571960449
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Pour le Mérite",
+        "never"
+      ],
+      "u": -0.10050028562545776,
+      "margin": -0.5325807332992554,
+      "wrong_score": -0.599128007888794,
+      "right_score": -0.06654726713895798
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "never"
+      ],
+      "u": -0.32011711597442627,
+      "margin": -0.31296390295028687,
+      "wrong_score": -0.4363430142402649,
+      "right_score": -0.12337911874055862
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Pour le Mérite",
+        "Fellow of the Royal",
+        "never"
+      ],
+      "u": -0.36363738775253296,
+      "margin": -0.2694436311721802,
+      "wrong_score": -0.46114978194236755,
+      "right_score": -0.19170615077018738
+    }
+  ],
+  "single_u": [
+    0.09457159042358398,
+    -0.5353865027427673,
+    -0.6127676367759705
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Pour le Mérite",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.09457159042358398,
+      "u_j": -0.5353865027427673,
+      "local_fd": -0.6340129971504211,
+      "banzhaf": -0.5949003100395203,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Pour le Mérite",
+        "never"
+      ],
+      "u_i": 0.09457159042358398,
+      "u_j": -0.6127676367759705,
+      "local_fd": 0.4176957607269287,
+      "banzhaf": 0.456808477640152,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "never"
+      ],
+      "u_i": -0.5353865027427673,
+      "u_j": -0.6127676367759705,
+      "local_fd": 0.8280370235443115,
+      "banzhaf": 0.8671497106552124,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.8280370235443115
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Pour le Mérite",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.6340129971504211
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Pour le Mérite",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.4176957607269287
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Pour le Mérite",
+        "Fellow of the Royal",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": 0.07822537422180176
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.2694436311721802,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

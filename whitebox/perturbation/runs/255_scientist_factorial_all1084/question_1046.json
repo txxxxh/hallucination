@@ -1,0 +1,301 @@
+{
+  "key": "question_1046",
+  "group": "Q201513",
+  "generation_correct": false,
+  "right": "Edward Witten",
+  "wrong": "Steven Weinberg",
+  "base_margin_wrong_minus_right": 1.208353042602539,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 211,
+      "char_end": 244,
+      "text": "education at Princeton University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Princeton University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 70,
+      "token_end": 78
+    },
+    {
+      "char_start": 404,
+      "char_end": 429,
+      "text": "Dannie Heineman Prize for",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Dannie Heineman Prize for Mathematical Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 110,
+      "token_end": 114
+    },
+    {
+      "char_start": 430,
+      "char_end": 461,
+      "text": "Mathematical Physics. They have",
+      "kind": "attribute",
+      "field": "field",
+      "value": "mathematical physics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 113,
+      "token_end": 120
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.208353042602539,
+      "wrong_score": -0.013201717287302017,
+      "right_score": -1.2215547561645508
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "education at Princeton University"
+      ],
+      "u": 1.0000098943710327,
+      "margin": 0.20834311842918396,
+      "wrong_score": -0.16623154282569885,
+      "right_score": -0.3745746612548828
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Dannie Heineman Prize for"
+      ],
+      "u": -0.1250060796737671,
+      "margin": 1.3333591222763062,
+      "wrong_score": -0.010741239413619041,
+      "right_score": -1.3441003561019897
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Princeton University",
+        "Dannie Heineman Prize for"
+      ],
+      "u": 1.2916772365570068,
+      "margin": -0.083324134349823,
+      "wrong_score": -0.3576321005821228,
+      "right_score": -0.2743079662322998
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Mathematical Physics. They have"
+      ],
+      "u": 0.37500131130218506,
+      "margin": 0.833351731300354,
+      "wrong_score": -0.03138040006160736,
+      "right_score": -0.8647321462631226
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at Princeton University",
+        "Mathematical Physics. They have"
+      ],
+      "u": 0.8750000596046448,
+      "margin": 0.3333529829978943,
+      "wrong_score": -0.12173588573932648,
+      "right_score": -0.45508885383605957
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Dannie Heineman Prize for",
+        "Mathematical Physics. They have"
+      ],
+      "u": 0.33333534002304077,
+      "margin": 0.8750177025794983,
+      "wrong_score": -0.028570551425218582,
+      "right_score": -0.9035882353782654
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at Princeton University",
+        "Dannie Heineman Prize for",
+        "Mathematical Physics. They have"
+      ],
+      "u": 1.1666678190231323,
+      "margin": 0.04168522357940674,
+      "wrong_score": -0.23112058639526367,
+      "right_score": -0.2728058099746704
+    }
+  ],
+  "single_u": [
+    1.0000098943710327,
+    -0.1250060796737671,
+    0.37500131130218506
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "education at Princeton University",
+        "Dannie Heineman Prize for"
+      ],
+      "u_i": 1.0000098943710327,
+      "u_j": -0.1250060796737671,
+      "local_fd": 0.4166734218597412,
+      "banzhaf": 0.3750035762786865,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "education at Princeton University",
+        "Mathematical Physics. They have"
+      ],
+      "u_i": 1.0000098943710327,
+      "u_j": 0.37500131130218506,
+      "local_fd": -0.500011146068573,
+      "banzhaf": -0.5416809916496277,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Dannie Heineman Prize for",
+        "Mathematical Physics. They have"
+      ],
+      "u_i": -0.1250060796737671,
+      "u_j": 0.37500131130218506,
+      "local_fd": 0.0833401083946228,
+      "banzhaf": 0.04167023301124573,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at Princeton University",
+        "Mathematical Physics. They have"
+      ],
+      "order": 2,
+      "harsanyi": -0.500011146068573
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Princeton University",
+        "Dannie Heineman Prize for"
+      ],
+      "order": 2,
+      "harsanyi": 0.4166734218597412
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Dannie Heineman Prize for",
+        "Mathematical Physics. They have"
+      ],
+      "order": 2,
+      "harsanyi": 0.0833401083946228
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at Princeton University",
+        "Dannie Heineman Prize for",
+        "Mathematical Physics. They have"
+      ],
+      "order": 3,
+      "harsanyi": -0.08333969116210938
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Princeton University",
+        "Dannie Heineman Prize for"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.04168522357940674,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

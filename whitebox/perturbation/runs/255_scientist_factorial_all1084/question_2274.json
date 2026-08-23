@@ -1,0 +1,296 @@
+{
+  "key": "question_2274",
+  "group": "Q7426",
+  "generation_correct": true,
+  "right": "Ada Yonath",
+  "wrong": "Alexander R. Todd, Baron Todd",
+  "base_margin_wrong_minus_right": -0.3044508099555969,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 150,
+      "char_end": 176,
+      "text": "is an accomplished chemist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 67,
+      "token_end": 71
+    },
+    {
+      "char_start": 178,
+      "char_end": 212,
+      "text": "biochemist, and university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 71,
+      "token_end": 76
+    },
+    {
+      "char_start": 260,
+      "char_end": 280,
+      "text": "with the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 81,
+      "token_end": 85
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3044508099555969,
+      "wrong_score": -0.3316802680492401,
+      "right_score": -0.02722945809364319
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "is an accomplished chemist"
+      ],
+      "u": -1.2176036834716797,
+      "margin": 0.9131529331207275,
+      "wrong_score": -0.01120703760534525,
+      "right_score": -0.9243599772453308
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "biochemist, and university teacher"
+      ],
+      "u": -0.4147169291973114,
+      "margin": 0.11026612669229507,
+      "wrong_score": -0.0921686515212059,
+      "right_score": -0.20243477821350098
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "is an accomplished chemist",
+        "biochemist, and university teacher"
+      ],
+      "u": -0.5342316627502441,
+      "margin": 0.22978082299232483,
+      "wrong_score": -0.07300439476966858,
+      "right_score": -0.3027852177619934
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "with the Nobel Prize"
+      ],
+      "u": -0.07520708441734314,
+      "margin": -0.22924372553825378,
+      "wrong_score": -0.2848053574562073,
+      "right_score": -0.05556163564324379
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "is an accomplished chemist",
+        "with the Nobel Prize"
+      ],
+      "u": -0.6871974468231201,
+      "margin": 0.3827466368675232,
+      "wrong_score": -0.039391353726387024,
+      "right_score": -0.4221380054950714
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "biochemist, and university teacher",
+        "with the Nobel Prize"
+      ],
+      "u": -0.2520899772644043,
+      "margin": -0.05236083269119263,
+      "wrong_score": -0.16542033851146698,
+      "right_score": -0.11305950582027435
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "is an accomplished chemist",
+        "biochemist, and university teacher",
+        "with the Nobel Prize"
+      ],
+      "u": -0.3934464156627655,
+      "margin": 0.08899561315774918,
+      "wrong_score": -0.1058838739991188,
+      "right_score": -0.19487948715686798
+    }
+  ],
+  "single_u": [
+    -1.2176036834716797,
+    -0.4147169291973114,
+    -0.07520708441734314
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "is an accomplished chemist",
+        "biochemist, and university teacher"
+      ],
+      "u_i": -1.2176036834716797,
+      "u_j": -0.4147169291973114,
+      "local_fd": 1.0980889797210693,
+      "banzhaf": 0.7843614220619202,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "is an accomplished chemist",
+        "with the Nobel Prize"
+      ],
+      "u_i": -1.2176036834716797,
+      "u_j": -0.07520708441734314,
+      "local_fd": 0.6056133508682251,
+      "banzhaf": 0.2918858230113983,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "biochemist, and university teacher",
+        "with the Nobel Prize"
+      ],
+      "u_i": -0.4147169291973114,
+      "u_j": -0.07520708441734314,
+      "local_fd": 0.23783403635025024,
+      "banzhaf": -0.07589349150657654,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "is an accomplished chemist",
+        "biochemist, and university teacher"
+      ],
+      "order": 2,
+      "harsanyi": 1.098088949918747
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "is an accomplished chemist",
+        "biochemist, and university teacher",
+        "with the Nobel Prize"
+      ],
+      "order": 3,
+      "harsanyi": -0.6274550259113312
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "is an accomplished chemist",
+        "with the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.6056133210659027
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "biochemist, and university teacher",
+        "with the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.23783403635025024
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.08899561315774918,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

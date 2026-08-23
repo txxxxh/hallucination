@@ -1,0 +1,152 @@
+{
+  "key": "question_1933",
+  "group": "Q234463",
+  "generation_correct": true,
+  "right": "Sydney Brenner",
+  "wrong": "Alexander R. Todd, Baron Todd",
+  "base_margin_wrong_minus_right": -0.709686279296875,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 292,
+      "char_end": 311,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 90,
+      "token_end": 94
+    },
+    {
+      "char_start": 342,
+      "char_end": 362,
+      "text": "both the Royal Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 103
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.709686279296875,
+      "wrong_score": -0.71694016456604,
+      "right_score": -0.007253857795149088
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.5327743291854858,
+      "margin": -0.17691196501255035,
+      "wrong_score": -0.2528162896633148,
+      "right_score": -0.07590432465076447
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "both the Royal Medal"
+      ],
+      "u": -1.6530259847640991,
+      "margin": 0.9433397054672241,
+      "wrong_score": -0.010289475321769714,
+      "right_score": -0.953629195690155
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "both the Royal Medal"
+      ],
+      "u": -2.8356356620788574,
+      "margin": 2.1259493827819824,
+      "wrong_score": -0.01009344682097435,
+      "right_score": -2.136042833328247
+    }
+  ],
+  "single_u": [
+    -0.5327743291854858,
+    -1.6530259847640991
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "both the Royal Medal"
+      ],
+      "u_i": -0.5327743291854858,
+      "u_j": -1.6530259847640991,
+      "local_fd": -0.6498352289199829,
+      "banzhaf": -0.6498352289199829,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "both the Royal Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.6498353481292725
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 2.1259493827819824,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

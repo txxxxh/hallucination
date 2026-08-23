@@ -1,0 +1,145 @@
+{
+  "key": "question_0312",
+  "group": "Q179777",
+  "generation_correct": true,
+  "right": "Harold Clayton Urey",
+  "wrong": "Roald Hoffmann",
+  "base_margin_wrong_minus_right": 0.0383630245923996,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 209,
+      "char_end": 241,
+      "text": "education at Columbia University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Columbia University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 75,
+      "token_end": 81
+    },
+    {
+      "char_start": 335,
+      "char_end": 361,
+      "text": "in Chemistry, the National",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 108
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.0383630245923996,
+      "wrong_score": -0.14787304401397705,
+      "right_score": -0.18623606860637665
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "education at Columbia University"
+      ],
+      "u": -0.14412470161914825,
+      "margin": 0.18248772621154785,
+      "wrong_score": -0.09168931096792221,
+      "right_score": -0.27417704463005066
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Chemistry, the National"
+      ],
+      "u": -0.3248344659805298,
+      "margin": 0.3631974756717682,
+      "wrong_score": -0.060402777045965195,
+      "right_score": -0.4236002564430237
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Columbia University",
+        "in Chemistry, the National"
+      ],
+      "u": -0.1035480797290802,
+      "margin": 0.1419111043214798,
+      "wrong_score": -0.13233338296413422,
+      "right_score": -0.274244487285614
+    }
+  ],
+  "single_u": [
+    -0.14412470161914825,
+    -0.3248344659805298
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "education at Columbia University",
+        "in Chemistry, the National"
+      ],
+      "u_i": -0.14412470161914825,
+      "u_j": -0.3248344659805298,
+      "local_fd": 0.36541110277175903,
+      "banzhaf": 0.36541110277175903,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at Columbia University",
+        "in Chemistry, the National"
+      ],
+      "order": 2,
+      "harsanyi": 0.36541108787059784
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.1419111043214798,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

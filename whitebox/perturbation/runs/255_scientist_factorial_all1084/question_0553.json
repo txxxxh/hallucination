@@ -1,0 +1,289 @@
+{
+  "key": "question_0553",
+  "group": "Q335213",
+  "generation_correct": true,
+  "right": "Martin Rees, Baron Rees of Ludlow",
+  "wrong": "Edward Victor Appleton",
+  "base_margin_wrong_minus_right": -0.2970263957977295,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 227,
+      "char_end": 254,
+      "text": "education at the University",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate at the Laval University",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 81,
+      "token_end": 86
+    },
+    {
+      "char_start": 342,
+      "char_end": 361,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 103
+    },
+    {
+      "char_start": 408,
+      "char_end": 432,
+      "text": "Bakerian Medal for their",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Society Bakerian Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 109,
+      "token_end": 114
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.2970263957977295,
+      "wrong_score": -0.36145609617233276,
+      "right_score": -0.06442971527576447
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "education at the University"
+      ],
+      "u": 0.1801697313785553,
+      "margin": -0.4771961271762848,
+      "wrong_score": -0.5156915187835693,
+      "right_score": -0.03849538043141365
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.047100841999053955,
+      "margin": -0.34412723779678345,
+      "wrong_score": -0.40043407678604126,
+      "right_score": -0.05630683898925781
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal"
+      ],
+      "u": 0.006666362285614014,
+      "margin": -0.3036927580833435,
+      "wrong_score": -0.350911408662796,
+      "right_score": -0.04721866175532341
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Bakerian Medal for their"
+      ],
+      "u": -0.19175073504447937,
+      "margin": -0.10527565330266953,
+      "wrong_score": -0.1870145946741104,
+      "right_score": -0.08173894137144089
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at the University",
+        "Bakerian Medal for their"
+      ],
+      "u": -0.0267048180103302,
+      "margin": -0.2703215777873993,
+      "wrong_score": -0.32850325107574463,
+      "right_score": -0.05818168446421623
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal for their"
+      ],
+      "u": 0.07566750049591064,
+      "margin": -0.37269389629364014,
+      "wrong_score": -0.4114345610141754,
+      "right_score": -0.03874066099524498
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal",
+        "Bakerian Medal for their"
+      ],
+      "u": 0.18231815099716187,
+      "margin": -0.47934454679489136,
+      "wrong_score": -0.5123969912528992,
+      "right_score": -0.033052437007427216
+    }
+  ],
+  "single_u": [
+    0.1801697313785553,
+    0.047100841999053955,
+    -0.19175073504447937
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.1801697313785553,
+      "u_j": 0.047100841999053955,
+      "local_fd": -0.22060421109199524,
+      "banzhaf": -0.1394997388124466,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "education at the University",
+        "Bakerian Medal for their"
+      ],
+      "u_i": 0.1801697313785553,
+      "u_j": -0.19175073504447937,
+      "local_fd": -0.015123814344406128,
+      "banzhaf": 0.06598065793514252,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal for their"
+      ],
+      "u_i": 0.047100841999053955,
+      "u_j": -0.19175073504447937,
+      "local_fd": 0.22031739354133606,
+      "banzhaf": 0.3014218807220459,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.22060421109199524
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal for their"
+      ],
+      "order": 2,
+      "harsanyi": 0.22031739354133606
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "education at the University",
+        "Fellow of the Royal",
+        "Bakerian Medal for their"
+      ],
+      "order": 3,
+      "harsanyi": 0.1622089445590973
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "education at the University",
+        "Bakerian Medal for their"
+      ],
+      "order": 2,
+      "harsanyi": -0.015123814344406128
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.47934454679489136,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

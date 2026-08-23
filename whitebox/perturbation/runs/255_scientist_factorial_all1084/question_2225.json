@@ -1,0 +1,290 @@
+{
+  "key": "question_2225",
+  "group": "Q80884",
+  "generation_correct": false,
+  "right": "James Chadwick",
+  "wrong": "Ernest Rutherford",
+  "base_margin_wrong_minus_right": 1.3361479043960571,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 288,
+      "char_end": 315,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 86,
+      "token_end": 94
+    },
+    {
+      "char_start": 358,
+      "char_end": 384,
+      "text": "including the Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 100,
+      "token_end": 105
+    },
+    {
+      "char_start": 386,
+      "char_end": 408,
+      "text": "the Faraday Medal, the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Faraday Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 104,
+      "token_end": 109
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.3361479043960571,
+      "wrong_score": -0.007954445667564869,
+      "right_score": -1.344102382659912
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": 0.3246934413909912,
+      "margin": 1.011454463005066,
+      "wrong_score": -0.0222176406532526,
+      "right_score": -1.0336720943450928
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Copley Medal"
+      ],
+      "u": 0.08184468746185303,
+      "margin": 1.254303216934204,
+      "wrong_score": -0.012676249258220196,
+      "right_score": -1.266979455947876
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "including the Copley Medal"
+      ],
+      "u": 0.24831640720367432,
+      "margin": 1.0878314971923828,
+      "wrong_score": -0.013515769504010677,
+      "right_score": -1.1013472080230713
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Faraday Medal, the"
+      ],
+      "u": 0.5349414348602295,
+      "margin": 0.8012064695358276,
+      "wrong_score": -0.028732523322105408,
+      "right_score": -0.8299390077590942
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "the Faraday Medal, the"
+      ],
+      "u": 0.24796557426452637,
+      "margin": 1.0881823301315308,
+      "wrong_score": -0.017128856852650642,
+      "right_score": -1.1053111553192139
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Copley Medal",
+        "the Faraday Medal, the"
+      ],
+      "u": 0.36953604221343994,
+      "margin": 0.9666118621826172,
+      "wrong_score": -0.017078543081879616,
+      "right_score": -0.9836903810501099
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "including the Copley Medal",
+        "the Faraday Medal, the"
+      ],
+      "u": 0.40744566917419434,
+      "margin": 0.9287022352218628,
+      "wrong_score": -0.0255621075630188,
+      "right_score": -0.9542643427848816
+    }
+  ],
+  "single_u": [
+    0.3246934413909912,
+    0.08184468746185303,
+    0.5349414348602295
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "including the Copley Medal"
+      ],
+      "u_i": 0.3246934413909912,
+      "u_j": 0.08184468746185303,
+      "local_fd": -0.15822172164916992,
+      "banzhaf": 0.0833318829536438,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "the Faraday Medal, the"
+      ],
+      "u_i": 0.3246934413909912,
+      "u_j": 0.5349414348602295,
+      "local_fd": -0.6116693019866943,
+      "banzhaf": -0.3701156973838806,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Copley Medal",
+        "the Faraday Medal, the"
+      ],
+      "u_i": 0.08184468746185303,
+      "u_j": 0.5349414348602295,
+      "local_fd": -0.24725008010864258,
+      "banzhaf": -0.005696475505828857,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "the Faraday Medal, the"
+      ],
+      "order": 2,
+      "harsanyi": -0.6116693019866943
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "including the Copley Medal",
+        "the Faraday Medal, the"
+      ],
+      "order": 3,
+      "harsanyi": 0.48310720920562744
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Copley Medal",
+        "the Faraday Medal, the"
+      ],
+      "order": 2,
+      "harsanyi": -0.24725008010864258
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "including the Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.15822172164916992
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.9287022352218628,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "key": "question_0866",
+  "group": "Q232316",
+  "generation_correct": false,
+  "right": "Robert Burns Woodward",
+  "wrong": "Sir Derek Barton",
+  "base_margin_wrong_minus_right": -0.4658050537109375,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 420,
+      "char_end": 441,
+      "text": "the Roger Adams Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Roger Adams Award in Organic Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 113,
+      "token_end": 116
+    },
+    {
+      "char_start": 511,
+      "char_end": 529,
+      "text": "with the ACS Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "ACS Award for Creative Work in Synthetic Organic Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 130,
+      "token_end": 135
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.4658050537109375,
+      "wrong_score": -0.5435956716537476,
+      "right_score": -0.07779060304164886
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Roger Adams Award"
+      ],
+      "u": 0.16054242849349976,
+      "margin": -0.6263474822044373,
+      "wrong_score": -0.679374098777771,
+      "right_score": -0.05302659794688225
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the ACS Award"
+      ],
+      "u": -0.1323927342891693,
+      "margin": -0.3334123194217682,
+      "wrong_score": -0.44333529472351074,
+      "right_score": -0.10992296785116196
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Roger Adams Award",
+        "with the ACS Award"
+      ],
+      "u": 0.15941447019577026,
+      "margin": -0.6252195239067078,
+      "wrong_score": -0.6780809760093689,
+      "right_score": -0.05286146700382233
+    }
+  ],
+  "single_u": [
+    0.16054242849349976,
+    -0.1323927342891693
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Roger Adams Award",
+        "with the ACS Award"
+      ],
+      "u_i": 0.16054242849349976,
+      "u_j": -0.1323927342891693,
+      "local_fd": 0.13126477599143982,
+      "banzhaf": 0.13126477599143982,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Roger Adams Award",
+        "with the ACS Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.13126477599143982
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6252195239067078,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

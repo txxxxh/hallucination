@@ -1,0 +1,152 @@
+{
+  "key": "question_2500",
+  "group": "Q899517",
+  "generation_correct": false,
+  "right": "Allen J. Bard",
+  "wrong": "John Charles Polanyi",
+  "base_margin_wrong_minus_right": -0.12056931853294373,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 155,
+      "char_end": 190,
+      "text": "university teacher made significant",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 63,
+      "token_end": 71
+    },
+    {
+      "char_start": 295,
+      "char_end": 314,
+      "text": "both the Wolf Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Wolf Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 90,
+      "token_end": 95
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.12056931853294373,
+      "wrong_score": -0.23114673793315887,
+      "right_score": -0.11057741940021515
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university teacher made significant"
+      ],
+      "u": 0.05244450271129608,
+      "margin": -0.1730138212442398,
+      "wrong_score": -0.2921094596385956,
+      "right_score": -0.11909563839435577
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "both the Wolf Prize"
+      ],
+      "u": -0.4557085633277893,
+      "margin": 0.3351392447948456,
+      "wrong_score": -0.05614429712295532,
+      "right_score": -0.3912835419178009
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher made significant",
+        "both the Wolf Prize"
+      ],
+      "u": -0.3278554379940033,
+      "margin": 0.20728611946105957,
+      "wrong_score": -0.4064403176307678,
+      "right_score": -0.6137264370918274
+    }
+  ],
+  "single_u": [
+    0.05244450271129608,
+    -0.4557085633277893
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university teacher made significant",
+        "both the Wolf Prize"
+      ],
+      "u_i": 0.05244450271129608,
+      "u_j": -0.4557085633277893,
+      "local_fd": 0.07540863752365112,
+      "banzhaf": 0.07540863752365112,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university teacher made significant",
+        "both the Wolf Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.07540862262248993
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.20728611946105957,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "key": "question_2219",
+  "group": "Q185110",
+  "generation_correct": true,
+  "right": "Igor Vasilyevich Kurchatov",
+  "wrong": "Vitaly Lazarevich Ginzburg",
+  "base_margin_wrong_minus_right": 0.08935262262821198,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 381,
+      "char_end": 397,
+      "text": "Order of the Red",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 121,
+      "token_end": 124
+    },
+    {
+      "char_start": 441,
+      "char_end": 464,
+      "text": "State Stalin Prize, 1st",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "State Stalin Prize, 1st degree",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 132,
+      "token_end": 139
+    },
+    {
+      "char_start": 492,
+      "char_end": 519,
+      "text": "the Medal \"In Commemoration",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal \"In Commemoration of the 800th Anniversary of Moscow\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 143,
+      "token_end": 148
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.08935262262821198,
+      "wrong_score": -0.03954628109931946,
+      "right_score": -0.12889890372753143
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Order of the Red"
+      ],
+      "u": 0.029203880578279495,
+      "margin": 0.06014874204993248,
+      "wrong_score": -0.04812585189938545,
+      "right_score": -0.10827459394931793
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "State Stalin Prize, 1st"
+      ],
+      "u": 0.04072681814432144,
+      "margin": 0.04862580448389053,
+      "wrong_score": -0.05197993665933609,
+      "right_score": -0.10060574114322662
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the Red",
+        "State Stalin Prize, 1st"
+      ],
+      "u": 0.09030892699956894,
+      "margin": -0.0009563043713569641,
+      "wrong_score": -0.07219632714986801,
+      "right_score": -0.07124002277851105
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Medal \"In Commemoration"
+      ],
+      "u": 0.28620433807373047,
+      "margin": -0.1968517154455185,
+      "wrong_score": -0.2142752856016159,
+      "right_score": -0.01742357574403286
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "the Medal \"In Commemoration"
+      ],
+      "u": 0.24472567439079285,
+      "margin": -0.15537305176258087,
+      "wrong_score": -0.1825193613767624,
+      "right_score": -0.02714630402624607
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "State Stalin Prize, 1st",
+        "the Medal \"In Commemoration"
+      ],
+      "u": 0.18244370818138123,
+      "margin": -0.09309107810258865,
+      "wrong_score": -0.13479050993919373,
+      "right_score": -0.04169943183660507
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "State Stalin Prize, 1st",
+        "the Medal \"In Commemoration"
+      ],
+      "u": 0.20620109140872955,
+      "margin": -0.11684846878051758,
+      "wrong_score": -0.15834103524684906,
+      "right_score": -0.041492562741041183
+    }
+  ],
+  "single_u": [
+    0.029203880578279495,
+    0.04072681814432144,
+    0.28620433807373047
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Order of the Red",
+        "State Stalin Prize, 1st"
+      ],
+      "u_i": 0.029203880578279495,
+      "u_j": 0.04072681814432144,
+      "local_fd": 0.020378228276968002,
+      "banzhaf": 0.042807139456272125,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Order of the Red",
+        "the Medal \"In Commemoration"
+      ],
+      "u_i": 0.029203880578279495,
+      "u_j": 0.28620433807373047,
+      "local_fd": -0.07068254053592682,
+      "banzhaf": -0.048253633081912994,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "State Stalin Prize, 1st",
+        "the Medal \"In Commemoration"
+      ],
+      "u_i": 0.04072681814432144,
+      "u_j": 0.28620433807373047,
+      "local_fd": -0.1444874405860901,
+      "banzhaf": -0.12205853313207626,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "State Stalin Prize, 1st",
+        "the Medal \"In Commemoration"
+      ],
+      "order": 2,
+      "harsanyi": -0.14448744803667068
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "the Medal \"In Commemoration"
+      ],
+      "order": 2,
+      "harsanyi": -0.07068254426121712
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "State Stalin Prize, 1st",
+        "the Medal \"In Commemoration"
+      ],
+      "order": 3,
+      "harsanyi": 0.04485781863331795
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the Red",
+        "State Stalin Prize, 1st"
+      ],
+      "order": 2,
+      "harsanyi": 0.020378228276968002
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Medal \"In Commemoration"
+      ]
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of the Red",
+        "State Stalin Prize, 1st"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of the Red",
+        "the Medal \"In Commemoration"
+      ]
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "State Stalin Prize, 1st",
+        "the Medal \"In Commemoration"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.11684846878051758,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

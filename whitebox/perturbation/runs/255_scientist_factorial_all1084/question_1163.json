@@ -1,0 +1,150 @@
+{
+  "key": "question_1163",
+  "group": "Q707137",
+  "generation_correct": true,
+  "right": "Mikhail Lavrentyev",
+  "wrong": "Ivan Matveevich Vinogradov",
+  "base_margin_wrong_minus_right": -0.2554575204849243,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 317,
+      "char_end": 337,
+      "text": "Labour, the Order of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 103,
+      "token_end": 108
+    },
+    {
+      "char_start": 362,
+      "char_end": 383,
+      "text": "the Stalin Prize, and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Stalin Prize",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 115,
+      "token_end": 122
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.2554575204849243,
+      "wrong_score": -0.27563682198524475,
+      "right_score": -0.020179294049739838
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Labour, the Order of"
+      ],
+      "u": -0.17461147904396057,
+      "margin": -0.08084604889154434,
+      "wrong_score": -0.14857113361358643,
+      "right_score": -0.06772508472204208
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Stalin Prize, and"
+      ],
+      "u": -0.39835694432258606,
+      "margin": 0.14289942383766174,
+      "wrong_score": -0.05064937844872475,
+      "right_score": -0.1935487985610962
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Labour, the Order of",
+        "the Stalin Prize, and"
+      ],
+      "u": -0.49358558654785156,
+      "margin": 0.23812808096408844,
+      "wrong_score": -0.03754081204533577,
+      "right_score": -0.2756688892841339
+    }
+  ],
+  "single_u": [
+    -0.17461147904396057,
+    -0.39835694432258606
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Labour, the Order of",
+        "the Stalin Prize, and"
+      ],
+      "u_i": -0.17461147904396057,
+      "u_j": -0.39835694432258606,
+      "local_fd": 0.07938283681869507,
+      "banzhaf": 0.07938283681869507,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Labour, the Order of",
+        "the Stalin Prize, and"
+      ],
+      "order": 2,
+      "harsanyi": 0.07938283681869507
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.23812808096408844,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

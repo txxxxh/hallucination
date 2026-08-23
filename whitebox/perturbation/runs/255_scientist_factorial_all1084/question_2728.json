@@ -1,0 +1,146 @@
+{
+  "key": "question_2728",
+  "group": "Q201513",
+  "generation_correct": true,
+  "right": "Edward Witten",
+  "wrong": "Pierre-Gilles de Gennes",
+  "base_margin_wrong_minus_right": -0.9987668991088867,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 340,
+      "char_end": 367,
+      "text": "including the Lorentz Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Lorentz Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 99,
+      "token_end": 104
+    },
+    {
+      "char_start": 369,
+      "char_end": 390,
+      "text": "the Harvey Prize, and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Harvey Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 104,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9987668991088867,
+      "wrong_score": -1.0010207891464233,
+      "right_score": -0.0022539093624800444
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Lorentz Medal"
+      ],
+      "u": -0.4181969165802002,
+      "margin": -0.5805699825286865,
+      "wrong_score": -0.5970437526702881,
+      "right_score": -0.01647379621863365
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Harvey Prize, and"
+      ],
+      "u": -0.41191720962524414,
+      "margin": -0.5868496894836426,
+      "wrong_score": -0.6530574560165405,
+      "right_score": -0.06620775163173676
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Lorentz Medal",
+        "the Harvey Prize, and"
+      ],
+      "u": -0.11120855808258057,
+      "margin": -0.8875583410263062,
+      "wrong_score": -1.050402045249939,
+      "right_score": -0.1628437340259552
+    }
+  ],
+  "single_u": [
+    -0.4181969165802002,
+    -0.41191720962524414
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Lorentz Medal",
+        "the Harvey Prize, and"
+      ],
+      "u_i": -0.4181969165802002,
+      "u_j": -0.41191720962524414,
+      "local_fd": 0.7189055681228638,
+      "banzhaf": 0.7189055681228638,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Lorentz Medal",
+        "the Harvey Prize, and"
+      ],
+      "order": 2,
+      "harsanyi": 0.7189055681228638
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.8875583410263062,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

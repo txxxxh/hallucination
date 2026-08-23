@@ -1,0 +1,296 @@
+{
+  "key": "question_1416",
+  "group": "Q233973",
+  "generation_correct": true,
+  "right": "John A. Pople",
+  "wrong": "Dorothy Hodgkin",
+  "base_margin_wrong_minus_right": -1.8079808950424194,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 196,
+      "char_end": 218,
+      "text": "the field of chemistry",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 65,
+      "token_end": 71
+    },
+    {
+      "char_start": 311,
+      "char_end": 336,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 91,
+      "token_end": 95
+    },
+    {
+      "char_start": 387,
+      "char_end": 406,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 107,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.8079808950424194,
+      "wrong_score": -1.8095296621322632,
+      "right_score": -0.0015488134231418371
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of chemistry"
+      ],
+      "u": -0.3812243938446045,
+      "margin": -1.426756501197815,
+      "wrong_score": -1.4288026094436646,
+      "right_score": -0.002046159701421857
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": -2.608571767807007,
+      "margin": 0.8005908131599426,
+      "wrong_score": -0.006910646799951792,
+      "right_score": -0.8075014352798462
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize"
+      ],
+      "u": -2.308006525039673,
+      "margin": 0.5000255703926086,
+      "wrong_score": -0.020730402320623398,
+      "right_score": -0.5207559466362
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.543154239654541,
+      "margin": -1.2648266553878784,
+      "wrong_score": -1.2677514553070068,
+      "right_score": -0.0029247794300317764
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "Fellow of the Royal"
+      ],
+      "u": -1.1318844556808472,
+      "margin": -0.6760964393615723,
+      "wrong_score": -0.6974366307258606,
+      "right_score": -0.021340204402804375
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the Royal"
+      ],
+      "u": -2.557677745819092,
+      "margin": 0.7496967911720276,
+      "wrong_score": -0.01696905307471752,
+      "right_score": -0.7666658163070679
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize",
+        "Fellow of the Royal"
+      ],
+      "u": -2.432671070098877,
+      "margin": 0.6246902346611023,
+      "wrong_score": -0.05946690961718559,
+      "right_score": -0.684157133102417
+    }
+  ],
+  "single_u": [
+    -0.3812243938446045,
+    -2.608571767807007,
+    -0.543154239654541
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize"
+      ],
+      "u_i": -0.3812243938446045,
+      "u_j": -2.608571767807007,
+      "local_fd": 0.6817896366119385,
+      "banzhaf": 0.6977632641792297,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the field of chemistry",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.3812243938446045,
+      "u_j": -0.543154239654541,
+      "local_fd": -0.20750582218170166,
+      "banzhaf": -0.1915321946144104,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the Royal"
+      ],
+      "u_i": -2.608571767807007,
+      "u_j": -0.543154239654541,
+      "local_fd": 0.594048261642456,
+      "banzhaf": 0.6100218892097473,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.6817896366119385
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.594048261642456
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.20750582218170166
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize",
+        "Fellow of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": 0.03194725513458252
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6246902346611023,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

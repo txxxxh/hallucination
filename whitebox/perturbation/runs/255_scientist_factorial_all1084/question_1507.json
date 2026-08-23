@@ -1,0 +1,290 @@
+{
+  "key": "question_1507",
+  "group": "Q80956",
+  "generation_correct": true,
+  "right": "Svante Arrhenius",
+  "wrong": "Ahmed H. Zewail",
+  "base_margin_wrong_minus_right": -0.3713470697402954,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 317,
+      "char_end": 340,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 100,
+      "token_end": 105
+    },
+    {
+      "char_start": 362,
+      "char_end": 382,
+      "text": "Davy Medal, and were",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Davy Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 106,
+      "token_end": 110
+    },
+    {
+      "char_start": 396,
+      "char_end": 415,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 111,
+      "token_end": 114
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3713470697402954,
+      "wrong_score": -0.3899950087070465,
+      "right_score": -0.0186479389667511
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": 0.12603315711021423,
+      "margin": -0.49738022685050964,
+      "wrong_score": -0.5111509561538696,
+      "right_score": -0.01377074234187603
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Davy Medal, and were"
+      ],
+      "u": -0.0024208128452301025,
+      "margin": -0.3689262568950653,
+      "wrong_score": -0.3920098543167114,
+      "right_score": -0.023083601146936417
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "Davy Medal, and were"
+      ],
+      "u": -0.09636825323104858,
+      "margin": -0.2749788165092468,
+      "wrong_score": -0.3613750636577606,
+      "right_score": -0.08639626204967499
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.10931327939033508,
+      "margin": -0.4806603491306305,
+      "wrong_score": -0.49000874161720276,
+      "right_score": -0.009348398074507713
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "as a Foreign Member"
+      ],
+      "u": 0.03371581435203552,
+      "margin": -0.40506288409233093,
+      "wrong_score": -0.4366966485977173,
+      "right_score": -0.03163377195596695
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Davy Medal, and were",
+        "as a Foreign Member"
+      ],
+      "u": -0.08395278453826904,
+      "margin": -0.28739428520202637,
+      "wrong_score": -0.3901332914829254,
+      "right_score": -0.10273900628089905
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "Davy Medal, and were",
+        "as a Foreign Member"
+      ],
+      "u": -0.058870911598205566,
+      "margin": -0.31247615814208984,
+      "wrong_score": -0.37045300006866455,
+      "right_score": -0.0579768568277359
+    }
+  ],
+  "single_u": [
+    0.12603315711021423,
+    -0.0024208128452301025,
+    0.10931327939033508
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Nobel Prize",
+        "Davy Medal, and were"
+      ],
+      "u_i": 0.12603315711021423,
+      "u_j": -0.0024208128452301025,
+      "local_fd": -0.21998059749603271,
+      "banzhaf": -0.05965062975883484,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "awarded the Nobel Prize",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.12603315711021423,
+      "u_j": 0.10931327939033508,
+      "local_fd": -0.2016306221485138,
+      "banzhaf": -0.04130065441131592,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Davy Medal, and were",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.0024208128452301025,
+      "u_j": 0.10931327939033508,
+      "local_fd": -0.19084525108337402,
+      "banzhaf": -0.030515283346176147,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "Davy Medal, and were",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": 0.32065993547439575
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "Davy Medal, and were"
+      ],
+      "order": 2,
+      "harsanyi": -0.21998059749603271
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.2016306221485138
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Davy Medal, and were",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.19084525108337402
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.31247615814208984,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

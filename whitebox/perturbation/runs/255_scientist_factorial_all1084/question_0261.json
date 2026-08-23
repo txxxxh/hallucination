@@ -1,0 +1,288 @@
+{
+  "key": "question_0261",
+  "group": "Q366471",
+  "generation_correct": true,
+  "right": "Yakov Borisovich Zel'dovich",
+  "wrong": "Vladimir Aleksandrovich Kotelnikov",
+  "base_margin_wrong_minus_right": 0.3916109502315521,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 366,
+      "char_end": 387,
+      "text": "the Stalin Prize, the",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Stalin Prize",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 120,
+      "token_end": 129
+    },
+    {
+      "char_start": 452,
+      "char_end": 473,
+      "text": "Labour, and the Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal \"Veteran of Labour\"",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 140,
+      "token_end": 145
+    },
+    {
+      "char_start": 475,
+      "char_end": 496,
+      "text": "For Valiant Labour in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Medal \"For Valiant Labour in the Great Patriotic War 1941–1945\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 144,
+      "token_end": 149
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.3916109502315521,
+      "wrong_score": -0.006738425698131323,
+      "right_score": -0.3983493745326996
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Stalin Prize, the"
+      ],
+      "u": 0.12706777453422546,
+      "margin": 0.26454317569732666,
+      "wrong_score": -0.033491916954517365,
+      "right_score": -0.2980350852012634
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Labour, and the Medal"
+      ],
+      "u": 0.07591056823730469,
+      "margin": 0.31570038199424744,
+      "wrong_score": -0.01139975618571043,
+      "right_score": -0.32710012793540955
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Stalin Prize, the",
+        "Labour, and the Medal"
+      ],
+      "u": 0.10611465573310852,
+      "margin": 0.2854962944984436,
+      "wrong_score": -0.020072441548109055,
+      "right_score": -0.30556872487068176
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "For Valiant Labour in"
+      ],
+      "u": 0.16493767499923706,
+      "margin": 0.22667327523231506,
+      "wrong_score": -0.027749238535761833,
+      "right_score": -0.25442251563072205
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Stalin Prize, the",
+        "For Valiant Labour in"
+      ],
+      "u": 0.11363527178764343,
+      "margin": 0.2779756784439087,
+      "wrong_score": -0.033522412180900574,
+      "right_score": -0.31149810552597046
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Labour, and the Medal",
+        "For Valiant Labour in"
+      ],
+      "u": 0.1419176608324051,
+      "margin": 0.24969328939914703,
+      "wrong_score": -0.04115067794919014,
+      "right_score": -0.2908439636230469
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Stalin Prize, the",
+        "Labour, and the Medal",
+        "For Valiant Labour in"
+      ],
+      "u": 0.0644746720790863,
+      "margin": 0.3271362781524658,
+      "wrong_score": -0.04667571187019348,
+      "right_score": -0.3738119900226593
+    }
+  ],
+  "single_u": [
+    0.12706777453422546,
+    0.07591056823730469,
+    0.16493767499923706
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Stalin Prize, the",
+        "Labour, and the Medal"
+      ],
+      "u_i": 0.12706777453422546,
+      "u_j": 0.07591056823730469,
+      "local_fd": -0.09686368703842163,
+      "banzhaf": -0.061502136290073395,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Stalin Prize, the",
+        "For Valiant Labour in"
+      ],
+      "u_i": 0.12706777453422546,
+      "u_j": 0.16493767499923706,
+      "local_fd": -0.1783701777458191,
+      "banzhaf": -0.14300861954689026,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Labour, and the Medal",
+        "For Valiant Labour in"
+      ],
+      "u_i": 0.07591056823730469,
+      "u_j": 0.16493767499923706,
+      "local_fd": -0.09893058240413666,
+      "banzhaf": -0.06356903165578842,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Stalin Prize, the",
+        "For Valiant Labour in"
+      ],
+      "order": 2,
+      "harsanyi": -0.1783701777458191
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Labour, and the Medal",
+        "For Valiant Labour in"
+      ],
+      "order": 2,
+      "harsanyi": -0.09893058240413666
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Stalin Prize, the",
+        "Labour, and the Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.09686368703842163
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Stalin Prize, the",
+        "Labour, and the Medal",
+        "For Valiant Labour in"
+      ],
+      "order": 3,
+      "harsanyi": 0.07072310149669647
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3271362781524658,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 17,
+    "n_excluded": 11,
+    "max_candidates": 6
+  }
+}

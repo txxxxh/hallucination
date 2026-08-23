@@ -1,0 +1,155 @@
+{
+  "key": "question_1784",
+  "group": "Q9123",
+  "generation_correct": true,
+  "right": "Ernest Rutherford",
+  "wrong": "Linus Pauling",
+  "base_margin_wrong_minus_right": -0.093720942735672,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 164,
+      "char_end": 193,
+      "text": "and university professor made",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "professor",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 60,
+      "token_end": 67
+    },
+    {
+      "char_start": 292,
+      "char_end": 315,
+      "text": "in Chemistry. They were",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 84,
+      "token_end": 89
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.093720942735672,
+      "wrong_score": -0.22663815319538116,
+      "right_score": -0.13291721045970917
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and university professor made"
+      ],
+      "u": 0.03125825524330139,
+      "margin": -0.12497919797897339,
+      "wrong_score": -0.2763107120990753,
+      "right_score": -0.15133151412010193
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Chemistry. They were"
+      ],
+      "u": -0.5000019073486328,
+      "margin": 0.4062809348106384,
+      "wrong_score": -0.05090935528278351,
+      "right_score": -0.45719030499458313
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and university professor made",
+        "in Chemistry. They were"
+      ],
+      "u": -0.031252384185791016,
+      "margin": -0.06246855854988098,
+      "wrong_score": -0.24110276997089386,
+      "right_score": -0.17863421142101288
+    }
+  ],
+  "single_u": [
+    0.03125825524330139,
+    -0.5000019073486328
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "and university professor made",
+        "in Chemistry. They were"
+      ],
+      "u_i": 0.03125825524330139,
+      "u_j": -0.5000019073486328,
+      "local_fd": 0.4374912679195404,
+      "banzhaf": 0.4374912679195404,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "and university professor made",
+        "in Chemistry. They were"
+      ],
+      "order": 2,
+      "harsanyi": 0.4374912679195404
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "and university professor made"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.06246855854988098,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

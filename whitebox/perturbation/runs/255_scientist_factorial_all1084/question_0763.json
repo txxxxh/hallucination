@@ -1,0 +1,144 @@
+{
+  "key": "question_0763",
+  "group": "Q202140",
+  "generation_correct": true,
+  "right": "Robert H. Grubbs",
+  "wrong": "Linus Pauling",
+  "base_margin_wrong_minus_right": -2.906414270401001,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 225,
+      "char_end": 249,
+      "text": "to the chemical sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 75,
+      "token_end": 83
+    },
+    {
+      "char_start": 338,
+      "char_end": 362,
+      "text": "in Chemistry, the Tolman",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 100,
+      "token_end": 105
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.906414270401001,
+      "wrong_score": -2.907336473464966,
+      "right_score": -0.0009222753578796983
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "to the chemical sciences"
+      ],
+      "u": -2.715151309967041,
+      "margin": -0.19126300513744354,
+      "wrong_score": -0.28306952118873596,
+      "right_score": -0.09180651605129242
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Chemistry, the Tolman"
+      ],
+      "u": 0.48601365089416504,
+      "margin": -3.392427921295166,
+      "wrong_score": -3.3942806720733643,
+      "right_score": -0.0018527054926380515
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the chemical sciences",
+        "in Chemistry, the Tolman"
+      ],
+      "u": -2.712961435317993,
+      "margin": -0.19345277547836304,
+      "wrong_score": -0.2892408072948456,
+      "right_score": -0.09578803181648254
+    }
+  ],
+  "single_u": [
+    -2.715151309967041,
+    0.48601365089416504
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "to the chemical sciences",
+        "in Chemistry, the Tolman"
+      ],
+      "u_i": -2.715151309967041,
+      "u_j": 0.48601365089416504,
+      "local_fd": -0.4838237762451172,
+      "banzhaf": -0.4838237762451172,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the chemical sciences",
+        "in Chemistry, the Tolman"
+      ],
+      "order": 2,
+      "harsanyi": -0.4838237762451172
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.19345277547836304,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "key": "question_0673",
+  "group": "Q26321",
+  "generation_correct": true,
+  "right": "Elizabeth Blackburn",
+  "wrong": "James D. Watson",
+  "base_margin_wrong_minus_right": -1.8755426406860352,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 329,
+      "char_end": 352,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 101
+    },
+    {
+      "char_start": 380,
+      "char_end": 403,
+      "text": "the Albert Lasker Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Lasker Award for Basic Medical Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 106,
+      "token_end": 110
+    },
+    {
+      "char_start": 432,
+      "char_end": 455,
+      "text": "and the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 115,
+      "token_end": 120
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.8755426406860352,
+      "wrong_score": -1.87713623046875,
+      "right_score": -0.0015935542760416865
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.797042727470398,
+      "margin": -1.0784999132156372,
+      "wrong_score": -1.1089376211166382,
+      "right_score": -0.030437735840678215
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Albert Lasker Award"
+      ],
+      "u": -0.5679804086685181,
+      "margin": -1.307562232017517,
+      "wrong_score": -1.318827748298645,
+      "right_score": -0.011265476234257221
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "the Albert Lasker Award"
+      ],
+      "u": -0.5095345973968506,
+      "margin": -1.3660080432891846,
+      "wrong_score": -1.3910961151123047,
+      "right_score": -0.025088127702474594
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Canada Gairdner"
+      ],
+      "u": -1.3078348636627197,
+      "margin": -0.5677077770233154,
+      "wrong_score": -0.6218214631080627,
+      "right_score": -0.05411367863416672
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "and the Canada Gairdner"
+      ],
+      "u": -2.155806303024292,
+      "margin": 0.2802637219429016,
+      "wrong_score": -0.17648763954639435,
+      "right_score": -0.45675137639045715
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Albert Lasker Award",
+        "and the Canada Gairdner"
+      ],
+      "u": -1.7929517030715942,
+      "margin": -0.0825909674167633,
+      "wrong_score": -0.29210036993026733,
+      "right_score": -0.20950940251350403
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "the Albert Lasker Award",
+        "and the Canada Gairdner"
+      ],
+      "u": -2.1105542182922363,
+      "margin": 0.235011488199234,
+      "wrong_score": -0.199594646692276,
+      "right_score": -0.43460613489151
+    }
+  ],
+  "single_u": [
+    -0.797042727470398,
+    -0.5679804086685181,
+    -1.3078348636627197
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Nobel Prize",
+        "the Albert Lasker Award"
+      ],
+      "u_i": -0.797042727470398,
+      "u_j": -0.5679804086685181,
+      "local_fd": 0.8554885387420654,
+      "banzhaf": 0.6929287314414978,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "awarded the Nobel Prize",
+        "and the Canada Gairdner"
+      ],
+      "u_i": -0.797042727470398,
+      "u_j": -1.3078348636627197,
+      "local_fd": -0.050928711891174316,
+      "banzhaf": -0.21348851919174194,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Albert Lasker Award",
+        "and the Canada Gairdner"
+      ],
+      "u_i": -0.5679804086685181,
+      "u_j": -1.3078348636627197,
+      "local_fd": 0.08286356925964355,
+      "banzhaf": -0.07969623804092407,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "the Albert Lasker Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.8554885387420654
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "the Albert Lasker Award",
+        "and the Canada Gairdner"
+      ],
+      "order": 3,
+      "harsanyi": -0.32511961460113525
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Albert Lasker Award",
+        "and the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": 0.08286356925964355
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "and the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": -0.050928711891174316
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.235011488199234,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

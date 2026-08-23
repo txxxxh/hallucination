@@ -1,0 +1,289 @@
+{
+  "key": "question_1817",
+  "group": "Q155790",
+  "generation_correct": false,
+  "right": "Eugene Wigner",
+  "wrong": "Albert Einstein",
+  "base_margin_wrong_minus_right": -1.3914172649383545,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 279,
+      "char_end": 304,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 87,
+      "token_end": 91
+    },
+    {
+      "char_start": 305,
+      "char_end": 324,
+      "text": "in Physics, the Max",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 90,
+      "token_end": 96
+    },
+    {
+      "char_start": 359,
+      "char_end": 381,
+      "text": "and the Josiah Willard",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Josiah Willard Gibbs Lectureship",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 103,
+      "token_end": 107
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.3914172649383545,
+      "wrong_score": -1.4082846641540527,
+      "right_score": -0.0168673824518919
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": 1.6778595447540283,
+      "margin": -3.069276809692383,
+      "wrong_score": -3.073570966720581,
+      "right_score": -0.004294104874134064
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Physics, the Max"
+      ],
+      "u": 0.5561474561691284,
+      "margin": -1.947564721107483,
+      "wrong_score": -1.954522728919983,
+      "right_score": -0.006958006415516138
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "in Physics, the Max"
+      ],
+      "u": 0.37259554862976074,
+      "margin": -1.7640128135681152,
+      "wrong_score": -1.7744566202163696,
+      "right_score": -0.01044381782412529
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Josiah Willard"
+      ],
+      "u": 1.0511624813079834,
+      "margin": -2.442579746246338,
+      "wrong_score": -2.4461772441864014,
+      "right_score": -0.003597566857933998
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "and the Josiah Willard"
+      ],
+      "u": -0.787367582321167,
+      "margin": -0.6040496826171875,
+      "wrong_score": -0.6737080216407776,
+      "right_score": -0.0696583166718483
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Physics, the Max",
+        "and the Josiah Willard"
+      ],
+      "u": -0.17262637615203857,
+      "margin": -1.218790888786316,
+      "wrong_score": -1.2363139390945435,
+      "right_score": -0.017523063346743584
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "in Physics, the Max",
+        "and the Josiah Willard"
+      ],
+      "u": -1.1332650184631348,
+      "margin": -0.2581523060798645,
+      "wrong_score": -0.38967710733413696,
+      "right_score": -0.13152481615543365
+    }
+  ],
+  "single_u": [
+    1.6778595447540283,
+    0.5561474561691284,
+    1.0511624813079834
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including the Nobel Prize",
+        "in Physics, the Max"
+      ],
+      "u_i": 1.6778595447540283,
+      "u_j": 0.5561474561691284,
+      "local_fd": -1.861411452293396,
+      "banzhaf": -0.4917600154876709,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "including the Nobel Prize",
+        "and the Josiah Willard"
+      ],
+      "u_i": 1.6778595447540283,
+      "u_j": 1.0511624813079834,
+      "local_fd": -3.5163896083831787,
+      "banzhaf": -2.146738052368164,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "in Physics, the Max",
+        "and the Josiah Willard"
+      ],
+      "u_i": 0.5561474561691284,
+      "u_j": 1.0511624813079834,
+      "local_fd": -1.7799363136291504,
+      "banzhaf": -0.4102848768234253,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "and the Josiah Willard"
+      ],
+      "order": 2,
+      "harsanyi": -3.5163896083831787
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "in Physics, the Max",
+        "and the Josiah Willard"
+      ],
+      "order": 3,
+      "harsanyi": 2.73930287361145
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "in Physics, the Max"
+      ],
+      "order": 2,
+      "harsanyi": -1.861411452293396
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Physics, the Max",
+        "and the Josiah Willard"
+      ],
+      "order": 2,
+      "harsanyi": -1.7799363136291504
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2581523060798645,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

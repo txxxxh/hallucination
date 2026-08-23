@@ -1,0 +1,153 @@
+{
+  "key": "question_2739",
+  "group": "Q7487",
+  "generation_correct": true,
+  "right": "Dorothy Hodgkin",
+  "wrong": "Elias James Corey",
+  "base_margin_wrong_minus_right": -0.3557088077068329,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 254,
+      "char_end": 281,
+      "text": "the prestigious Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 74,
+      "token_end": 78
+    },
+    {
+      "char_start": 493,
+      "char_end": 498,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 114,
+      "token_end": 116
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3557088077068329,
+      "wrong_score": -0.40299519896507263,
+      "right_score": -0.04728640243411064
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the prestigious Nobel Prize"
+      ],
+      "u": -0.40123695135116577,
+      "margin": 0.04552815854549408,
+      "wrong_score": -0.16037362813949585,
+      "right_score": -0.20590178668498993
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.13970907032489777,
+      "margin": -0.21599973738193512,
+      "wrong_score": -0.28936341404914856,
+      "right_score": -0.07336367666721344
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the prestigious Nobel Prize",
+        "never"
+      ],
+      "u": -0.27492594718933105,
+      "margin": -0.08078284561634064,
+      "wrong_score": -0.21159452199935913,
+      "right_score": -0.1308116763830185
+    }
+  ],
+  "single_u": [
+    -0.40123695135116577,
+    -0.13970907032489777
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the prestigious Nobel Prize",
+        "never"
+      ],
+      "u_i": -0.40123695135116577,
+      "u_j": -0.13970907032489777,
+      "local_fd": 0.2660200595855713,
+      "banzhaf": 0.2660200595855713,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the prestigious Nobel Prize",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.2660200744867325
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.08078284561634064,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

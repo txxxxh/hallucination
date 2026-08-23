@@ -1,0 +1,290 @@
+{
+  "key": "question_2265",
+  "group": "Q311115",
+  "generation_correct": false,
+  "right": "Henri Victor Regnault",
+  "wrong": "Henri Becquerel",
+  "base_margin_wrong_minus_right": -1.3802292346954346,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 196,
+      "char_end": 222,
+      "text": "at the École polytechnique",
+      "kind": "attribute",
+      "field": "education",
+      "value": "École polytechnique",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 77,
+      "token_end": 83
+    },
+    {
+      "char_start": 390,
+      "char_end": 409,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 114,
+      "token_end": 117
+    },
+    {
+      "char_start": 480,
+      "char_end": 516,
+      "text": "administrative position of president",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "president",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 128,
+      "token_end": 135
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.3802292346954346,
+      "wrong_score": -1.393738865852356,
+      "right_score": -0.013509663753211498
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "at the École polytechnique"
+      ],
+      "u": 0.07291090488433838,
+      "margin": -1.453140139579773,
+      "wrong_score": -1.4620037078857422,
+      "right_score": -0.008863581344485283
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.17256999015808105,
+      "margin": -1.5527992248535156,
+      "wrong_score": -1.560156226158142,
+      "right_score": -0.007357060443609953
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "as a Foreign Member"
+      ],
+      "u": -0.12488532066345215,
+      "margin": -1.2553439140319824,
+      "wrong_score": -1.2668753862380981,
+      "right_score": -0.01153145357966423
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "administrative position of president"
+      ],
+      "u": -0.33222198486328125,
+      "margin": -1.0480072498321533,
+      "wrong_score": -1.066542387008667,
+      "right_score": -0.018535150215029716
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "administrative position of president"
+      ],
+      "u": -0.5500208139419556,
+      "margin": -0.830208420753479,
+      "wrong_score": -0.8443010449409485,
+      "right_score": -0.014092650264501572
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "administrative position of president"
+      ],
+      "u": -0.5030130743980408,
+      "margin": -0.8772161602973938,
+      "wrong_score": -0.8881322145462036,
+      "right_score": -0.010916049592196941
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "as a Foreign Member",
+        "administrative position of president"
+      ],
+      "u": -0.726982593536377,
+      "margin": -0.6532466411590576,
+      "wrong_score": -0.6746676564216614,
+      "right_score": -0.021421028301119804
+    }
+  ],
+  "single_u": [
+    0.07291090488433838,
+    0.17256999015808105,
+    -0.33222198486328125
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "at the École polytechnique",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.07291090488433838,
+      "u_j": 0.17256999015808105,
+      "local_fd": -0.3703662157058716,
+      "banzhaf": -0.18826845288276672,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "at the École polytechnique",
+        "administrative position of president"
+      ],
+      "u_i": 0.07291090488433838,
+      "u_j": -0.33222198486328125,
+      "local_fd": -0.2907097339630127,
+      "banzhaf": -0.10861197113990784,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as a Foreign Member",
+        "administrative position of president"
+      ],
+      "u_i": 0.17256999015808105,
+      "u_j": -0.33222198486328125,
+      "local_fd": -0.3433610796928406,
+      "banzhaf": -0.16126331686973572,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.3703662157058716
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "as a Foreign Member",
+        "administrative position of president"
+      ],
+      "order": 3,
+      "harsanyi": 0.3641955256462097
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "administrative position of president"
+      ],
+      "order": 2,
+      "harsanyi": -0.3433610796928406
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "administrative position of president"
+      ],
+      "order": 2,
+      "harsanyi": -0.2907097339630127
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6532466411590576,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

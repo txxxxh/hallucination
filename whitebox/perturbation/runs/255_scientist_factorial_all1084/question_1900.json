@@ -1,0 +1,290 @@
+{
+  "key": "question_1900",
+  "group": "Q201513",
+  "generation_correct": false,
+  "right": "Edward Witten",
+  "wrong": "Enrico Fermi",
+  "base_margin_wrong_minus_right": 0.8084620237350464,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 125,
+      "char_end": 165,
+      "text": "highly influential theoretical physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "theoretical physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 54,
+      "token_end": 61
+    },
+    {
+      "char_start": 307,
+      "char_end": 329,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 86,
+      "token_end": 90
+    },
+    {
+      "char_start": 354,
+      "char_end": 373,
+      "text": "a Foreign Member of",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 94,
+      "token_end": 97
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.8084620237350464,
+      "wrong_score": -0.014926177449524403,
+      "right_score": -0.8233882188796997
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "highly influential theoretical physicist"
+      ],
+      "u": -0.404799222946167,
+      "margin": 1.2132612466812134,
+      "wrong_score": -0.011098711751401424,
+      "right_score": -1.2243599891662598
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.7214716672897339,
+      "margin": 0.08699038624763489,
+      "wrong_score": -0.19180771708488464,
+      "right_score": -0.27879810333251953
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "highly influential theoretical physicist",
+        "Fellow of the American"
+      ],
+      "u": 0.40511226654052734,
+      "margin": 0.40334975719451904,
+      "wrong_score": -0.1989123672246933,
+      "right_score": -0.6022621393203735
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "a Foreign Member of"
+      ],
+      "u": 0.5247747898101807,
+      "margin": 0.28368720412254333,
+      "wrong_score": -0.10391249507665634,
+      "right_score": -0.3875997066497803
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "highly influential theoretical physicist",
+        "a Foreign Member of"
+      ],
+      "u": 0.20413076877593994,
+      "margin": 0.6043312549591064,
+      "wrong_score": -0.04027262330055237,
+      "right_score": -0.6446038484573364
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "a Foreign Member of"
+      ],
+      "u": 0.7115362286567688,
+      "margin": 0.0969257801771164,
+      "wrong_score": -0.16557802259922028,
+      "right_score": -0.26250380277633667
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "highly influential theoretical physicist",
+        "Fellow of the American",
+        "a Foreign Member of"
+      ],
+      "u": -0.19729888439178467,
+      "margin": 1.005760908126831,
+      "wrong_score": -0.01662376895546913,
+      "right_score": -1.0223846435546875
+    }
+  ],
+  "single_u": [
+    -0.404799222946167,
+    0.7214716672897339,
+    0.5247747898101807
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "highly influential theoretical physicist",
+        "Fellow of the American"
+      ],
+      "u_i": -0.404799222946167,
+      "u_j": 0.7214716672897339,
+      "local_fd": 0.08843982219696045,
+      "banzhaf": -0.24987560510635376,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "highly influential theoretical physicist",
+        "a Foreign Member of"
+      ],
+      "u_i": -0.404799222946167,
+      "u_j": 0.5247747898101807,
+      "local_fd": 0.08415520191192627,
+      "banzhaf": -0.2541602849960327,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the American",
+        "a Foreign Member of"
+      ],
+      "u_i": 0.7214716672897339,
+      "u_j": 0.5247747898101807,
+      "local_fd": -0.5347102284431458,
+      "banzhaf": -0.87302565574646,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "highly influential theoretical physicist",
+        "Fellow of the American",
+        "a Foreign Member of"
+      ],
+      "order": 3,
+      "harsanyi": -0.6766309142112732
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the American",
+        "a Foreign Member of"
+      ],
+      "order": 2,
+      "harsanyi": -0.5347102284431458
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "highly influential theoretical physicist",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.08843982219696045
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "highly influential theoretical physicist",
+        "a Foreign Member of"
+      ],
+      "order": 2,
+      "harsanyi": 0.08415520191192627
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.005760908126831,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

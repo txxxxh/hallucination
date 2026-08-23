@@ -1,0 +1,288 @@
+{
+  "key": "question_0402",
+  "group": "Q17714",
+  "generation_correct": true,
+  "right": "Stephen Hawking",
+  "wrong": "Kip Stephen Thorne",
+  "base_margin_wrong_minus_right": -0.6436658501625061,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 229,
+      "char_end": 258,
+      "text": "understanding of the universe",
+      "kind": "attribute",
+      "field": "field",
+      "value": "universe",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 77,
+      "token_end": 83
+    },
+    {
+      "char_start": 310,
+      "char_end": 334,
+      "text": "and astronomy, they were",
+      "kind": "attribute",
+      "field": "field",
+      "value": "astronomy",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 93,
+      "token_end": 98
+    },
+    {
+      "char_start": 369,
+      "char_end": 398,
+      "text": "including the Albert Einstein",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Einstein Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 103,
+      "token_end": 109
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.6436658501625061,
+      "wrong_score": -0.661870539188385,
+      "right_score": -0.018204690888524055
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "understanding of the universe"
+      ],
+      "u": 0.25284111499786377,
+      "margin": -0.8965069651603699,
+      "wrong_score": -0.908798336982727,
+      "right_score": -0.01229136437177658
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and astronomy, they were"
+      ],
+      "u": 0.2242557406425476,
+      "margin": -0.8679215908050537,
+      "wrong_score": -0.8869624137878418,
+      "right_score": -0.019040830433368683
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "understanding of the universe",
+        "and astronomy, they were"
+      ],
+      "u": 0.3724469542503357,
+      "margin": -1.0161128044128418,
+      "wrong_score": -1.0371121168136597,
+      "right_score": -0.020999370142817497
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "including the Albert Einstein"
+      ],
+      "u": -0.16281142830848694,
+      "margin": -0.48085442185401917,
+      "wrong_score": -0.5261002779006958,
+      "right_score": -0.04524585232138634
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "understanding of the universe",
+        "including the Albert Einstein"
+      ],
+      "u": -0.2687874436378479,
+      "margin": -0.3748784065246582,
+      "wrong_score": -0.4382162094116211,
+      "right_score": -0.0633377879858017
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and astronomy, they were",
+        "including the Albert Einstein"
+      ],
+      "u": -0.5248867273330688,
+      "margin": -0.11877912282943726,
+      "wrong_score": -0.26234346628189087,
+      "right_score": -0.1435643434524536
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "understanding of the universe",
+        "and astronomy, they were",
+        "including the Albert Einstein"
+      ],
+      "u": -0.4069634675979614,
+      "margin": -0.23670239746570587,
+      "wrong_score": -0.3562873303890228,
+      "right_score": -0.11958493292331696
+    }
+  ],
+  "single_u": [
+    0.25284111499786377,
+    0.2242557406425476,
+    -0.16281142830848694
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "understanding of the universe",
+        "and astronomy, they were"
+      ],
+      "u_i": 0.25284111499786377,
+      "u_j": 0.2242557406425476,
+      "local_fd": -0.10464990139007568,
+      "banzhaf": 0.05962468683719635,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "understanding of the universe",
+        "including the Albert Einstein"
+      ],
+      "u_i": 0.25284111499786377,
+      "u_j": -0.16281142830848694,
+      "local_fd": -0.35881713032722473,
+      "banzhaf": -0.1945425420999527,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and astronomy, they were",
+        "including the Albert Einstein"
+      ],
+      "u_i": 0.2242557406425476,
+      "u_j": -0.16281142830848694,
+      "local_fd": -0.5863310098648071,
+      "banzhaf": -0.4220564365386963,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and astronomy, they were",
+        "including the Albert Einstein"
+      ],
+      "order": 2,
+      "harsanyi": -0.5863310396671295
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "understanding of the universe",
+        "including the Albert Einstein"
+      ],
+      "order": 2,
+      "harsanyi": -0.35881713032722473
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "understanding of the universe",
+        "and astronomy, they were",
+        "including the Albert Einstein"
+      ],
+      "order": 3,
+      "harsanyi": 0.32854917645454407
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "understanding of the universe",
+        "and astronomy, they were"
+      ],
+      "order": 2,
+      "harsanyi": -0.10464990139007568
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.23670239746570587,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

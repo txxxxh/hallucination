@@ -1,0 +1,144 @@
+{
+  "key": "question_1682",
+  "group": "Q106949",
+  "generation_correct": true,
+  "right": "Saul Perlmutter",
+  "wrong": "George Smoot",
+  "base_margin_wrong_minus_right": -0.34624648094177246,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 212,
+      "char_end": 234,
+      "text": "in Physics, the Albert",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 78,
+      "token_end": 84
+    },
+    {
+      "char_start": 290,
+      "char_end": 315,
+      "text": "As a prominent researcher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "researcher",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 93,
+      "token_end": 97
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.34624648094177246,
+      "wrong_score": -0.4104192852973938,
+      "right_score": -0.06417278945446014
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in Physics, the Albert"
+      ],
+      "u": -0.09328019618988037,
+      "margin": -0.2529662847518921,
+      "wrong_score": -0.33715420961380005,
+      "right_score": -0.08418793231248856
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "As a prominent researcher"
+      ],
+      "u": 0.21775126457214355,
+      "margin": -0.563997745513916,
+      "wrong_score": -0.6083368062973022,
+      "right_score": -0.04433904588222504
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Physics, the Albert",
+        "As a prominent researcher"
+      ],
+      "u": -0.18357336521148682,
+      "margin": -0.16267311573028564,
+      "wrong_score": -0.28194618225097656,
+      "right_score": -0.11927305907011032
+    }
+  ],
+  "single_u": [
+    -0.09328019618988037,
+    0.21775126457214355
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "in Physics, the Albert",
+        "As a prominent researcher"
+      ],
+      "u_i": -0.09328019618988037,
+      "u_j": 0.21775126457214355,
+      "local_fd": -0.30804443359375,
+      "banzhaf": -0.30804443359375,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Physics, the Albert",
+        "As a prominent researcher"
+      ],
+      "order": 2,
+      "harsanyi": -0.30804443359375
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.16267311573028564,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

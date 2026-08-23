@@ -1,0 +1,146 @@
+{
+  "key": "question_2071",
+  "group": "Q169577",
+  "generation_correct": false,
+  "right": "Ernest Lawrence",
+  "wrong": "Leon Max Lederman",
+  "base_margin_wrong_minus_right": 0.6691600680351257,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 389,
+      "char_end": 417,
+      "text": "Procter Prize for Scientific",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "William Procter Prize for Scientific Achievement",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 104,
+      "token_end": 109
+    },
+    {
+      "char_start": 492,
+      "char_end": 514,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 120,
+      "token_end": 125
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.6691600680351257,
+      "wrong_score": -0.04667546600103378,
+      "right_score": -0.7158355116844177
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Procter Prize for Scientific"
+      ],
+      "u": 0.6523228287696838,
+      "margin": 0.01683725416660309,
+      "wrong_score": -0.24351774156093597,
+      "right_score": -0.26035499572753906
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.3395339846611023,
+      "margin": 1.008694052696228,
+      "wrong_score": -0.03041594848036766,
+      "right_score": -1.0391099452972412
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Procter Prize for Scientific",
+        "Fellow of the American"
+      ],
+      "u": 0.391046941280365,
+      "margin": 0.27811312675476074,
+      "wrong_score": -0.14101777970790863,
+      "right_score": -0.4191308915615082
+    }
+  ],
+  "single_u": [
+    0.6523228287696838,
+    -0.3395339846611023
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Procter Prize for Scientific",
+        "Fellow of the American"
+      ],
+      "u_i": 0.6523228287696838,
+      "u_j": -0.3395339846611023,
+      "local_fd": 0.07825809717178345,
+      "banzhaf": 0.07825809717178345,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Procter Prize for Scientific",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.07825809717178345
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.27811312675476074,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

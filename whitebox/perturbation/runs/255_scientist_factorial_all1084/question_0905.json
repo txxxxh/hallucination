@@ -1,0 +1,286 @@
+{
+  "key": "question_0905",
+  "group": "Q57120",
+  "generation_correct": true,
+  "right": "Peter Grünberg",
+  "wrong": "Max Planck",
+  "base_margin_wrong_minus_right": -5.000988483428955,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 152,
+      "char_end": 186,
+      "text": "university professor made profound",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "professor",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 62,
+      "token_end": 68
+    },
+    {
+      "char_start": 251,
+      "char_end": 269,
+      "text": "of the Nobel Prize",
+      "kind": "attribute",
+      "field": "field",
+      "value": "Nobel Prize",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 78,
+      "token_end": 83
+    },
+    {
+      "char_start": 432,
+      "char_end": 435,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 121
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -5.000988483428955,
+      "wrong_score": -5.001815319061279,
+      "right_score": -0.0008267626399174333
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "university professor made profound"
+      ],
+      "u": -1.994215726852417,
+      "margin": -3.006772756576538,
+      "wrong_score": -3.0274436473846436,
+      "right_score": -0.020670805126428604
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Nobel Prize"
+      ],
+      "u": -2.869398832321167,
+      "margin": -2.131589651107788,
+      "wrong_score": -2.163496255874634,
+      "right_score": -0.031906574964523315
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university professor made profound",
+        "of the Nobel Prize"
+      ],
+      "u": -4.174820899963379,
+      "margin": -0.8261675834655762,
+      "wrong_score": -0.8917652368545532,
+      "right_score": -0.06559767574071884
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": -0.9165048599243164,
+      "margin": -4.084483623504639,
+      "wrong_score": -4.087398529052734,
+      "right_score": -0.0029149537440389395
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university professor made profound",
+        "not"
+      ],
+      "u": -2.2065439224243164,
+      "margin": -2.7944445610046387,
+      "wrong_score": -2.8016533851623535,
+      "right_score": -0.007208836730569601
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Nobel Prize",
+        "not"
+      ],
+      "u": -3.414820432662964,
+      "margin": -1.5861680507659912,
+      "wrong_score": -1.6077234745025635,
+      "right_score": -0.021555429324507713
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university professor made profound",
+        "of the Nobel Prize",
+        "not"
+      ],
+      "u": -3.946671962738037,
+      "margin": -1.0543164014816284,
+      "wrong_score": -1.0785963535308838,
+      "right_score": -0.02427990362048149
+    }
+  ],
+  "single_u": [
+    -1.994215726852417,
+    -2.869398832321167,
+    -0.9165048599243164
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "university professor made profound",
+        "of the Nobel Prize"
+      ],
+      "u_i": -1.994215726852417,
+      "u_j": -2.869398832321167,
+      "local_fd": 0.6887936592102051,
+      "banzhaf": 0.7234905958175659,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "university professor made profound",
+        "not"
+      ],
+      "u_i": -1.994215726852417,
+      "u_j": -0.9165048599243164,
+      "local_fd": 0.704176664352417,
+      "banzhaf": 0.7388736009597778,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "of the Nobel Prize",
+        "not"
+      ],
+      "u_i": -2.869398832321167,
+      "u_j": -0.9165048599243164,
+      "local_fd": 0.37108325958251953,
+      "banzhaf": 0.40578019618988037,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "university professor made profound",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.704176664352417
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "university professor made profound",
+        "of the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.6887936592102051
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Nobel Prize",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.37108325958251953
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "university professor made profound",
+        "of the Nobel Prize",
+        "not"
+      ],
+      "order": 3,
+      "harsanyi": 0.06939387321472168
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.0543164014816284,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

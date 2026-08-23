@@ -1,0 +1,300 @@
+{
+  "key": "question_0256",
+  "group": "Q76600",
+  "generation_correct": false,
+  "right": "Manfred Eigen",
+  "wrong": "Max Planck",
+  "base_margin_wrong_minus_right": 0.16666829586029053,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 225,
+      "char_end": 250,
+      "text": "passing away in Göttingen",
+      "kind": "attribute",
+      "field": "place_of_death",
+      "value": "Göttingen",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 72,
+      "token_end": 77
+    },
+    {
+      "char_start": 355,
+      "char_end": 376,
+      "text": "including the Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite for Sciences and Arts order",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 101,
+      "token_end": 106
+    },
+    {
+      "char_start": 464,
+      "char_end": 483,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 121,
+      "token_end": 125
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.16666829586029053,
+      "wrong_score": -0.1604171097278595,
+      "right_score": -0.32708540558815
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "passing away in Göttingen"
+      ],
+      "u": -0.6666710376739502,
+      "margin": 0.8333393335342407,
+      "wrong_score": -0.03281783685088158,
+      "right_score": -0.8661571741104126
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Pour le"
+      ],
+      "u": 0.2083350121974945,
+      "margin": -0.04166671633720398,
+      "wrong_score": -0.2618616819381714,
+      "right_score": -0.2201949656009674
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "passing away in Göttingen",
+        "including the Pour le"
+      ],
+      "u": -0.41666650772094727,
+      "margin": 0.5833348035812378,
+      "wrong_score": -0.06699436902999878,
+      "right_score": -0.6503291726112366
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -0.4583360552787781,
+      "margin": 0.6250043511390686,
+      "wrong_score": -0.05739694461226463,
+      "right_score": -0.6824012994766235
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "passing away in Göttingen",
+        "as a Foreign Member"
+      ],
+      "u": -0.5833353996276855,
+      "margin": 0.7500036954879761,
+      "wrong_score": -0.03834177553653717,
+      "right_score": -0.788345456123352
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Pour le",
+        "as a Foreign Member"
+      ],
+      "u": -0.5000028610229492,
+      "margin": 0.6666711568832397,
+      "wrong_score": -0.04990587756037712,
+      "right_score": -0.7165770530700684
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "passing away in Göttingen",
+        "including the Pour le",
+        "as a Foreign Member"
+      ],
+      "u": -0.7083367705345154,
+      "margin": 0.8750050663948059,
+      "wrong_score": -0.0472346767783165,
+      "right_score": -0.9222397208213806
+    }
+  ],
+  "single_u": [
+    -0.6666710376739502,
+    0.2083350121974945,
+    -0.4583360552787781
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "passing away in Göttingen",
+        "including the Pour le"
+      ],
+      "u_i": -0.6666710376739502,
+      "u_j": 0.2083350121974945,
+      "local_fd": 0.04166951775550842,
+      "banzhaf": -0.020832523703575134,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "passing away in Göttingen",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.6666710376739502,
+      "u_j": -0.4583360552787781,
+      "local_fd": 0.5416716933250427,
+      "banzhaf": 0.47916966676712036,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Pour le",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.2083350121974945,
+      "u_j": -0.4583360552787781,
+      "local_fd": -0.25000184774398804,
+      "banzhaf": -0.3125038743019104,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "passing away in Göttingen",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.5416716933250427
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Pour le",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.25000181794166565
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "passing away in Göttingen",
+        "including the Pour le",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": -0.12500408291816711
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "passing away in Göttingen",
+        "including the Pour le"
+      ],
+      "order": 2,
+      "harsanyi": 0.04166951775550842
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Pour le"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8750050663948059,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

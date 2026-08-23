@@ -1,0 +1,146 @@
+{
+  "key": "question_1208",
+  "group": "Q231292",
+  "generation_correct": true,
+  "right": "Edgar Douglas Adrian",
+  "wrong": "Howard Walter Florey",
+  "base_margin_wrong_minus_right": -1.1562494039535522,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 250,
+      "char_end": 272,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 87
+    },
+    {
+      "char_start": 298,
+      "char_end": 317,
+      "text": "member of the House",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "member of the House of Lords",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 90,
+      "token_end": 97
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.1562494039535522,
+      "wrong_score": -1.1600675582885742,
+      "right_score": -0.0038181638810783625
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": 0.1875075101852417,
+      "margin": -1.343756914138794,
+      "wrong_score": -1.348799228668213,
+      "right_score": -0.005042367614805698
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "member of the House"
+      ],
+      "u": 0.09375035762786865,
+      "margin": -1.249999761581421,
+      "wrong_score": -1.2548069953918457,
+      "right_score": -0.004807279445230961
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "President of the Royal",
+        "member of the House"
+      ],
+      "u": 0.8437756299972534,
+      "margin": -2.0000250339508057,
+      "wrong_score": -2.003519058227539,
+      "right_score": -0.0034941292833536863
+    }
+  ],
+  "single_u": [
+    0.1875075101852417,
+    0.09375035762786865
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "President of the Royal",
+        "member of the House"
+      ],
+      "u_i": 0.1875075101852417,
+      "u_j": 0.09375035762786865,
+      "local_fd": 0.5625177621841431,
+      "banzhaf": 0.5625177621841431,
+      "relation_raw": "synergy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "President of the Royal",
+        "member of the House"
+      ],
+      "order": 2,
+      "harsanyi": 0.5625177621841431
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -2.0000250339508057,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 17,
+    "n_excluded": 11,
+    "max_candidates": 6
+  }
+}

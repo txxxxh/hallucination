@@ -1,0 +1,309 @@
+{
+  "key": "question_1652",
+  "group": "Q512459",
+  "generation_correct": false,
+  "right": "Isabella Karle",
+  "wrong": "Carolyn R. Bertozzi",
+  "base_margin_wrong_minus_right": 0.1272958219051361,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 291,
+      "char_end": 313,
+      "text": "with the Bijvoet Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Bijvoet Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 91,
+      "token_end": 96
+    },
+    {
+      "char_start": 314,
+      "char_end": 331,
+      "text": "and the NAS Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 99
+    },
+    {
+      "char_start": 384,
+      "char_end": 406,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Academy of Arts and Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 106,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.1272958219051361,
+      "wrong_score": -0.08762701600790024,
+      "right_score": -0.21492284536361694
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "with the Bijvoet Medal"
+      ],
+      "u": 0.5130120515823364,
+      "margin": -0.38571619987487793,
+      "wrong_score": -0.4072129428386688,
+      "right_score": -0.0214967280626297
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the NAS Award"
+      ],
+      "u": -0.14768844842910767,
+      "margin": 0.2749842703342438,
+      "wrong_score": -0.05026666447520256,
+      "right_score": -0.32525092363357544
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Bijvoet Medal",
+        "and the NAS Award"
+      ],
+      "u": 0.07483963668346405,
+      "margin": 0.05245618522167206,
+      "wrong_score": -0.13549208641052246,
+      "right_score": -0.18794827163219452
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.24587802588939667,
+      "margin": -0.11858220398426056,
+      "wrong_score": -0.2050914317369461,
+      "right_score": -0.08650922775268555
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Bijvoet Medal",
+        "Fellow of the American"
+      ],
+      "u": 0.22385892271995544,
+      "margin": -0.09656309336423874,
+      "wrong_score": -0.19286583364009857,
+      "right_score": -0.09630274027585983
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the NAS Award",
+        "Fellow of the American"
+      ],
+      "u": 0.1205722838640213,
+      "margin": 0.006723538041114807,
+      "wrong_score": -0.13521385192871094,
+      "right_score": -0.14193738996982574
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Bijvoet Medal",
+        "and the NAS Award",
+        "Fellow of the American"
+      ],
+      "u": 0.09771279990673065,
+      "margin": 0.029583021998405457,
+      "wrong_score": -0.12540437281131744,
+      "right_score": -0.1549873948097229
+    }
+  ],
+  "single_u": [
+    0.5130120515823364,
+    -0.14768844842910767,
+    0.24587802588939667
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "with the Bijvoet Medal",
+        "and the NAS Award"
+      ],
+      "u_i": 0.5130120515823364,
+      "u_j": -0.14768844842910767,
+      "local_fd": -0.2904839515686035,
+      "banzhaf": -0.14566215872764587,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "with the Bijvoet Medal",
+        "Fellow of the American"
+      ],
+      "u_i": 0.5130120515823364,
+      "u_j": 0.24587802588939667,
+      "local_fd": -0.5350311398506165,
+      "banzhaf": -0.3902093470096588,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and the NAS Award",
+        "Fellow of the American"
+      ],
+      "u_i": -0.14768844842910767,
+      "u_j": 0.24587802588939667,
+      "local_fd": 0.022382691502571106,
+      "banzhaf": 0.16720449924468994,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Bijvoet Medal",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.5350311547517776
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Bijvoet Medal",
+        "and the NAS Award"
+      ],
+      "order": 2,
+      "harsanyi": -0.2904839664697647
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Bijvoet Medal",
+        "and the NAS Award",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.2896435856819153
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the NAS Award",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.0223827064037323
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "with the Bijvoet Medal"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.029583021998405457,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

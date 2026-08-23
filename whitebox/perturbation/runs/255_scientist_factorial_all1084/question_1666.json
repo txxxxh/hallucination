@@ -1,0 +1,146 @@
+{
+  "key": "question_1666",
+  "group": "Q160627",
+  "generation_correct": false,
+  "right": "Alfred Russel Wallace",
+  "wrong": "Georg Forster",
+  "base_margin_wrong_minus_right": -0.3804759979248047,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 144,
+      "char_end": 163,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 64,
+      "token_end": 68
+    },
+    {
+      "char_start": 301,
+      "char_end": 339,
+      "text": "significant contributions to geography",
+      "kind": "attribute",
+      "field": "field",
+      "value": "geography",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 92,
+      "token_end": 99
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3804759979248047,
+      "wrong_score": -0.42724135518074036,
+      "right_score": -0.046765368431806564
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.005387842655181885,
+      "margin": -0.3858638405799866,
+      "wrong_score": -0.4288159906864166,
+      "right_score": -0.04295216128230095
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "significant contributions to geography"
+      ],
+      "u": -0.019702434539794922,
+      "margin": -0.36077356338500977,
+      "wrong_score": -0.40819409489631653,
+      "right_score": -0.047420527786016464
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "significant contributions to geography"
+      ],
+      "u": -0.08448991179466248,
+      "margin": -0.2959860861301422,
+      "wrong_score": -0.3579966127872467,
+      "right_score": -0.062010522931814194
+    }
+  ],
+  "single_u": [
+    0.005387842655181885,
+    -0.019702434539794922
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "significant contributions to geography"
+      ],
+      "u_i": 0.005387842655181885,
+      "u_j": -0.019702434539794922,
+      "local_fd": -0.07017531991004944,
+      "banzhaf": -0.07017531991004944,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "significant contributions to geography"
+      ],
+      "order": 2,
+      "harsanyi": -0.07017531991004944
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2959860861301422,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

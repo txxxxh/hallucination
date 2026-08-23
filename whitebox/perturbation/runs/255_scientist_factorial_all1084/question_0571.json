@@ -1,0 +1,290 @@
+{
+  "key": "question_0571",
+  "group": "Q528631",
+  "generation_correct": true,
+  "right": "Frederick Abel",
+  "wrong": "Walter Haworth",
+  "base_margin_wrong_minus_right": -0.4376170337200165,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 278,
+      "char_end": 303,
+      "text": "the position of professor",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "professor",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 87
+    },
+    {
+      "char_start": 308,
+      "char_end": 329,
+      "text": "served as a president",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "president",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 88,
+      "token_end": 93
+    },
+    {
+      "char_start": 429,
+      "char_end": 448,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 112,
+      "token_end": 116
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.4376170337200165,
+      "wrong_score": -0.48175477981567383,
+      "right_score": -0.04413774609565735
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the position of professor"
+      ],
+      "u": 0.06251326203346252,
+      "margin": -0.500130295753479,
+      "wrong_score": -0.5388794541358948,
+      "right_score": -0.03874913603067398
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "served as a president"
+      ],
+      "u": -0.37501078844070435,
+      "margin": -0.06260623037815094,
+      "wrong_score": -0.21519909799098969,
+      "right_score": -0.15259286761283875
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the position of professor",
+        "served as a president"
+      ],
+      "u": 0.12504372000694275,
+      "margin": -0.5626607537269592,
+      "wrong_score": -0.5957919359207153,
+      "right_score": -0.033131204545497894
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 3.692507743835449e-05,
+      "margin": -0.43765395879745483,
+      "wrong_score": -0.4846184551715851,
+      "right_score": -0.04696450009942055
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the position of professor",
+        "Fellow of the Royal"
+      ],
+      "u": -0.218753844499588,
+      "margin": -0.21886318922042847,
+      "wrong_score": -0.3137141466140747,
+      "right_score": -0.09485094994306564
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "served as a president",
+        "Fellow of the Royal"
+      ],
+      "u": -0.37497377395629883,
+      "margin": -0.06264325976371765,
+      "wrong_score": -0.21815310418605804,
+      "right_score": -0.1555098444223404
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the position of professor",
+        "served as a president",
+        "Fellow of the Royal"
+      ],
+      "u": -0.1874893605709076,
+      "margin": -0.2501276731491089,
+      "wrong_score": -0.33558395504951477,
+      "right_score": -0.08545628190040588
+    }
+  ],
+  "single_u": [
+    0.06251326203346252,
+    -0.37501078844070435,
+    3.692507743835449e-05
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the position of professor",
+        "served as a president"
+      ],
+      "u_i": 0.06251326203346252,
+      "u_j": -0.37501078844070435,
+      "local_fd": 0.43754124641418457,
+      "banzhaf": 0.4219081997871399,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the position of professor",
+        "Fellow of the Royal"
+      ],
+      "u_i": 0.06251326203346252,
+      "u_j": 3.692507743835449e-05,
+      "local_fd": -0.2813040316104889,
+      "banzhaf": -0.2969370484352112,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "served as a president",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.37501078844070435,
+      "u_j": 3.692507743835449e-05,
+      "local_fd": 8.940696716308594e-08,
+      "banzhaf": -0.01563294231891632,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the position of professor",
+        "served as a president"
+      ],
+      "order": 2,
+      "harsanyi": 0.43754124641418457
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the position of professor",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.2813040316104889
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the position of professor",
+        "served as a president",
+        "Fellow of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": -0.03126606345176697
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "served as a president",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 8.940696716308594e-08
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2501276731491089,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

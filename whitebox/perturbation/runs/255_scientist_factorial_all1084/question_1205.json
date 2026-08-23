@@ -1,0 +1,309 @@
+{
+  "key": "question_1205",
+  "group": "Q233973",
+  "generation_correct": false,
+  "right": "John A. Pople",
+  "wrong": "Roald Hoffmann",
+  "base_margin_wrong_minus_right": -0.3013828992843628,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 215,
+      "char_end": 237,
+      "text": "the field of chemistry",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 74,
+      "token_end": 79
+    },
+    {
+      "char_start": 308,
+      "char_end": 333,
+      "text": "including the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 93,
+      "token_end": 98
+    },
+    {
+      "char_start": 369,
+      "char_end": 390,
+      "text": "and the Linus Pauling",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Linus Pauling Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 104,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3013828992843628,
+      "wrong_score": -0.3541780710220337,
+      "right_score": -0.0527951605618
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of chemistry"
+      ],
+      "u": 0.1771317720413208,
+      "margin": -0.4785146713256836,
+      "wrong_score": -0.5403715968132019,
+      "right_score": -0.061856914311647415
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Nobel Prize"
+      ],
+      "u": -0.4145689308643341,
+      "margin": 0.11318603903055191,
+      "wrong_score": -0.10042444616556168,
+      "right_score": -0.2136104851961136
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize"
+      ],
+      "u": -0.30611512064933777,
+      "margin": 0.004732221364974976,
+      "wrong_score": -0.17076542973518372,
+      "right_score": -0.1754976511001587
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Linus Pauling"
+      ],
+      "u": -0.4205077886581421,
+      "margin": 0.11912490427494049,
+      "wrong_score": -0.15136031806468964,
+      "right_score": -0.2704852223396301
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "and the Linus Pauling"
+      ],
+      "u": -0.24295730888843536,
+      "margin": -0.05842559039592743,
+      "wrong_score": -0.27795588970184326,
+      "right_score": -0.21953029930591583
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "and the Linus Pauling"
+      ],
+      "u": -0.494608998298645,
+      "margin": 0.19322609901428223,
+      "wrong_score": -0.21120396256446838,
+      "right_score": -0.4044300615787506
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize",
+        "and the Linus Pauling"
+      ],
+      "u": -0.29217100143432617,
+      "margin": -0.009211897850036621,
+      "wrong_score": -0.31182920932769775,
+      "right_score": -0.30261731147766113
+    }
+  ],
+  "single_u": [
+    0.1771317720413208,
+    -0.4145689308643341,
+    -0.4205077886581421
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize"
+      ],
+      "u_i": 0.1771317720413208,
+      "u_j": -0.4145689308643341,
+      "local_fd": -0.06867796182632446,
+      "banzhaf": -0.021895229816436768,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the field of chemistry",
+        "and the Linus Pauling"
+      ],
+      "u_i": 0.1771317720413208,
+      "u_j": -0.4205077886581421,
+      "local_fd": 0.00041872262954711914,
+      "banzhaf": 0.04720146954059601,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Nobel Prize",
+        "and the Linus Pauling"
+      ],
+      "u_i": -0.4145689308643341,
+      "u_j": -0.4205077886581421,
+      "local_fd": 0.3404677212238312,
+      "banzhaf": 0.38725048303604126,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Nobel Prize",
+        "and the Linus Pauling"
+      ],
+      "order": 2,
+      "harsanyi": 0.3404677212238312
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize",
+        "and the Linus Pauling"
+      ],
+      "order": 3,
+      "harsanyi": 0.09356547892093658
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of chemistry",
+        "including the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.06867796182632446
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the field of chemistry",
+        "and the Linus Pauling"
+      ],
+      "order": 2,
+      "harsanyi": 0.0004187077283859253
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of chemistry"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and the Linus Pauling"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.009211897850036621,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

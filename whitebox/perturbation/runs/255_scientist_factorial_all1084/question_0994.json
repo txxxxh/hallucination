@@ -1,0 +1,296 @@
+{
+  "key": "question_0994",
+  "group": "Q233950",
+  "generation_correct": true,
+  "right": "Daniel Kahneman",
+  "wrong": "Joseph E. Stiglitz",
+  "base_margin_wrong_minus_right": 0.46212661266326904,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 283,
+      "char_end": 304,
+      "text": "the Prize in Economic",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Prize in Economic Sciences in Memory of Alfred Nobel",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 85,
+      "token_end": 90
+    },
+    {
+      "char_start": 539,
+      "char_end": 565,
+      "text": "on modern economic thought",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Leontief Prize for Advancing the Frontiers of Economic Thought",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 132,
+      "token_end": 139
+    },
+    {
+      "char_start": 572,
+      "char_end": 577,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 140,
+      "token_end": 141
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.46212661266326904,
+      "wrong_score": -0.04176902398467064,
+      "right_score": -0.50389564037323
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Prize in Economic"
+      ],
+      "u": -0.200886070728302,
+      "margin": 0.663012683391571,
+      "wrong_score": -0.02476842887699604,
+      "right_score": -0.6877810955047607
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "on modern economic thought"
+      ],
+      "u": 0.5442449450492859,
+      "margin": -0.08211833238601685,
+      "wrong_score": -0.22018656134605408,
+      "right_score": -0.13806822896003723
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "on modern economic thought"
+      ],
+      "u": 0.3746797442436218,
+      "margin": 0.08744688332080841,
+      "wrong_score": -0.14573481678962708,
+      "right_score": -0.23318170011043549
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.17609423398971558,
+      "margin": 0.28603237867355347,
+      "wrong_score": -0.06973530352115631,
+      "right_score": -0.3557676672935486
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "never"
+      ],
+      "u": -0.006170779466629028,
+      "margin": 0.46829739212989807,
+      "wrong_score": -0.046222295612096786,
+      "right_score": -0.5145196914672852
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "on modern economic thought",
+        "never"
+      ],
+      "u": 0.5572497248649597,
+      "margin": -0.09512309730052948,
+      "wrong_score": -0.23374776542186737,
+      "right_score": -0.1386246681213379
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "on modern economic thought",
+        "never"
+      ],
+      "u": 0.14448398351669312,
+      "margin": 0.3176426291465759,
+      "wrong_score": -0.10732299834489822,
+      "right_score": -0.42496562004089355
+    }
+  ],
+  "single_u": [
+    -0.200886070728302,
+    0.5442449450492859,
+    0.17609423398971558
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Prize in Economic",
+        "on modern economic thought"
+      ],
+      "u_i": -0.200886070728302,
+      "u_j": 0.5442449450492859,
+      "local_fd": 0.03132086992263794,
+      "banzhaf": -0.09958992898464203,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the Prize in Economic",
+        "never"
+      ],
+      "u_i": -0.200886070728302,
+      "u_j": 0.17609423398971558,
+      "local_fd": 0.018621057271957397,
+      "banzhaf": -0.11228974163532257,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "on modern economic thought",
+        "never"
+      ],
+      "u_i": 0.5442449450492859,
+      "u_j": 0.17609423398971558,
+      "local_fd": -0.16308945417404175,
+      "banzhaf": -0.2940002679824829,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "on modern economic thought",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.26182159781455994
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "on modern economic thought",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.16308945417404175
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "on modern economic thought"
+      ],
+      "order": 2,
+      "harsanyi": 0.03132086992263794
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the Prize in Economic",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.018621057271957397
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "on modern economic thought"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3176426291465759,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

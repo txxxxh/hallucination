@@ -1,0 +1,290 @@
+{
+  "key": "question_2586",
+  "group": "Q779433",
+  "generation_correct": false,
+  "right": "Sidney Drell",
+  "wrong": "Eugene Wigner",
+  "base_margin_wrong_minus_right": 1.2196003198623657,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 374,
+      "char_end": 399,
+      "text": "Award, the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 104,
+      "token_end": 107
+    },
+    {
+      "char_start": 412,
+      "char_end": 438,
+      "text": "and the Richtmyer Memorial",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Richtmyer Memorial Lecture Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 110,
+      "token_end": 114
+    },
+    {
+      "char_start": 481,
+      "char_end": 503,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 120,
+      "token_end": 125
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.2196003198623657,
+      "wrong_score": -0.0018352989573031664,
+      "right_score": -1.2214356660842896
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Award, the National Medal"
+      ],
+      "u": 0.06186032295227051,
+      "margin": 1.1577399969100952,
+      "wrong_score": -0.00422954885289073,
+      "right_score": -1.161969542503357
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Richtmyer Memorial"
+      ],
+      "u": 0.4017294645309448,
+      "margin": 0.8178708553314209,
+      "wrong_score": -0.01056003849953413,
+      "right_score": -0.8284308910369873
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "and the Richtmyer Memorial"
+      ],
+      "u": 0.40497690439224243,
+      "margin": 0.8146234154701233,
+      "wrong_score": -0.00841290969401598,
+      "right_score": -0.8230363130569458
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": 0.12408757209777832,
+      "margin": 1.0955127477645874,
+      "wrong_score": -0.00636083260178566,
+      "right_score": -1.1018736362457275
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "Fellow of the American"
+      ],
+      "u": 0.05703747272491455,
+      "margin": 1.1625628471374512,
+      "wrong_score": -0.016160769388079643,
+      "right_score": -1.1787235736846924
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Richtmyer Memorial",
+        "Fellow of the American"
+      ],
+      "u": 0.02950465679168701,
+      "margin": 1.1900956630706787,
+      "wrong_score": -0.0059104724787175655,
+      "right_score": -1.196006178855896
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "and the Richtmyer Memorial",
+        "Fellow of the American"
+      ],
+      "u": 0.028540611267089844,
+      "margin": 1.1910597085952759,
+      "wrong_score": -0.015166266821324825,
+      "right_score": -1.2062259912490845
+    }
+  ],
+  "single_u": [
+    0.06186032295227051,
+    0.4017294645309448,
+    0.12408757209777832
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Award, the National Medal",
+        "and the Richtmyer Memorial"
+      ],
+      "u_i": 0.06186032295227051,
+      "u_j": 0.4017294645309448,
+      "local_fd": -0.0586128830909729,
+      "banzhaf": 0.0037365853786468506,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Award, the National Medal",
+        "Fellow of the American"
+      ],
+      "u_i": 0.06186032295227051,
+      "u_j": 0.12408757209777832,
+      "local_fd": -0.12891042232513428,
+      "banzhaf": -0.06656095385551453,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and the Richtmyer Memorial",
+        "Fellow of the American"
+      ],
+      "u_i": 0.4017294645309448,
+      "u_j": 0.12408757209777832,
+      "local_fd": -0.49631237983703613,
+      "banzhaf": -0.4339629113674164,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Richtmyer Memorial",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.49631237983703613
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": -0.12891042232513428
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "and the Richtmyer Memorial",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.1246989369392395
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, the National Medal",
+        "and the Richtmyer Memorial"
+      ],
+      "order": 2,
+      "harsanyi": -0.0586128830909729
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.1910597085952759,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

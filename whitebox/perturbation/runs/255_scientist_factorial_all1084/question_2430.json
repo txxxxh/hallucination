@@ -1,0 +1,146 @@
+{
+  "key": "question_2430",
+  "group": "Q1035",
+  "generation_correct": true,
+  "right": "Charles Darwin",
+  "wrong": "Francis Galton",
+  "base_margin_wrong_minus_right": -1.0576547384262085,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 135,
+      "char_end": 162,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 67
+    },
+    {
+      "char_start": 408,
+      "char_end": 434,
+      "text": "and the Royal Geographical",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Geographical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 114,
+      "token_end": 121
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.0576547384262085,
+      "wrong_score": -1.0663652420043945,
+      "right_score": -0.008710496127605438
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": -0.5559157729148865,
+      "margin": -0.501738965511322,
+      "wrong_score": -0.5606981515884399,
+      "right_score": -0.058959171175956726
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Royal Geographical"
+      ],
+      "u": -0.6711641550064087,
+      "margin": -0.3864906132221222,
+      "wrong_score": -0.478515088558197,
+      "right_score": -0.09202448278665543
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "and the Royal Geographical"
+      ],
+      "u": -0.5152634978294373,
+      "margin": -0.5423912405967712,
+      "wrong_score": -0.5884017944335938,
+      "right_score": -0.04601055756211281
+    }
+  ],
+  "single_u": [
+    -0.5559157729148865,
+    -0.6711641550064087
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "and the Royal Geographical"
+      ],
+      "u_i": -0.5559157729148865,
+      "u_j": -0.6711641550064087,
+      "local_fd": 0.7118164300918579,
+      "banzhaf": 0.7118164300918579,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "and the Royal Geographical"
+      ],
+      "order": 2,
+      "harsanyi": 0.7118164300918579
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.5423912405967712,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

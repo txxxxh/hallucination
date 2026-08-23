@@ -215,7 +215,8 @@ def select_candidates(records: list[dict], cap: int) -> tuple[list[dict], list[d
     return sorted(chosen, key=lambda x: x["char_start"]), excluded
 
 
-def analyse_item(key, group, row, prep, candidates, u, pred_scores, gold_scores):
+def analyse_item(key, group, row, prep, candidates, u, pred_scores, gold_scores,
+                 generation_correct=False):
     m = len(candidates)
     margins = pred_scores - gold_scores
     h = mobius_dividends(u, m)
@@ -263,7 +264,7 @@ def analyse_item(key, group, row, prep, candidates, u, pred_scores, gold_scores)
     nonzero_h.sort(key=lambda x: -abs(x["harsanyi"]))
 
     return {
-        "key": key, "group": group, "generation_correct": False,
+        "key": key, "group": group, "generation_correct": bool(generation_correct),
         "right": row["rgt_ans"], "wrong": row["wrg_ans"],
         "base_margin_wrong_minus_right": float(margins[0]),
         "likelihood_error": bool(margins[0] > 0), "m": m,
@@ -290,8 +291,10 @@ def collect(args):
     builder = importlib.import_module("76_build_closedbook_fact_probes")
     raw = {str(x["key"]): x for x in json.load(
         (HERE.parent / "shuffled_prepend_profiles_question.json").open())}
-    jobs = [x for x in importlib.import_module(
-        "152_scientist_attention_pruned_current127").jobs() if not x[2]]
+    jobs = importlib.import_module(
+        "152_scientist_attention_pruned_current127").jobs()
+    if not args.all_generations:
+        jobs = [x for x in jobs if not x[2]]
     if args.limit:
         jobs = jobs[:args.limit]
     model, tok = importlib.import_module("61_grad_span_proposal").load_model(
@@ -300,12 +303,19 @@ def collect(args):
                          length_norm=True, max_rows=args.batch)
 
     skipped = Counter()
-    for n, (key, group, _, prompt, pred, other) in enumerate(jobs, 1):
+    invalid = {"", "None", "null", "NULL", "none"}
+    for n, (key, group, correct, prompt, pred, other) in enumerate(jobs, 1):
         fp = args.out / f"{key}.json"
         if args.resume and fp.exists():
             continue
+        if str(pred).strip() in invalid or str(other).strip() in invalid:
+            skipped["invalid_candidate"] += 1
+            fp.write_text(json.dumps({"key": key, "group": group,
+                "generation_correct": bool(correct), "skipped": True,
+                "reason": "invalid_candidate"}, indent=2) + "\n")
+            continue
         row = raw[key]
-        right, wrong = other, pred
+        right, wrong = (pred, other) if correct else (other, pred)
         if right != row["rgt_ans"] or wrong != row["wrg_ans"]:
             raise RuntimeError(f"answer identity mismatch for {key}")
         item = Item.from_dict({"key": key, "prompt": prompt,
@@ -339,7 +349,8 @@ def collect(args):
         ps, gs = ps.numpy(), gs.numpy()
         margin = ps - gs
         u = margin[0] - margin
-        result = analyse_item(key, group, row, prep, candidates, u, ps, gs)
+        result = analyse_item(key, group, row, prep, candidates, u, ps, gs,
+                              generation_correct=correct)
         result["selection"] = {
             "rule": "semantic deterministic; no model-effect ranking",
             "n_grounded_or_logic": len(records), "n_excluded": len(excluded),
@@ -425,6 +436,8 @@ def main():
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--out", type=Path, default=DEFAULT_OUT)
     p.add_argument("--resume", action="store_true")
+    p.add_argument("--all-generations", action="store_true",
+                   help="include correct and incorrect baseline generations")
     args = p.parse_args()
     if args.stage == "selftest":
         selftest(); return

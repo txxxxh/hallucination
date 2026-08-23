@@ -1,0 +1,256 @@
+{
+  "protocol": "errors only; expected detector trigger at benchmark-frozen tie-aware 10% FPR; five overlapping base type indicators; Ridge alpha=1; LOBO type-only vs training-mean null",
+  "warning": "operational types reuse UEPR axes; attribution is descriptive/explanatory, not independent causal identification",
+  "methods": {
+    "Perturbation": {
+      "applicable_benchmarks": [
+        "DROP",
+        "GSM8K",
+        "Scientist-Names",
+        "Scientist-Profiles",
+        "TriviaQA"
+      ],
+      "n_errors": 2046,
+      "in_sample_decomposition": {
+        "null_mean": 0.3989736070381231,
+        "r2_types": 0.5711412491910202,
+        "r2_benchmark": 0.35714308859469746,
+        "r2_types_plus_benchmark": 0.6571945854427876,
+        "type_increment_over_benchmark": 0.3000514968480902,
+        "benchmark_increment_after_types": 0.08605333625176748
+      },
+      "leave_one_benchmark_out": {
+        "sample_mse_type": 0.1073581687340449,
+        "sample_mse_null": 0.26451416902792335,
+        "sample_mse_reduction": 0.5941307449480648,
+        "benchmark_mean_mae_type": 0.15289788614416006,
+        "benchmark_mean_mae_null": 0.3425420474115307,
+        "folds": {
+          "DROP": {
+            "n": 500,
+            "observed_tpr": 0.656,
+            "type_predicted_tpr": 0.594492404505034,
+            "training_mean_tpr": 0.31584734799482544,
+            "absolute_error_type": 0.06150759549496598,
+            "absolute_error_null": 0.3401526520051746
+          },
+          "GSM8K": {
+            "n": 471,
+            "observed_tpr": 0.3197452229299363,
+            "type_predicted_tpr": 0.32814720924145885,
+            "training_mean_tpr": 0.42266666666666647,
+            "absolute_error_type": 0.008401986311522558,
+            "absolute_error_null": 0.10292144373673018
+          },
+          "Scientist-Names": {
+            "n": 453,
+            "observed_tpr": 0.013245033112582781,
+            "type_predicted_tpr": 0.2723100781375165,
+            "training_mean_tpr": 0.508662900188324,
+            "absolute_error_type": 0.2590650450249337,
+            "absolute_error_null": 0.49541786707574126
+          },
+          "Scientist-Profiles": {
+            "n": 122,
+            "observed_tpr": 0.0,
+            "type_predicted_tpr": 0.23829247871473958,
+            "training_mean_tpr": 0.4242723492723491,
+            "absolute_error_type": 0.23829247871473958,
+            "absolute_error_null": 0.4242723492723491
+          },
+          "TriviaQA": {
+            "n": 500,
+            "observed_tpr": 0.6633999999999999,
+            "type_predicted_tpr": 0.46617767482536143,
+            "training_mean_tpr": 0.3134540750323415,
+            "absolute_error_type": 0.19722232517463845,
+            "absolute_error_null": 0.34994592496765836
+          }
+        }
+      }
+    },
+    "Uncertainty": {
+      "applicable_benchmarks": [
+        "DROP",
+        "GSM8K",
+        "Scientist-Names",
+        "Scientist-Profiles",
+        "TriviaQA"
+      ],
+      "n_errors": 2046,
+      "in_sample_decomposition": {
+        "null_mean": 0.27211712715982717,
+        "r2_types": 0.3853541426643784,
+        "r2_benchmark": 0.10280629563993215,
+        "r2_types_plus_benchmark": 0.4431589231492894,
+        "type_increment_over_benchmark": 0.34035262750935724,
+        "benchmark_increment_after_types": 0.057804780484911
+      },
+      "leave_one_benchmark_out": {
+        "sample_mse_type": 0.11293241267708125,
+        "sample_mse_null": 0.16223112594892333,
+        "sample_mse_reduction": 0.30387949897705346,
+        "benchmark_mean_mae_type": 0.11963287926410768,
+        "benchmark_mean_mae_null": 0.14553430417869753,
+        "folds": {
+          "DROP": {
+            "n": 500,
+            "observed_tpr": 0.329664,
+            "type_predicted_tpr": 0.35716052904208534,
+            "training_mean_tpr": 0.2535055900187623,
+            "absolute_error_type": 0.027496529042085327,
+            "absolute_error_null": 0.07615840998123774
+          },
+          "GSM8K": {
+            "n": 471,
+            "observed_tpr": 0.17714285714285716,
+            "type_predicted_tpr": 0.274894309240639,
+            "training_mean_tpr": 0.3005189564791877,
+            "absolute_error_type": 0.09775145209778185,
+            "absolute_error_null": 0.12337609933633054
+          },
+          "Scientist-Names": {
+            "n": 453,
+            "observed_tpr": 0.13752759381898455,
+            "type_predicted_tpr": 0.23824083254422307,
+            "training_mean_tpr": 0.3103902336277503,
+            "absolute_error_type": 0.10071323872523852,
+            "absolute_error_null": 0.17286263980876576
+          },
+          "Scientist-Profiles": {
+            "n": 122,
+            "observed_tpr": 0.16272150099497773,
+            "type_predicted_tpr": 0.33519511531989193,
+            "training_mean_tpr": 0.279053856053856,
+            "absolute_error_type": 0.1724736143249142,
+            "absolute_error_null": 0.11633235505887829
+          },
+          "TriviaQA": {
+            "n": 500,
+            "observed_tpr": 0.4526666666666666,
+            "type_predicted_tpr": 0.2529371045361481,
+            "training_mean_tpr": 0.2137246499583913,
+            "absolute_error_type": 0.1997295621305185,
+            "absolute_error_null": 0.2389420167082753
+          }
+        }
+      }
+    },
+    "Representation": {
+      "applicable_benchmarks": [
+        "DROP",
+        "GSM8K",
+        "Scientist-Names",
+        "Scientist-Profiles",
+        "TriviaQA"
+      ],
+      "n_errors": 2046,
+      "in_sample_decomposition": {
+        "null_mean": 0.4970674486803519,
+        "r2_types": 0.1663649644381895,
+        "r2_benchmark": 0.10205131430874792,
+        "r2_types_plus_benchmark": 0.24541947459469726,
+        "type_increment_over_benchmark": 0.14336816028594934,
+        "benchmark_increment_after_types": 0.07905451015650777
+      },
+      "leave_one_benchmark_out": {
+        "sample_mse_type": 0.22989309186029225,
+        "sample_mse_null": 0.2666553808095556,
+        "sample_mse_reduction": 0.13786441825270668,
+        "benchmark_mean_mae_type": 0.14877829553104763,
+        "benchmark_mean_mae_null": 0.17824776285385444,
+        "folds": {
+          "DROP": {
+            "n": 500,
+            "observed_tpr": 0.694,
+            "type_predicted_tpr": 0.425564894068585,
+            "training_mean_tpr": 0.4333764553686933,
+            "absolute_error_type": 0.26843510593141495,
+            "absolute_error_null": 0.26062354463130666
+          },
+          "GSM8K": {
+            "n": 471,
+            "observed_tpr": 0.2632696390658174,
+            "type_predicted_tpr": 0.5208418071857198,
+            "training_mean_tpr": 0.5669841269841268,
+            "absolute_error_type": 0.2575721681199024,
+            "absolute_error_null": 0.3037144879183094
+          },
+          "Scientist-Names": {
+            "n": 453,
+            "observed_tpr": 0.5518763796909493,
+            "type_predicted_tpr": 0.5520491646760637,
+            "training_mean_tpr": 0.48148148148148157,
+            "absolute_error_type": 0.00017278498511441587,
+            "absolute_error_null": 0.0703948982094677
+          },
+          "Scientist-Profiles": {
+            "n": 122,
+            "observed_tpr": 0.28688524590163933,
+            "type_predicted_tpr": 0.47400364935478023,
+            "training_mean_tpr": 0.5103950103950101,
+            "absolute_error_type": 0.1871184034531409,
+            "absolute_error_null": 0.2235097644933708
+          },
+          "TriviaQA": {
+            "n": 500,
+            "observed_tpr": 0.522,
+            "type_predicted_tpr": 0.4914069848343346,
+            "training_mean_tpr": 0.48900388098318254,
+            "absolute_error_type": 0.030593015165665427,
+            "absolute_error_null": 0.03299611901681748
+          }
+        }
+      }
+    },
+    "Evidence": {
+      "applicable_benchmarks": [
+        "Scientist-Names",
+        "Scientist-Profiles",
+        "TriviaQA"
+      ],
+      "n_errors": 1075,
+      "in_sample_decomposition": {
+        "null_mean": 0.6395593635250919,
+        "r2_types": 0.35319884552201486,
+        "r2_benchmark": 0.6716142748620524,
+        "r2_types_plus_benchmark": 0.7145879860770943,
+        "type_increment_over_benchmark": 0.0429737112150419,
+        "benchmark_increment_after_types": 0.3613891405550794
+      },
+      "leave_one_benchmark_out": {
+        "sample_mse_type": 0.35831045587188315,
+        "sample_mse_null": 0.40573387373038217,
+        "sample_mse_reduction": 0.11688306283742234,
+        "benchmark_mean_mae_type": 0.46726030277008196,
+        "benchmark_mean_mae_null": 0.5208317518181419,
+        "folds": {
+          "Scientist-Names": {
+            "n": 453,
+            "observed_tpr": 0.9558498896247241,
+            "type_predicted_tpr": 0.5395288945841754,
+            "training_mean_tpr": 0.4092062954814689,
+            "absolute_error_type": 0.41632099504054865,
+            "absolute_error_null": 0.5466435941432551
+          },
+          "Scientist-Profiles": {
+            "n": 122,
+            "observed_tpr": 0.9426229508196722,
+            "type_predicted_tpr": 0.6165716599138822,
+            "training_mean_tpr": 0.6007621361904237,
+            "absolute_error_type": 0.32605129090579,
+            "absolute_error_null": 0.34186081462924844
+          },
+          "TriviaQA": {
+            "n": 500,
+            "observed_tpr": 0.2790526315789474,
+            "type_predicted_tpr": 0.9384612539428547,
+            "training_mean_tpr": 0.9530434782608697,
+            "absolute_error_type": 0.6594086223639073,
+            "absolute_error_null": 0.6739908466819222
+          }
+        }
+      }
+    }
+  }
+}

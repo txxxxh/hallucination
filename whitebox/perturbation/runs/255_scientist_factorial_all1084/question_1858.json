@@ -1,0 +1,151 @@
+{
+  "key": "question_1858",
+  "group": "Q899517",
+  "generation_correct": true,
+  "right": "Allen J. Bard",
+  "wrong": "Mildred Dresselhaus",
+  "base_margin_wrong_minus_right": -0.22473454475402832,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 127,
+      "char_end": 157,
+      "text": "Educated at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 62
+    },
+    {
+      "char_start": 314,
+      "char_end": 336,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 88,
+      "token_end": 94
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.22473454475402832,
+      "wrong_score": -0.26799479126930237,
+      "right_score": -0.04326023906469345
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Educated at Harvard University"
+      ],
+      "u": -0.46368837356567383,
+      "margin": 0.23895381391048431,
+      "wrong_score": -0.05945064127445221,
+      "right_score": -0.2984044551849365
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.3730420768260956,
+      "margin": 0.14830753207206726,
+      "wrong_score": -0.1055995523929596,
+      "right_score": -0.25390708446502686
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "Fellow of the American"
+      ],
+      "u": -0.34914785623550415,
+      "margin": 0.12441329658031464,
+      "wrong_score": -0.12000194191932678,
+      "right_score": -0.24441523849964142
+    }
+  ],
+  "single_u": [
+    -0.46368837356567383,
+    -0.3730420768260956
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Educated at Harvard University",
+        "Fellow of the American"
+      ],
+      "u_i": -0.46368837356567383,
+      "u_j": -0.3730420768260956,
+      "local_fd": 0.48758259415626526,
+      "banzhaf": 0.48758259415626526,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.48758259415626526
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.12441329658031464,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

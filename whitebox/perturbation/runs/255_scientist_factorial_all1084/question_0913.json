@@ -1,0 +1,290 @@
+{
+  "key": "question_0913",
+  "group": "Q335213",
+  "generation_correct": true,
+  "right": "Martin Rees, Baron Rees of Ludlow",
+  "wrong": "Ernest Rutherford",
+  "base_margin_wrong_minus_right": -1.395172357559204,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 145,
+      "char_end": 172,
+      "text": "Educated at Trinity College",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Trinity College",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 68,
+      "token_end": 74
+    },
+    {
+      "char_start": 299,
+      "char_end": 321,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 103
+    },
+    {
+      "char_start": 339,
+      "char_end": 358,
+      "text": "member of the House",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "member of the House of Lords",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 106,
+      "token_end": 110
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.395172357559204,
+      "wrong_score": -1.4442952871322632,
+      "right_score": -0.04912296682596207
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Educated at Trinity College"
+      ],
+      "u": -0.2886025905609131,
+      "margin": -1.106569766998291,
+      "wrong_score": -1.1475675106048584,
+      "right_score": -0.040997762233018875
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": 0.2107851505279541,
+      "margin": -1.6059575080871582,
+      "wrong_score": -1.635909080505371,
+      "right_score": -0.029951605945825577
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "President of the Royal"
+      ],
+      "u": -0.6730996370315552,
+      "margin": -0.7220727205276489,
+      "wrong_score": -0.7482684254646301,
+      "right_score": -0.0261957049369812
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "member of the House"
+      ],
+      "u": 0.40407586097717285,
+      "margin": -1.799248218536377,
+      "wrong_score": -1.8229398727416992,
+      "right_score": -0.023691654205322266
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "member of the House"
+      ],
+      "u": -0.5531104207038879,
+      "margin": -0.8420619368553162,
+      "wrong_score": -0.8715255260467529,
+      "right_score": -0.02946360781788826
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "member of the House"
+      ],
+      "u": -0.34336888790130615,
+      "margin": -1.051803469657898,
+      "wrong_score": -1.0785017013549805,
+      "right_score": -0.026698177680373192
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "President of the Royal",
+        "member of the House"
+      ],
+      "u": -0.7695242762565613,
+      "margin": -0.6256480813026428,
+      "wrong_score": -0.660243034362793,
+      "right_score": -0.03459497168660164
+    }
+  ],
+  "single_u": [
+    -0.2886025905609131,
+    0.2107851505279541,
+    0.40407586097717285
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Educated at Trinity College",
+        "President of the Royal"
+      ],
+      "u_i": -0.2886025905609131,
+      "u_j": 0.2107851505279541,
+      "local_fd": -0.5952821969985962,
+      "banzhaf": -0.032125651836395264,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Educated at Trinity College",
+        "member of the House"
+      ],
+      "u_i": -0.2886025905609131,
+      "u_j": 0.40407586097717285,
+      "local_fd": -0.6685836911201477,
+      "banzhaf": -0.10542714595794678,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "President of the Royal",
+        "member of the House"
+      ],
+      "u_i": 0.2107851505279541,
+      "u_j": 0.40407586097717285,
+      "local_fd": -0.9582298994064331,
+      "banzhaf": -0.3950733542442322,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "President of the Royal",
+        "member of the House"
+      ],
+      "order": 3,
+      "harsanyi": 1.1263130903244019
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "President of the Royal",
+        "member of the House"
+      ],
+      "order": 2,
+      "harsanyi": -0.9582298994064331
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "member of the House"
+      ],
+      "order": 2,
+      "harsanyi": -0.6685836911201477
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Trinity College",
+        "President of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -0.5952821969985962
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6256480813026428,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

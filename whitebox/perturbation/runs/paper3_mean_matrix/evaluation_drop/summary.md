@@ -12,6 +12,5 @@
 | mistral | gradient | 1000 | 500 | 0.965 | 0.955 | 0.908 | 0.908 | 0.908 | 42.9% |
 | qwen | exact | 1000 | 500 | 0.907 | 0.909 | 0.819 | 0.819 | 0.819 | 0.0% |
 | qwen | attention | 1000 | 500 | 0.902 | 0.902 | 0.812 | 0.812 | 0.812 | 46.7% |
-| qwen | gradient | 1000 | 500 | 0.884 | 0.877 | 0.794 | 0.794 | 0.794 | 47.0% |
 
 Qwen gradient is absent because generation was intentionally skipped.

@@ -1,0 +1,156 @@
+{
+  "key": "question_0239",
+  "group": "Q48973",
+  "generation_correct": true,
+  "right": "Glenn T. Seaborg",
+  "wrong": "Melvin Calvin",
+  "base_margin_wrong_minus_right": 0.06975890696048737,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 402,
+      "char_end": 433,
+      "text": "Science, the American Institute",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Association for the Advancement of Science",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 115,
+      "token_end": 122
+    },
+    {
+      "char_start": 599,
+      "char_end": 602,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 151,
+      "token_end": 152
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.06975890696048737,
+      "wrong_score": -0.10654112696647644,
+      "right_score": -0.1763000339269638
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Science, the American Institute"
+      ],
+      "u": -0.005727887153625488,
+      "margin": 0.07548679411411285,
+      "wrong_score": -0.11858457326889038,
+      "right_score": -0.19407136738300323
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": 0.3056994080543518,
+      "margin": -0.23594048619270325,
+      "wrong_score": -0.3078509569168091,
+      "right_score": -0.07191046327352524
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Science, the American Institute",
+        "not"
+      ],
+      "u": 0.17125916481018066,
+      "margin": -0.1015002503991127,
+      "wrong_score": -0.22489403188228607,
+      "right_score": -0.12339378148317337
+    }
+  ],
+  "single_u": [
+    -0.005727887153625488,
+    0.3056994080543518
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Science, the American Institute",
+        "not"
+      ],
+      "u_i": -0.005727887153625488,
+      "u_j": 0.3056994080543518,
+      "local_fd": -0.12871235609054565,
+      "banzhaf": -0.12871235609054565,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Science, the American Institute",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": -0.12871235609054565
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.1015002503991127,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "key": "question_1775",
+  "group": "Q35149",
+  "generation_correct": true,
+  "right": "Wilhelm Conrad Röntgen",
+  "wrong": "Gerhard Ertl",
+  "base_margin_wrong_minus_right": 0.27016904950141907,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 129,
+      "char_end": 161,
+      "text": "This distinguished physicist was",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 64,
+      "token_end": 71
+    },
+    {
+      "char_start": 162,
+      "char_end": 208,
+      "text": "educated at the Ludwig-Maximilians-Universität",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Ludwig-Maximilians-Universität München",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 70,
+      "token_end": 78
+    },
+    {
+      "char_start": 337,
+      "char_end": 365,
+      "text": "with the Bavarian Maximilian",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Bavarian Maximilian Order for Science and Art",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 100,
+      "token_end": 106
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.27016904950141907,
+      "wrong_score": -0.03617251664400101,
+      "right_score": -0.3063415586948395
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist was"
+      ],
+      "u": 0.06234478950500488,
+      "margin": 0.20782425999641418,
+      "wrong_score": -0.06841844320297241,
+      "right_score": -0.2762427031993866
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "educated at the Ludwig-Maximilians-Universität"
+      ],
+      "u": -0.1684841811656952,
+      "margin": 0.43865323066711426,
+      "wrong_score": -0.02121853642165661,
+      "right_score": -0.459871768951416
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist was",
+        "educated at the Ludwig-Maximilians-Universität"
+      ],
+      "u": 0.005855530500411987,
+      "margin": 0.2643135190010071,
+      "wrong_score": -0.06275321543216705,
+      "right_score": -0.32706671953201294
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "with the Bavarian Maximilian"
+      ],
+      "u": 0.1564435064792633,
+      "margin": 0.11372555047273636,
+      "wrong_score": -0.07868913561105728,
+      "right_score": -0.19241468608379364
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist was",
+        "with the Bavarian Maximilian"
+      ],
+      "u": 0.29841598868370056,
+      "margin": -0.028246931731700897,
+      "wrong_score": -0.1488795280456543,
+      "right_score": -0.1206325963139534
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "educated at the Ludwig-Maximilians-Universität",
+        "with the Bavarian Maximilian"
+      ],
+      "u": 0.3479374647140503,
+      "margin": -0.07776842266321182,
+      "wrong_score": -0.18154048919677734,
+      "right_score": -0.10377206653356552
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist was",
+        "educated at the Ludwig-Maximilians-Universität",
+        "with the Bavarian Maximilian"
+      ],
+      "u": 0.44609591364860535,
+      "margin": -0.17592686414718628,
+      "wrong_score": -0.2586717903614044,
+      "right_score": -0.08274492621421814
+    }
+  ],
+  "single_u": [
+    0.06234478950500488,
+    -0.1684841811656952,
+    0.1564435064792633
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished physicist was",
+        "educated at the Ludwig-Maximilians-Universität"
+      ],
+      "u_i": 0.06234478950500488,
+      "u_j": -0.1684841811656952,
+      "local_fd": 0.1119949221611023,
+      "banzhaf": 0.034090444445610046,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished physicist was",
+        "with the Bavarian Maximilian"
+      ],
+      "u_i": 0.06234478950500488,
+      "u_j": 0.1564435064792633,
+      "local_fd": 0.07962769269943237,
+      "banzhaf": 0.0017232149839401245,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "educated at the Ludwig-Maximilians-Universität",
+        "with the Bavarian Maximilian"
+      ],
+      "u_i": -0.1684841811656952,
+      "u_j": 0.1564435064792633,
+      "local_fd": 0.35997816920280457,
+      "banzhaf": 0.2820736765861511,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "educated at the Ludwig-Maximilians-Universität",
+        "with the Bavarian Maximilian"
+      ],
+      "order": 2,
+      "harsanyi": 0.3599781394004822
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist was",
+        "educated at the Ludwig-Maximilians-Universität",
+        "with the Bavarian Maximilian"
+      ],
+      "order": 3,
+      "harsanyi": -0.1558089554309845
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist was",
+        "educated at the Ludwig-Maximilians-Universität"
+      ],
+      "order": 2,
+      "harsanyi": 0.1119949221611023
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist was",
+        "with the Bavarian Maximilian"
+      ],
+      "order": 2,
+      "harsanyi": 0.07962769269943237
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist was",
+        "with the Bavarian Maximilian"
+      ]
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "educated at the Ludwig-Maximilians-Universität",
+        "with the Bavarian Maximilian"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "with the Bavarian Maximilian"
+      ]
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist was",
+        "educated at the Ludwig-Maximilians-Universität"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.17592686414718628,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

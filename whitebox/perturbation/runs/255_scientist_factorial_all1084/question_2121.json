@@ -1,0 +1,145 @@
+{
+  "key": "question_2121",
+  "group": "Q153224",
+  "generation_correct": false,
+  "right": "Andrey Nikolaevich Kolmogorov",
+  "wrong": "Zhores Ivanovich Alferov",
+  "base_margin_wrong_minus_right": 0.24152278900146484,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 485,
+      "char_end": 507,
+      "text": "with the Jubilee Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Jubilee Medal Medal \"In Commemoration of the 250th Anniversary of Leningrad\"",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 137,
+      "token_end": 142
+    },
+    {
+      "char_start": 512,
+      "char_end": 538,
+      "text": "Commemoration of the 100th",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Jubilee Medal \"In Commemoration of the 100th Anniversary of the Birth of Vladimir Ilyich Lenin\"",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 142,
+      "token_end": 147
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.24152278900146484,
+      "wrong_score": -0.04730323702096939,
+      "right_score": -0.28882601857185364
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "with the Jubilee Medal"
+      ],
+      "u": 0.16133911907672882,
+      "margin": 0.08018366992473602,
+      "wrong_score": -0.09158547222614288,
+      "right_score": -0.1717691421508789
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Commemoration of the 100th"
+      ],
+      "u": 0.0059247612953186035,
+      "margin": 0.23559802770614624,
+      "wrong_score": -0.06138581782579422,
+      "right_score": -0.29698383808135986
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Jubilee Medal",
+        "Commemoration of the 100th"
+      ],
+      "u": -0.2524517774581909,
+      "margin": 0.49397456645965576,
+      "wrong_score": -0.04695606976747513,
+      "right_score": -0.5409306287765503
+    }
+  ],
+  "single_u": [
+    0.16133911907672882,
+    0.0059247612953186035
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "with the Jubilee Medal",
+        "Commemoration of the 100th"
+      ],
+      "u_i": 0.16133911907672882,
+      "u_j": 0.0059247612953186035,
+      "local_fd": -0.41971564292907715,
+      "banzhaf": -0.41971564292907715,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Jubilee Medal",
+        "Commemoration of the 100th"
+      ],
+      "order": 2,
+      "harsanyi": -0.41971565783023834
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.49397456645965576,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

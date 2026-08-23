@@ -1,0 +1,145 @@
+{
+  "key": "question_0122",
+  "group": "Q135171",
+  "generation_correct": true,
+  "right": "Elias James Corey",
+  "wrong": "Glenn T. Seaborg",
+  "base_margin_wrong_minus_right": -1.5541211366653442,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 397,
+      "char_end": 423,
+      "text": "in Chemistry, the National",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 113,
+      "token_end": 119
+    },
+    {
+      "char_start": 543,
+      "char_end": 562,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 138,
+      "token_end": 142
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.5541211366653442,
+      "wrong_score": -1.5547782182693481,
+      "right_score": -0.000657136260997504
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in Chemistry, the National"
+      ],
+      "u": -0.005437612533569336,
+      "margin": -1.548683524131775,
+      "wrong_score": -1.5634360313415527,
+      "right_score": -0.014752497896552086
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.0680229663848877,
+      "margin": -1.622144103050232,
+      "wrong_score": -1.6292757987976074,
+      "right_score": -0.007131738588213921
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Chemistry, the National",
+        "as a Foreign Member"
+      ],
+      "u": 0.049721717834472656,
+      "margin": -1.603842854499817,
+      "wrong_score": -1.6142823696136475,
+      "right_score": -0.010439485311508179
+    }
+  ],
+  "single_u": [
+    -0.005437612533569336,
+    0.0680229663848877
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "in Chemistry, the National",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.005437612533569336,
+      "u_j": 0.0680229663848877,
+      "local_fd": -0.012863636016845703,
+      "banzhaf": -0.012863636016845703,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in Chemistry, the National",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.012863636016845703
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.603842854499817,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

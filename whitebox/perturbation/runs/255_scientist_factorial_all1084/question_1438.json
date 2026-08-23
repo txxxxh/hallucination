@@ -1,0 +1,290 @@
+{
+  "key": "question_1438",
+  "group": "Q201513",
+  "generation_correct": false,
+  "right": "Edward Witten",
+  "wrong": "Charles Townes",
+  "base_margin_wrong_minus_right": 1.3333951234817505,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 292,
+      "char_end": 319,
+      "text": "received the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 86,
+      "token_end": 90
+    },
+    {
+      "char_start": 348,
+      "char_end": 367,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 99
+    },
+    {
+      "char_start": 402,
+      "char_end": 424,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Physical Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 104,
+      "token_end": 109
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 1.3333951234817505,
+      "wrong_score": -0.014257119968533516,
+      "right_score": -1.3476521968841553
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "received the National Medal"
+      ],
+      "u": -0.2500401735305786,
+      "margin": 1.583435297012329,
+      "wrong_score": -0.01625361293554306,
+      "right_score": -1.5996888875961304
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -0.958678126335144,
+      "margin": 2.2920732498168945,
+      "wrong_score": -0.021640410646796227,
+      "right_score": -2.313713550567627
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the National Medal",
+        "as a Foreign Member"
+      ],
+      "u": -1.2085264921188354,
+      "margin": 2.541921615600586,
+      "wrong_score": -0.007165067829191685,
+      "right_score": -2.549086570739746
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -0.25014591217041016,
+      "margin": 1.5835410356521606,
+      "wrong_score": -0.008739305660128593,
+      "right_score": -1.592280387878418
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the National Medal",
+        "Fellow of the American"
+      ],
+      "u": -0.291729211807251,
+      "margin": 1.6251243352890015,
+      "wrong_score": -0.005075573921203613,
+      "right_score": -1.630199909210205
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "Fellow of the American"
+      ],
+      "u": -0.625080943107605,
+      "margin": 1.9584760665893555,
+      "wrong_score": -0.006209723651409149,
+      "right_score": -1.9646857976913452
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the National Medal",
+        "as a Foreign Member",
+        "Fellow of the American"
+      ],
+      "u": -0.33334338665008545,
+      "margin": 1.666738510131836,
+      "wrong_score": -0.005163989029824734,
+      "right_score": -1.6719025373458862
+    }
+  ],
+  "single_u": [
+    -0.2500401735305786,
+    -0.958678126335144,
+    -0.25014591217041016
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "received the National Medal",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.2500401735305786,
+      "u_j": -0.958678126335144,
+      "local_fd": 0.00019180774688720703,
+      "banzhaf": 0.16675633192062378,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "received the National Medal",
+        "Fellow of the American"
+      ],
+      "u_i": -0.2500401735305786,
+      "u_j": -0.25014591217041016,
+      "local_fd": 0.2084568738937378,
+      "banzhaf": 0.37502139806747437,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as a Foreign Member",
+        "Fellow of the American"
+      ],
+      "u_i": -0.958678126335144,
+      "u_j": -0.25014591217041016,
+      "local_fd": 0.5837430953979492,
+      "banzhaf": 0.7503076195716858,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.5837430953979492
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "received the National Medal",
+        "as a Foreign Member",
+        "Fellow of the American"
+      ],
+      "order": 3,
+      "harsanyi": 0.33312904834747314
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "received the National Medal",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.2084568738937378
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "received the National Medal",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.00019180774688720703
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.666738510131836,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

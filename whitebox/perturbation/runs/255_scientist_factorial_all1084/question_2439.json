@@ -1,0 +1,146 @@
+{
+  "key": "question_2439",
+  "group": "Q451330",
+  "generation_correct": true,
+  "right": "Ivan Matveevich Vinogradov",
+  "wrong": "Yakov Borisovich Zel'dovich",
+  "base_margin_wrong_minus_right": -0.3290845453739166,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 203,
+      "char_end": 231,
+      "text": "educated at Saint Petersburg",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Saint Petersburg State University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 80,
+      "token_end": 84
+    },
+    {
+      "char_start": 552,
+      "char_end": 571,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 146,
+      "token_end": 149
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3290845453739166,
+      "wrong_score": -0.3385012149810791,
+      "right_score": -0.009416659362614155
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Saint Petersburg"
+      ],
+      "u": -0.1690002828836441,
+      "margin": -0.16008426249027252,
+      "wrong_score": -0.19092917442321777,
+      "right_score": -0.0308449175208807
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.23408839106559753,
+      "margin": -0.5631729364395142,
+      "wrong_score": -0.5672309994697571,
+      "right_score": -0.0040580411441624165
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Saint Petersburg",
+        "as a Foreign Member"
+      ],
+      "u": -0.17229057848453522,
+      "margin": -0.1567939668893814,
+      "wrong_score": -0.190667062997818,
+      "right_score": -0.03387309983372688
+    }
+  ],
+  "single_u": [
+    -0.1690002828836441,
+    0.23408839106559753
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Saint Petersburg",
+        "as a Foreign Member"
+      ],
+      "u_i": -0.1690002828836441,
+      "u_j": 0.23408839106559753,
+      "local_fd": -0.23737868666648865,
+      "banzhaf": -0.23737868666648865,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Saint Petersburg",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.23737868666648865
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.1567939668893814,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

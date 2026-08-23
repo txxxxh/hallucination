@@ -1,0 +1,326 @@
+{
+  "key": "question_0978",
+  "group": "Q49351",
+  "generation_correct": true,
+  "right": "Robert Robinson",
+  "wrong": "William Lawrence Bragg",
+  "base_margin_wrong_minus_right": 0.09695596992969513,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 188,
+      "char_end": 207,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 69,
+      "token_end": 75
+    },
+    {
+      "char_start": 284,
+      "char_end": 310,
+      "text": "including the Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 89,
+      "token_end": 95
+    },
+    {
+      "char_start": 333,
+      "char_end": 355,
+      "text": "the August Wilhelm von",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "August Wilhelm von Hofmann Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 96,
+      "token_end": 101
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.09695596992969513,
+      "wrong_score": -0.19742314517498016,
+      "right_score": -0.2943791151046753
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.09747050702571869,
+      "margin": -0.0005145370960235596,
+      "wrong_score": -0.25498488545417786,
+      "right_score": -0.2544703483581543
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Copley Medal"
+      ],
+      "u": 0.7727250456809998,
+      "margin": -0.6757690906524658,
+      "wrong_score": -0.7065830230712891,
+      "right_score": -0.030813930556178093
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "including the Copley Medal"
+      ],
+      "u": 0.6004186868667603,
+      "margin": -0.5034627318382263,
+      "wrong_score": -0.5671595931053162,
+      "right_score": -0.06369687616825104
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the August Wilhelm von"
+      ],
+      "u": 0.9019047617912292,
+      "margin": -0.8049488067626953,
+      "wrong_score": -0.8264481425285339,
+      "right_score": -0.02149934507906437
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the August Wilhelm von"
+      ],
+      "u": 0.9375627636909485,
+      "margin": -0.8406068086624146,
+      "wrong_score": -0.8573963046073914,
+      "right_score": -0.016789503395557404
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Copley Medal",
+        "the August Wilhelm von"
+      ],
+      "u": 0.9024702906608582,
+      "margin": -0.8055143356323242,
+      "wrong_score": -0.8251838088035583,
+      "right_score": -0.01966950111091137
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "including the Copley Medal",
+        "the August Wilhelm von"
+      ],
+      "u": 0.5786051750183105,
+      "margin": -0.4816492199897766,
+      "wrong_score": -0.5345364809036255,
+      "right_score": -0.05288725346326828
+    }
+  ],
+  "single_u": [
+    0.09747050702571869,
+    0.7727250456809998,
+    0.9019047617912292
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "including the Copley Medal"
+      ],
+      "u_i": 0.09747050702571869,
+      "u_j": 0.7727250456809998,
+      "local_fd": -0.2697768807411194,
+      "banzhaf": -0.3146499991416931,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "the August Wilhelm von"
+      ],
+      "u_i": 0.09747050702571869,
+      "u_j": 0.9019047617912292,
+      "local_fd": -0.061812520027160645,
+      "banzhaf": -0.10668563842773438,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Copley Medal",
+        "the August Wilhelm von"
+      ],
+      "u_i": 0.7727250456809998,
+      "u_j": 0.9019047617912292,
+      "local_fd": -0.7721595168113708,
+      "banzhaf": -0.8170326352119446,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Copley Medal",
+        "the August Wilhelm von"
+      ],
+      "order": 2,
+      "harsanyi": -0.7721595168113708
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "including the Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.2697768658399582
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "including the Copley Medal",
+        "the August Wilhelm von"
+      ],
+      "order": 3,
+      "harsanyi": -0.08974625170230865
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "the August Wilhelm von"
+      ],
+      "order": 2,
+      "harsanyi": -0.06181250512599945
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Copley Medal"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the August Wilhelm von"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "including the Copley Medal",
+        "the August Wilhelm von"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.4816492199897766,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

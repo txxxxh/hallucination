@@ -1,0 +1,290 @@
+{
+  "key": "question_1289",
+  "group": "Q215022",
+  "generation_correct": true,
+  "right": "Arthur Stanley Eddington",
+  "wrong": "Ernest Rutherford",
+  "base_margin_wrong_minus_right": -0.8460352420806885,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 169,
+      "char_end": 196,
+      "text": "educated at Trinity College",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Trinity College",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 66,
+      "token_end": 71
+    },
+    {
+      "char_start": 201,
+      "char_end": 228,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 71,
+      "token_end": 79
+    },
+    {
+      "char_start": 369,
+      "char_end": 388,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 102,
+      "token_end": 106
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.8460352420806885,
+      "wrong_score": -0.8588452935218811,
+      "right_score": -0.012810048647224903
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Trinity College"
+      ],
+      "u": -0.5430192947387695,
+      "margin": -0.30301591753959656,
+      "wrong_score": -0.3619532883167267,
+      "right_score": -0.05893735960125923
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": -0.7771812081336975,
+      "margin": -0.06885401904582977,
+      "wrong_score": -0.21713915467262268,
+      "right_score": -0.1482851356267929
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "the University of Cambridge"
+      ],
+      "u": -0.7668619155883789,
+      "margin": -0.07917329668998718,
+      "wrong_score": -0.22033096849918365,
+      "right_score": -0.14115767180919647
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.6590731143951416,
+      "margin": -1.50510835647583,
+      "wrong_score": -1.525011658668518,
+      "right_score": -0.0199032761156559
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "Fellow of the Royal"
+      ],
+      "u": 0.7194775342941284,
+      "margin": -1.565512776374817,
+      "wrong_score": -1.5762192010879517,
+      "right_score": -0.010706369765102863
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u": 0.4691593647003174,
+      "margin": -1.3151946067810059,
+      "wrong_score": -1.3214231729507446,
+      "right_score": -0.006228521466255188
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u": 0.49890124797821045,
+      "margin": -1.344936490058899,
+      "wrong_score": -1.3486597537994385,
+      "right_score": -0.003723251400515437
+    }
+  ],
+  "single_u": [
+    -0.5430192947387695,
+    -0.7771812081336975,
+    0.6590731143951416
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Trinity College",
+        "the University of Cambridge"
+      ],
+      "u_i": -0.5430192947387695,
+      "u_j": -0.7771812081336975,
+      "local_fd": 0.5533385872840881,
+      "banzhaf": 0.2613380253314972,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "educated at Trinity College",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.5430192947387695,
+      "u_j": 0.6590731143951416,
+      "local_fd": 0.6034237146377563,
+      "banzhaf": 0.3114231526851654,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.7771812081336975,
+      "u_j": 0.6590731143951416,
+      "local_fd": 0.5872673988342285,
+      "banzhaf": 0.29526686668395996,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.6034237146377563
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.5872674584388733
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "the University of Cambridge",
+        "Fellow of the Royal"
+      ],
+      "order": 3,
+      "harsanyi": -0.5840011239051819
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "the University of Cambridge"
+      ],
+      "order": 2,
+      "harsanyi": 0.5533385872840881
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.344936490058899,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

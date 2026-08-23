@@ -1,0 +1,296 @@
+{
+  "key": "question_1840",
+  "group": "Q92602",
+  "generation_correct": true,
+  "right": "C. A. R. Hoare",
+  "wrong": "Tim Berners-Lee",
+  "base_margin_wrong_minus_right": -1.9245637655258179,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 445,
+      "char_end": 466,
+      "text": "Fellow of the British",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the British Computer Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 121,
+      "token_end": 126
+    },
+    {
+      "char_start": 494,
+      "char_end": 514,
+      "text": "of the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 129,
+      "token_end": 133
+    },
+    {
+      "char_start": 542,
+      "char_end": 573,
+      "text": "Academy of Engineering. However",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Academy of Engineering",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 139,
+      "token_end": 147
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.9245637655258179,
+      "wrong_score": -1.9254915714263916,
+      "right_score": -0.000927759101614356
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the British"
+      ],
+      "u": -0.49933958053588867,
+      "margin": -1.4252241849899292,
+      "wrong_score": -1.4267935752868652,
+      "right_score": -0.0015694487374275923
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Royal Society"
+      ],
+      "u": -1.1968357563018799,
+      "margin": -0.7277280688285828,
+      "wrong_score": -0.7318502068519592,
+      "right_score": -0.004122165031731129
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the British",
+        "of the Royal Society"
+      ],
+      "u": -2.072078227996826,
+      "margin": 0.14751453697681427,
+      "wrong_score": -0.057485099881887436,
+      "right_score": -0.204999640583992
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Academy of Engineering. However"
+      ],
+      "u": -0.8491307497024536,
+      "margin": -1.0754330158233643,
+      "wrong_score": -1.0772942304611206,
+      "right_score": -0.0018612481653690338
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the British",
+        "Academy of Engineering. However"
+      ],
+      "u": -1.862217664718628,
+      "margin": -0.06234606355428696,
+      "wrong_score": -0.14677679538726807,
+      "right_score": -0.08443073183298111
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Royal Society",
+        "Academy of Engineering. However"
+      ],
+      "u": -1.5396431684494019,
+      "margin": -0.38492056727409363,
+      "wrong_score": -0.4146858751773834,
+      "right_score": -0.02976532094180584
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the British",
+        "of the Royal Society",
+        "Academy of Engineering. However"
+      ],
+      "u": -2.036769151687622,
+      "margin": 0.11220533400774002,
+      "wrong_score": -0.10988789051771164,
+      "right_score": -0.22209322452545166
+    }
+  ],
+  "single_u": [
+    -0.49933958053588867,
+    -1.1968357563018799,
+    -0.8491307497024536
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the British",
+        "of the Royal Society"
+      ],
+      "u_i": -0.49933958053588867,
+      "u_j": -1.1968357563018799,
+      "local_fd": -0.3759028911590576,
+      "banzhaf": 0.07002902030944824,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the British",
+        "Academy of Engineering. However"
+      ],
+      "u_i": -0.49933958053588867,
+      "u_j": -0.8491307497024536,
+      "local_fd": -0.5137473344802856,
+      "banzhaf": -0.06781542301177979,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "of the Royal Society",
+        "Academy of Engineering. However"
+      ],
+      "u_i": -1.1968357563018799,
+      "u_j": -0.8491307497024536,
+      "local_fd": 0.5063233375549316,
+      "banzhaf": 0.9522552490234375,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the British",
+        "of the Royal Society",
+        "Academy of Engineering. However"
+      ],
+      "order": 3,
+      "harsanyi": 0.8918638229370117
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the British",
+        "Academy of Engineering. However"
+      ],
+      "order": 2,
+      "harsanyi": -0.5137473344802856
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Royal Society",
+        "Academy of Engineering. However"
+      ],
+      "order": 2,
+      "harsanyi": 0.5063233375549316
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the British",
+        "of the Royal Society"
+      ],
+      "order": 2,
+      "harsanyi": -0.3759028911590576
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.11220533400774002,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

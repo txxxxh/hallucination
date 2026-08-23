@@ -1,0 +1,145 @@
+{
+  "key": "question_2167",
+  "group": "Q899517",
+  "generation_correct": true,
+  "right": "Allen J. Bard",
+  "wrong": "Robert Burns Woodward",
+  "base_margin_wrong_minus_right": -1.1268473863601685,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 219,
+      "char_end": 243,
+      "text": "on the chemical sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 75,
+      "token_end": 80
+    },
+    {
+      "char_start": 308,
+      "char_end": 336,
+      "text": "including the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 95,
+      "token_end": 100
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.1268473863601685,
+      "wrong_score": -1.1385860443115234,
+      "right_score": -0.011738656088709831
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "on the chemical sciences"
+      ],
+      "u": 0.33138227462768555,
+      "margin": -1.458229660987854,
+      "wrong_score": -1.4680085182189941,
+      "right_score": -0.009778817184269428
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the National Medal"
+      ],
+      "u": -0.11915349960327148,
+      "margin": -1.007693886756897,
+      "wrong_score": -1.0266327857971191,
+      "right_score": -0.018938913941383362
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "on the chemical sciences",
+        "including the National Medal"
+      ],
+      "u": -0.20244574546813965,
+      "margin": -0.9244016408920288,
+      "wrong_score": -0.9444632530212402,
+      "right_score": -0.02006159909069538
+    }
+  ],
+  "single_u": [
+    0.33138227462768555,
+    -0.11915349960327148
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "on the chemical sciences",
+        "including the National Medal"
+      ],
+      "u_i": 0.33138227462768555,
+      "u_j": -0.11915349960327148,
+      "local_fd": -0.4146745204925537,
+      "banzhaf": -0.4146745204925537,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "on the chemical sciences",
+        "including the National Medal"
+      ],
+      "order": 2,
+      "harsanyi": -0.4146745204925537
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.9244016408920288,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "key": "question_0897",
+  "group": "Q77174",
+  "generation_correct": false,
+  "right": "Christiane Nüsslein-Volhard",
+  "wrong": "Alexander von Humboldt",
+  "base_margin_wrong_minus_right": -0.15289881825447083,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 200,
+      "char_end": 223,
+      "text": "the prestigious Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 79,
+      "token_end": 85
+    },
+    {
+      "char_start": 509,
+      "char_end": 538,
+      "text": "with honorary doctorates from",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate from the University of Cambridge",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 136,
+      "token_end": 141
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.15289881825447083,
+      "wrong_score": -0.2565556764602661,
+      "right_score": -0.10365685075521469
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the prestigious Pour le"
+      ],
+      "u": -0.45303967595100403,
+      "margin": 0.3001408576965332,
+      "wrong_score": -0.05736380070447922,
+      "right_score": -0.357504665851593
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with honorary doctorates from"
+      ],
+      "u": -1.432865023612976,
+      "margin": 1.2799662351608276,
+      "wrong_score": -0.002497307490557432,
+      "right_score": -1.282463550567627
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the prestigious Pour le",
+        "with honorary doctorates from"
+      ],
+      "u": -1.2922967672348022,
+      "margin": 1.1393979787826538,
+      "wrong_score": -0.00284004514105618,
+      "right_score": -1.1422380208969116
+    }
+  ],
+  "single_u": [
+    -0.45303967595100403,
+    -1.432865023612976
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the prestigious Pour le",
+        "with honorary doctorates from"
+      ],
+      "u_i": -0.45303967595100403,
+      "u_j": -1.432865023612976,
+      "local_fd": 0.5936079025268555,
+      "banzhaf": 0.5936079025268555,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the prestigious Pour le",
+        "with honorary doctorates from"
+      ],
+      "order": 2,
+      "harsanyi": 0.5936079323291779
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.1393979787826538,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 16,
+    "n_excluded": 10,
+    "max_candidates": 6
+  }
+}

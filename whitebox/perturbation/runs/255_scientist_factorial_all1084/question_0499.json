@@ -1,0 +1,146 @@
+{
+  "key": "question_0499",
+  "group": "Q172844",
+  "generation_correct": true,
+  "right": "Pyotr Kapitsa",
+  "wrong": "Zhores Ivanovich Alferov",
+  "base_margin_wrong_minus_right": -0.059255629777908325,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 320,
+      "char_end": 343,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 102,
+      "token_end": 105
+    },
+    {
+      "char_start": 386,
+      "char_end": 403,
+      "text": "of the Red Banner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of the Red Banner of Labour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 112,
+      "token_end": 115
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.059255629777908325,
+      "wrong_score": -0.16200153529644012,
+      "right_score": -0.1027459055185318
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": 0.10194629430770874,
+      "margin": -0.16120192408561707,
+      "wrong_score": -0.2415352314710617,
+      "right_score": -0.08033331483602524
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Red Banner"
+      ],
+      "u": 0.12358196079730988,
+      "margin": -0.1828375905752182,
+      "wrong_score": -0.24987372756004333,
+      "right_score": -0.06703613698482513
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "of the Red Banner"
+      ],
+      "u": 0.1304992437362671,
+      "margin": -0.18975487351417542,
+      "wrong_score": -0.25607967376708984,
+      "right_score": -0.06632480025291443
+    }
+  ],
+  "single_u": [
+    0.10194629430770874,
+    0.12358196079730988
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Nobel Prize",
+        "of the Red Banner"
+      ],
+      "u_i": 0.10194629430770874,
+      "u_j": 0.12358196079730988,
+      "local_fd": -0.09502901136875153,
+      "banzhaf": -0.09502901136875153,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "of the Red Banner"
+      ],
+      "order": 2,
+      "harsanyi": -0.09502901136875153
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.18975487351417542,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

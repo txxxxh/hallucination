@@ -1,0 +1,151 @@
+{
+  "key": "question_0845",
+  "group": "Q233974",
+  "generation_correct": true,
+  "right": "Jocelyn Bell Burnell",
+  "wrong": "Theodor Wolfgang Hänsch",
+  "base_margin_wrong_minus_right": -0.3130544424057007,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 243,
+      "char_end": 274,
+      "text": "including an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 89
+    },
+    {
+      "char_start": 279,
+      "char_end": 302,
+      "text": "the Albert A. Michelson",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert A. Michelson Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 89,
+      "token_end": 94
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3130544424057007,
+      "wrong_score": -0.3446879982948303,
+      "right_score": -0.03163354843854904
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "including an honorary doctorate"
+      ],
+      "u": -0.25014254450798035,
+      "margin": -0.06291189789772034,
+      "wrong_score": -0.17084263265132904,
+      "right_score": -0.1079307347536087
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Albert A. Michelson"
+      ],
+      "u": 0.0420820415019989,
+      "margin": -0.3551364839076996,
+      "wrong_score": -0.38527214527130127,
+      "right_score": -0.030135665088891983
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including an honorary doctorate",
+        "the Albert A. Michelson"
+      ],
+      "u": -0.39548176527023315,
+      "margin": 0.08242733776569366,
+      "wrong_score": -0.10099895298480988,
+      "right_score": -0.18342629075050354
+    }
+  ],
+  "single_u": [
+    -0.25014254450798035,
+    0.0420820415019989
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "including an honorary doctorate",
+        "the Albert A. Michelson"
+      ],
+      "u_i": -0.25014254450798035,
+      "u_j": 0.0420820415019989,
+      "local_fd": -0.1874212622642517,
+      "banzhaf": -0.1874212622642517,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "including an honorary doctorate",
+        "the Albert A. Michelson"
+      ],
+      "order": 2,
+      "harsanyi": -0.1874212622642517
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.08242733776569366,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

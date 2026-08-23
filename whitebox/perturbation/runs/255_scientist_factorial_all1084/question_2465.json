@@ -1,0 +1,144 @@
+{
+  "key": "question_2465",
+  "group": "Q366471",
+  "generation_correct": true,
+  "right": "Yakov Borisovich Zel'dovich",
+  "wrong": "Dmitri Ivanovich Mendeleev",
+  "base_margin_wrong_minus_right": -0.20438134670257568,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 244,
+      "char_end": 272,
+      "text": "educated at Saint Petersburg",
+      "kind": "attribute",
+      "field": "place_of_death",
+      "value": "Saint Petersburg",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 82,
+      "token_end": 87
+    },
+    {
+      "char_start": 352,
+      "char_end": 385,
+      "text": "and chemistry, eventually earning",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 106
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.20438134670257568,
+      "wrong_score": -0.23644022643566132,
+      "right_score": -0.03205888345837593
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Saint Petersburg"
+      ],
+      "u": -0.09388752281665802,
+      "margin": -0.11049382388591766,
+      "wrong_score": -0.19607388973236084,
+      "right_score": -0.08558006584644318
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and chemistry, eventually earning"
+      ],
+      "u": -0.15668153762817383,
+      "margin": -0.04769980162382126,
+      "wrong_score": -0.13313926756381989,
+      "right_score": -0.08543946593999863
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Saint Petersburg",
+        "and chemistry, eventually earning"
+      ],
+      "u": -0.1878931224346161,
+      "margin": -0.01648823171854019,
+      "wrong_score": -0.12111365795135498,
+      "right_score": -0.10462542623281479
+    }
+  ],
+  "single_u": [
+    -0.09388752281665802,
+    -0.15668153762817383
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Saint Petersburg",
+        "and chemistry, eventually earning"
+      ],
+      "u_i": -0.09388752281665802,
+      "u_j": -0.15668153762817383,
+      "local_fd": 0.06267593801021576,
+      "banzhaf": 0.06267593801021576,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Saint Petersburg",
+        "and chemistry, eventually earning"
+      ],
+      "order": 2,
+      "harsanyi": 0.06267593801021576
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.01648823171854019,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

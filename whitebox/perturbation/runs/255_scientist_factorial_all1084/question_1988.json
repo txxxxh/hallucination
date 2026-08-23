@@ -1,0 +1,290 @@
+{
+  "key": "question_1988",
+  "group": "Q899214",
+  "generation_correct": true,
+  "right": "Tobin J. Marks",
+  "wrong": "Roald Hoffmann",
+  "base_margin_wrong_minus_right": -0.3093172609806061,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 400,
+      "char_end": 416,
+      "text": "the NAS Award in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "NAS Award in Chemical Sciences",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 111,
+      "token_end": 114
+    },
+    {
+      "char_start": 444,
+      "char_end": 475,
+      "text": "American Chemical Society Award",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "American Chemical Society Award in Inorganic Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 121,
+      "token_end": 126
+    },
+    {
+      "char_start": 577,
+      "char_end": 603,
+      "text": "Institute of Chemists Gold",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "American Institute of Chemists Gold Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 141,
+      "token_end": 146
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3093172609806061,
+      "wrong_score": -0.35296905040740967,
+      "right_score": -0.04365178942680359
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the NAS Award in"
+      ],
+      "u": 0.11670568585395813,
+      "margin": -0.4260229468345642,
+      "wrong_score": -0.45697665214538574,
+      "right_score": -0.03095371648669243
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "American Chemical Society Award"
+      ],
+      "u": 0.054138004779815674,
+      "margin": -0.36345526576042175,
+      "wrong_score": -0.40384572744369507,
+      "right_score": -0.040390465408563614
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the NAS Award in",
+        "American Chemical Society Award"
+      ],
+      "u": 0.23499813675880432,
+      "margin": -0.5443153977394104,
+      "wrong_score": -0.5653374195098877,
+      "right_score": -0.021022018045186996
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Institute of Chemists Gold"
+      ],
+      "u": 0.5079805850982666,
+      "margin": -0.8172978758811951,
+      "wrong_score": -0.8253565430641174,
+      "right_score": -0.00805866438895464
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the NAS Award in",
+        "Institute of Chemists Gold"
+      ],
+      "u": 0.5645284652709961,
+      "margin": -0.8738456964492798,
+      "wrong_score": -0.8842381834983826,
+      "right_score": -0.010392476804554462
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "American Chemical Society Award",
+        "Institute of Chemists Gold"
+      ],
+      "u": 0.3521246612071991,
+      "margin": -0.6614419221878052,
+      "wrong_score": -0.6746922731399536,
+      "right_score": -0.013250323943793774
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the NAS Award in",
+        "American Chemical Society Award",
+        "Institute of Chemists Gold"
+      ],
+      "u": 0.38213786482810974,
+      "margin": -0.6914551258087158,
+      "wrong_score": -0.7051790356636047,
+      "right_score": -0.013723928481340408
+    }
+  ],
+  "single_u": [
+    0.11670568585395813,
+    0.054138004779815674,
+    0.5079805850982666
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the NAS Award in",
+        "American Chemical Society Award"
+      ],
+      "u_i": 0.11670568585395813,
+      "u_j": 0.054138004779815674,
+      "local_fd": 0.06415444612503052,
+      "banzhaf": 0.018809884786605835,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the NAS Award in",
+        "Institute of Chemists Gold"
+      ],
+      "u_i": 0.11670568585395813,
+      "u_j": 0.5079805850982666,
+      "local_fd": -0.06015780568122864,
+      "banzhaf": -0.10550236701965332,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "American Chemical Society Award",
+        "Institute of Chemists Gold"
+      ],
+      "u_i": 0.054138004779815674,
+      "u_j": 0.5079805850982666,
+      "local_fd": -0.20999392867088318,
+      "banzhaf": -0.25533849000930786,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "American Chemical Society Award",
+        "Institute of Chemists Gold"
+      ],
+      "order": 2,
+      "harsanyi": -0.20999392867088318
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the NAS Award in",
+        "American Chemical Society Award",
+        "Institute of Chemists Gold"
+      ],
+      "order": 3,
+      "harsanyi": -0.09068912267684937
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the NAS Award in",
+        "American Chemical Society Award"
+      ],
+      "order": 2,
+      "harsanyi": 0.06415444612503052
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the NAS Award in",
+        "Institute of Chemists Gold"
+      ],
+      "order": 2,
+      "harsanyi": -0.06015780568122864
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6914551258087158,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

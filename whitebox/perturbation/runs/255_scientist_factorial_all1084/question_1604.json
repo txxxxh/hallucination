@@ -1,0 +1,146 @@
+{
+  "key": "question_1604",
+  "group": "Q549729",
+  "generation_correct": true,
+  "right": "Charles Cardale Babington",
+  "wrong": "Georg Forster",
+  "base_margin_wrong_minus_right": -0.8768789768218994,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 359,
+      "char_end": 378,
+      "text": "the field of botany",
+      "kind": "attribute",
+      "field": "field",
+      "value": "botany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 107,
+      "token_end": 111
+    },
+    {
+      "char_start": 398,
+      "char_end": 417,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 115,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.8768789768218994,
+      "wrong_score": -0.8853575587272644,
+      "right_score": -0.008478593081235886
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the field of botany"
+      ],
+      "u": -0.20970594882965088,
+      "margin": -0.6671730279922485,
+      "wrong_score": -0.6934226751327515,
+      "right_score": -0.02624962292611599
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.6322164535522461,
+      "margin": -0.24466252326965332,
+      "wrong_score": -0.3156368136405945,
+      "right_score": -0.07097429782152176
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of botany",
+        "Fellow of the Royal"
+      ],
+      "u": -0.7537156343460083,
+      "margin": -0.12316334247589111,
+      "wrong_score": -0.24145956337451935,
+      "right_score": -0.11829622089862823
+    }
+  ],
+  "single_u": [
+    -0.20970594882965088,
+    -0.6322164535522461
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the field of botany",
+        "Fellow of the Royal"
+      ],
+      "u_i": -0.20970594882965088,
+      "u_j": -0.6322164535522461,
+      "local_fd": 0.08820676803588867,
+      "banzhaf": 0.08820676803588867,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the field of botany",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": 0.08820676803588867
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.12316334247589111,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "key": "question_1280",
+  "group": "Q57067",
+  "generation_correct": true,
+  "right": "Max von Laue",
+  "wrong": "Otto Hahn",
+  "base_margin_wrong_minus_right": -1.9379618167877197,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 168,
+      "char_end": 217,
+      "text": "studied at Ludwig-Maximilians-Universität München",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Ludwig-Maximilians-Universität München",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 69,
+      "token_end": 78
+    },
+    {
+      "char_start": 218,
+      "char_end": 252,
+      "text": "and Humboldt-Universität zu Berlin",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Humboldt-Universität zu Berlin",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 77,
+      "token_end": 82
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.9379618167877197,
+      "wrong_score": -1.940394639968872,
+      "right_score": -0.0024328359868377447
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "studied at Ludwig-Maximilians-Universität München"
+      ],
+      "u": 0.2190871238708496,
+      "margin": -2.1570489406585693,
+      "wrong_score": -2.1614937782287598,
+      "right_score": -0.004444854333996773
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and Humboldt-Universität zu Berlin"
+      ],
+      "u": -0.06270623207092285,
+      "margin": -1.8752555847167969,
+      "wrong_score": -1.8794234991073608,
+      "right_score": -0.0041679516434669495
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "studied at Ludwig-Maximilians-Universität München",
+        "and Humboldt-Universität zu Berlin"
+      ],
+      "u": 0.06219911575317383,
+      "margin": -2.0001609325408936,
+      "wrong_score": -2.0034003257751465,
+      "right_score": -0.003239365993067622
+    }
+  ],
+  "single_u": [
+    0.2190871238708496,
+    -0.06270623207092285
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "studied at Ludwig-Maximilians-Universität München",
+        "and Humboldt-Universität zu Berlin"
+      ],
+      "u_i": 0.2190871238708496,
+      "u_j": -0.06270623207092285,
+      "local_fd": -0.09418177604675293,
+      "banzhaf": -0.09418177604675293,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "studied at Ludwig-Maximilians-Universität München",
+        "and Humboldt-Universität zu Berlin"
+      ],
+      "order": 2,
+      "harsanyi": -0.09418177604675293
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -2.0001609325408936,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

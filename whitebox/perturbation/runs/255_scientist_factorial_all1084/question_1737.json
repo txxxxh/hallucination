@@ -1,0 +1,315 @@
+{
+  "key": "question_1737",
+  "group": "Q132537",
+  "generation_correct": true,
+  "right": "Robert Oppenheimer",
+  "wrong": "James Chadwick",
+  "base_margin_wrong_minus_right": 0.4343177378177643,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 127,
+      "char_end": 159,
+      "text": "This prominent nuclear physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "nuclear physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 58,
+      "token_end": 66
+    },
+    {
+      "char_start": 269,
+      "char_end": 296,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 84,
+      "token_end": 89
+    },
+    {
+      "char_start": 354,
+      "char_end": 373,
+      "text": "of the nuclear bomb",
+      "kind": "attribute",
+      "field": "field",
+      "value": "nuclear bomb",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 100,
+      "token_end": 104
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.4343177378177643,
+      "wrong_score": -0.04604779928922653,
+      "right_score": -0.4803655445575714
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent nuclear physicist"
+      ],
+      "u": 1.277878761291504,
+      "margin": -0.8435609936714172,
+      "wrong_score": -0.8709449768066406,
+      "right_score": -0.027383971959352493
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": -0.6173700094223022,
+      "margin": 1.0516877174377441,
+      "wrong_score": -0.029995616525411606,
+      "right_score": -1.0816832780838013
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent nuclear physicist",
+        "the University of Cambridge"
+      ],
+      "u": 0.6202890276908875,
+      "margin": -0.18597128987312317,
+      "wrong_score": -0.3494386076927185,
+      "right_score": -0.16346731781959534
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "of the nuclear bomb"
+      ],
+      "u": 0.47788330912590027,
+      "margin": -0.043565571308135986,
+      "wrong_score": -0.231706440448761,
+      "right_score": -0.188140869140625
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent nuclear physicist",
+        "of the nuclear bomb"
+      ],
+      "u": 0.9993720054626465,
+      "margin": -0.5650542974472046,
+      "wrong_score": -0.6299805045127869,
+      "right_score": -0.06492622941732407
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "of the nuclear bomb"
+      ],
+      "u": 0.4399508237838745,
+      "margin": -0.005633071064949036,
+      "wrong_score": -0.2530883848667145,
+      "right_score": -0.24745531380176544
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent nuclear physicist",
+        "the University of Cambridge",
+        "of the nuclear bomb"
+      ],
+      "u": 0.799555778503418,
+      "margin": -0.3652380108833313,
+      "wrong_score": -0.45619043707847595,
+      "right_score": -0.09095241874456406
+    }
+  ],
+  "single_u": [
+    1.277878761291504,
+    -0.6173700094223022,
+    0.47788330912590027
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This prominent nuclear physicist",
+        "the University of Cambridge"
+      ],
+      "u_i": 1.277878761291504,
+      "u_j": -0.6173700094223022,
+      "local_fd": -0.04021972417831421,
+      "banzhaf": -0.10105173289775848,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This prominent nuclear physicist",
+        "of the nuclear bomb"
+      ],
+      "u_i": 1.277878761291504,
+      "u_j": 0.47788330912590027,
+      "local_fd": -0.7563900947570801,
+      "banzhaf": -0.8172221183776855,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the University of Cambridge",
+        "of the nuclear bomb"
+      ],
+      "u_i": -0.6173700094223022,
+      "u_j": 0.47788330912590027,
+      "local_fd": 0.5794374942779541,
+      "banzhaf": 0.5186054706573486,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent nuclear physicist",
+        "of the nuclear bomb"
+      ],
+      "order": 2,
+      "harsanyi": -0.7563900649547577
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "of the nuclear bomb"
+      ],
+      "order": 2,
+      "harsanyi": 0.5794375240802765
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This prominent nuclear physicist",
+        "the University of Cambridge",
+        "of the nuclear bomb"
+      ],
+      "order": 3,
+      "harsanyi": -0.12166401743888855
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This prominent nuclear physicist",
+        "the University of Cambridge"
+      ],
+      "order": 2,
+      "harsanyi": -0.04021972417831421
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This prominent nuclear physicist"
+      ]
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "of the nuclear bomb"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This prominent nuclear physicist",
+        "of the nuclear bomb"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.3652380108833313,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

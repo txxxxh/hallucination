@@ -1,0 +1,302 @@
+{
+  "key": "question_1689",
+  "group": "Q106949",
+  "generation_correct": true,
+  "right": "Saul Perlmutter",
+  "wrong": "Martin Ryle",
+  "base_margin_wrong_minus_right": -0.9262751340866089,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 229,
+      "char_end": 250,
+      "text": "career as a physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 81,
+      "token_end": 85
+    },
+    {
+      "char_start": 331,
+      "char_end": 360,
+      "text": "became a prominent researcher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "researcher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 96,
+      "token_end": 102
+    },
+    {
+      "char_start": 381,
+      "char_end": 404,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physics",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 104,
+      "token_end": 108
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9262751340866089,
+      "wrong_score": -0.9409240484237671,
+      "right_score": -0.014648916199803352
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "career as a physicist"
+      ],
+      "u": -0.3074083924293518,
+      "margin": -0.6188667416572571,
+      "wrong_score": -0.6781044006347656,
+      "right_score": -0.05923764780163765
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "became a prominent researcher"
+      ],
+      "u": -0.49548906087875366,
+      "margin": -0.4307860732078552,
+      "wrong_score": -0.6248655319213867,
+      "right_score": -0.1940794438123703
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "career as a physicist",
+        "became a prominent researcher"
+      ],
+      "u": -0.42738497257232666,
+      "margin": -0.4988901615142822,
+      "wrong_score": -0.5659481287002563,
+      "right_score": -0.06705795973539352
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": -1.1182770729064941,
+      "margin": 0.19200190901756287,
+      "wrong_score": -0.09657632559537888,
+      "right_score": -0.28857824206352234
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "career as a physicist",
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.8044754266738892,
+      "margin": -0.12179972231388092,
+      "wrong_score": -0.2738552689552307,
+      "right_score": -0.1520555466413498
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "became a prominent researcher",
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.7722373008728027,
+      "margin": -0.15403783321380615,
+      "wrong_score": -0.3260413706302643,
+      "right_score": -0.17200353741645813
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "career as a physicist",
+        "became a prominent researcher",
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.6825383901596069,
+      "margin": -0.24373677372932434,
+      "wrong_score": -0.33607861399650574,
+      "right_score": -0.0923418328166008
+    }
+  ],
+  "single_u": [
+    -0.3074083924293518,
+    -0.49548906087875366,
+    -1.1182770729064941
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "career as a physicist",
+        "became a prominent researcher"
+      ],
+      "u_i": -0.3074083924293518,
+      "u_j": -0.49548906087875366,
+      "local_fd": 0.3755124807357788,
+      "banzhaf": 0.07570487260818481,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "career as a physicist",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": -0.3074083924293518,
+      "u_j": -1.1182770729064941,
+      "local_fd": 0.6212100386619568,
+      "banzhaf": 0.3214024305343628,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "became a prominent researcher",
+        "awarded the Nobel Prize"
+      ],
+      "u_i": -0.49548906087875366,
+      "u_j": -1.1182770729064941,
+      "local_fd": 0.8415288329124451,
+      "banzhaf": 0.5417212247848511,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "became a prominent researcher",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.8415288329124451
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "career as a physicist",
+        "awarded the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.6212100386619568
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "career as a physicist",
+        "became a prominent researcher",
+        "awarded the Nobel Prize"
+      ],
+      "order": 3,
+      "harsanyi": -0.599615216255188
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "career as a physicist",
+        "became a prominent researcher"
+      ],
+      "order": 2,
+      "harsanyi": 0.3755124807357788
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "career as a physicist",
+        "became a prominent researcher"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.24373677372932434,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 6,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

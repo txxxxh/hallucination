@@ -1,0 +1,151 @@
+{
+  "key": "question_0773",
+  "group": "Q5327",
+  "generation_correct": true,
+  "right": "Adolf Butenandt",
+  "wrong": "Emmanuelle Charpentier",
+  "base_margin_wrong_minus_right": -0.18755292892456055,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 215,
+      "char_end": 235,
+      "text": "to the life sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Breakthrough Prize in Life Sciences",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 76,
+      "token_end": 82
+    },
+    {
+      "char_start": 494,
+      "char_end": 524,
+      "text": "awarded the Knight Commander's",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight Commander's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 129,
+      "token_end": 135
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.18755292892456055,
+      "wrong_score": -0.23679855465888977,
+      "right_score": -0.04924563318490982
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "to the life sciences"
+      ],
+      "u": -0.3958398401737213,
+      "margin": 0.20828691124916077,
+      "wrong_score": -0.05003460496664047,
+      "right_score": -0.25832152366638184
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "awarded the Knight Commander's"
+      ],
+      "u": -0.43743377923965454,
+      "margin": 0.249880850315094,
+      "wrong_score": -0.13073673844337463,
+      "right_score": -0.38061758875846863
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the life sciences",
+        "awarded the Knight Commander's"
+      ],
+      "u": -0.5208302736282349,
+      "margin": 0.33327731490135193,
+      "wrong_score": -0.044168971478939056,
+      "right_score": -0.3774462938308716
+    }
+  ],
+  "single_u": [
+    -0.3958398401737213,
+    -0.43743377923965454
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "to the life sciences",
+        "awarded the Knight Commander's"
+      ],
+      "u_i": -0.3958398401737213,
+      "u_j": -0.43743377923965454,
+      "local_fd": 0.312443345785141,
+      "banzhaf": 0.312443345785141,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the life sciences",
+        "awarded the Knight Commander's"
+      ],
+      "order": 2,
+      "harsanyi": 0.312443345785141
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.33327731490135193,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 18,
+    "n_excluded": 12,
+    "max_candidates": 6
+  }
+}

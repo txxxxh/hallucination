@@ -1,0 +1,145 @@
+{
+  "key": "question_1837",
+  "group": "Q2031915",
+  "generation_correct": true,
+  "right": "Mitropolskiy, Yurii Oleksiyovych",
+  "wrong": "Glushkov, Victor Mihailovich",
+  "base_margin_wrong_minus_right": -0.4328620433807373,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 438,
+      "char_end": 459,
+      "text": "as an Honoured worker",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honoured worker in science and technology of the Ukrainian SSR",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 134,
+      "token_end": 137
+    },
+    {
+      "char_start": 511,
+      "char_end": 535,
+      "text": "received the State Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "USSR State Prize",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 148,
+      "token_end": 155
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.4328620433807373,
+      "wrong_score": -0.45047369599342346,
+      "right_score": -0.01761164329946041
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as an Honoured worker"
+      ],
+      "u": -0.048176199197769165,
+      "margin": -0.38468584418296814,
+      "wrong_score": -0.40101611614227295,
+      "right_score": -0.016330260783433914
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "received the State Prize"
+      ],
+      "u": -0.20924386382102966,
+      "margin": -0.22361817955970764,
+      "wrong_score": -0.26427868008613586,
+      "right_score": -0.04066050052642822
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as an Honoured worker",
+        "received the State Prize"
+      ],
+      "u": -0.20846208930015564,
+      "margin": -0.22439995408058167,
+      "wrong_score": -0.28251755237579346,
+      "right_score": -0.05811760202050209
+    }
+  ],
+  "single_u": [
+    -0.048176199197769165,
+    -0.20924386382102966
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as an Honoured worker",
+        "received the State Prize"
+      ],
+      "u_i": -0.048176199197769165,
+      "u_j": -0.20924386382102966,
+      "local_fd": 0.04895797371864319,
+      "banzhaf": 0.04895797371864319,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as an Honoured worker",
+        "received the State Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.04895797371864319
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.22439995408058167,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

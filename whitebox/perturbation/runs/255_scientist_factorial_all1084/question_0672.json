@@ -1,0 +1,288 @@
+{
+  "key": "question_0672",
+  "group": "Q65350",
+  "generation_correct": true,
+  "right": "Carl Friedrich von Weizsäcker",
+  "wrong": "Anton Zeilinger",
+  "base_margin_wrong_minus_right": -0.7022754549980164,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 180,
+      "char_end": 203,
+      "text": "teacher, and writer has",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "writer",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 70,
+      "token_end": 74
+    },
+    {
+      "char_start": 361,
+      "char_end": 377,
+      "text": "with the Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 105,
+      "token_end": 107
+    },
+    {
+      "char_start": 385,
+      "char_end": 406,
+      "text": "for Sciences and Arts",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite for Sciences and Arts order",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 108,
+      "token_end": 114
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7022754549980164,
+      "wrong_score": -0.7074151635169983,
+      "right_score": -0.00513968663290143
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "teacher, and writer has"
+      ],
+      "u": -0.21639379858970642,
+      "margin": -0.48588165640830994,
+      "wrong_score": -0.5051363706588745,
+      "right_score": -0.019254708662629128
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Pour le"
+      ],
+      "u": 0.20148098468780518,
+      "margin": -0.9037564396858215,
+      "wrong_score": -0.90804523229599,
+      "right_score": -0.004288780502974987
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "teacher, and writer has",
+        "with the Pour le"
+      ],
+      "u": -0.21375572681427002,
+      "margin": -0.48851972818374634,
+      "wrong_score": -0.50370192527771,
+      "right_score": -0.015182201750576496
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "for Sciences and Arts"
+      ],
+      "u": -0.2927148938179016,
+      "margin": -0.40956056118011475,
+      "wrong_score": -0.4304909408092499,
+      "right_score": -0.02093038335442543
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "teacher, and writer has",
+        "for Sciences and Arts"
+      ],
+      "u": -0.4678572714328766,
+      "margin": -0.23441818356513977,
+      "wrong_score": -0.29038894176483154,
+      "right_score": -0.055970750749111176
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Pour le",
+        "for Sciences and Arts"
+      ],
+      "u": -0.34010931849479675,
+      "margin": -0.3621661365032196,
+      "wrong_score": -0.3876066505908966,
+      "right_score": -0.02544051967561245
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "teacher, and writer has",
+        "with the Pour le",
+        "for Sciences and Arts"
+      ],
+      "u": -0.5630049705505371,
+      "margin": -0.13927051424980164,
+      "wrong_score": -0.2087736874818802,
+      "right_score": -0.06950316578149796
+    }
+  ],
+  "single_u": [
+    -0.21639379858970642,
+    0.20148098468780518,
+    -0.2927148938179016
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "teacher, and writer has",
+        "with the Pour le"
+      ],
+      "u_i": -0.21639379858970642,
+      "u_j": 0.20148098468780518,
+      "local_fd": -0.19884291291236877,
+      "banzhaf": -0.12329809367656708,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "teacher, and writer has",
+        "for Sciences and Arts"
+      ],
+      "u_i": -0.21639379858970642,
+      "u_j": -0.2927148938179016,
+      "local_fd": 0.041251420974731445,
+      "banzhaf": 0.11679624021053314,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "with the Pour le",
+        "for Sciences and Arts"
+      ],
+      "u_i": 0.20148098468780518,
+      "u_j": -0.2927148938179016,
+      "local_fd": -0.2488754391670227,
+      "banzhaf": -0.17333060503005981,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Pour le",
+        "for Sciences and Arts"
+      ],
+      "order": 2,
+      "harsanyi": -0.24887540936470032
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "teacher, and writer has",
+        "with the Pour le"
+      ],
+      "order": 2,
+      "harsanyi": -0.19884291291236877
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "teacher, and writer has",
+        "with the Pour le",
+        "for Sciences and Arts"
+      ],
+      "order": 3,
+      "harsanyi": 0.1510896384716034
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "teacher, and writer has",
+        "for Sciences and Arts"
+      ],
+      "order": 2,
+      "harsanyi": 0.041251420974731445
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.13927051424980164,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

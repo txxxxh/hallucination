@@ -1,0 +1,145 @@
+{
+  "key": "question_2492",
+  "group": "Q57065",
+  "generation_correct": true,
+  "right": "Otto Hahn",
+  "wrong": "Robert Huber",
+  "base_margin_wrong_minus_right": 0.3576321601867676,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 337,
+      "char_end": 353,
+      "text": "with the Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 99
+    },
+    {
+      "char_start": 397,
+      "char_end": 418,
+      "text": "Great Cross with Star",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Great Cross with Star and Sash of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 107,
+      "token_end": 112
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.3576321601867676,
+      "wrong_score": -0.06961461901664734,
+      "right_score": -0.4272467792034149
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "with the Pour le"
+      ],
+      "u": -0.2905353307723999,
+      "margin": 0.6481674909591675,
+      "wrong_score": -0.03032824769616127,
+      "right_score": -0.6784957647323608
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Great Cross with Star"
+      ],
+      "u": -0.890622615814209,
+      "margin": 1.2482547760009766,
+      "wrong_score": -0.009539258666336536,
+      "right_score": -1.2577940225601196
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Pour le",
+        "Great Cross with Star"
+      ],
+      "u": -0.541584849357605,
+      "margin": 0.8992170095443726,
+      "wrong_score": -0.02328002266585827,
+      "right_score": -0.922497034072876
+    }
+  ],
+  "single_u": [
+    -0.2905353307723999,
+    -0.890622615814209
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "with the Pour le",
+        "Great Cross with Star"
+      ],
+      "u_i": -0.2905353307723999,
+      "u_j": -0.890622615814209,
+      "local_fd": 0.6395730972290039,
+      "banzhaf": 0.6395730972290039,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Pour le",
+        "Great Cross with Star"
+      ],
+      "order": 2,
+      "harsanyi": 0.6395730972290039
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.8992170095443726,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 17,
+    "n_excluded": 11,
+    "max_candidates": 6
+  }
+}

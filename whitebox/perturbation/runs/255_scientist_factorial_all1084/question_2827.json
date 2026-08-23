@@ -1,0 +1,146 @@
+{
+  "key": "question_2827",
+  "group": "Q219716",
+  "generation_correct": true,
+  "right": "Paul Nurse",
+  "wrong": "Frances Arnold",
+  "base_margin_wrong_minus_right": 0.11639967560768127,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 119,
+      "char_end": 152,
+      "text": "This distinguished biochemist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biochemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 54,
+      "token_end": 60
+    },
+    {
+      "char_start": 153,
+      "char_end": 175,
+      "text": "Fellow of the American",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the American Association for the Advancement of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 59,
+      "token_end": 64
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.11639967560768127,
+      "wrong_score": -0.23317626118659973,
+      "right_score": -0.349575936794281
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished biochemist and"
+      ],
+      "u": -0.404386430978775,
+      "margin": 0.5207861065864563,
+      "wrong_score": -0.0979514941573143,
+      "right_score": -0.6187375783920288
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the American"
+      ],
+      "u": -1.5785409212112427,
+      "margin": 1.6949405670166016,
+      "wrong_score": -0.02125117927789688,
+      "right_score": -1.7161917686462402
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished biochemist and",
+        "Fellow of the American"
+      ],
+      "u": -1.4599814414978027,
+      "margin": 1.5763810873031616,
+      "wrong_score": -0.026439201086759567,
+      "right_score": -1.6028202772140503
+    }
+  ],
+  "single_u": [
+    -0.404386430978775,
+    -1.5785409212112427
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished biochemist and",
+        "Fellow of the American"
+      ],
+      "u_i": -0.404386430978775,
+      "u_j": -1.5785409212112427,
+      "local_fd": 0.5229458808898926,
+      "banzhaf": 0.5229458808898926,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished biochemist and",
+        "Fellow of the American"
+      ],
+      "order": 2,
+      "harsanyi": 0.522945910692215
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.5763810873031616,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "key": "question_1621",
+  "group": "Q8772",
+  "generation_correct": true,
+  "right": "Joseph Fourier",
+  "wrong": "François Arago",
+  "base_margin_wrong_minus_right": 3.00349497795105,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 288,
+      "char_end": 307,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 85,
+      "token_end": 92
+    },
+    {
+      "char_start": 352,
+      "char_end": 373,
+      "text": "Officer of the Legion",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Officer of the Legion of Honour",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 103,
+      "token_end": 107
+    },
+    {
+      "char_start": 419,
+      "char_end": 434,
+      "text": "of the 72 names",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "72 names on the Eiffel Tower",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 115,
+      "token_end": 120
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 3.00349497795105,
+      "wrong_score": -0.0033811600878834724,
+      "right_score": -3.006876230239868
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 1.0489360094070435,
+      "margin": 1.9545589685440063,
+      "wrong_score": -0.010851955972611904,
+      "right_score": -1.9654109477996826
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Officer of the Legion"
+      ],
+      "u": 0.06159019470214844,
+      "margin": 2.9419047832489014,
+      "wrong_score": -0.005037414375692606,
+      "right_score": -2.946942090988159
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "Officer of the Legion"
+      ],
+      "u": 1.4213858842849731,
+      "margin": 1.5821090936660767,
+      "wrong_score": -0.01722467876970768,
+      "right_score": -1.5993337631225586
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "of the 72 names"
+      ],
+      "u": 1.6659032106399536,
+      "margin": 1.3375917673110962,
+      "wrong_score": -0.03260383754968643,
+      "right_score": -1.3701956272125244
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "of the 72 names"
+      ],
+      "u": 2.084010124206543,
+      "margin": 0.9194849729537964,
+      "wrong_score": -0.05488621070981026,
+      "right_score": -0.9743711948394775
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Officer of the Legion",
+        "of the 72 names"
+      ],
+      "u": 1.4254800081253052,
+      "margin": 1.5780149698257446,
+      "wrong_score": -0.020181387662887573,
+      "right_score": -1.5981963872909546
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "Officer of the Legion",
+        "of the 72 names"
+      ],
+      "u": 2.9329378604888916,
+      "margin": 0.07055701315402985,
+      "wrong_score": -0.2483793944120407,
+      "right_score": -0.31893640756607056
+    }
+  ],
+  "single_u": [
+    1.0489360094070435,
+    0.06159019470214844,
+    1.6659032106399536
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as a Foreign Member",
+        "Officer of the Legion"
+      ],
+      "u_i": 1.0489360094070435,
+      "u_j": 0.06159019470214844,
+      "local_fd": 0.31085968017578125,
+      "banzhaf": 0.7001053094863892,
+      "relation_raw": "synergy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "as a Foreign Member",
+        "of the 72 names"
+      ],
+      "u_i": 1.0489360094070435,
+      "u_j": 1.6659032106399536,
+      "local_fd": -0.6308290958404541,
+      "banzhaf": -0.2415834665298462,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Officer of the Legion",
+        "of the 72 names"
+      ],
+      "u_i": 0.06159019470214844,
+      "u_j": 1.6659032106399536,
+      "local_fd": -0.3020133972167969,
+      "banzhaf": 0.08723223209381104,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "Officer of the Legion",
+        "of the 72 names"
+      ],
+      "order": 3,
+      "harsanyi": 0.7784912586212158
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "of the 72 names"
+      ],
+      "order": 2,
+      "harsanyi": -0.6308290958404541
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "Officer of the Legion"
+      ],
+      "order": 2,
+      "harsanyi": 0.31085968017578125
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Officer of the Legion",
+        "of the 72 names"
+      ],
+      "order": 2,
+      "harsanyi": -0.3020133972167969
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.07055701315402985,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "n": 2894,
+  "split": "discovery=1000 / confirmation=1894",
+  "embedding_dimensions_available": 47,
+  "protocol": "feature count/indices/lambda discovery-only; all PCA/scaler/LR fold-local",
+  "question": "8 independent layer probes, PCA128 each, mean probabilities",
+  "discovery_candidates": [
+    {
+      "k": 1,
+      "lambda": 0.6500000000000001,
+      "fused_auroc": 0.6980386617354974,
+      "scalar_auroc": 0.5780554414081227
+    },
+    {
+      "k": 2,
+      "lambda": 0.8500000000000001,
+      "fused_auroc": 0.6984624340798575,
+      "scalar_auroc": 0.593392575850969
+    },
+    {
+      "k": 4,
+      "lambda": 0.6500000000000001,
+      "fused_auroc": 0.6980086980343811,
+      "scalar_auroc": 0.5983622697075542
+    },
+    {
+      "k": 8,
+      "lambda": 0.7000000000000002,
+      "fused_auroc": 0.7016471474556537,
+      "scalar_auroc": 0.6121156085199644
+    }
+  ],
+  "selected": {
+    "k": 8,
+    "indices": [
+      29,
+      42,
+      28,
+      30,
+      14,
+      41,
+      8,
+      11
+    ],
+    "lambda": 0.7000000000000002
+  },
+  "confirmation": {
+    "question_auroc": 0.74649064171123,
+    "embedding_scalar_auroc": 0.619111678762414,
+    "fused_auroc": 0.7509716386554622,
+    "delta_auroc": 0.004480996944232207
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "key": "question_1959",
+  "group": "Q58328",
+  "generation_correct": true,
+  "right": "Jean-Baptiste Biot",
+  "wrong": "François Arago",
+  "base_margin_wrong_minus_right": 0.7271737456321716,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 136,
+      "char_end": 162,
+      "text": "at the École polytechnique",
+      "kind": "attribute",
+      "field": "education",
+      "value": "École polytechnique",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 64,
+      "token_end": 70
+    },
+    {
+      "char_start": 434,
+      "char_end": 449,
+      "text": "and the Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite for Sciences and Arts order",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 122,
+      "token_end": 126
+    },
+    {
+      "char_start": 621,
+      "char_end": 626,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 158,
+      "token_end": 160
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.7271737456321716,
+      "wrong_score": -0.00609167292714119,
+      "right_score": -0.7332653999328613
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "at the École polytechnique"
+      ],
+      "u": 0.08395355939865112,
+      "margin": 0.6432201862335205,
+      "wrong_score": -0.008221869356930256,
+      "right_score": -0.6514420509338379
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Pour le"
+      ],
+      "u": -0.10409873723983765,
+      "margin": 0.8312724828720093,
+      "wrong_score": -0.005488134920597076,
+      "right_score": -0.8367606401443481
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "and the Pour le"
+      ],
+      "u": 0.08500063419342041,
+      "margin": 0.6421731114387512,
+      "wrong_score": -0.009265313856303692,
+      "right_score": -0.6514384150505066
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.3399752080440521,
+      "margin": 0.3871985375881195,
+      "wrong_score": -0.026000382378697395,
+      "right_score": -0.41319891810417175
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "never"
+      ],
+      "u": 0.3020922541618347,
+      "margin": 0.4250814914703369,
+      "wrong_score": -0.02700943313539028,
+      "right_score": -0.45209091901779175
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Pour le",
+        "never"
+      ],
+      "u": 0.29926028847694397,
+      "margin": 0.42791345715522766,
+      "wrong_score": -0.02466231770813465,
+      "right_score": -0.45257577300071716
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "and the Pour le",
+        "never"
+      ],
+      "u": 0.2777966856956482,
+      "margin": 0.44937705993652344,
+      "wrong_score": -0.022162294015288353,
+      "right_score": -0.47153934836387634
+    }
+  ],
+  "single_u": [
+    0.08395355939865112,
+    -0.10409873723983765,
+    0.3399752080440521
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "at the École polytechnique",
+        "and the Pour le"
+      ],
+      "u_i": 0.08395355939865112,
+      "u_j": -0.10409873723983765,
+      "local_fd": 0.10514581203460693,
+      "banzhaf": 0.06078258156776428,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "at the École polytechnique",
+        "never"
+      ],
+      "u_i": 0.08395355939865112,
+      "u_j": 0.3399752080440521,
+      "local_fd": -0.12183651328086853,
+      "banzhaf": -0.16619974374771118,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and the Pour le",
+        "never"
+      ],
+      "u_i": -0.10409873723983765,
+      "u_j": 0.3399752080440521,
+      "local_fd": 0.06338381767272949,
+      "banzhaf": 0.01902058720588684,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.12183651328086853
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "and the Pour le"
+      ],
+      "order": 2,
+      "harsanyi": 0.10514581203460693
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "at the École polytechnique",
+        "and the Pour le",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.0887264609336853
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and the Pour le",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.06338381767272949
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.44937705993652344,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

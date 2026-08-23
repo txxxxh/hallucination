@@ -1,0 +1,146 @@
+{
+  "key": "question_1299",
+  "group": "Q233976",
+  "generation_correct": true,
+  "right": "Frederick Gowland Hopkins",
+  "wrong": "Alexander R. Todd, Baron Todd",
+  "base_margin_wrong_minus_right": 0.22484014928340912,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 284,
+      "char_end": 306,
+      "text": "President of the Royal",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "President of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 94,
+      "token_end": 101
+    },
+    {
+      "char_start": 490,
+      "char_end": 514,
+      "text": "granted a doctor honoris",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "doctor honoris causa from the University of Paris",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 135,
+      "token_end": 141
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.22484014928340912,
+      "wrong_score": -0.04570429399609566,
+      "right_score": -0.2705444395542145
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "President of the Royal"
+      ],
+      "u": -0.2727964520454407,
+      "margin": 0.4976365864276886,
+      "wrong_score": -0.017961900681257248,
+      "right_score": -0.515598475933075
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "granted a doctor honoris"
+      ],
+      "u": -0.47910743951797485,
+      "margin": 0.7039476037025452,
+      "wrong_score": -0.01340668834745884,
+      "right_score": -0.7173542976379395
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "President of the Royal",
+        "granted a doctor honoris"
+      ],
+      "u": -0.44868648052215576,
+      "margin": 0.6735266447067261,
+      "wrong_score": -0.02213730663061142,
+      "right_score": -0.6956639289855957
+    }
+  ],
+  "single_u": [
+    -0.2727964520454407,
+    -0.47910743951797485
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "President of the Royal",
+        "granted a doctor honoris"
+      ],
+      "u_i": -0.2727964520454407,
+      "u_j": -0.47910743951797485,
+      "local_fd": 0.30321741104125977,
+      "banzhaf": 0.30321741104125977,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "President of the Royal",
+        "granted a doctor honoris"
+      ],
+      "order": 2,
+      "harsanyi": 0.30321741104125977
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.6735266447067261,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

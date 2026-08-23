@@ -1,0 +1,592 @@
+{
+  "protocol": "fixed current127 scalar47 + four hidden PCA8 + layer14 PCA48; LR C=.03; no hyperparameter tuning on this matrix",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "models": {
+    "falcon3": {
+      "exact": {
+        "in_domain": {
+          "scientist": {
+            "n": 1099,
+            "groups": 372,
+            "positive": 568,
+            "protocol": "3 seeds x 5-fold OOF; grouped except TriviaQA unique-key stratified",
+            "mean": {
+              "auroc": 0.6447552231152135,
+              "auprc": 0.6515289988642485,
+              "accuracy": 0.6069153776160147,
+              "balanced_accuracy": 0.6088001644518714,
+              "macro_f1": 0.6064127329249703
+            },
+            "per_seed": [
+              {
+                "n": 1099,
+                "positive": 568,
+                "auroc": 0.6229642449802393,
+                "auprc": 0.6244727778949216,
+                "accuracy": 0.5777979981801638,
+                "balanced_accuracy": 0.5797110819341662,
+                "macro_f1": 0.5772095645541073,
+                "confusion_tn_fp_fn_tp": [
+                  338,
+                  193,
+                  271,
+                  297
+                ]
+              },
+              {
+                "n": 1099,
+                "positive": 568,
+                "auroc": 0.6647038540091775,
+                "auprc": 0.6675745961457615,
+                "accuracy": 0.6278434940855323,
+                "balanced_accuracy": 0.6295986843850296,
+                "macro_f1": 0.6274869576387421,
+                "confusion_tn_fp_fn_tp": [
+                  362,
+                  169,
+                  240,
+                  328
+                ]
+              },
+              {
+                "n": 1099,
+                "positive": 568,
+                "auroc": 0.6465975703562239,
+                "auprc": 0.6625396225520626,
+                "accuracy": 0.6151046405823476,
+                "balanced_accuracy": 0.6170907270364181,
+                "macro_f1": 0.6145416765820617,
+                "confusion_tn_fp_fn_tp": [
+                  359,
+                  172,
+                  251,
+                  317
+                ]
+              }
+            ],
+            "queries": {
+              "selected_span_queries_mean": 74.53230209281165,
+              "full_enumeration_span_queries_mean": 74.53230209281165,
+              "charged_queries_mean": 74.53230209281165,
+              "reduction_vs_full": 0.0
+            }
+          },
+          "trivia": {
+            "n": 1000,
+            "groups": 1000,
+            "positive": 540,
+            "protocol": "3 seeds x 5-fold OOF; grouped except TriviaQA unique-key stratified",
+            "mean": {
+              "auroc": 0.8967592592592591,
+              "auprc": 0.914683436809427,
+              "accuracy": 0.809,
+              "balanced_accuracy": 0.8103730542136338,
+              "macro_f1": 0.808562787777317
+            },
+            "per_seed": [
+              {
+                "n": 1000,
+                "positive": 540,
+                "auroc": 0.8968035426731078,
+                "auprc": 0.9149668998446886,
+                "accuracy": 0.807,
+                "balanced_accuracy": 0.8082528180354267,
+                "macro_f1": 0.8065354917156091,
+                "confusion_tn_fp_fn_tp": [
+                  379,
+                  81,
+                  112,
+                  428
+                ]
+              },
+              {
+                "n": 1000,
+                "positive": 540,
+                "auroc": 0.8935909822866344,
+                "auprc": 0.909963506941952,
+                "accuracy": 0.806,
+                "balanced_accuracy": 0.8078099838969404,
+                "macro_f1": 0.8056571792642221,
+                "confusion_tn_fp_fn_tp": [
+                  382,
+                  78,
+                  116,
+                  424
+                ]
+              },
+              {
+                "n": 1000,
+                "positive": 540,
+                "auroc": 0.8998832528180354,
+                "auprc": 0.9191199036416403,
+                "accuracy": 0.814,
+                "balanced_accuracy": 0.8150563607085346,
+                "macro_f1": 0.8134956923521202,
+                "confusion_tn_fp_fn_tp": [
+                  381,
+                  79,
+                  107,
+                  433
+                ]
+              }
+            ],
+            "queries": {
+              "selected_span_queries_mean": 67.06,
+              "full_enumeration_span_queries_mean": 67.06,
+              "charged_queries_mean": 67.06,
+              "reduction_vs_full": 0.0
+            }
+          },
+          "gsm8k": {
+            "n": 942,
+            "groups": 942,
+            "positive": 664,
+            "protocol": "3 seeds x 5-fold OOF; grouped except TriviaQA unique-key stratified",
+            "mean": {
+              "auroc": 0.8718362659270174,
+              "auprc": 0.9250169239976905,
+              "accuracy": 0.821656050955414,
+              "balanced_accuracy": 0.7874104330993036,
+              "macro_f1": 0.7863758311550196
+            },
+            "per_seed": [
+              {
+                "n": 942,
+                "positive": 664,
+                "auroc": 0.8729143191470919,
+                "auprc": 0.926301523439885,
+                "accuracy": 0.8184713375796179,
+                "balanced_accuracy": 0.779226618705036,
+                "macro_f1": 0.7806865509480818,
+                "confusion_tn_fp_fn_tp": [
+                  190,
+                  88,
+                  83,
+                  581
+                ]
+              },
+              {
+                "n": 942,
+                "positive": 664,
+                "auroc": 0.8732014388489209,
+                "auprc": 0.925815318846356,
+                "accuracy": 0.826963906581741,
+                "balanced_accuracy": 0.7957062061194418,
+                "macro_f1": 0.7935441017690726,
+                "confusion_tn_fp_fn_tp": [
+                  200,
+                  78,
+                  85,
+                  579
+                ]
+              },
+              {
+                "n": 942,
+                "positive": 664,
+                "auroc": 0.8693930397850395,
+                "auprc": 0.9229339297068306,
+                "accuracy": 0.8195329087048833,
+                "balanced_accuracy": 0.7872984744734333,
+                "macro_f1": 0.7848968407479046,
+                "confusion_tn_fp_fn_tp": [
+                  197,
+                  81,
+                  89,
+                  575
+                ]
+              }
+            ],
+            "queries": {
+              "selected_span_queries_mean": 47.34182590233546,
+              "full_enumeration_span_queries_mean": 47.34182590233546,
+              "charged_queries_mean": 47.34182590233546,
+              "reduction_vs_full": 0.0
+            }
+          }
+        },
+        "scientist_to_multidomain": {
+          "protocol": "frozen transfer: scaler/PCA/LR fit only on Scientist 1084; no target fitting",
+          "source_n": 1099,
+          "target_n": 297,
+          "subsets": {
+            "all": {
+              "n": 297,
+              "positive": 204,
+              "auroc": 0.6262386675100148,
+              "auprc": 0.7841779718758042,
+              "accuracy": 0.4208754208754209,
+              "balanced_accuracy": 0.5521030993042378,
+              "macro_f1": 0.40847614636405744,
+              "confusion_tn_fp_fn_tp": [
+                84,
+                9,
+                163,
+                41
+              ]
+            },
+            "athlete": {
+              "n": 92,
+              "positive": 63,
+              "auroc": 0.7285166940339355,
+              "auprc": 0.8387038902632802,
+              "accuracy": 0.41304347826086957,
+              "balanced_accuracy": 0.5435139573070608,
+              "macro_f1": 0.3991291727140784,
+              "confusion_tn_fp_fn_tp": [
+                26,
+                3,
+                51,
+                12
+              ],
+              "per_seed_auroc": [
+                0.7208538587848933,
+                0.7301587301587301,
+                0.7279693486590039
+              ]
+            },
+            "building": {
+              "n": 115,
+              "positive": 79,
+              "auroc": 0.6146272855133615,
+              "auprc": 0.8123573746355799,
+              "accuracy": 0.4434782608695652,
+              "balanced_accuracy": 0.5873769338959213,
+              "macro_f1": 0.4278606965174129,
+              "confusion_tn_fp_fn_tp": [
+                35,
+                1,
+                63,
+                16
+              ],
+              "per_seed_auroc": [
+                0.6156821378340366,
+                0.611111111111111,
+                0.6156821378340365
+              ]
+            },
+            "musician": {
+              "n": 90,
+              "positive": 62,
+              "auroc": 0.5524193548387096,
+              "auprc": 0.7357763978686691,
+              "accuracy": 0.4,
+              "balanced_accuracy": 0.5155529953917051,
+              "macro_f1": 0.3925,
+              "confusion_tn_fp_fn_tp": [
+                23,
+                5,
+                49,
+                13
+              ],
+              "per_seed_auroc": [
+                0.5495391705069125,
+                0.554147465437788,
+                0.5529953917050692
+              ]
+            }
+          },
+          "queries": {
+            "selected_span_queries_mean": 35.27609427609428,
+            "full_enumeration_span_queries_mean": 35.27609427609428,
+            "charged_queries_mean": 35.27609427609428,
+            "reduction_vs_full": 0.0
+          }
+        }
+      },
+      "attention": {
+        "in_domain": {
+          "scientist": {
+            "n": 1099,
+            "groups": 372,
+            "positive": 568,
+            "protocol": "3 seeds x 5-fold OOF; grouped except TriviaQA unique-key stratified",
+            "mean": {
+              "auroc": 0.6499871798272371,
+              "auprc": 0.6548763960692615,
+              "accuracy": 0.6105550500454959,
+              "balanced_accuracy": 0.6119737098043376,
+              "macro_f1": 0.6103467834382569
+            },
+            "per_seed": [
+              {
+                "n": 1099,
+                "positive": 568,
+                "auroc": 0.6314686613087186,
+                "auprc": 0.6318523732344934,
+                "accuracy": 0.5896269335759782,
+                "balanced_accuracy": 0.5906027028460783,
+                "macro_f1": 0.589592953885109,
+                "confusion_tn_fp_fn_tp": [
+                  329,
+                  202,
+                  249,
+                  319
+                ]
+              },
+              {
+                "n": 1099,
+                "positive": 568,
+                "auroc": 0.6700883265695871,
+                "auprc": 0.6714844796970921,
+                "accuracy": 0.6314831665150137,
+                "balanced_accuracy": 0.6330584732500464,
+                "macro_f1": 0.6312438018685735,
+                "confusion_tn_fp_fn_tp": [
+                  361,
+                  170,
+                  235,
+                  333
+                ]
+              },
+              {
+                "n": 1099,
+                "positive": 568,
+                "auroc": 0.6484045516034057,
+                "auprc": 0.6612923352761988,
+                "accuracy": 0.6105550500454959,
+                "balanced_accuracy": 0.6122599533168882,
+                "macro_f1": 0.6102035945610883,
+                "confusion_tn_fp_fn_tp": [
+                  352,
+                  179,
+                  249,
+                  319
+                ]
+              }
+            ],
+            "queries": {
+              "selected_span_queries_mean": 39.60054595086442,
+              "full_enumeration_span_queries_mean": 74.53230209281165,
+              "charged_queries_mean": 43.60054595086442,
+              "reduction_vs_full": 0.4150114148282893
+            }
+          },
+          "trivia": {
+            "n": 1000,
+            "groups": 1000,
+            "positive": 540,
+            "protocol": "3 seeds x 5-fold OOF; grouped except TriviaQA unique-key stratified",
+            "mean": {
+              "auroc": 0.8982890499194847,
+              "auprc": 0.9155648221387475,
+              "accuracy": 0.8116666666666666,
+              "balanced_accuracy": 0.8130032206119163,
+              "macro_f1": 0.8112258504316494
+            },
+            "per_seed": [
+              {
+                "n": 1000,
+                "positive": 540,
+                "auroc": 0.8980354267310788,
+                "auprc": 0.9151919271659631,
+                "accuracy": 0.817,
+                "balanced_accuracy": 0.8181561996779387,
+                "macro_f1": 0.8165227757396989,
+                "confusion_tn_fp_fn_tp": [
+                  383,
+                  77,
+                  106,
+                  434
+                ]
+              },
+              {
+                "n": 1000,
+                "positive": 540,
+                "auroc": 0.8956521739130434,
+                "auprc": 0.911629761309239,
+                "accuracy": 0.802,
+                "balanced_accuracy": 0.8036231884057972,
+                "macro_f1": 0.8016159284374549,
+                "confusion_tn_fp_fn_tp": [
+                  379,
+                  81,
+                  117,
+                  423
+                ]
+              },
+              {
+                "n": 1000,
+                "positive": 540,
+                "auroc": 0.9011795491143316,
+                "auprc": 0.91987277794104,
+                "accuracy": 0.816,
+                "balanced_accuracy": 0.8172302737520128,
+                "macro_f1": 0.8155388471177945,
+                "confusion_tn_fp_fn_tp": [
+                  383,
+                  77,
+                  107,
+                  433
+                ]
+              }
+            ],
+            "queries": {
+              "selected_span_queries_mean": 35.428,
+              "full_enumeration_span_queries_mean": 67.06,
+              "charged_queries_mean": 39.428,
+              "reduction_vs_full": 0.4120489114226066
+            }
+          },
+          "gsm8k": {
+            "n": 942,
+            "groups": 942,
+            "positive": 664,
+            "protocol": "3 seeds x 5-fold OOF; grouped except TriviaQA unique-key stratified",
+            "mean": {
+              "auroc": 0.8724881540550692,
+              "auprc": 0.9250778358552502,
+              "accuracy": 0.8234253361641897,
+              "balanced_accuracy": 0.7904080350177689,
+              "macro_f1": 0.78888385572987
+            },
+            "per_seed": [
+              {
+                "n": 942,
+                "positive": 664,
+                "auroc": 0.8758721938112161,
+                "auprc": 0.9273520430335485,
+                "accuracy": 0.8248407643312102,
+                "balanced_accuracy": 0.7952457311259427,
+                "macro_f1": 0.7918549854768533,
+                "confusion_tn_fp_fn_tp": [
+                  201,
+                  77,
+                  88,
+                  576
+                ]
+              },
+              {
+                "n": 942,
+                "positive": 664,
+                "auroc": 0.8758830285169455,
+                "auprc": 0.926832773826481,
+                "accuracy": 0.826963906581741,
+                "balanced_accuracy": 0.7915240097078964,
+                "macro_f1": 0.7918288491651924,
+                "confusion_tn_fp_fn_tp": [
+                  196,
+                  82,
+                  81,
+                  583
+                ]
+              },
+              {
+                "n": 942,
+                "positive": 664,
+                "auroc": 0.8657092398370461,
+                "auprc": 0.9210486907057207,
+                "accuracy": 0.8184713375796179,
+                "balanced_accuracy": 0.7844543642194678,
+                "macro_f1": 0.7829677325475645,
+                "confusion_tn_fp_fn_tp": [
+                  195,
+                  83,
+                  88,
+                  576
+                ]
+              }
+            ],
+            "queries": {
+              "selected_span_queries_mean": 26.515923566878982,
+              "full_enumeration_span_queries_mean": 47.34182590233546,
+              "charged_queries_mean": 30.515923566878982,
+              "reduction_vs_full": 0.35541304152838815
+            }
+          }
+        },
+        "scientist_to_multidomain": {
+          "protocol": "frozen transfer: scaler/PCA/LR fit only on Scientist 1084; no target fitting",
+          "source_n": 1099,
+          "target_n": 297,
+          "subsets": {
+            "all": {
+              "n": 297,
+              "positive": 204,
+              "auroc": 0.6056293485135991,
+              "auprc": 0.7669178887191137,
+              "accuracy": 0.4377104377104377,
+              "balanced_accuracy": 0.5585072738772928,
+              "macro_f1": 0.4302436446762317,
+              "confusion_tn_fp_fn_tp": [
+                82,
+                11,
+                156,
+                48
+              ]
+            },
+            "athlete": {
+              "n": 92,
+              "positive": 63,
+              "auroc": 0.6436781609195402,
+              "auprc": 0.7952118212281711,
+              "accuracy": 0.4673913043478261,
+              "balanced_accuracy": 0.5925013683634373,
+              "macro_f1": 0.45966678652762794,
+              "confusion_tn_fp_fn_tp": [
+                27,
+                2,
+                47,
+                16
+              ],
+              "per_seed_auroc": [
+                0.6403940886699508,
+                0.6442255062944718,
+                0.6431308155446086
+              ]
+            },
+            "building": {
+              "n": 115,
+              "positive": 79,
+              "auroc": 0.6262306610407877,
+              "auprc": 0.7863703951203497,
+              "accuracy": 0.4434782608695652,
+              "balanced_accuracy": 0.5722573839662447,
+              "macro_f1": 0.4338461538461538,
+              "confusion_tn_fp_fn_tp": [
+                33,
+                3,
+                61,
+                18
+              ],
+              "per_seed_auroc": [
+                0.6322081575246132,
+                0.620604781997187,
+                0.6209563994374121
+              ]
+            },
+            "musician": {
+              "n": 90,
+              "positive": 62,
+              "auroc": 0.5391705069124424,
+              "auprc": 0.7345323378550561,
+              "accuracy": 0.4,
+              "balanced_accuracy": 0.5057603686635944,
+              "macro_f1": 0.39522150323544053,
+              "confusion_tn_fp_fn_tp": [
+                22,
+                6,
+                48,
+                14
+              ],
+              "per_seed_auroc": [
+                0.5443548387096774,
+                0.5426267281105991,
+                0.5351382488479263
+              ]
+            }
+          },
+          "queries": {
+            "selected_span_queries_mean": 20.5016835016835,
+            "full_enumeration_span_queries_mean": 35.27609427609428,
+            "charged_queries_mean": 24.5016835016835,
+            "reduction_vs_full": 0.30543094397251125
+          }
+        }
+      }
+    }
+  }
+}

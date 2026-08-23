@@ -1,0 +1,149 @@
+{
+  "key": "question_0989",
+  "group": "Q6694",
+  "generation_correct": false,
+  "right": "Alexander von Humboldt",
+  "wrong": "Martin Rees, Baron Rees of Ludlow",
+  "base_margin_wrong_minus_right": -0.6877201795578003,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 248,
+      "char_end": 272,
+      "text": "awarded the Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 86,
+      "token_end": 91
+    },
+    {
+      "char_start": 339,
+      "char_end": 344,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 104,
+      "token_end": 107
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.6877201795578003,
+      "wrong_score": -0.6930801868438721,
+      "right_score": -0.005360011011362076
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Copley Medal"
+      ],
+      "u": -0.7880420088768005,
+      "margin": 0.10032183676958084,
+      "wrong_score": -0.09999207407236099,
+      "right_score": -0.20031391084194183
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -1.020506501197815,
+      "margin": 0.33278635144233704,
+      "wrong_score": -0.05612078309059143,
+      "right_score": -0.38890713453292847
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Copley Medal",
+        "never"
+      ],
+      "u": -1.0803253650665283,
+      "margin": 0.3926052153110504,
+      "wrong_score": -0.03364415094256401,
+      "right_score": -0.42624935507774353
+    }
+  ],
+  "single_u": [
+    -0.7880420088768005,
+    -1.020506501197815
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Copley Medal",
+        "never"
+      ],
+      "u_i": -0.7880420088768005,
+      "u_j": -1.020506501197815,
+      "local_fd": 0.7282231450080872,
+      "banzhaf": 0.7282231450080872,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Copley Medal",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.7282231450080872
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.3926052153110504,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

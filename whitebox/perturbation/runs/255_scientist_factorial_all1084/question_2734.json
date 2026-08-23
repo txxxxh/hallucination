@@ -1,0 +1,143 @@
+{
+  "key": "question_2734",
+  "group": "Q8753",
+  "generation_correct": true,
+  "right": "Enrico Fermi",
+  "wrong": "Lise Meitner",
+  "base_margin_wrong_minus_right": 0.25886040925979614,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 335,
+      "char_end": 354,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 101
+    },
+    {
+      "char_start": 413,
+      "char_end": 416,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 111,
+      "token_end": 112
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.25886040925979614,
+      "wrong_score": -0.0706290453672409,
+      "right_score": -0.32948946952819824
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": -0.15797078609466553,
+      "margin": 0.41683119535446167,
+      "wrong_score": -0.041808098554611206,
+      "right_score": -0.4586392939090729
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": 0.20770716667175293,
+      "margin": 0.05115324258804321,
+      "wrong_score": -0.14180046319961548,
+      "right_score": -0.1929537057876587
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "not"
+      ],
+      "u": -0.3409074544906616,
+      "margin": 0.5997678637504578,
+      "wrong_score": -0.021768828853964806,
+      "right_score": -0.6215366721153259
+    }
+  ],
+  "single_u": [
+    -0.15797078609466553,
+    0.20770716667175293
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as a Foreign Member",
+        "not"
+      ],
+      "u_i": -0.15797078609466553,
+      "u_j": 0.20770716667175293,
+      "local_fd": -0.390643835067749,
+      "banzhaf": -0.390643835067749,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a Foreign Member",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": -0.390643835067749
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5997678637504578,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "key": "question_0307",
+  "group": "Q17280087",
+  "generation_correct": true,
+  "right": "Emmanuelle Charpentier",
+  "wrong": "Ahmed H. Zewail",
+  "base_margin_wrong_minus_right": -0.7854551076889038,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 262,
+      "char_end": 282,
+      "text": "Order of Merit. Most",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of Merit",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 87,
+      "token_end": 92
+    },
+    {
+      "char_start": 332,
+      "char_end": 354,
+      "text": "in Chemistry for their",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 101,
+      "token_end": 106
+    },
+    {
+      "char_start": 415,
+      "char_end": 420,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 116,
+      "token_end": 117
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7854551076889038,
+      "wrong_score": -0.7895494699478149,
+      "right_score": -0.004094353411346674
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Order of Merit. Most"
+      ],
+      "u": 0.06950962543487549,
+      "margin": -0.8549647331237793,
+      "wrong_score": -0.8688337802886963,
+      "right_score": -0.013869058340787888
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Chemistry for their"
+      ],
+      "u": -0.17827200889587402,
+      "margin": -0.6071830987930298,
+      "wrong_score": -0.6138249635696411,
+      "right_score": -0.006641850806772709
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of Merit. Most",
+        "in Chemistry for their"
+      ],
+      "u": -0.19682103395462036,
+      "margin": -0.5886340737342834,
+      "wrong_score": -0.5953984260559082,
+      "right_score": -0.006764337420463562
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.21498459577560425,
+      "margin": -0.5704705119132996,
+      "wrong_score": -0.5768963694572449,
+      "right_score": -0.006425881292670965
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of Merit. Most",
+        "never"
+      ],
+      "u": 0.0537068247795105,
+      "margin": -0.8391619324684143,
+      "wrong_score": -0.843408465385437,
+      "right_score": -0.00424650963395834
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Chemistry for their",
+        "never"
+      ],
+      "u": -0.05420964956283569,
+      "margin": -0.7312454581260681,
+      "wrong_score": -0.737592875957489,
+      "right_score": -0.006347391288727522
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Order of Merit. Most",
+        "in Chemistry for their",
+        "never"
+      ],
+      "u": -0.11031699180603027,
+      "margin": -0.6751381158828735,
+      "wrong_score": -0.6933087110519409,
+      "right_score": -0.01817060448229313
+    }
+  ],
+  "single_u": [
+    0.06950962543487549,
+    -0.17827200889587402,
+    -0.21498459577560425
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Order of Merit. Most",
+        "in Chemistry for their"
+      ],
+      "u_i": 0.06950962543487549,
+      "u_j": -0.17827200889587402,
+      "local_fd": -0.08805865049362183,
+      "banzhaf": -0.20642870664596558,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Order of Merit. Most",
+        "never"
+      ],
+      "u_i": 0.06950962543487549,
+      "u_j": -0.21498459577560425,
+      "local_fd": 0.19918179512023926,
+      "banzhaf": 0.08081173896789551,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "in Chemistry for their",
+        "never"
+      ],
+      "u_i": -0.17827200889587402,
+      "u_j": -0.21498459577560425,
+      "local_fd": 0.3390469551086426,
+      "banzhaf": 0.22067689895629883,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "in Chemistry for their",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.3390469551086426
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Order of Merit. Most",
+        "in Chemistry for their",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": -0.2367401123046875
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Order of Merit. Most",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.19918179512023926
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Order of Merit. Most",
+        "in Chemistry for their"
+      ],
+      "order": 2,
+      "harsanyi": -0.08805865049362183
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6751381158828735,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 12,
+    "n_excluded": 6,
+    "max_candidates": 6
+  }
+}

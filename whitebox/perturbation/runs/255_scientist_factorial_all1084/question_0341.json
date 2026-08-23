@@ -1,0 +1,289 @@
+{
+  "key": "question_0341",
+  "group": "Q234463",
+  "generation_correct": true,
+  "right": "Sydney Brenner",
+  "wrong": "Luc Montagnier",
+  "base_margin_wrong_minus_right": -2.687607765197754,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 162,
+      "char_end": 187,
+      "text": "studies at the University",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate at the Laval University",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 62,
+      "token_end": 67
+    },
+    {
+      "char_start": 320,
+      "char_end": 340,
+      "text": "with the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 89,
+      "token_end": 93
+    },
+    {
+      "char_start": 478,
+      "char_end": 507,
+      "text": "Faisal International Prize in",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "King Faisal International Prize in Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 123,
+      "token_end": 130
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.687607765197754,
+      "wrong_score": -2.6882646083831787,
+      "right_score": -0.0006568292737938464
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "studies at the University"
+      ],
+      "u": -1.250001311302185,
+      "margin": -1.4376064538955688,
+      "wrong_score": -1.4405215978622437,
+      "right_score": -0.002915124874562025
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "with the Nobel Prize"
+      ],
+      "u": -1.0312973260879517,
+      "margin": -1.6563104391098022,
+      "wrong_score": -1.6585272550582886,
+      "right_score": -0.002216799883171916
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "studies at the University",
+        "with the Nobel Prize"
+      ],
+      "u": -1.812556266784668,
+      "margin": -0.8750515580177307,
+      "wrong_score": -0.8858248591423035,
+      "right_score": -0.010773329995572567
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Faisal International Prize in"
+      ],
+      "u": -2.343620538711548,
+      "margin": -0.3439871668815613,
+      "wrong_score": -0.40610846877098083,
+      "right_score": -0.06212129443883896
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "studies at the University",
+        "Faisal International Prize in"
+      ],
+      "u": -2.406327247619629,
+      "margin": -0.2812804579734802,
+      "wrong_score": -0.3565741181373596,
+      "right_score": -0.07529367506504059
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Nobel Prize",
+        "Faisal International Prize in"
+      ],
+      "u": -2.5000922679901123,
+      "margin": -0.18751545250415802,
+      "wrong_score": -0.28929683566093445,
+      "right_score": -0.10178138315677643
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "studies at the University",
+        "with the Nobel Prize",
+        "Faisal International Prize in"
+      ],
+      "u": -2.6875662803649902,
+      "margin": -4.157423973083496e-05,
+      "wrong_score": -0.20050016045570374,
+      "right_score": -0.2004585862159729
+    }
+  ],
+  "single_u": [
+    -1.250001311302185,
+    -1.0312973260879517,
+    -2.343620538711548
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "studies at the University",
+        "with the Nobel Prize"
+      ],
+      "u_i": -1.250001311302185,
+      "u_j": -1.0312973260879517,
+      "local_fd": 0.46874237060546875,
+      "banzhaf": 0.17198753356933594,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "studies at the University",
+        "Faisal International Prize in"
+      ],
+      "u_i": -1.250001311302185,
+      "u_j": -2.343620538711548,
+      "local_fd": 1.187294602394104,
+      "banzhaf": 0.8905397653579712,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "with the Nobel Prize",
+        "Faisal International Prize in"
+      ],
+      "u_i": -1.0312973260879517,
+      "u_j": -2.343620538711548,
+      "local_fd": 0.8748255968093872,
+      "banzhaf": 0.5780707597732544,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "studies at the University",
+        "Faisal International Prize in"
+      ],
+      "order": 2,
+      "harsanyi": 1.187294602394104
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "with the Nobel Prize",
+        "Faisal International Prize in"
+      ],
+      "order": 2,
+      "harsanyi": 0.8748255968093872
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "studies at the University",
+        "with the Nobel Prize",
+        "Faisal International Prize in"
+      ],
+      "order": 3,
+      "harsanyi": -0.5935096740722656
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "studies at the University",
+        "with the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": 0.46874237060546875
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -4.157423973083496e-05,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

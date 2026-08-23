@@ -1,0 +1,293 @@
+{
+  "key": "question_1848",
+  "group": "Q8772",
+  "generation_correct": false,
+  "right": "Joseph Fourier",
+  "wrong": "Gaspard Monge",
+  "base_margin_wrong_minus_right": -0.3722202777862549,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 188,
+      "char_end": 222,
+      "text": "physicist, university teacher, and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 69,
+      "token_end": 80
+    },
+    {
+      "char_start": 303,
+      "char_end": 321,
+      "text": "among the 72 names",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "72 names on the Eiffel Tower",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 92,
+      "token_end": 97
+    },
+    {
+      "char_start": 414,
+      "char_end": 419,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 117,
+      "token_end": 118
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.3722202777862549,
+      "wrong_score": -0.42784667015075684,
+      "right_score": -0.05562637746334076
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "physicist, university teacher, and"
+      ],
+      "u": -0.12339740991592407,
+      "margin": -0.2488228678703308,
+      "wrong_score": -0.34795716404914856,
+      "right_score": -0.09913430362939835
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "among the 72 names"
+      ],
+      "u": 0.34208977222442627,
+      "margin": -0.7143100500106812,
+      "wrong_score": -0.734169065952301,
+      "right_score": -0.01985901966691017
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "physicist, university teacher, and",
+        "among the 72 names"
+      ],
+      "u": -0.21284858882427216,
+      "margin": -0.15937168896198273,
+      "wrong_score": -0.28800901770591736,
+      "right_score": -0.12863732874393463
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": -0.17685848474502563,
+      "margin": -0.19536179304122925,
+      "wrong_score": -0.3034733831882477,
+      "right_score": -0.10811158269643784
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "physicist, university teacher, and",
+        "never"
+      ],
+      "u": -0.25759202241897583,
+      "margin": -0.11462825536727905,
+      "wrong_score": -0.2685891091823578,
+      "right_score": -0.15396085381507874
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "among the 72 names",
+        "never"
+      ],
+      "u": -0.2879711985588074,
+      "margin": -0.08424907922744751,
+      "wrong_score": -0.24716590344905853,
+      "right_score": -0.16291682422161102
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "physicist, university teacher, and",
+        "among the 72 names",
+        "never"
+      ],
+      "u": -0.41158583760261536,
+      "margin": 0.039365559816360474,
+      "wrong_score": -0.18244527280330658,
+      "right_score": -0.22181083261966705
+    }
+  ],
+  "single_u": [
+    -0.12339740991592407,
+    0.34208977222442627,
+    -0.17685848474502563
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "physicist, university teacher, and",
+        "among the 72 names"
+      ],
+      "u_i": -0.12339740991592407,
+      "u_j": 0.34208977222442627,
+      "local_fd": -0.43154096603393555,
+      "banzhaf": -0.23721103370189667,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "physicist, university teacher, and",
+        "never"
+      ],
+      "u_i": -0.12339740991592407,
+      "u_j": -0.17685848474502563,
+      "local_fd": 0.04266387224197388,
+      "banzhaf": 0.23699378967285156,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "among the 72 names",
+        "never"
+      ],
+      "u_i": 0.34208977222442627,
+      "u_j": -0.17685848474502563,
+      "local_fd": -0.453202486038208,
+      "banzhaf": -0.2588725686073303,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "among the 72 names",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": -0.453202486038208
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "physicist, university teacher, and",
+        "among the 72 names"
+      ],
+      "order": 2,
+      "harsanyi": -0.43154095113277435
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "physicist, university teacher, and",
+        "among the 72 names",
+        "never"
+      ],
+      "order": 3,
+      "harsanyi": 0.38865984976291656
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "physicist, university teacher, and",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 0.04266387224197388
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.039365559816360474,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

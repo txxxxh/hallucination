@@ -1,0 +1,146 @@
+{
+  "key": "question_2528",
+  "group": "Q71031",
+  "generation_correct": true,
+  "right": "Robert Wilhelm Bunsen",
+  "wrong": "Max Perutz",
+  "base_margin_wrong_minus_right": -1.0485758781433105,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 138,
+      "char_end": 162,
+      "text": "the University of Vienna",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Vienna",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 62,
+      "token_end": 65
+    },
+    {
+      "char_start": 357,
+      "char_end": 372,
+      "text": "and the Pour le",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Pour le Mérite for Sciences and Arts order",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 103,
+      "token_end": 107
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.0485758781433105,
+      "wrong_score": -1.0599063634872437,
+      "right_score": -0.011330544017255306
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Vienna"
+      ],
+      "u": 0.20957458019256592,
+      "margin": -1.2581504583358765,
+      "wrong_score": -1.272423505783081,
+      "right_score": -0.014273089356720448
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and the Pour le"
+      ],
+      "u": -0.43912839889526367,
+      "margin": -0.6094474792480469,
+      "wrong_score": -0.6474431753158569,
+      "right_score": -0.03799569606781006
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Vienna",
+        "and the Pour le"
+      ],
+      "u": 0.00262296199798584,
+      "margin": -1.0511988401412964,
+      "wrong_score": -1.0629156827926636,
+      "right_score": -0.0117168128490448
+    }
+  ],
+  "single_u": [
+    0.20957458019256592,
+    -0.43912839889526367
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Vienna",
+        "and the Pour le"
+      ],
+      "u_i": 0.20957458019256592,
+      "u_j": -0.43912839889526367,
+      "local_fd": 0.2321767807006836,
+      "banzhaf": 0.2321767807006836,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Vienna",
+        "and the Pour le"
+      ],
+      "order": 2,
+      "harsanyi": 0.2321767807006836
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.0511988401412964,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

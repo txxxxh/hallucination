@@ -1,0 +1,297 @@
+{
+  "key": "question_1420",
+  "group": "Q135180",
+  "generation_correct": true,
+  "right": "Thomas Cech",
+  "wrong": "Frederick Sanger",
+  "base_margin_wrong_minus_right": -0.9983252286911011,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 304,
+      "char_end": 324,
+      "text": "them the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 93,
+      "token_end": 99
+    },
+    {
+      "char_start": 328,
+      "char_end": 356,
+      "text": "Chemistry, the Albert Lasker",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Lasker Award for Basic Medical Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 108
+    },
+    {
+      "char_start": 572,
+      "char_end": 575,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 146,
+      "token_end": 148
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9983252286911011,
+      "wrong_score": -1.0025333166122437,
+      "right_score": -0.00420808931812644
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "them the Nobel Prize"
+      ],
+      "u": -0.7031652927398682,
+      "margin": -0.2951599359512329,
+      "wrong_score": -0.3702297508716583,
+      "right_score": -0.07506981492042542
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Chemistry, the Albert Lasker"
+      ],
+      "u": -0.9299272298812866,
+      "margin": -0.06839799880981445,
+      "wrong_score": -0.24850165843963623,
+      "right_score": -0.18010365962982178
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "Chemistry, the Albert Lasker"
+      ],
+      "u": -0.917785108089447,
+      "margin": -0.08054012060165405,
+      "wrong_score": -0.2564246654510498,
+      "right_score": -0.17588454484939575
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": -0.510746955871582,
+      "margin": -0.48757827281951904,
+      "wrong_score": -0.51961749792099,
+      "right_score": -0.032039228826761246
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "not"
+      ],
+      "u": -0.9968746304512024,
+      "margin": -0.0014505982398986816,
+      "wrong_score": -0.1855522245168686,
+      "right_score": -0.1841016262769699
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Chemistry, the Albert Lasker",
+        "not"
+      ],
+      "u": -1.0359971523284912,
+      "margin": 0.03767193853855133,
+      "wrong_score": -0.18825021386146545,
+      "right_score": -0.22592215240001678
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "Chemistry, the Albert Lasker",
+        "not"
+      ],
+      "u": -0.9840566515922546,
+      "margin": -0.014268577098846436,
+      "wrong_score": -0.2064739316701889,
+      "right_score": -0.19220535457134247
+    }
+  ],
+  "single_u": [
+    -0.7031652927398682,
+    -0.9299272298812866,
+    -0.510746955871582
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "them the Nobel Prize",
+        "Chemistry, the Albert Lasker"
+      ],
+      "u_i": -0.7031652927398682,
+      "u_j": -0.9299272298812866,
+      "local_fd": 0.7153074145317078,
+      "banzhaf": 0.62668776512146,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "them the Nobel Prize",
+        "not"
+      ],
+      "u_i": -0.7031652927398682,
+      "u_j": -0.510746955871582,
+      "local_fd": 0.2170376181602478,
+      "banzhaf": 0.1284179985523224,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Chemistry, the Albert Lasker",
+        "not"
+      ],
+      "u_i": -0.9299272298812866,
+      "u_j": -0.510746955871582,
+      "local_fd": 0.40467703342437744,
+      "banzhaf": 0.316057413816452,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "Chemistry, the Albert Lasker"
+      ],
+      "order": 2,
+      "harsanyi": 0.7153074145317078
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Chemistry, the Albert Lasker",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.40467703342437744
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.2170376181602478
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "Chemistry, the Albert Lasker",
+        "not"
+      ],
+      "order": 3,
+      "harsanyi": -0.17723923921585083
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "them the Nobel Prize"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.014268577098846436,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "key": "question_0778",
+  "group": "Q184746",
+  "generation_correct": true,
+  "right": "Jane Goodall",
+  "wrong": "Ernst Mayr",
+  "base_margin_wrong_minus_right": 2.5835061073303223,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 164,
+      "char_end": 187,
+      "text": "as a university teacher",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 62,
+      "token_end": 67
+    },
+    {
+      "char_start": 267,
+      "char_end": 291,
+      "text": "life and natural history",
+      "kind": "attribute",
+      "field": "field",
+      "value": "natural history collection",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 79,
+      "token_end": 83
+    },
+    {
+      "char_start": 343,
+      "char_end": 372,
+      "text": "the prestigious Gregor Mendel",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Gregor Mendel Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 92,
+      "token_end": 98
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 2.5835061073303223,
+      "wrong_score": -0.0007690667407587171,
+      "right_score": -2.584275245666504
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as a university teacher"
+      ],
+      "u": -0.0005426406860351562,
+      "margin": 2.5840487480163574,
+      "wrong_score": -0.0023298596497625113,
+      "right_score": -2.586378574371338
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "life and natural history"
+      ],
+      "u": 0.873598575592041,
+      "margin": 1.7099075317382812,
+      "wrong_score": -0.0033901073038578033,
+      "right_score": -1.7132976055145264
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a university teacher",
+        "life and natural history"
+      ],
+      "u": 1.2047171592712402,
+      "margin": 1.378788948059082,
+      "wrong_score": -0.008714885450899601,
+      "right_score": -1.3875038623809814
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the prestigious Gregor Mendel"
+      ],
+      "u": -0.20877885818481445,
+      "margin": 2.7922849655151367,
+      "wrong_score": -0.0021757902577519417,
+      "right_score": -2.7944607734680176
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "the prestigious Gregor Mendel"
+      ],
+      "u": 0.8324458599090576,
+      "margin": 1.7510602474212646,
+      "wrong_score": -0.006223892327398062,
+      "right_score": -1.757284164428711
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "life and natural history",
+        "the prestigious Gregor Mendel"
+      ],
+      "u": 0.7472171783447266,
+      "margin": 1.8362889289855957,
+      "wrong_score": -0.006022456102073193,
+      "right_score": -1.8423113822937012
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "life and natural history",
+        "the prestigious Gregor Mendel"
+      ],
+      "u": 0.6654796600341797,
+      "margin": 1.9180264472961426,
+      "wrong_score": -0.0030892807990312576,
+      "right_score": -1.921115756034851
+    }
+  ],
+  "single_u": [
+    -0.0005426406860351562,
+    0.873598575592041,
+    -0.20877885818481445
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as a university teacher",
+        "life and natural history"
+      ],
+      "u_i": -0.0005426406860351562,
+      "u_j": 0.873598575592041,
+      "local_fd": 0.3316612243652344,
+      "banzhaf": -0.3956505060195923,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "as a university teacher",
+        "the prestigious Gregor Mendel"
+      ],
+      "u_i": -0.0005426406860351562,
+      "u_j": -0.20877885818481445,
+      "local_fd": 1.0417673587799072,
+      "banzhaf": 0.31445562839508057,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "life and natural history",
+        "the prestigious Gregor Mendel"
+      ],
+      "u_i": 0.873598575592041,
+      "u_j": -0.20877885818481445,
+      "local_fd": 0.0823974609375,
+      "banzhaf": -0.6449142694473267,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "life and natural history",
+        "the prestigious Gregor Mendel"
+      ],
+      "order": 3,
+      "harsanyi": -1.4546234607696533
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as a university teacher",
+        "the prestigious Gregor Mendel"
+      ],
+      "order": 2,
+      "harsanyi": 1.0417673587799072
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as a university teacher",
+        "life and natural history"
+      ],
+      "order": 2,
+      "harsanyi": 0.3316612243652344
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "life and natural history",
+        "the prestigious Gregor Mendel"
+      ],
+      "order": 2,
+      "harsanyi": 0.0823974609375
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.9180264472961426,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

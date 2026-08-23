@@ -1,0 +1,295 @@
+{
+  "key": "question_1767",
+  "group": "Q49351",
+  "generation_correct": true,
+  "right": "Robert Robinson",
+  "wrong": "Ryōji Noyori",
+  "base_margin_wrong_minus_right": -0.7295778393745422,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 155,
+      "char_end": 181,
+      "text": "a renowned organic chemist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "chemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 62,
+      "token_end": 67
+    },
+    {
+      "char_start": 246,
+      "char_end": 266,
+      "text": "them the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 76,
+      "token_end": 80
+    },
+    {
+      "char_start": 267,
+      "char_end": 297,
+      "text": "in Chemistry. Throughout their",
+      "kind": "attribute",
+      "field": "field",
+      "value": "chemistry",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 79,
+      "token_end": 84
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.7295778393745422,
+      "wrong_score": -0.7339404225349426,
+      "right_score": -0.00436257803812623
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "a renowned organic chemist"
+      ],
+      "u": -0.2214847207069397,
+      "margin": -0.5080931186676025,
+      "wrong_score": -0.5227778553962708,
+      "right_score": -0.014684755355119705
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "them the Nobel Prize"
+      ],
+      "u": -1.0715818405151367,
+      "margin": 0.34200406074523926,
+      "wrong_score": -0.07643808424472809,
+      "right_score": -0.41844215989112854
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "a renowned organic chemist",
+        "them the Nobel Prize"
+      ],
+      "u": -1.5621509552001953,
+      "margin": 0.8325731158256531,
+      "wrong_score": -0.033474963158369064,
+      "right_score": -0.8660480976104736
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "in Chemistry. Throughout their"
+      ],
+      "u": -1.2450575828552246,
+      "margin": 0.5154798030853271,
+      "wrong_score": -0.06483539938926697,
+      "right_score": -0.5803152322769165
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "a renowned organic chemist",
+        "in Chemistry. Throughout their"
+      ],
+      "u": -0.9950406551361084,
+      "margin": 0.26546281576156616,
+      "wrong_score": -0.09545353055000305,
+      "right_score": -0.3609163463115692
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "in Chemistry. Throughout their"
+      ],
+      "u": -1.006146788597107,
+      "margin": 0.2765689492225647,
+      "wrong_score": -0.11063883453607559,
+      "right_score": -0.3872077763080597
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "a renowned organic chemist",
+        "them the Nobel Prize",
+        "in Chemistry. Throughout their"
+      ],
+      "u": -0.973820149898529,
+      "margin": 0.24424231052398682,
+      "wrong_score": -0.11105331778526306,
+      "right_score": -0.3552956283092499
+    }
+  ],
+  "single_u": [
+    -0.2214847207069397,
+    -1.0715818405151367,
+    -1.2450575828552246
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "a renowned organic chemist",
+        "them the Nobel Prize"
+      ],
+      "u_i": -0.2214847207069397,
+      "u_j": -1.0715818405151367,
+      "local_fd": -0.26908445358276367,
+      "banzhaf": -0.2433873414993286,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "a renowned organic chemist",
+        "in Chemistry. Throughout their"
+      ],
+      "u_i": -0.2214847207069397,
+      "u_j": -1.2450575828552246,
+      "local_fd": 0.4715016484260559,
+      "banzhaf": 0.4971987307071686,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "them the Nobel Prize",
+        "in Chemistry. Throughout their"
+      ],
+      "u_i": -1.0715818405151367,
+      "u_j": -1.2450575828552246,
+      "local_fd": 1.3104926347732544,
+      "banzhaf": 1.3361897468566895,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "them the Nobel Prize",
+        "in Chemistry. Throughout their"
+      ],
+      "order": 2,
+      "harsanyi": 1.3104926347732544
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "a renowned organic chemist",
+        "in Chemistry. Throughout their"
+      ],
+      "order": 2,
+      "harsanyi": 0.4715016484260559
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "a renowned organic chemist",
+        "them the Nobel Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.2690843939781189
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "a renowned organic chemist",
+        "them the Nobel Prize",
+        "in Chemistry. Throughout their"
+      ],
+      "order": 3,
+      "harsanyi": 0.051394104957580566
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.24424231052398682,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

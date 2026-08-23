@@ -1,0 +1,286 @@
+{
+  "key": "question_0798",
+  "group": "Q183397",
+  "generation_correct": true,
+  "right": "Fred Hoyle",
+  "wrong": "Lawrence M. Krauss",
+  "base_margin_wrong_minus_right": 0.39391639828681946,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 258,
+      "char_end": 279,
+      "text": "work as a non-fiction",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "non-fiction writer",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 85,
+      "token_end": 91
+    },
+    {
+      "char_start": 394,
+      "char_end": 397,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 109,
+      "token_end": 111
+    },
+    {
+      "char_start": 422,
+      "char_end": 452,
+      "text": "at the Massachusetts Institute",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Massachusetts Institute of Technology",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 116,
+      "token_end": 123
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.39391639828681946,
+      "wrong_score": -0.050866685807704926,
+      "right_score": -0.444783091545105
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "work as a non-fiction"
+      ],
+      "u": -0.8756227493286133,
+      "margin": 1.2695391178131104,
+      "wrong_score": -0.0199284628033638,
+      "right_score": -1.2894675731658936
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": -0.0811707079410553,
+      "margin": 0.47508710622787476,
+      "wrong_score": -0.048024412244558334,
+      "right_score": -0.5231115221977234
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "work as a non-fiction",
+        "not"
+      ],
+      "u": -0.6214972734451294,
+      "margin": 1.0154136419296265,
+      "wrong_score": -0.015528133139014244,
+      "right_score": -1.0309417247772217
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "at the Massachusetts Institute"
+      ],
+      "u": -0.008975684642791748,
+      "margin": 0.4028920829296112,
+      "wrong_score": -0.12113156914710999,
+      "right_score": -0.5240236520767212
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "work as a non-fiction",
+        "at the Massachusetts Institute"
+      ],
+      "u": -0.14544495940208435,
+      "margin": 0.5393613576889038,
+      "wrong_score": -0.09376493096351624,
+      "right_score": -0.6331262588500977
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "not",
+        "at the Massachusetts Institute"
+      ],
+      "u": -0.08486282825469971,
+      "margin": 0.47877922654151917,
+      "wrong_score": -0.14221975207328796,
+      "right_score": -0.6209989786148071
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "work as a non-fiction",
+        "not",
+        "at the Massachusetts Institute"
+      ],
+      "u": -0.17526540160179138,
+      "margin": 0.5691817998886108,
+      "wrong_score": -0.13252541422843933,
+      "right_score": -0.7017072439193726
+    }
+  ],
+  "single_u": [
+    -0.8756227493286133,
+    -0.0811707079410553,
+    -0.008975684642791748
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "work as a non-fiction",
+        "not"
+      ],
+      "u_i": -0.8756227493286133,
+      "u_j": -0.0811707079410553,
+      "local_fd": 0.3352961838245392,
+      "banzhaf": 0.19068144261837006,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "work as a non-fiction",
+        "at the Massachusetts Institute"
+      ],
+      "u_i": -0.8756227493286133,
+      "u_j": -0.008975684642791748,
+      "local_fd": 0.7391534447669983,
+      "banzhaf": 0.594538688659668,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "not",
+        "at the Massachusetts Institute"
+      ],
+      "u_i": -0.0811707079410553,
+      "u_j": -0.008975684642791748,
+      "local_fd": 0.005283564329147339,
+      "banzhaf": -0.1393311768770218,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "work as a non-fiction",
+        "at the Massachusetts Institute"
+      ],
+      "order": 2,
+      "harsanyi": 0.7391534745693207
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "work as a non-fiction",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.3352961838245392
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "work as a non-fiction",
+        "not",
+        "at the Massachusetts Institute"
+      ],
+      "order": 3,
+      "harsanyi": -0.28922948241233826
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "not",
+        "at the Massachusetts Institute"
+      ],
+      "order": 2,
+      "harsanyi": 0.005283564329147339
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5691817998886108,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

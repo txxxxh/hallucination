@@ -1,0 +1,290 @@
+{
+  "key": "question_1060",
+  "group": "Q1690702",
+  "generation_correct": false,
+  "right": "Joan Steitz",
+  "wrong": "Carolyn R. Bertozzi",
+  "base_margin_wrong_minus_right": 0.36156871914863586,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 125,
+      "char_end": 155,
+      "text": "Educated at Harvard University",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Harvard University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 61,
+      "token_end": 67
+    },
+    {
+      "char_start": 249,
+      "char_end": 278,
+      "text": "and university teacher. Their",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 77,
+      "token_end": 83
+    },
+    {
+      "char_start": 387,
+      "char_end": 411,
+      "text": "elected a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 102,
+      "token_end": 107
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.36156871914863586,
+      "wrong_score": -0.05415720120072365,
+      "right_score": -0.4157259166240692
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Educated at Harvard University"
+      ],
+      "u": 0.025929808616638184,
+      "margin": 0.3356389105319977,
+      "wrong_score": -0.07641740888357162,
+      "right_score": -0.4120563268661499
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and university teacher. Their"
+      ],
+      "u": 0.24792544543743134,
+      "margin": 0.11364327371120453,
+      "wrong_score": -0.20984025299549103,
+      "right_score": -0.32348352670669556
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "and university teacher. Their"
+      ],
+      "u": 0.07318267226219177,
+      "margin": 0.2883860468864441,
+      "wrong_score": -0.09392697364091873,
+      "right_score": -0.3823130130767822
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "elected a Foreign Member"
+      ],
+      "u": -0.935489296913147,
+      "margin": 1.2970579862594604,
+      "wrong_score": -0.015362474136054516,
+      "right_score": -1.3124204874038696
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "elected a Foreign Member"
+      ],
+      "u": -0.7383347749710083,
+      "margin": 1.0999034643173218,
+      "wrong_score": -0.006672494579106569,
+      "right_score": -1.1065759658813477
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher. Their",
+        "elected a Foreign Member"
+      ],
+      "u": -0.3785487115383148,
+      "margin": 0.7401174306869507,
+      "wrong_score": -0.02860601805150509,
+      "right_score": -0.7687234282493591
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "and university teacher. Their",
+        "elected a Foreign Member"
+      ],
+      "u": -0.38037392497062683,
+      "margin": 0.7419426441192627,
+      "wrong_score": -0.028853002935647964,
+      "right_score": -0.7707956433296204
+    }
+  ],
+  "single_u": [
+    0.025929808616638184,
+    0.24792544543743134,
+    -0.935489296913147
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Educated at Harvard University",
+        "and university teacher. Their"
+      ],
+      "u_i": 0.025929808616638184,
+      "u_j": 0.24792544543743134,
+      "local_fd": -0.20067258179187775,
+      "banzhaf": -0.19982615113258362,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Educated at Harvard University",
+        "elected a Foreign Member"
+      ],
+      "u_i": 0.025929808616638184,
+      "u_j": -0.935489296913147,
+      "local_fd": 0.1712247133255005,
+      "banzhaf": 0.17207112908363342,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and university teacher. Their",
+        "elected a Foreign Member"
+      ],
+      "u_i": 0.24792544543743134,
+      "u_j": -0.935489296913147,
+      "local_fd": 0.309015154838562,
+      "banzhaf": 0.30986157059669495,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher. Their",
+        "elected a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.3090151399374008
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "and university teacher. Their"
+      ],
+      "order": 2,
+      "harsanyi": -0.20067258179187775
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "elected a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": 0.1712247133255005
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Educated at Harvard University",
+        "and university teacher. Their",
+        "elected a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": 0.001692846417427063
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.7419426441192627,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

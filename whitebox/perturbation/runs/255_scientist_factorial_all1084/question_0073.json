@@ -1,0 +1,145 @@
+{
+  "key": "question_0073",
+  "group": "Q60108",
+  "generation_correct": true,
+  "right": "Günter Blobel",
+  "wrong": "Emmanuelle Charpentier",
+  "base_margin_wrong_minus_right": -0.45817676186561584,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 221,
+      "char_end": 241,
+      "text": "to the life sciences",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Breakthrough Prize in Life Sciences",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 72,
+      "token_end": 79
+    },
+    {
+      "char_start": 543,
+      "char_end": 574,
+      "text": "received the Knight Commander's",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight Commander's Cross of the Order of Merit of the Federal Republic of Germany",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 142,
+      "token_end": 149
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.45817676186561584,
+      "wrong_score": -0.4716436564922333,
+      "right_score": -0.013466883450746536
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "to the life sciences"
+      ],
+      "u": -0.2083435207605362,
+      "margin": -0.24983324110507965,
+      "wrong_score": -0.29696622490882874,
+      "right_score": -0.047132983803749084
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "received the Knight Commander's"
+      ],
+      "u": -0.10391047596931458,
+      "margin": -0.35426628589630127,
+      "wrong_score": -0.37732404470443726,
+      "right_score": -0.023057766258716583
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the life sciences",
+        "received the Knight Commander's"
+      ],
+      "u": 0.14597287774085999,
+      "margin": -0.6041496396064758,
+      "wrong_score": -0.6166117191314697,
+      "right_score": -0.012462100945413113
+    }
+  ],
+  "single_u": [
+    -0.2083435207605362,
+    -0.10391047596931458
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "to the life sciences",
+        "received the Knight Commander's"
+      ],
+      "u_i": -0.2083435207605362,
+      "u_j": -0.10391047596931458,
+      "local_fd": 0.45822688937187195,
+      "banzhaf": 0.45822688937187195,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "to the life sciences",
+        "received the Knight Commander's"
+      ],
+      "order": 2,
+      "harsanyi": 0.45822687447071075
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.6041496396064758,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 18,
+    "n_excluded": 12,
+    "max_candidates": 6
+  }
+}

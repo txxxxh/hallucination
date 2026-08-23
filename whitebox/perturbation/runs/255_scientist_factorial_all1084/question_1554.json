@@ -1,0 +1,296 @@
+{
+  "key": "question_1554",
+  "group": "Q234463",
+  "generation_correct": true,
+  "right": "Sydney Brenner",
+  "wrong": "Howard Walter Florey",
+  "base_margin_wrong_minus_right": -0.8438034653663635,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 162,
+      "char_end": 185,
+      "text": "awarded the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 59,
+      "token_end": 65
+    },
+    {
+      "char_start": 312,
+      "char_end": 337,
+      "text": "received the Copley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Copley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 91,
+      "token_end": 97
+    },
+    {
+      "char_start": 339,
+      "char_end": 359,
+      "text": "the Royal Medal, and",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 97,
+      "token_end": 102
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.8438034653663635,
+      "wrong_score": -0.8563756942749023,
+      "right_score": -0.012572240084409714
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "awarded the Nobel Prize"
+      ],
+      "u": -0.7187943458557129,
+      "margin": -0.12500914931297302,
+      "wrong_score": -0.34679800271987915,
+      "right_score": -0.22178885340690613
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "received the Copley Medal"
+      ],
+      "u": -1.0312983989715576,
+      "margin": 0.1874949038028717,
+      "wrong_score": -0.10969683527946472,
+      "right_score": -0.2971917390823364
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "received the Copley Medal"
+      ],
+      "u": -1.1250497102737427,
+      "margin": 0.28124621510505676,
+      "wrong_score": -0.10112070292234421,
+      "right_score": -0.38236692547798157
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the Royal Medal, and"
+      ],
+      "u": -1.09378981590271,
+      "margin": 0.24998630583286285,
+      "wrong_score": -0.13768859207630157,
+      "right_score": -0.38767489790916443
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "the Royal Medal, and"
+      ],
+      "u": -1.1250568628311157,
+      "margin": 0.2812533974647522,
+      "wrong_score": -0.4605991244316101,
+      "right_score": -0.7418525218963623
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "received the Copley Medal",
+        "the Royal Medal, and"
+      ],
+      "u": -1.2501436471939087,
+      "margin": 0.40634018182754517,
+      "wrong_score": -0.20813971757888794,
+      "right_score": -0.6144798994064331
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "received the Copley Medal",
+        "the Royal Medal, and"
+      ],
+      "u": -1.2193245887756348,
+      "margin": 0.37552115321159363,
+      "wrong_score": -0.4573611319065094,
+      "right_score": -0.832882285118103
+    }
+  ],
+  "single_u": [
+    -0.7187943458557129,
+    -1.0312983989715576,
+    -1.09378981590271
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "awarded the Nobel Prize",
+        "received the Copley Medal"
+      ],
+      "u_i": -0.7187943458557129,
+      "u_j": -1.0312983989715576,
+      "local_fd": 0.6250430345535278,
+      "banzhaf": 0.34356456995010376,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "awarded the Nobel Prize",
+        "the Royal Medal, and"
+      ],
+      "u_i": -0.7187943458557129,
+      "u_j": -1.09378981590271,
+      "local_fd": 0.6875272989273071,
+      "banzhaf": 0.40604883432388306,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "received the Copley Medal",
+        "the Royal Medal, and"
+      ],
+      "u_i": -1.0312983989715576,
+      "u_j": -1.09378981590271,
+      "local_fd": 0.8749445676803589,
+      "banzhaf": 0.5934661030769348,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "received the Copley Medal",
+        "the Royal Medal, and"
+      ],
+      "order": 2,
+      "harsanyi": 0.8749445676803589
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "the Royal Medal, and"
+      ],
+      "order": 2,
+      "harsanyi": 0.6875272989273071
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "received the Copley Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.6250430345535278
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "awarded the Nobel Prize",
+        "received the Copley Medal",
+        "the Royal Medal, and"
+      ],
+      "order": 3,
+      "harsanyi": -0.5629569292068481
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.37552115321159363,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 8,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

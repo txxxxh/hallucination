@@ -1,0 +1,286 @@
+{
+  "key": "question_0151",
+  "group": "Q469904",
+  "generation_correct": false,
+  "right": "Robert Gallo",
+  "wrong": "Anthony Fauci",
+  "base_margin_wrong_minus_right": 0.750012218952179,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 365,
+      "char_end": 390,
+      "text": "the prestigious Dan David",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Dan David Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 95,
+      "token_end": 100
+    },
+    {
+      "char_start": 458,
+      "char_end": 463,
+      "text": "never",
+      "kind": "logic",
+      "field": "logic",
+      "value": "never",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 111,
+      "token_end": 113
+    },
+    {
+      "char_start": 471,
+      "char_end": 491,
+      "text": "as the Chief Medical",
+      "kind": "attribute",
+      "field": "position_held",
+      "value": "Chief Medical Advisor to the President",
+      "owners": [
+        "wrong"
+      ],
+      "negated": true,
+      "id": 2,
+      "token_start": 114,
+      "token_end": 119
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.750012218952179,
+      "wrong_score": -0.036835286766290665,
+      "right_score": -0.7868475317955017
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the prestigious Dan David"
+      ],
+      "u": -1.375016450881958,
+      "margin": 2.125028610229492,
+      "wrong_score": -0.0092902397736907,
+      "right_score": -2.1343188285827637
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "never"
+      ],
+      "u": 0.041665613651275635,
+      "margin": 0.7083466053009033,
+      "wrong_score": -0.04379215091466904,
+      "right_score": -0.7521387338638306
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the prestigious Dan David",
+        "never"
+      ],
+      "u": -0.1666719913482666,
+      "margin": 0.9166842103004456,
+      "wrong_score": -0.02872353419661522,
+      "right_score": -0.9454077482223511
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as the Chief Medical"
+      ],
+      "u": -0.29166942834854126,
+      "margin": 1.0416816473007202,
+      "wrong_score": -0.023062847554683685,
+      "right_score": -1.064744472503662
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the prestigious Dan David",
+        "as the Chief Medical"
+      ],
+      "u": -0.8750148415565491,
+      "margin": 1.625027060508728,
+      "wrong_score": -0.048763684928417206,
+      "right_score": -1.673790693283081
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "as the Chief Medical"
+      ],
+      "u": -0.08334159851074219,
+      "margin": 0.8333538174629211,
+      "wrong_score": -0.09141319990158081,
+      "right_score": -0.924767017364502
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the prestigious Dan David",
+        "never",
+        "as the Chief Medical"
+      ],
+      "u": -0.5416855216026306,
+      "margin": 1.2916977405548096,
+      "wrong_score": -0.12611359357833862,
+      "right_score": -1.417811393737793
+    }
+  ],
+  "single_u": [
+    -1.375016450881958,
+    0.041665613651275635,
+    -0.29166942834854126
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the prestigious Dan David",
+        "never"
+      ],
+      "u_i": -1.375016450881958,
+      "u_j": 0.041665613651275635,
+      "local_fd": 1.1666789054870605,
+      "banzhaf": 0.6458401679992676,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "the prestigious Dan David",
+        "as the Chief Medical"
+      ],
+      "u_i": -1.375016450881958,
+      "u_j": -0.29166942834854126,
+      "local_fd": 0.7916710376739502,
+      "banzhaf": 0.270832359790802,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "never",
+        "as the Chief Medical"
+      ],
+      "u_i": 0.041665613651275635,
+      "u_j": -0.29166942834854126,
+      "local_fd": 0.16666221618652344,
+      "banzhaf": -0.35417646169662476,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the prestigious Dan David",
+        "never"
+      ],
+      "order": 2,
+      "harsanyi": 1.1666788458824158
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "the prestigious Dan David",
+        "never",
+        "as the Chief Medical"
+      ],
+      "order": 3,
+      "harsanyi": -1.0416773557662964
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "the prestigious Dan David",
+        "as the Chief Medical"
+      ],
+      "order": 2,
+      "harsanyi": 0.7916710376739502
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "never",
+        "as the Chief Medical"
+      ],
+      "order": 2,
+      "harsanyi": 0.16666221618652344
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.2916977405548096,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}

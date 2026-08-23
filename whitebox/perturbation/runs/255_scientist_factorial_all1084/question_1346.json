@@ -1,0 +1,290 @@
+{
+  "key": "question_1346",
+  "group": "Q106624",
+  "generation_correct": true,
+  "right": "Ahmed H. Zewail",
+  "wrong": "Martin Rees, Baron Rees of Ludlow",
+  "base_margin_wrong_minus_right": 0.3096347451210022,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 286,
+      "char_end": 310,
+      "text": "with the Albert Einstein",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Einstein World Award of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 94,
+      "token_end": 98
+    },
+    {
+      "char_start": 335,
+      "char_end": 353,
+      "text": "the Order of Merit",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Order of Merit",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 102,
+      "token_end": 107
+    },
+    {
+      "char_start": 355,
+      "char_end": 380,
+      "text": "and an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "honorary doctorate of the Open University",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 107,
+      "token_end": 111
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.3096347451210022,
+      "wrong_score": -0.09541943669319153,
+      "right_score": -0.4050541818141937
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "with the Albert Einstein"
+      ],
+      "u": -0.004659861326217651,
+      "margin": 0.31429460644721985,
+      "wrong_score": -0.059123653918504715,
+      "right_score": -0.37341827154159546
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "the Order of Merit"
+      ],
+      "u": -0.003839433193206787,
+      "margin": 0.313474178314209,
+      "wrong_score": -0.043403755873441696,
+      "right_score": -0.3568779230117798
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Albert Einstein",
+        "the Order of Merit"
+      ],
+      "u": -0.07147663831710815,
+      "margin": 0.38111138343811035,
+      "wrong_score": -0.03869815543293953,
+      "right_score": -0.4198095500469208
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "and an honorary doctorate"
+      ],
+      "u": 0.21577614545822144,
+      "margin": 0.09385859966278076,
+      "wrong_score": -0.0643686056137085,
+      "right_score": -0.15822720527648926
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Albert Einstein",
+        "and an honorary doctorate"
+      ],
+      "u": -0.03542608022689819,
+      "margin": 0.3450608253479004,
+      "wrong_score": -0.023551318794488907,
+      "right_score": -0.368612140417099
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Order of Merit",
+        "and an honorary doctorate"
+      ],
+      "u": -0.0038049519062042236,
+      "margin": 0.3134396970272064,
+      "wrong_score": -0.07795383781194687,
+      "right_score": -0.3913935422897339
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Albert Einstein",
+        "the Order of Merit",
+        "and an honorary doctorate"
+      ],
+      "u": 0.02640095353126526,
+      "margin": 0.28323379158973694,
+      "wrong_score": -0.09476914256811142,
+      "right_score": -0.37800294160842896
+    }
+  ],
+  "single_u": [
+    -0.004659861326217651,
+    -0.003839433193206787,
+    0.21577614545822144
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "with the Albert Einstein",
+        "the Order of Merit"
+      ],
+      "u_i": -0.004659861326217651,
+      "u_j": -0.003839433193206787,
+      "local_fd": -0.06297734379768372,
+      "banzhaf": 0.1092153936624527,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "with the Albert Einstein",
+        "and an honorary doctorate"
+      ],
+      "u_i": -0.004659861326217651,
+      "u_j": 0.21577614545822144,
+      "local_fd": -0.24654236435890198,
+      "banzhaf": -0.07434962689876556,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "the Order of Merit",
+        "and an honorary doctorate"
+      ],
+      "u_i": -0.003839433193206787,
+      "u_j": 0.21577614545822144,
+      "local_fd": -0.21574166417121887,
+      "banzhaf": -0.04354892671108246,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "with the Albert Einstein",
+        "the Order of Merit",
+        "and an honorary doctorate"
+      ],
+      "order": 3,
+      "harsanyi": 0.3443854749202728
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "with the Albert Einstein",
+        "and an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": -0.24654236435890198
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "the Order of Merit",
+        "and an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": -0.21574166417121887
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "with the Albert Einstein",
+        "the Order of Merit"
+      ],
+      "order": 2,
+      "harsanyi": -0.06297734379768372
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.28323379158973694,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 9,
+    "n_excluded": 3,
+    "max_candidates": 6
+  }
+}

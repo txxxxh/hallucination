@@ -1,0 +1,145 @@
+{
+  "key": "question_2360",
+  "group": "Q184746",
+  "generation_correct": true,
+  "right": "Jane Goodall",
+  "wrong": "Kofi Annan",
+  "base_margin_wrong_minus_right": -0.9331514835357666,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 494,
+      "char_end": 514,
+      "text": "the Legion of Honour",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Officer of the Legion of Honour",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 116,
+      "token_end": 119
+    },
+    {
+      "char_start": 587,
+      "char_end": 620,
+      "text": "multiple honorary doctorates from",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary doctorate from the University of Geneva",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 130,
+      "token_end": 135
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9331514835357666,
+      "wrong_score": -0.9442427754402161,
+      "right_score": -0.011091286316514015
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the Legion of Honour"
+      ],
+      "u": -0.2193114161491394,
+      "margin": -0.7138400673866272,
+      "wrong_score": -0.7347588539123535,
+      "right_score": -0.02091876044869423
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "multiple honorary doctorates from"
+      ],
+      "u": -0.7343562841415405,
+      "margin": -0.19879519939422607,
+      "wrong_score": -0.3315621018409729,
+      "right_score": -0.13276690244674683
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Legion of Honour",
+        "multiple honorary doctorates from"
+      ],
+      "u": -0.8673931360244751,
+      "margin": -0.06575831770896912,
+      "wrong_score": -0.22635525465011597,
+      "right_score": -0.16059693694114685
+    }
+  ],
+  "single_u": [
+    -0.2193114161491394,
+    -0.7343562841415405
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the Legion of Honour",
+        "multiple honorary doctorates from"
+      ],
+      "u_i": -0.2193114161491394,
+      "u_j": -0.7343562841415405,
+      "local_fd": 0.08627456426620483,
+      "banzhaf": 0.08627456426620483,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the Legion of Honour",
+        "multiple honorary doctorates from"
+      ],
+      "order": 2,
+      "harsanyi": 0.08627456426620483
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.06575831770896912,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 5,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

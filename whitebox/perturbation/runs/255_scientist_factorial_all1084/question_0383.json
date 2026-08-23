@@ -1,0 +1,145 @@
+{
+  "key": "question_0383",
+  "group": "Q153717",
+  "generation_correct": true,
+  "right": "Freeman Dyson",
+  "wrong": "Roger Penrose",
+  "base_margin_wrong_minus_right": 0.44874507188796997,
+  "likelihood_error": true,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 245,
+      "char_end": 272,
+      "text": "the University of Cambridge",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Cambridge",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 76,
+      "token_end": 82
+    },
+    {
+      "char_start": 458,
+      "char_end": 480,
+      "text": "in Physics, the Dannie",
+      "kind": "attribute",
+      "field": "field",
+      "value": "physics",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 119,
+      "token_end": 126
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.44874507188796997,
+      "wrong_score": -0.06410115212202072,
+      "right_score": -0.5128462314605713
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Cambridge"
+      ],
+      "u": 0.23347413539886475,
+      "margin": 0.21527093648910522,
+      "wrong_score": -0.14752060174942017,
+      "right_score": -0.3627915382385254
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "in Physics, the Dannie"
+      ],
+      "u": 0.02884042263031006,
+      "margin": 0.4199046492576599,
+      "wrong_score": -0.07059885561466217,
+      "right_score": -0.4905034899711609
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "in Physics, the Dannie"
+      ],
+      "u": 0.2992161214351654,
+      "margin": 0.14952895045280457,
+      "wrong_score": -0.18175581097602844,
+      "right_score": -0.331284761428833
+    }
+  ],
+  "single_u": [
+    0.23347413539886475,
+    0.02884042263031006
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Cambridge",
+        "in Physics, the Dannie"
+      ],
+      "u_i": 0.23347413539886475,
+      "u_j": 0.02884042263031006,
+      "local_fd": 0.0369015634059906,
+      "banzhaf": 0.0369015634059906,
+      "relation_raw": "synergy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Cambridge",
+        "in Physics, the Dannie"
+      ],
+      "order": 2,
+      "harsanyi": 0.0369015634059906
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.14952895045280457,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 17,
+    "n_excluded": 11,
+    "max_candidates": 6
+  }
+}

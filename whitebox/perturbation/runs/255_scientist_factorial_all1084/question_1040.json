@@ -1,0 +1,290 @@
+{
+  "key": "question_1040",
+  "group": "Q311003",
+  "generation_correct": true,
+  "right": "Craig Venter",
+  "wrong": "Günter Blobel",
+  "base_margin_wrong_minus_right": 0.766746997833252,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 120,
+      "char_end": 153,
+      "text": "This distinguished biochemist has",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "biochemist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 56,
+      "token_end": 62
+    },
+    {
+      "char_start": 297,
+      "char_end": 320,
+      "text": "are the Canada Gairdner",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Canada Gairdner International Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 87,
+      "token_end": 91
+    },
+    {
+      "char_start": 349,
+      "char_end": 380,
+      "text": "King Faisal International Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "King Faisal International Prize in Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 95,
+      "token_end": 102
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.766746997833252,
+      "wrong_score": -0.022138092666864395,
+      "right_score": -0.7888851165771484
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished biochemist has"
+      ],
+      "u": 0.5840381383895874,
+      "margin": 0.18270885944366455,
+      "wrong_score": -0.10025017708539963,
+      "right_score": -0.2829590439796448
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "are the Canada Gairdner"
+      ],
+      "u": 0.036004841327667236,
+      "margin": 0.7307421565055847,
+      "wrong_score": -0.022543609142303467,
+      "right_score": -0.7532857656478882
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished biochemist has",
+        "are the Canada Gairdner"
+      ],
+      "u": -0.04316592216491699,
+      "margin": 0.809912919998169,
+      "wrong_score": -0.015275448560714722,
+      "right_score": -0.8251883387565613
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "King Faisal International Prize"
+      ],
+      "u": -0.16526657342910767,
+      "margin": 0.9320135712623596,
+      "wrong_score": -0.015067717991769314,
+      "right_score": -0.9470812678337097
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished biochemist has",
+        "King Faisal International Prize"
+      ],
+      "u": -0.16369271278381348,
+      "margin": 0.9304397106170654,
+      "wrong_score": -0.01925293169915676,
+      "right_score": -0.9496926665306091
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "are the Canada Gairdner",
+        "King Faisal International Prize"
+      ],
+      "u": -0.16402345895767212,
+      "margin": 0.9307704567909241,
+      "wrong_score": -0.016069334000349045,
+      "right_score": -0.9468398094177246
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished biochemist has",
+        "are the Canada Gairdner",
+        "King Faisal International Prize"
+      ],
+      "u": -0.17176395654678345,
+      "margin": 0.9385109543800354,
+      "wrong_score": -0.024561932310461998,
+      "right_score": -0.9630728960037231
+    }
+  ],
+  "single_u": [
+    0.5840381383895874,
+    0.036004841327667236,
+    -0.16526657342910767
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished biochemist has",
+        "are the Canada Gairdner"
+      ],
+      "u_i": 0.5840381383895874,
+      "u_j": 0.036004841327667236,
+      "local_fd": -0.6632089018821716,
+      "banzhaf": -0.3362616300582886,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished biochemist has",
+        "King Faisal International Prize"
+      ],
+      "u_i": 0.5840381383895874,
+      "u_j": -0.16526657342910767,
+      "local_fd": -0.5824642777442932,
+      "banzhaf": -0.25551700592041016,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "are the Canada Gairdner",
+        "King Faisal International Prize"
+      ],
+      "u_i": 0.036004841327667236,
+      "u_j": -0.16526657342910767,
+      "local_fd": -0.03476172685623169,
+      "banzhaf": 0.29218554496765137,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished biochemist has",
+        "are the Canada Gairdner"
+      ],
+      "order": 2,
+      "harsanyi": -0.6632089018821716
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished biochemist has",
+        "are the Canada Gairdner",
+        "King Faisal International Prize"
+      ],
+      "order": 3,
+      "harsanyi": 0.6538945436477661
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished biochemist has",
+        "King Faisal International Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.5824642777442932
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "are the Canada Gairdner",
+        "King Faisal International Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.03476172685623169
+    }
+  ],
+  "minimal_repair_sets": [],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.9385109543800354,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 2,
+    "max_candidates": 6
+  }
+}

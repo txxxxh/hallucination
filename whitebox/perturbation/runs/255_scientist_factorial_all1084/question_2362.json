@@ -1,0 +1,290 @@
+{
+  "key": "question_2362",
+  "group": "Q122701",
+  "generation_correct": true,
+  "right": "William Thomson, 1st Baron Kelvin",
+  "wrong": "Martin Ryle",
+  "base_margin_wrong_minus_right": -0.9699490070343018,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 294,
+      "char_end": 313,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 90,
+      "token_end": 93
+    },
+    {
+      "char_start": 360,
+      "char_end": 380,
+      "text": "as a Knight Bachelor",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Knight Bachelor",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 101,
+      "token_end": 107
+    },
+    {
+      "char_start": 503,
+      "char_end": 535,
+      "text": "Bakerian Medal. However, despite",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Royal Society Bakerian Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 127,
+      "token_end": 132
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.9699490070343018,
+      "wrong_score": -0.9952120780944824,
+      "right_score": -0.025263093411922455
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": -0.6304176449775696,
+      "margin": -0.3395313620567322,
+      "wrong_score": -0.40547943115234375,
+      "right_score": -0.06594806909561157
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "as a Knight Bachelor"
+      ],
+      "u": -0.520373523235321,
+      "margin": -0.4495754837989807,
+      "wrong_score": -0.5118007659912109,
+      "right_score": -0.06222527101635933
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "as a Knight Bachelor"
+      ],
+      "u": -0.7838979363441467,
+      "margin": -0.18605108559131622,
+      "wrong_score": -0.3011525571346283,
+      "right_score": -0.11510147154331207
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Bakerian Medal. However, despite"
+      ],
+      "u": -0.16627538204193115,
+      "margin": -0.8036736249923706,
+      "wrong_score": -0.8355357646942139,
+      "right_score": -0.03186216950416565
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "u": -0.12503588199615479,
+      "margin": -0.844913125038147,
+      "wrong_score": -0.8840646743774414,
+      "right_score": -0.03915153443813324
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Knight Bachelor",
+        "Bakerian Medal. However, despite"
+      ],
+      "u": -0.5548989772796631,
+      "margin": -0.41505002975463867,
+      "wrong_score": -0.5074033737182617,
+      "right_score": -0.09235335886478424
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "as a Knight Bachelor",
+        "Bakerian Medal. However, despite"
+      ],
+      "u": -0.7195084691047668,
+      "margin": -0.2504405379295349,
+      "wrong_score": -0.3850414454936981,
+      "right_score": -0.1346009075641632
+    }
+  ],
+  "single_u": [
+    -0.6304176449775696,
+    -0.520373523235321,
+    -0.16627538204193115
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Fellow of the Royal",
+        "as a Knight Bachelor"
+      ],
+      "u_i": -0.6304176449775696,
+      "u_j": -0.520373523235321,
+      "local_fd": 0.3668932318687439,
+      "banzhaf": 0.08052211999893188,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "u_i": -0.6304176449775696,
+      "u_j": -0.16627538204193115,
+      "local_fd": 0.671657145023346,
+      "banzhaf": 0.38528603315353394,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "as a Knight Bachelor",
+        "Bakerian Medal. However, despite"
+      ],
+      "u_i": -0.520373523235321,
+      "u_j": -0.16627538204193115,
+      "local_fd": 0.1317499279975891,
+      "banzhaf": -0.1546211838722229,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "Bakerian Medal. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": 0.671657145023346
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "as a Knight Bachelor",
+        "Bakerian Medal. However, despite"
+      ],
+      "order": 3,
+      "harsanyi": -0.572742223739624
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "as a Knight Bachelor"
+      ],
+      "order": 2,
+      "harsanyi": 0.3668932318687439
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "as a Knight Bachelor",
+        "Bakerian Medal. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": 0.1317499279975891
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.2504405379295349,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

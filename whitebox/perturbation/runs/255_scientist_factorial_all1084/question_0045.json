@@ -1,0 +1,143 @@
+{
+  "key": "question_0045",
+  "group": "Q135171",
+  "generation_correct": true,
+  "right": "Elias James Corey",
+  "wrong": "Sir Derek Barton",
+  "base_margin_wrong_minus_right": -2.7938179969787598,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 401,
+      "char_end": 421,
+      "text": "Award, and the Roger",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Roger Adams Award in Organic Chemistry",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 106,
+      "token_end": 111
+    },
+    {
+      "char_start": 485,
+      "char_end": 488,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 1,
+      "token_start": 123,
+      "token_end": 124
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.7938179969787598,
+      "wrong_score": -2.7944750785827637,
+      "right_score": -0.0006570742698386312
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "Award, and the Roger"
+      ],
+      "u": -1.3322663307189941,
+      "margin": -1.4615516662597656,
+      "wrong_score": -1.468169093132019,
+      "right_score": -0.006617473904043436
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": -0.5009262561798096,
+      "margin": -2.29289174079895,
+      "wrong_score": -2.2946865558624268,
+      "right_score": -0.0017947631422430277
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, and the Roger",
+        "not"
+      ],
+      "u": -1.0800825357437134,
+      "margin": -1.7137354612350464,
+      "wrong_score": -1.7273924350738525,
+      "right_score": -0.013656985014677048
+    }
+  ],
+  "single_u": [
+    -1.3322663307189941,
+    -0.5009262561798096
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "Award, and the Roger",
+        "not"
+      ],
+      "u_i": -1.3322663307189941,
+      "u_j": -0.5009262561798096,
+      "local_fd": 0.7531100511550903,
+      "banzhaf": 0.7531100511550903,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "Award, and the Roger",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": 0.7531100511550903
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.7137354612350464,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 14,
+    "n_excluded": 8,
+    "max_candidates": 6
+  }
+}

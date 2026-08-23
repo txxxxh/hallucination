@@ -1,0 +1,290 @@
+{
+  "key": "question_1448",
+  "group": "Q155380",
+  "generation_correct": true,
+  "right": "Stanley B. Prusiner",
+  "wrong": "Oliver Smithies",
+  "base_margin_wrong_minus_right": -0.09947597980499268,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 255,
+      "char_end": 273,
+      "text": "in the Nobel Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Nobel Prize in Physiology or Medicine",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 78,
+      "token_end": 83
+    },
+    {
+      "char_start": 387,
+      "char_end": 414,
+      "text": "including the Albert Lasker",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Albert Lasker Award for Basic Medical Research",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 106,
+      "token_end": 112
+    },
+    {
+      "char_start": 558,
+      "char_end": 577,
+      "text": "as a Foreign Member",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Foreign Member of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 136,
+      "token_end": 142
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.09947597980499268,
+      "wrong_score": -0.19102142751216888,
+      "right_score": -0.09154544770717621
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "in the Nobel Prize"
+      ],
+      "u": 0.09790220856666565,
+      "margin": -0.19737818837165833,
+      "wrong_score": -0.26822230219841003,
+      "right_score": -0.07084411382675171
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "including the Albert Lasker"
+      ],
+      "u": 0.011041365563869476,
+      "margin": -0.11051734536886215,
+      "wrong_score": -0.19720132648944855,
+      "right_score": -0.0866839811205864
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in the Nobel Prize",
+        "including the Albert Lasker"
+      ],
+      "u": -0.04636944830417633,
+      "margin": -0.053106531500816345,
+      "wrong_score": -0.16623908281326294,
+      "right_score": -0.1131325513124466
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "as a Foreign Member"
+      ],
+      "u": 0.09705434739589691,
+      "margin": -0.1965303272008896,
+      "wrong_score": -0.2661159932613373,
+      "right_score": -0.06958566606044769
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in the Nobel Prize",
+        "as a Foreign Member"
+      ],
+      "u": 0.07978563010692596,
+      "margin": -0.17926160991191864,
+      "wrong_score": -0.2521856725215912,
+      "right_score": -0.07292406260967255
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Albert Lasker",
+        "as a Foreign Member"
+      ],
+      "u": 0.026308149099349976,
+      "margin": -0.12578412890434265,
+      "wrong_score": -0.2104920893907547,
+      "right_score": -0.08470795303583145
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in the Nobel Prize",
+        "including the Albert Lasker",
+        "as a Foreign Member"
+      ],
+      "u": 0.0319138765335083,
+      "margin": -0.13138985633850098,
+      "wrong_score": -0.22421704232692719,
+      "right_score": -0.09282718598842621
+    }
+  ],
+  "single_u": [
+    0.09790220856666565,
+    0.011041365563869476,
+    0.09705434739589691
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "in the Nobel Prize",
+        "including the Albert Lasker"
+      ],
+      "u_i": 0.09790220856666565,
+      "u_j": 0.011041365563869476,
+      "local_fd": -0.15531301498413086,
+      "banzhaf": -0.0662192851305008,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "in the Nobel Prize",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.09790220856666565,
+      "u_j": 0.09705434739589691,
+      "local_fd": -0.1151709258556366,
+      "banzhaf": -0.026077192276716232,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "including the Albert Lasker",
+        "as a Foreign Member"
+      ],
+      "u_i": 0.011041365563869476,
+      "u_j": 0.09705434739589691,
+      "local_fd": -0.08178756386041641,
+      "banzhaf": 0.007306169718503952,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "in the Nobel Prize",
+        "including the Albert Lasker",
+        "as a Foreign Member"
+      ],
+      "order": 3,
+      "harsanyi": 0.17818746715784073
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "in the Nobel Prize",
+        "including the Albert Lasker"
+      ],
+      "order": 2,
+      "harsanyi": -0.15531302243471146
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "in the Nobel Prize",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.1151709258556366
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "including the Albert Lasker",
+        "as a Foreign Member"
+      ],
+      "order": 2,
+      "harsanyi": -0.08178756386041641
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.13138985633850098,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 15,
+    "n_excluded": 9,
+    "max_candidates": 6
+  }
+}

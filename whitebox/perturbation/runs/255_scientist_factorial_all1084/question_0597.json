@@ -1,0 +1,151 @@
+{
+  "key": "question_0597",
+  "group": "Q164384",
+  "generation_correct": true,
+  "right": "Theodore von Kármán",
+  "wrong": "Alexander von Humboldt",
+  "base_margin_wrong_minus_right": -0.38981691002845764,
+  "likelihood_error": false,
+  "m": 2,
+  "candidates": [
+    {
+      "char_start": 148,
+      "char_end": 175,
+      "text": "the University of Göttingen",
+      "kind": "attribute",
+      "field": "education",
+      "value": "University of Göttingen",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 66,
+      "token_end": 73
+    },
+    {
+      "char_start": 177,
+      "char_end": 205,
+      "text": "this prominent scientist and",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "scientist",
+      "owners": [
+        "right"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 72,
+      "token_end": 78
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.38981691002845764,
+      "wrong_score": -0.42701512575149536,
+      "right_score": -0.037198226898908615
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "the University of Göttingen"
+      ],
+      "u": -0.7677707076072693,
+      "margin": 0.37795379757881165,
+      "wrong_score": -0.031088504940271378,
+      "right_score": -0.4090422987937927
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "this prominent scientist and"
+      ],
+      "u": -0.6661433577537537,
+      "margin": 0.276326447725296,
+      "wrong_score": -0.048182666301727295,
+      "right_score": -0.3245091140270233
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "this prominent scientist and"
+      ],
+      "u": -0.6477056741714478,
+      "margin": 0.2578887343406677,
+      "wrong_score": -0.055420614778995514,
+      "right_score": -0.31330934166908264
+    }
+  ],
+  "single_u": [
+    -0.7677707076072693,
+    -0.6661433577537537
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "the University of Göttingen",
+        "this prominent scientist and"
+      ],
+      "u_i": -0.7677707076072693,
+      "u_j": -0.6661433577537537,
+      "local_fd": 0.7862083911895752,
+      "banzhaf": 0.7862083911895752,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "the University of Göttingen",
+        "this prominent scientist and"
+      ],
+      "order": 2,
+      "harsanyi": 0.7862083911895752
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.2578887343406677,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

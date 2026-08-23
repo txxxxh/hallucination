@@ -1,0 +1,1572 @@
+{
+  "method": "test-time interventional multimodal span role-mediated detector v7",
+  "model": "NousResearch/Meta-Llama-3.1-8B-Instruct",
+  "data": "other_bench/HaluEval/v7_llama_1000/halueval_qa_v7_adapted.jsonl",
+  "device": "cuda",
+  "dtype": "torch.bfloat16",
+  "choices": [
+    "1",
+    "2"
+  ],
+  "n_input": 3000,
+  "n_extracted": 3000,
+  "n_train": 2250,
+  "n_test": 750,
+  "interventions_used_for_prediction": [
+    "delete",
+    "neutralize",
+    "mask"
+  ],
+  "span_mode": "atomic",
+  "max_intervention_spans": 2,
+  "keep_head_identities": false,
+  "compute_gradient_features": true,
+  "lap_topk": 10,
+  "feature_sets_evaluated": [
+    "structure_only",
+    "behavior_only",
+    "attention_only",
+    "gradient_only",
+    "spectral_only",
+    "behavior_attention",
+    "behavior_gradient",
+    "behavior_spectral",
+    "whitebox_combined",
+    "all_combined"
+  ],
+  "primary_feature_set": "all_combined",
+  "feature_set_comparison": {
+    "structure_only": {
+      "feature_families": [
+        "structural"
+      ],
+      "role_head": {
+        "feature_set": "structure_only",
+        "feature_families": [
+          "structural"
+        ],
+        "n_input_features": 13,
+        "input_feature_counts_by_family": {
+          "structural": 13
+        },
+        "pca_dim": null,
+        "pca_explained_variance_ratio_sum": null,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.3949152542372881,
+        "weighted_accuracy": 0.39181281329491835,
+        "log_loss": 1.093938852591447,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.5348663698725993,
+            "auprc": 0.7478918751713315
+          },
+          "shortcut": {
+            "auroc": 0.5196010610360716,
+            "auprc": 0.25853132255851563
+          },
+          "irrelevant": {
+            "auroc": 0.5644208576287658,
+            "auprc": 0.030859475877945346
+          }
+        },
+        "macro_ovr_auroc": 0.5396294295124789
+      },
+      "selected_threshold_from_train_oof": 0.5162466549449113,
+      "role_mechanism": {
+        "bias": -0.39975154399871826,
+        "beta_shortcut": 2.5751101970672607,
+        "beta_constraint": 0.001447252812795341,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5162466549449113,
+          "accuracy": 0.7004444444444444,
+          "precision": 0.16517857142857142,
+          "recall": 0.4955357142857143,
+          "f1": 0.24776785714285715,
+          "confusion_matrix": [
+            [
+              1465,
+              561
+            ],
+            [
+              113,
+              111
+            ]
+          ],
+          "auroc": 0.6270602700606402,
+          "auprc": 0.16617145311663437
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5162466549449113,
+          "accuracy": 0.6968888888888889,
+          "precision": 0.16124260355029585,
+          "recall": 0.48660714285714285,
+          "f1": 0.24222222222222223,
+          "confusion_matrix": [
+            [
+              1459,
+              567
+            ],
+            [
+              115,
+              109
+            ]
+          ],
+          "auroc": 0.6310463968410662,
+          "auprc": 0.1682325749126492
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.5162466549449113,
+          "accuracy": 0.68,
+          "precision": 0.13004484304932734,
+          "recall": 0.38666666666666666,
+          "f1": 0.19463087248322147,
+          "confusion_matrix": [
+            [
+              481,
+              194
+            ],
+            [
+              46,
+              29
+            ]
+          ],
+          "auroc": 0.5992296296296297,
+          "auprc": 0.14340968079050442
+        }
+      },
+      "test_auroc_delta_vs_primary": -0.20665679012345683
+    },
+    "behavior_only": {
+      "feature_families": [
+        "behavior"
+      ],
+      "role_head": {
+        "feature_set": "behavior_only",
+        "feature_families": [
+          "behavior"
+        ],
+        "n_input_features": 27,
+        "input_feature_counts_by_family": {
+          "behavior": 27
+        },
+        "pca_dim": null,
+        "pca_explained_variance_ratio_sum": null,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.6423728813559322,
+        "weighted_accuracy": 0.6494393478601606,
+        "log_loss": 0.7613788219602206,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.8938752722089686,
+            "auprc": 0.9558582313338134
+          },
+          "shortcut": {
+            "auroc": 0.8726015414611926,
+            "auprc": 0.6453566069438035
+          },
+          "irrelevant": {
+            "auroc": 0.9389501336248784,
+            "auprc": 0.28294103036832163
+          }
+        },
+        "macro_ovr_auroc": 0.90180898243168
+      },
+      "selected_threshold_from_train_oof": 0.5334942980392229,
+      "role_mechanism": {
+        "bias": -0.26106977462768555,
+        "beta_shortcut": 4.761527061462402,
+        "beta_constraint": 2.5608325004577637,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5334942980392229,
+          "accuracy": 0.8106666666666666,
+          "precision": 0.30118110236220474,
+          "recall": 0.6830357142857143,
+          "f1": 0.4180327868852459,
+          "confusion_matrix": [
+            [
+              1671,
+              355
+            ],
+            [
+              71,
+              153
+            ]
+          ],
+          "auroc": 0.8357094380200254,
+          "auprc": 0.31407973035769465
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5334942980392229,
+          "accuracy": 0.8075555555555556,
+          "precision": 0.2962962962962963,
+          "recall": 0.6785714285714286,
+          "f1": 0.412483039348711,
+          "confusion_matrix": [
+            [
+              1665,
+              361
+            ],
+            [
+              72,
+              152
+            ]
+          ],
+          "auroc": 0.8375295268650402,
+          "auprc": 0.31673646077021256
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.5334942980392229,
+          "accuracy": 0.7906666666666666,
+          "precision": 0.2722222222222222,
+          "recall": 0.6533333333333333,
+          "f1": 0.3843137254901961,
+          "confusion_matrix": [
+            [
+              544,
+              131
+            ],
+            [
+              26,
+              49
+            ]
+          ],
+          "auroc": 0.808651851851852,
+          "auprc": 0.30127114394637616
+        }
+      },
+      "test_auroc_delta_vs_primary": 0.0027654320987654524
+    },
+    "attention_only": {
+      "feature_families": [
+        "attention"
+      ],
+      "role_head": {
+        "feature_set": "attention_only",
+        "feature_families": [
+          "attention"
+        ],
+        "n_input_features": 768,
+        "input_feature_counts_by_family": {
+          "attention": 768
+        },
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.9549649532900936,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.615496368038741,
+        "weighted_accuracy": 0.6152468341917178,
+        "log_loss": 0.8580334337075709,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.8398895743036516,
+            "auprc": 0.937213552304385
+          },
+          "shortcut": {
+            "auroc": 0.8340741595951432,
+            "auprc": 0.5728403415947311
+          },
+          "irrelevant": {
+            "auroc": 0.7603027818270165,
+            "auprc": 0.05839507470440773
+          }
+        },
+        "macro_ovr_auroc": 0.8114221719086038
+      },
+      "selected_threshold_from_train_oof": 0.5364046278326593,
+      "role_mechanism": {
+        "bias": -0.17670229077339172,
+        "beta_shortcut": 4.526548385620117,
+        "beta_constraint": 2.613557815551758,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5364046278326593,
+          "accuracy": 0.8208888888888889,
+          "precision": 0.2979683972911964,
+          "recall": 0.5892857142857143,
+          "f1": 0.39580209895052476,
+          "confusion_matrix": [
+            [
+              1715,
+              311
+            ],
+            [
+              92,
+              132
+            ]
+          ],
+          "auroc": 0.8174005781977155,
+          "auprc": 0.3032472663941833
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5364046278326593,
+          "accuracy": 0.8208888888888889,
+          "precision": 0.29705215419501135,
+          "recall": 0.5848214285714286,
+          "f1": 0.39398496240601505,
+          "confusion_matrix": [
+            [
+              1716,
+              310
+            ],
+            [
+              93,
+              131
+            ]
+          ],
+          "auroc": 0.8210121104216613,
+          "auprc": 0.30517246073974785
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.5364046278326593,
+          "accuracy": 0.8213333333333334,
+          "precision": 0.30718954248366015,
+          "recall": 0.6266666666666667,
+          "f1": 0.41228070175438597,
+          "confusion_matrix": [
+            [
+              569,
+              106
+            ],
+            [
+              28,
+              47
+            ]
+          ],
+          "auroc": 0.8066172839506173,
+          "auprc": 0.3060995737265054
+        }
+      },
+      "test_auroc_delta_vs_primary": 0.0007308641975307673
+    },
+    "gradient_only": {
+      "feature_families": [
+        "gradient"
+      ],
+      "role_head": {
+        "feature_set": "gradient_only",
+        "feature_families": [
+          "gradient"
+        ],
+        "n_input_features": 108,
+        "input_feature_counts_by_family": {
+          "gradient": 108
+        },
+        "pca_dim": null,
+        "pca_explained_variance_ratio_sum": null,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.4830508474576271,
+        "weighted_accuracy": 0.47854342516404624,
+        "log_loss": 1.0071616378560628,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.6983210028996997,
+            "auprc": 0.8596708942060766
+          },
+          "shortcut": {
+            "auroc": 0.6772410664743704,
+            "auprc": 0.3577265075093538
+          },
+          "irrelevant": {
+            "auroc": 0.7157662172011661,
+            "auprc": 0.055021380216551175
+          }
+        },
+        "macro_ovr_auroc": 0.6971094288584121
+      },
+      "selected_threshold_from_train_oof": 0.5447068839524445,
+      "role_mechanism": {
+        "bias": -0.3417678773403168,
+        "beta_shortcut": 4.613211631774902,
+        "beta_constraint": 2.2965455055236816,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5447068839524445,
+          "accuracy": 0.8088888888888889,
+          "precision": 0.2669683257918552,
+          "recall": 0.5267857142857143,
+          "f1": 0.35435435435435436,
+          "confusion_matrix": [
+            [
+              1702,
+              324
+            ],
+            [
+              106,
+              118
+            ]
+          ],
+          "auroc": 0.778863612325483,
+          "auprc": 0.24424307776577417
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5447068839524445,
+          "accuracy": 0.8097777777777778,
+          "precision": 0.2671232876712329,
+          "recall": 0.5223214285714286,
+          "f1": 0.35347432024169184,
+          "confusion_matrix": [
+            [
+              1705,
+              321
+            ],
+            [
+              107,
+              117
+            ]
+          ],
+          "auroc": 0.7833543400084615,
+          "auprc": 0.24683808863084394
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.5447068839524445,
+          "accuracy": 0.8213333333333334,
+          "precision": 0.2677165354330709,
+          "recall": 0.4533333333333333,
+          "f1": 0.33663366336633666,
+          "confusion_matrix": [
+            [
+              582,
+              93
+            ],
+            [
+              41,
+              34
+            ]
+          ],
+          "auroc": 0.7759407407407407,
+          "auprc": 0.2553340372051914
+        }
+      },
+      "test_auroc_delta_vs_primary": -0.029945679012345794
+    },
+    "spectral_only": {
+      "feature_families": [
+        "spectral"
+      ],
+      "role_head": {
+        "feature_set": "spectral_only",
+        "feature_families": [
+          "spectral"
+        ],
+        "n_input_features": 2592,
+        "input_feature_counts_by_family": {
+          "spectral": 2592
+        },
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.6444241264126687,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.5566585956416464,
+        "weighted_accuracy": 0.5603764339971685,
+        "log_loss": 0.9483235415164059,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.7660980276159324,
+            "auprc": 0.9005399937250669
+          },
+          "shortcut": {
+            "auroc": 0.7428066353554403,
+            "auprc": 0.44768832554735577
+          },
+          "irrelevant": {
+            "auroc": 0.681694403952057,
+            "auprc": 0.04005360922744924
+          }
+        },
+        "macro_ovr_auroc": 0.7301996889744765
+      },
+      "selected_threshold_from_train_oof": 0.6208144266791118,
+      "role_mechanism": {
+        "bias": -0.31803712248802185,
+        "beta_shortcut": 4.914460182189941,
+        "beta_constraint": 2.2015421390533447,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.6208144266791118,
+          "accuracy": 0.8666666666666667,
+          "precision": 0.35384615384615387,
+          "recall": 0.4107142857142857,
+          "f1": 0.38016528925619836,
+          "confusion_matrix": [
+            [
+              1858,
+              168
+            ],
+            [
+              132,
+              92
+            ]
+          ],
+          "auroc": 0.7891032647017345,
+          "auprc": 0.2934666915309127
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.6208144266791118,
+          "accuracy": 0.8644444444444445,
+          "precision": 0.3448275862068966,
+          "recall": 0.4017857142857143,
+          "f1": 0.3711340206185567,
+          "confusion_matrix": [
+            [
+              1855,
+              171
+            ],
+            [
+              134,
+              90
+            ]
+          ],
+          "auroc": 0.7950835566210689,
+          "auprc": 0.29774312665670266
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.6208144266791118,
+          "accuracy": 0.8453333333333334,
+          "precision": 0.2696629213483146,
+          "recall": 0.32,
+          "f1": 0.2926829268292683,
+          "confusion_matrix": [
+            [
+              610,
+              65
+            ],
+            [
+              51,
+              24
+            ]
+          ],
+          "auroc": 0.7825185185185186,
+          "auprc": 0.2784954994565379
+        }
+      },
+      "test_auroc_delta_vs_primary": -0.02336790123456789
+    },
+    "behavior_attention": {
+      "feature_families": [
+        "behavior",
+        "attention"
+      ],
+      "role_head": {
+        "feature_set": "behavior_attention",
+        "feature_families": [
+          "behavior",
+          "attention"
+        ],
+        "n_input_features": 795,
+        "input_feature_counts_by_family": {
+          "behavior": 27,
+          "attention": 768
+        },
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.9512499081895538,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.6539951573849879,
+        "weighted_accuracy": 0.6584658115428081,
+        "log_loss": 0.794440877338021,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.8722789131311318,
+            "auprc": 0.9507809598750527
+          },
+          "shortcut": {
+            "auroc": 0.8541731530366937,
+            "auprc": 0.6135194257588352
+          },
+          "irrelevant": {
+            "auroc": 0.9153531948493684,
+            "auprc": 0.22828229477966527
+          }
+        },
+        "macro_ovr_auroc": 0.8806017536723979
+      },
+      "selected_threshold_from_train_oof": 0.5351000242680887,
+      "role_mechanism": {
+        "bias": -0.22334755957126617,
+        "beta_shortcut": 4.634310245513916,
+        "beta_constraint": 2.374760150909424,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5351000242680887,
+          "accuracy": 0.828,
+          "precision": 0.31519274376417233,
+          "recall": 0.6205357142857143,
+          "f1": 0.4180451127819549,
+          "confusion_matrix": [
+            [
+              1724,
+              302
+            ],
+            [
+              85,
+              139
+            ]
+          ],
+          "auroc": 0.8302954449301931,
+          "auprc": 0.32200668107787145
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5351000242680887,
+          "accuracy": 0.8262222222222222,
+          "precision": 0.3097949886104784,
+          "recall": 0.6071428571428571,
+          "f1": 0.41025641025641024,
+          "confusion_matrix": [
+            [
+              1723,
+              303
+            ],
+            [
+              88,
+              136
+            ]
+          ],
+          "auroc": 0.8335786560428712,
+          "auprc": 0.32562042915463446
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.5351000242680887,
+          "accuracy": 0.8333333333333334,
+          "precision": 0.34177215189873417,
+          "recall": 0.72,
+          "f1": 0.463519313304721,
+          "confusion_matrix": [
+            [
+              571,
+              104
+            ],
+            [
+              21,
+              54
+            ]
+          ],
+          "auroc": 0.8298469135802469,
+          "auprc": 0.32889720995453237
+        }
+      },
+      "test_auroc_delta_vs_primary": 0.023960493827160367
+    },
+    "behavior_gradient": {
+      "feature_families": [
+        "behavior",
+        "gradient"
+      ],
+      "role_head": {
+        "feature_set": "behavior_gradient",
+        "feature_families": [
+          "behavior",
+          "gradient"
+        ],
+        "n_input_features": 135,
+        "input_feature_counts_by_family": {
+          "behavior": 27,
+          "gradient": 108
+        },
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.9999999999999994,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.6476997578692494,
+        "weighted_accuracy": 0.6527076091662645,
+        "log_loss": 0.7723937474670378,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.886961038127529,
+            "auprc": 0.9535412586477869
+          },
+          "shortcut": {
+            "auroc": 0.8669865925745771,
+            "auprc": 0.6388375736628998
+          },
+          "irrelevant": {
+            "auroc": 0.935369088111435,
+            "auprc": 0.2986685955977621
+          }
+        },
+        "macro_ovr_auroc": 0.8964389062711805
+      },
+      "selected_threshold_from_train_oof": 0.5061038495244545,
+      "role_mechanism": {
+        "bias": -0.2687646746635437,
+        "beta_shortcut": 4.779503345489502,
+        "beta_constraint": 2.5281851291656494,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5061038495244545,
+          "accuracy": 0.8017777777777778,
+          "precision": 0.30035971223021585,
+          "recall": 0.7455357142857143,
+          "f1": 0.4282051282051282,
+          "confusion_matrix": [
+            [
+              1637,
+              389
+            ],
+            [
+              57,
+              167
+            ]
+          ],
+          "auroc": 0.8389838351431391,
+          "auprc": 0.31108475262414875
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5061038495244545,
+          "accuracy": 0.7995555555555556,
+          "precision": 0.29695885509839,
+          "recall": 0.7410714285714286,
+          "f1": 0.4240102171136654,
+          "confusion_matrix": [
+            [
+              1633,
+              393
+            ],
+            [
+              58,
+              166
+            ]
+          ],
+          "auroc": 0.8417624453532646,
+          "auprc": 0.31402034814530755
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.5061038495244545,
+          "accuracy": 0.7813333333333333,
+          "precision": 0.27860696517412936,
+          "recall": 0.7466666666666667,
+          "f1": 0.4057971014492754,
+          "confusion_matrix": [
+            [
+              530,
+              145
+            ],
+            [
+              19,
+              56
+            ]
+          ],
+          "auroc": 0.8095604938271606,
+          "auprc": 0.3043746914435987
+        }
+      },
+      "test_auroc_delta_vs_primary": 0.003674074074074052
+    },
+    "behavior_spectral": {
+      "feature_families": [
+        "behavior",
+        "spectral"
+      ],
+      "role_head": {
+        "feature_set": "behavior_spectral",
+        "feature_families": [
+          "behavior",
+          "spectral"
+        ],
+        "n_input_features": 2619,
+        "input_feature_counts_by_family": {
+          "behavior": 27,
+          "spectral": 2592
+        },
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.6422426385039969,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.57409200968523,
+        "weighted_accuracy": 0.5813181234293853,
+        "log_loss": 0.8909699438817696,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.8094618931214513,
+            "auprc": 0.9221809437486302
+          },
+          "shortcut": {
+            "auroc": 0.7769704448648296,
+            "auprc": 0.460107278953673
+          },
+          "irrelevant": {
+            "auroc": 0.7516525955620345,
+            "auprc": 0.05553964590678249
+          }
+        },
+        "macro_ovr_auroc": 0.7793616445161051
+      },
+      "selected_threshold_from_train_oof": 0.6264199753498655,
+      "role_mechanism": {
+        "bias": -0.3633652329444885,
+        "beta_shortcut": 5.280699729919434,
+        "beta_constraint": 2.022050619125366,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.6264199753498655,
+          "accuracy": 0.8808888888888889,
+          "precision": 0.4140625,
+          "recall": 0.4732142857142857,
+          "f1": 0.44166666666666665,
+          "confusion_matrix": [
+            [
+              1876,
+              150
+            ],
+            [
+              118,
+              106
+            ]
+          ],
+          "auroc": 0.8216511246650684,
+          "auprc": 0.3559274166756511
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.6264199753498655,
+          "accuracy": 0.8786666666666667,
+          "precision": 0.403921568627451,
+          "recall": 0.45982142857142855,
+          "f1": 0.430062630480167,
+          "confusion_matrix": [
+            [
+              1874,
+              152
+            ],
+            [
+              121,
+              103
+            ]
+          ],
+          "auroc": 0.8257187808489634,
+          "auprc": 0.3602667246385496
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.6264199753498655,
+          "accuracy": 0.86,
+          "precision": 0.33695652173913043,
+          "recall": 0.41333333333333333,
+          "f1": 0.3712574850299401,
+          "confusion_matrix": [
+            [
+              614,
+              61
+            ],
+            [
+              44,
+              31
+            ]
+          ],
+          "auroc": 0.8204641975308642,
+          "auprc": 0.3544168546533065
+        }
+      },
+      "test_auroc_delta_vs_primary": 0.01457777777777769
+    },
+    "whitebox_combined": {
+      "feature_families": [
+        "attention",
+        "gradient",
+        "spectral"
+      ],
+      "role_head": {
+        "feature_set": "whitebox_combined",
+        "feature_families": [
+          "attention",
+          "gradient",
+          "spectral"
+        ],
+        "n_input_features": 3468,
+        "input_feature_counts_by_family": {
+          "attention": 768,
+          "gradient": 108,
+          "spectral": 2592
+        },
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.6609040524776539,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.6043583535108958,
+        "weighted_accuracy": 0.6032218422104982,
+        "log_loss": 0.8769313397715565,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.8203772907671649,
+            "auprc": 0.9282865752594651
+          },
+          "shortcut": {
+            "auroc": 0.808702792238374,
+            "auprc": 0.527613757356351
+          },
+          "irrelevant": {
+            "auroc": 0.7577568229672822,
+            "auprc": 0.05734915065085931
+          }
+        },
+        "macro_ovr_auroc": 0.7956123019909404
+      },
+      "selected_threshold_from_train_oof": 0.5432491780351691,
+      "role_mechanism": {
+        "bias": -0.23807154595851898,
+        "beta_shortcut": 4.617776870727539,
+        "beta_constraint": 2.4121322631835938,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5432491780351691,
+          "accuracy": 0.8328888888888889,
+          "precision": 0.3146341463414634,
+          "recall": 0.5758928571428571,
+          "f1": 0.4069400630914827,
+          "confusion_matrix": [
+            [
+              1745,
+              281
+            ],
+            [
+              95,
+              129
+            ]
+          ],
+          "auroc": 0.8092542483429699,
+          "auprc": 0.3175620420810989
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.5432491780351691,
+          "accuracy": 0.8315555555555556,
+          "precision": 0.3105134474327628,
+          "recall": 0.5669642857142857,
+          "f1": 0.40126382306477093,
+          "confusion_matrix": [
+            [
+              1744,
+              282
+            ],
+            [
+              97,
+              127
+            ]
+          ],
+          "auroc": 0.812462540544352,
+          "auprc": 0.32159946580474374
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.5432491780351691,
+          "accuracy": 0.8253333333333334,
+          "precision": 0.2971014492753623,
+          "recall": 0.5466666666666666,
+          "f1": 0.38497652582159625,
+          "confusion_matrix": [
+            [
+              578,
+              97
+            ],
+            [
+              34,
+              41
+            ]
+          ],
+          "auroc": 0.7983012345679013,
+          "auprc": 0.29341321435067885
+        }
+      },
+      "test_auroc_delta_vs_primary": -0.00758518518518525
+    },
+    "all_combined": {
+      "feature_families": [
+        "structural",
+        "behavior",
+        "attention",
+        "gradient",
+        "spectral"
+      ],
+      "role_head": {
+        "feature_set": "all_combined",
+        "feature_families": [
+          "structural",
+          "behavior",
+          "attention",
+          "gradient",
+          "spectral"
+        ],
+        "n_input_features": 3508,
+        "input_feature_counts_by_family": {
+          "structural": 13,
+          "behavior": 27,
+          "attention": 768,
+          "gradient": 108,
+          "spectral": 2592
+        },
+        "pca_dim": 128,
+        "pca_explained_variance_ratio_sum": 0.659442184952186,
+        "classifier_classes": [
+          0,
+          1,
+          2
+        ],
+        "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+      },
+      "span_role_train_oof": {
+        "n": 4130,
+        "accuracy": 0.6159806295399516,
+        "weighted_accuracy": 0.6172305502275355,
+        "log_loss": 0.8449506950937073,
+        "class_counts": {
+          "constraint": 3013,
+          "shortcut": 1019,
+          "irrelevant": 98
+        },
+        "per_role": {
+          "constraint": {
+            "auroc": 0.8394171363066818,
+            "auprc": 0.9352731261383996
+          },
+          "shortcut": {
+            "auroc": 0.8198039878124064,
+            "auprc": 0.5331154797235704
+          },
+          "irrelevant": {
+            "auroc": 0.7955564666342727,
+            "auprc": 0.06924573951391651
+          }
+        },
+        "macro_ovr_auroc": 0.8182591969177869
+      },
+      "selected_threshold_from_train_oof": 0.6502667305911267,
+      "role_mechanism": {
+        "bias": -0.29552018642425537,
+        "beta_shortcut": 4.839106559753418,
+        "beta_constraint": 2.056896448135376,
+        "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+      },
+      "item_metrics": {
+        "train_oof": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.6502667305911267,
+          "accuracy": 0.8782222222222222,
+          "precision": 0.39919354838709675,
+          "recall": 0.4419642857142857,
+          "f1": 0.4194915254237288,
+          "confusion_matrix": [
+            [
+              1877,
+              149
+            ],
+            [
+              125,
+              99
+            ]
+          ],
+          "auroc": 0.8124493195600057,
+          "auprc": 0.34996214044140206
+        },
+        "train_full": {
+          "n": 2250,
+          "positive_rate": 0.09955555555555555,
+          "threshold": 0.6502667305911267,
+          "accuracy": 0.8782222222222222,
+          "precision": 0.3983739837398374,
+          "recall": 0.4375,
+          "f1": 0.41702127659574467,
+          "confusion_matrix": [
+            [
+              1878,
+              148
+            ],
+            [
+              126,
+              98
+            ]
+          ],
+          "auroc": 0.8157237166831194,
+          "auprc": 0.3522587239222356
+        },
+        "test": {
+          "n": 750,
+          "positive_rate": 0.1,
+          "threshold": 0.6502667305911267,
+          "accuracy": 0.868,
+          "precision": 0.36046511627906974,
+          "recall": 0.41333333333333333,
+          "f1": 0.38509316770186336,
+          "confusion_matrix": [
+            [
+              620,
+              55
+            ],
+            [
+              44,
+              31
+            ]
+          ],
+          "auroc": 0.8058864197530865,
+          "auprc": 0.35062338497835627
+        }
+      },
+      "test_auroc_delta_vs_primary": 0.0
+    }
+  },
+  "feature_set_item_test_auroc_ranking": [
+    "behavior_attention",
+    "behavior_spectral",
+    "behavior_gradient",
+    "behavior_only",
+    "attention_only",
+    "all_combined",
+    "whitebox_combined",
+    "spectral_only",
+    "gradient_only",
+    "structure_only"
+  ],
+  "feature_set_span_role_oof_auroc_ranking": [
+    "behavior_only",
+    "behavior_gradient",
+    "behavior_attention",
+    "all_combined",
+    "attention_only",
+    "whitebox_combined",
+    "behavior_spectral",
+    "spectral_only",
+    "gradient_only",
+    "structure_only"
+  ],
+  "role_pseudo_label_counts": {
+    "constraint": 3031,
+    "shortcut": 1028,
+    "irrelevant": 103
+  },
+  "mean_role_reliability": 0.7990903265478448,
+  "n_role_training_spans": 4130,
+  "primary_metrics": {
+    "train_oof": {
+      "n": 2250,
+      "positive_rate": 0.09955555555555555,
+      "threshold": 0.6502667305911267,
+      "accuracy": 0.8782222222222222,
+      "precision": 0.39919354838709675,
+      "recall": 0.4419642857142857,
+      "f1": 0.4194915254237288,
+      "confusion_matrix": [
+        [
+          1877,
+          149
+        ],
+        [
+          125,
+          99
+        ]
+      ],
+      "auroc": 0.8124493195600057,
+      "auprc": 0.34996214044140206
+    },
+    "train_full": {
+      "n": 2250,
+      "positive_rate": 0.09955555555555555,
+      "threshold": 0.6502667305911267,
+      "accuracy": 0.8782222222222222,
+      "precision": 0.3983739837398374,
+      "recall": 0.4375,
+      "f1": 0.41702127659574467,
+      "confusion_matrix": [
+        [
+          1878,
+          148
+        ],
+        [
+          126,
+          98
+        ]
+      ],
+      "auroc": 0.8157237166831194,
+      "auprc": 0.3522587239222356
+    },
+    "test": {
+      "n": 750,
+      "positive_rate": 0.1,
+      "threshold": 0.6502667305911267,
+      "accuracy": 0.868,
+      "precision": 0.36046511627906974,
+      "recall": 0.41333333333333333,
+      "f1": 0.38509316770186336,
+      "confusion_matrix": [
+        [
+          620,
+          55
+        ],
+        [
+          44,
+          31
+        ]
+      ],
+      "auroc": 0.8058864197530865,
+      "auprc": 0.35062338497835627
+    }
+  },
+  "primary_role_head": {
+    "feature_set": "all_combined",
+    "feature_families": [
+      "structural",
+      "behavior",
+      "attention",
+      "gradient",
+      "spectral"
+    ],
+    "n_input_features": 3508,
+    "input_feature_counts_by_family": {
+      "structural": 13,
+      "behavior": 27,
+      "attention": 768,
+      "gradient": 108,
+      "spectral": 2592
+    },
+    "pca_dim": 128,
+    "pca_explained_variance_ratio_sum": 0.659442184952186,
+    "classifier_classes": [
+      0,
+      1,
+      2
+    ],
+    "note": "coefficients live in PCA space; use the feature-set ablation table and permutation importance for family-level interpretation"
+  },
+  "primary_role_mechanism": {
+    "bias": -0.29552018642425537,
+    "beta_shortcut": 4.839106559753418,
+    "beta_constraint": 2.056896448135376,
+    "formula": "bias + beta_shortcut * shortcut_evidence - beta_constraint * constraint_evidence"
+  },
+  "primary_selected_threshold_from_train_oof": 0.6502667305911267,
+  "shortcut_explanatory_statistics_primary": {
+    "shortcut_evidence_by_outcome": {
+      "hallucination": {
+        "n": 75,
+        "mean": 0.21957083712836845,
+        "median": 0.19994125675572474,
+        "std": 0.16788552160004533,
+        "bootstrap_mean_95_ci": [
+          0.18289165623544262,
+          0.2579596026257302
+        ]
+      },
+      "correct": {
+        "n": 675,
+        "mean": 0.07752744742810179,
+        "median": 0.03286501647659318,
+        "std": 0.10865218807630307,
+        "bootstrap_mean_95_ci": [
+          0.06986020382983966,
+          0.08579177053843584
+        ]
+      },
+      "mean_difference_hallucination_minus_correct": 0.14204338970026664,
+      "difference_bootstrap_95_ci": [
+        0.10349669788320326,
+        0.1810433677158971
+      ],
+      "label_permutation_p_value": 0.0001999600079984003,
+      "cohens_d": 1.225888231535752,
+      "shortcut_evidence_auroc": 0.8143012345679013,
+      "shortcut_evidence_auprc": 0.31489126359989883
+    },
+    "additional_shortcut_quantities": {
+      "max_shortcut_probability": {
+        "hallucination": {
+          "n": 75,
+          "mean": 0.5499291024098462,
+          "median": 0.5318972978391774,
+          "std": 0.15923874504235538,
+          "bootstrap_mean_95_ci": [
+            0.5156250771490811,
+            0.5859880442028179
+          ]
+        },
+        "correct": {
+          "n": 675,
+          "mean": 0.40752439110592587,
+          "median": 0.4149157680596519,
+          "std": 0.16711335157140977,
+          "bootstrap_mean_95_ci": [
+            0.39511604626411106,
+            0.4202153890331216
+          ]
+        },
+        "auroc": 0.7391802469135802
+      },
+      "max_shortcut_logit_contribution": {
+        "hallucination": {
+          "n": 75,
+          "mean": 0.7783162796257319,
+          "median": 0.6239047947821253,
+          "std": 0.5799087365421723,
+          "bootstrap_mean_95_ci": [
+            0.648229316912387,
+            0.9026959492302193
+          ]
+        },
+        "correct": {
+          "n": 675,
+          "mean": 0.2786849452170834,
+          "median": 0.11393133395144642,
+          "std": 0.4071076835462379,
+          "bootstrap_mean_95_ci": [
+            0.2500016238861766,
+            0.3098107109664894
+          ]
+        },
+        "auroc": 0.813767901234568
+      }
+    },
+    "shortcut_detection_prevalence": {
+      "contingency": {
+        "hallucination_detected": 45,
+        "hallucination_not_detected": 30,
+        "correct_detected": 104,
+        "correct_not_detected": 571
+      },
+      "detected_rate_given_hallucination": 0.6,
+      "detected_rate_given_correct": 0.15407407407407409,
+      "rate_difference": 0.4459259259259259,
+      "label_permutation_p_value": 0.0001999600079984003,
+      "hallucination_rate_given_detected": 0.30201342281879195,
+      "hallucination_rate_given_not_detected": 0.04991680532445923,
+      "odds_ratio": 8.235576923076923,
+      "odds_ratio_95_ci": [
+        4.960092730614802,
+        13.674084526139561
+      ]
+    },
+    "shortcut_evidence_dose_response": [
+      {
+        "quartile": 1,
+        "n": 188,
+        "shortcut_evidence_min": 0.0,
+        "shortcut_evidence_max": 0.01727941409016198,
+        "hallucination_rate": 0.005319148936170213
+      },
+      {
+        "quartile": 2,
+        "n": 187,
+        "shortcut_evidence_min": 0.0173791983028234,
+        "shortcut_evidence_max": 0.037170451733981244,
+        "hallucination_rate": 0.03208556149732621
+      },
+      {
+        "quartile": 3,
+        "n": 188,
+        "shortcut_evidence_min": 0.03761706157105482,
+        "shortcut_evidence_max": 0.11126720706134431,
+        "hallucination_rate": 0.10106382978723404
+      },
+      {
+        "quartile": 4,
+        "n": 187,
+        "shortcut_evidence_min": 0.11453911610654281,
+        "shortcut_evidence_max": 0.649977784158881,
+        "hallucination_rate": 0.2620320855614973
+      }
+    ]
+  },
+  "files": {
+    "base_multimodal_features": "other_bench/HaluEval/v7_llama_3000/base_multimodal_features.jsonl",
+    "intervention_multimodal_features": "other_bench/HaluEval/v7_llama_3000/intervention_multimodal_features.jsonl",
+    "predictions": "other_bench/HaluEval/v7_llama_3000/predictions.jsonl",
+    "model_bundle": "other_bench/HaluEval/v7_llama_3000/interventional_multimodal_bundle.joblib"
+  },
+  "method_notes": {
+    "test_prediction_uses_span_interventions": true,
+    "test_prediction_uses_gold_answer": false,
+    "detector_has_global_residual_channel": false,
+    "span_role_feature_families": [
+      "structural",
+      "behavior/logit",
+      "attention",
+      "gradient",
+      "spectral"
+    ],
+    "logit_features_are_span_level_intervention_responses": true,
+    "gradient_features_are_span_level_chosen_contrast_gradients": true,
+    "attention_features_are_span_level_decision_row_features": true,
+    "spectral_features_use_per_layer_per_head_causal_attention_laplacian": true,
+    "all_feature_set_item_detectors_share_the_same_behavior_derived_usage_weight": true,
+    "cleanest_feature_family_comparison_is_span_role_train_oof_metrics": true,
+    "profile_swap_is_a_synthetic_intervention_span": true,
+    "causal_audit_warning": "delete/neutralize/mask are part of prediction and cannot also serve as independent post-hoc causal validation; reserve held-out semantic-preserving operators"
+  }
+}

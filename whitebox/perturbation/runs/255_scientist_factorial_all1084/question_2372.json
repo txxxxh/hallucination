@@ -1,0 +1,287 @@
+{
+  "key": "question_2372",
+  "group": "Q233973",
+  "generation_correct": true,
+  "right": "John A. Pople",
+  "wrong": "Ernest Rutherford",
+  "base_margin_wrong_minus_right": -1.184962272644043,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 162,
+      "char_end": 189,
+      "text": "educated at Trinity College",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Trinity College",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 69,
+      "token_end": 73
+    },
+    {
+      "char_start": 423,
+      "char_end": 442,
+      "text": "Fellow of the Royal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 119,
+      "token_end": 123
+    },
+    {
+      "char_start": 481,
+      "char_end": 484,
+      "text": "not",
+      "kind": "logic",
+      "field": "logic",
+      "value": "not",
+      "owners": [],
+      "negated": true,
+      "id": 2,
+      "token_start": 131,
+      "token_end": 132
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -1.184962272644043,
+      "wrong_score": -1.1916695833206177,
+      "right_score": -0.006707294378429651
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "educated at Trinity College"
+      ],
+      "u": 1.377793312072754,
+      "margin": -2.562755584716797,
+      "wrong_score": -2.567984104156494,
+      "right_score": -0.0052285343408584595
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Fellow of the Royal"
+      ],
+      "u": 0.13099563121795654,
+      "margin": -1.3159579038619995,
+      "wrong_score": -1.328007698059082,
+      "right_score": -0.01204974390566349
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "Fellow of the Royal"
+      ],
+      "u": 0.3482860326766968,
+      "margin": -1.5332483053207397,
+      "wrong_score": -1.5404990911483765,
+      "right_score": -0.00725074578076601
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "not"
+      ],
+      "u": 0.3767746686935425,
+      "margin": -1.5617369413375854,
+      "wrong_score": -1.5683389902114868,
+      "right_score": -0.006602087058126926
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "not"
+      ],
+      "u": 1.254059076309204,
+      "margin": -2.439021348953247,
+      "wrong_score": -2.444352388381958,
+      "right_score": -0.005331003572791815
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "not"
+      ],
+      "u": -0.11824381351470947,
+      "margin": -1.0667184591293335,
+      "wrong_score": -1.0841306447982788,
+      "right_score": -0.017412235960364342
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "Fellow of the Royal",
+        "not"
+      ],
+      "u": 0.41779792308807373,
+      "margin": -1.6027601957321167,
+      "wrong_score": -1.6171876192092896,
+      "right_score": -0.014427411369979382
+    }
+  ],
+  "single_u": [
+    1.377793312072754,
+    0.13099563121795654,
+    0.3767746686935425
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "educated at Trinity College",
+        "Fellow of the Royal"
+      ],
+      "u_i": 1.377793312072754,
+      "u_j": 0.13099563121795654,
+      "local_fd": -1.1605029106140137,
+      "banzhaf": -0.750872790813446,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "educated at Trinity College",
+        "not"
+      ],
+      "u_i": 1.377793312072754,
+      "u_j": 0.3767746686935425,
+      "local_fd": -0.5005089044570923,
+      "banzhaf": -0.09087878465652466,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Fellow of the Royal",
+        "not"
+      ],
+      "u_i": 0.13099563121795654,
+      "u_j": 0.3767746686935425,
+      "local_fd": -0.6260141134262085,
+      "banzhaf": -0.21638399362564087,
+      "relation_raw": "redundancy"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "Fellow of the Royal"
+      ],
+      "order": 2,
+      "harsanyi": -1.1605029106140137
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "Fellow of the Royal",
+        "not"
+      ],
+      "order": 3,
+      "harsanyi": 0.8192602396011353
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Fellow of the Royal",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": -0.6260141134262085
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "educated at Trinity College",
+        "not"
+      ],
+      "order": 2,
+      "harsanyi": -0.5005089044570923
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -1.6027601957321167,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 13,
+    "n_excluded": 7,
+    "max_candidates": 6
+  }
+}

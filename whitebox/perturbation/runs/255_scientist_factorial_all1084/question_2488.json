@@ -1,0 +1,289 @@
+{
+  "key": "question_2488",
+  "group": "Q335213",
+  "generation_correct": false,
+  "right": "Martin Rees, Baron Rees of Ludlow",
+  "wrong": "Murray Gell-Mann",
+  "base_margin_wrong_minus_right": -0.2738790810108185,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 144,
+      "char_end": 176,
+      "text": "This distinguished physicist has",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 66,
+      "token_end": 73
+    },
+    {
+      "char_start": 304,
+      "char_end": 333,
+      "text": "awarded an honorary doctorate",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary doctorate of the University of Florida",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 93,
+      "token_end": 100
+    },
+    {
+      "char_start": 334,
+      "char_end": 363,
+      "text": "from Yale University. However",
+      "kind": "attribute",
+      "field": "education",
+      "value": "Yale University",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 100,
+      "token_end": 105
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -0.2738790810108185,
+      "wrong_score": -0.3814016282558441,
+      "right_score": -0.10752253979444504
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished physicist has"
+      ],
+      "u": -0.13368669152259827,
+      "margin": -0.14019238948822021,
+      "wrong_score": -0.23376809060573578,
+      "right_score": -0.09357569366693497
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "awarded an honorary doctorate"
+      ],
+      "u": -0.21082943677902222,
+      "margin": -0.06304964423179626,
+      "wrong_score": -0.15207353234291077,
+      "right_score": -0.0890238881111145
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist has",
+        "awarded an honorary doctorate"
+      ],
+      "u": -0.201520636677742,
+      "margin": -0.07235844433307648,
+      "wrong_score": -0.14619426429271698,
+      "right_score": -0.0738358199596405
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "from Yale University. However"
+      ],
+      "u": -0.16635677218437195,
+      "margin": -0.10752230882644653,
+      "wrong_score": -0.1559184193611145,
+      "right_score": -0.04839611425995827
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist has",
+        "from Yale University. However"
+      ],
+      "u": -0.04589855670928955,
+      "margin": -0.22798052430152893,
+      "wrong_score": -0.2654300630092621,
+      "right_score": -0.03744953125715256
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "awarded an honorary doctorate",
+        "from Yale University. However"
+      ],
+      "u": -0.1577547937631607,
+      "margin": -0.11612428724765778,
+      "wrong_score": -0.2552366256713867,
+      "right_score": -0.13911233842372894
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist has",
+        "awarded an honorary doctorate",
+        "from Yale University. However"
+      ],
+      "u": -0.1815960705280304,
+      "margin": -0.09228301793336868,
+      "wrong_score": -0.19627617299556732,
+      "right_score": -0.10399315506219864
+    }
+  ],
+  "single_u": [
+    -0.13368669152259827,
+    -0.21082943677902222,
+    -0.16635677218437195
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished physicist has",
+        "awarded an honorary doctorate"
+      ],
+      "u_i": -0.13368669152259827,
+      "u_j": -0.21082943677902222,
+      "local_fd": 0.14299549162387848,
+      "banzhaf": -0.0006520003080368042,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished physicist has",
+        "from Yale University. However"
+      ],
+      "u_i": -0.13368669152259827,
+      "u_j": -0.16635677218437195,
+      "local_fd": 0.25414490699768066,
+      "banzhaf": 0.11049741506576538,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "awarded an honorary doctorate",
+        "from Yale University. However"
+      ],
+      "u_i": -0.21082943677902222,
+      "u_j": -0.16635677218437195,
+      "local_fd": 0.21943141520023346,
+      "banzhaf": 0.07578392326831818,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist has",
+        "awarded an honorary doctorate",
+        "from Yale University. However"
+      ],
+      "order": 3,
+      "harsanyi": -0.28729498386383057
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished physicist has",
+        "from Yale University. However"
+      ],
+      "order": 2,
+      "harsanyi": 0.25414490699768066
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "awarded an honorary doctorate",
+        "from Yale University. However"
+      ],
+      "order": 2,
+      "harsanyi": 0.21943141520023346
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished physicist has",
+        "awarded an honorary doctorate"
+      ],
+      "order": 2,
+      "harsanyi": 0.14299549162387848
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [],
+  "all_candidates_deleted_margin": -0.09228301793336868,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 6,
+    "n_excluded": 0,
+    "max_candidates": 6
+  }
+}

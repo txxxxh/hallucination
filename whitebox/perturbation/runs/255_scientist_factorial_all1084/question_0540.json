@@ -1,0 +1,296 @@
+{
+  "key": "question_0540",
+  "group": "Q153717",
+  "generation_correct": true,
+  "right": "Freeman Dyson",
+  "wrong": "Charles Townes",
+  "base_margin_wrong_minus_right": -2.083635091781616,
+  "likelihood_error": false,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 122,
+      "char_end": 158,
+      "text": "This distinguished nuclear physicist",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "nuclear physicist",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 55,
+      "token_end": 62
+    },
+    {
+      "char_start": 159,
+      "char_end": 186,
+      "text": "and university teacher made",
+      "kind": "attribute",
+      "field": "occupation",
+      "value": "university teacher",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 61,
+      "token_end": 67
+    },
+    {
+      "char_start": 337,
+      "char_end": 368,
+      "text": "the prestigious Templeton Prize",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Templeton Prize",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 91,
+      "token_end": 97
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": -2.083635091781616,
+      "wrong_score": -2.084805488586426,
+      "right_score": -0.0011702812043949962
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "This distinguished nuclear physicist"
+      ],
+      "u": -1.2444885969161987,
+      "margin": -0.8391464948654175,
+      "wrong_score": -0.8697173595428467,
+      "right_score": -0.030570857226848602
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "and university teacher made"
+      ],
+      "u": -1.0791223049163818,
+      "margin": -1.0045127868652344,
+      "wrong_score": -1.0247199535369873,
+      "right_score": -0.02020716480910778
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished nuclear physicist",
+        "and university teacher made"
+      ],
+      "u": -2.021688222885132,
+      "margin": -0.06194691359996796,
+      "wrong_score": -0.2497408092021942,
+      "right_score": -0.18779389560222626
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "the prestigious Templeton Prize"
+      ],
+      "u": -1.646012306213379,
+      "margin": -0.4376227557659149,
+      "wrong_score": -0.5293001532554626,
+      "right_score": -0.09167740494012833
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished nuclear physicist",
+        "the prestigious Templeton Prize"
+      ],
+      "u": -3.1745433807373047,
+      "margin": 1.0909082889556885,
+      "wrong_score": -0.010928330942988396,
+      "right_score": -1.1018365621566772
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher made",
+        "the prestigious Templeton Prize"
+      ],
+      "u": -3.047494888305664,
+      "margin": 0.9638599157333374,
+      "wrong_score": -0.022657401859760284,
+      "right_score": -0.9865173101425171
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished nuclear physicist",
+        "and university teacher made",
+        "the prestigious Templeton Prize"
+      ],
+      "u": -3.109225034713745,
+      "margin": 1.025589942932129,
+      "wrong_score": -0.026054948568344116,
+      "right_score": -1.0516449213027954
+    }
+  ],
+  "single_u": [
+    -1.2444885969161987,
+    -1.0791223049163818,
+    -1.646012306213379
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "This distinguished nuclear physicist",
+        "and university teacher made"
+      ],
+      "u_i": -1.2444885969161987,
+      "u_j": -1.0791223049163818,
+      "local_fd": 0.30192267894744873,
+      "banzhaf": 0.8843618035316467,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "This distinguished nuclear physicist",
+        "the prestigious Templeton Prize"
+      ],
+      "u_i": -1.2444885969161987,
+      "u_j": -1.646012306213379,
+      "local_fd": -0.28404247760772705,
+      "banzhaf": 0.29839664697647095,
+      "relation_raw": "mixed"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "and university teacher made",
+        "the prestigious Templeton Prize"
+      ],
+      "u_i": -1.0791223049163818,
+      "u_j": -1.646012306213379,
+      "local_fd": -0.3223602771759033,
+      "banzhaf": 0.2600788474082947,
+      "relation_raw": "mixed"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "This distinguished nuclear physicist",
+        "and university teacher made",
+        "the prestigious Templeton Prize"
+      ],
+      "order": 3,
+      "harsanyi": 1.164878249168396
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "and university teacher made",
+        "the prestigious Templeton Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.3223602771759033
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "This distinguished nuclear physicist",
+        "and university teacher made"
+      ],
+      "order": 2,
+      "harsanyi": 0.30192267894744873
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "This distinguished nuclear physicist",
+        "the prestigious Templeton Prize"
+      ],
+      "order": 2,
+      "harsanyi": -0.28404247760772705
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 1.025589942932129,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 7,
+    "n_excluded": 1,
+    "max_candidates": 6
+  }
+}

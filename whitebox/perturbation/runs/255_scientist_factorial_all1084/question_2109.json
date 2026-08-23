@@ -1,0 +1,300 @@
+{
+  "key": "question_2109",
+  "group": "Q1534144",
+  "generation_correct": false,
+  "right": "Roger Adams",
+  "wrong": "Glenn T. Seaborg",
+  "base_margin_wrong_minus_right": 0.07781338691711426,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 314,
+      "char_end": 335,
+      "text": "as the National Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "National Medal of Science",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 96,
+      "token_end": 100
+    },
+    {
+      "char_start": 339,
+      "char_end": 367,
+      "text": "Science, the Priestley Medal",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Priestley Medal",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 99,
+      "token_end": 105
+    },
+    {
+      "char_start": 415,
+      "char_end": 443,
+      "text": "Willard Gibbs Award. Despite",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Willard Gibbs Award",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 114,
+      "token_end": 116
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.07781338691711426,
+      "wrong_score": -0.15666112303733826,
+      "right_score": -0.23447450995445251
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as the National Medal"
+      ],
+      "u": 0.23657852411270142,
+      "margin": -0.15876513719558716,
+      "wrong_score": -0.2806827425956726,
+      "right_score": -0.12191761285066605
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "Science, the Priestley Medal"
+      ],
+      "u": -0.9220620393753052,
+      "margin": 0.9998754262924194,
+      "wrong_score": -0.029988527297973633,
+      "right_score": -1.029863953590393
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the National Medal",
+        "Science, the Priestley Medal"
+      ],
+      "u": -0.6713785529136658,
+      "margin": 0.74919193983078,
+      "wrong_score": -0.061343468725681305,
+      "right_score": -0.8105354309082031
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Willard Gibbs Award. Despite"
+      ],
+      "u": 0.07770350575447083,
+      "margin": 0.00010988116264343262,
+      "wrong_score": -0.19300328195095062,
+      "right_score": -0.19311316311359406
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as the National Medal",
+        "Willard Gibbs Award. Despite"
+      ],
+      "u": 0.09550443291664124,
+      "margin": -0.017691045999526978,
+      "wrong_score": -0.19258923828601837,
+      "right_score": -0.1748981922864914
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the Priestley Medal",
+        "Willard Gibbs Award. Despite"
+      ],
+      "u": -0.857461154460907,
+      "margin": 0.9352745413780212,
+      "wrong_score": -0.047880880534648895,
+      "right_score": -0.9831554293632507
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as the National Medal",
+        "Science, the Priestley Medal",
+        "Willard Gibbs Award. Despite"
+      ],
+      "u": -0.5176182985305786,
+      "margin": 0.5954316854476929,
+      "wrong_score": -0.08323073387145996,
+      "right_score": -0.6786624193191528
+    }
+  ],
+  "single_u": [
+    0.23657852411270142,
+    -0.9220620393753052,
+    0.07770350575447083
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as the National Medal",
+        "Science, the Priestley Medal"
+      ],
+      "u_i": 0.23657852411270142,
+      "u_j": -0.9220620393753052,
+      "local_fd": 0.014104962348937988,
+      "banzhaf": 0.16807346045970917,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "as the National Medal",
+        "Willard Gibbs Award. Despite"
+      ],
+      "u_i": 0.23657852411270142,
+      "u_j": 0.07770350575447083,
+      "local_fd": -0.218777596950531,
+      "banzhaf": -0.06480911374092102,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "Science, the Priestley Medal",
+        "Willard Gibbs Award. Despite"
+      ],
+      "u_i": -0.9220620393753052,
+      "u_j": 0.07770350575447083,
+      "local_fd": -0.013102620840072632,
+      "banzhaf": 0.14086586236953735,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as the National Medal",
+        "Science, the Priestley Medal",
+        "Willard Gibbs Award. Despite"
+      ],
+      "order": 3,
+      "harsanyi": 0.30793696641921997
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as the National Medal",
+        "Willard Gibbs Award. Despite"
+      ],
+      "order": 2,
+      "harsanyi": -0.218777596950531
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as the National Medal",
+        "Science, the Priestley Medal"
+      ],
+      "order": 2,
+      "harsanyi": 0.014104962348937988
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "Science, the Priestley Medal",
+        "Willard Gibbs Award. Despite"
+      ],
+      "order": 2,
+      "harsanyi": -0.013102620840072632
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as the National Medal"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": []
+    }
+  ],
+  "all_candidates_deleted_margin": 0.5954316854476929,
+  "candidate_set_collectively_necessary_for_error": false,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 10,
+    "n_excluded": 4,
+    "max_candidates": 6
+  }
+}

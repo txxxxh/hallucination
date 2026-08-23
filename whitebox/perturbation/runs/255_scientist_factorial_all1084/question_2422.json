@@ -1,0 +1,313 @@
+{
+  "key": "question_2422",
+  "group": "Q127944",
+  "generation_correct": true,
+  "right": "Arthur Compton",
+  "wrong": "Ernest Rutherford",
+  "base_margin_wrong_minus_right": 0.24602875113487244,
+  "likelihood_error": true,
+  "m": 3,
+  "candidates": [
+    {
+      "char_start": 454,
+      "char_end": 475,
+      "text": "as an Honorary Fellow",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Royal Society of Edinburgh",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 0,
+      "token_start": 116,
+      "token_end": 120
+    },
+    {
+      "char_start": 476,
+      "char_end": 496,
+      "text": "of the Royal Society",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Fellow of the Royal Society",
+      "owners": [
+        "wrong"
+      ],
+      "negated": false,
+      "id": 1,
+      "token_start": 120,
+      "token_end": 125
+    },
+    {
+      "char_start": 497,
+      "char_end": 526,
+      "text": "Te Apārangi. However, despite",
+      "kind": "attribute",
+      "field": "award_received",
+      "value": "Honorary Fellow of the Royal Society Te Apārangi",
+      "owners": [
+        "right",
+        "wrong"
+      ],
+      "negated": false,
+      "id": 2,
+      "token_start": 125,
+      "token_end": 128
+    }
+  ],
+  "masks": [
+    {
+      "mask": 0,
+      "ids": [],
+      "texts": [],
+      "u": 0.0,
+      "margin": 0.24602875113487244,
+      "wrong_score": -0.11375096440315247,
+      "right_score": -0.3597797155380249
+    },
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as an Honorary Fellow"
+      ],
+      "u": 0.27140164375305176,
+      "margin": -0.02537289261817932,
+      "wrong_score": -0.25094759464263916,
+      "right_score": -0.22557470202445984
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Royal Society"
+      ],
+      "u": 0.5079923272132874,
+      "margin": -0.2619635760784149,
+      "wrong_score": -0.41781172156333923,
+      "right_score": -0.15584814548492432
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "of the Royal Society"
+      ],
+      "u": 0.48141273856163025,
+      "margin": -0.2353839874267578,
+      "wrong_score": -0.6236093044281006,
+      "right_score": -0.3882253170013428
+    },
+    {
+      "mask": 4,
+      "ids": [
+        2
+      ],
+      "texts": [
+        "Te Apārangi. However, despite"
+      ],
+      "u": -0.1058017909526825,
+      "margin": 0.35183054208755493,
+      "wrong_score": -0.09266358613967896,
+      "right_score": -0.4444941282272339
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "Te Apārangi. However, despite"
+      ],
+      "u": 0.4518997073173523,
+      "margin": -0.20587097108364105,
+      "wrong_score": -0.34686052799224854,
+      "right_score": -0.14098955690860748
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Royal Society",
+        "Te Apārangi. However, despite"
+      ],
+      "u": 0.4569547772407532,
+      "margin": -0.21092604100704193,
+      "wrong_score": -0.3999207317829132,
+      "right_score": -0.18899469077587128
+    },
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "of the Royal Society",
+        "Te Apārangi. However, despite"
+      ],
+      "u": 0.27775803208351135,
+      "margin": -0.031729280948638916,
+      "wrong_score": -0.7550466060638428,
+      "right_score": -0.7233173251152039
+    }
+  ],
+  "single_u": [
+    0.27140164375305176,
+    0.5079923272132874,
+    -0.1058017909526825
+  ],
+  "pair_interactions": [
+    {
+      "i": 0,
+      "j": 1,
+      "texts": [
+        "as an Honorary Fellow",
+        "of the Royal Society"
+      ],
+      "u_i": 0.27140164375305176,
+      "u_j": 0.5079923272132874,
+      "local_fd": -0.29798123240470886,
+      "banzhaf": -0.5174397826194763,
+      "relation_raw": "redundancy"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "texts": [
+        "as an Honorary Fellow",
+        "Te Apārangi. However, despite"
+      ],
+      "u_i": 0.27140164375305176,
+      "u_j": -0.1058017909526825,
+      "local_fd": 0.28629985451698303,
+      "banzhaf": 0.06684134900569916,
+      "relation_raw": "competition"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "texts": [
+        "of the Royal Society",
+        "Te Apārangi. However, despite"
+      ],
+      "u_i": 0.5079923272132874,
+      "u_j": -0.1058017909526825,
+      "local_fd": 0.054764240980148315,
+      "banzhaf": -0.16469426453113556,
+      "relation_raw": "competition"
+    }
+  ],
+  "harsanyi_interactions": [
+    {
+      "mask": 7,
+      "ids": [
+        0,
+        1,
+        2
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "of the Royal Society",
+        "Te Apārangi. However, despite"
+      ],
+      "order": 3,
+      "harsanyi": -0.43891701102256775
+    },
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "of the Royal Society"
+      ],
+      "order": 2,
+      "harsanyi": -0.29798123240470886
+    },
+    {
+      "mask": 5,
+      "ids": [
+        0,
+        2
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "Te Apārangi. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": 0.28629985451698303
+    },
+    {
+      "mask": 6,
+      "ids": [
+        1,
+        2
+      ],
+      "texts": [
+        "of the Royal Society",
+        "Te Apārangi. However, despite"
+      ],
+      "order": 2,
+      "harsanyi": 0.054764240980148315
+    }
+  ],
+  "minimal_repair_sets": [
+    {
+      "mask": 1,
+      "ids": [
+        0
+      ],
+      "texts": [
+        "as an Honorary Fellow"
+      ]
+    },
+    {
+      "mask": 2,
+      "ids": [
+        1
+      ],
+      "texts": [
+        "of the Royal Society"
+      ]
+    }
+  ],
+  "minimal_candidate_sufficient_sets": [
+    {
+      "mask": 3,
+      "ids": [
+        0,
+        1
+      ],
+      "texts": [
+        "as an Honorary Fellow",
+        "of the Royal Society"
+      ]
+    }
+  ],
+  "all_candidates_deleted_margin": -0.031729280948638916,
+  "candidate_set_collectively_necessary_for_error": true,
+  "selection": {
+    "rule": "semantic deterministic; no model-effect ranking",
+    "n_grounded_or_logic": 11,
+    "n_excluded": 5,
+    "max_candidates": 6
+  }
+}
