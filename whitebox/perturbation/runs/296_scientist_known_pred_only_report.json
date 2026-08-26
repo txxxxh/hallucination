@@ -1,0 +1,44 @@
+{
+  "protocol": "Scientist-known 1084; strict pred-only exact two-stage perturbation; right-person grouped 3x5 OOF; seeds 42-44; fold-local scaler/PCA; LR C=.03",
+  "feature_blocks": "pred scalar [ch(stage1), ch2(stage2), delete delta] + pred hidden original PCA8 + pred weighted displacement PCA8 + layer14 PCA48",
+  "explicitly_excluded": [
+    "other scores",
+    "other hidden",
+    "pred-other margin",
+    "contrastive span ranking"
+  ],
+  "n": 1084,
+  "correct": 623,
+  "incorrect": 461,
+  "groups": 337,
+  "per_seed": [
+    {
+      "seed": 42,
+      "auroc": 0.8650536380191014,
+      "auprc": 0.8929053359191501,
+      "balanced_accuracy": 0.7855802341897542
+    },
+    {
+      "seed": 43,
+      "auroc": 0.8602730472871105,
+      "auprc": 0.8878408772804753,
+      "balanced_accuracy": 0.7737802181732085
+    },
+    {
+      "seed": 44,
+      "auroc": 0.8714149921832295,
+      "auprc": 0.8977606819088855,
+      "balanced_accuracy": 0.783216052757109
+    }
+  ],
+  "mean_per_seed": {
+    "auroc": 0.865580559163147,
+    "auprc": 0.892835631702837,
+    "balanced_accuracy": 0.780858835040024
+  },
+  "mean_probability": {
+    "auroc": 0.8716552403700518,
+    "auprc": 0.8980431041742291,
+    "balanced_accuracy": 0.7931724250791252
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "protocol": "label-invariant four-state trajectory features (original-answer disagreement retained; right/wrong bins permutation-invariant); model selected by 3x5 grouped CV on frozen pilot n=500; refit on pilot only; evaluated once on disjoint remainder n=2394",
+  "feature_count_including_P": 153,
+  "pilot_holdout_group_overlap": 231,
+  "pilot_cv_candidates": [
+    {
+      "model": "logistic_C=0.3",
+      "auroc": 0.7737877363934642,
+      "auprc": 0.6583706905223894
+    },
+    {
+      "model": "logistic_C=0.1",
+      "auroc": 0.773490956455788,
+      "auprc": 0.6568633010702651
+    },
+    {
+      "model": "logistic_C=1",
+      "auroc": 0.7668134078580732,
+      "auprc": 0.6519251805388314
+    },
+    {
+      "model": "logistic_C=0.03",
+      "auroc": 0.7644721439052942,
+      "auprc": 0.644402550262581
+    },
+    {
+      "model": "histgb_leaves=7",
+      "auroc": 0.7600039570658356,
+      "auprc": 0.6668552136084387
+    },
+    {
+      "model": "histgb_leaves=15",
+      "auroc": 0.7513808510989102,
+      "auprc": 0.6738391007807646
+    },
+    {
+      "model": "logistic_C=0.01",
+      "auroc": 0.7421806730309475,
+      "auprc": 0.6118251542114813
+    },
+    {
+      "model": "logistic_C=0.003",
+      "auroc": 0.712684044780795,
+      "auprc": 0.5812032482469438
+    }
+  ],
+  "selected_model": "logistic_C=0.3",
+  "pilot_descriptive_refit": {
+    "P": {
+      "auroc": 0.7864998103905952,
+      "auprc": 0.717639236970141
+    },
+    "P_plus_trajectory": {
+      "auroc": 0.8275378806614895,
+      "auprc": 0.7491007252966332
+    }
+  },
+  "holdout": {
+    "P": {
+      "auroc": 0.7953469023586237,
+      "auprc": 0.7825601993942999
+    },
+    "P_plus_trajectory": {
+      "auroc": 0.777370266592619,
+      "auprc": 0.7572206219500529
+    }
+  },
+  "holdout_paired_bootstrap_10000_delta_vs_P_ci95": {
+    "auroc": [
+      -0.029344252706953653,
+      -0.0070270304537987036
+    ],
+    "auprc": [
+      -0.039662412492283285,
+      -0.011758320456595762
+    ]
+  }
+}

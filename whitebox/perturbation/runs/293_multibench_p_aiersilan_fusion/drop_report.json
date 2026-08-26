@@ -1,0 +1,146 @@
+{
+  "dataset": "drop",
+  "n": 1000,
+  "correct": 500,
+  "split": "stratified 70/10/20; seeds 42,43,44",
+  "classifier": "fold-local scaler/PCA; balanced LR C=.03",
+  "summary": {
+    "P": {
+      "auroc": 0.9142333333333333,
+      "auprc": 0.9050086586167163,
+      "balanced_accuracy": 0.8283333333333335
+    },
+    "R": {
+      "auroc": 0.8655333333333334,
+      "auprc": 0.8047702612783404,
+      "balanced_accuracy": 0.8150000000000001
+    },
+    "P_plus_R": {
+      "auroc": 0.9243,
+      "auprc": 0.9152941458149743,
+      "balanced_accuracy": 0.8416666666666667
+    }
+  },
+  "per_seed": {
+    "P": [
+      {
+        "seed": 42,
+        "auroc": 0.9191,
+        "auprc": 0.9039878153814954,
+        "balanced_accuracy": 0.8500000000000001,
+        "dims": [
+          null,
+          8,
+          8,
+          8,
+          8,
+          44
+        ]
+      },
+      {
+        "seed": 43,
+        "auroc": 0.8906999999999999,
+        "auprc": 0.8839613244418021,
+        "balanced_accuracy": 0.79,
+        "dims": [
+          null,
+          8,
+          8,
+          8,
+          8,
+          44
+        ]
+      },
+      {
+        "seed": 44,
+        "auroc": 0.9329,
+        "auprc": 0.9270768360268511,
+        "balanced_accuracy": 0.845,
+        "dims": [
+          null,
+          8,
+          8,
+          8,
+          8,
+          44
+        ]
+      }
+    ],
+    "R": [
+      {
+        "seed": 42,
+        "auroc": 0.8513999999999999,
+        "auprc": 0.7616988779876835,
+        "balanced_accuracy": 0.7949999999999999,
+        "dims": [
+          48
+        ]
+      },
+      {
+        "seed": 43,
+        "auroc": 0.8463,
+        "auprc": 0.7797808484612785,
+        "balanced_accuracy": 0.81,
+        "dims": [
+          48
+        ]
+      },
+      {
+        "seed": 44,
+        "auroc": 0.8989,
+        "auprc": 0.8728310573860592,
+        "balanced_accuracy": 0.8400000000000001,
+        "dims": [
+          48
+        ]
+      }
+    ],
+    "P_plus_R": [
+      {
+        "seed": 42,
+        "auroc": 0.9275,
+        "auprc": 0.9168764118754481,
+        "balanced_accuracy": 0.835,
+        "dims": [
+          null,
+          8,
+          8,
+          8,
+          8,
+          44,
+          48
+        ]
+      },
+      {
+        "seed": 43,
+        "auroc": 0.9023,
+        "auprc": 0.8917736434495867,
+        "balanced_accuracy": 0.825,
+        "dims": [
+          null,
+          8,
+          8,
+          8,
+          8,
+          44,
+          48
+        ]
+      },
+      {
+        "seed": 44,
+        "auroc": 0.9430999999999999,
+        "auprc": 0.9372323821198882,
+        "balanced_accuracy": 0.865,
+        "dims": [
+          null,
+          8,
+          8,
+          8,
+          8,
+          44,
+          48
+        ]
+      }
+    ]
+  }
+}

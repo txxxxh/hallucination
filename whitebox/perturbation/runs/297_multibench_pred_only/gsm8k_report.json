@@ -1,0 +1,38 @@
+{
+  "dataset": "gsm8k",
+  "n": 942,
+  "correct": 471,
+  "groups": 942,
+  "protocol": "strict pred-only exact two-stage perturbation; legacy two-answer benchmark rows/labels but other answer never loaded; 3x5 OOF; grouped except TriviaQA unique-key stratified; seeds 42-44; fold-local scaler/PCA; LR C=.03",
+  "feature_blocks": "pred scalar [ch(stage1), ch2(stage2), delete delta] + pred hidden original PCA8 + pred weighted displacement PCA8 + layer14 PCA48",
+  "per_seed": [
+    {
+      "seed": 42,
+      "auroc": 0.7577048426575791,
+      "auprc": 0.7263194847839105,
+      "balanced_accuracy": 0.6963906581740976
+    },
+    {
+      "seed": 43,
+      "auroc": 0.7489057478103687,
+      "auprc": 0.7183905405642315,
+      "balanced_accuracy": 0.6868365180467091
+    },
+    {
+      "seed": 44,
+      "auroc": 0.7554915457467286,
+      "auprc": 0.7291793889350637,
+      "balanced_accuracy": 0.6942675159235668
+    }
+  ],
+  "mean_per_seed": {
+    "auroc": 0.7540340454048922,
+    "auprc": 0.7246298047610686,
+    "balanced_accuracy": 0.6924982307147912
+  },
+  "mean_probability": {
+    "auroc": 0.7594267966696868,
+    "auprc": 0.7294047233890304,
+    "balanced_accuracy": 0.6953290870488322
+  }
+}

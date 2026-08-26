@@ -1,0 +1,38 @@
+{
+  "dataset": "trivia",
+  "n": 1000,
+  "correct": 500,
+  "groups": 1000,
+  "protocol": "strict pred-only exact two-stage perturbation; legacy two-answer benchmark rows/labels but other answer never loaded; 3x5 OOF; grouped except TriviaQA unique-key stratified; seeds 42-44; fold-local scaler/PCA; LR C=.03",
+  "feature_blocks": "pred scalar [ch(stage1), ch2(stage2), delete delta] + pred hidden original PCA8 + pred weighted displacement PCA8 + layer14 PCA48",
+  "per_seed": [
+    {
+      "seed": 42,
+      "auroc": 0.8963599999999999,
+      "auprc": 0.8946341335050546,
+      "balanced_accuracy": 0.815
+    },
+    {
+      "seed": 43,
+      "auroc": 0.896476,
+      "auprc": 0.8955178732302874,
+      "balanced_accuracy": 0.8109999999999999
+    },
+    {
+      "seed": 44,
+      "auroc": 0.8949759999999999,
+      "auprc": 0.8943642154730559,
+      "balanced_accuracy": 0.813
+    }
+  ],
+  "mean_per_seed": {
+    "auroc": 0.8959373333333333,
+    "auprc": 0.8948387407361326,
+    "balanced_accuracy": 0.8130000000000001
+  },
+  "mean_probability": {
+    "auroc": 0.898408,
+    "auprc": 0.8976015253779864,
+    "balanced_accuracy": 0.817
+  }
+}

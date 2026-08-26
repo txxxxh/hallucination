@@ -1,0 +1,574 @@
+{
+  "protocol": "2894 parse-valid full Scientist; right-person grouped 3x5 OOF; fold-local scaling/PCA; LR C=.03 class_weight=balanced",
+  "n": 2894,
+  "hallucination": 1334,
+  "correct": 1560,
+  "groups": 568,
+  "feature_definitions": {
+    "P": "exact-current127 P blocks; PCA dimensions [None,8,8,8,8,48]",
+    "Aiersilan": "official-extractor candidate-last-token hidden state at layer 14; PCA48",
+    "P_plus_Aiersilan": "fold-local transformed P and Aiersilan blocks concatenated"
+  },
+  "results": {
+    "P": {
+      "mean_probability": {
+        "tn": 1082,
+        "fp": 478,
+        "fn": 374,
+        "tp": 960,
+        "accuracy": 0.7055977885279889,
+        "balanced_accuracy": 0.7066149617498942,
+        "hallucination_precision": 0.6675938803894298,
+        "hallucination_recall": 0.719640179910045,
+        "hallucination_f1": 0.6926406926406926,
+        "auroc": 0.7938525929343021,
+        "auprc": 0.7729769336486666
+      },
+      "per_seed": [
+        {
+          "tn": 1070,
+          "fp": 490,
+          "fn": 393,
+          "tp": 941,
+          "accuracy": 0.6948859709744298,
+          "balanced_accuracy": 0.6956473686233806,
+          "hallucination_precision": 0.6575821104122991,
+          "hallucination_recall": 0.7053973013493253,
+          "hallucination_f1": 0.6806509945750452,
+          "auroc": 0.7854375696767002,
+          "auprc": 0.7633434853578507
+        },
+        {
+          "tn": 1077,
+          "fp": 483,
+          "fn": 386,
+          "tp": 948,
+          "accuracy": 0.6997235659986178,
+          "balanced_accuracy": 0.7005146465228924,
+          "hallucination_precision": 0.6624737945492662,
+          "hallucination_recall": 0.7106446776611695,
+          "hallucination_f1": 0.6857142857142857,
+          "auroc": 0.7887926229193095,
+          "auprc": 0.7693624607026384
+        },
+        {
+          "tn": 1084,
+          "fp": 476,
+          "fn": 369,
+          "tp": 965,
+          "accuracy": 0.7080165860400829,
+          "balanced_accuracy": 0.7091300503594357,
+          "hallucination_precision": 0.6696738376127689,
+          "hallucination_recall": 0.7233883058470765,
+          "hallucination_f1": 0.6954954954954955,
+          "auroc": 0.7938482681736054,
+          "auprc": 0.7706607146264997
+        }
+      ]
+    },
+    "Aiersilan": {
+      "mean_probability": {
+        "tn": 848,
+        "fp": 712,
+        "fn": 427,
+        "tp": 907,
+        "accuracy": 0.6064270905321355,
+        "balanced_accuracy": 0.6117498942836275,
+        "hallucination_precision": 0.5602223594811612,
+        "hallucination_recall": 0.6799100449775113,
+        "hallucination_f1": 0.6142905519810362,
+        "auroc": 0.6507318456156537,
+        "auprc": 0.5925538609039993
+      },
+      "per_seed": [
+        {
+          "tn": 853,
+          "fp": 707,
+          "fn": 456,
+          "tp": 878,
+          "accuracy": 0.5981340704906704,
+          "balanced_accuracy": 0.6024828931688002,
+          "hallucination_precision": 0.5539432176656152,
+          "hallucination_recall": 0.6581709145427287,
+          "hallucination_f1": 0.6015758821514218,
+          "auroc": 0.6485550493983777,
+          "auprc": 0.5932193955436769
+        },
+        {
+          "tn": 851,
+          "fp": 709,
+          "fn": 444,
+          "tp": 890,
+          "accuracy": 0.6015894955079475,
+          "balanced_accuracy": 0.6063396186522123,
+          "hallucination_precision": 0.5565978736710444,
+          "hallucination_recall": 0.6671664167916042,
+          "hallucination_f1": 0.6068871462666212,
+          "auroc": 0.6449284972898167,
+          "auprc": 0.5883215835830726
+        },
+        {
+          "tn": 855,
+          "fp": 705,
+          "fn": 435,
+          "tp": 899,
+          "accuracy": 0.6060815480304077,
+          "balanced_accuracy": 0.610994983277592,
+          "hallucination_precision": 0.5604738154613467,
+          "hallucination_recall": 0.6739130434782609,
+          "hallucination_f1": 0.6119809394145678,
+          "auroc": 0.6441745473417138,
+          "auprc": 0.5874881788800634
+        }
+      ]
+    },
+    "P_plus_Aiersilan": {
+      "mean_probability": {
+        "tn": 1060,
+        "fp": 500,
+        "fn": 360,
+        "tp": 974,
+        "accuracy": 0.7028334485141673,
+        "balanced_accuracy": 0.7048110560104563,
+        "hallucination_precision": 0.66078697421981,
+        "hallucination_recall": 0.7301349325337332,
+        "hallucination_f1": 0.6937321937321937,
+        "auroc": 0.7881741821396994,
+        "auprc": 0.766773614257957
+      },
+      "per_seed": [
+        {
+          "tn": 1052,
+          "fp": 508,
+          "fn": 375,
+          "tp": 959,
+          "accuracy": 0.6948859709744298,
+          "balanced_accuracy": 0.6966247645408066,
+          "hallucination_precision": 0.6537150647580096,
+          "hallucination_recall": 0.7188905547226386,
+          "hallucination_f1": 0.6847554444841129,
+          "auroc": 0.7826283973397917,
+          "auprc": 0.7608775052047811
+        },
+        {
+          "tn": 1028,
+          "fp": 532,
+          "fn": 365,
+          "tp": 969,
+          "accuracy": 0.6900483759502419,
+          "balanced_accuracy": 0.6926805827855302,
+          "hallucination_precision": 0.6455696202531646,
+          "hallucination_recall": 0.7263868065967016,
+          "hallucination_f1": 0.6835978835978836,
+          "auroc": 0.7787389958866721,
+          "auprc": 0.7584687135696956
+        },
+        {
+          "tn": 1064,
+          "fp": 496,
+          "fn": 362,
+          "tp": 972,
+          "accuracy": 0.7035245335176227,
+          "balanced_accuracy": 0.7053434821051012,
+          "hallucination_precision": 0.662125340599455,
+          "hallucination_recall": 0.7286356821589205,
+          "hallucination_f1": 0.6937901498929336,
+          "auroc": 0.7884966170760774,
+          "auprc": 0.7658085644944281
+        }
+      ]
+    }
+  },
+  "fold_details": [
+    {
+      "seed": 42,
+      "fold": 1,
+      "n_train": 2227,
+      "n_test": 667,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 42,
+      "fold": 2,
+      "n_train": 2330,
+      "n_test": 564,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 42,
+      "fold": 3,
+      "n_train": 2303,
+      "n_test": 591,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 42,
+      "fold": 4,
+      "n_train": 2285,
+      "n_test": 609,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 42,
+      "fold": 5,
+      "n_train": 2431,
+      "n_test": 463,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 1,
+      "n_train": 2395,
+      "n_test": 499,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 2,
+      "n_train": 2243,
+      "n_test": 651,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 3,
+      "n_train": 2450,
+      "n_test": 444,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 4,
+      "n_train": 2385,
+      "n_test": 509,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 5,
+      "n_train": 2103,
+      "n_test": 791,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 1,
+      "n_train": 2227,
+      "n_test": 667,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 2,
+      "n_train": 2328,
+      "n_test": 566,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 3,
+      "n_train": 2285,
+      "n_test": 609,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 4,
+      "n_train": 2358,
+      "n_test": 536,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 5,
+      "n_train": 2378,
+      "n_test": 516,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "Aiersilan_dims": [
+        48
+      ],
+      "P_plus_Aiersilan_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        48
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "protocol": "Aiersilan official layer-12 MLP; stratified 70/10/20 seeds 42/43/44; P/representation rank weight selected on validation grid 0..2 step .05; test untouched by fusion tuning",
+  "n": 1084,
+  "label_alignment": "Aiersilan truthful probability flipped to error probability; P predicts error",
+  "seed_results": [
+    {
+      "seed": 42,
+      "n_train": 758,
+      "n_val": 109,
+      "n_test": 217,
+      "val_selected_rep_weight": 1.7000000000000002,
+      "P": {
+        "auroc": 0.8677391304347826,
+        "auprc": 0.8442621386516684
+      },
+      "Aiersilan_representation_layer12_MLP": {
+        "auroc": 0.9113913043478261,
+        "auprc": 0.8934872523035038
+      },
+      "P_plus_representation": {
+        "auroc": 0.930695652173913,
+        "auprc": 0.9149299452683509
+      }
+    },
+    {
+      "seed": 43,
+      "n_train": 758,
+      "n_val": 109,
+      "n_test": 217,
+      "val_selected_rep_weight": 1.75,
+      "P": {
+        "auroc": 0.8795652173913043,
+        "auprc": 0.8561408478615218
+      },
+      "Aiersilan_representation_layer12_MLP": {
+        "auroc": 0.9041739130434782,
+        "auprc": 0.8803198755452603
+      },
+      "P_plus_representation": {
+        "auroc": 0.9343478260869565,
+        "auprc": 0.922907522752744
+      }
+    },
+    {
+      "seed": 44,
+      "n_train": 758,
+      "n_val": 109,
+      "n_test": 217,
+      "val_selected_rep_weight": 0.6000000000000001,
+      "P": {
+        "auroc": 0.8244347826086956,
+        "auprc": 0.7854641660155319
+      },
+      "Aiersilan_representation_layer12_MLP": {
+        "auroc": 0.8964347826086957,
+        "auprc": 0.8820450225220899
+      },
+      "P_plus_representation": {
+        "auroc": 0.8802173913043478,
+        "auprc": 0.858004935988849
+      }
+    }
+  ],
+  "summary": {
+    "P": {
+      "auroc_mean": 0.8572463768115942,
+      "auroc_std": 0.023698306814026016,
+      "auprc_mean": 0.8286223841762407,
+      "auprc_std": 0.030900375178181512
+    },
+    "Aiersilan_representation_layer12_MLP": {
+      "auroc_mean": 0.904,
+      "auroc_std": 0.006107212672640393,
+      "auprc_mean": 0.885284050123618,
+      "auprc_std": 0.005843139996381992
+    },
+    "P_plus_representation": {
+      "auroc_mean": 0.9150869565217391,
+      "auroc_std": 0.02470154553073158,
+      "auprc_mean": 0.8986141346699813,
+      "auprc_std": 0.028899142995051297
+    }
+  }
+}

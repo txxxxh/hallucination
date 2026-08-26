@@ -1,0 +1,188 @@
+{
+  "protocol": "strict task split; frozen Scientist-only training and multidomain-only testing",
+  "method": "icr",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "target": "multidomain_v6_fixed500_musician_opt; probe_state=knows_both; unmatched excluded",
+  "target_labels_used_for_fitting_or_tuning": false,
+  "training": "published ICR MLP; source-only stratified 90/10 checkpoint validation; Adam lr=5e-4; up to 50 epochs; batch 32",
+  "results": {
+    "scientist_known": {
+      "source_n": 1084,
+      "source_correct": 623,
+      "target_n": 849,
+      "subsets": {
+        "all": {
+          "n": 849,
+          "correct": 686,
+          "incorrect": 163,
+          "auroc": 0.5627537605752204,
+          "auprc": 0.8493273708315403,
+          "accuracy_at_0.5": 0.702002355712603,
+          "balanced_accuracy_at_0.5": 0.5232699565365146,
+          "confusion_tn_fp_fn_tp": [
+            38,
+            125,
+            128,
+            558
+          ],
+          "per_seed_auroc": [
+            0.5586488758518307,
+            0.53337566402547,
+            0.5609830259886601
+          ]
+        },
+        "athlete": {
+          "n": 316,
+          "correct": 275,
+          "incorrect": 41,
+          "auroc": 0.5458980044345898,
+          "auprc": 0.8917869028009311,
+          "accuracy_at_0.5": 0.7436708860759493,
+          "balanced_accuracy_at_0.5": 0.5517960088691796,
+          "confusion_tn_fp_fn_tp": [
+            12,
+            29,
+            52,
+            223
+          ],
+          "per_seed_auroc": [
+            0.5288691796008869,
+            0.4930376940133037,
+            0.5886474501108648
+          ]
+        },
+        "musician": {
+          "n": 264,
+          "correct": 206,
+          "incorrect": 58,
+          "auroc": 0.6066287244727152,
+          "auprc": 0.8591775384078776,
+          "accuracy_at_0.5": 0.6931818181818182,
+          "balanced_accuracy_at_0.5": 0.5370773351188484,
+          "confusion_tn_fp_fn_tp": [
+            15,
+            43,
+            38,
+            168
+          ],
+          "per_seed_auroc": [
+            0.6317375292936056,
+            0.569049213257449,
+            0.5393371275527284
+          ]
+        },
+        "building": {
+          "n": 269,
+          "correct": 205,
+          "incorrect": 64,
+          "auroc": 0.5424542682926828,
+          "auprc": 0.7889380124718586,
+          "accuracy_at_0.5": 0.6617100371747212,
+          "balanced_accuracy_at_0.5": 0.4932545731707317,
+          "confusion_tn_fp_fn_tp": [
+            11,
+            53,
+            38,
+            167
+          ],
+          "per_seed_auroc": [
+            0.5284298780487804,
+            0.5244664634146341,
+            0.5459603658536585
+          ]
+        }
+      }
+    },
+    "scientist_full": {
+      "source_n": 2894,
+      "source_correct": 1560,
+      "target_n": 849,
+      "subsets": {
+        "all": {
+          "n": 849,
+          "correct": 686,
+          "incorrect": 163,
+          "auroc": 0.5232699565365146,
+          "auprc": 0.8196644077670152,
+          "accuracy_at_0.5": 0.7031802120141343,
+          "balanced_accuracy_at_0.5": 0.5146443327550126,
+          "confusion_tn_fp_fn_tp": [
+            34,
+            129,
+            123,
+            563
+          ],
+          "per_seed_auroc": [
+            0.526006546352108,
+            0.49286340302992365,
+            0.5129138421363286
+          ]
+        },
+        "athlete": {
+          "n": 316,
+          "correct": 275,
+          "incorrect": 41,
+          "auroc": 0.5027050997782705,
+          "auprc": 0.8644362329570582,
+          "accuracy_at_0.5": 0.7056962025316456,
+          "balanced_accuracy_at_0.5": 0.51960088691796,
+          "confusion_tn_fp_fn_tp": [
+            11,
+            30,
+            63,
+            212
+          ],
+          "per_seed_auroc": [
+            0.5086474501108647,
+            0.44727272727272727,
+            0.5206208425720621
+          ]
+        },
+        "musician": {
+          "n": 264,
+          "correct": 206,
+          "incorrect": 58,
+          "auroc": 0.5547371945095414,
+          "auprc": 0.8162940639506954,
+          "accuracy_at_0.5": 0.7234848484848485,
+          "balanced_accuracy_at_0.5": 0.5626883160361567,
+          "confusion_tn_fp_fn_tp": [
+            16,
+            42,
+            31,
+            175
+          ],
+          "per_seed_auroc": [
+            0.5845329762303315,
+            0.510545698024774,
+            0.5277870773351189
+          ]
+        },
+        "building": {
+          "n": 269,
+          "correct": 205,
+          "incorrect": 64,
+          "auroc": 0.5403201219512195,
+          "auprc": 0.7889230303007897,
+          "accuracy_at_0.5": 0.6802973977695167,
+          "balanced_accuracy_at_0.5": 0.4839557926829268,
+          "confusion_tn_fp_fn_tp": [
+            7,
+            57,
+            29,
+            176
+          ],
+          "per_seed_auroc": [
+            0.5109756097560976,
+            0.5301829268292683,
+            0.5273628048780488
+          ]
+        }
+      }
+    }
+  }
+}
