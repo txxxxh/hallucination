@@ -1,0 +1,25 @@
+{
+  "protocol": "four states: original, top1-neutralized, top1-deleted, deleted-top1-neutralized; K=6 local/fixed disagreement; right-person grouped 3x5 OOF; no probe features; uncertainty-only",
+  "n": 500,
+  "P_full_reference": {
+    "auroc": 0.7864998103905952,
+    "auprc": 0.717639236970141
+  },
+  "results": {
+    "U_trajectory": {
+      "auroc": 0.7528977263359219,
+      "auprc": 0.6126442052574601
+    }
+  },
+  "fixed_rank_fusion_with_P": {
+    "U_trajectory": {
+      "auroc": 0.815691414815914,
+      "auprc": 0.7201324555085691
+    }
+  },
+  "fusion_diagnostics": {
+    "known": {"n": 200, "errors": 78, "P_auroc": 0.8385876418663304, "U_auroc": 0.7979192938209332, "fusion_auroc": 0.864438839848676, "P_auprc": 0.7816944462496854, "fusion_auprc": 0.8038451808506015},
+    "unknown": {"n": 300, "errors": 129, "P_auroc": 0.7521193163788022, "U_auroc": 0.7209302325581396, "fusion_auroc": 0.7801577587379301, "P_auprc": 0.6886131558686819, "fusion_auprc": 0.6789172432502111},
+    "paired_bootstrap_10000": {"auroc_delta": 0.029191604425318762, "auroc_delta_ci95": [0.003441258116883123, 0.0548961704654896], "auprc_delta": 0.002493218538428099, "auprc_delta_ci95": [-0.0338771701826293, 0.045293339996211074]}
+  }
+}

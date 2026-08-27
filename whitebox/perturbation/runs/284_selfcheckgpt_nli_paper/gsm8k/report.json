@@ -1,0 +1,17 @@
+{
+  "dataset": "gsm8k",
+  "n": 942,
+  "errors": 471,
+  "method": "SelfCheckGPT SelfCheck-NLI (Manakul et al., EMNLP 2023)",
+  "adaptation": "original frozen benchmark/prompts/primary responses and Llama-3.1-8B target model",
+  "sampling": {
+    "N": 20,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "seed": 20260823
+  },
+  "nli_model": "potsawee/deberta-v3-large-mnli",
+  "aggregation": "mean contradiction probability over 20 sampled passages, then mean over primary-response sentences",
+  "auroc": 0.7894077289590293,
+  "auprc": 0.7753096675571894
+}

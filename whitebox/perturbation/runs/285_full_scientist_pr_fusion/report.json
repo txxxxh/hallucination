@@ -1,0 +1,604 @@
+{
+  "protocol": "2894 parse-valid full Scientist; right-person grouped 3x5 OOF; fold-local scaler/PCA; LR C=.03 class_weight=balanced; P and R feature-level early fusion; no closed-book probe features",
+  "n": 2894,
+  "hallucination": 1334,
+  "correct": 1560,
+  "groups": 568,
+  "feature_definitions": {
+    "P": "exact-current127 scalars + four perturbation hidden PCA8 + perturbation layer14 PCA48",
+    "R": "unperturbed answer layer14 last+mean, PCA8 each",
+    "P_plus_R": "concatenation of fold-local transformed P and R blocks"
+  },
+  "results": {
+    "P": {
+      "mean_probability": {
+        "tn": 1082,
+        "fp": 478,
+        "fn": 374,
+        "tp": 960,
+        "accuracy": 0.7055977885279889,
+        "balanced_accuracy": 0.7066149617498942,
+        "hallucination_precision": 0.6675938803894298,
+        "hallucination_recall": 0.719640179910045,
+        "hallucination_f1": 0.6926406926406926,
+        "auroc": 0.7938525929343021,
+        "auprc": 0.7729769336486666
+      },
+      "per_seed": [
+        {
+          "tn": 1070,
+          "fp": 490,
+          "fn": 393,
+          "tp": 941,
+          "accuracy": 0.6948859709744298,
+          "balanced_accuracy": 0.6956473686233806,
+          "hallucination_precision": 0.6575821104122991,
+          "hallucination_recall": 0.7053973013493253,
+          "hallucination_f1": 0.6806509945750452,
+          "auroc": 0.7854375696767002,
+          "auprc": 0.7633434853578507
+        },
+        {
+          "tn": 1077,
+          "fp": 483,
+          "fn": 386,
+          "tp": 948,
+          "accuracy": 0.6997235659986178,
+          "balanced_accuracy": 0.7005146465228924,
+          "hallucination_precision": 0.6624737945492662,
+          "hallucination_recall": 0.7106446776611695,
+          "hallucination_f1": 0.6857142857142857,
+          "auroc": 0.7887926229193095,
+          "auprc": 0.7693624607026384
+        },
+        {
+          "tn": 1084,
+          "fp": 476,
+          "fn": 369,
+          "tp": 965,
+          "accuracy": 0.7080165860400829,
+          "balanced_accuracy": 0.7091300503594357,
+          "hallucination_precision": 0.6696738376127689,
+          "hallucination_recall": 0.7233883058470765,
+          "hallucination_f1": 0.6954954954954955,
+          "auroc": 0.7938482681736054,
+          "auprc": 0.7706607146264997
+        }
+      ]
+    },
+    "R": {
+      "mean_probability": {
+        "tn": 953,
+        "fp": 607,
+        "fn": 494,
+        "tp": 840,
+        "accuracy": 0.6195577055977886,
+        "balanced_accuracy": 0.6202912966593627,
+        "hallucination_precision": 0.580511402902557,
+        "hallucination_recall": 0.6296851574212894,
+        "hallucination_f1": 0.6040992448759439,
+        "auroc": 0.6743700265251988,
+        "auprc": 0.6331556279229694
+      },
+      "per_seed": [
+        {
+          "tn": 955,
+          "fp": 605,
+          "fn": 479,
+          "tp": 855,
+          "accuracy": 0.6254319281271596,
+          "balanced_accuracy": 0.6265545112059355,
+          "hallucination_precision": 0.5856164383561644,
+          "hallucination_recall": 0.6409295352323838,
+          "hallucination_f1": 0.6120257695060844,
+          "auroc": 0.6745266789682082,
+          "auprc": 0.6344265740726004
+        },
+        {
+          "tn": 961,
+          "fp": 599,
+          "fn": 509,
+          "tp": 825,
+          "accuracy": 0.6171389080856945,
+          "balanced_accuracy": 0.617233210317918,
+          "hallucination_precision": 0.5793539325842697,
+          "hallucination_recall": 0.618440779610195,
+          "hallucination_f1": 0.5982596084118926,
+          "auroc": 0.6701370468611849,
+          "auprc": 0.630176261098204
+        },
+        {
+          "tn": 959,
+          "fp": 601,
+          "fn": 495,
+          "tp": 839,
+          "accuracy": 0.6212854181064271,
+          "balanced_accuracy": 0.6218395609887364,
+          "hallucination_precision": 0.5826388888888889,
+          "hallucination_recall": 0.6289355322338831,
+          "hallucination_f1": 0.6049026676279741,
+          "auroc": 0.6710788836351056,
+          "auprc": 0.6306231361419785
+        }
+      ]
+    },
+    "P_plus_R": {
+      "mean_probability": {
+        "tn": 1089,
+        "fp": 471,
+        "fn": 368,
+        "tp": 966,
+        "accuracy": 0.7100898410504493,
+        "balanced_accuracy": 0.711107427055703,
+        "hallucination_precision": 0.6722338204592901,
+        "hallucination_recall": 0.7241379310344828,
+        "hallucination_f1": 0.6972212197762541,
+        "auroc": 0.7956473686233807,
+        "auprc": 0.7758807146045823
+      },
+      "per_seed": [
+        {
+          "tn": 1071,
+          "fp": 489,
+          "fn": 390,
+          "tp": 944,
+          "accuracy": 0.6962681409813407,
+          "balanced_accuracy": 0.6970923192250029,
+          "hallucination_precision": 0.6587578506629449,
+          "hallucination_recall": 0.7076461769115442,
+          "hallucination_f1": 0.6823274304300687,
+          "auroc": 0.7888176104255565,
+          "auprc": 0.768792944847491
+        },
+        {
+          "tn": 1075,
+          "fp": 485,
+          "fn": 375,
+          "tp": 959,
+          "accuracy": 0.7028334485141673,
+          "balanced_accuracy": 0.7039965594126014,
+          "hallucination_precision": 0.6641274238227147,
+          "hallucination_recall": 0.7188905547226386,
+          "hallucination_f1": 0.6904247660187185,
+          "auroc": 0.7903918233191096,
+          "auprc": 0.7717720139146323
+        },
+        {
+          "tn": 1075,
+          "fp": 485,
+          "fn": 360,
+          "tp": 974,
+          "accuracy": 0.7080165860400829,
+          "balanced_accuracy": 0.7096187483181486,
+          "hallucination_precision": 0.6675805346127485,
+          "hallucination_recall": 0.7301349325337332,
+          "hallucination_f1": 0.6974579305406373,
+          "auroc": 0.7933456348748702,
+          "auprc": 0.7710815676225955
+        }
+      ]
+    }
+  },
+  "fold_details": [
+    {
+      "seed": 42,
+      "fold": 1,
+      "n_train": 2227,
+      "n_test": 667,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 42,
+      "fold": 2,
+      "n_train": 2330,
+      "n_test": 564,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 42,
+      "fold": 3,
+      "n_train": 2303,
+      "n_test": 591,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 42,
+      "fold": 4,
+      "n_train": 2285,
+      "n_test": 609,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 42,
+      "fold": 5,
+      "n_train": 2431,
+      "n_test": 463,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 1,
+      "n_train": 2395,
+      "n_test": 499,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 2,
+      "n_train": 2243,
+      "n_test": 651,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 3,
+      "n_train": 2450,
+      "n_test": 444,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 4,
+      "n_train": 2385,
+      "n_test": 509,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 43,
+      "fold": 5,
+      "n_train": 2103,
+      "n_test": 791,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 1,
+      "n_train": 2227,
+      "n_test": 667,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 2,
+      "n_train": 2328,
+      "n_test": 566,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 3,
+      "n_train": 2285,
+      "n_test": 609,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 4,
+      "n_train": 2358,
+      "n_test": 536,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    },
+    {
+      "seed": 44,
+      "fold": 5,
+      "n_train": 2378,
+      "n_test": 516,
+      "P_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      "R_dims": [
+        8,
+        8
+      ],
+      "P_plus_R_dims": [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48,
+        8,
+        8
+      ]
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "dataset": "Scientist full parse-valid",
+  "n": 2894,
+  "errors": 1334,
+  "protocol": "stratified outer 80/20 seeds42-47; fixed Scientist paired-winner capacity; fold-local P hidden PCA16x4 + P layer PCA96; generated-only layer14-last R PCA96; balanced LR C=.01; no inner tuning",
+  "scope_caveat": "R is open/generated-only, but the reused P block is the existing dual-candidate P and is not pred-only.",
+  "summary": {
+    "P_only": {
+      "auroc_mean": 0.8364544319600499,
+      "auprc_mean": 0.8178279177361469,
+      "auroc_std": 0.014583358748686204,
+      "auprc_std": 0.013966509579572945
+    },
+    "R_generated_only": {
+      "auroc_mean": 0.7456044527673741,
+      "auprc_mean": 0.7039653633808634,
+      "auroc_std": 0.021306759027322934,
+      "auprc_std": 0.026196365007920764
+    },
+    "P_plus_R_generated": {
+      "auroc_mean": 0.8401437305931689,
+      "auprc_mean": 0.8198944847179807,
+      "auroc_std": 0.016937550484302493,
+      "auprc_std": 0.01589929100631761
+    }
+  },
+  "per_seed": {
+    "P_only": [
+      {
+        "seed": 42,
+        "auroc": 0.8116056852011908,
+        "auprc": 0.7949285745486614
+      },
+      {
+        "seed": 43,
+        "auroc": 0.8534284067991933,
+        "auprc": 0.8313119307762611
+      },
+      {
+        "seed": 44,
+        "auroc": 0.8250504177470469,
+        "auprc": 0.8030217514894596
+      },
+      {
+        "seed": 45,
+        "auroc": 0.8372467108422164,
+        "auprc": 0.8219010367891512
+      },
+      {
+        "seed": 46,
+        "auroc": 0.8398276193220013,
+        "auprc": 0.8243390739587193
+      },
+      {
+        "seed": 47,
+        "auroc": 0.8515677518486509,
+        "auprc": 0.8314651388546291
+      }
+    ],
+    "R_generated_only": [
+      {
+        "seed": 42,
+        "auroc": 0.7195092672620762,
+        "auprc": 0.6930174179734034
+      },
+      {
+        "seed": 43,
+        "auroc": 0.7698669931815999,
+        "auprc": 0.7391904703362827
+      },
+      {
+        "seed": 44,
+        "auroc": 0.7275040814366657,
+        "auprc": 0.6832778681838354
+      },
+      {
+        "seed": 45,
+        "auroc": 0.7387160280418708,
+        "auprc": 0.6811836965708469
+      },
+      {
+        "seed": 46,
+        "auroc": 0.7400484970709691,
+        "auprc": 0.6850509415850883
+      },
+      {
+        "seed": 47,
+        "auroc": 0.7779818496110631,
+        "auprc": 0.7420717856357233
+      }
+    ],
+    "P_plus_R_generated": [
+      {
+        "seed": 42,
+        "auroc": 0.8126740612695669,
+        "auprc": 0.7959396049316766
+      },
+      {
+        "seed": 43,
+        "auroc": 0.8606189378661289,
+        "auprc": 0.8379972230225232
+      },
+      {
+        "seed": 44,
+        "auroc": 0.8300561797752809,
+        "auprc": 0.8058253411840464
+      },
+      {
+        "seed": 45,
+        "auroc": 0.8391913953711707,
+        "auprc": 0.8210355803475963
+      },
+      {
+        "seed": 46,
+        "auroc": 0.8372827235186786,
+        "auprc": 0.8183395195295144
+      },
+      {
+        "seed": 47,
+        "auroc": 0.8610390857581869,
+        "auprc": 0.8402296392925268
+      }
+    ]
+  }
+}

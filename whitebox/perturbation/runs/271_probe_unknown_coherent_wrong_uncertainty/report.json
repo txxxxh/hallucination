@@ -1,0 +1,1400 @@
+{
+  "protocol": {
+    "population": "Scientist items used by experiment 215 with >=1 discriminative fact",
+    "independence": "phenotypes use only paired closed-book probe probabilities; no generation correctness or uncertainty",
+    "probe_unknown": "exact experiment-215 rule complement",
+    "true_missing_proxy": "bottom 30% mean absolute owner-minus-distractor fact margin among probe-unknown",
+    "confident_coherent_wrong_proxy": "top 30% margin strength, >=2 facts, negative mean margin, and >=75% facts prefer wrong owner",
+    "high_uncertainty": "top 30% on the full fixed population",
+    "uncertainty_orientation": "larger means more uncertain/error-like"
+  },
+  "n": 2888,
+  "unknown_strength_cutoffs": [
+    0.04910091757774353,
+    0.2016076385974884
+  ],
+  "counts": {
+    "probe_known": {
+      "n": 1076,
+      "errors": 453,
+      "error_rate": 0.42100371747211895
+    },
+    "true_missing": {
+      "n": 544,
+      "errors": 260,
+      "error_rate": 0.47794117647058826
+    },
+    "confident_coherent_wrong": {
+      "n": 24,
+      "errors": 9,
+      "error_rate": 0.375
+    },
+    "ambiguous_probe_unknown": {
+      "n": 1244,
+      "errors": 611,
+      "error_rate": 0.49115755627009644
+    }
+  },
+  "high_uncertainty_cutoffs": {
+    "mean_token_nll": 0.23189833760261525,
+    "worst_token_nll": 1.0573802709579465,
+    "mean_token_entropy": 0.15492843985557553,
+    "max_token_entropy": 0.7085452735424042,
+    "negative_top2_margin": -8.833333969116211,
+    "logit_uncertainty_lr_oof": 0.5239324124415546
+  },
+  "results": {
+    "mean_token_nll": {
+      "true_missing_vs_confident_coherent_wrong__all": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 544,
+        "n_negative": 24,
+        "auroc": 0.5453431372549019,
+        "auroc_cluster_bootstrap_95ci": [
+          0.5442727481617647,
+          0.5488861386138615
+        ],
+        "auprc": 0.9673455058010415,
+        "mean_positive": 0.2337548263505382,
+        "mean_negative": 0.15579696000592472,
+        "median_positive": 0.12041584402322769,
+        "median_negative": 0.10875790566205978,
+        "high_uncertainty_rate_positive": 0.33455882352941174,
+        "high_uncertainty_rate_negative": 0.20833333333333334
+      },
+      "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 260,
+        "n_negative": 9,
+        "auroc": 0.6008547008547009,
+        "auroc_cluster_bootstrap_95ci": [
+          0.6000000000000001,
+          0.6044905008635579
+        ],
+        "auprc": 0.9785848593726008,
+        "mean_positive": 0.2895042165643715,
+        "mean_negative": 0.1576544590190881,
+        "median_positive": 0.15658080577850342,
+        "median_negative": 0.08735286444425583,
+        "high_uncertainty_rate_positive": 0.4115384615384615,
+        "high_uncertainty_rate_negative": 0.3333333333333333
+      },
+      "true_missing_vs_probe_known__all": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 544,
+        "n_negative": 1076,
+        "auroc": 0.5888024819593265,
+        "auroc_cluster_bootstrap_95ci": [
+          0.30665306122448976,
+          0.7999999999999999
+        ],
+        "auprc": 0.37088629197642153,
+        "mean_positive": 0.2337548263505382,
+        "mean_negative": 0.2213998851971003,
+        "median_positive": 0.12041584402322769,
+        "median_negative": 0.05381321348249912,
+        "high_uncertainty_rate_positive": 0.33455882352941174,
+        "high_uncertainty_rate_negative": 0.26765799256505574
+      },
+      "true_missing_vs_probe_known__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 260,
+        "n_negative": 453,
+        "auroc": 0.5296484971981661,
+        "auroc_cluster_bootstrap_95ci": [
+          0.1522321428571429,
+          1.0
+        ],
+        "auprc": 0.3633221468196029,
+        "mean_positive": 0.2895042165643715,
+        "mean_negative": 0.32894294140099756,
+        "median_positive": 0.15658080577850342,
+        "median_negative": 0.1242515817284584,
+        "high_uncertainty_rate_positive": 0.4115384615384615,
+        "high_uncertainty_rate_negative": 0.36423841059602646
+      },
+      "confident_coherent_wrong_vs_probe_known__all": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 24,
+        "n_negative": 1076,
+        "auroc": 0.5526254646840149,
+        "auroc_cluster_bootstrap_95ci": [
+          0.5508225777016453,
+          0.5539397898379892
+        ],
+        "auprc": 0.02373964828070195,
+        "mean_positive": 0.15579696000592472,
+        "mean_negative": 0.2213998851971003,
+        "median_positive": 0.10875790566205978,
+        "median_negative": 0.05381321348249912,
+        "high_uncertainty_rate_positive": 0.20833333333333334,
+        "high_uncertainty_rate_negative": 0.26765799256505574
+      },
+      "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 9,
+        "n_negative": 453,
+        "auroc": 0.42604856512141276,
+        "auroc_cluster_bootstrap_95ci": [
+          0.42261904761904756,
+          0.4285714285714285
+        ],
+        "auprc": 0.01806087545129742,
+        "mean_positive": 0.1576544590190881,
+        "mean_negative": 0.32894294140099756,
+        "median_positive": 0.08735286444425583,
+        "median_negative": 0.1242515817284584,
+        "high_uncertainty_rate_positive": 0.3333333333333333,
+        "high_uncertainty_rate_negative": 0.36423841059602646
+      }
+    },
+    "worst_token_nll": {
+      "true_missing_vs_confident_coherent_wrong__all": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 544,
+        "n_negative": 24,
+        "auroc": 0.5587469362745098,
+        "auroc_cluster_bootstrap_95ci": [
+          0.5570618872549021,
+          0.5617283950617283
+        ],
+        "auprc": 0.9696619707795655,
+        "mean_positive": 1.0195443891269165,
+        "mean_negative": 0.6521863339003175,
+        "median_positive": 0.5888305306434631,
+        "median_negative": 0.41485756635665894,
+        "high_uncertainty_rate_positive": 0.3382352941176471,
+        "high_uncertainty_rate_negative": 0.16666666666666666
+      },
+      "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 260,
+        "n_negative": 9,
+        "auroc": 0.6367521367521367,
+        "auroc_cluster_bootstrap_95ci": [
+          0.635042735042735,
+          0.6401842256764537
+        ],
+        "auprc": 0.9812569385384713,
+        "mean_positive": 1.2634143543228185,
+        "mean_negative": 0.6392018161714077,
+        "median_positive": 0.7922714054584503,
+        "median_negative": 0.38880687952041626,
+        "high_uncertainty_rate_positive": 0.4,
+        "high_uncertainty_rate_negative": 0.2222222222222222
+      },
+      "true_missing_vs_probe_known__all": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 544,
+        "n_negative": 1076,
+        "auroc": 0.5954481467308113,
+        "auroc_cluster_bootstrap_95ci": [
+          0.3333333333333333,
+          0.8541666666666666
+        ],
+        "auprc": 0.38000129341296235,
+        "mean_positive": 1.0195443891269165,
+        "mean_negative": 0.8741604240575654,
+        "median_positive": 0.5888305306434631,
+        "median_negative": 0.2635139673948288,
+        "high_uncertainty_rate_positive": 0.3382352941176471,
+        "high_uncertainty_rate_negative": 0.26579925650557623
+      },
+      "true_missing_vs_probe_known__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 260,
+        "n_negative": 453,
+        "auroc": 0.5370860927152318,
+        "auroc_cluster_bootstrap_95ci": [
+          0.1522321428571429,
+          1.0
+        ],
+        "auprc": 0.3730859657560287,
+        "mean_positive": 1.2634143543228185,
+        "mean_negative": 1.2919020737710494,
+        "median_positive": 0.7922714054584503,
+        "median_negative": 0.6280433535575867,
+        "high_uncertainty_rate_positive": 0.4,
+        "high_uncertainty_rate_negative": 0.36644591611479027
+      },
+      "confident_coherent_wrong_vs_probe_known__all": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 24,
+        "n_negative": 1076,
+        "auroc": 0.5464296778190831,
+        "auroc_cluster_bootstrap_95ci": [
+          0.5445372951131291,
+          0.5477406375735067
+        ],
+        "auprc": 0.02346229287129738,
+        "mean_positive": 0.6521863339003175,
+        "mean_negative": 0.8741604240575654,
+        "median_positive": 0.41485756635665894,
+        "median_negative": 0.2635139673948288,
+        "high_uncertainty_rate_positive": 0.16666666666666666,
+        "high_uncertainty_rate_negative": 0.26579925650557623
+      },
+      "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 9,
+        "n_negative": 453,
+        "auroc": 0.40667157223448613,
+        "auroc_cluster_bootstrap_95ci": [
+          0.4026304361312737,
+          0.4083028083028083
+        ],
+        "auprc": 0.01723986008533099,
+        "mean_positive": 0.6392018161714077,
+        "mean_negative": 1.2919020737710494,
+        "median_positive": 0.38880687952041626,
+        "median_negative": 0.6280433535575867,
+        "high_uncertainty_rate_positive": 0.2222222222222222,
+        "high_uncertainty_rate_negative": 0.36644591611479027
+      }
+    },
+    "mean_token_entropy": {
+      "true_missing_vs_confident_coherent_wrong__all": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 544,
+        "n_negative": 24,
+        "auroc": 0.44715073529411764,
+        "auroc_cluster_bootstrap_95ci": [
+          0.4461550245098039,
+          0.4500825082508251
+        ],
+        "auprc": 0.9509144485639719,
+        "mean_positive": 0.13136381515462692,
+        "mean_negative": 0.14503506904778382,
+        "median_positive": 0.12129915878176689,
+        "median_negative": 0.14440618455410004,
+        "high_uncertainty_rate_positive": 0.35110294117647056,
+        "high_uncertainty_rate_negative": 0.4166666666666667
+      },
+      "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 260,
+        "n_negative": 9,
+        "auroc": 0.4653846153846154,
+        "auroc_cluster_bootstrap_95ci": [
+          0.4636752136752137,
+          0.46776050662061025
+        ],
+        "auprc": 0.9570331818018112,
+        "mean_positive": 0.13494473843692015,
+        "mean_negative": 0.15242692993746865,
+        "median_positive": 0.12725364416837692,
+        "median_negative": 0.1442488431930542,
+        "high_uncertainty_rate_positive": 0.38461538461538464,
+        "high_uncertainty_rate_negative": 0.4444444444444444
+      },
+      "true_missing_vs_probe_known__all": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 544,
+        "n_negative": 1076,
+        "auroc": 0.5909618959107807,
+        "auroc_cluster_bootstrap_95ci": [
+          0.28888888888888886,
+          0.7714285714285715
+        ],
+        "auprc": 0.3810627036463501,
+        "mean_positive": 0.13136381515462692,
+        "mean_negative": 0.11046997579026684,
+        "median_positive": 0.12129915878176689,
+        "median_negative": 0.09688567370176315,
+        "high_uncertainty_rate_positive": 0.35110294117647056,
+        "high_uncertainty_rate_negative": 0.2704460966542751
+      },
+      "true_missing_vs_probe_known__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 260,
+        "n_negative": 453,
+        "auroc": 0.5495924605196129,
+        "auroc_cluster_bootstrap_95ci": [
+          0.19999999999999998,
+          1.0
+        ],
+        "auprc": 0.39013519645272143,
+        "mean_positive": 0.13494473843692015,
+        "mean_negative": 0.12480282916113833,
+        "median_positive": 0.12725364416837692,
+        "median_negative": 0.10770498216152191,
+        "high_uncertainty_rate_positive": 0.38461538461538464,
+        "high_uncertainty_rate_negative": 0.31567328918322296
+      },
+      "confident_coherent_wrong_vs_probe_known__all": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 24,
+        "n_negative": 1076,
+        "auroc": 0.6379337050805453,
+        "auroc_cluster_bootstrap_95ci": [
+          0.6362749687890137,
+          0.6391852195423624
+        ],
+        "auprc": 0.03483255634944167,
+        "mean_positive": 0.14503506904778382,
+        "mean_negative": 0.11046997579026684,
+        "median_positive": 0.14440618455410004,
+        "median_negative": 0.09688567370176315,
+        "high_uncertainty_rate_positive": 0.4166666666666667,
+        "high_uncertainty_rate_negative": 0.2704460966542751
+      },
+      "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 9,
+        "n_negative": 453,
+        "auroc": 0.577140053961246,
+        "auroc_cluster_bootstrap_95ci": [
+          0.5749007936507937,
+          0.5799755799755799
+        ],
+        "auprc": 0.03708934648684887,
+        "mean_positive": 0.15242692993746865,
+        "mean_negative": 0.12480282916113833,
+        "median_positive": 0.1442488431930542,
+        "median_negative": 0.10770498216152191,
+        "high_uncertainty_rate_positive": 0.4444444444444444,
+        "high_uncertainty_rate_negative": 0.31567328918322296
+      }
+    },
+    "max_token_entropy": {
+      "true_missing_vs_confident_coherent_wrong__all": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 544,
+        "n_negative": 24,
+        "auroc": 0.4599417892156863,
+        "auroc_cluster_bootstrap_95ci": [
+          0.4577205882352941,
+          0.46239276960784315
+        ],
+        "auprc": 0.9535051409862911,
+        "mean_positive": 0.5671861080199425,
+        "mean_negative": 0.5933705546582738,
+        "median_positive": 0.6151892244815826,
+        "median_negative": 0.6548246145248413,
+        "high_uncertainty_rate_positive": 0.38235294117647056,
+        "high_uncertainty_rate_negative": 0.4583333333333333
+      },
+      "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 260,
+        "n_negative": 9,
+        "auroc": 0.5192307692307692,
+        "auroc_cluster_bootstrap_95ci": [
+          0.5162393162393162,
+          0.5235042735042735
+        ],
+        "auprc": 0.9705143389365761,
+        "mean_positive": 0.5788288097112224,
+        "mean_negative": 0.5456188577744696,
+        "median_positive": 0.6362268030643463,
+        "median_negative": 0.6459067463874817,
+        "high_uncertainty_rate_positive": 0.40384615384615385,
+        "high_uncertainty_rate_negative": 0.3333333333333333
+      },
+      "true_missing_vs_probe_known__all": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 544,
+        "n_negative": 1076,
+        "auroc": 0.6117804231357971,
+        "auroc_cluster_bootstrap_95ci": [
+          0.33333333333333337,
+          0.875
+        ],
+        "auprc": 0.4015972894551751,
+        "mean_positive": 0.5671861080199425,
+        "mean_negative": 0.4558506941346652,
+        "median_positive": 0.6151892244815826,
+        "median_negative": 0.451553076505661,
+        "high_uncertainty_rate_positive": 0.38235294117647056,
+        "high_uncertainty_rate_negative": 0.25929368029739774
+      },
+      "true_missing_vs_probe_known__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 260,
+        "n_negative": 453,
+        "auroc": 0.567524197656648,
+        "auroc_cluster_bootstrap_95ci": [
+          0.1522321428571429,
+          1.0
+        ],
+        "auprc": 0.3926497606341466,
+        "mean_positive": 0.5788288097112224,
+        "mean_negative": 0.5180048766046368,
+        "median_positive": 0.6362268030643463,
+        "median_negative": 0.5087574124336243,
+        "high_uncertainty_rate_positive": 0.40384615384615385,
+        "high_uncertainty_rate_negative": 0.31346578366445915
+      },
+      "confident_coherent_wrong_vs_probe_known__all": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 24,
+        "n_negative": 1076,
+        "auroc": 0.641728624535316,
+        "auroc_cluster_bootstrap_95ci": [
+          0.6403204811427728,
+          0.6428294573643412
+        ],
+        "auprc": 0.03604859240086923,
+        "mean_positive": 0.5933705546582738,
+        "mean_negative": 0.4558506941346652,
+        "median_positive": 0.6548246145248413,
+        "median_negative": 0.451553076505661,
+        "high_uncertainty_rate_positive": 0.4583333333333333,
+        "high_uncertainty_rate_negative": 0.25929368029739774
+      },
+      "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 9,
+        "n_negative": 453,
+        "auroc": 0.539121903360314,
+        "auroc_cluster_bootstrap_95ci": [
+          0.5361356932153393,
+          0.5411160058737151
+        ],
+        "auprc": 0.024381473045157392,
+        "mean_positive": 0.5456188577744696,
+        "mean_negative": 0.5180048766046368,
+        "median_positive": 0.6459067463874817,
+        "median_negative": 0.5087574124336243,
+        "high_uncertainty_rate_positive": 0.3333333333333333,
+        "high_uncertainty_rate_negative": 0.31346578366445915
+      }
+    },
+    "negative_top2_margin": {
+      "true_missing_vs_confident_coherent_wrong__all": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 544,
+        "n_negative": 24,
+        "auroc": 0.42218137254901955,
+        "auroc_cluster_bootstrap_95ci": [
+          0.42141544117647056,
+          0.4237654320987654
+        ],
+        "auprc": 0.9510359908428875,
+        "mean_positive": -9.439079613370055,
+        "mean_negative": -9.132068673769632,
+        "median_positive": -9.661458492279053,
+        "median_negative": -8.635416984558105,
+        "high_uncertainty_rate_positive": 0.30514705882352944,
+        "high_uncertainty_rate_negative": 0.5416666666666666
+      },
+      "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 260,
+        "n_negative": 9,
+        "auroc": 0.37948717948717947,
+        "auroc_cluster_bootstrap_95ci": [
+          0.3786324786324786,
+          0.3812607944732297
+        ],
+        "auprc": 0.9614087851268784,
+        "mean_positive": -9.447049304155202,
+        "mean_negative": -9.02638906902737,
+        "median_positive": -9.640625,
+        "median_negative": -8.708333969116211,
+        "high_uncertainty_rate_positive": 0.29615384615384616,
+        "high_uncertainty_rate_negative": 0.5555555555555556
+      },
+      "true_missing_vs_probe_known__all": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 544,
+        "n_negative": 1076,
+        "auroc": 0.5500218674830528,
+        "auroc_cluster_bootstrap_95ci": [
+          0.4249810606060606,
+          0.8269318181818182
+        ],
+        "auprc": 0.3698753677564004,
+        "mean_positive": -9.439079613370055,
+        "mean_negative": -9.722989451043224,
+        "median_positive": -9.661458492279053,
+        "median_negative": -9.848958492279053,
+        "high_uncertainty_rate_positive": 0.30514705882352944,
+        "high_uncertainty_rate_negative": 0.26765799256505574
+      },
+      "true_missing_vs_probe_known__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 260,
+        "n_negative": 453,
+        "auroc": 0.48649600950925453,
+        "auroc_cluster_bootstrap_95ci": [
+          0.2777777777777778,
+          0.875
+        ],
+        "auprc": 0.3688253458716576,
+        "mean_positive": -9.447049304155202,
+        "mean_negative": -9.40301584092197,
+        "median_positive": -9.640625,
+        "median_negative": -9.517857551574707,
+        "high_uncertainty_rate_positive": 0.29615384615384616,
+        "high_uncertainty_rate_negative": 0.33112582781456956
+      },
+      "confident_coherent_wrong_vs_probe_known__all": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 24,
+        "n_negative": 1076,
+        "auroc": 0.6208759293680297,
+        "auroc_cluster_bootstrap_95ci": [
+          0.6188189785596957,
+          0.6227664849312486
+        ],
+        "auprc": 0.033379749463066384,
+        "mean_positive": -9.132068673769632,
+        "mean_negative": -9.722989451043224,
+        "median_positive": -8.635416984558105,
+        "median_negative": -9.848958492279053,
+        "high_uncertainty_rate_positive": 0.5416666666666666,
+        "high_uncertainty_rate_negative": 0.26765799256505574
+      },
+      "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 9,
+        "n_negative": 453,
+        "auroc": 0.5987245523669364,
+        "auroc_cluster_bootstrap_95ci": [
+          0.5939036381514258,
+          0.6026490066225165
+        ],
+        "auprc": 0.027361211225735732,
+        "mean_positive": -9.02638906902737,
+        "mean_negative": -9.40301584092197,
+        "median_positive": -8.708333969116211,
+        "median_negative": -9.517857551574707,
+        "high_uncertainty_rate_positive": 0.5555555555555556,
+        "high_uncertainty_rate_negative": 0.33112582781456956
+      }
+    },
+    "logit_uncertainty_lr_oof": {
+      "true_missing_vs_confident_coherent_wrong__all": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 544,
+        "n_negative": 24,
+        "auroc": 0.4412530637254902,
+        "auroc_cluster_bootstrap_95ci": [
+          0.4391084558823529,
+          0.44355085784313725
+        ],
+        "auprc": 0.9521370330396719,
+        "mean_positive": 0.41441691910830697,
+        "mean_negative": 0.44635546427309375,
+        "median_positive": 0.4450713169528606,
+        "median_negative": 0.44965873738360984,
+        "high_uncertainty_rate_positive": 0.20588235294117646,
+        "high_uncertainty_rate_negative": 0.20833333333333334
+      },
+      "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "confident_coherent_wrong",
+        "n_positive": 260,
+        "n_negative": 9,
+        "auroc": 0.38247863247863245,
+        "auroc_cluster_bootstrap_95ci": [
+          0.3803418803418803,
+          0.38589743589743586
+        ],
+        "auprc": 0.9543296348896619,
+        "mean_positive": 0.3906863547668411,
+        "mean_negative": 0.4462523008289425,
+        "median_positive": 0.4190738944301341,
+        "median_negative": 0.4673885304810379,
+        "high_uncertainty_rate_positive": 0.14615384615384616,
+        "high_uncertainty_rate_negative": 0.3333333333333333
+      },
+      "true_missing_vs_probe_known__all": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 544,
+        "n_negative": 1076,
+        "auroc": 0.41005118357752024,
+        "auroc_cluster_bootstrap_95ci": [
+          0.3232244318181818,
+          0.8461805555555556
+        ],
+        "auprc": 0.27323129237138366,
+        "mean_positive": 0.41441691910830697,
+        "mean_negative": 0.437901208098492,
+        "median_positive": 0.4450713169528606,
+        "median_negative": 0.4896063218784089,
+        "high_uncertainty_rate_positive": 0.20588235294117646,
+        "high_uncertainty_rate_negative": 0.3596654275092937
+      },
+      "true_missing_vs_probe_known__generated_errors_only": {
+        "positive": "true_missing",
+        "negative": "probe_known",
+        "n_positive": 260,
+        "n_negative": 453,
+        "auroc": 0.47277975887247414,
+        "auroc_cluster_bootstrap_95ci": [
+          0.14285714285714285,
+          1.0
+        ],
+        "auprc": 0.34475956840174826,
+        "mean_positive": 0.3906863547668411,
+        "mean_negative": 0.3925845323203759,
+        "median_positive": 0.4190738944301341,
+        "median_negative": 0.4363329548323565,
+        "high_uncertainty_rate_positive": 0.14615384615384616,
+        "high_uncertainty_rate_negative": 0.2251655629139073
+      },
+      "confident_coherent_wrong_vs_probe_known__all": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 24,
+        "n_negative": 1076,
+        "auroc": 0.46015334572490707,
+        "auroc_cluster_bootstrap_95ci": [
+          0.4578135493873252,
+          0.4617378520581863
+        ],
+        "auprc": 0.01947623338848803,
+        "mean_positive": 0.44635546427309375,
+        "mean_negative": 0.437901208098492,
+        "median_positive": 0.44965873738360984,
+        "median_negative": 0.4896063218784089,
+        "high_uncertainty_rate_positive": 0.20833333333333334,
+        "high_uncertainty_rate_negative": 0.3596654275092937
+      },
+      "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+        "positive": "confident_coherent_wrong",
+        "negative": "probe_known",
+        "n_positive": 9,
+        "n_negative": 453,
+        "auroc": 0.5884228599460387,
+        "auroc_cluster_bootstrap_95ci": [
+          0.5862831858407079,
+          0.5903083700440529
+        ],
+        "auprc": 0.03386760904596421,
+        "mean_positive": 0.4462523008289425,
+        "mean_negative": 0.3925845323203759,
+        "median_positive": 0.4673885304810379,
+        "median_negative": 0.4363329548323565,
+        "high_uncertainty_rate_positive": 0.3333333333333333,
+        "high_uncertainty_rate_negative": 0.2251655629139073
+      }
+    }
+  },
+  "threshold_sensitivity": {
+    "0.2": {
+      "cutoffs": [
+        0.025336396694183357,
+        0.2725766509771348
+      ],
+      "counts": {
+        "true_missing": 363,
+        "confident_coherent_wrong": 17
+      },
+      "mean_token_nll": {
+        "true_missing_vs_confident_coherent_wrong__all": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 363,
+          "n_negative": 17,
+          "auroc": 0.4916545130448874,
+          "auroc_cluster_bootstrap_95ci": [
+            0.49149246475449687,
+            0.49323773830861983
+          ],
+          "auprc": 0.958846163254248,
+          "mean_positive": 0.22894414735011265,
+          "mean_negative": 0.19170515414546518,
+          "median_positive": 0.1252523809671402,
+          "median_negative": 0.14449407160282135,
+          "high_uncertainty_rate_positive": 0.3305785123966942,
+          "high_uncertainty_rate_negative": 0.29411764705882354
+        },
+        "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 177,
+          "n_negative": 7,
+          "auroc": 0.5649717514124294,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5649717514124294,
+            0.5649717514124294
+          ],
+          "auprc": 0.971568990323141,
+          "mean_positive": 0.2861993602847965,
+          "mean_negative": 0.1829843593628279,
+          "median_positive": 0.16505840420722961,
+          "median_negative": 0.08735286444425583,
+          "high_uncertainty_rate_positive": 0.4180790960451977,
+          "high_uncertainty_rate_negative": 0.42857142857142855
+        },
+        "true_missing_vs_probe_known__all": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 363,
+          "n_negative": 1076,
+          "auroc": 0.5971663235941709,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5,
+            0.923076923076923
+          ],
+          "auprc": 0.28409233873533213,
+          "mean_positive": 0.22894414735011265,
+          "mean_negative": 0.2213998851971003,
+          "median_positive": 0.1252523809671402,
+          "median_negative": 0.05381321348249912,
+          "high_uncertainty_rate_positive": 0.3305785123966942,
+          "high_uncertainty_rate_negative": 0.26765799256505574
+        },
+        "true_missing_vs_probe_known__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 177,
+          "n_negative": 453,
+          "auroc": 0.5425849016599943,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5384298493408662,
+            0.5445986217172658
+          ],
+          "auprc": 0.2844250688546701,
+          "mean_positive": 0.2861993602847965,
+          "mean_negative": 0.32894294140099756,
+          "median_positive": 0.16505840420722961,
+          "median_negative": 0.1242515817284584,
+          "high_uncertainty_rate_positive": 0.4180790960451977,
+          "high_uncertainty_rate_negative": 0.36423841059602646
+        },
+        "confident_coherent_wrong_vs_probe_known__all": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 17,
+          "n_negative": 1076,
+          "auroc": 0.5966542750929368,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5949658002735978,
+            0.5978023179532036
+          ],
+          "auprc": 0.01960331966105732,
+          "mean_positive": 0.19170515414546518,
+          "mean_negative": 0.2213998851971003,
+          "median_positive": 0.14449407160282135,
+          "median_negative": 0.05381321348249912,
+          "high_uncertainty_rate_positive": 0.29411764705882354,
+          "high_uncertainty_rate_negative": 0.26765799256505574
+        },
+        "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 7,
+          "n_negative": 453,
+          "auroc": 0.4553768527278461,
+          "auroc_cluster_bootstrap_95ci": [
+            0.45216836734693877,
+            0.45714285714285713
+          ],
+          "auprc": 0.015817057464341856,
+          "mean_positive": 0.1829843593628279,
+          "mean_negative": 0.32894294140099756,
+          "median_positive": 0.08735286444425583,
+          "median_negative": 0.1242515817284584,
+          "high_uncertainty_rate_positive": 0.42857142857142855,
+          "high_uncertainty_rate_negative": 0.36423841059602646
+        }
+      },
+      "mean_token_entropy": {
+        "true_missing_vs_confident_coherent_wrong__all": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 363,
+          "n_negative": 17,
+          "auroc": 0.4436882190892886,
+          "auroc_cluster_bootstrap_95ci": [
+            0.4436882190892886,
+            0.44516864917712234
+          ],
+          "auprc": 0.9486560279364076,
+          "mean_positive": 0.13843178456089877,
+          "mean_negative": 0.15289395631236188,
+          "median_positive": 0.12942716479301453,
+          "median_negative": 0.14802482724189758,
+          "high_uncertainty_rate_positive": 0.4022038567493113,
+          "high_uncertainty_rate_negative": 0.47058823529411764
+        },
+        "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 177,
+          "n_negative": 7,
+          "auroc": 0.5221953188054883,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5221953188054883,
+            0.5221953188054883
+          ],
+          "auprc": 0.9598636353789579,
+          "mean_positive": 0.1451850582156225,
+          "mean_negative": 0.14659105773483003,
+          "median_positive": 0.14142122864723206,
+          "median_negative": 0.1442488431930542,
+          "high_uncertainty_rate_positive": 0.4576271186440678,
+          "high_uncertainty_rate_negative": 0.42857142857142855
+        },
+        "true_missing_vs_probe_known__all": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 363,
+          "n_negative": 1076,
+          "auroc": 0.6149574487695475,
+          "auroc_cluster_bootstrap_95ci": [
+            0.4545454545454546,
+            0.8749999999999999
+          ],
+          "auprc": 0.3085718080086659,
+          "mean_positive": 0.13843178456089877,
+          "mean_negative": 0.11046997579026684,
+          "median_positive": 0.12942716479301453,
+          "median_negative": 0.09688567370176315,
+          "high_uncertainty_rate_positive": 0.4022038567493113,
+          "high_uncertainty_rate_negative": 0.2704460966542751
+        },
+        "true_missing_vs_probe_known__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 177,
+          "n_negative": 453,
+          "auroc": 0.5890672353799529,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5862800981974711,
+            0.5911932700068293
+          ],
+          "auprc": 0.32815258554953586,
+          "mean_positive": 0.1451850582156225,
+          "mean_negative": 0.12480282916113833,
+          "median_positive": 0.14142122864723206,
+          "median_negative": 0.10770498216152191,
+          "high_uncertainty_rate_positive": 0.4576271186440678,
+          "high_uncertainty_rate_negative": 0.31567328918322296
+        },
+        "confident_coherent_wrong_vs_probe_known__all": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 17,
+          "n_negative": 1076,
+          "auroc": 0.6640061228952547,
+          "auroc_cluster_bootstrap_95ci": [
+            0.6623765915903528,
+            0.6651919820853133
+          ],
+          "auprc": 0.028642564893163025,
+          "mean_positive": 0.15289395631236188,
+          "mean_negative": 0.11046997579026684,
+          "median_positive": 0.14802482724189758,
+          "median_negative": 0.09688567370176315,
+          "high_uncertainty_rate_positive": 0.47058823529411764,
+          "high_uncertainty_rate_negative": 0.2704460966542751
+        },
+        "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 7,
+          "n_negative": 453,
+          "auroc": 0.5685903500473037,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5660076530612245,
+            0.5711145996860282
+          ],
+          "auprc": 0.02920069820159129,
+          "mean_positive": 0.14659105773483003,
+          "mean_negative": 0.12480282916113833,
+          "median_positive": 0.1442488431930542,
+          "median_negative": 0.10770498216152191,
+          "high_uncertainty_rate_positive": 0.42857142857142855,
+          "high_uncertainty_rate_negative": 0.31567328918322296
+        }
+      }
+    },
+    "0.3": {
+      "cutoffs": [
+        0.04910091757774353,
+        0.2016076385974884
+      ],
+      "counts": {
+        "true_missing": 544,
+        "confident_coherent_wrong": 24
+      },
+      "mean_token_nll": {
+        "true_missing_vs_confident_coherent_wrong__all": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 544,
+          "n_negative": 24,
+          "auroc": 0.5453431372549019,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5442727481617647,
+            0.5488861386138615
+          ],
+          "auprc": 0.9673455058010415,
+          "mean_positive": 0.2337548263505382,
+          "mean_negative": 0.15579696000592472,
+          "median_positive": 0.12041584402322769,
+          "median_negative": 0.10875790566205978,
+          "high_uncertainty_rate_positive": 0.33455882352941174,
+          "high_uncertainty_rate_negative": 0.20833333333333334
+        },
+        "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 260,
+          "n_negative": 9,
+          "auroc": 0.6008547008547009,
+          "auroc_cluster_bootstrap_95ci": [
+            0.6000000000000001,
+            0.6044905008635579
+          ],
+          "auprc": 0.9785848593726008,
+          "mean_positive": 0.2895042165643715,
+          "mean_negative": 0.1576544590190881,
+          "median_positive": 0.15658080577850342,
+          "median_negative": 0.08735286444425583,
+          "high_uncertainty_rate_positive": 0.4115384615384615,
+          "high_uncertainty_rate_negative": 0.3333333333333333
+        },
+        "true_missing_vs_probe_known__all": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 544,
+          "n_negative": 1076,
+          "auroc": 0.5888024819593265,
+          "auroc_cluster_bootstrap_95ci": [
+            0.30665306122448976,
+            0.7999999999999999
+          ],
+          "auprc": 0.37088629197642153,
+          "mean_positive": 0.2337548263505382,
+          "mean_negative": 0.2213998851971003,
+          "median_positive": 0.12041584402322769,
+          "median_negative": 0.05381321348249912,
+          "high_uncertainty_rate_positive": 0.33455882352941174,
+          "high_uncertainty_rate_negative": 0.26765799256505574
+        },
+        "true_missing_vs_probe_known__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 260,
+          "n_negative": 453,
+          "auroc": 0.5296484971981661,
+          "auroc_cluster_bootstrap_95ci": [
+            0.1522321428571429,
+            1.0
+          ],
+          "auprc": 0.3633221468196029,
+          "mean_positive": 0.2895042165643715,
+          "mean_negative": 0.32894294140099756,
+          "median_positive": 0.15658080577850342,
+          "median_negative": 0.1242515817284584,
+          "high_uncertainty_rate_positive": 0.4115384615384615,
+          "high_uncertainty_rate_negative": 0.36423841059602646
+        },
+        "confident_coherent_wrong_vs_probe_known__all": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 24,
+          "n_negative": 1076,
+          "auroc": 0.5526254646840149,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5508225777016453,
+            0.5539397898379892
+          ],
+          "auprc": 0.02373964828070195,
+          "mean_positive": 0.15579696000592472,
+          "mean_negative": 0.2213998851971003,
+          "median_positive": 0.10875790566205978,
+          "median_negative": 0.05381321348249912,
+          "high_uncertainty_rate_positive": 0.20833333333333334,
+          "high_uncertainty_rate_negative": 0.26765799256505574
+        },
+        "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 9,
+          "n_negative": 453,
+          "auroc": 0.42604856512141276,
+          "auroc_cluster_bootstrap_95ci": [
+            0.42261904761904756,
+            0.4285714285714285
+          ],
+          "auprc": 0.01806087545129742,
+          "mean_positive": 0.1576544590190881,
+          "mean_negative": 0.32894294140099756,
+          "median_positive": 0.08735286444425583,
+          "median_negative": 0.1242515817284584,
+          "high_uncertainty_rate_positive": 0.3333333333333333,
+          "high_uncertainty_rate_negative": 0.36423841059602646
+        }
+      },
+      "mean_token_entropy": {
+        "true_missing_vs_confident_coherent_wrong__all": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 544,
+          "n_negative": 24,
+          "auroc": 0.44715073529411764,
+          "auroc_cluster_bootstrap_95ci": [
+            0.4461550245098039,
+            0.4500825082508251
+          ],
+          "auprc": 0.9509144485639719,
+          "mean_positive": 0.13136381515462692,
+          "mean_negative": 0.14503506904778382,
+          "median_positive": 0.12129915878176689,
+          "median_negative": 0.14440618455410004,
+          "high_uncertainty_rate_positive": 0.35110294117647056,
+          "high_uncertainty_rate_negative": 0.4166666666666667
+        },
+        "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 260,
+          "n_negative": 9,
+          "auroc": 0.4653846153846154,
+          "auroc_cluster_bootstrap_95ci": [
+            0.4636752136752137,
+            0.46776050662061025
+          ],
+          "auprc": 0.9570331818018112,
+          "mean_positive": 0.13494473843692015,
+          "mean_negative": 0.15242692993746865,
+          "median_positive": 0.12725364416837692,
+          "median_negative": 0.1442488431930542,
+          "high_uncertainty_rate_positive": 0.38461538461538464,
+          "high_uncertainty_rate_negative": 0.4444444444444444
+        },
+        "true_missing_vs_probe_known__all": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 544,
+          "n_negative": 1076,
+          "auroc": 0.5909618959107807,
+          "auroc_cluster_bootstrap_95ci": [
+            0.28888888888888886,
+            0.7714285714285715
+          ],
+          "auprc": 0.3810627036463501,
+          "mean_positive": 0.13136381515462692,
+          "mean_negative": 0.11046997579026684,
+          "median_positive": 0.12129915878176689,
+          "median_negative": 0.09688567370176315,
+          "high_uncertainty_rate_positive": 0.35110294117647056,
+          "high_uncertainty_rate_negative": 0.2704460966542751
+        },
+        "true_missing_vs_probe_known__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 260,
+          "n_negative": 453,
+          "auroc": 0.5495924605196129,
+          "auroc_cluster_bootstrap_95ci": [
+            0.19999999999999998,
+            1.0
+          ],
+          "auprc": 0.39013519645272143,
+          "mean_positive": 0.13494473843692015,
+          "mean_negative": 0.12480282916113833,
+          "median_positive": 0.12725364416837692,
+          "median_negative": 0.10770498216152191,
+          "high_uncertainty_rate_positive": 0.38461538461538464,
+          "high_uncertainty_rate_negative": 0.31567328918322296
+        },
+        "confident_coherent_wrong_vs_probe_known__all": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 24,
+          "n_negative": 1076,
+          "auroc": 0.6379337050805453,
+          "auroc_cluster_bootstrap_95ci": [
+            0.6362749687890137,
+            0.6391852195423624
+          ],
+          "auprc": 0.03483255634944167,
+          "mean_positive": 0.14503506904778382,
+          "mean_negative": 0.11046997579026684,
+          "median_positive": 0.14440618455410004,
+          "median_negative": 0.09688567370176315,
+          "high_uncertainty_rate_positive": 0.4166666666666667,
+          "high_uncertainty_rate_negative": 0.2704460966542751
+        },
+        "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 9,
+          "n_negative": 453,
+          "auroc": 0.577140053961246,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5749007936507937,
+            0.5799755799755799
+          ],
+          "auprc": 0.03708934648684887,
+          "mean_positive": 0.15242692993746865,
+          "mean_negative": 0.12480282916113833,
+          "median_positive": 0.1442488431930542,
+          "median_negative": 0.10770498216152191,
+          "high_uncertainty_rate_positive": 0.4444444444444444,
+          "high_uncertainty_rate_negative": 0.31567328918322296
+        }
+      }
+    },
+    "0.4": {
+      "cutoffs": [
+        0.08198529481887819,
+        0.15113435387611387
+      ],
+      "counts": {
+        "true_missing": 725,
+        "confident_coherent_wrong": 34
+      },
+      "mean_token_nll": {
+        "true_missing_vs_confident_coherent_wrong__all": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 725,
+          "n_negative": 34,
+          "auroc": 0.521419878296146,
+          "auroc_cluster_bootstrap_95ci": [
+            0.0,
+            0.5349406747455981
+          ],
+          "auprc": 0.9591787113430805,
+          "mean_positive": 0.23765300592443714,
+          "mean_negative": 0.20632578609922134,
+          "median_positive": 0.11862745881080627,
+          "median_negative": 0.1186569519340992,
+          "high_uncertainty_rate_positive": 0.3406896551724138,
+          "high_uncertainty_rate_negative": 0.29411764705882354
+        },
+        "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 346,
+          "n_negative": 14,
+          "auroc": 0.5483071841453344,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5474814203137902,
+            0.5522138680033417
+          ],
+          "auprc": 0.9640934674511779,
+          "mean_positive": 0.2833555986827362,
+          "mean_negative": 0.261696461887498,
+          "median_positive": 0.1567230299115181,
+          "median_negative": 0.10684166476130486,
+          "high_uncertainty_rate_positive": 0.407514450867052,
+          "high_uncertainty_rate_negative": 0.42857142857142855
+        },
+        "true_missing_vs_probe_known__all": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 725,
+          "n_negative": 1076,
+          "auroc": 0.5819433405973593,
+          "auroc_cluster_bootstrap_95ci": [
+            0.3268543956043956,
+            0.7333333333333333
+          ],
+          "auprc": 0.43886092161362855,
+          "mean_positive": 0.23765300592443714,
+          "mean_negative": 0.2213998851971003,
+          "median_positive": 0.11862745881080627,
+          "median_negative": 0.05381321348249912,
+          "high_uncertainty_rate_positive": 0.3406896551724138,
+          "high_uncertainty_rate_negative": 0.26765799256505574
+        },
+        "true_missing_vs_probe_known__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 346,
+          "n_negative": 453,
+          "auroc": 0.5282126861386518,
+          "auroc_cluster_bootstrap_95ci": [
+            0.14285714285714288,
+            0.8
+          ],
+          "auprc": 0.4279517909753704,
+          "mean_positive": 0.2833555986827362,
+          "mean_negative": 0.32894294140099756,
+          "median_positive": 0.1567230299115181,
+          "median_negative": 0.1242515817284584,
+          "high_uncertainty_rate_positive": 0.407514450867052,
+          "high_uncertainty_rate_negative": 0.36423841059602646
+        },
+        "confident_coherent_wrong_vs_probe_known__all": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 34,
+          "n_negative": 1076,
+          "auroc": 0.5612562869013775,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5508227837713193,
+            1.0
+          ],
+          "auprc": 0.03527932420228803,
+          "mean_positive": 0.20632578609922134,
+          "mean_negative": 0.2213998851971003,
+          "median_positive": 0.1186569519340992,
+          "median_negative": 0.05381321348249912,
+          "high_uncertainty_rate_positive": 0.29411764705882354,
+          "high_uncertainty_rate_negative": 0.26765799256505574
+        },
+        "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 14,
+          "n_negative": 453,
+          "auroc": 0.47429832860296445,
+          "auroc_cluster_bootstrap_95ci": [
+            0.47124787414965985,
+            0.47629513343799057
+          ],
+          "auprc": 0.03130515390971239,
+          "mean_positive": 0.261696461887498,
+          "mean_negative": 0.32894294140099756,
+          "median_positive": 0.10684166476130486,
+          "median_negative": 0.1242515817284584,
+          "high_uncertainty_rate_positive": 0.42857142857142855,
+          "high_uncertainty_rate_negative": 0.36423841059602646
+        }
+      },
+      "mean_token_entropy": {
+        "true_missing_vs_confident_coherent_wrong__all": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 725,
+          "n_negative": 34,
+          "auroc": 0.49525354969574037,
+          "auroc_cluster_bootstrap_95ci": [
+            0.0,
+            0.5036114953127401
+          ],
+          "auprc": 0.9547741355032008,
+          "mean_positive": 0.12872017577868597,
+          "mean_negative": 0.12963325653553887,
+          "median_positive": 0.11943476647138596,
+          "median_negative": 0.12230277061462402,
+          "high_uncertainty_rate_positive": 0.3393103448275862,
+          "high_uncertainty_rate_negative": 0.35294117647058826
+        },
+        "true_missing_vs_confident_coherent_wrong__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "confident_coherent_wrong",
+          "n_positive": 346,
+          "n_negative": 14,
+          "auroc": 0.5410817506193228,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5392237819983484,
+            0.5447730112453144
+          ],
+          "auprc": 0.9615603614220937,
+          "mean_positive": 0.1364358997206618,
+          "mean_negative": 0.130511420512838,
+          "median_positive": 0.1281469538807869,
+          "median_negative": 0.10155095905065536,
+          "high_uncertainty_rate_positive": 0.3815028901734104,
+          "high_uncertainty_rate_negative": 0.35714285714285715
+        },
+        "true_missing_vs_probe_known__all": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 725,
+          "n_negative": 1076,
+          "auroc": 0.5780861428022048,
+          "auroc_cluster_bootstrap_95ci": [
+            0.3105909090909091,
+            0.6927375637755103
+          ],
+          "auprc": 0.44497105572038415,
+          "mean_positive": 0.12872017577868597,
+          "mean_negative": 0.11046997579026684,
+          "median_positive": 0.11943476647138596,
+          "median_negative": 0.09688567370176315,
+          "high_uncertainty_rate_positive": 0.3393103448275862,
+          "high_uncertainty_rate_negative": 0.2704460966542751
+        },
+        "true_missing_vs_probe_known__generated_errors_only": {
+          "positive": "true_missing",
+          "negative": "probe_known",
+          "n_positive": 346,
+          "n_negative": 453,
+          "auroc": 0.5510278298817134,
+          "auroc_cluster_bootstrap_95ci": [
+            0.125,
+            0.7333333333333333
+          ],
+          "auprc": 0.4642856123998539,
+          "mean_positive": 0.1364358997206618,
+          "mean_negative": 0.12480282916113833,
+          "median_positive": 0.1281469538807869,
+          "median_negative": 0.10770498216152191,
+          "high_uncertainty_rate_positive": 0.3815028901734104,
+          "high_uncertainty_rate_negative": 0.31567328918322296
+        },
+        "confident_coherent_wrong_vs_probe_known__all": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 34,
+          "n_negative": 1076,
+          "auroc": 0.5845998250601356,
+          "auroc_cluster_bootstrap_95ci": [
+            0.579667492771582,
+            1.0
+          ],
+          "auprc": 0.039830128495419746,
+          "mean_positive": 0.12963325653553887,
+          "mean_negative": 0.11046997579026684,
+          "median_positive": 0.12230277061462402,
+          "median_negative": 0.09688567370176315,
+          "high_uncertainty_rate_positive": 0.35294117647058826,
+          "high_uncertainty_rate_negative": 0.2704460966542751
+        },
+        "confident_coherent_wrong_vs_probe_known__generated_errors_only": {
+          "positive": "confident_coherent_wrong",
+          "negative": "probe_known",
+          "n_positive": 14,
+          "n_negative": 453,
+          "auroc": 0.5097760958688111,
+          "auroc_cluster_bootstrap_95ci": [
+            0.5070153061224489,
+            0.51287284144427
+          ],
+          "auprc": 0.039463350444442206,
+          "mean_positive": 0.130511420512838,
+          "mean_negative": 0.12480282916113833,
+          "median_positive": 0.10155095905065536,
+          "median_negative": 0.10770498216152191,
+          "high_uncertainty_rate_positive": 0.35714285714285715,
+          "high_uncertainty_rate_negative": 0.31567328918322296
+        }
+      }
+    }
+  }
+}

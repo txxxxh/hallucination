@@ -1,0 +1,94 @@
+{
+  "protocol": "Qwen2.5-7B pilot; right-person grouped nested 3x5 OOF; fold-local layer/lambda; exact same Llama top-span deletion; no probe-derived input features",
+  "notes": {
+    "P": "47-dimensional scalar ablation, not the formal full P",
+    "known_unknown": "closed-book probes used only for post-hoc reporting"
+  },
+  "n": 128,
+  "results": {
+    "llama_probe": {
+      "overall": {
+        "auroc": 0.4774655355249205,
+        "auprc": 0.38861741394211835
+      },
+      "known": {
+        "auroc": 0.561965811965812,
+        "auprc": 0.5350151638643019
+      },
+      "unknown": {
+        "auroc": 0.44387755102040816,
+        "auprc": 0.34705798568303664
+      }
+    },
+    "qwen_probe": {
+      "overall": {
+        "auroc": 0.6688759278897137,
+        "auprc": 0.5062505511276671
+      },
+      "known": {
+        "auroc": 0.7222222222222223,
+        "auprc": 0.6497248325160373
+      },
+      "unknown": {
+        "auroc": 0.6364795918367347,
+        "auprc": 0.4376665369307193
+      }
+    },
+    "cross_probe": {
+      "overall": {
+        "auroc": 0.5914634146341463,
+        "auprc": 0.4521743161544758
+      },
+      "known": {
+        "auroc": 0.6538461538461539,
+        "auprc": 0.6039729520965135
+      },
+      "unknown": {
+        "auroc": 0.5529336734693878,
+        "auprc": 0.3820419993329104
+      }
+    },
+    "P": {
+      "overall": {
+        "auroc": 0.5705196182396607,
+        "auprc": 0.4496903283335957
+      },
+      "known": {
+        "auroc": 0.6217948717948718,
+        "auprc": 0.563094193107794
+      },
+      "unknown": {
+        "auroc": 0.5369897959183674,
+        "auprc": 0.39631110988090856
+      }
+    },
+    "P_cross_qwen": {
+      "overall": {
+        "auroc": 0.5535524920466596,
+        "auprc": 0.427508917602499
+      },
+      "known": {
+        "auroc": 0.6282051282051282,
+        "auprc": 0.6113582501121202
+      },
+      "unknown": {
+        "auroc": 0.5108418367346939,
+        "auprc": 0.3625122986539887
+      }
+    },
+    "P_full_reference_same_items": {
+      "overall": {
+        "auroc": 0.8054082714740192,
+        "auprc": 0.7439777226765566
+      },
+      "known": {
+        "auroc": 0.8098290598290598,
+        "auprc": 0.7789462584145024
+      },
+      "unknown": {
+        "auroc": 0.8054846938775511,
+        "auprc": 0.7255373289355727
+      }
+    }
+  }
+}

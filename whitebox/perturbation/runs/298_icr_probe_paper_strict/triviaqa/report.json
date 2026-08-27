@@ -1,0 +1,43 @@
+{
+  "dataset": "triviaqa",
+  "n": 1000,
+  "correct": 500,
+  "errors": 500,
+  "official_commit": "40ec490e762cadbac6bcefdc24a8f0d5974e8448",
+  "feature": "official ICRScore; paper top_k=20; induction heads; answer-token mean",
+  "training": "paper: 50 epochs, batch_size=32, Adam lr=5e-4, ReduceLROnPlateau factor=.5 patience=5",
+  "paper_protocol_random_80_20": [
+    {
+      "auroc": 0.6934,
+      "auprc_correct": 0.6506369421436026,
+      "auprc_error": 0.7216873884118098,
+      "seed": 42,
+      "train_n": 800,
+      "test_n": 200,
+      "best_heldout_loss_used_for_checkpoint": 0.6414200663566589
+    },
+    {
+      "auroc": 0.7308,
+      "auprc_correct": 0.6900244709753744,
+      "auprc_error": 0.756213114723739,
+      "seed": 43,
+      "train_n": 800,
+      "test_n": 200,
+      "best_heldout_loss_used_for_checkpoint": 0.6131385564804077
+    },
+    {
+      "auroc": 0.7546999999999999,
+      "auprc_correct": 0.7107825642623499,
+      "auprc_error": 0.7937437363370364,
+      "seed": 44,
+      "train_n": 800,
+      "test_n": 200,
+      "best_heldout_loss_used_for_checkpoint": 0.5738521218299866
+    }
+  ],
+  "mean_random_80_20": {
+    "auroc": 0.7262999999999998,
+    "auprc_correct": 0.6838146591271089,
+    "auprc_error": 0.7572147464908617
+  }
+}

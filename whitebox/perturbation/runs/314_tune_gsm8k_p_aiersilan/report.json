@@ -1,0 +1,185 @@
+{
+  "dataset": "gsm8k",
+  "n": 942,
+  "protocol": "stratified outer 80/20 seeds42-47; all layer/dimension/C selection by 3-fold CV within outer 80%; untouched outer test",
+  "search": {
+    "p_configs": [
+      [
+        null,
+        8,
+        8,
+        8,
+        8,
+        48
+      ],
+      [
+        null,
+        16,
+        16,
+        16,
+        16,
+        96
+      ]
+    ],
+    "r_layers": [
+      10,
+      12,
+      14,
+      16,
+      18,
+      20
+    ],
+    "r_dims": [
+      32,
+      64,
+      96,
+      128
+    ],
+    "C": [
+      0.003,
+      0.01,
+      0.03,
+      0.1
+    ]
+  },
+  "per_seed": [
+    {
+      "seed": 42,
+      "selected": {
+        "p_config": 1,
+        "p_dims": [
+          null,
+          16,
+          16,
+          16,
+          16,
+          96
+        ],
+        "r_layer": 20,
+        "r_dim": 128,
+        "C": 0.01
+      },
+      "inner_cv_auroc": 0.7931528302951633,
+      "test": {
+        "auroc": 0.734602463605823,
+        "auprc": 0.7011146108916941
+      }
+    },
+    {
+      "seed": 43,
+      "selected": {
+        "p_config": 1,
+        "p_dims": [
+          null,
+          16,
+          16,
+          16,
+          16,
+          96
+        ],
+        "r_layer": 16,
+        "r_dim": 128,
+        "C": 0.003
+      },
+      "inner_cv_auroc": 0.7824298775325921,
+      "test": {
+        "auroc": 0.74501679731243,
+        "auprc": 0.7565348209971521
+      }
+    },
+    {
+      "seed": 44,
+      "selected": {
+        "p_config": 1,
+        "p_dims": [
+          null,
+          16,
+          16,
+          16,
+          16,
+          96
+        ],
+        "r_layer": 16,
+        "r_dim": 96,
+        "C": 0.03
+      },
+      "inner_cv_auroc": 0.7398555223206726,
+      "test": {
+        "auroc": 0.8114221724524077,
+        "auprc": 0.7962204872455055
+      }
+    },
+    {
+      "seed": 45,
+      "selected": {
+        "p_config": 1,
+        "p_dims": [
+          null,
+          16,
+          16,
+          16,
+          16,
+          96
+        ],
+        "r_layer": 18,
+        "r_dim": 96,
+        "C": 0.003
+      },
+      "inner_cv_auroc": 0.7869871324566848,
+      "test": {
+        "auroc": 0.722060470324748,
+        "auprc": 0.6919671371693028
+      }
+    },
+    {
+      "seed": 46,
+      "selected": {
+        "p_config": 1,
+        "p_dims": [
+          null,
+          16,
+          16,
+          16,
+          16,
+          96
+        ],
+        "r_layer": 20,
+        "r_dim": 96,
+        "C": 0.01
+      },
+      "inner_cv_auroc": 0.751516733449969,
+      "test": {
+        "auroc": 0.8173572228443449,
+        "auprc": 0.805422317935059
+      }
+    },
+    {
+      "seed": 47,
+      "selected": {
+        "p_config": 1,
+        "p_dims": [
+          null,
+          16,
+          16,
+          16,
+          16,
+          96
+        ],
+        "r_layer": 20,
+        "r_dim": 64,
+        "C": 0.01
+      },
+      "inner_cv_auroc": 0.7658939556408375,
+      "test": {
+        "auroc": 0.7947368421052632,
+        "auprc": 0.8008037129159377
+      }
+    }
+  ],
+  "summary": {
+    "auroc_mean": 0.7708659947741694,
+    "auroc_std": 0.038169051832261054,
+    "auprc_mean": 0.7586771811924419
+  },
+  "reference_selfcheckgpt_nli_auroc": 0.79
+}

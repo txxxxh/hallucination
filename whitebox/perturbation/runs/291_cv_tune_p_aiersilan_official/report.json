@@ -1,0 +1,71 @@
+{
+  "protocol": "Aiersilan stratified outer 80/20; hyperparameters selected by 5-fold stratified CV across the full outer 80%; refit on full 80%; one evaluation on fixed 20% test",
+  "candidate_count": 588,
+  "per_seed": [
+    {
+      "seed": 42,
+      "selected": {
+        "p_hidden": 16,
+        "p_layer": 96,
+        "aiersilan": 128,
+        "C": 0.01
+      },
+      "cv": {
+        "auroc": 0.8463408369980536,
+        "auprc": 0.8244148091301223
+      },
+      "test": {
+        "auroc": 0.8188562373955632,
+        "auprc": 0.8047423830678673
+      },
+      "n_dev": 2315,
+      "n_test": 579
+    },
+    {
+      "seed": 43,
+      "selected": {
+        "p_hidden": 16,
+        "p_layer": 96,
+        "aiersilan": 192,
+        "C": 0.003
+      },
+      "cv": {
+        "auroc": 0.833182388916925,
+        "auprc": 0.8170101082066826
+      },
+      "test": {
+        "auroc": 0.8607269758955152,
+        "auprc": 0.8428233647043111
+      },
+      "n_dev": 2315,
+      "n_test": 579
+    },
+    {
+      "seed": 44,
+      "selected": {
+        "p_hidden": 16,
+        "p_layer": 96,
+        "aiersilan": 192,
+        "C": 0.003
+      },
+      "cv": {
+        "auroc": 0.8380486566697907,
+        "auprc": 0.8224467974890174
+      },
+      "test": {
+        "auroc": 0.8275833093248823,
+        "auprc": 0.8063964847498624
+      },
+      "n_dev": 2315,
+      "n_test": 579
+    }
+  ],
+  "test_mean": {
+    "auroc": 0.8357221742053204,
+    "auprc": 0.8179874108406802
+  },
+  "test_std": {
+    "auroc": 0.018036454322461468,
+    "auprc": 0.017574649666131696
+  }
+}

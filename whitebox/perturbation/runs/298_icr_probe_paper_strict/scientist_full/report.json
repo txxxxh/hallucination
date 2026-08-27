@@ -1,0 +1,43 @@
+{
+  "dataset": "scientist_full",
+  "n": 2894,
+  "correct": 1560,
+  "errors": 1334,
+  "official_commit": "40ec490e762cadbac6bcefdc24a8f0d5974e8448",
+  "feature": "official ICRScore; paper top_k=20; induction heads; answer-token mean",
+  "training": "paper: 50 epochs, batch_size=32, Adam lr=5e-4, ReduceLROnPlateau factor=.5 patience=5",
+  "paper_protocol_random_80_20": [
+    {
+      "auroc": 0.5713771247479112,
+      "auprc_correct": 0.5994173815273903,
+      "auprc_error": 0.5250982072537858,
+      "seed": 42,
+      "train_n": 2315,
+      "test_n": 579,
+      "best_heldout_loss_used_for_checkpoint": 0.6838786602020264
+    },
+    {
+      "auroc": 0.5826731009315279,
+      "auprc_correct": 0.5934825692967125,
+      "auprc_error": 0.5370144255080156,
+      "seed": 43,
+      "train_n": 2315,
+      "test_n": 579,
+      "best_heldout_loss_used_for_checkpoint": 0.6823737025260925
+    },
+    {
+      "auroc": 0.5534428118697783,
+      "auprc_correct": 0.5771366151107482,
+      "auprc_error": 0.5211250306620653,
+      "seed": 44,
+      "train_n": 2315,
+      "test_n": 579,
+      "best_heldout_loss_used_for_checkpoint": 0.6855764389038086
+    }
+  ],
+  "mean_random_80_20": {
+    "auroc": 0.5691643458497392,
+    "auprc_correct": 0.5900121886449503,
+    "auprc_error": 0.5277458878079555
+  }
+}

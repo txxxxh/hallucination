@@ -545,6 +545,74 @@
         "charged_queries_mean": 91.3,
         "reduction_vs_full": 0.4672905921067986
       }
+    },
+    {
+      "model": "qwen",
+      "method": "gradient",
+      "n": 1000,
+      "groups": 398,
+      "positive": 500,
+      "protocol": "3 seeds x 5-fold OOF; grouped except TriviaQA unique-key stratified",
+      "mean": {
+        "auroc": 0.8837026666666667,
+        "auprc": 0.8766200972593344,
+        "accuracy": 0.7943333333333333,
+        "balanced_accuracy": 0.7943333333333333,
+        "macro_f1": 0.7939746208835259
+      },
+      "per_seed": [
+        {
+          "n": 1000,
+          "positive": 500,
+          "auroc": 0.8888600000000001,
+          "auprc": 0.878129564472197,
+          "accuracy": 0.809,
+          "balanced_accuracy": 0.8089999999999999,
+          "macro_f1": 0.8086461867993922,
+          "confusion_tn_fp_fn_tp": [
+            383,
+            117,
+            74,
+            426
+          ]
+        },
+        {
+          "n": 1000,
+          "positive": 500,
+          "auroc": 0.8816120000000001,
+          "auprc": 0.8810260555890678,
+          "accuracy": 0.777,
+          "balanced_accuracy": 0.7769999999999999,
+          "macro_f1": 0.7765869091951018,
+          "confusion_tn_fp_fn_tp": [
+            367,
+            133,
+            90,
+            410
+          ]
+        },
+        {
+          "n": 1000,
+          "positive": 500,
+          "auroc": 0.880636,
+          "auprc": 0.8707046717167388,
+          "accuracy": 0.797,
+          "balanced_accuracy": 0.7969999999999999,
+          "macro_f1": 0.7966907666560838,
+          "confusion_tn_fp_fn_tp": [
+            379,
+            121,
+            82,
+            418
+          ]
+        }
+      ],
+      "queries": {
+        "selected_span_queries_mean": 90.824,
+        "full_enumeration_span_queries_mean": 171.388,
+        "charged_queries_mean": 90.824,
+        "reduction_vs_full": 0.47006791607347076
+      }
     }
   ]
 }
